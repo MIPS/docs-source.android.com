@@ -249,7 +249,7 @@ PRODUCT_PACKAGES += \
   </li>
 </ol>
 
-<h2>Audio preprocessing effects</h2>
+<h2 id="preprocessing">Audio preprocessing effects</h2>
 <p>
 The Android platform supports audio effects on supported devices in the
 <a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">audiofx</a>
@@ -291,7 +291,7 @@ see the implementation for the Nexus 10 in <code>device/samsung/manta/audio_effe
 <p class="warning"><strong>Warning:</strong> For the <code>VOICE_RECOGNITION</code> use case, do not enable
 the noise suppression pre-processing effect. It should not be turned on by default when recording from this audio source,
 and you should not enable it in your own audio_effects.conf file. Turning on the effect by default will cause the device to fail
-the <a href="http://static.googleusercontent.com/external_content/untrusted_dlcp/source.android.com/en/us/compatibility/4.2/android-4.2-cdd.pdf"> compatibility requirement </a>
+the <a href="/compatibility/index.html"> compatibility requirement </a>
 regardless of whether is was on by default due to configuration file, or the audio HAL implementation's default behavior.</p>
 
 <p>The following example enables pre-processing for the VoIP <code>AudioSource</code> and Camcorder <code>AudioSource</code>.
@@ -309,7 +309,7 @@ pre_processing {
 }
 </pre>
 
-<h3>Source tuning</h3>
+<h3 id="tuning">Source tuning</h3>
 <p>For <code>AudioSource</code> tuning, there are no explicit requirements on audio gain or audio processing
 with the exception of voice recognition (<code>VOICE_RECOGNITION</code>).</p>
 
@@ -341,7 +341,7 @@ with the exception of voice recognition (<code>VOICE_RECOGNITION</code>).</p>
   </li>
 </ul>
 
-<h3>More information</h3>
+<h3 id="more">More information</h3>
 <p>For more information, see:</p>
 <ul>
 <li>Android documentation for <a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">audiofx 
