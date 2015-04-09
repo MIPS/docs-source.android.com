@@ -30,14 +30,6 @@ can find information on common features useful to people and organizations who
 are looking to modify, contribute to, or port the Android software. This is
 "under the hood" information intended for engineers.</p>
 
-<h2 id="accessory-protocol-information">Accessories</h2>
-<p>Android devices can connect to hardware accessories, such as audio docks,
-keyboards and custom hardware, through USB or Bluetooth. This section
-describes the Android Open Accessory protocol (AOAP) for accessory hardware
-builders.</p>
-<p><a href="{@docRoot}accessories/index.html">&raquo; Accessory Protocol
-Information</a></p>
-
 <h2 id="art-technical-information">ART</h2>
 <p>The Android runtime (ART) is the heart of Android. It's a fast, ahead-of-time
 compiled runtime with modern garbage collection designed to scale.
@@ -60,6 +52,13 @@ Information</a></p>
 for debugging at the platform level.</p>
 <p><a href="{@docRoot}devices/tech/debug/index.html">&raquo; Debugging
 Information</a></p>
+
+<h2 id="admin-information">Device Administration</h2>
+<p>Since Android 5.0, the platform supports use cases in a corporate
+environment under the auspices of each company’s information technology (IT)
+department.</p>
+<p><a href="{@docRoot}devices/tech/admin/index.html">&raquo; Device
+administration information</a></p>
 
 <h2 id="HAL-technical-information">HAL File Reference</h2>
 <p>Android's Hardware Abstraction Layer (HAL) provides the interface between

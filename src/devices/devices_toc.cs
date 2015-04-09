@@ -215,6 +215,21 @@
       </li>
 
       <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/tech/admin/index.html">
+          <span class="en">Device Administration</span></a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/admin/implement.html">Implementation</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/admin/multi-user.html">Multiple Users</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/admin/managed-profiles.html">Managed Profiles</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/admin/provision.html">Provisioning</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/admin/multiuser-apps.html">Multiuser Apps</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/admin/testing-setup.html">Testing Setup</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
         <div class="nav-section-header empty">
           <a href="<?cs var:toroot ?>devices/halref/index.html">
             <span class="en">HAL File Reference</span>
