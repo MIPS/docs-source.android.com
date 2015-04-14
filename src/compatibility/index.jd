@@ -16,6 +16,13 @@ page.title=Android Compatibility
     See the License for the specific language governing permissions and    
     limitations under the License.   
 -->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
 
 <p>Android's purpose is to establish an open platform for developers to build innovative apps.
 The Android Compatibility program defines the technical details of the Android platform and provides
@@ -25,6 +32,14 @@ require. And Google Play shows apps only to those devices that can properly run 
 </p>
 
 <h2 id="why-build-compatible-android-devices">Why build compatible Android devices?</h2>
+
+<div class="figure">
+  <img src="images/compat-ecosystem.png" alt="Compatibility ecosystem" id="figure1" />
+  <p class="img-caption">
+    <strong>Figure 1.</strong> How the Android ecosystem thrives with device compatibility
+  </p>
+</div>
+
 <h3 id="users-want-a-customizable-device">Users want a customizable device.</h3>
 <p>A mobile phone is a highly personal, always-on, always-present gateway to
 the Internet. We haven't met a user yet who didn't want to customize it by
@@ -73,6 +88,6 @@ your device.</p>
 licensing Google’s proprietary suite of apps that run on top of Android -
 Google Mobile Services (GMS, which include Google Play, YouTube, Google Maps,
 Gmail, and more). Google Mobile Services is not part of the Android Open Source
-Project and is available only through a license with Google. Please visit the
-‘contact’ us section for more information on how to inquire about a GMS
-license.</p>
+Project and is available only through a license with Google. Please visit
+<a href="contact-us.html">Contact Us</a> for more information on how to inquire
+about a GMS license.</p>
