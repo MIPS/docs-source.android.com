@@ -55,7 +55,7 @@ versions will likely be different as well.  Version-specific features are called
 out in a few places.</p>
 
 <p>At various points I will refer to source code from the AOSP sources or from
-Grafika.  Grafika is a Google open-source project for testing; it can be found at
+Grafika.  Grafika is a Google open source project for testing; it can be found at
 <a
 href="https://github.com/google/grafika">https://github.com/google/grafika</a>.
 It's more "quick hack" than solid example code, but it will suffice.</p>

@@ -181,7 +181,7 @@ libraries to run, specifically for hardware graphics acceleration.</p>
 branches can be downloaded from <a
 href="https://developers.google.com/android/nexus/drivers">Google's Nexus
 driver page</a>. These add access to additional hardware capabilities with
-non-open-source code. To instead build the AOSP master branch, use the <a
+non-open source code. To instead build the AOSP master branch, use the <a
 href="https://developers.google.com/android/nexus/blobs-preview">Binaries
 Preview for Nexus Devices</a>.</p>
 <p>When building the master branch for a device, the binaries for the most

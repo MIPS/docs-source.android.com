@@ -39,11 +39,11 @@ page.title=Security overview
     and security resources, with appropriate security controls integrated into the
     architecture of the system.</li>
   <li><strong>Penetration Testing and Code Review</strong>: During the development of the
-    platform, Android-created and open-source components are subject to vigorous
+    platform, Android-created and open source components are subject to vigorous
     security reviews. These reviews are performed by the Android Security Team,
     Google’s Information Security Engineering team, and independent security
     consultants. The goal of these reviews is to identify weaknesses and possible
-    vulnerabilities well before the platform is open-sourced, and to simulate the
+    vulnerabilities well before the platform is open sourced, and to simulate the
     types of analysis that will be performed by external security experts upon
     release.</li>
   <li><strong>Open Source and Community Review</strong>: The Android Open Source Project enables
