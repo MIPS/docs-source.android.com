@@ -25,7 +25,7 @@ $CTS_ROOT/android-cts/repository/results/&lt;start_time>.zip
 <p>If you have built the CTS yourself, <em>$CTS_ROOT</em> will resemble the
 path <em>out/host/linux-x86/cts</em> but differ by platform. This reflects the
 path where you have uncompressed the prebuilt official CTS <a
-href="downloads.html">downloaded</a> from this site.</p>
+href="{@docRoot}compatibility/downloads.html">downloaded</a> from this site.</p>
 
 <p>Inside the zip, the testResult.xml file contains the actual results—open
 this file in any web browser (HTML5 compatible browser recommended) to view the

@@ -42,6 +42,13 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}compatibility/cts/index.html">
+        <h4>Compatibility Test Suite User Instructions</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}compatibility/cts/index.html">Compatibility Test Suite (CTS)
+        User Manual</a></strong> previously presented as a PDF has been converted to native web
+        pages and updated to improve clarity.</p>
+
 <a href="{@docRoot}devices/halref/index.html">
         <h4>Hardware Abstraction Layer References</h4></a>
         <p>The <strong><a href="{@docRoot}devices/halref/index.html">Hardware
@@ -84,17 +91,6 @@ devices meet compatibility requirements.
         images. And the ccache section has been moved to an optional <strong><a
         href="{@docRoot}source/initializing.html#optimizing-a-build-environment">Optimizing
         a build environment</a></strong> section.</p>
-
-<a href="{@docRoot}devices/tech/security/selinux/index.html">
-        <h4>SELinux Permissive Declarations</h4></a>
-        <p>SELinux <strong><a
-        href="{@docRoot}devices/tech/security/selinux/customize.html">Customizing</a></strong>
-        and <strong><a
-        href="{@docRoot}devices/tech/security/selinux/implement.html">Implementing</a></strong>
-        instructions have been updated to recommend using permissive declarations
-        directly as <code>permissive_or_unconfined()</code> has been deprecated.
-        Similarly, <code>BOARD_SEPOLICY_UNION</code> has been removed, so
-        <code>BOARD_SEPOLICY_*</code> variables are suggested insead.</p>
     </div>
 
     <div class="col-8">
