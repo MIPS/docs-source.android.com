@@ -239,7 +239,7 @@ src="../images/image_gmail_installed.png" id="figure1" /></td>
   choose to share this information can use Android OS permission checks to
   protect the data from third-party applications.</p>
 <img alt="Access to sensitive user data available only through protected
-APIs" src="../images/image03.png" id="figure2" />
+APIs" src="../images/permissions_check.png" id="figure2" />
 <p class="img-caption">
   <strong>Figure 2.</strong> Access to sensitive user data is available only through protected APIs
 </p>
@@ -339,7 +339,7 @@ APIs" src="../images/image03.png" id="figure2" />
   </li>
 </ul>
 <p><img alt="Architecture of Digital Rights Management on Android
-platform" src="../images/image02.png" id="figure3" /></p>
+platform" src="../../../images/ape_fwk_drm_2.png" id="figure3" /></p>
 <p class="img-caption">
   <strong>Figure 3.</strong> Architecture of Digital Rights Management on Android platform
 </p>
