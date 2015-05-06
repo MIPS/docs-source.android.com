@@ -25,12 +25,13 @@ header.hide=1
   <div class="landing-banner">
       <h1 itemprop="name" style="margin-bottom:0;">Welcome to the Android Open Source Project!</h1>
 
-      <p>
-      Android is an open-source software stack for a wide range of mobile devices and a corresponding open-source project led by 
-      Google. Here you can find the information and source code you need to learn more about the Android platform. From there you can
-      create custom variants of the Android software stack, port devices and accessories to the Android platform,
-      and ensure your devices are compatible with the Android compatibility definition.
-      </p>
+<p>
+Android is an open source software stack for a wide range of mobile devices and
+a corresponding open source project led by Google. This site offers the
+information and source code you need to create custom variants of the Android
+stack, port devices and accessories to the Android platform, and ensure your
+devices meet compatibility requirements.
+</p>
 
   </div>
 
