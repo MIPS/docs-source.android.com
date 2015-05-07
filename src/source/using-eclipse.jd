@@ -24,10 +24,10 @@ page.title=Using Eclipse
   </div>
 </div>
 <p>This document will help you set up the Eclipse IDE for Android platform development.</p>
-<p><em>Note: if you are looking for information on how to use
+<p class="note"><strong>Note:</strong> If you are looking for information on how to use
 Eclipse to develop applications that run on Android, this is not the right
 page for you. You probably would find <a href="https://developer.android.com/sdk/eclipse-adt.html">the Eclipse page on 
-developer.android.com</a> more useful.</em></p>
+developer.android.com</a> more useful.</p>
 <h2 id="basic-setup">Basic setup</h2>
 <p>First, it's important to make sure the regular Android development system is set up.</p>
 <pre><code>cd /path/to/android/root 
@@ -81,7 +81,7 @@ chmod u+w .classpath
 </li>
 </ol>
 <p>Once the project workspace is created, Eclipse should start building. In theory, it should build with no errors and you should be set to go. If necessary, uncheck and re-check Project Build Automatically to force a rebuild.</p>
-<p><em>Note:</em> Eclipse sometimes likes to add an <code>import android.R</code> statement at the top of your files that use resources, especially when you ask eclipse to sort or otherwise manage imports. This will cause your make to break. Look out for these erroneous import statements and delete them.</p>
+<p class="note"><strong>Note:</strong> Eclipse sometimes adds an <code>import android.R</code> statement at the top of your files that use resources, especially when you ask eclipse to sort or otherwise manage imports. This will cause your make to break. Look out for these erroneous import statements and delete them.</p>
 <h3 id="when-you-sync">When You Sync</h3>
 <p>Every time you repo sync, or otherwise change files outside of Eclipse (especially the .classpath), you need to refresh Eclipse's view of things:</p>
 <ol>

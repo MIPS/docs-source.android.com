@@ -47,7 +47,7 @@ distributions are welcome.</p>
 <p>For Gingerbread (2.3.x) and newer versions, including the <code>master</code>
 branch, a 64-bit environment is required. Older versions can be
 compiled on 32-bit systems.</p>
-<p><strong>Note</strong>: See the <a href="building.html">Downloading and
+<p class="note"><strong>Note:</strong> See the <a href="building.html">Downloading and
 Building</a> page for the list of hardware and software requirements. Then
 follow the detailed instructions for Ubuntu and Mac OS below.</p>
 
@@ -74,7 +74,7 @@ href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">Java JD
 Java 6: for Gingerbread through KitKat<br/>
 Java 5: for Cupcake through Froyo</p>
 
-<p><strong>Note</strong>: The <code>lunch</code> command in the build step will ensure that the Sun JDK is
+<p class="note"><strong>Note:</strong> The <code>lunch</code> command in the build step will ensure that the Sun JDK is
 used instead of any previously installed JDK.</p>
 
 <h3 id="installing-required-packages-ubuntu-1404">Installing required packages (Ubuntu 14.04)</h3>
@@ -212,7 +212,7 @@ To mount the image when you execute <code>mountAndroid</code>:</p>
 <pre><code># mount the android file image
 function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }
 </code></pre>
-<p><strong>Note</strong>: If your system created a <code>.dmg.sparsefile</code> file, replace <code>~/android.dmg</code> with <code>~/android.dmg.sparsefile</code>.</p>
+<p class="note"><strong>Note:</strong> If your system created a <code>.dmg.sparsefile</code> file, replace <code>~/android.dmg</code> with <code>~/android.dmg.sparsefile</code>.</p>
 </li>
 <li>
 <p>To unmount it when you execute <code>umountAndroid</code>:</p>
@@ -266,13 +266,11 @@ create an Apple ID in order to download.</p>
 </li>
 <li>
 <p>Install MacPorts from <a href="http://www.macports.org/install.php">macports.org</a>.</p>
-<p><em>Note: Make sure that <code>/opt/local/bin</code> appears in your path BEFORE <code>/usr/bin</code>.  If not, add</em> </p>
-<pre><code>export PATH=/opt/local/bin:$PATH
-</code></pre>
-<p><em>to your <code>~/.bash_profile</code>.</em></p>
-
-<p><strong>Note</strong>: If you do not have a <code>.bash_profile</code> file in your home directory, create one.</p>
-
+<p class="note"><strong>Note:</strong> Make sure that <code>/opt/local/bin</code> appears in your path <strong>before</strong> <code>/usr/bin</code>. If not, please add the following to your <code>~/.bash_profile</code> file:</p>
+<pre>
+<code>export PATH=/opt/local/bin:$PATH</code>
+</pre>
+<p class="note"><strong>Note:</strong> If you do not have a <code>.bash_profile</code> file in your home directory, create one.</p>
 </li>
 <li>
 <p>Get make, git, and GPG packages from MacPorts: </p>

@@ -91,8 +91,7 @@ component is off. Measure the average instantaneous current drawn on the device 
 nominal voltage using an external power monitor, such as a bench power supply or specialized
 battery-monitoring tools (such as Monsoon Solution Inc. Power Monitor and Power Tool software).</p>
 
-<p class="note">
-<strong>Note:</strong> Manufacturers often supply information about the current consumed by an
+<p class="note"><strong>Note:</strong> Manufacturers often supply information about the current consumed by an
 individual component. Use this information if it accurately represents the current drawn from the
 device battery in practice. However, validate manufacturer-provided values before
 using those values in your device power profile.</p>

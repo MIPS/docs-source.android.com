@@ -101,7 +101,8 @@ For information about using repo to download source, see <a href="{@docRoot}sour
 <pre><code>$ repo branches
 </code></pre>
 <p>The name of the current branch will be preceded by an asterisk.</p>
-<p><em>Note: A bug might be causing <code>repo sync</code> to reset the local topic branch. If <code>git branch</code> shows * (no branch) after you run <code>repo sync</code>, then run <code>git checkout</code> again.</em></p>
+<p class="note"><strong>Note:</strong> A bug might be causing <code>repo sync</code> to reset the local topic branch. 
+If <code>git branch</code> shows * (no branch) after you run <code>repo sync</code>, then run <code>git checkout</code> again.</p>
 <h2 id="staging-files">Staging files</h2>
 <p>By default, Git notices but does not track the changes you make in a project. In order to tell git to preserve your changes, you must mark them for inclusion in a commit. This is also called "staging". </p>
 <p>You can stage your changes by running</p>
