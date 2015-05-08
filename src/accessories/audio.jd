@@ -56,7 +56,7 @@ Profile (A2DP) connection stream music for playback. Playing audio over a Blueto
 supported on Android 1.5 (API Level 3) and higher. An Android user can connect to an accessory
 that supports this profile using the system Settings &gt; Bluetooth and play music directly to the
 accessory without the need for a secondary application.</p>
-<p><strong>Note:</strong> If you want to provide a custom application for output to your audio
+<p class="note"><strong>Note:</strong> If you want to provide a custom application for output to your audio
 accessory, note that the Android 3.0 (API Level 11) allows applications to operate an A2DP
 connection using the
 <a href="http://developer.android.com/reference/android/bluetooth/BluetoothA2dp.html"><code>BluetoothA2dp</code></a>
@@ -71,6 +71,6 @@ class.</p>
   (<code>&lt;adk-src&gt;/adk2012/board/library/ADK2/</code>), which includes an example implementation
   of an audio playback accessory using a Bluetooth connection.</li>
 </ul>
-<p><strong>Note:</strong> The ADK 2012 source code includes an open source Bluetooth stack that
+<p class="note"><strong>Note:</strong> The ADK 2012 source code includes an open source Bluetooth stack that
 is built for the Texas Instruments CC2564 chip, but can work with any Bluetooth chip that
 implements a standard Host/Controller Interface (HCI).</p>

@@ -25,7 +25,7 @@ may be augmented or overridden by the Integrator, and may be subsequently augmen
 the Test Runner.  This mechanism works for all Java intrinsic types, as well as for any
 <code>Map</code>s or <code>Collection</code>s of intrinsic types.</p>
 
-<p><em>Note:</em> the option-handling mechanism only works for classes implementing one of the
+<p class="note"><strong>Note:</strong> The option-handling mechanism only works for classes implementing one of the
 interfaces included in the <a href="lifecycle.html">Test Lifecycle</a>, and only when that class is
 <em>instantiated</em> by the lifecycle machinery.</p>
 

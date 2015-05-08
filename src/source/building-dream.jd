@@ -58,5 +58,5 @@ device needs to be an ADP1 running an official 1.6 system):</p>
 <p>from this point, the fastboot tool (which is put automatically in your path) can be used to flash a device: boot the device into the bootloader by holding the back key while pressing the power key, and run <code>fastboot -w flashall</code>.</p>
 </li>
 </ol>
-<p>Note: these instructions work for the sapphire (ADP2) build target, as
+<p class="note"><strong>Note:</strong> These instructions work for the sapphire (ADP2) build target, as
 well. Simply replace "dream" with "sapphire" above.</p>

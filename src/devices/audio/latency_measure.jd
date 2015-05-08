@@ -67,12 +67,10 @@ If your production device does not have an LED, you can install the
 <ol>
   <li>Run an app that periodically pulses the LED at
   the same time it outputs audio. 
-
-  <p class="note"><b>Note:</b> To get useful results, it is crucial to use the correct
+  <p class="note"><strong>Note:</strong> To get useful results, it is crucial to use the correct
   APIs in the test app so that you're exercising the fast audio output path.
   See <a href="latency_design.html">Design For Reduced Latency</a> for
-  background.
-  </p>
+  background.</p>
   </li>
   <li>Place a light sensor next to the LED.</li>
   <li>Connect the probes of a dual-channel oscilloscope to both the wired headphone
