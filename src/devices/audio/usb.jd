@@ -67,7 +67,7 @@ The host communicates with
 </p>
 
 <p>
-<b>Note:</b> the terms <i>device</i> or <i>accessory</i> are common synonyms for
+<p class="note"><strong>Note:</strong> The terms <i>device</i> and <i>accessory</i> are common synonyms for
 <i>peripheral</i>.  We avoid those terms here, as they could be confused with
 Android <a href="http://en.wikipedia.org/wiki/Mobile_device">device</a>
 or the Android-specific concept called
@@ -452,7 +452,7 @@ also with headphones.
 <p>
 Which design is better?  The answer depends on your needs.
 Each has advantages and disadvantages.
-<b>Note:</b> this is an artificial comparison, since
+<p class="note"><strong>Note:</strong> This is an artificial comparison, since
 a real Android device would probably have both options available.
 </p>
 

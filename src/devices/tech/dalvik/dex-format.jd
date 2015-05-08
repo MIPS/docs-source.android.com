@@ -275,7 +275,7 @@ ubyte[8] DEX_FILE_MAGIC = { 0x64 0x65 0x78 0x0a 0x30 0x33 0x35 0x00 }
                         = "dex\n035\0"
 </pre>
 
-<p><b>Note:</b> At least a couple earlier versions of the format have
+<p class="note"><strong>Note:</strong> At least a couple earlier versions of the format have
 been used in widely-available public software releases. For example,
 version <code>009</code> was used for the M3 releases of the
 Android platform (November&ndash;December 2007),
@@ -306,10 +306,10 @@ uint REVERSE_ENDIAN_CONSTANT = 0x78563412;
 <p>The constant <code>NO_INDEX</code> is used to indicate that
 an index value is absent.</p>
 
-<p><b>Note:</b> This value isn't defined to be
+<p class="note"><strong>Note:</strong> This value isn't defined to be
 <code>0</code>, because that is in fact typically a valid index.</p>
 
-<p><b>Also Note:</b> The chosen value for <code>NO_INDEX</code> is
+<p>The chosen value for <code>NO_INDEX</code> is
 representable as a single byte in the <code>uleb128p1</code> encoding.</p>
 
 <pre>
@@ -381,8 +381,8 @@ overall properties of classes and class members.</p>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td><code>synchronized</code>: associated lock automatically acquired
-    around call to this method. <b>Note:</b> This is only valid to set when
-    <code>ACC_NATIVE</code> is also set.</td>
+    around call to this method. <p class="note"><strong>Note:</strong> This is only valid to set when
+    <code>ACC_NATIVE</code> is also set. </p></td>
 </tr>
 <tr>
   <td>ACC_VOLATILE</td>
@@ -482,8 +482,8 @@ overall properties of classes and class members.</p>
   <td>0x20000</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>declared <code>synchronized</code>. <b>Note:</b> This has no effect on
-    execution (other than in reflection of this flag, per se).
+  <td>declared <code>synchronized</code>. <p class="note"><strong>Note:</strong> This has no effect on
+    execution (other than in reflection of this flag, per se).</p>
   </td>
 </tr>
 </tbody>
@@ -1567,7 +1567,7 @@ be ordered by initial offset and must not overlap.</p>
     followed by a byte of value <code>0</code>. See
     "MUTF-8 (Modified UTF-8) Encoding" above for details and
     discussion about the data format.
-    <p><b>Note:</b> It is acceptable to have a string which includes
+    <p class="note"><strong>Note:</strong> It is acceptable to have a string which includes
     (the encoded form of) UTF-16 surrogate code units (that is,
     <code>U+d800</code> &hellip; <code>U+dfff</code>)
     either in isolation or out-of-order with respect to the usual
@@ -1897,7 +1897,7 @@ be ordered by initial offset and must not overlap.</p>
 </tbody>
 </table>
 
-<p><b>Note:</b> All elements' <code>field_id</code>s and
+<p class="note"><strong>Note:</strong> All elements' <code>field_id</code>s and
 <code>method_id</code>s must refer to the same defining class.</p>
 
 <h3 id="encoded-field-format">encoded_field format</h3>
@@ -2381,7 +2381,7 @@ each register for the <code>DBG_RESTART_LOCAL</code> code.</p>
     to indicate that that value is unknown. (If <code>sig_idx</code> is
     <code>-1</code>, though, the same data could be represented more
     efficiently using the opcode <code>DBG_START_LOCAL</code>.)
-    <p><b>Note:</b> See the discussion under
+    <p class="note"><strong>Note:</strong> See the discussion under
     "<code>dalvik.annotation.Signature</code>" below for caveats about
     handling signatures.</p>
   </td>
@@ -2538,7 +2538,7 @@ address += (adjusted_opcode / DBG_LINE_RANGE)
 </tbody>
 </table>
 
-<p><b>Note:</b> All elements' <code>field_id</code>s and
+<p class="note"><strong>Note:</strong> All elements' <code>field_id</code>s and
 <code>method_id</code>s must refer to the same defining class.</p>
 
 <h3 id="field-annotation">field_annotation format</h3>

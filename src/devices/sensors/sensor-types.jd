@@ -608,7 +608,7 @@ href="http://developer.android.com/reference/android/hardware/SensorManager.html
   Gyroscope</p>
 <p>Reporting-mode: <em><a href="report-modes.html#continuous">Continuous</a></em></p>
 <p><code>getDefaultSensor(SENSOR_TYPE_ORIENTATION)</code> <em>returns a non-wake-up sensor</em></p>
-<p>Note: This is an older sensor type that has been deprecated in the Android SDK.
+<p class="note"><strong>Note:</strong> This is an older sensor type that has been deprecated in the Android SDK.
   It has been replaced by the rotation vector sensor, which is more clearly
   defined. Use the rotation vector sensor over the orientation sensor whenever
   possible.</p>
