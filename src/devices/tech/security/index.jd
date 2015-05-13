@@ -64,7 +64,7 @@ page.title=Security
   the components below are properly secured. With the exception of a small amount
   of Android OS code running as root, all code above the Linux Kernel is
   restricted by the Application Sandbox.</p>
-<p><img alt="Figure 1: Android software stack" src="images/image00.png" /></p>
+<p><img alt="Figure 1: Android software stack" src="images/android_software_stack.png" /></p>
 <p><em>Figure 1: Android software stack.</em></p>
 <p>The main Android platform building blocks are:</p>
 <ul>
