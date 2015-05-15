@@ -104,7 +104,7 @@ devices meet compatibility requirements.
         href="https://android.googlesource.com/">Android Open Source Project (AOSP)
         repository</a></strong> to make your changes available to everyone else
         in the Android ecosystem.</p>
-<a href="{@docRoot}source/index.html"><img border="0" src="images/android_framework_small.png" alt="Android framework summary" style="display:inline;float:left;margin:5px 10px"></a>
+<a href="{@docRoot}source/index.html"><img border="0" src="images/android_framework_small.png" alt="Android framework summary" style="display:inline;float:right;margin:5px 10px;width:42%;height:42%"></a>
       <a href="{@docRoot}devices/index.html">
         <h4>Port Android to Devices</h4></a>
         <p>Port the latest Android platform and
