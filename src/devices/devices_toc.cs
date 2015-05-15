@@ -251,7 +251,7 @@
         </ul>
       </li>
 
-      <li><a href="<?cs var:toroot ?>devices/tech/netstats.html">Viewing Network Data</a></li>
+      <li><a href="<?cs var:toroot ?>devices/tech/netstats.html">Network Data</a></li>
 
       <li class="nav-section">
         <div class="nav-section-header">
