@@ -2,7 +2,7 @@ page.title=Android Security Acknowledgements
 @jd:body
 
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -16,6 +16,14 @@ page.title=Android Security Acknowledgements
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
+
 <p>The Android Security Team would like to thank the following people and
 parties for helping to improve Android security. They have done this either by
 finding and responsibly reporting security vulnerabilities to <a
