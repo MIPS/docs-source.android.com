@@ -42,6 +42,12 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}source/building.html">
+        <h4>Increased Disk Space Requirements</h4></a>
+        <p>The amount of available disk space required to build Android has
+        been increased to a minimum of 100GB in <strong><a
+        href="{@docRoot}source/building.html">Downloading and Building</a></strong>.</p>
+
 <a href="{@docRoot}compatibility/cts/index.html">
         <h4>Compatibility Test Suite User Instructions</h4></a>
         <p>The <strong><a
@@ -82,15 +88,6 @@ devices meet compatibility requirements.
         information has been moved and expanded to include details on
         <code>cpu.awake</code> and <code>cpu.active</code>. The need to create a
         <code>power_profile.xml</code> file is also emphasized throughout.</p>
-
-<a href="{@docRoot}source/initializing.html">
-        <h4>Initializing Improvements</h4></a>
-        <p>Build environment <strong><a
-        href="{@docRoot}source/initializing.html#setting-up-a-mac-os-x-build-environment">Initializing</a></strong>
-        instructions now explain how to resize and unmount Mac OS sparse
-        images. And the ccache section has been moved to an optional <strong><a
-        href="{@docRoot}source/initializing.html#optimizing-a-build-environment">Optimizing
-        a build environment</a></strong> section.</p>
     </div>
 
     <div class="col-8">
