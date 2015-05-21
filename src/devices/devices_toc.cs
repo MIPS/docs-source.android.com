@@ -51,6 +51,7 @@
           <li><a href="<?cs var:toroot ?>devices/audio/avoiding_pi.html">Priority Inversion</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio/src.html">Sample Rate Conversion</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio/debugging.html">Debugging</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio/midi.html">MIDI</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio/usb.html">USB Digital Audio</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio/tv.html">TV Audio</a></li>
         </ul>
