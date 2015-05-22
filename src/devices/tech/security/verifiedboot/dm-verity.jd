@@ -189,6 +189,9 @@ resembles:<br/>
 
 <p>And this table describes those metadata fields.</p>
 
+<p class="table-caption" id="table1">
+  <strong>Table 1.</strong> Verity metadata fields</p>
+
 <table>
 <tr>
 <th>Field</th>
@@ -233,3 +236,11 @@ resembles:<br/>
 <td>0</td>
 </tr>
 </table>
+
+<h3 id="optimize">Optimizing dm-verity</h3>
+
+<p>To get the best performance out of dm-verity, you should:</p>
+  <ul>
+    <li>In the kernel, turn on NEON SHA-2 for ARMv7 and the SHA-2 extensions for ARMv8.
+    <li>Experiment with different read-ahead and prefetch_cluster settings to find the best configuration for your device.
+  </ul>
