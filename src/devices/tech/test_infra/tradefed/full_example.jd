@@ -442,6 +442,5 @@ addition to being logged to a file.</p>
 <a href="https://android.googlesource.com/platform/tools/tradefederation/+/master"
 >Trade Federation source code</a> has a lot of useful information that isn't
 exposed in the documentation.  And if all else fails, try asking on the
-<a href="/source/community/index.html">android-platform</a> Google Group, with "Trade Federation"
+<a href="{@docRoot}source/community.html">android-platform</a> Google Group, with "Trade Federation"
 in the message subject.</p>
-
