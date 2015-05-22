@@ -16,6 +16,13 @@ page.title=External Storage
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
 
 <img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_extstor.png" alt="Android external storage HAL icon"/>
 
