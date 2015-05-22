@@ -1,5 +1,5 @@
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -78,7 +78,7 @@
 
   <li class="nav-section">
     <div class="nav-section-header empty">
-      <a href="<?cs var:toroot ?>source/community/index.html">
+      <a href="<?cs var:toroot ?>source/community.html">
         <span class="en">Community</span>
       </a>
     </div>
