@@ -62,9 +62,7 @@ specifications</h2>
     <th style="width:33%">Description</th>
  </tr>
  <tr>
-    <td>
-<p>Function A</p>
-</td>
+    <td>Function A</td>
     <td>Required</td>
     <td>Play/pause/hook (Short Press), Trigger Assist (Long Press), Next
     (Double Press)</td>
