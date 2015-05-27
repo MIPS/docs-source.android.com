@@ -2,7 +2,7 @@ page.title=Building for devices
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -28,31 +28,24 @@ page.title=Building for devices
 <a href="building-running.html">Building and Running</a> with
 information that is specific to individual devices.</p>
 
-<p>With the current release, it is possible to build for
-Nexus 4, Nexus 7, and for some variants of Galaxy Nexus.
-The exact level of functionality for each device depends on the availability
-of the relevant proprietary hardware-specific binaries.</p>
-<p>For Nexus 4 and Nexus 7, all configurations can be used,
-and all the hardware is functional.
-Due to hardware differences, do not use 4.1.1 on a Nexus 7 that
+<h2 class="nexus-devices">Nexus devices</h2>
+<p>
+It is possible to build for Nexus devices using the AOSP
+builds and the relevant hardware-specific binaries.
+For a list of available Android builds and the Nexus devices
+they can be installed on, see <a
+href="build-numbers.html#source-code-tags-and-builds">Source
+Code, Tags, and Builds</a>.
+</p>
+
+<p class="note">
+<b>Note:</b> Due to hardware differences, do not use 4.1.1 on a Nexus 7 that
 was originally sold with 4.1.2 or newer.</p>
-<p>All configurations of Nexus 10 "manta" can be used with 4.2.2.
-On those devices, graphics, audio,
-Wi-Fi, Bluetooth, camera, NFC, GPS and orientation sensors are functional.</p>
-<p>The variants of Galaxy Nexus that can be used are the GSM/HSPA+ configuration
-"maguro" (only if it was originally sold with a "yakju" or "takju" operating
-system) and the VZW CDMA/LTE configuration "toro". On those devices, graphics
-and audio are functional, as well as Wi-Fi, Bluetooth, and access to the
-respective cellular networks. NFC and the orientation sensors are functional.</p>
-<p>The Sprint CDMA/LTE configuration "toroplus" of Galaxy Nexus is supported
-experimentally, in the jb-mr1-dev-plus-aosp branch. On that configuration,
-the cellular network is not functional,
-and the other peripherals work like they do on "toro".</p>
+
+<h2 class="other-devices">Other devices</h2>
 <p>The Motorola Xoom can be used in the Wi-Fi configuration "wingray"
 sold in the USA, with Android 4.1.2. Graphics and audio are functional
 as well as Wi-Fi and Bluetooth and the orientation sensors.</p>
-<p>All configurations of Nexus S and Nexus S 4G can be used with Android 4.1.2.
-On those devices all the hardware is functional.</p>
 <p>In addition, <a href="http://pandaboard.org">PandaBoard</a> a.k.a. "panda" can be used
 in the jb-mr1-dev-plus-aosp branch, but is considered experimental.
 The specific details to use a PandaBoard with the Android Open-Source Project
@@ -64,6 +57,7 @@ the regular build system. Follow the instructions on the page about
 <a href="building-running.html">Building and Running</a>, and replace the main <code>make</code> command with</p>
 <pre><code>$ make fastboot adb
 </code></pre>
+
 <h2 id="booting-into-fastboot-mode">Booting into fastboot mode</h2>
 <p>During a cold boot, the following key combinations can be used to boot into fastboot mode,
 which is a mode in the bootloader that can be used to flash the devices:</p>
