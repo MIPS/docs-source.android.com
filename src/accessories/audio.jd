@@ -74,3 +74,9 @@ class.</p>
 <p class="note"><strong>Note:</strong> The ADK 2012 source code includes an open source Bluetooth stack that
 is built for the Texas Instruments CC2564 chip, but can work with any Bluetooth chip that
 implements a standard Host/Controller Interface (HCI).</p>
+
+<h2 id="midi-over-usb">MIDI over USB and Bluetooth LE</h2>
+<p>Both USB and Bluetooth Low Energy can be used as transports for the
+<a href="http://en.wikipedia.org/wiki/MIDI">MIDI</a> protocol.
+See <a href="{@docRoot}devices/audio/midi.html">MIDI</a> for more information.
+</p>
