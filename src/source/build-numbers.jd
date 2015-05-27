@@ -178,6 +178,18 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Supported devices</th>
 </tr>
 <tr>
+  <td>LYZ28E</td>
+  <td>android-5.1.1_r5</td>
+  <td>Lollipop</td>
+  <td>Nexus 6 (For T-Mobile ONLY)</td>
+</tr>
+<tr>
+  <td>LMY47Z</td>
+  <td>android-5.1.1_r4</td>
+  <td>Lollipop</td>
+  <td>Nexus 6 (For Sprint, USC ONLY)</td>
+</tr>
+<tr>
   <td>LMY47X</td>
   <td>android-5.1.1_r2</td>
   <td>Lollipop</td>
@@ -196,10 +208,22 @@ following table. Factory images and binaries for Nexus devices can be downloaded
   <td>Nexus 4, Nexus 7 (flo/deb)</td>
 </tr>
 <tr>
+  <td>LMY47M</td>
+  <td>android-5.1.0_r4</td>
+  <td>Lollipop</td>
+  <td>Nexus 6 (For T-Mobile ONLY)</td>
+</tr>
+<tr>
   <td>LMY47I</td>
   <td>android-5.1.0_r3</td>
   <td>Lollipop</td>
   <td>Nexus 5, Nexus 6</td>
+</tr>
+<tr>
+  <td>LMY47E</td>
+  <td>android-5.1.0_r2</td>
+  <td>Lollipop</td>
+  <td>Nexus 6</td>
 </tr>
 <tr>
   <td>LMY47D</td>
