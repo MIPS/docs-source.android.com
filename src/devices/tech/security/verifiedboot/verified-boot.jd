@@ -222,7 +222,7 @@ wishes to disable verification on the device.
 flashing lock</code></td>
     <td>
 <ul>
-  <li>Wipe data after asking the user for confirmation     
+  <li>Wipe data after asking the user for confirmation
   <li>Clear a write-protected bit indicating the device is unlocked
 </ul>
 </td>
@@ -233,7 +233,7 @@ flashing lock</code></td>
 flashing unlock</code></td>
     <td>
 <ul>
-  <li>Wipe data after asking the user for confirmation     
+  <li>Wipe data after asking the user for confirmation
   <li>Set a write-protected bit indicating the device is unlocked
 </ul>
 </td>
@@ -498,11 +498,11 @@ the user dismisses the warning.</p>
 </td>
     <td>
 <img src="../images/boot_yellow1.png" alt="Yellow device state 1" id="figure4" />
-<p class="img-caption"><strong>Figure 4.</strong> Yellow state example 1 UI</p>
+<p class="img-caption"><strong>Figure 3.</strong> Yellow state example 1 UI</p>
 </td>
     <td>
 <img src="../images/boot_yellow2.png" alt="Yellow device state 2" id="figure5" />
-<p class="img-caption"><strong>Figure 5.</strong> Yellow state example 2 UI</p>
+<p class="img-caption"><strong>Figure 4.</strong> Yellow state example 2 UI</p>
 </td>
 
  </tr>
@@ -512,7 +512,7 @@ the user dismisses the warning.</p>
 </td>
     <td>
 <img src="../images/boot_orange.png" alt="Orange device state" id="figure6" />
-<p class="img-caption"><strong>Figure 6.</strong> Orange state example UI</p>
+<p class="img-caption"><strong>Figure 5.</strong> Orange state example UI</p>
 </td>
  </tr>
  <tr>
@@ -521,7 +521,7 @@ the user dismisses the warning.</p>
 </td>
     <td>
 <img src="../images/boot_red.png" alt="Red device state" id="figure7" />
-<p class="img-caption"><strong>Figure 7.</strong> Red state example UI</p>
+<p class="img-caption"><strong>Figure 6.</strong> Red state example UI</p>
 </td>
  </tr>
 </table>
