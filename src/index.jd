@@ -42,6 +42,17 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/security/verifiedboot/verified-boot.html">
+        <h4>Verified Boot Improvements</h4></a>
+        <p><strong><a
+        href="{@docRoot}devices/tech/security/verifiedboot/verified-boot.html#classes">Verifying
+        Boot</a></strong> has been rewritten to remove the VERIFIED state and Keystore
+        format and add details on implementation classes, communicating boot state, and
+        kernel command line parameters. And performance recommendations have been added
+        to <strong><a
+        href="{@docRoot}devices/tech/security/verifiedboot/dm-verity.html#optimize">Implementing
+        dm-verity</a></strong>.</p>
+
 <a href="{@docRoot}source/building.html">
         <h4>Increased Disk Space Requirements</h4></a>
         <p>The amount of available disk space required to build Android has
@@ -80,14 +91,6 @@ devices meet compatibility requirements.
         href="{@docRoot}devices/audio/latency_measurements.html">round-trip audio latency
         measurements</a></strong> for select Nexus devices to help partners compare their
         own devices and reduce latency further.</p>
-
-<a href="{@docRoot}devices/tech/power/index.html">
-        <h4>Power Profile Details</h4></a>
-        <p><strong><a
-        href="{@docRoot}devices/tech/power/index.html">Power</a></strong>
-        information has been moved and expanded to include details on
-        <code>cpu.awake</code> and <code>cpu.active</code>. The need to create a
-        <code>power_profile.xml</code> file is also emphasized throughout.</p>
     </div>
 
     <div class="col-8">
