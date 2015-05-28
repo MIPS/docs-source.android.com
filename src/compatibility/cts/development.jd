@@ -120,3 +120,70 @@ remove tests annotated with "BrokenTest" or "KnownFailure."</p>
 <p>Follow the <a href="{@docRoot}source/submit-patches.html">Submitting Patches workflow</a>
 to contribute changes to CTS. A reviewer
 will be assigned to your change, and your change should be reviewed shortly!</p>
+
+<h2 id="release-schedule">Release schedule and branch information</h2>
+
+<p>CTS releases follow this schedule.</p>
+
+<p class="note"><strong>Note</strong>: This schedule is tentative and may be
+updated from time to time as CTS for the given Android version matures.</p>
+
+<table>
+<tr>
+  <th>Version</th>
+  <th>Branch</th>
+  <th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>5.1</td>
+  <td>lollipop-mr1-cts-dev</td>
+  <td>Monthly</td>
+</tr>
+<tr>
+  <td>5.0</td>
+  <td>lollipop-cts-dev</td>
+  <td>Monthly</td>
+</tr>
+<tr>
+  <td>4.4</td>
+  <td>kitkat-cts-dev</td>
+  <td>Odd month (Jan, Mar, etc.)</td>
+</tr>
+<tr>
+  <td>4.3</td>
+  <td>jb-mr2-cts-dev</td>
+  <td>First month of each quarter</td>
+</tr>
+<tr>
+  <td>4.2</td>
+  <td>jb-mr1.1-cts-dev</td>
+  <td>First month of each quarter</td>
+</tr>
+</table>
+
+<h3 id="important-dates">Important Dates during month of the release</h3>
+
+<ul>
+  <li><strong>End of 1st Week</strong>: Code Freeze.  At this point,
+submissions on the current branch will no longer be accepted and will not be
+included in the next version of CTS.  Once we have chosen a candidate for
+release, the branch will again be open and accepting new submissions.
+
+  <li><strong>Second or third week</strong>: CTS is published in the Android
+Open Source Project (AOSP).
+</ul>
+
+<h3 id="auto-merge">Auto-merge flow</h3>
+
+<p>CTS development branches have been setup so that changes submitted to each
+branch will automatically merge as below:<br>
+jb-dev-> jb-mr1.1-cts-dev -> jb-mr2-cts-dev  -> kitkat-cts-dev ->
+lollipop-cts-dev -> lollipop-mr1-cts-dev -> &lt;private-development-branch for
+Android M&gt;</p>
+
+<p>If a changelist (CL) fails to merge correctly, the author of the CL will get
+an email with instructions on how to resolve the conflict. In most of the
+cases, the author of the CL can use the instructions to skip the auto-merge of
+the conflicting CL.</p>
