@@ -222,20 +222,6 @@
         </div>
       </li>
 
-      <li><a href="<?cs var:toroot ?>devices/tech/kernel.html">Kernel</a></li>
-
-      <li class="nav-section">
-        <div class="nav-section-header">
-            <a href="<?cs var:toroot ?>devices/tech/ram/index.html">
-              <span class="en">RAM</span>
-            </a>
-        </div>
-        <ul>
-          <li><a href="<?cs var:toroot ?>devices/tech/ram/low-ram.html">Low RAM</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/ram/procstats.html">Viewing RAM Usage Data</a></li>
-        </ul>
-      </li>
-
       <li class="nav-section">
         <div class="nav-section-header">
             <a href="<?cs var:toroot ?>devices/tech/ota/index.html">
@@ -251,14 +237,12 @@
         </ul>
       </li>
 
-      <li><a href="<?cs var:toroot ?>devices/tech/netstats.html">Network Data</a></li>
-
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/power/index.html"><span class="en">Power</span></a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/tech/power/batterystats.html">Viewing Battery Usage Data</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/power/batterystats.html">Battery Usage Data</a></li>
         </ul>
       </li>
 
@@ -331,6 +315,29 @@
           </ul>
         </li>
       </ul>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+            <a href="<?cs var:toroot ?>devices/tech/resources.html">
+              <span class="en">System Resources</span>
+            </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/kernel.html">Kernel Configuration</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/netstats.html">Network Usage Data</a></li>
+          <li class="nav-section">
+            <div class="nav-section-header">
+                <a href="<?cs var:toroot ?>devices/tech/ram/index.html">
+                  <span class="en">RAM</span>
+                </a>
+            </div>
+            <ul>
+              <li><a href="<?cs var:toroot ?>devices/tech/ram/low-ram.html">Low RAM Configuration</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/ram/procstats.html">RAM Usage Data</a></li>
+            </ul>
+          </li>
+        </ul>
+
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/index.html">
