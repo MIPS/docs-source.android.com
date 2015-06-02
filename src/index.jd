@@ -58,9 +58,9 @@ devices meet compatibility requirements.
         <h4>MIDI and Audio Latency for Developers</h4></a>
         <p>The Android audio team has published <strong><a
         href="{@docRoot}devices/audio/latency_app.html">advice to developers
-        for avoiding latency</a></strong> and also <strong><a
-        href="{@docRoot}devices/audio/midi.html">MIDI</a></strong> for
-        instructions on employing the new support for this professional-grade protocol now
+        for reducing latency</a></strong> and also instructions to partners on
+        implementing the new support for <strong><a
+        href="{@docRoot}devices/audio/midi.html">MIDI</a></strong> protocol now
         available in AOSP.</p>
 
 <a href="{@docRoot}compatibility/cts/development.html">
