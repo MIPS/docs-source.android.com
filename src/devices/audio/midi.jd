@@ -65,9 +65,10 @@ Supported transports include USB, draft BLE, and virtual (inter-app).
 </p>
 
 <p>
-For details on application programming with the new MIDI APIs, see the
-<a href="https://android-preview.googleplex.com/reference/android/media/midi/package-summary.html">android.media.midi</a>
-package.
+For details on application programming with the new MIDI APIs,
+first download the
+<a href="https://developer.android.com/preview/download.html#docs">preview reference</a>
+and then see the <code>android.media.midi</code> package.
 </p>
 
 <p>
