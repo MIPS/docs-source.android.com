@@ -48,7 +48,7 @@ Strictly speaking, MIDI is unrelated to audio. But since MIDI is commonly used w
 music, this article is placed in the audio section.
 </p>
 
-<h2>MIDI for Android</h2>
+<h2 id="for-android">MIDI for Android</h2>
 
 <p>
 Android 3.1 and later support
@@ -76,16 +76,16 @@ The remainder of this article discusses how an Android device maker can
 enable MIDI support in the platform.
 </p>
 
-<h2>Enabling transports</h2>
+<h2 id="transport">Enabling transports</h2>
 
-<h3>USB host mode</h3>
+<h3 id="usb-host">USB host mode</h3>
 
 <p>
 To enable MIDI for USB host mode, first support USB host mode in general, and
 then enable <code>CONFIG_SND_RAWMIDI</code> in your kernel configuration.
 </p>
 
-<h3>USB peripheral mode</h3>
+<h3 id="usb-peripheral">USB peripheral mode</h3>
 
 <p>
 To enable MIDI for USB peripheral mode, you may need to apply patches
@@ -115,20 +115,20 @@ or by pulling down from the top of screen while attached
 to the USB host, and choosing <strong>MIDI</strong> for "Use USB for ...".
 </p>
 
-<h3>BLE</h3>
+<h3 id="ble">BLE</h3>
 
 <p>
 MIDI over BLE is always enabled.
 As this transport is in draft status, it is subject to change.
 </p>
 
-<h3>Virtual (inter-app)</h3>
+<h3 id="virtual">Virtual (inter-app)</h3>
 
 <p>
 The virtual (inter-app) transport is always enabled.
 </p>
 
-<h2>Claiming the feature</h2>
+<h2 id="claim-feature">Claiming the feature</h2>
 
 <p>
 Applications can screen for the presence of MIDI support using the
