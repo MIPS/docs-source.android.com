@@ -32,6 +32,8 @@ you access to key documents and information about the program.</p>
 The source code for the following tests can be synced with the
 'android-cts-5.1_r1' tag in the open source tree.</p>
 <ul>
+<li><a href="5.1/android-5.1-cdd.pdf">Android 5.1 Compatibility Definition
+Document (CDD)</a></li>
 <li><a
 href="https://dl.google.com/dl/android/cts/android-cts-5.1_r1-linux_x86-arm.zip">Android
 5.1 R1 Compatibility Test Suite (CTS) - ARM</a></li>
