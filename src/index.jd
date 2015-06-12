@@ -42,6 +42,15 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/ota/sign_builds.html">
+        <h4>Sign OTA Packages and Release Keys</h4></a>
+        <p>Signing Builds for Release now contains sections on <strong><a
+        href="{@docRoot}devices/tech/ota/sign_builds.html#release-keys">Release
+        Keys</a></strong> and <strong><a
+        href="{@docRoot}devices/tech/ota/sign_builds.html#sign-ota-packages">Signing OTA
+        packages</a></strong> that provide easy recipes for signing flashable
+        images and over-the-air (OTA) updates.</p>
+
 <a href="{@docRoot}compatibility/android-cdd.pdf">
         <h4>5.1 Compatibility Definition Document</h4></a>
         <p>The Android <strong><a
@@ -84,17 +93,6 @@ devices meet compatibility requirements.
         <strong><a href="{@docRoot}devices/tech/kernel.html">kernel</a></strong>, <strong><a
         href="{@docRoot}devices/tech/netstats.html">network</a></strong>, and
         <strong><a href="{@docRoot}devices/tech/ram/index.html">RAM</a></strong>.</p>
-
-<a href="{@docRoot}devices/tech/security/verifiedboot/verified-boot.html">
-        <h4>Verified Boot Improvements</h4></a>
-        <p><strong><a
-        href="{@docRoot}devices/tech/security/verifiedboot/verified-boot.html#classes">Verifying
-        Boot</a></strong> has been rewritten to remove the VERIFIED state and Keystore
-        format and add details on implementation classes, communicating boot state, and
-        kernel command line parameters. And performance recommendations have been added
-        to <strong><a
-        href="{@docRoot}devices/tech/security/verifiedboot/dm-verity.html#optimize">Implementing
-        dm-verity</a></strong>.</p>
     </div>
 
     <div class="col-8">
