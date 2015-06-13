@@ -252,10 +252,7 @@ href="https://developer.android.com/security_at_android_dot_com.txt">https://dev
 <p>Security information exists throughout the Android Open Source and Developer
 sites. Good places to start:<br>
 <a href="http://source.android.com/devices/tech/security/index.html">http://source.android.com/devices/tech/security/index.html</a><br>
-<a href="https://developer.android.com/guide/topics/security/security.html">https://developer.android.com/guide/topics/security/security.html</a></p>
-
-<p>Security best practices for developers: <a
-href="https://developer.android.com/guide/practices/security.html">https://developer.android.com/guide/practices/security.html</a>.</p>
+<a href="https://developer.android.com/training/articles/security-tips.html">https://developer.android.com/training/articles/security-tips.html</a></p>
 
 <p>Community resource for discussion about Android security: <a
 href="https://groups.google.com/forum/?fromgroups#!forum/android-security-discuss">https://groups.google.com/forum/?fromgroups#!forum/android-security-discuss</a></p>
