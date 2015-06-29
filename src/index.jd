@@ -42,6 +42,13 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}source/build-numbers.html">
+        <h4>New Build Numbers</h4></a>
+        <p>Build numbers <strong><a
+        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">LYZ28E and
+        LMY48G</a></strong> have been added for Nexus 6 (T-Mobile ONLY) and Nexus 7 (flo),
+        respectively.</p>
+
 <a href="{@docRoot}devices/tech/security/overview/updates-resources.html">
         <h4>Security Updates and Resources</h4></a>
         <p><strong><a href="{@docRoot}devices/tech/security/overview/updates-resources.html">Security
@@ -91,13 +98,6 @@ devices meet compatibility requirements.
         implementing the new support for <strong><a
         href="{@docRoot}devices/audio/midi.html">MIDI</a></strong> protocol now
         available in AOSP.</p>
-
-<a href="{@docRoot}compatibility/cts/development.html">
-        <h4>CTS Development Release Schedule</h4></a>
-        <p>Compatibility Test Suite (CTS) <strong><a
-        href="{@docRoot}compatibility/cts/development.html#release-schedule">release
-        schedule and branch information</a></strong> has been published,
-        including code freeze dates and auto-merge instructions.</p>
     </div>
 
     <div class="col-8">
