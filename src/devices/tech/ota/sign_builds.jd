@@ -306,3 +306,26 @@ keys. In particular, the GNUshred utility may not be effective on network or
 journaled filesystems. You can use a working directory located in a RAM disk
 (such as a tmpfs partition) when generating keys to ensure the intermediates
 are not inadvertently exposed.</p>
+
+<h2 id="creating-image-files">Creating image files</h2>
+
+<p>
+Once you have signed-target-files.zip, you need to
+create the image so you can put it onto a device.
+To create the signed image from the target files, run
+the following command from the root of the Android
+tree:
+</p>
+
+<pre>
+./build/tools/releasetools/img_from_target_files signed-target-files.zip signed-img.zip
+</pre>
+
+The resulting file, <code>signed-img.zip</code>, contains all the .img files.
+
+To load an image onto a device, use fastboot as
+follows:
+
+<pre>
+fastboot update signed-img.zip
+</pre>
