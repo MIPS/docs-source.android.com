@@ -42,8 +42,14 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/security/selinux/customize.html">
+        <h4>SELinux neverallow Rules</h4></a>
+        <p>New guidance has been offered on the use of Security-Enhanced Linux (SELinux) <strong><a
+        href="{@docRoot}devices/tech/security/selinux/customize.html#neverallow"><code>neverallow</code>
+        rules</a></strong>, which prohibit behavior that should never occur.</p>
+
 <a href="{@docRoot}source/build-numbers.html">
-        <h4>New Build Numbers</h4></a>
+        <h4>Build Numbers for Nexus 6 and 7</h4></a>
         <p>Build numbers <strong><a
         href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">LYZ28E and
         LMY48G</a></strong> have been added for Nexus 6 (T-Mobile ONLY) and Nexus 7 (flo),
