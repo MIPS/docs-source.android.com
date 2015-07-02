@@ -32,7 +32,7 @@ Bus (USB), or a Bluetooth connection to stream music or other audio content.</p>
 <h2 id="audio-over-35mm">Audio over 3.5 mm headset connector</h2>
 <p>Many Android-based devices include a 3.5 mm (“mini”) headset connector. In
 addition to the traditional stereo output and mono input features, the <a
-href="headset-spec.html">Wired audio headset specification</a> defines standard
+href="headset/specification.html">Wired audio headset specification</a> defines standard
 impedances and functions so a range of Android devices and headsets can inter-operate.</p>
 
 <h2 id="audio-over-usb">Audio over USB</h2>
