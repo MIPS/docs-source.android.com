@@ -4851,8 +4851,7 @@ screen), so that the display draws correctly when the device is oriented with
 the port at bottom. Existing and new Android devices are <strong>very strongly encouraged to meet these requirements</strong> so they will be able to upgrade to future platform releases.
   <li> It MUST allow a USB host connected with the Android device to access the
 contents of the shared storage volume using either USB mass storage or Media
-Transfer Protocol, if the device reports the android.hardware.feature.output
-feature or the android.hardware.camera feature.
+Transfer.
   <li> It SHOULD implement the Android Open Accessory (AOA) API and specification as
 documented in the Android SDK documentation, and if it is an Android Handheld
 device it MUST implement the AOA API. Device implementations implementing the
@@ -5900,7 +5899,7 @@ resulting in a successful exploit. No permissive mode domains allowed.</p>
 <p>9.9. Full-Disk Encryption</p>
 </td>
     <td>
-<p>Devices with a lock screen MUST support full-disk encryption. For new devices,
+<p>Devices with a lock screen SHOULD support full-disk encryption. For new devices,
 full-disk encryption must be enabled out of box. </p>
 </td>
  </tr>
