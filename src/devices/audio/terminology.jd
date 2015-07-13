@@ -341,6 +341,12 @@ connector. For details, refer to
 Definition Audio</a>.
 </dd>
 
+<dt>line level</dt>
+<dd>
+<a href="http://en.wikipedia.org/wiki/Line_level">Line level</a> is the strength
+of an analog audio signal that passes between audio components, not transducers.
+</dd>
+
 <dt>MHL</dt>
 <dd>
 Mobile High-Definition Link. Mobile audio/video interface, often over micro-USB
@@ -389,7 +395,7 @@ on intra-device interconnections, refer to the following articles:
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/General-purpose_input/output">GPIO</a></li>
 <li><a href="http://en.wikipedia.org/wiki/I%C2%B2C">I²C</a>, for control channel</li>
-<li><a href="http://en.wikipedia.org/wiki/I%C2%B2S">I²S</a>, for audio data</li>
+<li><a href="http://en.wikipedia.org/wiki/I%C2%B2S">I²S</a>, for audio data, simpler than SLIMbus</li>
 <li><a href="http://en.wikipedia.org/wiki/McASP">McASP</a></li>
 <li><a href="http://en.wikipedia.org/wiki/SLIMbus">SLIMbus</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus">SPI</a></li>
