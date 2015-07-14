@@ -118,6 +118,11 @@ If your production device does not have an LED, you can install the
   precise output latency or input latency values in isolation, but might be useful
   for establishing rough estimates.</p>
 
+  <p>
+  Output latency to on-device speaker can be significantly larger than
+  output latency to headset connector.  This is due to speaker correction and protection.
+  </p>
+
 <p>
 We have published an example implementation at
 <a href="https://android.googlesource.com/platform/frameworks/wilhelm/+/master/tests/examples/slesTestFeedback.cpp">slesTestFeedback.cpp</a>.
@@ -143,6 +148,10 @@ located in the <code>audio_utils</code> library.
 <img src="images/round_trip.png" alt="round-trip measurement" id="figure1" />
 <p class="img-caption">
   <strong>Figure 1.</strong> Round-trip measurement
+</p>
+
+<p>You may need to remove the USB cable to reduce noise,
+and adjust the volume level to get a stable oscillation.
 </p>
 
 <h2 id="measuringInput">Measuring Input Latency</h2>
