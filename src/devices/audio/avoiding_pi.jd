@@ -78,6 +78,13 @@ are used, or delay in responding to a command.
 </p>
 
 <p>
+A common workaround for priority inversion is to increase audio buffer sizes.
+However, this method increases latency and merely hides the problem
+instead of solving it. It is better to understand and prevent priority
+inversion, as seen below.
+</p>
+
+<p>
 In the Android audio implementation, priority inversion is most
 likely to occur in these places. And so you should focus your attention here:
 </p>
