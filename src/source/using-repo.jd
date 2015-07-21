@@ -42,6 +42,13 @@ repo sync [<em>&lt;/PATH/TO/PROJECT0&gt;</em> ... <em>&lt;/PATH/TO/PROJECTN&gt;<
 <pre><code>repo help <em>&lt;COMMAND&gt;</em>
 </code></pre>
 
+<p>For example, the following command yields a description and list of options
+for the <code>init</code> argument of Repo, which initializes Repo in the
+current directory. (See <a href="#init">init</a> for more details.)</p>
+<pre><code>repo help init
+</code></pre>
+
+
 <h2 id="init">init</h2>
 <pre><code>$ repo init -u <em>&lt;URL&gt;</em> [<em>&lt;OPTIONS&gt;</em>]
 </code></pre>
