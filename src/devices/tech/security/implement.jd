@@ -160,7 +160,7 @@ required that are not accessible without root privileges.</li>
 <li>Where possible, root code <strong>should</strong> be isolated from untrusted data and
 accessed via IPC. For example, reduce root functionality to a small Service
 accessible via Binder and expose the Service with signature permission to an
-an application with low or no privileges to handle network traffic.</li>
+application with low or no privileges to handle network traffic.</li>
 <li>Root processes <strong>must not</strong> listen on a network socket.</li>
 <li>Root processes <strong>must not</strong> provide a general-purpose runtime for
 applications. (e.g. a Java VM)</li>
