@@ -30,7 +30,18 @@
           </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>accessories/headset-spec.html">Headset specification</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>accessories/headset/index.html">
+            <span class="en">Headset</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>accessories/headset/specification.html">Specification</a></li>
+          <li><a href="<?cs var:toroot ?>accessories/headset/requirements.html">Requirements</a></li>
+          <li><a href="<?cs var:toroot ?>accessories/headset/testing.html">Testing</a></li>
+        </ul>
+      </li>
         </ul>
       </li>    
   <li class="nav-section">
