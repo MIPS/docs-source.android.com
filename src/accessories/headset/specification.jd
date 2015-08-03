@@ -1,4 +1,4 @@
-page.title=Wired audio headset specification (v1.1)
+page.title=Wired Audio Headset Specification (v1.1)
 @jd:body
 
 <!--
@@ -80,7 +80,7 @@ specifications</h2>
  <tr>
     <td>Function D</td>
     <td>Optional</td>
-    <td>Reserved (Nexus devices use this to launch Google voice search)
+    <td>Reserved (Nexus devices use this to launch Voice Assist)
 </td>
  </tr>
 </table>
