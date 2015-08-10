@@ -340,6 +340,7 @@
             </a>
         </div>
         <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/filesystem-config.html">File System Configuration</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/kernel.html">Kernel Configuration</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/netstats.html">Network Usage Data</a></li>
           <li class="nav-section">
