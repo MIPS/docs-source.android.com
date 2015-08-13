@@ -184,6 +184,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
   <td>Nexus 6 (For T-Mobile ONLY)</td>
 </tr>
 <tr>
+  <td>LMY48J</td>
+  <td>android-5.1.1_r10</td>
+  <td>Lollipop</td>
+  <td>Nexus Player</td>
+</tr>
+<tr>
   <td>LMY48I</td>
   <td>android-5.1.1_r9</td>
   <td>Lollipop</td>
