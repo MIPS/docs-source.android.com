@@ -1,4 +1,4 @@
-page.title=Building for devices
+page.title=Running Builds
 @jd:body
 
 <!--
@@ -25,7 +25,7 @@ page.title=Building for devices
 </div>
 
 <p>This page complements the main page about
-<a href="building-running.html">Building and Running</a> with
+<a href="building.html">Building the System</a> with
 information that is specific to individual devices.</p>
 
 <h2 class="nexus-devices">Nexus devices</h2>
@@ -54,7 +54,8 @@ are in the file <code>device/ti/panda/README</code> in the source tree.</p>
 <h2 id="building-fastboot-and-adb">Building fastboot and adb</h2>
 <p>If you don't already have those tools, fastboot and adb can be built with
 the regular build system. Follow the instructions on the page about
-<a href="building-running.html">Building and Running</a>, and replace the main <code>make</code> command with</p>
+<a href="building.html">Building a System</a>, and replace the main
+<code>make</code> command with:</p>
 <pre><code>$ make fastboot adb
 </code></pre>
 
@@ -194,8 +195,6 @@ build needs to be deleted with</p>
 <pre><code>$ make clobber
 </code></pre>
 <h2 id="picking-and-building-the-configuration-that-matches-a-device">Picking and building the configuration that matches a device</h2>
-<p>The steps to configure and build the Android Open Source Project
-are described in the <a href="building.html">Building</a> page.</p>
 <p>The recommended builds for the various devices are available through
 the lunch menu, accessed when running the <code>lunch</code> command with no arguments. Factory images and binaries for Nexus devices can be downloaded from:</p>
 <p><a href="https://developers.google.com/android/nexus/images">https://developers.google.com/android/nexus/images</a></p>

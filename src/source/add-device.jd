@@ -1,4 +1,4 @@
-page.title=Configuring the Products
+page.title=Adding a New Device
 @jd:body
 
 <!--
@@ -24,7 +24,10 @@ page.title=Configuring the Products
   </div>
 </div>
 
-<p>Use the information in this page to create the Makefiles for your device and product.</p>
+<p>Use the information in this page to create the Makefiles for your device and
+product. Please note, unlike the other pages in this section, the contents here
+are applicable only when creating an entirely new device type and are intended
+for company build and product teams only.</p>
 
 <h2 id="build-layers">Understand Build Layers</h2>
 
