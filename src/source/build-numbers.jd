@@ -178,6 +178,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Supported devices</th>
 </tr>
 <tr>
+  <td>LVY48E</td>
+  <td>android-5.1.1_r13</td>
+  <td>Lollipop</td>
+  <td>Nexus 6 (For Project Fi ONLY)</td>
+</tr>
+<tr>
   <td>LYZ28J</td>
   <td>android-5.1.1_r12</td>
   <td>Lollipop</td>
