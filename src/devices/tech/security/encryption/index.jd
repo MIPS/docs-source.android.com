@@ -454,7 +454,7 @@ display a message saying encryption completed, and give the user a button to reb
     <td><code>vold.encrypt_progress  error_not_encrypted</code></td>
     <td>The progress bar UI should
 display a message saying an error
-occured,  no data was encrypted or
+occurred,  no data was encrypted or
 lost, and give the user a button to reboot the system.</td>
   </tr>
   <tr>
