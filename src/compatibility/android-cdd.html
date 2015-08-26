@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-<title>Android 5.1 Compatibility Definition</title>
-<link rel="stylesheet" type="text/css" href="android-cdd.css"/>
+<title>Android ANDROID_VERSION Compatibility Definition</title>
+<link rel="stylesheet" type="text/css" href="source/android-cdd.css"/>
 </head>
 
 <body>
@@ -139,6 +139,8 @@
 <p class="toc_h2"><a href="#5_7_network_protocols">5.7. Network Protocols</a></p>
 
 <p class="toc_h2"><a href="#5_8_secure_media">5.8. Secure Media</a></p>
+
+<p class="toc_h2"><a href="#5_9_midi">5.9. Musical Instrument Digital Interface (MIDI)</a></p>
 
 <p class="toc_h1"><a href="#6_developer_tools_and_options_compatibility">6. Developer Tools and Options Compatibility</a></p>
 
@@ -322,17 +324,17 @@
 
 
 <p>This document enumerates the requirements that must be met in order for devices
-to be compatible with Android 5.1.</p>
+to be compatible with Android ANDROID_VERSION.</p>
 
 <p>The use of &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldquo;REQUIRED&rdquo;, &ldquo;SHALL&rdquo;, &ldquo;SHALL NOT&rdquo;, &ldquo;SHOULD&rdquo;,&ldquo;SHOULD NOT&rdquo;, &ldquo;RECOMMENDED&rdquo;, &ldquo;MAY&rdquo;, and &ldquo;OPTIONAL&rdquo; is per the IETF standard
 defined in RFC2119 [<a href="http://www.ietf.org/rfc/rfc2119.txt">Resources, 1</a>].</p>
 
 <p>As used in this document, a &ldquo;device implementer&rdquo; or &ldquo;implementer&rdquo; is a person
-or organization developing a hardware/software solution running Android 5.1. A
+or organization developing a hardware/software solution running Android ANDROID_VERSION. A
 &ldquo;device implementation&rdquo; or &ldquo;implementation is the hardware/software solution
 so developed.</p>
 
-<p>To be considered compatible with Android 5.1, device implementations MUST meet
+<p>To be considered compatible with Android ANDROID_VERSION, device implementations MUST meet
 the requirements presented in this Compatibility Definition, including any
 documents incorporated via reference.</p>
 
@@ -402,7 +404,7 @@ infotainment functionality. Android Automotive implementations MUST support
 uiMode = UI_MODE_TYPE_CAR [<a href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR">Resources, 111</a>].</p>
 
 <p>All Android device implementations that do not fit into any of the above device
-types still MUST meet all requirements in this document to be Android 5.1
+types still MUST meet all requirements in this document to be Android ANDROID_VERSION
 compatible, unless the requirement is explicitly described to be only
 applicable to a specific Android device type from above.</p>
 
@@ -579,18 +581,18 @@ implementations MUST conform.</p>
  <tr>
     <td>VERSION.RELEASE</td>
     <td>The version of the currently-executing Android system, in human-readable
-format. This field MUST have one of the string values defined in [<a href="http://source.android.com/compatibility/5.1/versions.html">Resources, 8]</a>.</td>
+format. This field MUST have one of the string values defined in [<a href="http://source.android.com/compatibility/ANDROID_VERSION/versions.html">Resources, 8]</a>.</td>
  </tr>
  <tr>
     <td>VERSION.SDK</td>
     <td>The version of the currently-executing Android system, in a format accessible
-to third-party application code. For Android 5.1, this field MUST have the
+to third-party application code. For Android ANDROID_VERSION, this field MUST have the
 integer value 22.</td>
  </tr>
  <tr>
     <td>VERSION.SDK_INT</td>
     <td>The version of the currently-executing Android system, in a format accessible
-to third-party application code. For Android 5.1, this field MUST have the
+to third-party application code. For Android ANDROID_VERSION, this field MUST have the
 integer value 22.</td>
  </tr>
  <tr>
@@ -655,7 +657,7 @@ human-readable. It MUST follow this template:</p>
 
 <p class="small">$(BRAND)/$(PRODUCT)/$(DEVICE):$(VERSION.RELEASE)/$(ID)/$(VERSION.INCREMENTAL):$(TYPE)/$(TAGS)</p>
 
-<p>For example: acme/myproduct/mydevice:5.1/LMYXX/3359:userdebug/test-keys</p>
+<p>For example: acme/myproduct/mydevice:ANDROID_VERSION/LMYXX/3359:userdebug/test-keys</p>
 
 <p>The fingerprint MUST NOT include whitespace characters. If other fields
 included in the template above have whitespace characters, they MUST be
@@ -957,7 +959,7 @@ Chromium in the WebView implementation. Specifically:</p>
 
 <ul>
   <li>Device android.webkit.WebView implementations MUST be based on the Chromium
-build from the upstream Android Open Source Project for Android 5.1. This build
+build from the upstream Android Open Source Project for Android ANDROID_VERSION. This build
 includes a specific set of functionality and security fixes for the WebView [<a href="http://www.chromium.org/">Resources, 13</a>].</li>
   <li>The user agent string reported by the WebView MUST be in this format:
 <p>Mozilla/5.0 (Linux; Android $(VERSION); $(MODEL) Build/$(BUILD)$(WEBVIEW))
@@ -1079,7 +1081,7 @@ Google may do so. Similarly, Google MUST NOT add APIs to other companies'
 namespaces. Additionally, if a device implementation includes custom APIs
 outside the standard Android namespace, those APIs MUST be packaged in an
 Android shared library so that only apps that explicitly use them (via the
-&lt;uses-library&gt; mechanism) are affected by the increased memory usage of such
+lt;uses-librarygt; mechanism) are affected by the increased memory usage of such
 APIs.</p>
 
 <p>If a device implementer proposes to improve one of the package namespaces above
@@ -1965,8 +1967,8 @@ encoding profiles.</p>
 
 
 <p>Device implementations MUST support dynamic video resolution switching within
-the same stream for all VP8, VP9, H.264, and H.265 codecs exposed to developers
-through the standard Android APIs.</p>
+the same stream for all VP8, VP9, H.264, and H.265 codecs exposed through the
+standard Android APIs.</p>
 
 <p>Android device implementations with H.264 decoders, MUST support Baseline
 Profile Level 3 and the following SD video decoding profiles and SHOULD support
@@ -2347,11 +2349,40 @@ lower resolutions. The upstream Android open source implementation includes
 support for wireless (Miracast) and wired (HDMI) displays that satisfies this
 requirement.</p>
 
+<h2 id="5_9_midi">5.9. Musical Instrument Digital Interface (MIDI)</h2>
+
+<p>
+If a device implementation supports the inter-app MIDI software transport
+(virtual MIDI devices), and it supports MIDI over
+<em>all</em> of the following MIDI-capable hardware transports
+for which it provides generic non-MIDI connectivity, it MAY report
+support for feature android.software.midi via the
+android.content.pm.PackageManager class
+[<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>].
+</p>
+
+<p>The MIDI-capable hardware transports are:</p>
+<ul>
+  <li>USB host mode (section 7.7 USB)</li>
+  <li>USB peripheral mode (section 7.7 USB)</li>
+</ul>
+
+<p>
+Conversely, if the device implementation provides generic non-MIDI connectivity over a particular
+MIDI-capable hardware transport listed above, but does not support MIDI over that hardware transport,
+it MUST NOT report support for feature android.software.midi.
+</p>
+
+<p>
+MIDI over Bluetooth LE acting in central role (section 7.4.3 Bluetooth)
+is in trial use status.  A device implementation that reports
+feature android.software.midi, and which provides generic non-MIDI connectivity
+over Bluetooth LE, SHOULD support MIDI over Bluetooth LE.
+</p>
+
 <h1 id="6_developer_tools_and_options_compatibility">6. Developer Tools and Options Compatibility</h1>
 
-
 <h2 id="6_1_developer_tools">6.1. Developer Tools</h2>
-
 
 <p>Device implementations MUST support the Android Developer Tools provided in the
 Android SDK. Android compatible devices MUST be compatible with:</p>
@@ -2781,7 +2812,7 @@ icon unless hidden together with other navigation functions in full-screen mode
 or when the uiMode UI_MODE_TYPE_MASK is set to UI_MODE_TYPE_WATCH.</p>
 
 <p>The Menu function is deprecated in favor of action bar since Android 4.0.
-Therefore the new device implementations shipping with Android 5.0 and later MUST NOT
+Therefore the new device implementations shipping with Android ANDROID_VERSION and later MUST NOT
 implement a dedicated physical button for the Menu function. Older device
 implementations SHOULD NOT implement a dedicated physical button for the Menu
 function, but if the physical Menu button is implemented and the device is
@@ -2790,7 +2821,7 @@ running applications with targetSdkVersion > 10, the device implementation:</p>
 <ul>
   <li>MUST display the action overflow button on the action bar when it is visible
 and the resulting action overflow menu popup is not empty. For a device
-implementation launched before Android 4.4 but upgrading to Android 5.1, this
+implementation launched before Android 4.4 but upgrading to Android ANDROID_VERSION, this
 is RECOMMENDED.</li>
   <li>MUST NOT modify the position of the action overflow popup displayed by
 selecting the overflow button in the action bar.</li>
@@ -4253,7 +4284,7 @@ feature dm-crypt.</p>
 
 <p>
 Verified boot is a feature that guarantees the integrity of the device software.
-If a device implementation supports the feature, it MUST:</p>
+If a device implementation supports the feature, it MUST:
 <ul>
 <li>Declare the platform feature flag android.software.verified_boot</li>
 <li>Perform verification on every boot sequence</li>
@@ -4264,6 +4295,7 @@ of all the bytes in the next stage before executing the code in the next stage</
 <li>Use verification algorithms as strong as current recommendations
 from NIST for hashing algorithms (SHA-256) and public key sizes (RSA-2048)</li>
 </ul>
+</p>
 
 <p>Device implementations SHOULD support verified boot for device integrity.
 While this requirement is SHOULD for this version of the Android platform,
@@ -4295,7 +4327,7 @@ reimplementations of parts of the reference source code.</p>
 <p>The CTS is designed to be run on an actual device. Like any software, the CTS
 may itself contain bugs. The CTS will be versioned independently of this
 Compatibility Definition, and multiple revisions of the CTS may be released for
-Android 5.1. Device implementations MUST pass the latest CTS version available
+Android ANDROID_VERSION. Device implementations MUST pass the latest CTS version available
 at the time the device software is completed.</p>
 
 <h2 id="10_2_cts_verifier">10.2. CTS Verifier</h2>
@@ -4353,7 +4385,7 @@ is, the update mechanism MUST preserve application private data and application
 shared data. Note that the upstream Android software includes an update
 mechanism that satisfies this requirement.</p>
 
-<p>For device implementations that are launching with Android 5.1 and later, the
+<p>For device implementations that are launching with Android ANDROID_VERSION and later, the
 update mechanism SHOULD support verifying that the system image is binary
 identical to expected result following an OTA. The block-based OTA
 implementation in the upstream Android Open Source Project, added since Android
@@ -4408,7 +4440,7 @@ Definition in this release. </p>
         Automotive implementations.</td>
  </tr>
  <tr>
-    <td>3.8.10. Lock Screen Media Control</td>
+    <td>3.8.10. Lock Screen Media Control<</td>
     <td>Clarified requirement for Android Watch and Automotive implementations.</td>
  </tr>
  <tr>
@@ -4532,7 +4564,7 @@ does not cover.</p>
 
 <p>7. android.os.Build reference: <a href="http://developer.android.com/reference/android/os/Build.html">http://developer.android.com/reference/android/os/Build.html</a></p>
 
-<p>8. Android 5.1 allowed version strings: <a href="http://source.android.com/compatibility/5.1/versions.html">http://source.android.com/compatibility/5.1/versions.html</a></p>
+<p>8. Android ANDROID_VERSION allowed version strings: <a href="http://source.android.com/compatibility/ANDROID_VERSION/versions.html">http://source.android.com/compatibility/ANDROID_VERSION/versions.html</a></p>
 
 <p>9. Telephony Provider: <a href="http://developer.android.com/reference/android/provider/Telephony.html">http://developer.android.com/reference/android/provider/Telephony.html</a></p>
 
