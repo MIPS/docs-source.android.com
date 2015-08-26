@@ -64,7 +64,7 @@ that is used by the virtual keyboard devices.</p>
 (see <code>KeyCharacterMap.VIRTUAL_KEYBOARD</code>).  It is present on all Android devices
 beginning with Android Honeycomb 3.0.  The purpose of the virtual keyboard device
 is to provide a known built-in input device that can be used for injecting
-keystokes into applications by the IME or by test instrumentation, even
+keystrokes into applications by the IME or by test instrumentation, even
 for devices that do not have built-in keyboards.</p>
 <p>The virtual keyboard is assumed to have a full QWERTY layout that is the
 same on all devices.  This makes it possible for applications to inject

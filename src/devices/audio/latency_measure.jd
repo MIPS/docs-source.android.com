@@ -57,7 +57,7 @@ If your production device does not have an LED, you can install the
   <li>Use a General Purpose Input/Output (GPIO) pin for the same purpose.</li>
   <li>Use JTAG or another debugging port.</li>
   <li>Use the screen backlight. This might be risky as the
-  backlight may have a non-neglible latency, and can contribute to
+  backlight may have a non-negligible latency, and can contribute to
   an inaccurate latency reading.
   </li>
 </ul>
