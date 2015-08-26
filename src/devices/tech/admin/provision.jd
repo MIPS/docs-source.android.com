@@ -36,6 +36,9 @@ APK</a> and <a
 href="https://github.com/googlesamples/android-DeviceOwner">Android-DeviceOwner
 APK</a>.</p>
 
+<p class="caution"><strong>Caution:</strong> If provisioning has already
+started, affected devices will first need to be factory reset.</p>
+
 <h2 id=managed_provisioning>Managed Provisioning</h2>
 
 <p>Managed Provisioning is a framework UI flow to ensure users are adequately
@@ -165,4 +168,4 @@ corporate apps
 <p>Managed provisioning is just one piece of the EMM end-to-end workflow, with the
   end goal being to make corporate data accessible to apps in the managed profile.</p>
 
-<p>See <a href="https://docs.google.com/document/d/1xWdZHjsDB_4FWQcHfPh84EuTvljoMgrc2JINGMBtDQg/edit#">Manual Setup for Device Owner Testing</a> for testing instructions.</p>
+<p>See <a href="testing-setup.html">Setting up Device Testing</a> for testing instructions.</p>
