@@ -185,6 +185,15 @@ maximally used to improve first boot time.</p>
 <pre><code>PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=interpret-only
 $(call add-product-dex-preopt-module-config,services,--compiler-filter=space)</code></pre>
 
+<p>These flags can also be used to selectively disable pre-optimization of a
+particular module or package by specifying <code>$(call
+add-product-dex-preopt-module-config,&lt;modules&gt;,disable)</code> in a
+product's device.mk file.</p>
+
+<p>Example usage (in product’s device.mk):</p>
+
+<pre><code>$(call add-product-dex-preopt-module-config,Calculator,disable)</code></pre>
+
 <h2 id=preloaded_classes_list>Preloaded Classes List</h2>
 
 <p>The preloaded classes list is a list of classes the zygote will initialize on
