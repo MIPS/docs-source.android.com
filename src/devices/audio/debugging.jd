@@ -202,7 +202,7 @@ Nevertheless, there are some limitations to <code>ALOGx</code> and friends:
 
 <ul>
 <li>
-They are suspectible to "log spam": the log buffer is a shared resource
+They are susceptible to "log spam": the log buffer is a shared resource
 so it can easily overflow due to unrelated log entries, resulting in
 missed information.  The <code>ALOGV</code> variant is disabled at
 compile-time by default.  But of course even it can result in log spam

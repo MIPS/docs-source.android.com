@@ -786,7 +786,7 @@ be both compact and straightforward to parse.</p>
 <tr>
   <td>elements</td>
   <td>annotation_element[size]</td>
-  <td>elements of the annotataion, represented directly in-line (not as
+  <td>elements of the annotation, represented directly in-line (not as
     offsets). Elements must be sorted in increasing order by
     <code>string_id</code> index.
   </td>

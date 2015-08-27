@@ -181,7 +181,7 @@ switch codes are defined in the <code>linux/input.h</code> header file
 using constants that begin with the prefix <code>SW_</code>.  The Linux
 kernel input drivers report switch state changes as <code>EV_SW</code> events.</p>
 <p>Android applications generally do not receive events from switches,
-but the system may use them interally to control various
+but the system may use them internally to control various
 device-specific functions.</p>
 </dd>
 <dt>Android Key Code</dt>
