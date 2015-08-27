@@ -231,7 +231,7 @@ a runtime is required to support only valid .dex files.</p>
         </td>
 
         <td>
-          For each <code>type_id_item</code>, the <code>desciptor_idx</code> field must contain a valid
+          For each <code>type_id_item</code>, the <code>descriptor_idx</code> field must contain a valid
           reference into the <code>string_ids</code> list. The referenced string must be a valid type
           descriptor.
         </td>

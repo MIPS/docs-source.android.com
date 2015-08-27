@@ -227,7 +227,7 @@ application can register three listener classes to DRM framework.</p>
 
 <ul>
 <li>OnEventListener for results of asynchronous APIs</li>
-<li>OnErrorListener for recieving errors of asynchronous APIs</li>
+<li>OnErrorListener for receiving errors of asynchronous APIs</li>
 <li>OnInfoListener for any supplementary information during DRM
 transactions.</li>
 </ul>

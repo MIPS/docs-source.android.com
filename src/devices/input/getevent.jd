@@ -26,7 +26,7 @@ page.title=Getevent
 
 <p>The <code>getevent</code> tool runs on the device and provides information about input
 devices and a live dump of kernel input events.</p>
-<p>It is very useful tool for ensuring that device drivers are reporing the
+<p>It is very useful tool for ensuring that device drivers are reporting the
 expected set of capabilities for each input device and are generating the
 desired stream of input events.</p>
 <h2 id="usage">Usage</h2>
