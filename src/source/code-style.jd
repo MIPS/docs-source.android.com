@@ -650,7 +650,7 @@ level (depending on whether the consequences are serious enough and unexpected
 enough to be logged in a release build).</p>
 </li>
 <li>
-<p>A full filesystem on a filesystem that is acceessible to or on
+<p>A full filesystem on a filesystem that is accessible to or on
 behalf of third-party applications should not be logged at a level higher than
 INFORMATIVE.</p>
 </li>
@@ -725,7 +725,7 @@ looks drastically different from the existing code around it, it throws
 readers out of their rhythm when they go to read it. Try to avoid this.</p></p>
 <h2 id="javatests-style-rules">Javatests Style Rules</h2>
 <h3 id="follow-test-method-naming-conventions">Follow Test Method Naming Conventions</h3>
-<p>When naming test methods, you can use an underscore to seperate what is
+<p>When naming test methods, you can use an underscore to separate what is
 being tested from the specific case being tested. This style makes it easier
 to see exactly what cases are being tested.</p>
 <p>For example:</p>

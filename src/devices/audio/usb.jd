@@ -310,7 +310,7 @@ of the host.
 
 <p>
 In asynchronous (also called implicit feedback) sub-mode,
-the sink or source determines the sample rate, and the host accomodates.
+the sink or source determines the sample rate, and the host accommodates.
 The primary theoretical advantage of asynchronous sub-mode is that the source
 or sink USB clock is physically and electrically closer to (and indeed may
 be the same as, or derived from) the clock that drives the DAC or ADC.
