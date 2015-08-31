@@ -351,7 +351,6 @@
 
       <li class="nav-section">
         <div class="nav-section-header">
-
           <a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/index.html">
             <span class="en">Testing Infrastructure</span>
           </a>
