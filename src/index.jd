@@ -42,6 +42,44 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/debug/asan.html">
+        <h4>AddressSanitizer and Native Debugging Instructions</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}devices/tech/debug/asan.html">AddressSanitizer</a></strong>
+        tool for detecting memory bugs in native Android code is documented for the
+        first time in a dedicated page. Similarly, the main <strong><a
+        href="{@docRoot}devices/tech/debug/index.html">Debugging</a></strong> page now contains
+        instructions for debuggerd, GDB, and Valgrind.</p>
+
+<a href="{@docRoot}devices/tech/config/index.html">
+        <h4>Dedicated Debugging and Configuration sections</h4></a>
+        <p>The former Debugging and Tuning section has been split into separate
+        <strong><a
+        href="{@docRoot}devices/tech/debug/index.html">Debugging</a></strong> and
+        <strong><a
+        href="{@docRoot}devices/tech/config/index.html">Configuration</a></strong>
+        sections to better differentiate between setup and testing steps with the
+        previous Performance Tuning renamed <strong><a
+        href="{@docRoot}devices/tech/config/renderer.html">OpenGLRenderer</a></strong>.</p>
+
+<a href="{@docRoot}devices/tech/dalvik/configure.html">
+        <h4>Selectively Disabling Pre-optimization in ART</h4></a>
+        <p><strong><a
+        href="{@docRoot}devices/tech/dalvik/configure.html#product_dex_preopt_*">Configuring
+        ART</a></strong> now explains how to selectively disable pre-optimization of a
+        particular module or package and provides an example for
+        doing so.</p>
+
+<a href="{@docRoot}source/initializing.html">
+        <h4>USB Access Rules File Improvements</h4></a>
+        <p>The contents of the <strong><a
+        href="{@docRoot}source/51-android.rules">51-android.rules</a></strong>
+        file needed to configure USB access has been moved from being inline on
+        <strong><a
+        href="{@docRoot}source/initializing.html#configuring-usb-access">Establishing
+        a Build Environment</a></strong> to being a downloadable file accompanied by an
+        example command to update it programmatically.</p>
+
 <a href="{@docRoot}index.html">
         <h4>Google Feedback Integration</h4></a>
         <p>Now every source.android.com page contains a prominent <strong>Send
@@ -59,39 +97,6 @@ devices meet compatibility requirements.
         example for obtaining command-specific help. And the <em>Devices</em> main page now
         describes the <strong><a href="{@docRoot}devices/index.html#structure">standard
         hardware abstraction layer (HAL) structure</a></strong>.</p>
-
-<a href="{@docRoot}accessories/headset/index.html">
-        <h4>Audio Headset Requirements and Testing</h4></a>
-        <p><strong><a
-        href="{@docRoot}accessories/headset/requirements.html">Requirements</a></strong>
-        and <strong><a href="{@docRoot}accessories/headset/testing.html">Testing</a></strong>
-        information has been added for wired audio headsets. Those pages and the
-        existing specification have been moved to a distinct <strong><a
-        href="{@docRoot}accessories/headset/index.html">Headset</a></strong>
-        section.</p>
-
-<a href="{@docRoot}compatibility/downloads.html">
-        <h4>CTS 4.4 R4</h4></a>
-        <p>Packages for the 4.4 R4 version of the Android Compatibility Test
-        Suite (CTS) are available for <strong><a
-        href="/compatibility/downloads.html#android-44">download</a></strong>.</p>
-
-<a href="/source/build-numbers.html">
-        <h4>Build Numbers for Nexus 6 and Nexus Player</h4></a>
-        <p>Build numbers <strong><a
-        href="/source/build-numbers.html#source-code-tags-and-builds">LMY48J
-        and LYZ28J</a></strong> have been added for Nexus Player and Nexus 6
-        (T-Mobile ONLY), respectively.</p>
-
-<a href="{@docRoot}devices/audio/latency_app.html#videos">
-        <h4>Videos and Other Resources for Audio Implementation</h4></a>
-        <p>The Audio team offers video on <strong><a
-        href="https://youtu.be/PnDK17zP9BI">buffer sizes and their relationship
-        to audio latency</a></strong>, as well as <strong><a
-        href="{@docRoot}devices/audio/latency_app.html#videos">other videos on
-        improving audio performance</a></strong> and related clarifications to text
-        throughout the <strong><a href="{@docRoot}devices/audio/index.html">Audio
-        section</a></strong>.</p>
     </div>
 
     <div class="col-8">
