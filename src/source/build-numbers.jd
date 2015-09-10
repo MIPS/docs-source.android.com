@@ -178,6 +178,36 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Supported devices</th>
 </tr>
 <tr>
+  <td>LVY48F</td>
+  <td>android-5.1.1_r18</td>
+  <td>Lollipop</td>
+  <td>Nexus 6 (For Project Fi ONLY)</td>
+</tr>
+<tr>
+  <td>LYZ28K</td>
+  <td>android-5.1.1_r17</td>
+  <td>Lollipop</td>
+  <td>Nexus 6 (For T-Mobile ONLY)</td>
+</tr>
+<tr>
+  <td>LMY48P</td>
+  <td>android-5.1.1_r16</td>
+  <td>Lollipop</td>
+  <td>Nexus 7 (deb)</td>
+</tr>
+<tr>
+  <td>LMY48N</td>
+  <td>android-5.1.1_r15</td>
+  <td>Lollipop</td>
+  <td>Nexus Player</td>
+</tr>
+<tr>
+  <td>LMY48M</td>
+  <td>android-5.1.1_r14</td>
+  <td>Lollipop</td>
+  <td>Nexus 4, Nexus 5, Nexus 6, Nexus 7 (flo), Nexus 9 (volantis/volantisg), Nexus 10</td>
+</tr>
+<tr>
   <td>LVY48E</td>
   <td>android-5.1.1_r13</td>
   <td>Lollipop</td>
