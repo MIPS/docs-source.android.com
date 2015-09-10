@@ -42,6 +42,14 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/power/index.html">
+        <h4>Power Reorganization and Additions</h4></a>
+        <p>The previously singular Power page has been reorganized into a
+        <strong><a href="{@docRoot}devices/tech/power/index.html">Power
+        </a></strong> section that has gained <strong><a
+        href="{@docRoot}devices/tech/power/values.html#values">example values</a></strong> for
+        <code>camera.avg</code> and <code>camera.flashlight</code>.</p>
+
 <a href="{@docRoot}devices/tech/debug/asan.html">
         <h4>AddressSanitizer and Native Debugging Instructions</h4></a>
         <p>The <strong><a
@@ -85,18 +93,6 @@ devices meet compatibility requirements.
         <p>Now every source.android.com page contains a prominent <strong>Send
         Feedback</strong> button in the footer so partners and the open source community may
         directly convey their desired improvements to this site.</p>
-
-<a href="{@docRoot}source/index.html">
-        <h4>Source and Devices tab Improvements</h4></a>
-        <p>The <strong><a href="{@docRoot}source/requirements.html">Download
-        and Building</a></strong> section of the <em>Source</em> tab has been reorganized to
-        match expected development workflow. <strong><a
-        href="{@docRoot}source/add-device.html">Adding a New Device</a></strong> has
-        been introduced to explain how Android Makefiles are produced. <strong><a
-        href="{@docRoot}source/using-repo.html">Using Repo</a></strong> now contains an
-        example for obtaining command-specific help. And the <em>Devices</em> main page now
-        describes the <strong><a href="{@docRoot}devices/index.html#structure">standard
-        hardware abstraction layer (HAL) structure</a></strong>.</p>
     </div>
 
     <div class="col-8">
