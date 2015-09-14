@@ -78,11 +78,17 @@ enable MIDI support in the platform.
 
 <h2 id="transport">Enabling transports</h2>
 
+<p>
+The implementation depends on ALSA for USB host mode and USB peripheral mode transports.
+ALSA is not used for the BLE and virtual transports.
+</p>
+
 <h3 id="usb-host">USB host mode</h3>
 
 <p>
 To enable MIDI for USB host mode, first support USB host mode in general, and
-then enable <code>CONFIG_SND_RAWMIDI</code> in your kernel configuration.
+then enable <code>CONFIG_SND_RAWMIDI</code> and <code>CONFIG_SND_USB_MIDI</code> in your kernel configuration.
+See <a href="{@docRoot}devices/tech/config/kernel.html">Android Kernel Configuration.</a>
 </p>
 
 <h3 id="usb-peripheral">USB peripheral mode</h3>
@@ -96,16 +102,17 @@ driver. As of this writing, these patches are available for Linux kernel version
 <a href="http://en.wikipedia.org/wiki/Configfs">ConfigFs</a>
 (a new architecture
 for USB gadget drivers), nor are they merged at upstream
-<a href="http://kernel.org"</a>kernel.org</a>.
+<a href="http://kernel.org">kernel.org</a>.
 </p>
 
 <p>
-The patches are shown in commit order for the <code>tegra</code> tree:
+The patches are shown in commit order for the kernel tree at project <code>kernel/common</code>
+branch <code>android-3.10</code>:
 </p>
 <ol>
-<li><a href="https://android.googlesource.com/kernel/tegra/+/261230ce54cfc119efe643fc1d128e431d1678d3"</a>261230ce54cfc119efe643fc1d128e431d1678d3</a></li>
-<li><a href="https://android.googlesource.com/kernel/tegra/+/3f048135f3028e503d9d6e32b602e362bd9f374f"</a>3f048135f3028e503d9d6e32b602e362bd9f374f</a></li>
-<li><a href="https://android.googlesource.com/kernel/tegra/+/ae2019d83ecf14454315240c16dc3136212f0da2"</a>ae2019d83ecf14454315240c16dc3136212f0da2</a></li>
+<li><a href="https://android-review.googlesource.com/#/c/127450/">https://android-review.googlesource.com/#/c/127450/</a></li>
+<li><a href="https://android-review.googlesource.com/#/c/127452/">https://android-review.googlesource.com/#/c/127452/</a></li>
+<li><a href="https://android-review.googlesource.com/#/c/143714/">https://android-review.googlesource.com/#/c/143714/</a></li>
 </ol>
 
 <p>
@@ -118,7 +125,7 @@ to the USB host, and choosing <strong>MIDI</strong> for "Use USB for ...".
 <h3 id="ble">BLE</h3>
 
 <p>
-MIDI over BLE is always enabled.
+MIDI over BLE is always enabled, provided the device supports BLE.
 As this transport is in draft status, it is subject to change.
 </p>
 

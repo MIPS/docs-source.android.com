@@ -307,3 +307,9 @@ CONFIG_SND_USB=y
 CONFIG_SND_USB_AUDIO=y
 # CONFIG_USB_AUDIO is for a peripheral mode (gadget) driver
 </pre>
+
+<h3>For USB host mode MIDI</h3>
+
+<pre>
+CONFIG_SND_USB_MIDI=y
+</pre>
