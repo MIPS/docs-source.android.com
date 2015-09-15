@@ -327,6 +327,7 @@
               </a>
             </div>
             <ul>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/index.html">Authentication</a></li>
               <li><a href="<?cs var:toroot ?>devices/tech/security/encryption/index.html">Encryption</a></li>
               <li class="nav-section">
                 <div class="nav-section-header">
