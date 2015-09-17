@@ -1,4 +1,4 @@
-page.title=Encryption
+page.title=Full Disk Encryption
 @jd:body
 
 <!--
@@ -25,9 +25,9 @@ page.title=Encryption
   </div>
 </div>
 
-<h2 id=what_is_encryption>What is encryption?</h2>
+<h2 id=what_is_encryption>What is full disk encryption?</h2>
 
-<p>Encryption is the process of encoding user data on an Android device using an
+<p>Full disk encryption is the process of encoding all user data on an Android device using an
 encrypted key. Once a device is encrypted, all user-created data is
 automatically encrypted before committing it to disk and all reads
 automatically decrypt data before returning it to the calling process.</p>
@@ -50,9 +50,9 @@ currently support fast encryption.
 encrypted may be returned to an unencrypted state by factory data reset. New Android 5.0
 devices encrypted at first boot cannot be returned to an unencrypted state.</p>
 
-<h2 id=how_android_encryption_works>How Android encryption works</h2>
+<h2 id=how_android_encryption_works>How Android full disk encryption works</h2>
 
-<p>Android disk encryption is based on <code>dm-crypt</code>, which is a kernel
+<p>Android full disk encryption is based on <code>dm-crypt</code>, which is a kernel
 feature that works at the block device layer. Because of
 this, encryption works with Embedded MultiMediaCard<strong> (</strong>eMMC) and
 similar flash devices that present themselves to the kernel as block
