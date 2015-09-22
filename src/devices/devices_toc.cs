@@ -198,6 +198,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/config/kernel.html">Kernel</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/config/low-ram.html">Low RAM</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/config/renderer.html">OpenGLRenderer</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/config/uicc.html">UICC</a></li>
         </ul>
       </li>
 
