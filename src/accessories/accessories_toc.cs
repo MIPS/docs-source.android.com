@@ -1,5 +1,5 @@
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@
         </ul>
       </li>
         </ul>
-      </li>    
+      </li>
   <li class="nav-section">
 <div class="nav-section-header">
       <a href="<?cs var:toroot ?>accessories/custom.html">
@@ -56,8 +56,8 @@
         </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>accessories/aoa2.html">Version 2.0</a></li>
-          <li><a href="<?cs var:toroot ?>accessories/aoa.html">Version 1.0</a></li>
+          <li><a href="<?cs var:toroot ?>accessories/aoa2.html">AOA 2.0</a></li>
+          <li><a href="<?cs var:toroot ?>accessories/aoa.html">AOA 1.0</a></li>
         </ul>
         </li>
        </ul>
