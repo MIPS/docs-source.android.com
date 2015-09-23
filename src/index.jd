@@ -42,6 +42,15 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/config/uicc.html">
+        <h4>UICC Carrier Privileges</h4></a>
+        <p>Carriers now have a mechanism to grant special privileges for APIs
+        relevant to the <strong><a
+        href="{@docRoot}devices/tech/config/uicc.html">Universal Integrated
+        Circuit Card (UICC)</a></strong> owner’s apps. This mechanism provides a
+        secure and flexible way to manage apps from the Mobile Network Operator
+        (MNO).</p>
+
 <a href="{@docRoot}devices/audio/midi.html">
         <h4>Audio MIDI Updates</h4></a>
         <p><strong><a
@@ -80,17 +89,6 @@ devices meet compatibility requirements.
         first time in a dedicated page. Similarly, the main <strong><a
         href="{@docRoot}devices/tech/debug/index.html">Debugging</a></strong> page now contains
         instructions for debuggerd, GDB, and Valgrind.</p>
-
-<a href="{@docRoot}devices/tech/config/index.html">
-        <h4>Dedicated Debugging and Configuration sections</h4></a>
-        <p>The former Debugging and Tuning section has been split into separate
-        <strong><a
-        href="{@docRoot}devices/tech/debug/index.html">Debugging</a></strong> and
-        <strong><a
-        href="{@docRoot}devices/tech/config/index.html">Configuration</a></strong>
-        sections to better differentiate between setup and testing steps with the
-        previous Performance Tuning renamed <strong><a
-        href="{@docRoot}devices/tech/config/renderer.html">OpenGLRenderer</a></strong>.</p>
     </div>
 
     <div class="col-8">
