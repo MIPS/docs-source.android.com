@@ -36,6 +36,11 @@ test results. It will resemble the following screenshots.</p>
   <strong>Figure 1.</strong> CTS test summary
 </p>
 
+<p>If testResult.xml displays a blank page when using the Chrome browser,
+<a href="https://www.chromium.org/developers/how-tos/run-chromium-with-flags">change
+your browser configuration</a> to enable the
+<em>--allow-file-access-from-files</em> command line flag.</p>
+
 <p>The Device Information section provides details about the device, firmware
 (make, model, firmware build, platform), and device hardware (screen
 resolution, keypad, screen type).  To access device information, click the link
