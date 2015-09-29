@@ -25,10 +25,13 @@ page.title=Setting up CTS
 </div>
 
 <h2 id=desktop_setup>Desktop machine setup</h2>
-<h3 id=adb>Android Debug Bridge (ADB)</h3>
-<p>Before running the CTS, make sure you have a recent version of Android Debug
-Bridge (adb) installed and the <code>adb</code> location added to the system
-path of your machine.</p>
+<h3 id=adb>ADB and AAPT</h3>
+<p>Before running the CTS, make sure you have recent versions of both <a
+href="http://developer.android.com/tools/help/adb.html">Android Debug
+Bridge (adb)</a> and <a
+href="http://developer.android.com/guide/topics/manifest/uses-feature-element.html#testing">Android
+Asset Packaging Tool (AAPT)</a> installed and those tools' location added
+to the system path of your machine.</p>
 
 <p>To install ADB, download the <a
 href="http://developer.android.com/sdk/index.html#Other">Android SDK Tools</a>
@@ -37,8 +40,9 @@ included README file. For troubleshooting information, see <a
 href="http://developer.android.com/sdk/installing/index.html?pkg=tools">Installing
 the Stand-alone SDK Tools</a>.</p>
 
-<p>Ensure <code>adb</code> is in your system path. The following command
-assumes you've opened the package archive in your home directory:</p>
+<p>Ensure <code>adb</code> and <code>aapt</code> are in your system path. The
+following command assumes you've opened the package archive in your home
+directory:</p>
 <hr>
 <pre>
 export PATH=$PATH:$HOME/android-sdk-linux/platform-tools
@@ -75,13 +79,16 @@ file for Ubuntu Linux.</p>
 <h2 id=device_setup>Android device setup</h2>
 
 <h3 id=user_builds>User builds</h3>
-<p>To prevent test timeouts and other failures, your device should be running a
-<strong>user build (Android 4.0 and later)</strong> from <a
+
+<p>A compatible device is defined as a device with a user/release-key signed
+build, so your device should be running a system image based on the known to be
+compatible user build (Android 4.0 and later) from <a
 href="{@docRoot}source/build-numbers.html">Codenames, Tags, and Build
-Numbers</a> of source.android.com.<br>
-<p class="note"><strong>Note:</strong> CTS should be executed on consumer
-(user build) devices only.</p>
-</ol>
+Numbers</a>.<br>
+
+<p class="caution"><strong>Caution:</strong> When used to confirm Android
+compatibility of your final system image, CTS must be executed on devices with
+a user build.</p>
 
 <h3 id=storage_requirements>Storage requirements</h3>
 <p>The CTS media stress tests require video clips to be on external storage
@@ -109,7 +116,7 @@ SD card that supports Ultra High Speed (UHS) Bus with SDHC or SDXC capacity or
 one with at least speed class 10 or higher to ensure it can pass the CTS.</em>
 <p class="warning"><strong>Warning:</strong> CTS may modify/erase data on the SD card plugged into the device.</p>
 </li>
-<li>If the device has SIM card slots, plug in an activated SIM card to each slot.</li>
+<li>If the device has SIM card slots, plug in an activated SIM card to each slot. If the device supports SMS, each SIM card should have its own number field populated.</li>
 </li>
 </ol>
 
@@ -121,11 +128,19 @@ one with at least speed class 10 or higher to ensure it can pass the CTS.</em>
     & input > Language</strong>
   <li>Turn on the location setting if there is a GPS or Wi-Fi / Cellular network
     feature on the device: <strong>Settings &gt; Location</strong>
-  <li>Connect to a Wi-Fi network  that supports IPv6 and has an
-    internet connection: <strong>Settings > Wi-Fi</strong>
-    <p class="note"><strong>Note:</strong> If you don’t have access to a native IPv6 network, an IPv6 carrier network,
-      or a VPN to pass some tests depending on IPv6, you may instead use a Wi-Fi
+  <li>Connect to a Wi-Fi network  that supports IPv6, can treat the Device
+Under Test (DUT) as an <em>isolated client</em> (see note below), and has an
+internet connection: <strong>Settings > Wi-Fi</strong>
+<p class="note"><strong>Tip:</strong> If you don’t have access to a native
+IPv6 network, an IPv6 carrier network,
+or a VPN to pass some tests depending on IPv6, you may instead use a
+Wi-Fi
       access point and an IPv6 tunnel. See Wikipedia <a href="http://en.wikipedia.org/wiki/List_of_IPv6_tunnel_brokers">list of IPv6 tunnel brokers</a>.</p>
+<p class="note"><strong>Note:</strong> An isolated client refers to a
+configuration where the DUT does not have visibility to the
+broadcast/multinetwork messages on that subnetwork, either by a Wi-Fi AP
+configuration or by running the DUT on an isolated sub-network without
+other devices being connected.</p>
   <li>Make sure no lock pattern or password is set on the device: <strong>Settings > Security > Screen
     lock = 'None'</strong>
   <li>Enable <strong>USB debugging</strong> on your device: <strong>Settings &gt; Developer options &gt; USB debugging</strong>.
@@ -138,6 +153,8 @@ one with at least speed class 10 or higher to ensure it can pass the CTS.</em>
         On-device Developer Options</a> for additional details.</p>
   <li>Select: <strong>Settings > Developer options > Stay Awake</strong>
   <li>Select: <strong>Settings > Developer options > Allow mock locations</strong>
+<p class="note"><strong>Note:</strong> Starting in Android 6.0, this mock
+locations step is neither available nor required.</p>
   <li>Launch the browser and dismiss any startup/setup screen.
   <li>Connect the desktop machine that will be used to test the device with a USB cable
     <p class="note"><strong>Note:</strong> When you connect a device running Android 4.2.2 or later
