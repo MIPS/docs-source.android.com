@@ -68,12 +68,16 @@ short) continuous test framework.</p>
   <li><em>Performance</em>—performance tests for your implementation </li>
 </ul>
 <p>These can be executed with the <code>run cts</code> command.</p>
-<h2 id=cts_reference>CTS Console command reference</h2>
+<h2 id=cts_reference>CTS console command reference</h2>
+
+<p class="table-caption" id="console-commands">
+  <strong>Table 1.</strong> This table summarizes the CTS console commands for
+various uses.</p>
 <table>
   <tbody>
     <tr>
       <th>Host</th>
-      <th> </th>
+      <th>Description</th>
     </tr>
     <tr>
       <td><code>help</code></td>
@@ -89,11 +93,13 @@ short) continuous test framework.</p>
     </tr>
     <tr>
       <th>Run</th>
-      <th> </th>
+      <th>Description</th>
     </tr>
     <tr>
       <td><code>run cts</code></td>
-      <td>Run the specified tests and displays progress information. One of --plan, --package, --class or --continue-session-id needs to be specified
+      <td>Run the specified tests and displays progress information. One of
+<code>--plan</code>, <code>--package</code>, <code>--class</code> or
+<code>--continue-session</code> needs to be specified
         <p>The CTS console can accept other commands while tests are in progress </p>
         <p>If no devices are connected, the CTS desktop machine (or host) will wait for a device to be connected before starting tests </p>
         <p>If more than one device is connected, the CTS host will choose a device automatically</p></td>
@@ -111,7 +117,7 @@ short) continuous test framework.</p>
       <td>Run the specified test class and/or method</td>
     </tr>
     <tr>
-      <td><code>--continue-session-id</code></td>
+      <td><code>--continue-session</code></td>
       <td>Run all not executed tests from previous CTS session; the sessions testResult.xml will be updated with the new results</td>
     </tr>
     <tr>
@@ -127,12 +133,12 @@ short) continuous test framework.</p>
       <td>Run a specific test method</td>
     </tr>
     <tr>
-      <td><code>--abi 32|64</code></td>
+      <td><code>--force-abi 32|64</code></td>
       <td>On 64-bit devices, run the test against only the 32-bit or 64-bit ABI</td>
     </tr>
     <tr>
       <th>List</th>
-      <th> </th>
+      <th>Description</th>
     </tr>
     <tr>
       <td><code>list packages</code></td>
@@ -166,7 +172,7 @@ short) continuous test framework.</p>
     </tr>
     <tr>
       <th>Add</th>
-      <th> </th>
+      <th>Description</th>
     </tr>
     <tr>
       <td><code>add derivedplan --plan &lt;plan_name&gt;<br>
