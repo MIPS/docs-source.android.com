@@ -36,7 +36,7 @@ the Test Runner.  This mechanism works for all Java intrinsic types, as well as 
 interfaces included in the <a href="lifecycle.html">Test Lifecycle</a>, and only when that class is
 <em>instantiated</em> by the lifecycle machinery.</p>
 
-<h2>Developer</h2>
+<h2 id="developer">Developer</h2>
 <p>To start off, the developer marks a member with the
 <code><a href="https://android.googlesource.com/platform/tools/tradefederation/+/master/src/com/android/tradefed/config/Option.java"
 >@Option</a></code> annotation.  <!-- note: javadoc for the Option class is broken -->
@@ -67,7 +67,7 @@ without paying much attention to the fact that they're configurable.  Because th
 or perform some kind of filtering on <code>Map</code> and <code>Collection</code> fields, which are
 otherwise append-only.</p>
 
-<h2>Integrator</h2>
+<h2 id="integrator">Integrator</h2>
 <p>The Integrator works in the world of Configurations, which are written in XML.  The config format
 allows the Integrator to set (or append) a value for any <code>@Option</code> field.  For instance,
 suppose the Integrator wanted to define a lower-latency test that calls the default number, as well
@@ -90,7 +90,7 @@ that might look like the following:</p>
     &lt;/test&gt;
 &lt;/configuration&gt;</pre></code>
 
-<h2>Test Runner</h2>
+<h2 id="testrunner">Test Runner</h2>
 <p>The Test Runner also has access to these configuration points via the Trade Federation console.
 First and foremost, they will run a Command (that is, a config and all of its arguments) with the
 <code>run command &lt;name&gt;</code> instruction (or <code>run &lt;name&gt;</code> for short).
@@ -104,4 +104,3 @@ could execute:</p>
 <p>Or, to get a similar effect from the opposite direction, the Test Runner could reduce the wait time
 for the <code>many-numbers</code> test:</p>
 <code><pre>tf >run many-numbers.xml --timeout 5000</code></pre>
-
