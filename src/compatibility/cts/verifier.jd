@@ -45,7 +45,7 @@ SDK</a> on the Linux computer <li>Download the appropriate <a
 href="{@docRoot}compatibility/downloads.html">CTS Verifier.apk</a> for the
 version of Android under test.
   <li>Install CTS Verifier.apk to the <em>Device Under Test</em> (DUT). <br>
-    <code>adb install -r CtsVerifier.apk</code>
+    <code>adb install -r -g CtsVerifier.apk</code>
   <li>Ensure that the device has its system data and time set correctly.
 </ul>
 <h2 id=cts_test_procedure>CTS Verifier test procedure</h2>
