@@ -40,7 +40,7 @@ android/configs/android-recommended.cfg</pre>
 This will generate a .config that can then be used to save a new defconfig or
 compile a new kernel with Android features enabled.
 </p>
-<h3>
+<h3 id="base">
 Base Configuration
 </h3>
 <pre>
@@ -180,7 +180,7 @@ CONFIG_ANDROID_LOW_MEMORY_KILLER=y
 CONFIG_ANDROID_INTF_ALARM_DEV=y
 </pre>
 
-<h3>Recommended Configuration</h3>
+<h3 id="recommended">Recommended Configuration</h3>
 
 <pre>
 CONFIG_PANIC_TIMEOUT=5
@@ -300,7 +300,7 @@ CONFIG_TIMER_STATS=y
 CONFIG_SCHED_TRACER=y
 </pre>
 
-<h3>For USB host mode audio</h3>
+<h3 id="audio">For USB host mode audio</h3>
 
 <pre>
 CONFIG_SND_USB=y
@@ -308,7 +308,7 @@ CONFIG_SND_USB_AUDIO=y
 # CONFIG_USB_AUDIO is for a peripheral mode (gadget) driver
 </pre>
 
-<h3>For USB host mode MIDI</h3>
+<h3 id="midi">For USB host mode MIDI</h3>
 
 <pre>
 CONFIG_SND_USB_MIDI=y

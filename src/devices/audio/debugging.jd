@@ -50,7 +50,7 @@ The instructions in the remainder of this section are for Android 5.0,
 and may require changes for other versions.
 </p>
 
-<h3>Compile-time setup</h3>
+<h3 id="compile">Compile-time setup</h3>
 
 <ol>
 <li><code>cd frameworks/av/services/audioflinger</code></li>
@@ -62,7 +62,7 @@ and may require changes for other versions.
 <li>Push or sync the new <code>libaudioflinger.so</code> to the device's <code>/system/lib</code>.</li>
 </ol>
 
-<h3>Run-time setup</h3>
+<h3 id="runtime">Run-time setup</h3>
 
 <ol>
 <li><code>adb shell getprop | grep ro.debuggable</code>
@@ -112,7 +112,7 @@ There is no bit for deep buffer or normal mixer yet,
 but you can get similar results using "4."
 </p>
 
-<h3>Test and acquire data</h3>
+<h3 id="test">Test and acquire data</h3>
 
 <ol>
 <li>Run your audio test.</li>
@@ -148,7 +148,7 @@ Only a limited number of dump files are preserved;
 older dumps are removed after that limit is reached.</li>
 </ul>
 
-<h3>Restore</h3>
+<h3 id="restore">Restore</h3>
 
 <p>
 As noted above, the tee sink feature should not be left enabled.
@@ -168,7 +168,7 @@ to the device's <code>/system/lib</code>.
 
 <h2 id="mediaLog">media.log</h2>
 
-<h3>ALOGx macros</h3>
+<h3 id="alogx">ALOGx macros</h3>
 
 <p>
 The standard Java language logging API in Android SDK is
@@ -222,7 +222,7 @@ It is not possible to enable a specific log retroactively,
 </li>
 </ul>
 
-<h3>NBLOG, media.log, and MediaLogService</h3>
+<h3 id="nblog">NBLOG, media.log, and MediaLogService</h3>
 
 <p>
 The <code>NBLOG</code> APIs and associated <code>media.log</code>
@@ -240,7 +240,7 @@ of log entries whose relative ordering is preserved.
 By convention, each thread should use it's own timeline.
 </p>
 
-<h3>Benefits</h3>
+<h3 id="benefits">Benefits</h3>
 
 <p>
 The benefits of the <code>media.log</code> system are that it:
@@ -254,7 +254,7 @@ The benefits of the <code>media.log</code> system are that it:
 </li>
 </ul>
 
-<h3>Architecture</h3>
+<h3 id="architecture">Architecture</h3>
 
 <p>
 The diagram below shows the relationship of the <code>mediaserver</code> process
@@ -329,7 +329,7 @@ run frequently, periodically, and without blocking such as the
 <code>FastMixer</code> and <code>FastCapture</code> threads.
 </p>
 
-<h3>How to use</h3>
+<h3 id="how">How to use</h3>
 
 <h4>Add logs</h4>
 
