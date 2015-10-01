@@ -165,7 +165,7 @@ in the 'donut' branch in the open source tree.</p>
 </ul>
 <h2 id="compatibility-test-suite-manual">Compatibility Test Suite Manual</h2>
 <ul>
-<li><a href="android-cts-manual.pdf">Compatibility Test Suite (CTS) User Manual</a></li>
+<li><a href="cts/index.html">Compatibility Test Suite (CTS) User Manual</a></li>
 </ul>
 <h2 id="cts-media-files">CTS Media Files</h2>
 <p>These media files are required for the CTS media stress tests.</p>
