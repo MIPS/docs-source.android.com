@@ -41,6 +41,11 @@ API levels and NDK releases provided for convenience:</p>
 </thead>
 <tbody>
 <tr>
+<td>Marshmallow</td>
+<td>6.0</td>
+<td>API level 23</td>
+</tr>
+<tr>
 <td>Lollipop</td>
 <td>5.1</td>
 <td>API level 22</td>
@@ -176,6 +181,42 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Branch</th>
 <th>Version</th>
 <th>Supported devices</th>
+</tr>
+<tr>
+  <td>MRA58K</td>
+  <td>android-6.0.0_r1</td>
+  <td>Marshmallow</td>
+  <td>Nexus 5, Nexus 6, Nexus 7 (flo/deb), Nexus 9 (volantis/volantisg), Nexus Player</td>
+</tr>
+<tr>
+  <td>LMY48W</td>
+  <td>android-5.1.1_r24</td>
+  <td>Lollipop</td>
+  <td>Nexus 6</td>
+</tr>
+<tr>
+  <td>LVY48H</td>
+  <td>android-5.1.1_r23</td>
+  <td>Lollipop</td>
+  <td>Nexus 6 (For Project Fi ONLY)</td>
+</tr>
+<tr>
+  <td>LYZ28M</td>
+  <td>android-5.1.1_r22</td>
+  <td>Lollipop</td>
+  <td>Nexus 6 (For T-Mobile ONLY)</td>
+</tr>
+<tr>
+  <td>LMY48U</td>
+  <td>android-5.1.1_r20</td>
+  <td>Lollipop</td>
+  <td>Nexus 7 (deb)</td>
+</tr>
+<tr>
+  <td>LMY48T</td>
+  <td>android-5.1.1_r19</td>
+  <td>Lollipop</td>
+  <td>Nexus 4, Nexus 6, Nexus 9 (volantis/volantisg), Nexus 10</td>
 </tr>
 <tr>
   <td>LVY48F</td>
