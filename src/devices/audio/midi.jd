@@ -60,15 +60,14 @@ recently there have been no built-in platform APIs for MIDI.
 </p>
 
 <p>
-Beginning with the Android M release, device makers can enable optional MIDI support in the platform.
+Beginning with the Android 6.0 (Marshmallow) release, device makers can enable optional MIDI support in the platform.
 Supported transports include USB, draft BLE, and virtual (inter-app).
 </p>
 
 <p>
-For details on application programming with the new MIDI APIs,
-first download the
-<a href="https://developer.android.com/preview/download.html#docs">preview reference</a>
-and then see the <code>android.media.midi</code> package.
+For details on application programming with the new MIDI APIs, see the
+<a href="https://developer.android.com/reference/android/media/midi/package-summary.html"><code>android.media.midi</code></a>
+package.
 </p>
 
 <p>
@@ -89,6 +88,14 @@ ALSA is not used for the BLE and virtual transports.
 To enable MIDI for USB host mode, first support USB host mode in general, and
 then enable <code>CONFIG_SND_RAWMIDI</code> and <code>CONFIG_SND_USB_MIDI</code> in your kernel configuration.
 See <a href="{@docRoot}devices/tech/config/kernel.html">Android Kernel Configuration.</a>
+</p>
+
+<p>
+The MIDI over USB transport is formally defined by the
+<a href="http://www.usb.org/developers/docs/devclass_docs/midi10.pdf">
+Universal Serial Bus Device Class Definition for MIDI Devices Release 1.0 Nov 1, 1999</a>
+standard published by the
+<a href="http://www.usb.org/">USB Implementers Forum, Inc</a>.
 </p>
 
 <h3 id="usb-peripheral">USB peripheral mode</h3>
@@ -117,9 +124,9 @@ branch <code>android-3.10</code>:
 
 <p>
 In addition, the end user must also check the box for MIDI
-in the <em>Settings</em> dialog for <em>Select USB configuration</em>,
+in the <em>Settings / Developer options / Networking / Select USB Configuration</em> dialog,
 or by pulling down from the top of screen while attached
-to the USB host, and choosing <strong>MIDI</strong> for "Use USB for ...".
+to the USB host, selecting entry "USB for ...", and then choosing <strong>MIDI</strong>.
 </p>
 
 <h3 id="ble">BLE</h3>
