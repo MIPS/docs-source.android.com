@@ -20,17 +20,18 @@ page.title=Android Open Accessory Protocol 1.0
 protocol, which defines how an accessory detects and sets up communication with
 an Android-powered device. Accessories should carry out the following steps:</p>
 
-<ul>
+<ol>
 <li>Wait for and detect a connected device.</li>
 <li>Determine the device's accessory mode support.</li>
 <li>Attempt to start the device in accessory mode (if needed).</li>
 <li>If the device supports AOA, establish communication with the device.</li>
-</ul>
+</ol>
 
 <p>The following sections explain how to implement these steps.</p>
 
-<p class="note">When developing a new accessory that connects to an Android
-device over USB, use <a href="{@docRoot}accessories/aoa2.html">AOAv2</a>.</p>
+<p class="note"><strong>Note:</strong> When developing a new accessory that
+connects to an Android device over USB, use
+<a href="{@docRoot}accessories/aoa2.html">AOAv2</a>.</p>
 
 <h2 id="wait-for-and-detect-connected-devices">Wait for and detect connected
 devices</h2>
@@ -79,14 +80,14 @@ mode</h2>
 <p>If the vendor and product IDs do not correspond to an Android-powered device
 in accessory mode, the accessory cannot discern whether the device supports (but
 is not in) accessory mode or if the device does not support accessory mode. This
-can occur because devices that support accessory mode (but are not in that mode)
-initially report the <em>device</em> manufacturer vendor and product IDs instead
-of the <em>AOA</em> vendor and product IDs.</p>
+can occur because devices that support accessory mode (but are not in accessory
+mode) initially report the <em>device</em> manufacturer vendor and product IDs
+instead of the <em>AOA</em> vendor and product IDs.</p>
 
 <p>The accessory should try to start the device in accessory mode to determine
 if the device supports that mode:</p>
 
-<ul>
+<ol>
   <li>Send a 51 control request ("Get Protocol") to determine if the device
   supports the Android accessory protocol. If the device supports the protocol,
   it returns a non-zero number that represents the supported protocol version.
@@ -141,17 +142,22 @@ index:          0
 data:           none
 </pre>
   </li>
-</ul>
+</ol>
 
 <p>After completing these steps, the accessory should wait for the connected USB
 device to re-introduce itself on the bus in accessory mode, then re-enumerate
-connected devices. The algorithm returns to
-<a href="#determine-accessory-mode-support">determine accessory mode support</a>
-to check the vendor and product IDs, which should be correct (e.g. correspond to
-Google's vendor and product IDs instead of the device manufacturer's IDs) if the
-device successfully switched to accessory mode. If IDs are correct, the
+connected devices. The algorithm
+<a href="#determine-accessory-mode-support">determines accessory mode support</a>
+by checking the vendor and product IDs, which should be correct (e.g. correspond
+to Google's vendor and product IDs instead of the device manufacturer's IDs) if
+the device successfully switched to accessory mode. If IDs are correct, the
 accessory moves to <a href="#establish-communication-with-the-device">establish
 communication with the device</a>.</p>
+
+<p class="note"><strong>Note:</strong> AOA does not currently support
+simultaneous AOA and MTP connections. To switch from AOA to MTP, the accessory
+must first disconnect the USB device (either physically or in an electrically
+equivalent way) then reconnect using MTP.</p>
 
 <p>If any step fails, the accessory determines the device does not support
 Android accessory mode and waits for the next device to connect.</p>
