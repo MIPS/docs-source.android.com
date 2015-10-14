@@ -209,8 +209,9 @@ as the central point for all Android graphics rendering.</p>
 <p>Since Android graphics offer no explicit parallelism, vendors have long
 implemented their own implicit synchronization within their own drivers. This
 is no longer required with the Android graphics synchronization framework. See
-the <a href="#explicit_synchronization">Explicit synchronization</a> section
-for implementation instructions.</p>
+the
+<a href="{@docRoot}devices/graphics/implement.html#explicit_synchronization">Explicit
+synchronization</a> section for implementation instructions.</p>
 
 <p>The synchronization framework explicitly describes dependencies between
 different asynchronous operations in the system. The framework provides a
