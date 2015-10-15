@@ -167,4 +167,6 @@ exceptions, such as enforcing the lock screen.</p>
   <li>Disable Wi-Fi/ BT
   <li>Control <code>setGlobalSetting</code>
   <li><code>setLockTaskPackages</code> (the ability to whitelist packages that can pin themselves to the foreground)
+  <li>Set <code>DISALLOW_MOUNT_PHYSICAL_MEDIA</code> (<code>FALSE</code> by default.
+When <code>TRUE</code>, physical media, both portable and adoptable, cannot be mounted.)
 </ul>
