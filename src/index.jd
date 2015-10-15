@@ -43,6 +43,24 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}source/build-numbers.html">
+        <h4>Android 6.0 and 5.1 Build Numbers and CTS Packages</h4></a>
+        <p>You can now find <strong><a
+        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">Build
+        Numbers</a></strong> and CTS packages for <strong><a
+        href="{@docRoot}compatibility/downloads.html#android-60">Android
+        6.0</a></strong> and <strong><a
+        href="{@docRoot}compatibility/downloads.html#android-51">Android
+        5.1</a></strong>.</p>
+
+<a href="{@docRoot}devices/halref/index.html">
+        <h4>HAL and Trad Fed Reference Files</h4></a>
+        <p>Both the <strong><a
+        href="{@docRoot}devices/halref/index.html">Hardware Abstraction Layer
+        (HAL)</a></strong> and <strong><a
+        href="{@docRoot}reference/packages.html">Trade Federation Testing
+        Suite</a></strong> reference files have been updated for Android 6.0.</p>
+
 <a href="{@docRoot}devices/tech/power/index.html">
         <h4>Doze and App Standby</h4></a>
         <p>New battery-saving features <em>Doze</em> and <em>App Standby</em>
@@ -64,7 +82,7 @@ devices meet compatibility requirements.
         interfaces in detail, including a list of <strong><a
         href="{@docRoot}devices/tech/security/authentication/km-features.html">Keymaster
         features</a></strong> and an <strong><a
-        href="{@docRoot}devices/tech/security/authentication/km-implementer-ref.html">implementer’s
+        href="{@docRoot}devices/tech/security/authentication/km-implementer-ref.html">implementer's
         reference</a></strong>.</p>
 
 <a href="{@docRoot}devices/storage/index.html">
@@ -82,7 +100,7 @@ devices meet compatibility requirements.
         <p>Instructions now exist for configuring <strong><a
         href="{@docRoot}devices/tech/config/runtime_perms.html">runtime permissions</a></strong>,
         <strong><a href="{@docRoot}devices/tech/config/voicemail.html">visual
-        voicemail</a></strong>, and Android’s new <strong><a
+        voicemail</a></strong>, and Android's new <strong><a
         href="{@docRoot}devices/tech/config/filesystem.html">file
         system</a></strong>. And carriers get <strong><a
         href="{@docRoot}devices/tech/config/carrier.html">custom
@@ -95,21 +113,6 @@ devices meet compatibility requirements.
         available, as well as instructions for <strong><a
         href="{@docRoot}devices/tech/dalvik/gc-debug.html">debugging garbage collection
         in ART</a></strong>.</p>
-
-<a href="{@docRoot}devices/media/index.html">
-        <h4>Media</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}devices/media/index.html">Media</a></strong> section now
-        contains descriptions of media resource manager dependencies for <strong><a 
-        href="{@docRoot}devices/media/oem.html">OEMs</a></strong> and <strong><a 
-        href="{@docRoot}devices/media/soc.html">SoC vendors</a></strong>.</p>
-
-<a href="{@docRoot}accessories/stylus.html">
-        <h4>Bluetooth Stylus</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}accessories/index.html">Accessories</a></strong>
-        section now explains how to implement a <strong><a
-        href="{@docRoot}accessories/stylus.html">Bluetooth Stylus</a></strong>.</p>
     </div>
 
     <div class="col-8">
