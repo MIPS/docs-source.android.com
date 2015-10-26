@@ -119,10 +119,10 @@ idle each time, until a maximum of a few hours of sleep time is reached. At all
 times, a device in Doze remains aware of motion and immediately leaves Doze
 if motion is detected.</p>
 
-<p>System services (such as telephony) and other preloaded services/apps are
-exempted from Doze by default. Users can also exempt specific applications from
-Doze in the Settings menu. By default, Doze is <b>disabled</b> in the Android
-Open Source Project (AOSP). For details on enabling Doze, see
+<p>System services (such as telephony) may be preloaded and exempted from Doze
+by default. Users can also exempt specific applications from Doze in the
+Settings menu. By default, Doze is <b>disabled</b> in the Android Open Source
+Project (AOSP). For details on enabling Doze, see
 <a href="#integrate-doze">Integrating Doze</a>.</p>
 
 <h3 id="doze-reqs">Doze requirements</h3>
@@ -167,8 +167,9 @@ restrictions are active:</p>
 <li>Apps not allowed network access.</li>
 <li>App wakelocks ignored.</li>
 <li>Alarms deferred. Excludes alarm clock alarms and alarms set using
-<code>setAndAllowWhileIdle()</code>. This exemption is intended for apps (such
-as Calendar) that must show event reminder notifications.</li>
+<code>setAndAllowWhileIdle()</code> (limited to 1 per 15 minutes per app while
+in Doze). This exemption is intended for apps (such as Calendar) that must show
+event reminder notifications.</li>
 <li>Wi-Fi scans not performed.</li>
 <li>SyncAdapter syncs and JobScheduler jobs deferred until the next maintenance
 window.</li>
