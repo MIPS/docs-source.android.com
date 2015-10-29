@@ -89,12 +89,6 @@ keeping track of time spent by different device components in different states.
 <p><a href="{@docRoot}devices/tech/power/index.html">&raquo; Power Information</a>
 </p>
 
-<h2 id="security-technical-information">Security</h2>
-<p>Android security comes with a variety of measures, including an application
-sandbox, SELinux, dm-verity, encryption, and more.</p>
-<p><a href="{@docRoot}devices/tech/security/index.html">&raquo; Security
-Information</a></p>
-
 <h2 id="tradefed-test-infrastructure">Trade Federation Testing Infrastructure
 </h2>
 <p>Trade Federation is a continuous test framework for running tests on

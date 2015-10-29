@@ -2,7 +2,7 @@ page.title=Security Enhancements in Android 4.2
 @jd:body
 
 <p>
-Android provides a multi-layered security model described in the <a href="{@docRoot}devices/tech/security/index.html">Android
+Android provides a multi-layered security model described in the <a href="{@docRoot}security/index.html">Android
 Security Overview</a>. Each update to Android includes dozens of
 security enhancements to protect users.  The following are some of the security
 enhancements introduced in Android 4.2:</p>

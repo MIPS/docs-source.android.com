@@ -174,7 +174,7 @@ team may drop the severity from "high" to "moderate."</p>
 <p>Whether a vulnerability that compromises the kernel is considered "high" or
 "critical" depends on the device and the version of Android. On devices with a
 TEE (or TrustZone) and <a
-href="http://source.android.com/devices/tech/security/verifiedboot/index.html">verified
+href="{@docRoot}security/verifiedboot/index.html">verified
 boot</a>, a kernel compromise is considered "high" because exploiting it won't
 allow permanently affecting the operation of the device unless a vulnerability is
 discovered in the TEE or verified boot implementation. In general, if the
@@ -251,7 +251,7 @@ href="https://developer.android.com/security_at_android_dot_com.txt">https://dev
 
 <p>Security information exists throughout the Android Open Source and Developer
 sites. Good places to start:<br>
-<a href="http://source.android.com/devices/tech/security/index.html">http://source.android.com/devices/tech/security/index.html</a><br>
+<a href="http://source.android.com/security/index.html">{@docRoot}security/index.html</a><br>
 <a href="https://developer.android.com/training/articles/security-tips.html">https://developer.android.com/training/articles/security-tips.html</a></p>
 
 <p>Community resource for discussion about Android security: <a
