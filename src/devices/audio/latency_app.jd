@@ -28,7 +28,7 @@ page.title=Audio Latency for App Developers
 <p>For the lowest audio latency possible, we recommend you use Android native audio
 based on OpenSL ES 1.0.1.</p>
 
-<h2 id=implementation>Implementation checklist</h2>
+<h2 id="implementation">Implementation checklist</h2>
 
 <p>To use Android native audio:</p>
 
@@ -78,9 +78,9 @@ and between the callback handlers and the rest of your application.
 
 </ol>
 
-<h2 id=supporting>Supporting documentation</h2>
+<h2 id="supporting">Supporting documentation</h2>
 
-<h3 id=opensl_es_1_0_1>OpenSL ES 1.0.1</h3>
+<h3 id="opensl_es_1_0_1">OpenSL ES 1.0.1</h3>
 
 <p>
 Use a PDF viewer to review the
@@ -99,7 +99,7 @@ Documents describing later versions of OpenSL ES, such as 1.1,
 are not relevant to Android.
 </p>
 
-<h3 id=opensl_es_for_android>OpenSL ES for Android</h3>
+<h3 id="opensl_es_for_android">OpenSL ES for Android</h3>
 
 <p>
 The document "OpenSL ES for Android" is provided in the NDK installation,
@@ -111,7 +111,7 @@ NDKroot/docs/Additional_library_docs/opensles/index.html
 </pre>
 
 <p>
-You’ll want to skim the whole
+You'll want to skim the whole
 document, but pay special attention to the "Performance" subsection of the
 "Programming notes" section.
 </p>
@@ -126,7 +126,7 @@ Section "Android extensions" describes Android-specific extensions
 that aren't included in base OpenSL ES 1.0.1.
 </p>
 
-<h3 id=relationship>Relationship with OpenSL ES 1.0.1</h3>
+<h3 id="relationship">Relationship with OpenSL ES 1.0.1</h3>
 
 <p>
 This Venn diagram shows the relationship between
@@ -138,9 +138,9 @@ Android native audio and OpenSL ES 1.0.1.
   <strong>Figure 1.</strong> Venn diagram
 </p>
 
-<h2 id=resources>Other resources</h2>
+<h2 id="resources">Other resources</h2>
 
-<h3 id=source_android_com>source.android.com</h3>
+<h3 id="source_android_com">source.android.com</h3>
 
 <p>
 The site <a href="{@docRoot}">source.android.com</a>
@@ -154,14 +154,14 @@ you may want to review it.  See the articles at
 <a href="latency.html">Audio Latency.</a>
 </p>
 
-<h3 id=android_ndk>android-ndk</h3>
+<h3 id="android_ndk">android-ndk</h3>
 
 <p>
 If you have questions about how to use Android native audio, you can ask at the discussion group
 <a href="https://groups.google.com/forum/#!forum/android-ndk">android-ndk.</a>
 </p>
 
-<h3 id=videos>Videos</h3>
+<h3 id="videos">Videos</h3>
 
 <dl>
 

@@ -119,7 +119,7 @@ but you can get similar results using "4."
 <li><code>adb shell dumpsys media.audio_flinger</code></li>
 <li>Look for a line in dumpsys output such as this:<br />
 <code>tee copied to /data/misc/media/20131010101147_2.wav</code>
-<br />This is a PCM .wav file.</br>
+<br />This is a PCM .wav file.
 </li>
 <li><code>adb pull</code> any <code>/data/misc/media/*.wav</code> files of interest;
 note that track-specific dump filenames do not appear in the dumpsys output,
@@ -140,6 +140,7 @@ if they are not of interest to your test.
 </li>
 <li>Track-specific dumps are only saved when the track is closed;
 you may need to force close an app in order to dump its track-specific data
+</li>
 <li>Do the <code>dumpsys</code> immediately after test;
 there is a limited amount of recording space available.</li>
 <li>To make sure you don't lose your dump files,
@@ -271,7 +272,7 @@ Notable points:
 <ul>
 <li><code>init</code> forks and execs <code>mediaserver</code>.</li>
 <li><code>init</code> detects the death of <code>mediaserver</code>, and re-forks as necessary.</li>
-<li><code>ALOGx</code> logging is not shown.
+<li><code>ALOGx</code> logging is not shown.</li>
 </ul>
 
 <p>
@@ -341,9 +342,9 @@ First, you need to add logs to your code.
 In <code>FastMixer</code> and <code>FastCapture</code> threads, use code such as this:
 </p>
 <pre>
-logWriter->log("string");
-logWriter->logf("format", parameters);
-logWriter->logTimestamp();
+logWriter-&gt;log("string");
+logWriter-&gt;logf("format", parameters);
+logWriter-&gt;logTimestamp();
 </pre>
 <p>
 As this <code>NBLog</code> timeline is used only by the <code>FastMixer</code> and
@@ -355,9 +356,9 @@ there is no need for mutual exclusion.
 In other AudioFlinger threads, use <code>mNBLogWriter</code>:
 </p>
 <pre>
-mNBLogWriter->log("string");
-mNBLogWriter->logf("format", parameters);
-mNBLogWriter->logTimestamp();
+mNBLogWriter-&gt;log("string");
+mNBLogWriter-&gt;logf("format", parameters);
+mNBLogWriter-&gt;logTimestamp();
 </pre>
 <p>
 For threads other than <code>FastMixer</code> and <code>FastCapture</code>,
