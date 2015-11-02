@@ -136,6 +136,18 @@ MIDI over BLE is always enabled, provided the device supports BLE.
 As this transport is in draft status, it is subject to change.
 </p>
 
+<p>
+The following changes should be applied to platform branch <code>android-6.0.0_r1</code>
+to improve stability of MIDI over BLE:
+</p>
+<ul>
+<li><a href="https://android-review.googlesource.com/#/c/179844/">179844</a></li>
+<li><a href="https://android-review.googlesource.com/#/c/179845/">179845</a></li>
+<li><a href="https://android-review.googlesource.com/#/c/179846/">179846</a></li>
+<li><a href="https://android-review.googlesource.com/#/c/179847/">179847</a></li>
+<li><a href="https://android-review.googlesource.com/#/c/179848/">179848</a></li>
+</ul>
+
 <h3 id="virtual">Virtual (inter-app)</h3>
 
 <p>
