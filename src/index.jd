@@ -43,6 +43,14 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}security/index.html">
+        <h4>Security Replaces Accessories in Navigation</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}security/index.html">Security</a></strong> section has replaced the <strong><a
+        href="{@docRoot}devices/accessories/index.html">Accessories</a></strong> section
+        in top navigation with a more prominent directory structure to
+        highlight the importance of security measures undertaken in Android.</p>
+
 <a href="{@docRoot}compatibility/index.html">
         <h4>6.0 Compatibility Definition Document</h4></a>
         <p>The <strong><a
@@ -82,11 +90,11 @@ devices meet compatibility requirements.
         href="{@docRoot}reference/packages.html">Trade Federation Testing
         Suite</a></strong> reference files have been updated for Android 6.0.</p>
 
-<a href="{@docRoot}devices/tech/security/enhancements/index.html">
+<a href="{@docRoot}security/enhancements/index.html">
         <h4>Android 6.0 Security Enhancements</h4></a>
         <p>The Android security team lists the latest measures undertaken to
         strengthen the operating system in the new <strong><a
-        href="{@docRoot}devices/tech/security/enhancements/enhancements60.html">Security
+        href="{@docRoot}security/enhancements/enhancements60.html">Security
         Enhancements in Android 6.0</a></strong>.</p>
 
 <a href="{@docRoot}devices/tech/power/index.html">
@@ -96,22 +104,6 @@ devices meet compatibility requirements.
         Management</a></strong> while the remaining <strong><a
         href="{@docRoot}devices/tech/power/index.html">Power</a></strong> section has
         been revised.</p>
-
-<a href="{@docRoot}devices/tech/security/authentication/index.html">
-        <h4>Authentication</h4></a>
-        <p>An entirely new <strong><a
-        href="{@docRoot}devices/tech/security/authentication/index.html">Authentication</a></strong>
-        section describes the <strong><a
-        href="{@docRoot}devices/tech/security/authentication/fingerprint-hal.html">Fingerprint</a></strong>,
-        <strong><a
-        href="{@docRoot}devices/tech/security/authentication/gatekeeper.html">Gatekeeper</a></strong>,
-        and <strong><a
-        href="{@docRoot}devices/tech/security/authentication/keymaster.html">Keymaster</a></strong>
-        interfaces in detail, including a list of <strong><a
-        href="{@docRoot}devices/tech/security/authentication/km-features.html">Keymaster
-        features</a></strong> and an <strong><a
-        href="{@docRoot}devices/tech/security/authentication/km-implementer-ref.html">implementer's
-        reference</a></strong>.</p>
     </div>
 
     <div class="col-8">
@@ -131,9 +123,11 @@ devices meet compatibility requirements.
         <p>Port the latest Android platform and
         create compelling devices that your customers want.</p>
 
-      <a href="{@docRoot}accessories/index.html">
-        <h4>Build Accessories</h4></a>
-        <p>Sometimes, a device can't do it all. Tap into Android's open accessory standard and build accessories to complement the wide variety of Android-powered devices.</p>
+      <a href="{@docRoot}security/index.html">
+        <h4>Make Secure</h4></a>
+	<p>Follow these examples and instructions to harden your Android
+          devices against malicious attacks. Find out how the Android security program
+          works and learn to implement the latest features.</p>
 
       <a href="{@docRoot}compatibility/index.html">
         <h4>Get Compatible</h4></a>

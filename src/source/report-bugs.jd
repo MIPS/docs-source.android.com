@@ -28,7 +28,7 @@ page.title=Report Bugs
 improve Android is to let us know about any problems you find with it.</p>
 <h2 id="report-issues">Report Issues</h2>
 <p class="note"><strong>Note:</strong> For security vulnerabilities, please see
-<a href="{@docRoot}devices/tech/security/overview/updates-resources.html#reporting-security-issues">Reporting Security Issues</a>. If you think you've found
+<a href="{@docRoot}security/overview/updates-resources.html#reporting-security-issues">Reporting Security Issues</a>. If you think you've found
 a security vulnerability, <em>please don't use the forms below</em>. Using a public form may
 allow anyone to see your report, which may put users at risk until the bug is
 fixed. Instead, please send an email detailing the issue to security@android.com.</p>

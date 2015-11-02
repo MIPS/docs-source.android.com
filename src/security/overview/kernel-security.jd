@@ -107,7 +107,7 @@ page.title=System and kernel security
 <p>Android uses Security-Enhanced
   Linux (SELinux) to apply access control policies and establish an environment of
   mandatory access control (mac). See <a
-href="{@docRoot}devices/tech/security/selinux/index.html">Validating
+href="{@docRoot}security/selinux/index.html">Validating
     Security-Enhanced Linux in
     Android</a> for details.</p>
 <h3 id="crypto">Cryptography</h3>
@@ -166,7 +166,7 @@ href="{@docRoot}devices/tech/security/selinux/index.html">Validating
   administrator and enforced by the operating system. Filesystem encryption
   requires the use of a user password, pattern-based screen lock is not supported.</p>
 <p>More details on implementation of filesystem encryption are available at <a
-href="/devices/tech/security/encryption/index.html">Encryption</a>.</p>
+href="{@docRoot}security/encryption/index.html">Encryption</a>.</p>
 <h3 id="password-protection">Password Protection</h3>
 <p>Android can be configured to verify a user-supplied password prior to providing
   access to a device. In addition to preventing unauthorized use of the device,

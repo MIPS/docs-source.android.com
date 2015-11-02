@@ -34,7 +34,7 @@ page.title=Security
   security that provides the flexibility required for an open platform, while
   providing protection for all users of the platform. For information about
   reporting security issues and the update process, 
-  see <a href="{@docRoot}devices/tech/security/overview/updates-resources.html">Security Updates and Resources</a>.</p>
+  see <a href="overview/updates-resources.html">Security Updates and Resources</a>.</p>
 <p>Android was designed with developers in mind. Security controls were designed
   to reduce the burden on developers. Security-savvy developers can easily work
   with and rely on flexible security controls.  Developers less familiar with

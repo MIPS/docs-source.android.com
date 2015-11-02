@@ -22,6 +22,56 @@
       </a>
     </div>
     <ul>
+  <li class="nav-section">
+  <div class="nav-section-header">
+      <a href="<?cs var:toroot ?>devices/accessories/index.html">
+        <span class="en">Accessories</span>
+      </a>
+    </div>
+    <ul>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/accessories/audio.html">
+            <span class="en">Audio Accessories</span>
+          </a>
+        </div>
+        <ul>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/accessories/headset/index.html">
+            <span class="en">Headset</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/accessories/headset/specification.html">Specification</a></li>
+          <li><a href="<?cs var:toroot ?>devices/accessories/headset/requirements.html">Requirements</a></li>
+          <li><a href="<?cs var:toroot ?>devices/accessories/headset/testing.html">Testing</a></li>
+        </ul>
+      </li>
+        </ul>
+      </li>
+  <li class="nav-section">
+  <div class="nav-section-header">
+      <a href="<?cs var:toroot ?>devices/accessories/custom.html">
+        <span class="en">Custom Accessories</span>
+      </a>
+    </div>
+    <ul>
+      <li class="nav-section">
+        <div class="nav-section-header"><a href="<?cs var:toroot ?>devices/accessories/protocol.html"><span class="en">AOA</span>
+        </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/accessories/aoa2.html">AOA 2.0</a></li>
+          <li><a href="<?cs var:toroot ?>devices/accessories/aoa.html">AOA 1.0</a></li>
+        </ul>
+        </li>
+        <div class="nav-section-header"><a href="<?cs var:toroot ?>devices/accessories/stylus.html"><span class="en">Stylus</span>
+        </a>
+        </div>
+       </ul>
+     </li>
+    </ul>
       <li class="nav-section">
       <div class="nav-section-header">
         <a href="<?cs var:toroot ?>devices/audio/index.html">
@@ -311,101 +361,6 @@
           </li>
         </ul>
       </li>
-
-      <li class="nav-section">
-        <div class="nav-section-header">
-            <a href="<?cs var:toroot ?>devices/tech/security/index.html">
-              <span class="en">Security</span>
-            </a>
-        </div>
-        <ul>
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/security/overview/index.html">
-                <span class="en">Overview</span>
-              </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/overview/kernel-security.html">Kernel security</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/overview/app-security.html">App security</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/overview/updates-resources.html">Updates and resources</a></li>
-              <li class="nav-section">
-                <div class="nav-section-header">
-                  <a href="<?cs var:toroot ?>devices/tech/security/enhancements/index.html">
-                    <span class="en">Enhancements</span>
-                  </a>
-                </div>
-                <ul>
-                  <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements60.html">Android 6.0</a></li>
-                  <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements50.html">Android 5.0</a></li>
-                  <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements44.html">Android 4.4</a></li>
-                  <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements43.html">Android 4.3</a></li>
-                  <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements42.html">Android 4.2</a></li>
-                  <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements41.html">Android 4.1</a></li>
-                </ul>
-              </li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/overview/acknowledgements.html">Acknowledgements</a></li>
-            </ul>
-          </li>
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/security/implement.html">
-                <span class="en">Implementation</span>
-              </a>
-            </div>
-            <ul>
-            <li class="nav-section">
-              <div class="nav-section-header">
-                <a href="<?cs var:toroot ?>devices/tech/security/authentication/index.html">
-                  <span class="en">Authentication</span>
-                </a>
-              </div>
-              <ul>
-                <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/fingerprint-hal.html">Fingerprint HAL</a></li>
-                <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/gatekeeper.html">Gatekeeper</a></li>
-                <li class="nav-section">
-                  <div class="nav-section-header">
-                    <a href="<?cs var:toroot ?>devices/tech/security/authentication/keymaster.html">
-                      <span class="en">Keymaster</span>
-                    </a>
-                  </div>
-                  <ul>
-                    <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/km-features.html">Features</a></li>
-                    <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/km-implementer-ref.html">Implementer's Reference</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="<?cs var:toroot ?>devices/tech/security/encryption/index.html">Full Disk Encryption</a></li>
-            <li class="nav-section">
-              <div class="nav-section-header">
-                <a href="<?cs var:toroot ?>devices/tech/security/selinux/index.html">
-                  <span class="en">SELinux</span>
-                </a>
-              </div>
-              <ul>
-                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/concepts.html">Concepts</a></li>
-                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/implement.html">Implementation</a></li>
-                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/customize.html">Customization</a></li>
-                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/validate.html">Validation</a></li>
-              </ul>
-            </li>
-              <li class="nav-section">
-                <div class="nav-section-header">
-                  <a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/index.html">
-                    <span class="en">Verified Boot</span>
-                  </a>
-                </div>
-                <ul>
-                  <li><a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/verified-boot.html">Verifying boot</a></li>
-                  <li><a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/dm-verity.html">Implementing dm-verity</a></li>
-                </ul>
-              </li>
-
-          </ul>
-        </li>
-      </ul>
-
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/index.html">

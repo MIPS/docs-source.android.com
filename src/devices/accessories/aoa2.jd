@@ -18,7 +18,7 @@ page.title=Android Open Accessory Protocol 2.0
 -->
 <p>This document describes changes in the Android Open Accessory (AOA) protocol
 since its initial release and supplements
-<a href="{@docRoot}accessories/aoa.html">AOA 1.0 documentation</a>. AOAv2
+<a href="aoa.html">AOA 1.0 documentation</a>. AOAv2
 adds the following features:</p>
 
 <ul>
@@ -246,7 +246,7 @@ accessory to the Android device.</li>
 
 <h2 id="interoperability-with-aoa-10-features">Interoperability with AOAv1</h2>
 
-<p>The original protocol (<a href="{@docRoot}accessories/aoa.html">AOAv1</a>)
+<p>The original protocol (<a href="aoa.html">AOAv1</a>)
 provides support for an Android application to communicate directly with a USB
 host (accessory) over USB. AOAv2 continues this support and adds new features
 to allow the accessory to communicate with the Android operating system itself
