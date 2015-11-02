@@ -31,11 +31,11 @@ department. This is possible with the introduction of <a href="multi-user.html">
 users</a>, <a href="managed-profiles.html">managed profiles</a>, and enterprise
 mobility management (EMM) applications, as well as enhancements to default
 <a
-href="{@docRoot}devices/tech/security/encryption/index.html">encryption</a>,
+href="{@docRoot}security/encryption/index.html">encryption</a>,
 <a
-href="{@docRoot}devices/tech/security/verifiedboot/index.html">verified
+href="{@docRoot}security/verifiedboot/index.html">verified
 boot</a>, and <a
-href="{@docRoot}devices/tech/security/selinux/index.html">SELinux</a>.</p>
+href="{@docRoot}security/selinux/index.html">SELinux</a>.</p>
 
 <p>With these enhancements, either users or their IT departments may create
 managed profiles that separate corporate employer data from personal user

@@ -60,9 +60,9 @@ that can detect the connection of your USB accessory and establish communication
 <ul>
 <li>Select a hardware platform or build a hardware device that can support USB
 host mode.</li>
-<li>Review <a href="{@docRoot}accessories/protocol.html">AOA</a> specifications to
+<li>Review <a href="protocol.html">AOA</a> specifications to
 understand how to implement this protocol on your accessory hardware.
-Implementing <a href="{@docRoot}accessories/aoa2.html">AOAv2</a> is
+Implementing <a href="aoa2.html">AOAv2</a> is
 recommended for all new Android USB accessories.</li>
 <li>Review the ADK 2012
 <a href="http://developer.android.com/tools/adk/adk2.html#src-download">firmware
@@ -126,7 +126,7 @@ accessory must power the bus.</p>
 <a href="#next-steps_0">next steps for USB connections.</a></p>
 
 <p>AOAv2 also supports the
-<a href="{@docRoot}accessories/aoa2.html#hid-support">human interface device</a>
+<a href="aoa2.html#hid-support">human interface device</a>
 (HID) protocol through a USB connection, enabling accessories such as audio
 docks to provide hardware play back controls such as pause, fast-forward or
 volume buttons.</p>

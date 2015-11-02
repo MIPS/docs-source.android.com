@@ -31,7 +31,7 @@ an Android-powered device. Accessories should carry out the following steps:</p>
 
 <p class="note"><strong>Note:</strong> When developing a new accessory that
 connects to an Android device over USB, use
-<a href="{@docRoot}accessories/aoa2.html">AOAv2</a>.</p>
+<a href="aoa2.html">AOAv2</a>.</p>
 
 <h2 id="wait-for-and-detect-connected-devices">Wait for and detect connected
 devices</h2>
