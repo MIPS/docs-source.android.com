@@ -49,12 +49,12 @@ declares the audio devices present on your product. For an example, see the file
 Nexus audio hardware in <code>device/samsung/tuna/audio/audio_policy.conf</code>. Also, see the
 audio header files for a reference of the properties that you can define.</p>
 
-<p>In the Android M release and later, the paths are:<br>
-<code>system/media/audio/include/system/audio.h</code><br>
+<p>In the Android M release and later, the paths are:<br />
+<code>system/media/audio/include/system/audio.h</code><br />
 <code>system/media/audio/include/system/audio_policy.h</code></p>
 
-<p>In Android 5.1 and earlier, the paths are:<br>
-<code>system/core/include/system/audio.h</code><br>
+<p>In Android 5.1 and earlier, the paths are:<br />
+<code>system/core/include/system/audio.h</code><br />
 <code>system/core/include/system/audio_policy.h</code></p>
 
 <h3 id="multichannel">Multi-channel support</h3>
@@ -263,7 +263,7 @@ processing with the exception of voice recognition (<code>VOICE_RECOGNITION</cod
 <li>"flat" frequency response (+/- 3dB) from 100Hz to 4kHz</li>
 <li>close-talk config: 90dB SPL reads RMS of 2500 (16bit samples)</li>
 <li>level tracks linearly from -18dB to +12dB relative to 90dB SPL</li>
-<li>THD < 1% (90dB SPL in 100 to 4000Hz range)</li>
+<li>THD &lt; 1% (90dB SPL in 100 to 4000Hz range)</li>
 <li>8kHz sampling rate (anti-aliasing)</li>
 <li>Effects/pre-processing must be disabled by default</li>
 </ul>
@@ -292,7 +292,7 @@ processing with the exception of voice recognition (<code>VOICE_RECOGNITION</cod
 <ul>
 <li>Android documentation for
 <a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">
-audiofx package</a>
+audiofx package</a></li>
 
 <li>Android documentation for
 <a href="http://developer.android.com/reference/android/media/audiofx/NoiseSuppressor.html">
