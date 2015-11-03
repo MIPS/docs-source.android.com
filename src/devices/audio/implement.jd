@@ -119,7 +119,7 @@ contains the following line:
 LOCAL_MODULE := audio.primary.&lt;device_name&gt;
 </pre>
 
-<p>Notice your library must be named <code>audio_primary.&lt;device_name&gt;.so</code> so
+<p>Notice your library must be named <code>audio.primary.&lt;device_name&gt;.so</code> so
 that Android can correctly load the library. The "<code>primary</code>" portion of this filename
 indicates that this shared library is for the primary audio hardware located on the device. The
 module names <code>audio.a2dp.&lt;device_name&gt;</code> and
@@ -155,7 +155,7 @@ corresponding XML feature file into your product. For example, in your product's
 PRODUCT_COPY_FILES := ...
 
 PRODUCT_COPY_FILES += \
-frameworks/native/data/etc/android.android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
+frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
 </pre>
 
 </li>
