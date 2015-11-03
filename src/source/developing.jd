@@ -38,9 +38,6 @@ command you can download files from multiple repositories into your local
 working directory.</p>
 <p><strong>Gerrit</strong> is a web-based code review system for projects that use git. Gerrit encourages more centralized use of Git by allowing all authorized users to submit changes, which are automatically merged if they pass code review. In addition, Gerrit makes reviewing easier by displaying changes side by side in-browser and enabling inline comments. </p>
 <h2 id="basic-workflow">Basic Workflow</h2>
-<div style="float:right">
-  <img src="{@docRoot}images/submit-patches-0.png" alt="basic workflow diagram">
-</div>
 <div class="figure" style="width:200px">
   <img src="{@docRoot}images/submit-patches-0.png" alt="basic workflow diagram" height="153px" />
   <p class="img-caption">
@@ -101,7 +98,7 @@ For information about using repo to download source, see <a href="{@docRoot}sour
 <pre><code>$ repo branches
 </code></pre>
 <p>The name of the current branch will be preceded by an asterisk.</p>
-<p class="note"><strong>Note:</strong> A bug might be causing <code>repo sync</code> to reset the local topic branch. 
+<p class="note"><strong>Note:</strong> A bug might be causing <code>repo sync</code> to reset the local topic branch.
 If <code>git branch</code> shows * (no branch) after you run <code>repo sync</code>, then run <code>git checkout</code> again.</p>
 <h2 id="staging-files">Staging files</h2>
 <p>By default, Git notices but does not track the changes you make in a project. In order to tell git to preserve your changes, you must mark them for inclusion in a commit. This is also called "staging". </p>
@@ -117,7 +114,7 @@ If <code>git branch</code> shows * (no branch) after you run <code>repo sync</co
 <pre><code>$ repo diff
 </code></pre>
 <p>The <code>repo diff</code> command shows every local edit that you have made that would <em>not</em> go into the commit, if you were to commit right now. To see every edit that would go into the commit if you were to commit right now, you need a Git command, <code>git diff</code>. Before running it, be sure you are in the project directory:</p>
-<pre><code>$ cd ~/WORKING_DIRECTORY/PROJECT  
+<pre><code>$ cd ~/WORKING_DIRECTORY/PROJECT
 $ git diff --cached
 </code></pre>
 <h2 id="committing-changes">Committing changes</h2>
@@ -141,7 +138,7 @@ $ git diff --cached
 <li>
 <p>Change into the relevant project directory, run <code>git add</code> and <code>git commit</code> for the files in question, and then "rebase" the changes. For example:</p>
 <pre><code>$ git add .
-$ git commit 
+$ git commit
 $ git rebase --continue
 </code></pre>
 </li>
