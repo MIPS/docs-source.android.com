@@ -114,8 +114,9 @@ the <code>com.android.cts.videoperf.VideoEncoderDecoderTest</code> and
     <li>Run the tests first using cts-tradefed. Given the
 variability of Android performance, it is recommended the tests are run
 multiple times to get more accurate minimum and maximum values.
-    <li>Use the provided <code>get_achievable_rates.py</code> script to
-generate the XML file.
+    <li>Use the provided <a
+href="https://android.googlesource.com/platform/cts/+/marshmallow-cts-dev/tools/cts-media/get_achievable_rates.py">get_achievable_rates.py</a>
+script to generate the XML file.
     <li>Place the XML file at: <code>/etc/media_codecs_performance.xml</code><br>
 This is usually done by placing the XML file in the device project
 (device/<em>&lt;vendor&gt;</em>/<em>&lt;product&gt;</em>) and adding a
