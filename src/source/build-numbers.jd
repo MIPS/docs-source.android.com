@@ -183,10 +183,82 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Supported devices</th>
 </tr>
 <tr>
+  <td>MDB08M</td>
+  <td>android-6.0.0_r26</td>
+  <td>Marshmallow</td>
+  <td>Nexus 5X, Nexus 6P</td>
+</tr>
+<tr>
+  <td>MDB08L</td>
+  <td>android-6.0.0_r25</td>
+  <td>Marshmallow</td>
+  <td>Nexus 5X, Nexus 6P</td>
+</tr>
+<tr>
+  <td>MDB08K</td>
+  <td>android-6.0.0_r24</td>
+  <td>Marshmallow</td>
+  <td>Nexus 6P</td>
+</tr>
+<tr>
+  <td>MDB08I</td>
+  <td>android-6.0.0_r23</td>
+  <td>Marshmallow</td>
+  <td>Nexus 5X</td>
+</tr>
+<tr>
+  <td>MDA89E</td>
+  <td>android-6.0.0_r12</td>
+  <td>Marshmallow</td>
+  <td>Nexus 5X</td>
+</tr>
+<tr>
+  <td>MDA89D</td>
+  <td>android-6.0.0_r11</td>
+  <td>Marshmallow</td>
+  <td>Nexus 6P</td>
+</tr>
+<tr>
+  <td>MRA58V</td>
+  <td>android-6.0.0_r5</td>
+  <td>Marshmallow</td>
+  <td>Nexus 7 (flo/deb)</td>
+</tr>
+<tr>
+  <td>MRA58U</td>
+  <td>android-6.0.0_r4</td>
+  <td>Marshmallow</td>
+  <td>Nexus 7 (flo)</td>
+</tr>
+<tr>
+  <td>MRA58N</td>
+  <td>android-6.0.0_r2</td>
+  <td>Marshmallow</td>
+  <td>Nexus 5, Nexus 6, Nexus 7 (flo/deb), Nexus 9 (volantis/volantisg), Nexus Player</td>
+</tr>
+<tr>
   <td>MRA58K</td>
   <td>android-6.0.0_r1</td>
   <td>Marshmallow</td>
   <td>Nexus 5, Nexus 6, Nexus 7 (flo/deb), Nexus 9 (volantis/volantisg), Nexus Player</td>
+</tr>
+<tr>
+  <td>LYZ28N</td>
+  <td>android-5.1.1_r28</td>
+  <td>Lollipop</td>
+  <td>Nexus 6 (For T-Mobile ONLY)</td>
+</tr>
+<tr>
+  <td>LMY48Y</td>
+  <td>android-5.1.1_r26</td>
+  <td>Lollipop</td>
+  <td>Nexus 6</td>
+</tr>
+<tr>
+  <td>LMY48X</td>
+  <td>android-5.1.1_r25</td>
+  <td>Lollipop</td>
+  <td>Nexus 6, Nexus 7 (deb), Nexus 9 (volantisg), Nexus 10</td>
 </tr>
 <tr>
   <td>LMY48W</td>
