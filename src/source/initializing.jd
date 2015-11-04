@@ -205,15 +205,20 @@ href="http://support.apple.com/kb/dl1572">Java JDK</a>.</p>
 
 <h3 id="master-branch">Master branch</h3>
 <p>To build the latest source in a Mac OS environment, you will need an Intel/x86
-machine running Mac OS X v10.8 (Mountain Lion) or later, along with Xcode
+machine running Mac OS X v10.10 (Yosemite) or later, along with Xcode
 4.5.2 or later including the Command Line Tools.</p>
 
-<h3 id="branch-50x-and-all-earlier-branches">Branch 5.0.x and earlier branches</h3>
+<h3 id="branch-60x">Branch 6.0.x</h3>
+<p>To build 6.0.x and earlier source in a Mac OS environment, you will need an Intel/x86
+machine running Mac OS X v10.10 (Yosemite), along with Xcode
+4.5.2 and Command Line Tools.</p>
+
+<h3 id="branch-50x">Branch 5.0.x</h3>
 <p>To build 5.0.x and earlier source in a Mac OS environment, you will need an Intel/x86
 machine running Mac OS X v10.8 (Mountain Lion), along with Xcode
 4.5.2 and Command Line Tools.</p>
 
-<h3 id="branch-44x-and-all-earlier-branches">Branch 4.4.x and earlier branches</h3>
+<h3 id="branch-44x">Branch 4.4.x</h3>
 <p>To build 4.2.x and earlier source in a Mac OS environment, you will need an Intel/x86
 machine running Mac OS X v10.6 (Snow Leopard) or Mac OS X v10.7 (Lion), along with Xcode
 4.2 (Apple's Developer Tools). Although Lion does not come with a JDK, it should
@@ -221,7 +226,7 @@ install automatically when you attempt to build the source.</p>
 <p>The remaining sections for Mac OS apply only to those who wish to build
 earlier branches.</p>
 
-<h3 id="branch-40x-and-all-earlier-branches">Branch 4.0.x and all earlier branches</h3>
+<h3 id="branch-40x">Branch 4.0.x and all earlier branches</h3>
 <p>To build android-4.0.x and earlier branches in a Mac OS environment, you need an
 Intel/x86 machine running Mac OS X v10.5 (Leopard) or Mac OS X v10.6 (Snow Leopard). You
 will need the Mac OS X v10.5 SDK.</p>
