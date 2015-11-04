@@ -408,3 +408,21 @@ resistor.</p>
     <td>Line In (high) &gt; 5 Kohm</td>
  </tr>
 </table>
+
+ <table>
+ <tr>
+    <th style="width:40%">4-Segment Plug Detection Resistance (between 3rd and 4th segment)</th>
+    <th style="width:20%">Device Support</th>
+    <th style="width:40%">Notes</th>
+ </tr>
+ <tr>
+    <td>4-Segment Plug Threshold</td>
+    <td>Required</td>
+    <td>Resistance &gt;= 100 ohms</td>
+ </tr>
+ <tr>
+    <td>3-Segment Plug Threshold</td>
+    <td>Required</td>
+    <td>Resistance &lt; 100 ohms</td>
+ </tr>
+</table>
