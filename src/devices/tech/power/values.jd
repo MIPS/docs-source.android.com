@@ -238,9 +238,10 @@ sample file in AOSP, see
   <td>cpu.active</td>
   <td>Additional power used by CPUs when running at different speeds.</td>
   <td>100mA, 120mA, 140mA, 160mA, 200mA</td>
-  <td>Set the max speed in the kernel to each of the allowed speeds and peg the
-  CPU at that speed. The number of entries here correspond to the number of
-  entries in cpu.speeds, in the same order.</td>
+  <td>Value represents the power used by the CPU rails when running at different
+  speeds. Set the max speed in the kernel to each of the allowed speeds and peg
+  the CPU at that speed. The number and order of entries correspond to the
+  number and order of entries in cpu.speeds.</td>
 </tr>
 
 <tr>
