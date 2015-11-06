@@ -55,7 +55,6 @@
           </div>
           <ul>
             <li><a href="<?cs var:toroot ?>source/using-repo.html">Using Repo</a></li>
-            <li><a href="<?cs var:toroot ?>source/using-eclipse.html">Using Eclipse</a></li>
             <li><a href="<?cs var:toroot ?>source/git-resources.html">Learning Git</a></li>
             <li><a href="<?cs var:toroot ?>source/add-device.html">Adding a New Device</a></li>
             <li><a href="<?cs var:toroot ?>source/64-bit-builds.html">Understanding 64-bit Builds</a></li>
