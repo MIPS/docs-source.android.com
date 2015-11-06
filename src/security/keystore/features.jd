@@ -24,7 +24,7 @@ page.title=Features
   </div>
 </div>
 
-<p>This page contains information about the features of <a href="keymaster.html">Keymaster</a> 1.0.</p>
+<p>This page contains information about the features of <a href="index.html">Keymaster</a> 1.0.</p>
 
 <h2 id=cryptographic_primitives>Cryptographic primitives</h2>
 

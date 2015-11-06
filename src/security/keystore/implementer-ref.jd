@@ -17,7 +17,7 @@ page.title=Implementer's Reference
     limitations under the License.
 -->
 
-<p>This page provides details to assist implementers of <a href="keymaster.html">Keymaster</a> HALs. It
+<p>This page provides details to assist implementers of <a href="index.html">Keymaster</a> HALs. It
 covers each tag and each function in the API.</p>
 
 <h2 id=authorization_tags>Authorization tags</h2>
