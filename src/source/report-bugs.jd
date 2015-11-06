@@ -27,14 +27,15 @@ page.title=Report Bugs
 <p>Thank you for your interest in Android! One of the best ways you can help us
 improve Android is to let us know about any problems you find with it.</p>
 <h2 id="report-issues">Report Issues</h2>
-<p class="note"><strong>Note:</strong> For security vulnerabilities, please see
-<a href="{@docRoot}security/overview/updates-resources.html#reporting-security-issues">Reporting Security Issues</a>. If you think you've found
-a security vulnerability, <em>please don't use the forms below</em>. Using a public form may
-allow anyone to see your report, which may put users at risk until the bug is
-fixed. Instead, please send an email detailing the issue to security@android.com.</p>
+<p class="note"><strong>Note:</strong> For security vulnerabilities, please use
+the AOSP bug tracker <a
+href="https://code.google.com/p/android/issues/entry?template=Security%20bug%20report">Security
+bug report</a> template. See <a
+href="{@docRoot}security/overview/updates-resources.html#report-issues">Reporting
+Security Issues</a> for additional details.</p>
 <p>Here's how to report <strong>non-security</strong> bugs:</p>
 <ul>
-<li> 
+<li>
 <p><a href="https://code.google.com/p/android/issues/advsearch">Search for
 your bug</a> to see if anyone has already reported it. Don't forget to
 search for all issues, not just open ones, as your issue might already
