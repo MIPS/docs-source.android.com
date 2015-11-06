@@ -88,6 +88,3 @@ dm-verity: device-mapper block integrity checking target</a><br/>
 Chromium Projects - Verified Boot</a><br/>
 <a
 href="http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/device-mapper/verity.txt">Linux Kernel Documentation: verity.txt</a></p>
-
-<p>For additional assistance, contact
-<a href="mailto:security@android.com">security@android.com</a>.</p>

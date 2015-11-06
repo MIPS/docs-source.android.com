@@ -141,7 +141,10 @@ email address for managing security incidents.</p>
 it.</li>
 <li>If you become aware of a security issue affecting Android OS or Android
 devices from multiple OEMs, you <strong>should</strong> contact the Android
-Security Team at <em>security@android.com</em>.</li>
+Security Team with a bug filed through the AOSP bug tracker <a
+href="https://code.google.com/p/android/issues/entry?template=Security%20bug%20report">Security
+bug report</a> template.</p>
+.</li>
 </ol>
 
 <h2 id="prod-implement">Product implementation</h2>

@@ -98,8 +98,3 @@ indicates that device needs a special domain
 <p><a href="https://www.nsa.gov/research/_files/publications/selinux_configuring_policy.pdf">https://www.nsa.gov/research/_files/publications/selinux_configuring_policy.pdf</a></p>
 
 <p><a href="https://www.gnu.org/software/m4/manual/index.html">https://www.gnu.org/software/m4/manual/index.html</a></p>
-
-<h2 id=help>Help</h2>
-
-<p>Over time, Android intends to support common manufacturer additions in its
-default SELinux policy. For more information, contact <a href="mailto:security@android.com">security@android.com</a>.</p>
