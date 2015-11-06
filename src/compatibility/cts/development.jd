@@ -31,25 +31,11 @@ name, for example<code>-b android-5.0_r2</code>, when issuing the <code>repo
 init</code> command. This assures your CTS changes will be included in the
 next CTS release and beyond.</p>
 
-<h2 id="setting-up-eclipse">Setting up Eclipse</h2>
-
-<p>Follow the <a href="{@docRoot}source/using-eclipse.html">instructions</a>
-to setup Eclipse but execute the following command to generate the
-<code>.classpath</code> file rather than copying the one from the development
-project:</p>
-<pre><code>cd /path/to/android/root
-./cts/development/ide/eclipse/genclasspath.sh &gt; .classpath
-chmod u+w .classpath
-</code></pre>
-
-<p>This <code>.classpath</code> file will contain both the Android framework
-packages and the CTS packages.</p>
-
 <h2 id="building-and-running-cts">Building and running CTS</h2>
 
 <p>Execute the following commands to build CTS and start the interactive
 CTS console:</p>
-<p class="note"><strong>Note:</strong> You may supply one of these other values 
+<p class="note"><strong>Note:</strong> You may supply one of these other values
 for <code>TARGET_PRODUCT</code> to build for different architectures:
 <code>aosp_x86_64</code> or <code>aosp_mips</code></p>
 <pre><code>cd <em>/path/to/android/root</em>
