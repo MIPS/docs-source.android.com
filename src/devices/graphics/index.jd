@@ -132,7 +132,7 @@ Composer HAL</a> section for more information.</p>
 
 <p>The graphics memory allocator is needed to allocate memory that is requested
 by image producers. See the <a
-href="{@docRoot}devices/graphics.html#gralloc">Gralloc HAL</a> section for more
+href="{@docRoot}devices/graphics/architecture.html#gralloc_HAL">Gralloc HAL</a> section for more
 information.</p>
 
 <h2 id="data_flow">Data flow</h2>
