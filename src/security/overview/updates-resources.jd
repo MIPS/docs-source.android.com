@@ -31,9 +31,10 @@ with Android devices.</p>
 
 <p>The Android security team finds security vulnerabilities through internal
 research and also responds to bugs reported by third parties. Sources of
-external bugs include issues reported through the <a
-href="https://code.google.com/p/android/issues/list">Android Open Source
-Project (AOSP) bug tracker</a>, published and pre-published academic research,
+external bugs include issues reported through the Android Open Source
+Project (AOSP) <a
+href="https://code.google.com/p/android/issues/entry?template=Security%20bug%20report">Security
+bug report</a> template, published and pre-published academic research,
 upstream open source project maintainers, notifications from our device
 manufacturer partners, and publicly disclosed issues posted on blogs or social
 media.</p>
@@ -50,13 +51,6 @@ eventually be made visible after the issue is evaluated or resolved. If you
 plan to submit a patch or Compatibility Test Suite (CTS) test to resolve a
 security issue, please attach it to the bug report and wait for a response
 before uploading the code to AOSP.</p>
-
-<p>If you need to reach the Android security team for a purpose other than
-reporting a vulnerability, please contact <a
-href="mailto:security@android.com">security@android.com</a>. The Android
-security team has a <a
-href="https://developer.android.com/security_at_android_dot_com.txt">PGP
-key</a> if you need to encrypt your message.</p>
 
 <h2 id=triaging_bugs>Triaging bugs</h2>
 
@@ -245,13 +239,9 @@ feature to warn users about applications that may be potentially harmful.</p>
 <p>Information for Android application developers: <a
 href="https://developer.android.com">https://developer.android.com</a></p>
 
-<p>The Android security team can be reached at <a
-href="mailto:security@android.com">security@android.com</a>. Our PGP key: <a
-href="https://developer.android.com/security_at_android_dot_com.txt">https://developer.android.com/security_at_android_dot_com.txt</a></p>
-
 <p>Security information exists throughout the Android Open Source and Developer
 sites. Good places to start:<br>
-<a href="http://source.android.com/security/index.html">{@docRoot}security/index.html</a><br>
+<a href="https://source.android.com/security/index.html">https://source.android.com/security/index.html</a><br>
 <a href="https://developer.android.com/training/articles/security-tips.html">https://developer.android.com/training/articles/security-tips.html</a></p>
 
 <p>Community resource for discussion about Android security: <a

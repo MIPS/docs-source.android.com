@@ -26,9 +26,11 @@ page.title=Android Security Acknowledgements
 
 <p>The Android Security Team would like to thank the following people and
 parties for helping to improve Android security. They have done this either by
-finding and responsibly reporting security vulnerabilities to <a
-href="mailto:security@android.com">security@android.com</a> or by committing code
-that has a positive impact on Android security, including code that qualifies
+finding and responsibly reporting security vulnerabilities through the AOSP bug
+tracker <a
+href="https://code.google.com/p/android/issues/entry?template=Security%20bug%20report">Security
+bug report</a> template or by committing code that has a positive
+impact on Android security, including code that qualifies
 for the <a href="https://www.google.com/about/appsecurity/patch-rewards/">Patch
 Rewards</a> program.</p>
 
@@ -332,7 +334,3 @@ alt="Patch Symbol" title="This person contributed code that improved Android sec
 <p>Charlie Miller (<a href="https://twitter.com/0xcharlie">@0xcharlie</a>)</p>
 
 </div>
-
-<br>
-<p><small>If you have reported a vulnerability prior to 2014 and want to be
-included on this list, or to report a vulnerability in Android, contact <a href="mailto:security@android.com">security@android.com</a></small></p>
