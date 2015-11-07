@@ -75,9 +75,6 @@ href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">Java JD
 Java 6: for Gingerbread through KitKat<br/>
 Java 5: for Cupcake through Froyo</p>
 
-<p class="note"><strong>Note:</strong> The <code>lunch</code> command in the build step will ensure that the Sun JDK is
-used instead of any previously installed JDK.</p>
-
 <h3 id="installing-required-packages-ubuntu-1404">Installing required packages (Ubuntu 14.04)</h3>
 <p>You will need a 64-bit version of Ubuntu. Ubuntu 14.04 is recommended.</p>
 <pre><code>$ sudo apt-get install git-core gnupg flex bison gperf build-essential \
