@@ -1,4 +1,4 @@
-page.title=Keymaster
+page.title=Hardware-backed Keystore
 @jd:body
 
 <!--
@@ -29,7 +29,7 @@ offers an opportunity for Android devices to provide hardware-backed, strong
 security services to the Android OS, to platform services, and even to
 third-party apps.</p>
 
-<p>Keymaster has been <a href="km-features.html">significantly enhanced</a>
+<p>Keymaster has been <a href="features.html">significantly enhanced</a>
 in Android 6.0 with the addition of symmetric cryptographic primitives,
 AES and HMAC, and the addition of an access control
 system for hardware-backed keys. Access controls are specified during key
@@ -37,7 +37,7 @@ generation and enforced for the lifetime of the key. Keys can be restricted to
 be usable only after the user has authenticated, only at a specific usage
 velocity, and only for specified purposes or with specified cryptographic
 parameters. For more information, please see
-the <a href="km-implementer-ref.html">Implementer's Reference</a>.</p>
+the <a href="implementer-ref.html">Implementer's Reference</a>.</p>
 
 <p>Before Keymaster 1.0, Android already had a simple, hardware-backed crypto
 services API: Keymaster versions 0.2 and 0.3, which provided only digital
