@@ -109,6 +109,7 @@
               </a>
             </div>
             <ul>
+              <li><a href="<?cs var:toroot ?>devices/audio/midi_arch.html">MIDI Architecture</a></li>
               <li><a href="<?cs var:toroot ?>devices/audio/midi_test.html">MIDI Test Procedure</a></li>
             </ul>
           <li><a href="<?cs var:toroot ?>devices/audio/usb.html">USB Digital Audio</a></li>
