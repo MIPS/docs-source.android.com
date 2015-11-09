@@ -368,6 +368,7 @@ Adapter from micro-USB to HDMI.
 <dd>
 Sony/Philips Digital Interface Format. Interconnect for uncompressed PCM. For
 details, refer to <a href="http://en.wikipedia.org/wiki/S/PDIF">S/PDIF</a>.
+S/PDIF is the consumer grade variant of <a href="https://en.wikipedia.org/wiki/AES3">AES3</a>.
 </dd>
 
 <dt>Thunderbolt</dt>
