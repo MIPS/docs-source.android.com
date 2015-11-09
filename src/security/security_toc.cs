@@ -15,99 +15,98 @@
 -->
 <?cs # Table of contents for security?>
 <ul id="nav">
-  <!-- Security -->
+  <li class="nav-section">
+    <div class="nav-section-header">
+        <a href="<?cs var:toroot ?>security/index.html">
+          <span class="en">Overview</span>
+        </a>
+    </div>
+    <ul>
+      <li><a href="<?cs var:toroot ?>security/overview/kernel-security.html">Kernel Security</a></li>
+      <li><a href="<?cs var:toroot ?>security/overview/app-security.html">App Security</a></li>
+      <li><a href="<?cs var:toroot ?>security/overview/updates-resources.html">Updates and Resources</a></li>
       <li class="nav-section">
         <div class="nav-section-header">
-            <a href="<?cs var:toroot ?>security/index.html">
-              <span class="en">Security</span>
-            </a>
+          <a href="<?cs var:toroot ?>security/enhancements/index.html">
+            <span class="en">Enhancements</span>
+          </a>
         </div>
         <ul>
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>security/overview/index.html">
-                <span class="en">Overview</span>
-              </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>security/overview/kernel-security.html">Kernel security</a></li>
-              <li><a href="<?cs var:toroot ?>security/overview/app-security.html">App security</a></li>
-              <li><a href="<?cs var:toroot ?>security/overview/updates-resources.html">Updates and resources</a></li>
-              <li class="nav-section">
-                <div class="nav-section-header">
-                  <a href="<?cs var:toroot ?>security/enhancements/index.html">
-                    <span class="en">Enhancements</span>
-                  </a>
-                </div>
-                <ul>
-                  <li><a href="<?cs var:toroot ?>security/enhancements/enhancements60.html">Android 6.0</a></li>
-                  <li><a href="<?cs var:toroot ?>security/enhancements/enhancements50.html">Android 5.0</a></li>
-                  <li><a href="<?cs var:toroot ?>security/enhancements/enhancements44.html">Android 4.4</a></li>
-                  <li><a href="<?cs var:toroot ?>security/enhancements/enhancements43.html">Android 4.3</a></li>
-                  <li><a href="<?cs var:toroot ?>security/enhancements/enhancements42.html">Android 4.2</a></li>
-                  <li><a href="<?cs var:toroot ?>security/enhancements/enhancements41.html">Android 4.1</a></li>
-                </ul>
-              </li>
-              <li><a href="<?cs var:toroot ?>security/overview/acknowledgements.html">Acknowledgements</a></li>
-            </ul>
-          </li>
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>security/implement.html">
-                <span class="en">Implementation</span>
-              </a>
-            </div>
-            <ul>
-            <li class="nav-section">
-              <div class="nav-section-header">
-                <a href="<?cs var:toroot ?>security/authentication/index.html">
-                  <span class="en">Authentication</span>
-                </a>
-              </div>
-              <ul>
-                <li><a href="<?cs var:toroot ?>security/authentication/fingerprint-hal.html">Fingerprint HAL</a></li>
-                <li><a href="<?cs var:toroot ?>security/authentication/gatekeeper.html">Gatekeeper</a></li>
-                <li class="nav-section">
-                  <div class="nav-section-header">
-                    <a href="<?cs var:toroot ?>security/authentication/keymaster.html">
-                      <span class="en">Keymaster</span>
-                    </a>
-                  </div>
-                  <ul>
-                    <li><a href="<?cs var:toroot ?>security/authentication/km-features.html">Features</a></li>
-                    <li><a href="<?cs var:toroot ?>security/authentication/km-implementer-ref.html">Implementer's Reference</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="<?cs var:toroot ?>security/encryption/index.html">Full Disk Encryption</a></li>
-            <li class="nav-section">
-              <div class="nav-section-header">
-                <a href="<?cs var:toroot ?>security/selinux/index.html">
-                  <span class="en">SELinux</span>
-                </a>
-              </div>
-              <ul>
-                <li><a href="<?cs var:toroot ?>security/selinux/concepts.html">Concepts</a></li>
-                <li><a href="<?cs var:toroot ?>security/selinux/implement.html">Implementation</a></li>
-                <li><a href="<?cs var:toroot ?>security/selinux/customize.html">Customization</a></li>
-                <li><a href="<?cs var:toroot ?>security/selinux/validate.html">Validation</a></li>
-              </ul>
-            </li>
-             <li class="nav-section">
-                <div class="nav-section-header">
-                  <a href="<?cs var:toroot ?>security/verifiedboot/index.html">
-                    <span class="en">Verified Boot</span>
-                  </a>
-                </div>
-                <ul>
-                  <li><a href="<?cs var:toroot ?>security/verifiedboot/verified-boot.html">Verifying boot</a></li>
-                  <li><a href="<?cs var:toroot ?>security/verifiedboot/dm-verity.html">Implementing dm-verity</a></li>
-                </ul>
-              </li>
-
-          </ul>
-        </li>
-       </ul>
-  <!-- End Security -->
+          <li><a href="<?cs var:toroot ?>security/enhancements/enhancements60.html">Android 6.0</a></li>
+          <li><a href="<?cs var:toroot ?>security/enhancements/enhancements50.html">Android 5.0</a></li>
+          <li><a href="<?cs var:toroot ?>security/enhancements/enhancements44.html">Android 4.4</a></li>
+          <li><a href="<?cs var:toroot ?>security/enhancements/enhancements43.html">Android 4.3</a></li>
+          <li><a href="<?cs var:toroot ?>security/enhancements/enhancements42.html">Android 4.2</a></li>
+          <li><a href="<?cs var:toroot ?>security/enhancements/enhancements41.html">Android 4.1</a></li>
+        </ul>
+      </li>
+      <li><a href="<?cs var:toroot ?>security/overview/acknowledgements.html">Acknowledgements</a></li>
+    </ul>
+  </li>
+  <li class="nav-section">
+    <div class="nav-section-header">
+      <a href="<?cs var:toroot ?>security/bulletin/index.html">
+        <span class="en">Bulletins</span>
+      </a>
+    </div>	  
+    <ul>
+      <li><a href="<?cs var:toroot ?>security/bulletin/2015-11-01.html">November 2015</a></li>
+      <li><a href="<?cs var:toroot ?>security/bulletin/2015-10-01.html">October 2015</a></li>
+      <li><a href="<?cs var:toroot ?>security/bulletin/2015-09-01.html">September 2015</a></li>
+      <li><a href="<?cs var:toroot ?>security/bulletin/2015-08-01.html">August 2015</a></li>
+    </ul>
+  </li>
+  <li class="nav-section">
+    <div class="nav-section-header">
+      <a href="<?cs var:toroot ?>security/authentication/index.html">
+        <span class="en">Authentication</span>
+      </a>
+    </div>
+    <ul>
+      <li><a href="<?cs var:toroot ?>security/authentication/fingerprint-hal.html">Fingerprint HAL</a></li>
+      <li><a href="<?cs var:toroot ?>security/authentication/gatekeeper.html">Gatekeeper</a></li>
+    </ul>
+  </li>
+  <li class="nav-section">
+    <div class="nav-section-header">
+      <a href="<?cs var:toroot ?>security/keystore/index.html">
+        <span class="en">Keystore</span>
+      </a>
+    </div>
+    <ul>
+      <li><a href="<?cs var:toroot ?>security/keystore/features.html">Features</a></li>
+      <li><a href="<?cs var:toroot ?>security/keystore/implementer-ref.html">Implementer's Reference</a></li>
+    </ul>
+  </li>
+  <li class="nav-section">
+    <div class="nav-section-header">
+      <a href="<?cs var:toroot ?>security/encryption/index.html">
+        <span class="en">Full Disk Encryption</span>
+      </a>
+    </div>
+  </li>
+  <li class="nav-section">
+    <div class="nav-section-header">
+      <a href="<?cs var:toroot ?>security/selinux/index.html">
+        <span class="en">SELinux</span>
+      </a>
+    </div>
+    <ul>
+      <li><a href="<?cs var:toroot ?>security/selinux/concepts.html">Concepts</a></li>
+      <li><a href="<?cs var:toroot ?>security/selinux/implement.html">Implementation</a></li>
+      <li><a href="<?cs var:toroot ?>security/selinux/customize.html">Customization</a></li>
+      <li><a href="<?cs var:toroot ?>security/selinux/validate.html">Validation</a></li>
+    </ul>
+  </li>	
+  <li class="nav-section">
+    <div class="nav-section-header">
+      <a href="<?cs var:toroot ?>security/verifiedboot/index.html">
+        <span class="en">Verified Boot</span>
+      </a>
+    </div>
+    <ul>
+      <li><a href="<?cs var:toroot ?>security/verifiedboot/verified-boot.html">Verifying Boot</a></li>
+      <li><a href="<?cs var:toroot ?>security/verifiedboot/dm-verity.html">Implementing dm-verity</a></li>
+    </ul>
+  </li>
 </ul>
