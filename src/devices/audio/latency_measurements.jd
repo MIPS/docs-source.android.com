@@ -401,6 +401,26 @@ The test application uses the Android native audio API based on OpenSL ES.
   <td>33</td>
 </tr>
 
+<tr>
+  <td>Nexus 5X</td>
+  <td>6.0</td>
+  <td>MDA89E</td>
+  <td>48000</td>
+  <td>192</td>
+  <td>4</td>
+  <td>18</td>
+</tr>
+
+<tr>
+  <td>Nexus 6P</td>
+  <td>6.0</td>
+  <td>MDA89D</td>
+  <td>48000</td>
+  <td>192</td>
+  <td>4</td>
+  <td>18</td>
+</tr>
+
 </table>
 
 <img src="images/round_trip_bar_graph.png" alt="Round-trip latency bar graph" id="figure3" />
