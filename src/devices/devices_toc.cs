@@ -81,6 +81,7 @@
         <ul>
           <li><a href="<?cs var:toroot ?>devices/audio/terminology.html">Terminology</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio/implement.html">Implementation</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio/data_formats.html">Data Formats</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio/attributes.html">Attributes</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio/warmup.html">Warmup</a></li>
           <li class="nav-section">
