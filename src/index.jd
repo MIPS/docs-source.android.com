@@ -43,6 +43,13 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}compatibility/downloads.html">
+        <h4>CTS 5.1 R4 Packages</h4></a>
+        <p>Android 5.1 R4 Compatibility Test Suite (CTS) and CTS Verifier
+        packages can now be found on <strong><a
+        href="{@docRoot}compatibility/downloads.html#android-51">Compatibility
+        Downloads</a></strong>.</p>
+
 <a href="{@docRoot}source/build-numbers.html">
         <h4>New Build Numbers for Devices Android 6.0 and 5.1</h4></a>
         <p><strong><a
@@ -92,16 +99,6 @@ devices meet compatibility requirements.
         href="{@docRoot}devices/accessories/index.html">Accessories</a></strong> section
         in top navigation with a more prominent directory structure to
         highlight the importance of security measures undertaken in Android.</p>
-
-<a href="{@docRoot}compatibility/index.html">
-        <h4>6.0 Compatibility Definition Document</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}compatibility/android-cdd.pdf">Android 6.0
-        Compatibility Definition Document (CDD)</a></strong>
-        has been published to source.android.com. It contains a changelog that
-        summarizes updates. Use the <strong>Send Feedback</strong> button at
-        the bottom of any page to provide input on the CDD or any other contents of
-        this site.</p>
     </div>
 
     <div class="col-8">
