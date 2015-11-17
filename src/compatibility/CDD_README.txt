@@ -22,7 +22,7 @@ Go to http://wkhtmltopdf.org/ and download the app for your system OS. It's comm
 
 Syntax:
 
-wkthmltopdf [page-size] [page-margins] cover path-to-html path-to-pdf
+wkhtmltopdf [page-size] [page-margins] cover path-to-html path-to-pdf
 
 page-size
 Set to letter.
@@ -75,12 +75,16 @@ wkhtmltopdf -B 1in -T 1in -L .75in -R .75in page docs/source.android.com/src/com
 Example body command run from 5.1 release folder:
 wkhtmltopdf -B 1in -T 1in -L .75in -R .75in page android-5.1-cdd.html --footer-html android-cdd-footer.html android-cdd-body.pdf
 
-4. CREATE CSS PDF
+4. CREATE CDD PDF
 ==================
 A. Open the body.pdf:
 	On a Mac or Windows, use Adobe Acrobat Pro (you *cannot* use Acrobat Reader for this task).
 	On Ubuntu, use PDF Studio 10 (other free pdf programs *cannot* handle the merge + bookmarks).
-B. Replace page 1 of the body.pdf with page 1 of the cover.pdf.
+B. Replace page 1 of the body.pdf with page 1 of the cover.pdf. For example, if you are using Adobe Acrobat Pro:
+   1. Open the body.pdf in Adobe Acrobat Pro.
+   2. Select Tools > Pages > Replace.
+   2. Open the cover.pdf file.
+   3. Replace page 1 of the body.pdf with page 1 of the cover.pdf. 
 C. Save the new file as the android-cdd_x_x.pdf (where X_X is the number of the release, such as 5.1).
 
 QUESTIONS?
