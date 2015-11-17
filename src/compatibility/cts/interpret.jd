@@ -31,6 +31,11 @@ href="{@docRoot}compatibility/downloads.html">downloaded</a> from this site.</p>
 this file in any web browser (HTML5 compatible browser recommended) to view the
 test results. It will resemble the following screenshots.</p>
 
+<p class="note"><strong>Note:</strong> The results are provided to help you
+ensure the software remains compatible throughout the development process and
+act as a common format for communicating the compatibility status of your
+device with other parties.</p>
+
 <img src="images/cts-test-summary.png" alt="CTS test summary" id="figure1" />
 <p class="img-caption">
   <strong>Figure 1.</strong> CTS test summary
