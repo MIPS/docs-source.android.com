@@ -60,12 +60,12 @@ Android, refer to the following resources.</p>
 <p></p>
 
 <h5>Communities</h5>
-<a href="http://source.android.com/source/community.html">AOSP communities</a><br>
+<a href="#open-source-project-discussions">AOSP communities</a><br>
 <a href="http://developer.android.com/support.html">Developer communities</a>
 <p></p>
 
 <h5>Send feedback</h5>
-<a href="http://source.android.com/source/report-bugs.html">Report AOSP bug</a><br>
+<a href="{@docRoot}source/report-bugs.html">Report AOSP bug</a><br>
 <a href="https://code.google.com/p/android/issues/entry?template=Feature%20request">Suggest
 a feature</a>
 <p></p>
@@ -91,13 +91,13 @@ a feature</a>
 <a href="https://support.google.com/android/answer/6215472?hl=en">Tips for users</a><br>
 <a href="http://developer.android.com/training/articles/security-tips.html">Tips
 for developers</a><br>
-<a href="http://source.android.com/security/index.html">Platform security</a>
+<a href="{@docRoot}security/index.html">Platform security</a>
 <p></p>
 
 <h5>Security announcements</h5>
-<a href="https://source.android.com/security/enhancements/index.html">Release
+<a href="{@docRoot}security/enhancements/index.html">Release
 Enhancements</a><br>
-<a href="https://groups.google.com/forum/#!forum/android-security-updates">Bulletins</a>
+<a href="{@docRoot}security/bulletin/index.html">Bulletins</a>
 <p></p>
 
 </div>
