@@ -33,6 +33,12 @@ information is needed. Measure the power use during those operations and compute
 the values (deriving differences from other baseline power uses as appropriate).
 </p>
 
+<p>As the goal of a power profile is to estimate battery drain appropriately,
+power profile values are given in current (amps). The Android framework
+multiplies the current by the time for which the subsystem was active and
+computes the mAh value, which is then used to estimate the amount of battery
+drained by the application/subsystem.</p>
+
 <h2 id="multiple-cpus">Devices with heterogeneous CPUs</h2>
 
 <p>The power profile for devices with CPU cores of heterogeneous architecture
