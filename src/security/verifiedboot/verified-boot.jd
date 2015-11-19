@@ -355,10 +355,13 @@ the block with unexpected contents inaccessible to user space. Depending on
 which block is corrupted, this may cause some of the programs that reside on
 the partition to malfunction.</p>
 
-<p>Using an optional verity table parameter, dm-verity can be configured to
-function in logging mode. If dm-verity is not started in enforcing mode for any
-reason, or verity metadata cannot be verified, a warning must be displayed to
-the user, similar to the one shown before booting into the RED state.</p>
+<p>If dm-verity is always enforcing against correctly signed metadata, nothing
+more needs be done. However, using an optional verity table parameter, dm-verity
+can be configured to function in a logging mode where it detects and logs
+errors but allows I/O to be completed despite them. If dm-verity is not started
+in enforcing mode for any reason, or verity metadata cannot be verified, a
+warning must be displayed to the user if the device is allowed to boot, similar
+to the one shown before booting into the RED state.</p>
 
 <img src="../images/dm-verity_mgmt.png" alt="dm-verity management" id="figure2" />
 <p class="img-caption"><strong>Figure 2.</strong> dm-verity management</p>
@@ -371,21 +374,17 @@ larger probability of unintentional disk corruption, which will cause a
 verification failure and can potentially make an otherwise functional device
 unusable if a critical block in the partition can no longer be accessed.</p>
 
-<p>It’s generally not possible to distinguish disk corruption from malicious
-changes, so any change to the system partition must result in the user being
-notified; and no unverified data must leak to user space until a warning has
-been shown. However, we must also assume most verification failures are
-not the result of malicious behavior; so the user must also have an option to
-continue using the device without verification.</p>
-
-<p>When a dm-verity error is detected, the device must be rebooted and
-dm-verity must be started in logging mode during all subsequent restarts until
-any of the verified partitions is reflashed or changed by an OTA update. This
-means dm-verity state should be stored in a persistent flag. When a verified
-partition has been changed, the flag must be cleared and dm-verity must again
-be started in enforcing mode. Anytime dm-verity is not started in enforcing
-mode, a warning must be shown to the user before any of the verified partitions
-are mounted.</p>
+<p>If dm-verity is always in enforcing mode, nothing further needs to be done.
+If logging mode is implemented and dm-verity detects an error while in
+enforcing mode, the device must be rebooted and dm-verity must be started in
+logging mode during all subsequent restarts until any of the verified
+partitions is reflashed or changed by an OTA update. This means dm-verity state
+should be stored in a persistent flag. When a verified partition has been
+changed, the flag must be cleared and dm-verity must again be started in
+enforcing mode. Anytime dm-verity is not started in enforcing mode, a warning
+must be shown to the user before any of the verified partitions are
+mounted. No unverified data must be allowed to leak to user space without the
+user being warned.</p>
 
 <h3 id=verified_partition>Verified partition</h3>
 
