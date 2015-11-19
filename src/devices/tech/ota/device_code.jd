@@ -523,7 +523,7 @@ height="275">
 
 <p>The installing animation is represented as a single PNG image with
 different frames of the animation interlaced by row (which is why Figure 2
-appears squished). For example, for a 7-frame animation that is 200x200, create
+appears squished). For example, for a 200x200 seven-frame animation, create
 a single 200x1400 image where first frame is rows 0, 7, 14, 21, ...; the second
 frame is rows 1, 8, 15, 22, ...; etc. The combined image includes a text chunk
 that indicates the number of animation frames. The tool
