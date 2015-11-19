@@ -153,7 +153,7 @@ one with at least speed class 10 or higher to ensure it can pass the CTS.</em>
     feature on the device: <strong>Settings &gt; Location</strong>
   <li>Connect to a Wi-Fi network  that supports IPv6, can treat the Device
 Under Test (DUT) as an <em>isolated client</em> (see the <a
-href="physical_environment">Physical Environment</a> section above), and has an
+href="#physical_environment">Physical Environment</a> section above), and has an
 internet connection: <strong>Settings > Wi-Fi</strong>
   <li>Make sure no lock pattern or password is set on the device: <strong>Settings > Security > Screen
     lock = 'None'</strong>
