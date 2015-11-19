@@ -522,11 +522,12 @@ height="275">
 </table>
 
 <p>The installing animation is represented as a single PNG image with
-different frames of the animation interlaced by row. For example, for a
-7-frame animation that is 200x200, create a single 200x1400 image where first
-frame is rows 0, 7, 14, 21, ...; the second frame is rows 1, 8, 15, 22, ...;
-etc. The combined image includes a text chunk that indicates the number of
-animation frames. The tool <code>bootable/recovery/interlace-frames.py</code>
+different frames of the animation interlaced by row (which is why Figure 2
+appears squished). For example, for a 7-frame animation that is 200x200, create
+a single 200x1400 image where first frame is rows 0, 7, 14, 21, ...; the second
+frame is rows 1, 8, 15, 22, ...; etc. The combined image includes a text chunk
+that indicates the number of animation frames. The tool
+<code>bootable/recovery/interlace-frames.py</code>
 takes a set of input frames and combines them into the necessary composite
 image used by recovery.</p>
 
