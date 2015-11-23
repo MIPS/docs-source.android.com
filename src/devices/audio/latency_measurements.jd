@@ -423,7 +423,52 @@ The test application uses the Android native audio API based on OpenSL ES.
 
 </table>
 
-<img src="images/round_trip_bar_graph.png" alt="Round-trip latency bar graph" id="figure3" />
-<p class="img-caption">
-  <strong>Figure 3.</strong> Round-trip latency bar graph
-</p>
+<p></p>
+<p></p>
+
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar']}]}"></script>
+    <script type="text/javascript">
+
+
+google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Device', '2.3', '4.0', '4.1', '4.2', '4.3', '4.4', '5.0', '5.1', '6.0'],
+        ['Nexus One', 345, null, null, null, null, null, null, null, null,],
+        ['Nexus S', 260, 260, 210, null, null, null, null, null, null,],
+        ['Galaxy Nexus', null, 270, null, null, 130, null, null, null, null,],
+        ['Nexus 4', null, null, null, 195, null, null, null, 58, null,],
+        ['Nexus 10', null, null, null, null, null, null, 36, 35, null,],
+        ['Nexus 7 2013', null, null, null, null, 149, 85, 64, 55, 55,],
+        ['Nexus 5', null, null, null, null, null, 95, 47, 42, 38,],
+        ['Nexus 9', null, null, null, null, null, null, 38, 32, 15,],
+        ['Nexus 6', null, null, null, null, null, null, 65, 42, 33,],
+        ['Nexus 5X', null, null, null, null, null, null, null, null, 18,],
+        ['Nexus 6P', null, null, null, null, null, null, null, null, 18,]
+      ]);
+
+        var options = {
+          chart: {
+            title: 'Round Trip Audio Latency',
+            subtitle: 'Over headset, using native APIs',
+          },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          bar: {groupWidth: '100%'},
+          hAxis: {
+            title: 'Milliseconds'
+          },
+          height: 800,
+          width: 600
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+
+      }
+</script>
+
+    <div id="chart_div"></div>
+    <p></p>
+    <p class="img-caption">
+<strong>Figure 3.</strong> Round trip latencies.</p>
