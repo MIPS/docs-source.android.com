@@ -43,6 +43,28 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/config/kernel_network_tests.html">
+        <h4>Kernel Networking Unit Tests</h4></a>
+        <p><strong><a
+        href="{@docRoot}devices/tech/config/kernel_network_tests.html">Kernel
+        Networking Unit Tests</a></strong> describe a suite of tests provided by
+        Android engineering to help ensure the device kernel will properly
+        support the Android networking stack.</p>
+
+<a href="{@docRoot}security/verifiedboot/verified-boot.html">
+        <h4>Logging Mode Optional When Verifying Boot</h4></a>
+        <p><strong><a
+        href="{@docRoot}security/verifiedboot/verified-boot.html#boot_partition">Verifying
+        Boot</a></strong> now makes it clear logging mode does not have to be
+        implemented, and dm-verity may be kept in enforcing mode.</p>
+
+<a href="{@docRoot}compatibility/cts/setup.html">
+        <h4>Bluetooth LE Beacons CTS Guidance</h4></a>
+        <p><strong><a
+        href="{@docRoot}compatibility/cts/setup.html#ble_beacons">Bluetooth LE
+        beacons</a></strong> can be used to test the compatibility of Bluetooth low
+        energy features on Android devices.</p>
+
 <a href="{@docRoot}devices/audio/index.html">
         <h4>Audio Data Formats, MIDI Architecture, Related Updates</h4></a>
         <p>New information is available about <strong><a
@@ -84,25 +106,6 @@ devices meet compatibility requirements.
         set for Ubuntu 14.04</a></strong>, and the <strong><a
         href="{@docRoot}devices/drm.html#drm-rights">DRM rights
         methods</a></strong> have been updated for Android 6.0.</p>
-
-<a href="{@docRoot}devices/media/oem.html">
-        <h4>Media Tool and Headset Specification</h4></a>
-        <p>The <strong><a
-        href="https://android.googlesource.com/platform/cts/+/marshmallow-cts-dev/tools/cts-media/get_achievable_rates.py">get_achievable_rates.py</a></strong>
-        script is now linked from <strong><a
-        href="{@docRoot}devices/media/oem.html#2_achievable_frame_rates_for_video_codecs">OEM
-        Dependencies for Media Resource Manager</a></strong>. And
-        4-Segment Plug Detection Resistance values have been added to the <strong><a
-        href="{@docRoot}devices/accessories/headset/specification.html#electrical12">Wired
-        Audio Headset Specification</a></strong>.</p>
-
-<a href="{@docRoot}security/index.html">
-        <h4>Security Replaces Accessories in Navigation</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}security/index.html">Security</a></strong> section has replaced the <strong><a
-        href="{@docRoot}devices/accessories/index.html">Accessories</a></strong> section
-        in top navigation with a more prominent directory structure to
-        highlight the importance of security measures undertaken in Android.</p>
     </div>
 
     <div class="col-8">
