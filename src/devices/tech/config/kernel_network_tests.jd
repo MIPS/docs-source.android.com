@@ -78,8 +78,7 @@ in the given release. For information on how to run the tests, see the <a
 href="https://android.googlesource.com/platform/system/extras/+/master/tests/net_test/README">net_test
 README file</a>. Basically, from the top of your kernel tree, run:</p>
 
-<pre> &lt;android tree&gt;/system/extras/tests/net_test/run_net_test.sh
-all_tests.sh </pre>
+<pre>  &lt;android tree&gt;/system/extras/tests/net_test/run_net_test.sh all_tests.sh</pre>
 
 <h3 id=passing>Passing the tests</h3> <p>The <code>net_test</code> Python
 source files contain comments that specify kernel commits that are known to be
