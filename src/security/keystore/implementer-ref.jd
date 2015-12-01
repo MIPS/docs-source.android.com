@@ -18,7 +18,7 @@ page.title=Implementer's Reference
 -->
 
 <p>This page provides details to assist implementers of <a href="index.html">Keymaster</a> HALs. It
-covers each tag and each function in the API.</p>
+covers each tag and each function in the HAL.</p>
 
 <h2 id=authorization_tags>Authorization tags</h2>
 
@@ -341,7 +341,13 @@ and false (if the tag is not present).</p>
 <h3 id=km_tag_user_auth_type>KM_TAG_USER_AUTH_TYPE</h3>
 
 <p>Specifies the types of user authenticators that may be used to authorize this
-key.</p>
+key.  When Keymaster is requested to perform an operation with a key with this
+tag, it must receive an authentication token, and the token's
+<code>authenticator_type</code> field must match the value in the tag.  To be
+precise, it must be true that <code>(ntoh(token.authenticator_type) &
+auth_type_tag_value) != 0, where <code>ntoh</code> is a function that converts
+network-ordered integers to host-ordered integers and
+<code>auth_type_tag_value</code> is the value of this tag.</p>
 
 <p>The value is a 32-bit integer bitmask of values from the enumeration:</p>
 
@@ -388,6 +394,11 @@ calls to  <a href="#begin">begin</a> must provide this tag and the
 same associated data as part of the <code>in_params</code> set. If the correct
 data is not provided the function must return <code>KM_ERROR_INVALID_KEY_BLOB</code>.</p>
 
+<p>The content of this tag must be bound to the key <i>cryptographically</i>,
+meaning it must not be possible for an adversary who has access to all of the
+secure world secrets but does not have access to the tag content to decrypt the
+key (without brute-forcing the tag content).</p>
+
 <p>The value is a blob, an arbitrary-length array of bytes.</p>
 
 <p>This tag is not repeatable.</p>
@@ -402,6 +413,14 @@ provide the same value to the <code>client_id</code> parameter, and calls
 to <a href="#begin">begin</a> must provide this tag and the same associated
 data as part of the <code>in_params</code> set. If the correct data is not
 provided, the function must return <code>KM_ERROR_INVALID_KEY_BLOB</code>.</p>
+
+<p>The content of this tag must be bound to the key <i>cryptographically</i>,
+meaning it must not be possible for an adversary who has access to all of the
+secure world secrets but does not have access to the tag content to decrypt the
+key (without brute-forcing the tag content, which applications can prevent by
+specifying sufficiently high-entropy content).</p>
+
+<p>The value is a blob, an arbitrary-length array of bytes.</p>
 
 <p>This tag is not repeatable.</p>
 
@@ -911,11 +930,26 @@ by Keymaster modules that provide rollback resistance.</p>
 
 <p>Begins a cryptographic operation, using the specified key, for the specified
 purpose, with the specified parameters (as appropriate), and returns an
-operation handle which is used with <a href="#update">update</a> and <a href="#finish">finish</a> to complete the operation.</p>
+operation handle which is used with <a href="#update">update</a> and <a
+href="#finish">finish</a> to complete the operation. The operation handle is
+also used as the "challenge" token in authenticated operations, and for such
+operations must be included in the <code>challenge</code> field of the
+authentication token.</p>
 
-<p>If <a href="#km_tag_application_id">KM_TAG_APPLICATION_ID</a> or <a href="#km_tag_application_data">KM_TAG_APPLICATION_DATA</a>
-were specified during key generation or import, calls to begin must include
-those tags with the originally-specified values in the <code>in_params</code> argument to this method.</p>
+<p>A Keymaster implementation must support at least 16 concurrent
+operations. Keystore will use up to 15, leaving one for vold to use for password
+encryption. When Keystore has 15 operations in progress (<code>begin</code> has
+been called, but <code>finish</code> or <code>abort</code> have not yet been
+called) and it receives a request to begin a 16th, it will call
+<code>abort</code> on the least-recently used operation to reduce the number of
+active operations to 14 before calling <code>begin</code> to start the
+newly-requested operation.
+
+<p>If <a href="#km_tag_application_id">KM_TAG_APPLICATION_ID</a> or <a
+href="#km_tag_application_data">KM_TAG_APPLICATION_DATA</a> were specified
+during key generation or import, calls to <code>begin</code> must include those
+tags with the originally-specified values in the <code>in_params</code> argument
+to this method.</p>
 
 <h4 id=authorization_enforcement>Authorization enforcement</h4>
 
@@ -998,18 +1032,34 @@ only support signing and verification, while <code>KM_PAD_RSA_PKCS1_1_1_5_ENCRYP
 <p>There are some important interactions between padding modes and digests:</p>
 
 <ul>
-  <li><code>KM_PAD_NONE</code> indicates that a "raw" RSA operation will be performed. If signing or
-verifying, <code>KM_DIGEST_NONE </code>must be specified for the digest. No digest is required for unpadded encryption
-or decryption.
-  <li><code>KM_PAD_RSA_PKCS1_1_5_SIGN</code> padding requires a digest, which may be <code>KM_DIGEST_NONE.</code>
+
+  <li><code>KM_PAD_NONE</code> indicates that a "raw" RSA operation will be
+  performed. If signing or verifying, <code>KM_DIGEST_NONE</code> must be
+  specified for the digest. No digest is required for unpadded encryption or
+  decryption.
+
+  <li><code>KM_PAD_RSA_PKCS1_1_5_SIGN</code> padding requires a digest. The
+  digest may be <code>KM_DIGEST_NONE</code>, in which case the Keymaster
+  implementation cannot build a proper PKCS#1 v1.5 signature structure, because
+  it cannot add the DigestInfo structure. Instead, the implementation must
+  construct <code>0x00 || 0x01 || PS || 0x00 || M</code>, where M is the
+  provided message and PS is the padding string. The size of the RSA key must be
+  at least 11 bytes larger than the message, otherwise the method must return
+  <code>KM_ERROR_INVALID_INPUT_LENGTH</code>.
+
   <li><code>KM_PAD_RSA_PKCS1_1_1_5_ENCRYPT</code> padding does not require a digest.
-  <li><code>KM_PAD_RSA_PSS</code> padding requires a digest, which may not be <code>KM_DIGEST_NONE</code>.
-  If <code>KM_DIGEST_NONE</code> is specified, the method must return
-  <code>KM_ERROR_INCOMPATIBLE_PADDING_MODE</code>. In addition, the
-  size of the RSA key must be at least 22 bytes larger than
-the output size of the digest. Otherwise, the method must return <code>KM_ERROR_INCOMPATIBLE_DIGEST</code>.
-  <li><code>KM_PAD_RSA_OAEP</code> padding requires a digest, which may not be <code>KM_DIGEST_NONE</code>.
-  If <code>KM_DIGEST_NONE</code> is specified, the method must return <code>KM_ERROR_INCOMPATIBLE_DIGEST</code>.
+
+  <li><code>KM_PAD_RSA_PSS</code> padding requires a digest, which may not be
+  <code>KM_DIGEST_NONE</code>.  If <code>KM_DIGEST_NONE</code> is specified, the
+  method must return <code>KM_ERROR_INCOMPATIBLE_DIGEST</code>. In addition, the
+  size of the RSA key must be at least 22 bytes larger than the output size of
+  the digest. Otherwise, the method must return
+  <code>KM_ERROR_INCOMPATIBLE_DIGEST</code>.
+
+  <li><code>KM_PAD_RSA_OAEP</code> padding requires a digest, which may not be
+  <code>KM_DIGEST_NONE</code>.  If <code>KM_DIGEST_NONE</code> is specified, the
+  method must return <code>KM_ERROR_INCOMPATIBLE_DIGEST</code>.
+
 </ul>
 
 <h4 id=ec_keys>EC keys</h4>
