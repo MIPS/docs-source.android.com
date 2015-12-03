@@ -92,7 +92,7 @@ outside the managed profile.</p>
 <p>Managed profiles are implemented as a new kind of secondary user, such that:</p>
 
 <pre>
-uid = 10000 * userid + appid
+uid = 100000 * userid + appid
 </pre>
 
 
