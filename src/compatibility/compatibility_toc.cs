@@ -34,7 +34,16 @@
         <ul>
           <li><a href="<?cs var:toroot ?>compatibility/cts/setup.html">Set up CTS</a></li>
           <li><a href="<?cs var:toroot ?>compatibility/cts/run.html">Run CTS</a></li>
-          <li><a href="<?cs var:toroot ?>compatibility/cts/verifier.html">Run CTS Verifier</a></li>
+          <li class="nav-section">
+            <div class="nav-section-header">
+            <a href="<?cs var:toroot ?>compatibility/cts/verifier.html">
+              <span class="en">Run CTS Verifier</span>
+            </a>
+            </div>
+           <ul>
+            <li><a href="<?cs var:toroot ?>compatibility/cts/rotation-vector.html">Rotation Vector Crosscheck</a></li>
+           </ul>
+          </li>
           <li><a href="<?cs var:toroot ?>compatibility/cts/interpret.html">Interpret Results</a></li>
           <li><a href="<?cs var:toroot ?>compatibility/cts/development.html">Develop CTS</a></li>
         </ul>
