@@ -48,8 +48,9 @@
       <a href="<?cs var:toroot ?>security/bulletin/index.html">
         <span class="en">Bulletins</span>
       </a>
-    </div>	  
+    </div>
     <ul>
+      <li><a href="<?cs var:toroot ?>security/bulletin/2015-12-01.html">December 2015</a></li>
       <li><a href="<?cs var:toroot ?>security/bulletin/2015-11-01.html">November 2015</a></li>
       <li><a href="<?cs var:toroot ?>security/bulletin/2015-10-01.html">October 2015</a></li>
       <li><a href="<?cs var:toroot ?>security/bulletin/2015-09-01.html">September 2015</a></li>
@@ -97,7 +98,7 @@
       <li><a href="<?cs var:toroot ?>security/selinux/customize.html">Customization</a></li>
       <li><a href="<?cs var:toroot ?>security/selinux/validate.html">Validation</a></li>
     </ul>
-  </li>	
+  </li>
   <li class="nav-section">
     <div class="nav-section-header">
       <a href="<?cs var:toroot ?>security/verifiedboot/index.html">

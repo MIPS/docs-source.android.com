@@ -16,13 +16,6 @@ page.title=Nexus Security Bulletins
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-   </ol>
-  </div>
-</div>
 <p>Security has always been a major focus for Android and Google Play: Android was
 built from day one with security in mind. Monthly device updates are an
 important tool to make and keep Android users safe. This page contains the
@@ -40,6 +33,11 @@ month to the<a href="https://developers.google.com/android/nexus/images"> Google
     <th>Android Security Patch Level</th>
  </tr>
  <tr>
+    <td><a href="2015-12-01.html">December 2015</a></td>
+    <td>December 7, 2015</td>
+    <td>December 1, 2015: [2015-12-01]</td>
+</tr>
+<tr>
     <td><a href="2015-11-01.html">November 2015</a></td>
     <td>November 2, 2015</td>
     <td>November 1, 2015: [2015-11-01]</td>
