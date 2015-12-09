@@ -204,7 +204,7 @@ for reporting several issues fixed in this bulletin.</p>
 <p>In the sections below, we provide details for each of the security
 vulnerabilities listed in the <a href="#security_vulnerability_summary">Security Vulnerability Summary</a> above. There is a description of the issue, a severity rationale, and a table
 with the CVE, associated bug, severity, affected versions, and date reported.
-Where available, we’ve linked the AOSP commit that addressed the issue to the
+Where available, we’ve linked the AOSP change that addressed the issue to the
 bug ID.  When multiple changes relate to a single bug, additional AOSP
 references are linked to numbers following the bug ID.</p>
 

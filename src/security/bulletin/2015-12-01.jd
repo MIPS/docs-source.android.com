@@ -24,17 +24,16 @@ page.title=Nexus Security Bulletin - December 2015
   </div>
 </div>
 
-<p><em>Published December 07, 2015</em></p>
+<p><em>Published December 07, 2015 | Updated December 09, 2015</em></p>
 
 <p>We have released a security update to Nexus devices through an over-the-air
 (OTA) update as part of our Android Security Bulletin Monthly Release process.
-The Nexus firmware images have also been released to the <a href="https://developers.google.com/android/nexus/images">Google Developer site</a>. Builds LMY48Z or later and Android Marshmallow with Security Patch Level of
+The Nexus firmware images have also been released to the <a href="https://developers.google.com/android/nexus/images">Google Developer site</a>. Builds LMY48Z or later and Android 6.0 with Security Patch Level of
 December 1, 2015 or later address these issues. Refer to the <a href="#common_questions_and_answers">Common Questions and Answers</a> section for more details.</p>
 
 <p>Partners were notified about and provided updates for these issues on November
-2, 2015 or earlier. Source code patches for these issues will be released to
-the Android Open Source Project (AOSP) repository over the next 48 hours. We
-will revise this bulletin with the AOSP links when they are available.</p>
+2, 2015 or earlier. Where applicable, source code patches for these issues have been released to
+the Android Open Source Project (AOSP) repository.</p>
 
 <p>The most severe of these issues is a Critical security vulnerability that could
 enable remote code execution on an affected device through multiple methods
@@ -194,7 +193,7 @@ CVE-2015-6619, CVE-2015-6633, CVE-2015-6634
 <p>In the sections below, we provide details for each of the security
 vulnerabilities listed in the <a href="#security_vulnerability_summary">Security Vulnerability Summary</a> above. There is a description of the issue, a severity rationale, and a table
 with the CVE, associated bug, severity, affected versions, and date reported.
-When available, we will link the AOSP commit that addressed the issue to the
+When available, we will link the AOSP change that addressed the issue to the
 bug ID. When multiple changes relate to a single bug, additional AOSP
 references are linked to numbers following the bug ID.</p>
 
@@ -216,38 +215,38 @@ that third-party apps cannot normally access.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td rowspan="5">CVE-2015-6616</td>
-    <td>ANDROID-24630158</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/77c185d5499d6174e7a97b3e1512994d3a803151">ANDROID-24630158</a></td>
     <td>Critical</td>
     <td>6.0 and below</td>
     <td>Google Internal</td>
  </tr>
   <tr>
-    <td>ANDROID-23882800</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/0d35dd2068d6422c3c77fb68f248cbabf3d0b10c">ANDROID-23882800</a></td>
     <td>Critical</td>
     <td>6.0 and below</td>
     <td>Google Internal</td>
  </tr>
  <tr>
-    <td>ANDROID-17769851</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/dedaca6f04ac9f95fabe3b64d44cd1a2050f079e">ANDROID-17769851</a></td>
     <td>Critical</td>
     <td>5.1 and below</td>
     <td>Google Internal</td>
  </tr>
  <tr>
-    <td>ANDROID-24441553</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/5d101298d8b0a78a1dc5bd26dbdada411f4ecd4d">ANDROID-24441553</a></td>
     <td>Critical</td>
     <td>6.0 and below</td>
     <td>Sep 22, 2015</td>
  </tr>
  <tr>
-    <td>ANDROID-24157524</td>
+    <td><a href="https://android.googlesource.com/platform%2Fexternal%2Flibavc/+/2ee0c1bced131ffb06d1b430b08a202cd3a52005">ANDROID-24157524</a></td>
     <td>Critical</td>
     <td>6.0</td>
     <td>Sep 08, 2015</td>
@@ -265,14 +264,14 @@ files.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6617</td>
-    <td>ANDROID-23648740</td>
+    <td><a href="https://android.googlesource.com/platform%2Fexternal%2Fskia/+/a1d8ac0ac0af44d74fc082838936ec265216ab60">ANDROID-23648740</a></td>
     <td>Critical</td>
     <td>6.0 and below</td>
     <td>Google internal</td>
@@ -289,14 +288,14 @@ re-flashing the operating system.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6619</td>
-    <td>ANDROID-23520714</td>
+    <td><a href ="https://android.googlesource.com/device%2Fhtc%2Fflounder-kernel/+/25d3e5d71865a7c0324423fad87aaabb70e82ee4">ANDROID-23520714</a></td>
     <td>Critical</td>
     <td>6.0 and below</td>
     <td>Jun 7, 2015</td>
@@ -315,27 +314,28 @@ media files.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6633</td>
-    <td>ANDROID-23987307</td>
+    <td>ANDROID-23987307*</td>
     <td>Critical</td>
     <td>6.0 and below</td>
     <td>Google Internal</td>
  </tr>
  <tr>
     <td>CVE-2015-6634</td>
-    <td>ANDROID-24163261</td>
+    <td><a href="https://android.googlesource.com/platform%2Fhardware%2Fqcom%2Fdisplay/+/25016fd2865943dec1a6b2b167ef85c772fb90f7">ANDROID-24163261</a> [<a href="https://android.googlesource.com/platform%2Fhardware%2Fqcom%2Fdisplay/+/0787bc222a016e944f01492c2dd04bd03c1da6af">2</a>] [<a href="https://android.googlesource.com/platform%2Fhardware%2Fqcom%2Fdisplay/+/95c2601aab7f27505e8b086fdd1f1dce31091e5d">3</a>] [<a href="https://android.googlesource.com/platform%2Fhardware%2Fqcom%2Fdisplay/+/45660529af1f4063a00e84aa2361649e6a9a878c">4</a>]</td>
     <td>Critical</td>
     <td>5.1 and below</td>
     <td>Google Internal</td>
  </tr>
 </table>
-
+<p> *The patch for this issue is not in AOSP. The update is contained in the
+latest binary drivers for Nexus devices available from the <a href="https://developers.google.com/android/nexus/drivers">Google Developer site</a>.</p>
 
 <h3 id="remote_code_execution_vulnerability_in_bluetooth">Remote Code Execution Vulnerability in Bluetooth</h3>
 
@@ -360,13 +360,14 @@ proximate attacker that had previously been allowed to pair a device.</p>
  </tr>
  <tr>
     <td>CVE-2015-6618</td>
-    <td>ANDROID-24595992 </td>
+    <td>ANDROID-24595992*</td>
     <td>High</td>
     <td>4.4, 5.0, and 5.1</td>
     <td>Sep 28, 2015</td>
  </tr>
 </table>
-
+<p> *The patch for this issue is not in AOSP. The update is contained in the
+latest binary drivers for Nexus devices available from the <a href="https://developers.google.com/android/nexus/drivers">Google Developer site</a>.</p>
 
 <h3 id="elevation_of_privilege_vulnerabilities_in_libstagefright">
 Elevation of Privilege Vulnerabilities in libstagefright</h3>
@@ -379,20 +380,20 @@ applications.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td rowspan="2">CVE-2015-6620</td>
-    <td>ANDROID-24123723 </td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/2b8cd9cbb3e72ffd048ffdd1609fac74f61a22ac">ANDROID-24123723</a></td>
     <td>High</td>
     <td>6.0 and below</td>
     <td>Sep 10, 2015</td>
  </tr>
  <tr>
-    <td>ANDROID-24445127</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/77c185d5499d6174e7a97b3e1512994d3a803151">ANDROID-24445127</a></td>
     <td>High</td>
     <td>6.0 and below</td>
     <td>Sep 2, 2015</td>
@@ -410,14 +411,14 @@ applications.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6621</td>
-    <td>ANDROID-23909438</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fbase/+/e70e8ac93807c51240b2cd9afed35bf454ea00b3">ANDROID-23909438</a></td>
     <td>High</td>
     <td>5.0, 5.1, and 6.0</td>
     <td>Sep 7, 2015</td>
@@ -433,14 +434,14 @@ because they could also be used to gain elevated capabilities, such as <a href="
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6622</td>
-    <td>ANDROID-23905002</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fnative/+/5d17838adef13062717322e79d4db0b9bb6b2395">ANDROID-23905002</a></td>
     <td>High</td>
     <td>6.0 and below</td>
     <td>Sep 7, 2015</td>
@@ -456,14 +457,14 @@ elevated capabilities, such as <a href="http://developer.android.com/guide/topic
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6623</td>
-    <td>ANDROID-24872703 </td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fopt%2Fnet%2Fwifi/+/a15a2ee69156fa6fff09c0dd9b8182cb8fafde1c">ANDROID-24872703</a></td>
     <td>High</td>
     <td>6.0</td>
     <td>Google Internal</td>
@@ -481,14 +482,14 @@ gain elevated capabilities, such as <a href="http://developer.android.com/guide/
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6624</td>
-    <td>ANDROID-23999740</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/f86a441cb5b0dccd3106019e578c3535498e5315">ANDROID-23999740</a></td>
     <td>High</td>
     <td>6.0</td>
     <td>Google internal</td>
@@ -507,28 +508,28 @@ elevated capabilities, such as <a href="http://developer.android.com/guide/topic
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6632</td>
-    <td>ANDROID-24346430</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/5cae16bdce77b0a3ba590b55637f7d55a2f35402">ANDROID-24346430</a></td>
     <td>High</td>
     <td>6.0 and below</td>
     <td>Google Internal</td>
  </tr>
  <tr>
     <td>CVE-2015-6626</td>
-    <td>ANDROID-24310423</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/8dde7269a5356503d2b283234b6cb46d0c3f214e">ANDROID-24310423</a></td>
     <td>High</td>
     <td>6.0 and below</td>
     <td>Sep 2, 2015</td>
  </tr>
  <tr>
     <td>CVE-2015-6631</td>
-    <td>ANDROID-24623447</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/7ed8d1eff9b292b3c65a875b13a549e29654534b">ANDROID-24623447</a></td>
     <td>High</td>
     <td>6.0 and below</td>
     <td>Aug 21, 2015</td>
@@ -545,14 +546,14 @@ capabilities, such as <a href="http://developer.android.com/guide/topics/manifes
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6627</td>
-    <td>ANDROID-24211743 </td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/8c987fa71326eb0cc504959a5ebb440410d73180">ANDROID-24211743</a></td>
     <td>High</td>
     <td>6.0 and below</td>
     <td>Google Internal</td>
@@ -569,14 +570,14 @@ capabilities, such as <a href="http://developer.android.com/guide/topics/manifes
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6628</td>
-    <td>ANDROID-24074485</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/5e7e87a383fdb1fece977097a7e3cc51b296f3a0">ANDROID-24074485</a></td>
     <td>High</td>
     <td>6.0 and below</td>
     <td>Sep 8, 2015</td>
@@ -592,14 +593,14 @@ applications.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6629</td>
-    <td>ANDROID-22667667</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fopt%2Fnet%2Fwifi/+/8b41627f7411306a0c42867fb526fa214f2991cd">ANDROID-22667667</a></td>
     <td>High</td>
     <td>5.1 and 5.0</td>
     <td>Google Internal</td>
@@ -616,14 +617,14 @@ to improperly gain “<a href="http://developer.android.com/guide/topics/manifes
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6625</td>
-    <td>ANDROID-23936840</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fopt%2Fnet%2Fwifi/+/29fa7d2ffc3bba55173969309e280328b43eeca1">ANDROID-23936840</a></td>
     <td>Moderate</td>
     <td>6.0</td>
     <td>Google Internal</td>
@@ -638,14 +639,14 @@ Moderate severity because it could be used to improperly gain “<a href="http:/
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s) </th>
+    <th>Bug(s) with AOSP links</th>
     <th>Severity</th>
     <th>Affected versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2015-6630</td>
-    <td>ANDROID-19121797</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fbase/+/51c2619c7706575a171cf29819db14e91b815a62">ANDROID-19121797</a></td>
     <td>Moderate</td>
     <td>5.0, 5.1, and 6.0</td>
     <td>Jan 22, 2015</td>
@@ -659,7 +660,7 @@ reading this bulletin.</p>
 
 <p><strong>1. How do I determine if my device is updated to address these issues?</strong></p>
 
-<p>Builds LMY48Z or later and Android Marshmallow with Security Patch Level of
+<p>Builds LMY48Z or later and Android 6.0 with Security Patch Level of
 December 1, 2015 or later address these issues. Refer to the <a href="https://support.google.com/nexus/answer/4457705">Nexus documentation</a> for instructions on how to check the security patch level. Device
 manufacturers that include these updates should set the patch string level to:
 [ro.build.version.security_patch]:[2015-12-01]</p>
@@ -667,4 +668,5 @@ manufacturers that include these updates should set the patch string level to:
 <h2 id="revisions">Revisions</h2>
 <ul>
   <li> December 07, 2015: Originally Published
+  <li> December 09, 2015: Bulletin revised to include AOSP links.
 </ul>
