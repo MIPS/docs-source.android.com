@@ -47,7 +47,6 @@ consumption between configurations.</p>
 
 <pre>
 import android.os.BatteryManager;
-import android.os.ServiceManager;
 import android.content.Context;
 BatteryManager mBatteryManager =
 (BatteryManager)Context.getSystemService(Context.BATTERY_SERVICE);
