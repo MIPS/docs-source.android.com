@@ -217,6 +217,11 @@ write /sys/kernel/mm/ksm/run 1</code></p>
   <code>swapprio</code> is optional and not needed if you don't have more than one swap 
   area.<br />
   <br />
+  You should also be sure to label the associated block device as a swap_block_device
+  in the device-specific <a href="{@docRoot}security/selinux/implement.html">
+  sepolicy/file_contexts</a> so that it is treated properly by SELinux. <br />
+  <code>/dev/block/zram0 u:object_r:swap_block_device:s0</code><br />
+  <br />
   </li>
   <li>By default, the Linux kernel swaps in 8 pages of memory at a time. When 
     using ZRAM, the incremental cost of reading 1 page at a time is negligible 
