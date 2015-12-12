@@ -43,6 +43,26 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}security/bulletin/index.html">
+        <h4>Security Bulletins</h4></a>
+        <p>The Android security team now publishes monthly <strong><a
+        href="{@docRoot}security/bulletin/index.html">Nexus Security
+        Bulletins</a></strong> describing key vulnerabilities fixed in AOSP
+        with links to associated changes.</p>
+
+<a href="{@docRoot}source/build-numbers.html">
+        <h4>Lollipop and Marshmallow Build Numbers</h4></a>
+        <p>New <strong><a
+        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">Build Numbers</a></strong>
+        have been published for Lollipop on Nexus 6, Nexus 7 (deb), Nexus 9
+        (volantisg), Nexus 10 and Marshmallow on Nexus 5, Nexus 5X, Nexus 6, Nexus 6P,
+        Nexus 7 (flo/deb), Nexus 9 (volantis/volantisg), and Nexus Player.</p>
+
+<a href="{@docRoot}compatibility/downloads.html">
+        <h4>6.0 CTS Downloads</h4></a>
+        <p>Android 6.0 R2 Compatibility Test Suite (CTS) and CTS Verifier are available for <strong><a
+        href="{@docRoot}compatibility/downloads.html#android-60">Download</a></strong>.</p>
+
 <a href="{@docRoot}source/community.html">
         <h4>Android Resources</h4></a>
         <p>Android Community now includes a collection of <strong><a
@@ -71,34 +91,6 @@ devices meet compatibility requirements.
         Networking Unit Tests</a></strong> describe a suite of tests provided by
         Android engineering to help ensure the device kernel will properly
         support the Android networking stack.</p>
-
-<a href="{@docRoot}security/verifiedboot/verified-boot.html">
-        <h4>Logging Mode Optional When Verifying Boot</h4></a>
-        <p><strong><a
-        href="{@docRoot}security/verifiedboot/verified-boot.html#boot_partition">Verifying
-        Boot</a></strong> now makes it clear logging mode does not have to be
-        implemented, and dm-verity may be kept in enforcing mode.</p>
-
-<a href="{@docRoot}compatibility/cts/setup.html">
-        <h4>Bluetooth LE Beacons CTS Guidance</h4></a>
-        <p><strong><a
-        href="{@docRoot}compatibility/cts/setup.html#ble_beacons">Bluetooth LE
-        beacons</a></strong> can be used to test the compatibility of Bluetooth low
-        energy features on Android devices.</p>
-
-<a href="{@docRoot}devices/audio/index.html">
-        <h4>Audio Data Formats, MIDI Architecture, Related Updates</h4></a>
-        <p>New information is available about <strong><a
-        href="{@docRoot}devices/audio/data_formats.html">Audio Data Formats</a></strong>
-        and the <strong><a
-        href="{@docRoot}devices/audio/midi_arch.html">MIDI Architecture</a></strong>.
-        Also updated are <strong><a
-        href="{@docRoot}devices/audio/latency_measurements.html">Latency Measurements</a></strong>
-        and <strong><a
-        href="{@docRoot}devices/audio/terminology.html">Audio Terminology</a></strong>.
-        It also is noted that Android indirectly <strong><a
-        href="{@docRoot}devices/audio/midi.html#for-android">supports MIDI 1.0 via
-        an external adapter</a></strong>.</p>
     </div>
 
     <div class="col-8">
