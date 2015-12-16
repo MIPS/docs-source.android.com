@@ -237,6 +237,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
   <td>Nexus 6P</td>
 </tr>
 <tr>
+  <td>MRA59B</td>
+  <td>android-6.0.0_r7</td>
+  <td>Marshmallow</td>
+  <td>Nexus 7 (deb)</td>
+</tr>
+<tr>
   <td>MRA58X</td>
   <td>android-6.0.0_r6</td>
   <td>Marshmallow</td>
