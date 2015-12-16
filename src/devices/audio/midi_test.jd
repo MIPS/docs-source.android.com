@@ -50,44 +50,52 @@ The following hardware is needed for the tests.
 
 <h3 id="apps">Apps</h3>
 
-
-<p>Several apps are used by this test procedure:</p>
+<p>
+Several apps are used by this test procedure.
+The apps are available in source code on GitHub project
+<a href="https://github.com/philburk/android-midisuite">android-midisuite</a>,
+and via <em>Google Play</em>&trade; at links in the following table.
+</p>
 
 <table>
 <tr>
-  <th>App</th>
+  <th>Source code</th>
+  <th>Google&nbsp;Play&trade;</th>
   <th>Description</th>
 </tr>
 <tr>
   <td><a href="https://github.com/philburk/android-midisuite/tree/master/MidiScope">MidiScope</a> or
     <a href="https://github.com/googlesamples/android-MidiScope">MidiScope</a></td>
+  <td><a href="https://play.google.com/store/apps/details?id=com.mobileer.example.midiscope">MIDI Scope</a></td>
   <td>displays MIDI messages on-screen</td>
 </tr>
 <tr>
   <td><a href="https://github.com/philburk/android-midisuite/tree/master/MidiKeyboard">MidiKeyboard</a></td>
+  <td><a href="https://play.google.com/store/apps/details?id=com.mobileer.midikeyboard">MIDI Keyboard</a></td>
   <td>sends MIDI messages by pressing an on-screen music keyboard</td>
 </tr>
 <tr>
   <td><a href="https://github.com/philburk/android-midisuite/tree/master/MidiSynthExample">MidiSynthExample</a> or
     <br /><a href="https://github.com/googlesamples/android-MidiSynth">MidiSynth</a></td>
+  <td><a href="https://play.google.com/store/apps/details?id=com.mobileer.midisynthexample">MIDI Synth Ex</a></td>
   <td>simple MIDI synthesizer that uses sawtooth oscillators</td>
 </tr>
 <tr>
   <td><a href="https://github.com/philburk/android-midisuite/tree/master/MidiBtlePairing">MidiBtlePairing</a></td>
+  <td><a href="https://play.google.com/store/apps/details?id=com.mobileer.example.midibtlepairing">MIDI BLE Connect</a></td>
   <td>pairs an Android device with a BLE peripheral</td>
 </tr>
 <tr>
   <td><a href="https://github.com/philburk/android-midisuite/tree/master/MidiTools">MidiTools</a></td>
+  <td></td>
   <td>library dependency of the above apps</td>
 </tr>
 </table>
 
 <p>
-Most of these apps are part of the GitHub project
-<a href="https://github.com/philburk/android-midisuite">android-midisuite</a>.
-</p>
-
-<p>Each test has a list of apps that are used. After building each app, you can install the app using
+If you choose to work from source code rather than install via <em>Google Play</em>&trade;,
+first build the app using the supplied <em>Android.mk</em>.
+Then install the app using
 <a href="http://developer.android.com/tools/help/adb.html">Android Debug Bridge</a> (ADB).
 For example, to install the <em>MidiScope</em> app:</p>
 
