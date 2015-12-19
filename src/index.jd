@@ -43,6 +43,13 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}compatibility/cts/rotation-vector.html">
+        <h4>Rotation Vector CV Crosscheck</h4></a>
+        <p>Instructions now exist for the CTS Verifier <strong><a
+        href="{@docRoot}compatibility/cts/rotation-vector.html">Rotation Vector
+        CV Crosscheck</a></strong> used to properly test the compatibility of rotation
+        vector sensor implementations.</p>
+
 <a href="{@docRoot}security/bulletin/index.html">
         <h4>Security Bulletins</h4></a>
         <p>The Android security team now publishes monthly <strong><a
@@ -83,14 +90,6 @@ devices meet compatibility requirements.
         href="{@docRoot}compatibility/cts/setup.html#user_builds">Setting up
         CTS</a></strong> more clearly defines compatible devices for the purposes of
         testing.</p>
-
-<a href="{@docRoot}devices/tech/config/kernel_network_tests.html">
-        <h4>Kernel Networking Unit Tests</h4></a>
-        <p><strong><a
-        href="{@docRoot}devices/tech/config/kernel_network_tests.html">Kernel
-        Networking Unit Tests</a></strong> describe a suite of tests provided by
-        Android engineering to help ensure the device kernel will properly
-        support the Android networking stack.</p>
     </div>
 
     <div class="col-8">
