@@ -27,10 +27,21 @@ page.title=Media
 <img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_media.png" alt="Android Media HAL icon"/>
 
 <p>
-  Android provides a media playback engine at the native level called Stagefright that comes built-in with software-based codecs for several popular media formats. Stagefright features for audio and video playback include integration with OpenMAX codecs, session management, time-synchronized rendering, transport control, and DRM.</p>
-  <p>In addition, Stagefright supports integration with custom hardware codecs that you provide.
-  There actually isn't a HAL to implement for custom codecs, but to provide a hardware path to encode and decode media, you must implement your hardware-based codec as an OpenMax IL (Integration Layer) component.</p>
+  Android provides a media playback engine at the native level called
+Stagefright that comes built-in with software-based codecs for several popular
+media formats. Stagefright features for audio and video playback include
+integration with OpenMAX codecs, session management, time-synchronized
+rendering, transport control, and DRM.</p>
 
+<p class="note"><strong>Note:</strong> The Stagefright media playback engine
+had been updated through our <a
+href="{@docRoot}security/bulletin/index.html">monthly security update</a>
+process.</p>
+
+  <p>In addition, Stagefright supports integration with custom hardware codecs
+that you provide.  There actually isn't a HAL to implement for custom codecs,
+but to provide a hardware path to encode and decode media, you must implement
+your hardware-based codec as an OpenMax IL (Integration Layer) component.</p>
 
 <h2 id="architecture">Architecture</h2>
 <p>The following diagram shows how media applications interact with the Android native multimedia framework.</p>
