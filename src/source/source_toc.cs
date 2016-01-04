@@ -73,6 +73,7 @@
         <li><a href="http://android-review.googlesource.com">View Patches</a></li>
         <li><a href="<?cs var:toroot ?>source/life-of-a-bug.html">Life of a Bug</a></li>
         <li><a href="<?cs var:toroot ?>source/report-bugs.html">Reporting Bugs</a></li>
+        <li><a href="<?cs var:toroot ?>source/read-bug-reports.html">Reading Bug Reports</a></li>
         <li><a href="<?cs var:toroot ?>source/code-style.html">Code Style Rules</a></li>
       </ul>
   </li>
