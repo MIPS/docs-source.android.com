@@ -43,6 +43,17 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}source/read-bug-reports.html">
+        <h4>Reading Bug Reports</h4></a>
+        <p>Android Engineering has written a detailed guide for <strong><a
+        href="{@docRoot}source/read-bug-reports.html">understanding
+        device-generated bug reports</a></strong>. This guide describes and
+        provides examples of common errors and their associated causes, such as
+        <strong><a href="{@docRoot}source/read-bug-reports.html#memory">low
+        memory</a></strong>. It even explains how to establish a <strong><a
+        href="{@docRoot}source/read-bug-reports.html#narrative">narrative</a></strong>
+        of the issue by syncing timelines across logs.</p>
+
 <a href="{@docRoot}compatibility/cts/rotation-vector.html">
         <h4>Rotation Vector CV Crosscheck</h4></a>
         <p>Instructions now exist for the CTS Verifier <strong><a
@@ -75,21 +86,6 @@ devices meet compatibility requirements.
         <p>Android Community now includes a collection of <strong><a
         href="{@docRoot}source/community.html#resources">Resources</a></strong>
         for contributors, developers, users, and security experts.</p>
-
-<a href="{@docRoot}devices/tech/power/values.html">
-        <h4>Received Feedback Implemented</h4></a>
-        <p>Thanks to contributors who have submitted input using the
-        <strong>Send Feedback</strong> button, <strong><a
-        href="{@docRoot}devices/tech/power/values.html">Power Values</a></strong> now
-        notes <code>cpu.active</code> represents the power used by the CPU rails when
-        running at different speeds and explains why power profile values are given in
-        current (amps). <strong><a
-        href="{@docRoot}source/building-kernels.html#building">Building
-        Kernels</a></strong> describes how to locate the correct filename for each
-        kernel, while <strong><a
-        href="{@docRoot}compatibility/cts/setup.html#user_builds">Setting up
-        CTS</a></strong> more clearly defines compatible devices for the purposes of
-        testing.</p>
     </div>
 
     <div class="col-8">
