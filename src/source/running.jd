@@ -71,6 +71,14 @@ which is a mode in the bootloader that can be used to flash the devices:</p>
 </thead>
 <tbody>
 <tr>
+<td>angler</td>
+<td>Press and hold <em>Volume Down</em>, then press and hold <em>Power</em></td>
+</tr>
+<tr>
+<td>bullhead</td>
+<td>Press and hold <em>Volume Down</em>, then press and hold <em>Power</em></td>
+</tr>
+<tr>
 <td>shamu</td>
 <td>Press and hold <em>Volume Down</em>, then press and hold <em>Power</em></td>
 </tr>
@@ -209,10 +217,19 @@ the lunch menu, accessed when running the <code>lunch</code> command with no arg
 </thead>
 <tbody>
 <tr>
+  <td>Nexus 6P</td>
+<td>angler</td>
+<td>aosp_angler-userdebug</td>
+</tr>
+<tr>
+  <td>Nexus 5X</td>
+<td>bullhead</td>
+<td>aosp_bullhead-userdebug</td>
+</tr>
+<tr>
   <td>Nexus 6</td>
 <td>shamu</td>
 <td>aosp_shamu-userdebug</td>
-</tr>
 </tr>
 <tr>
   <td>Nexus Player</td>
