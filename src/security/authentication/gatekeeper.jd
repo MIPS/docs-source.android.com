@@ -35,8 +35,8 @@ attempts.</p>
 
 <p>When users verify their passwords, Gatekeeper uses the TEE-derived shared
 secret to sign an authentication attestation to
-send to <a href="keymaster.html">Keymaster</a>. That is, a
-Gatekeeper attestation notifies Keymaster that authentication-bound keys (for
+send to the <a href="../keystore/index.html">hardware-backed Keystore</a>. That is, a
+Gatekeeper attestation notifies Keystore that authentication-bound keys (for
 example, keys that apps have created) can be released for use by apps.</p>
 
 <h2 id=architecture>Architecture</h2>
@@ -74,7 +74,7 @@ daemon makes a request that reaches its counterpart (Gatekeeper) in the TEE.</p>
 <p class="img-caption"><strong>Figure 1.</strong> High-level data flow for authentication by GateKeeper</p>
 
 <p>The <code>gatekeeperd</code> daemon gives the Android framework APIs access to the HAL, and
-participates in reporting device <a href="index.html">authentications</a> to Keymaster.
+participates in reporting device <a href="index.html">authentications</a> to Keystore.
 The <code>gatekeeperd</code> daemon runs in its own process, separate from the system
 server.</p>
 
@@ -113,7 +113,7 @@ monotonic clock <strong>that ticks in suspend</strong>.</p>
 <p>Trusty uses an internal IPC system to communicate a shared secret directly
 between Keymaster and the Trusty implementation of Gatekeeper ("Trusty
 Gatekeeper"). This shared secret is used for signing AuthTokens that will be
-sent to Keymaster, providing attestations of password verification. Trusty
+sent to Keystore, providing attestations of password verification. Trusty
 Gatekeeper requests the key from Keymaster for each use and does not persist
 or cache the value. Implementations are free to share this secret in any way
 that does not compromise security.</p>
@@ -158,8 +158,8 @@ The Android framework does not allow for an "untrusted" re-enroll under regular 
 password is enrolled.</p>
 
 <p>User SIDs are written into the AuthToken returned by the <code>verify</code>
-function and associated to all authentication-bound Keymaster keys. For
-information about the AuthToken format and Keymaster, see
+function and associated to all authentication-bound Keystore keys. For
+information about the AuthToken format and Keystore, see
 <a href="index.html">Authentication</a>.
 Since an untrusted call to the <code>enroll</code> function
 will change the User SID, the call will render the keys bound to that password useless.</p>

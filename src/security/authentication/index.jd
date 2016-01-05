@@ -43,16 +43,16 @@ authentication). These components communicate their authentication
 state with the keystore service via an authenticated channel.</p>
 
 <ul>
-  <li><strong>The keystore service and <a href="keymaster.html">Keymaster</a>.</strong> Cryptographic services,
-   including hardware-backed cryptography for key storage,
-   which might include a Trusted Execution Environment (TEE).</li>
+  <li><strong>The <a href="../keystore/index.html">hardware-backed Keystore</a>.</strong>
+  Cryptographic services, including hardware-backed cryptography for key storage,
+  which might include a Trusted Execution Environment (TEE).</li>
   <li><strong><a href="gatekeeper.html">Gatekeeper</a>.</strong> Components for PIN, pattern, and password authentication.</li>
   <li><strong><a href="fingerprint-hal.html">Fingerprint</a>.</strong> Components for fingerprint authentication.</li>
 </ul>
 
 <h2 id=architecture>Architecture</h2>
 
-<p>The Gatekeeper and Fingerprint components work with Keymaster and other
+<p>The Gatekeeper and Fingerprint components work with Keystore and other
 components to support the use of hardware-backed <a href="#authentication_token_format">authentication tokens</a> (referred to below as "AuthTokens").</p>
 
 <h3 id=enrollment>Enrollment</h3>
