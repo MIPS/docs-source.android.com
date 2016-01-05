@@ -226,62 +226,22 @@ class TardisUI : public ScreenRecoveryUI {
 
 <h3 id="screenrecoveryui">ScreenRecoveryUI</h3>
 <p>When using your own images (error icon, installation animation, progress
-bars) with ScreenRecoveryUI, you might need to set some member variables to
-specify attributes such as the number of frames, speed, and overlay offsets.
-You can set the following variables:</p>
+bars) with ScreenRecoveryUI, you can set the variable <code>animation_fps</code>
+to control the speed in frames per second (FPS) of animations.</p>
 
-<table>
-<tbody>
-<tr>
-<th>Variable Name</th>
-<th>Purpose</th>
-<th>Release</th>
-</tr>
-<tr>
-<td>animation_fps
-</td>
-<td>speed (in frames per second) of animations
-</td>
-<td>Android 5.x and earlier</td>
-</tr>
-<tr>
-<td>installing_frames
-</td>
-<td>number of frames in the installation animation
-</td>
-<td>Android 4.x and earlier</td>
-</tr>
-<tr>
-<td>install_overlay_offset_x,
-install_overlay_offset_y
-</td>
-<td>offset of the per-frame overlay (relative to the base image) for the
-installation animation
-</td>
-<td>Android 4.x and earlier</td>
-</tr>
-</tbody>
-</table>
+<p class="note"><strong>Note:</strong> The current
+<code>interlace-frames.py</code> script enables you to store the
+<code>animation_fps</code> information in the image itself. In earlier versions
+of Android it was necessary to set <code>animation_fps</code> yourself.</p>
 
-<p>To set variables, override the <code>ScreenRecoveryUI::Init()</code>
-function in your subclass. Set the values, then call the <code>parent Init()
-</code> function to complete initialization:</p>
+<p>To set the variable <code>animation_fps</code>, override the
+<code>ScreenRecoveryUI::Init()</code> function in your subclass. Set the value,
+then call the <code>parent Init() </code> function to complete initialization.
+The default value (20 FPS) corresponds to the default recovery images; when
+using these images you don't need to provide an <code>Init()</code> function.
+For details on images, see <a href="#recovery-ui-images">Recovery UI
+Images</a>.</p>
 
-<pre>
-class TardisUI : public ScreenRecoveryUI {
-  ...
-  void Init() {
-    // change the speed at which animations run
-    animation_fps = 30;
-
-    ScreenRecoveryUI::Init();
-  }
-</pre>
-
-<p>The default values correspond to the default recovery images; when using
-these images you don't need to provide an <code>Init()</code> function. For
-details on images, see <a href="#recovery-ui-images">Recovery UI Images</a>.
-</p>
 
 <h3 id="device-class">Device Class</h3>
 <p>After you have a RecoveryUI implementation, define your device class
@@ -526,8 +486,8 @@ different frames of the animation interlaced by row (which is why Figure 2
 appears squished). For example, for a 200x200 seven-frame animation, create
 a single 200x1400 image where first frame is rows 0, 7, 14, 21, ...; the second
 frame is rows 1, 8, 15, 22, ...; etc. The combined image includes a text chunk
-that indicates the number of animation frames. The tool
-<code>bootable/recovery/interlace-frames.py</code>
+that indicates the number of animation frames and the number of frames per
+second (FPS). The tool <code>bootable/recovery/interlace-frames.py</code>
 takes a set of input frames and combines them into the necessary composite
 image used by recovery.</p>
 
