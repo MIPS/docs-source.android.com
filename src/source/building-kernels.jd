@@ -41,6 +41,18 @@ sources.</p>
     <th>Build configuration</th>
   </tr>
   <tr>
+    <td>angler</td>
+    <td>device/huawei/angler-kernel</td>
+    <td>kernel/msm</td>
+    <td>angler_defconfig</td>
+  </tr>
+  <tr>
+    <td>bullhead</td>
+    <td>device/lge/bullhead-kernel</td>
+    <td>kernel/msm</td>
+    <td>bullhead_defconfig</td>
+  </tr>
+  <tr>
     <td>shamu</td>
     <td>device/moto/shamu-kernel</td>
     <td>kernel/msm</td>
@@ -189,6 +201,7 @@ $ git clone https://android.googlesource.com/kernel/tegra.git
 <li>The <code>goldfish</code> project contains the kernel sources for the emulated
 platforms.</li>
 <li>The <code>msm</code> project has the sources for ADP1, ADP2, Nexus One, Nexus 4, Nexus 5, Nexus 6,
+Nexus 5X, Nexus 6P,
 and can be used as a starting point for work on Qualcomm MSM chipsets.</li>
 <li>The <code>omap</code> project is used for PandaBoard and Galaxy Nexus,
 and can be used as a starting point for work on TI OMAP chipsets.</li>
