@@ -345,7 +345,7 @@ key.  When Keymaster is requested to perform an operation with a key with this
 tag, it must receive an authentication token, and the token's
 <code>authenticator_type</code> field must match the value in the tag.  To be
 precise, it must be true that <code>(ntoh(token.authenticator_type) &
-auth_type_tag_value) != 0, where <code>ntoh</code> is a function that converts
+auth_type_tag_value) != 0</code>, where <code>ntoh</code> is a function that converts
 network-ordered integers to host-ordered integers and
 <code>auth_type_tag_value</code> is the value of this tag.</p>
 
