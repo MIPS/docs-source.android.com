@@ -220,7 +220,7 @@ that third-party apps cannot normally access.</p>
  </tr>
  <tr>
     <td rowspan="5">CVE-2015-6616</td>
-    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/77c185d5499d6174e7a97b3e1512994d3a803151">ANDROID-24630158</a></td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/257b3bc581bbc65318a4cc2d3c22a07a4429dc1d">ANDROID-24630158</a></td>
     <td>Critical</td>
     <td>6.0 and below</td>
     <td>Google Internal</td>
