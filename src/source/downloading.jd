@@ -25,8 +25,10 @@ page.title=Downloading the Source
 </div>
 
 <p>
-  The Android source tree is located in a Git repository hosted by Google. This document
-  describes how to download the source tree for a specific Android code-line.
+  The Android source tree is located in a Git repository hosted by Google. The Git repository
+  includes metadata for the Android source, including those related to changes to the source
+  and the date they were made. This document describes how to download the source tree for a
+  specific Android code-line.
 </p>
 <h2 id="installing-repo">
   Installing Repo
