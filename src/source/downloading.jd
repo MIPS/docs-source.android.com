@@ -96,6 +96,20 @@ $ cd WORKING_DIRECTORY
   </li>
   <li>
     <p>
+      Configure git with your real name and email address. To use the Gerrit code-review tool,
+      you will need an email address that is connected with a <a href=
+      "https://www.google.com/accounts">registered Google account</a>. Make sure this is a live
+      address at which you can receive messages. The name that you provide here will show up in
+      attributions for your code submissions.
+    </p>
+<pre>
+$ git config --global user.name "Your Name"
+$ git config --global user.email "you@example.com"
+</pre>
+  </li>
+  </li>
+  <li>
+    <p>
       Run <code>repo init</code> to bring down the latest version of Repo with all its most
       recent bug fixes. You must specify a URL for the manifest, which specifies where the
       various repositories included in the Android source will be placed within your working
@@ -110,15 +124,6 @@ $ repo init -u https://android.googlesource.com/platform/manifest
 <pre>
 $ repo init -u https://android.googlesource.com/platform/manifest -b android-4.0.1_r1
 </pre>
-  </li>
-  <li>
-    <p>
-      When prompted, configure Repo with your real name and email address. To use the Gerrit
-      code-review tool, you will need an email address that is connected with a <a href= 
-      "https://www.google.com/accounts">registered Google account</a>. Make sure this is a live
-      address at which you can receive messages. The name that you provide here will show up in
-      attributions for your code submissions.
-    </p>
   </li>
 </ol>
 <p>
