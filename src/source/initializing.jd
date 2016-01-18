@@ -55,23 +55,63 @@ OS below.</p>
 <h3 id="installing-the-jdk">Installing the JDK</h3>
 <p>The <code>master</code> branch of Android in the <a
 href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
-requires Java 7. On Ubuntu, use <a href="http://openjdk.java.net/install/">OpenJDK</a>.</p>
-<p>Java 7: For the latest version of Android</p>
+requires Java 8. On Ubuntu, use <a href="http://openjdk.java.net/install/">OpenJDK</a>.</p>
+<p>Java 8: For the latest version of Android</p>
+
+<h4 id="for-ubuntu-15-04">For Unbuntu &gt;= 15.04</h4>
+<p>Run the following:</p>
 <pre><code>$ sudo apt-get update
-$ sudo apt-get install openjdk-7-jdk
+$ sudo apt-get install openjdk-8-jdk
 </code></pre>
 
-<p>Optionally, update the default Java version by running:</p>
+<h4 id="for-ubuntu-14-04">For Ubuntu LTS 14.04</h4>
+<p>There are no available supported OpenJDK 8 packages for Ubuntu 14.04. The
+<strong>Ubuntu 15.04 OpenJDK 8</strong> packages have been used successfully
+with Ubuntu 14.04. <em>Newer package versions (e.g. those for 15.10, 16.04) were
+found not to work on 14.04 using the instructions below.</em></p>
+<ol>
+<li>
+<p>Download the .deb packages for your architecture from
+<a href="http://packages.ubuntu.com/vivid/openjdk-8-jdk"
+>http://packages.ubuntu.com/vivid/openjdk-8-jdk</a>:</p>
+<ul>
+<li>openjdk-8-jre-headless</li>
+<li>openjdk-8-jre</li>
+<li>openjdk-8-jdk</li>
+</ul>
+</li>
+<li>
+<p>Optionally, confirm the checksums of the downloaded files using the information
+found on <a href="http://packages.ubuntu.com/vivid/openjdk-8-jdk"
+>http://packages.ubuntu.com/vivid/openjdk-8-jdk</a>.</p>
+<p>For example with the sha256sum tool:</p>
+<pre><code>$ sha256sum {package file}</code></pre>
+</li>
+<li>
+<p>Install the packages:</p>
+<pre><code>$ sudo apt-get update</pre></code>
+<p>Run dpkg for each of the .deb files you downloaded. It may produce errors due to
+missing dependencies:</p>
+<pre><code>$ sudo dpkg -i {downloaded.deb file}</pre></code>
+<p>To fix missing dependencies:</p>
+<pre><code>$ sudo apt-get -f install</pre></code>
+</li>
+</ol>
+
+<h4 id="default-java-version">Update the default Java version - optional</h4>
+<p>Optionally, for the Ubuntu versions above update the default Java version by
+running:</p>
 <pre><code>$ sudo update-alternatives --config java
 $ sudo update-alternatives --config javac
 </code></pre>
 
-<p>If you encounter version errors for Java, set its
+<p>If, during a build, you encounter version errors for Java, set its
 path as described in the <a href="building.html#wrong-java-version">Wrong
 Java Version</a> section.</p>
 
 <p>To develop older versions of Android, download and install the corresponding version of the <a
 href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">Java JDK</a>:<br/>
+Java 7: for Lollipop through Marshmallow<br/>
 Java 6: for Gingerbread through KitKat<br/>
 Java 5: for Cupcake through Froyo</p>
 
@@ -198,7 +238,12 @@ function umountAndroid() { hdiutil detach /Volumes/android; }
 <p>Once you've mounted the <code>android</code> volume, you'll do all your work there. You can eject it (unmount it) just like you would with an external drive.</p>
 
 <h3 id="installing-the-mac-jdk">Installing the JDK</h3>
-<p>The <code>master</code> and <code>5.0.x</code> branches of Android in the <a
+<p>The <code>master</code> branch of Android in the <a
+href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
+requires Java 8. On Mac OS, use <a
+href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html#jdk-8u45-oth-JPR">jdk 8u45 or newer</a>.</p>
+
+<p>The <code>5.0.x</code> branches of Android in the <a
 href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
 require Java 7. On Mac OS, use <a
 href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jdk-7u71-oth-JPR">jdk-7u71-macosx-x64.dmg</a>.</p>
