@@ -38,12 +38,12 @@ with it, and some details of the implementation.</p>
 
 <p>Android 6.0 includes a OMTP VVM client, which (when provided with the correct
 configuration) will connect to Carrier VVM servers and populate Visual
-Voicemail messages within the AOSP Dialer. The VVM client:</p>
+Voicemail messages within the Android Open Source Project (AOSP) Dialer. The VVM client:</p>
 
 <ul>
   <li>Handles the SMS messages used to activate/deactivate/query status of the
 service and the SMS messages used to notify the device of events in the
-subscriber’s mailbox
+subscriber's mailbox
   <li>Syncs the mailbox with the IMAP server
   <li>Downloads the voicemails when the user chooses to listen to them
   <li>Integrates into the Dialer for user functionality such as calling back, viewing
@@ -54,7 +54,7 @@ unread messages, deleting messages, etc.
 
 <h3 id=implementation>Implementation</h3>
 
-<p>The Carrier must provide a Visual Voicemail server implementing the <a href="http://www.gsma.com/newsroom/wp-content/uploads/2012/07/OMTP_VVM_Specification_1_3.pdf">OMTP VVM specifications</a>. The current implementation of the Google VVM client supports the core
+<p>The Carrier must provide a Visual Voicemail server implementing the <a href="http://www.gsma.com/newsroom/wp-content/uploads/2012/07/OMTP_VVM_Specification_1_3.pdf">OMTP VVM specifications</a>. The current implementation of the AOSP VVM client supports the core
 features (read/delete voicemails, download/sync/listen) but the additional TUI
 features (password change, voicemail greeting, languages) are not implemented.
 At this time, we only support OMTP version 1.1 and do not use encryption for
@@ -142,8 +142,7 @@ content, and update the record in the platform Voicemail content provider.</p>
 <p>The VVM service can be disabled or deactivated by user interaction, removal of
 a valid SIM, or replacement by a carrier VVM app. <em>Disabled</em> means that the local device no longer displays visual voicemail. <em>Deactivated</em> means that the service is turned off for the subscriber. User interaction can
 deactivate the service, SIM removal temporarily disables the service because
-it's no longer present, and carrier VVM replacement disables the Google
-component of visual voicemail.</p>
+it's no longer present, and carrier VVM replacement disables the AOSP VVM client.</p>
 
 <h4 id=user_interaction>User interaction</h4>
 
@@ -155,16 +154,14 @@ voicemail, their service is reactivated as well.</p>
 
 <h4 id=sim_removal>SIM removal</h4>
 
-<p>If there are changes to the device’s SIM state (<code>ACTION_SIM_STATE_CHANGED</code>) or Carrier Config values (<code>ACTION_CARRIER_CONFIG_CHANGED</code>), and a valid configuration for the given SIM no longer exists, then the
+<p>If there are changes to the device's SIM state (<code>ACTION_SIM_STATE_CHANGED</code>) or Carrier Config values (<code>ACTION_CARRIER_CONFIG_CHANGED</code>), and a valid configuration for the given SIM no longer exists, then the
 voicemail source is unregistered locally and the voicemail tab disappears. If
 the SIM is replaced, VVM will be re-enabled.</p>
 
 <h4 id=replaced_by_carrier_vvm>Replaced by carrier VVM</h4>
 
-<p>If the device or the user installs a corresponding carrier visual voicemail app
-and the carrier has opted to disable Google visual voicemail if the carrier
-equivalent is installed, then the Google visual voicemail client will be
-automatically disabled. This is achieved by checking if a package with a name
+<p>A carrier visual voicemail app, if installed on the device, can disable the
+AOSP VVM client. This is achieved by checking if a package with a name
 matching the <code>KEY_CARRIER_VVM_PACKAGE_NAME_STRING</code> parameter is installed.</p>
 
 <p>The VVM client can still be enabled through user interaction.</p>
