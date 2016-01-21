@@ -24,7 +24,7 @@ page.title=Visual Voicemail
   </div>
 </div>
 
-<p>Android 6.0 (Marshmallow) brings an implementation of Visual Voicemail (VVM)
+<p>Android 6.0 (Marshmallow) brings an implementation of visual voicemail (VVM)
 support integrated into the Dialer, allowing compatible Carrier VVM services to
 hook into the Dialer with minimal configuration. Visual voicemail lets users
 easily check voicemail without making any phone calls. Users can view a list of
@@ -34,11 +34,11 @@ delete them as desired.</p>
 <p>This article gives an overview of what is provided, how carriers can integrate
 with it, and some details of the implementation.</p>
 
-<h2 id=visual_voicemail_vvm_client>Visual Voicemail (VVM) client</h2>
+<h2 id=visual_voicemail_vvm_client>Visual voicemail (VVM) client</h2>
 
 <p>Android 6.0 includes a OMTP VVM client, which (when provided with the correct
-configuration) will connect to Carrier VVM servers and populate Visual
-Voicemail messages within the Android Open Source Project (AOSP) Dialer. The VVM client:</p>
+configuration) will connect to Carrier VVM servers and populate visual
+voicemail messages within the Android Open Source Project (AOSP) Dialer. The VVM client:</p>
 
 <ul>
   <li>Handles the SMS messages used to activate/deactivate/query status of the
@@ -54,7 +54,7 @@ unread messages, deleting messages, etc.
 
 <h3 id=implementation>Implementation</h3>
 
-<p>The Carrier must provide a Visual Voicemail server implementing the <a href="http://www.gsma.com/newsroom/wp-content/uploads/2012/07/OMTP_VVM_Specification_1_3.pdf">OMTP VVM specifications</a>. The current implementation of the AOSP VVM client supports the core
+<p>The Carrier must provide a visual voicemail server implementing the <a href="http://www.gsma.com/newsroom/wp-content/uploads/2012/07/OMTP_VVM_Specification_1_3.pdf">OMTP VVM specifications</a>. The current implementation of the AOSP VVM client supports the core
 features (read/delete voicemails, download/sync/listen) but the additional TUI
 features (password change, voicemail greeting, languages) are not implemented.
 At this time, we only support OMTP version 1.1 and do not use encryption for
@@ -72,7 +72,7 @@ These parameters are:</p>
 <ul>
   <li>Destination number and port number for SMS
   <li>Authentication security type for IMAP (SSL, TLS, none, etc.)
-  <li>The package name of the carrier-provided Visual Voicemail app (if one is
+  <li>The package name of the carrier-provided visual voicemail app (if one is
 provided), so that the platform implementation can be disabled if that package
 is installed
 </ul>
@@ -130,12 +130,12 @@ carrier. A SYNC message contains the metadata for a new message so that it can
 be stored in the voicemail content provider.
 </ul>
 
-<h3 id=voicemail_download>Voicemail Download</h3>
+<h3 id=voicemail_download>Voicemail download</h3>
 
 <p>When a user presses play to listen to a voicemail, the corresponding audio file
-is downloaded. If the user chooses to listen to the Voicemail, the Dialer can
+is downloaded. If the user chooses to listen to the voicemail, the Dialer can
 broadcast <code>VoicemailContract.ACTION_FETCH_VOICEMAIL</code>, which the voicemail client will receive, initiate the download of the
-content, and update the record in the platform Voicemail content provider.</p>
+content, and update the record in the platform voicemail content provider.</p>
 
 <h3 id=disabling_vvm>Disabling VVM</h3>
 
