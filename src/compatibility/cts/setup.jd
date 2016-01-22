@@ -34,7 +34,7 @@ broadcast/multinetwork messages on that subnetwork, either by a Wi-Fi AP
 configuration or by running the DUT on an isolated sub-network without
 other devices being connected.</p>
 
-<p>If you don’t have access to a native IPv6 network, an IPv6 carrier network,
+<p>If you don't have access to a native IPv6 network, an IPv6 carrier network,
 or a VPN to pass some tests depending on IPv6, you may instead use a Wi-Fi
 access point and an IPv6 tunnel. See Wikipedia <a
 href="http://en.wikipedia.org/wiki/List_of_IPv6_tunnel_brokers">list of IPv6
@@ -48,6 +48,8 @@ configured or emit anything specific, and can include iBeacon,
 Eddystone, or even devices simulating BLE beacons.</p>
 
 <h2 id=desktop_setup>Desktop machine setup</h2>
+<p>CTS currently supports 64-bit Linux and Mac OS host machines.</p>
+
 <h3 id=adb>ADB and AAPT</h3>
 <p>Before running the CTS, make sure you have recent versions of both <a
 href="http://developer.android.com/tools/help/adb.html">Android Debug
