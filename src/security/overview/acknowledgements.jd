@@ -34,31 +34,130 @@ impact on Android security, including code that qualifies
 for the <a href="https://www.google.com/about/appsecurity/patch-rewards/">Patch
 Rewards</a> program.</p>
 
-<h2 id=2015>2015</h2>
+<h2 id=2016>2016</h2>
 
 <div style="LINE-HEIGHT:25px;">
 
-<p>
-<a href="mailto:jgor@utexas.edu">jgor</a> of <a href="http://security.utexas.edu">The University of Texas at Austin</a> (<a href="https://twitter.com/indiecom">@indiecom</a>)
-</p>
+<p>Abhishek Arya of Google Chrome Security Team</p>
 
-<p><a href="mailto:higongguang@gmail.com">Guang Gong</a> of <a href="http://www.360safe.com/">Qihoo 360 Technology Co. Ltd</a> (<a href="https://twitter.com/oldfresher">@oldfresher</a>)</p>
+<p>Gal Beniamini (<a href="https://twitter.com/@laginimaineb">@laginimaineb</a>, <a href="http://bits-please.blogspot.com/">http://bits-please.blogspot.com</a>)</p>
 
-<p>Stephan Huber of Testlab Mobile Security, <a
-href="https://www.sit.fraunhofer.de/">Fraunhofer SIT</a> (<a
-href="mailto:Stephan.Huber@sit.fraunhofer.de">Stephan.Huber@sit.fraunhofer.de</a>)
-</p>
+<p>Jann Horn (<a href="https://thejh.net/">https://thejh.net</a>)</p>
 
-<p><a
-href="http://www.ec-spride.tu-darmstadt.de/en/research-groups/secure-software-engineering-group/staff/siegfried-rasthofer/">Siegfried
-Rasthofer</a> of <a href="http://sseblog.ec-spride.de/">Secure Software
-Engineering Group</a>, EC SPRIDE Technische Universität Darmstadt (<a
-href="mailto:siegfried.rasthofer@gmail.com">siegfried.rasthofer@gmail.com</a>)</p>
+<p>jfang of KEEN lab, Tencent (<a href="https://twitter.com/k33nteam">@K33nTeam</a>)</p>
 
-<p><a href="mailto:laginimaineb@gmail.com">Gal Beniamini</a> (<a href="http://bits-please.blogspot.com">http://bits-please.blogspot.com</a>)</p>
+<p>Jouni Malinen PGP id EFC895FA</p>
 
-<p>Michael Peck of <a href="https://www.mitre.org">The MITRE Corporation</a>
-(<a href="mailto:mpeck@mitre.org">mpeck@mitre.org</a>)</p>
+<p>Martin Barbella of Google Chrome Security Team</p>
+
+<p>Oliver Chang of Google Chrome Security Team</p>
+
+<p>Quan Nguyen of Google Information Security Engineer Team</p>
+
+<p>Sen Nie (<a href="https://twitter.com/@nforest_">@nforest_</a>) of KEEN lab, Tencent (<a href="https://twitter.com/k33nteam">@K33nTeam</a>)</p>
+
+<p>Tom Craig of Google X</p>
+
+<p>Yabin Cui from Android Bionic Team</p>
+
+</div>
+
+<h2 id=2015>2015</h2>
+
+<div style="LINE-HEIGHT:25px;">
+<p>Abhishek Arya, Google Chrome Security Team</p>
+
+<p>Alex Copot</p>
+
+<p>Alex Eubanks</p>
+
+<p>Alexandru Blanda</p>
+
+<p>Artem Chaykin</p>
+
+<p>Ben Hawkes</p>
+
+<p>Brennan Lautner</p>
+
+<p>Chiachih Wu of C0RE Team from Qihoo 360</p>
+
+<p>Darmstadt (siegfried.rasthofer@gmail.com)</p>
+
+<p>Daniel Micay (daniel.micay@copperhead.co) at Copperhead Security</p>
+
+<p>Dongkwan Kim of System Security Lab, KAIST (dkay@kaist.ac.kr)</p>
+
+<p>dragonltx of Alibaba Mobile Security Team</p>
+
+<p>Gal Beniamini (<a href="http://bits-please.blogspot.com/">http://bits-please.blogspot.com</a>)</p>
+
+<p>Guang Gong (龚广) (<a href="https://twitter.com/oldfresher">@oldfresher</a>, higongguang@gmail.com) of <a href="http://www.360.cn/">Qihoo 360 Technology Co.Ltd</a></p>
+
+<p>Hongil Kim of System Security Lab, KAIST (hongilk@kaist.ac.kr)</p>
+
+<p>Ian Beer of Google Project Zero</p>
+
+<p>Iván Arce (@4Dgifts) of Programa STIC at Fundación Dr. Manuel Sadosky, Buenos
+Aires Argentina</p>
+
+<p>Jack Tang of Trend Micro (@jacktang310)</p>
+
+<p>jgor of <a href="http://security.utexas.edu/">The University of Texas at Austin</a> (<a href="https://twitter.com/indiecom">@indiecom</a>)</p>
+
+<p>Joaquín Rinaudo (@xeroxnir) of Programa STIC at Fundación Dr. Manuel Sadosky,
+Buenos Aires Argentina</p>
+
+<p>Jordan Gruskovnjak of Exodus Intelligence (@jgrusko)</p>
+
+<p>Joshua Drake of Zimperium</p>
+
+<p>Lei Wu of C0RE Team from Qihoo 360</p>
+
+<p>Marco Grassi (<a href="https://twitter.com/marcograss">@marcograss</a>) of <a href="http://k33nteam.org/">KeenTeam</a> (<a href="https://twitter.com/k33nteam">@K33nTeam</a>)</p>
+
+<p>Mark Carter (<a href="https://twitter.com/hanpingchinese">@hanpingchinese</a>) of EmberMitre Ltd</p>
+
+<p>Martin Barbella, Google Chrome Security Team</p>
+
+<p>Michael Peck of <a href="https://www.mitre.org/">The MITRE Corporation</a> (mpeck@mitre.org)</p>
+
+<p>Michał Bednarski (<a href="https://github.com/michalbednarski">https://github.com/michalbednarski</a>)</p>
+
+<p>Michael Roland of JR-Center u'smile at University of Applied Scienses, Upper
+Austria/Hagenberg</p>
+
+<p>Natalie Silvanovich of Google Project Zero</p>
+
+<p>Oliver Chang, Google Chrome Security Team</p>
+
+<p>Peter Pi of Trend Micro</p>
+
+<p>Ping Li of Qihoo 360 Technology Co. Ltd</p>
+
+<p>Qidan He (@flanker_hqd) from KeenTeam (@K33nTeam, <a href="http://k33nteam.org/">http://k33nteam.org/</a>)</p>
+
+<p>Roee Hay and Or Peles</p>
+
+<p>Seven Shen of Trend Micro</p>
+
+<p><a href="http://www.ec-spride.tu-darmstadt.de/en/research-groups/secure-software-engineering-group/staff/siegfried-rasthofer/">Siegfried Rasthofer</a> of <a href="http://sseblog.ec-spride.de/">Secure Software Engineering Group</a>, EC SPRIDE Technische Universität</p>
+
+<p>Stephan Huber of Testlab Mobile Security, <a href="https://www.sit.fraunhofer.de/">Fraunhofer SIT</a> (Stephan.Huber@sit.fraunhofer.de)</p>
+
+<p>Steven Vittitoe of Google Project Zero</p>
+
+<p>Tzu-Yin (Nina) Tai</p>
+
+<p>Wangtao(neobyte) of Baidu X-Team</p>
+
+<p>Wen Xu (@antlr7) from KeenTeam (@K33nTeam, <a href="http://k33nteam.org/">http://k33nteam.org/</a>)</p>
+
+<p>Wish Wu of Trend Micro Inc. (@wish_wu)</p>
+
+<p>Xuxian Jiang of C0RE Team from Qihoo 360</p>
+
+<p>Yajin Zhou of C0RE Team from Qihoo 360</p>
+
 
 </div>
 
