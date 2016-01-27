@@ -50,11 +50,11 @@ the following requirements:</p>
   </li>
 
   <li>
-  JDK 7 to build the master branch of Android in the <a
+  JDK 8 to build the master branch of Android in the <a
   href="https://android.googlesource.com/">Android Open Source Project
-  (AOSP)</a>; JDK 6 to build Gingerbread through KitKat; JDK 5 for Cupcake through
-  Froyo. See <a href="initializing.html">Initializing a Build Environment</a>
-  for installation instructions by operating system.</p>
+  (AOSP)</a>; JDK 7 to build Lollipop through Marshmallow, JDK 6 to build Gingerbread through KitKat. See
+  <a href="initializing.html">Initializing a Build Environment</a> for installation instructions by operating
+  system.</p>
   </li>
 
   <li>
