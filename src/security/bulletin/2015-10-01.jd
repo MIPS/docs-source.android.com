@@ -2,7 +2,7 @@ page.title=Nexus Security Bulletin - October 2015
 @jd:body
 
 <!--
-    Copyright 2015 The Android Open Source Project
+    Copyright 2016 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -178,8 +178,8 @@ mediaserver.)
 
 <ul>
   <li> Brennan Lautner: CVE-2015-3863
-  <li> Yajin Zhou, Lei Wu, and Xuxian Jiang of C0re Team from Qihoo 360: CVE-2015-3868,
-CVE-2015-3869, CVE-2015-3865, CVE-2015-3862
+  <li> Chiachih Wu and Xuxian Jiang of C0RE Team from Qihoo 360: CVE-2015-3868, CVE-2015-3869, CVE-2015-3862
+  <li> Yajin Zhou, Lei Wu, and Xuxian Jiang of C0RE Team from Qihoo 360: CVE-2015-3865
   <li> Daniel Micay (daniel.micay@copperhead.co) at Copperhead Security: CVE-2015-3875
   <li> dragonltx of Alibaba Mobile Security Team: CVE-2015-6599
   <li> Ian Beer and Steven Vittitoe of Google Project Zero: CVE-2015-6604
