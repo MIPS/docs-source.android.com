@@ -24,7 +24,7 @@ page.title=Nexus Security Bulletin - October 2015
   </div>
 </div>
 
-<p><em>Published October 05, 2015 | Updated October 12, 2015</em></p>
+<p><em>Published October 05, 2015 | Updated January 22, 2016</em></p>
 
 <p>We have released a security update to Nexus devices through an over-the-air
 (OTA) update as part of our Android Security Bulletin Monthly Release process.
@@ -796,4 +796,5 @@ resulting in a local temporary denial of service.</p>
 references for CVE-2014-9082.
   <li> October 12, 2015: Updated acknowledgements for CVE-2015-3868, CVE-2015-3869,
 CVE-2015-3865, CVE-2015-3862.
+  <li> January 22, 2016: Updated acknowledgements for CVE-2015-6606.
 </ul>
