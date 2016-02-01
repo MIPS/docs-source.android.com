@@ -271,8 +271,8 @@ encodes a format version number as three decimal digits, which is
 expected to increase monotonically over time as the format evolves.</p>
 
 <pre>
-ubyte[8] DEX_FILE_MAGIC = { 0x64 0x65 0x78 0x0a 0x30 0x33 0x35 0x00 }
-                        = "dex\n035\0"
+ubyte[8] DEX_FILE_MAGIC = { 0x64 0x65 0x78 0x0a 0x30 0x33 0x37 0x00 }
+                        = "dex\n037\0"
 </pre>
 
 <p class="note"><strong>Note:</strong> At least a couple earlier versions of the format have
@@ -283,6 +283,16 @@ and version <code>013</code> was used for the M5 releases of the Android
 platform (February&ndash;March 2008). In several respects, these earlier
 versions of the format differ significantly from the version described in this
 document.</p>
+
+<p class="note"><strong>Note:</strong> Support for version <code>037</code> of
+the format was added in the Android N release. Prior to this release most
+versions of Android have used version <code>035</code> of the format. The only
+difference between versions <code>035</code> and <code>037</code> is the
+addition of default methods and the adjustment of the <code>invoke</code>
+instruction semantics to support this feature. Due to a Dalvik bug present in
+older versions of Android, Dex version <code>036</code> has been skipped.
+Dex version <code>036</code> is not valid for any version of Android and never
+will be.</p>
 
 <h3 id="endian-constant">ENDIAN_CONSTANT and REVERSE_ENDIAN_CONSTANT</h3>
 <h4>embedded in header_item</h4>
