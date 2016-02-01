@@ -39,6 +39,11 @@ multiplies the current by the time for which the subsystem was active and
 computes the mAh value, which is then used to estimate the amount of battery
 drained by the application/subsystem.</p>
 
+<p>Devices with <a href="#chipset-data">Bluetooth and Wi-Fi controllers</a>
+running Android 6.0 and higher can provide additional power values obtained from
+chipset data.</p>
+
+
 <h2 id="multiple-cpus">Devices with heterogeneous CPUs</h2>
 
 <p>The power profile for devices with CPU cores of heterogeneous architecture
@@ -268,3 +273,77 @@ sample file in AOSP, see
   <td></td>
 </tr>
 </table>
+
+<h2 id="chipset-data">Devices with Bluetooth and Wi-Fi controllers</h2>
+<p>Devices with Bluetooth and Wi-Fi controllers running Android 6.0 and
+higher can be polled for the following energy use data:</p>
+<ul>
+<li>Time spent transmitting (in milliseconds).</li>
+<li>Time spent receiving (in milliseconds).</li>
+<li>Time spent idle (in milliseconds).</li>
+</ul>
+
+<p>Time values are not measured but are instead available from respective chip
+specifications and must be explicitly stated (for details, see
+<a href="{@docRoot}devices/tech/power/batterystats.html#wifi-reqs">Wi-Fi,
+Bluetooth, and cellular usage</a>). To convert time values to power values, the
+framework expects four (4) values for each controller in a resource overlay at
+<code>/frameworks/base/core/res/res/values/config.xml</code>.</p>
+
+  <table id="chipset-energy-data">
+
+    <tr>
+      <th width="10%">Controller</th>
+      <th width="40%">Values/Resource Names</th>
+      <th width="40%">Description</th>
+    </tr>
+
+    <tr>
+      <td>Bluetooth<</td>
+      <td>android:integer/config_bluetooth_idle_cur_ma</td>
+      <td>Average current draw (mA) of the Bluetooth controller when idle.</td>
+    </tr>
+
+    <tr>
+      <td>Bluetooth</td>
+      <td>android:integer/config_bluetooth_active_rx_cur_ma</td>
+      <td>Average current draw (mA) of the Bluetooth controller when receiving.</td>
+    </tr>
+
+    <tr>
+      <td>Bluetooth</td>
+      <td>android:integer/config_bluetooth_tx_cur_ma</td>
+      <td>Average current draw (mA) of the Bluetooth controller when transmitting.</td>
+    </tr>
+
+    <tr>
+      <td>Bluetooth</td>
+      <td>android:integer/config_bluetooth_operating_voltage_mv</td>
+      <td>Average operating voltage (mV) of the Bluetooth controller.</td>
+    </tr>
+
+    <tr>
+      <td>Wi-Fi</td>
+      <td>android:integer/config_wifi_idle_receive_cur_ma</td>
+      <td>Average current draw (mA) of the Wi-Fi controller when idle.</td>
+    </tr>
+
+    <tr>
+      <td>Wi-Fi</td>
+      <td>android:integer/config_wifi_active_rx_cur_ma</td>
+      <td>Average current draw (mA) of the Wi-Fi controller when receiving.</td>
+    </tr>
+
+    <tr>
+      <td>Wi-Fi</td>
+      <td>android:integer/config_wifi_tx_cur_ma</td>
+      <td>average current draw (mA) of the Wi-Fi controller when transmitting.</td>
+    </tr>
+
+    <tr>
+      <td>Wi-Fi</td>
+      <td>android:integer/config_wifi_operating_voltage_mv</td>
+      <td>Average operating voltage (mV) of the Wi-Fi controller.</td>
+    </tr>
+
+    </table>
