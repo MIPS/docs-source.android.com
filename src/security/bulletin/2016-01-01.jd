@@ -257,7 +257,7 @@ possibly need to be repaired by re-flashing the operating system.</p>
     <td>CVE-2015-6638</td>
     <td>ANDROID-24673908*</td>
     <td>Critical</td>
-    <td>5.0, 5.5.1, 6.0, 6.0.1</td>
+    <td>5.0, 5.1.1, 6.0, 6.0.1</td>
     <td>Google Internal</td>
  </tr>
 </table>
