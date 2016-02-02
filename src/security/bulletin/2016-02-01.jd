@@ -383,9 +383,6 @@ third-party applications installed locally.</p>
 </table>
 
 
-<p>
-</p>
-
 <h3 id=elevation_of_privilege_vulnerability_in_mediaserver>Elevation of Privilege Vulnerability in Mediaserver </h3>
 
 
@@ -468,11 +465,7 @@ successfully reset a device, erasing all data.</p>
  </tr>
 </table>
 
-
-<p>
-</p>
-
-<p><strong>Common Questions and Answers</strong></p>
+<h3 id=common_questions_and_answers>Common Questions and Answers</strong></h3>
 
 <p>This section reviews answers to common questions that may occur after reading
 this bulletin.</p>
