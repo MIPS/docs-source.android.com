@@ -554,10 +554,10 @@ $ adb shell dumpsys batterystats --charged &lt;package-name&gt;</pre>
 
   </table>
 
-<h2 id="wifi-reqs">Wi-Fi, Bluetooth, and cellular usage</h2>
+<h2 id="wifi-reqs">Bluetooth, cellular, and Wi-Fi usage</h2>
 
-<p>Support for battery usage data on Wi-Fi, Bluetooth, and cellular data
-requires that the device Wi-Fi, Bluetooth, and cellular chipsets implement radio
+<p>Support for battery usage data on Bluetooth, cellular, and Wi-Fi data
+requires the device Bluetooth, cellular, and Wif-Fi chipsets implement radio
 support and the chipset firmware passes usage data to the framework. OEMs must
 work with their chipset providers to facilitate in-field firmware updates on
 existing chipsets and compatible firmware on new chipsets.</p>
@@ -565,7 +565,9 @@ existing chipsets and compatible firmware on new chipsets.</p>
 <p>Additionally, OEMs must continue to configure and submit the power profile
 for their devices. However, when the platform detects that Wi-Fi and Bluetooth
 radio power data is available from the chipset, it uses chipset data instead of
-power profile data (cell radio power data is not yet used).</p>
+power profile data (cell radio power data is not yet used). For details, see
+<a href="{@docRoot}devices/tech/power/values.html#chipset-data">Devices with
+Bluetooth and Wi-Fi controllers</a>.</p>
 
 <p class="note"><strong>Note</strong>: Prior to Android 6.0, power use for Wi-Fi
 radio, Bluetooth radio, and cellular radio was tracked in the <em>m</em> (Misc)
