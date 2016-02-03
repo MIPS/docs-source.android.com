@@ -645,7 +645,7 @@ INFORMATIVE.</li>
 <li>Invalid data coming from any untrusted source (including any
 file on shared storage, or data coming through just about any network
 connections) is considered expected and should not trigger any logging at a
-level higher then DEBUG when it's detected to be invalid (and even then
+level higher than DEBUG when it's detected to be invalid (and even then
 logging should be as limited as possible).</li>
 <li>Keep in mind that the <code>+</code> operator, when used on Strings,
 implicitly creates a <code>StringBuilder</code> with the default buffer size (16
