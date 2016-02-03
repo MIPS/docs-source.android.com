@@ -6,7 +6,7 @@ header.hide=1
 @jd:body
 
 <!--
-    Copyright 2015 The Android Open Source Project
+    Copyright 2016 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -43,6 +43,16 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}source/initializing.html">
+        <h4>JDK 8 for Latest Platform Development</h4></a>
+        <p>The master branch of Android now requires JDK 8 to build. See <strong><a
+        href="{@docRoot}source/requirements.html">Requirements</a></strong>
+        for a summary of Java versions by Android release. See <strong><a
+        href="{@docRoot}source/initializing.html#installing-the-jdk">Setting up
+        a Linux build environment</a></strong> or <strong><a
+        href="{@docRoot}source/initializing.html#installing-the-mac-jdk">Setting up a
+        Mac OS build environment</a></strong> for update instructions by operating system.</p>
+
 <a href="{@docRoot}source/read-bug-reports.html">
         <h4>Reading Bug Reports</h4></a>
         <p>Android Engineering has written a detailed guide for <strong><a
@@ -80,12 +90,6 @@ devices meet compatibility requirements.
         <h4>6.0 CTS Downloads</h4></a>
         <p>Android 6.0 R2 Compatibility Test Suite (CTS) and CTS Verifier are available for <strong><a
         href="{@docRoot}compatibility/downloads.html#android-60">Download</a></strong>.</p>
-
-<a href="{@docRoot}source/community.html">
-        <h4>Android Resources</h4></a>
-        <p>Android Community now includes a collection of <strong><a
-        href="{@docRoot}source/community.html#resources">Resources</a></strong>
-        for contributors, developers, users, and security experts.</p>
     </div>
 
     <div class="col-8">
