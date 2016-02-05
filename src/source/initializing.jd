@@ -58,7 +58,7 @@ href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
 requires Java 8. On Ubuntu, use <a href="http://openjdk.java.net/install/">OpenJDK</a>.</p>
 <p>Java 8: For the latest version of Android</p>
 
-<h4 id="for-ubuntu-15-04">For Unbuntu &gt;= 15.04</h4>
+<h4 id="for-ubuntu-15-04">For Ubuntu &gt;= 15.04</h4>
 <p>Run the following:</p>
 <pre><code>$ sudo apt-get update
 $ sudo apt-get install openjdk-8-jdk
