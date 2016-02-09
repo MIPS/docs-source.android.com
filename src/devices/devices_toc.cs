@@ -345,6 +345,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/ota/block.html">Block-based OTA</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/ota/inside_packages.html">Inside OTA Packages</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/ota/device_code.html">Device-Specific Code</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/ota/reduce_size.html">Reducing OTA Size</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/ota/sign_builds.html">Signing Builds for Release</a></li>
         </ul>
       </li>
