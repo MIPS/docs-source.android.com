@@ -246,3 +246,10 @@ sites. Good places to start:<br>
 
 <p>Community resource for discussion about Android security: <a
 href="https://groups.google.com/forum/?fromgroups#!forum/android-security-discuss">https://groups.google.com/forum/?fromgroups#!forum/android-security-discuss</a></p>
+
+<h3 id=reports>Reports</h3>
+<p>Sometimes the Android Security team publishes reports or whitepapers. Here are some of the most recent.</p>
+<ul>
+  <li><a href="https://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2014_Report_Final.pdf">Android Security 2014 Year in Review</a></li>
+  <li><a href="https://static.googleusercontent.com/media/source.android.com/en//security/reports/Android_WhitePaper_Final_02092016.pdf">Android Security white paper</a></li>
+</ul>
