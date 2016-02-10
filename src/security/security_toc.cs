@@ -83,6 +83,16 @@
   </li>
   <li class="nav-section">
     <div class="nav-section-header">
+      <a href="<?cs var:toroot ?>security/trusty/index.html">
+        <span class="en">Trusty TEE</span>
+      </a>
+    </div>
+    <ul>
+      <li><a href="<?cs var:toroot ?>security/trusty/trusty-ref.html">Trusty API Reference</a></li>
+    </ul>
+  </li>
+  <li class="nav-section">
+    <div class="nav-section-header">
       <a href="<?cs var:toroot ?>security/encryption/index.html">
         <span class="en">Full Disk Encryption</span>
       </a>
