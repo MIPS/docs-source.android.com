@@ -99,7 +99,7 @@ the host, configure <code>gdb</code> to find symbols, and connect
 <h3 id=starts>Debugging a native process as it starts</h3>
 
 <p>If you want to debug a process as it starts, you’ll need to use <code>gdbserver</code>
-manually, but that’s easy too:</p>
+or <code>gdbserver64</code> manually, but that’s easy too:</p>
 
 <pre>
 $ adb shell gdbserver :5039 /system/bin/<em>my_test_app</em>
@@ -115,6 +115,10 @@ $ gdbclient <em>&lt;app pid&gt;</em>
 </pre>
 
 <p>Then enter <strong>continue</strong> at the <code>gdb</code> prompt.</p>
+
+<p>Note that to debug a 64-bit process, you'll need to use <code>gdbserver64</code>.
+The error messages from <code>gdb</code> if you made the wrong choice are unhelpful
+(along the lines of <code>Reply contains invalid hex digit 59</code>).</p>
 
 <h3 id=crash>Debugging processes that crash</h3>
 
