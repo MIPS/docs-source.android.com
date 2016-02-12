@@ -42,6 +42,9 @@ drivers
 <p><strong>Important</strong>: Trusty and the Trusty API are subject
 to change.</p>
 
+<p>For information about the Trusty API, see the <a
+href="trusty-ref.html">API Reference</a>.</p>
+
 <h2 id=uses_examples>Uses and examples</h2>
 
 <p>Any TEE OS (not just Trusty) can be used for TEE implementations.</p>
@@ -77,9 +80,6 @@ content, secure PIN and fingerprint processing, and even malware detection.</p>
   <li>Normal/untrusted applications that run on the main processor and use services
 provided by Trusted applications
 </ul>
-
-<p>For more information about the Trusty APIs, see the <a
-href="trusty-ref.html">Trusty Reference</a>.</p>
 
 <p>Software running on the main processor can use Trusty APIs to connect to
 trusted applications and exchange arbitrary messages with them, just like a
