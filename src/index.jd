@@ -43,6 +43,15 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}security/trusty/index.html">
+        <h4>Trusty Components</h4></a>
+        <p>See <strong><a
+        href="{@docRoot}security/trusty/index.html">Trusty TEE</a></strong>
+        for information about an optional set of components for a
+        Trusted Execution Environment (TEE).
+        Trusty consists of an operating system, drivers for the Android kernel (Linux),
+        and libraries for Android systems software.</p>
+
 <a href="{@docRoot}source/build-numbers.html">
         <h4>Lollipop and Marshmallow Build Numbers</h4></a>
         <p>New <strong><a
@@ -77,13 +86,6 @@ devices meet compatibility requirements.
         memory</a></strong>. It even explains how to establish a <strong><a
         href="{@docRoot}source/read-bug-reports.html#narrative">narrative</a></strong>
         of the issue by syncing timelines across logs.</p>
-
-<a href="{@docRoot}compatibility/cts/rotation-vector.html">
-        <h4>Rotation Vector CV Crosscheck</h4></a>
-        <p>Instructions now exist for the CTS Verifier <strong><a
-        href="{@docRoot}compatibility/cts/rotation-vector.html">Rotation Vector
-        CV Crosscheck</a></strong> used to properly test the compatibility of rotation
-        vector sensor implementations.</p>
 
 <a href="{@docRoot}security/bulletin/index.html">
         <h4>Security Bulletins</h4></a>
