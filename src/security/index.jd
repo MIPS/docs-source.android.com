@@ -22,7 +22,6 @@ page.title=Security
   </div>
 </div>
 
-<h2 id="introduction">Introduction</h2>
 <p>Android is a modern mobile platform that was designed to be truly open. Android
   applications make use of advanced hardware and software, as well as local and
   served data, exposed through the platform to bring innovation and value to
@@ -136,5 +135,60 @@ page.title=Security
   of scope for this document. But they are relevant to the security of most
   Android devices, so a related security document titled “Google Services for
   Android: Security Overview” is available.</p>
-
+<h2 id="android-security-program-overview">Security Program Overview</h2>
+<p>Early on in development, the core Android development team recognized that a
+  robust security model was required to enable a vigorous ecosystem of
+  applications and devices built on and around the Android platform and supported
+  by cloud services. As a result, through its entire development lifecycle,
+  Android has been subjected to a professional security program. The Android team
+  has had the opportunity to observe how other mobile, desktop, and server platforms
+  prevented and reacted to security issues and built a security
+  program to address weak points observed in other offerings.</p>
+<p>The key components of the Android Security Program include:</p>
+<ul>
+  <li><strong>Design Review</strong>: The Android security process begins early in the
+    development lifecycle with the creation of a rich and configurable security
+    model and design. Each major feature of the platform is reviewed by engineering
+    and security resources, with appropriate security controls integrated into the
+    architecture of the system.</li>
+  <li><strong>Penetration Testing and Code Review</strong>: During the development of the
+    platform, Android-created and open source components are subject to vigorous
+    security reviews. These reviews are performed by the Android Security Team,
+    Google’s Information Security Engineering team, and independent security
+    consultants. The goal of these reviews is to identify weaknesses and possible
+    vulnerabilities well before the platform is open sourced, and to simulate the
+    types of analysis that will be performed by external security experts upon
+    release.</li>
+  <li><strong>Open Source and Community Review</strong>: The Android Open Source Project enables
+    broad security review by any interested party. Android also uses open source
+    technologies that have undergone significant external security review,
+    such as the Linux kernel.  Google Play provides a forum for users and companies
+    to provide information about specific applications directly to users.</li>
+  <li><strong>Incident Response</strong>: Even with all of these precautions, security issues
+    may occur after shipping, which is why the Android project has created a
+    comprehensive security response process. A full-time Android security team
+    constantly monitors Android-specific and the general security community for
+    discussion of potential vulnerabilities. Upon the discovery of legitimate
+    issues, the Android team has a response process that enables the rapid
+    mitigation of vulnerabilities to ensure that potential risk to all Android
+    users is minimized.  These cloud-supported responses can include updating the
+    Android platform (over-the-air updates), removing applications from Google
+    Play, and removing applications from devices in the field.</li>
+</ul>
+<h2 id="android-platform-security-architecture">Platform Security Architecture</h2>
+<p>Android seeks to be the most secure and usable operating system for mobile
+  platforms by re-purposing traditional operating system security controls to:</p>
+<ul>
+  <li>Protect user data</li>
+  <li>Protect system resources (including the network)</li>
+  <li>Provide application isolation</li>
+</ul>
+<p>To achieve these objectives, Android provides these key security features:</p>
+<ul>
+  <li>Robust security at the OS level through the Linux kernel</li>
+  <li>Mandatory application sandbox for all applications</li>
+  <li>Secure interprocess communication</li>
+  <li>Application signing</li>
+  <li>Application-defined and user-granted permissions</li>
+</ul>
 
