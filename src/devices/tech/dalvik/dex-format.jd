@@ -1209,9 +1209,8 @@ may appear in a <code>.dex</code> file.
 <tr>
   <td>map_off</td>
   <td>uint</td>
-  <td>offset from the start of the file to the map item, or
-    <code>0</code> if this file has no map. The offset, if non-zero,
-    should be to an offset into the <code>data</code> section,
+  <td>offset from the start of the file to the map item. The offset, which must
+    be non-zero, should be to an offset into the <code>data</code> section,
     and the data should be in the format specified by "<code>map_list</code>"
     below.
   </td>
