@@ -232,20 +232,20 @@ test execution service, test binaries, and data files. The test activity is a <c
 
 <p>The application package can be installed with the following command. The name shown is the name of the APK in the Android CTS package. The name depends on the build:</p>
 <pre>
-adb –d install –r com.drawelements.deqp.apk
+adb -d install -r com.drawelements.deqp.apk
 </pre>
 
 <p>To launch the test execution service and to setup port forwarding, use the
 following:</p>
 <pre>
-adb –d forward tcp:50016 tcp:50016
-adb –d shell am start –n com.drawelements.deqp/.execserver.ServiceStarter
+adb -d forward tcp:50016 tcp:50016
+adb -d shell am start -n com.drawelements.deqp/.execserver.ServiceStarter
 </pre>
 
 <p>Debug prints can be enabled by executing the following before starting the
 tests:</p>
 <pre>
-adb –d shell setprop log.tag.dEQP DEBUG 
+adb -d shell setprop log.tag.dEQP DEBUG 
 </pre>
 
 <h3 id=executing_tests_on_android_without_android_cts>Executing tests on Android without Android CTS</h3>
@@ -259,9 +259,7 @@ available in the device log.</p>
 <p>The activity can be launched from the command line using the <code>"am"</code> utility. For example, to run <code>dEQP-GLES2.info</code> tests on a platform supporting <code>NativeActivity,</code> the following command can be used:</p>
 
 <pre>
-adb -d shell am start -n com.drawelements.deqp/android.app.NativeActivity -e
-cmdLine "deqp --deqp-case=dEQP-GLES2.info.*
---deqp-log-filename=/sdcard/dEQP-Log.qpa
+adb -d shell am start -n com.drawelements.deqp/android.app.NativeActivity -e cmdLine "'deqp --deqp-case=dEQP-GLES2.info.* --deqp-log-filename=/sdcard/dEQP-Log.qpa'"
 </pre>
 
 <h3 id=debugging_on_android>Debugging on Android</h3>
@@ -278,9 +276,7 @@ python android/scripts/install.py
 running on the host, run the following command:</p>
 
 <pre>
-python android/scripts/debug.py
---deqp-commandline="--deqp-log-filename=/sdcard/TestLog.qpa
---deqp-case=dEQP-GLES2.functional.*"
+python android/scripts/debug.py --deqp-commandline="--deqp-log-filename=/sdcard/TestLog.qpa --deqp-case=dEQP-GLES2.functional.*"
 </pre>
 
 <p>The deqp command line will depend on test cases to be executed and other
