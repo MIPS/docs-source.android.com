@@ -1,0 +1,143 @@
+page.title=Бюллетени по безопасности Nexus
+@jd:body
+
+<!--
+    Copyright 2016 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<div id="qv-wrapper">
+  <div id="qv">
+    <ol id="auto-toc">
+   </ol>
+  </div>
+</div>
+
+<div id="jd-content">
+ <div class="jd-descr" itemprop="articleBody">
+  <!--
+    Copyright 2015 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+  <div id="qv-wrapper">
+   <div id="qv">
+    <h2>
+     В этом документе
+    </h2>
+    <ol id="auto-toc">
+    </ol>
+   </div>
+  </div>
+  <p>
+   При разработке Android и Google Play особое внимание всегда уделялось
+безопасности. Например, для Android ежемесячно выходят обновления,
+которые помогают защитить данные пользователей. На этой странице собраны
+бюллетени по безопасности Nexus. Ознакомившись с ними, пользователи могут
+проверить, установлено ли на их устройстве новое исправление (см. данные
+в таблице ниже). О том, как узнать уровень обновления, можно прочитать в
+   <a href="https://support.google.com/nexus/answer/4457705">
+    Справочном центре
+   </a>
+   . Образы прошивок Nexus также выходят каждый месяц
+и публикуются на
+   <a href="https://developers.google.com/android/nexus/images">
+    сайте для разработчиков
+   </a>
+   .
+  </p>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Бюллетень по безопасности Nexus
+     </th>
+     <th>
+      Дата публикации
+     </th>
+     <th>
+      Уровень обновления
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-11-01.html">
+       Ноябрь 2015 г.
+      </a>
+     </td>
+     <td>
+      2 ноября 2015 г.
+     </td>
+     <td>
+      1 ноября 2015 г.: [2015-11-01]
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-10-01.html">
+       Октябрь 2015 г.
+      </a>
+     </td>
+     <td>
+      5 октября 2015 г.
+     </td>
+     <td>
+      1 октября 2015 г.: [2015-10-01]
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-09-01.html">
+       Сентябрь 2015 г.
+      </a>
+     </td>
+     <td>
+      9 сентября 2015 г.
+     </td>
+     <td>
+      Нет данных
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-08-01.html">
+       Август 2015 г.
+      </a>
+     </td>
+     <td>
+      13 августа 2015 г.
+     </td>
+     <td>
+      Нет данных
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <div class="content-footer-sac" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+  <div class="layout-content-col col-9" style="padding-top:4px">
+  </div>
+  <div class="paging-links layout-content-col col-4">
+  </div>
+ </div>
+</div>
