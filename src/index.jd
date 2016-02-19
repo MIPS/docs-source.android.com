@@ -43,6 +43,16 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/ota/reduce_size.html">
+        <h4>Reducing OTA Size</h4></a>
+        <p>The Android build team has reduced the size of over-the-air (OTA)
+        updates by eliminating unnecessary file changes between builds. And the team
+        now offers those same improvements to the public by describing them in
+        <strong><a href="{@docRoot}devices/tech/ota/reduce_size.html">Reducing OTA
+        Size</a></strong> within the <strong><a
+        href="{@docRoot}devices/tech/ota/index.html">OTA Updates</a></strong>
+        section.</p>
+
 <a href="{@docRoot}security/trusty/index.html">
         <h4>Trusty Components</h4></a>
         <p>See <strong><a
@@ -86,13 +96,6 @@ devices meet compatibility requirements.
         memory</a></strong>. It even explains how to establish a <strong><a
         href="{@docRoot}source/read-bug-reports.html#narrative">narrative</a></strong>
         of the issue by syncing timelines across logs.</p>
-
-<a href="{@docRoot}security/bulletin/index.html">
-        <h4>Security Bulletins</h4></a>
-        <p>The Android security team now publishes monthly <strong><a
-        href="{@docRoot}security/bulletin/index.html">Nexus Security
-        Bulletins</a></strong> describing key vulnerabilities fixed in AOSP
-        with links to associated changes.</p>
     </div>
 
     <div class="col-8">
