@@ -4,6 +4,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS:=JAVA_LIBRARIES
 LOCAL_DROIDDOC_HTML_DIR:=src
+LOCAL_ADDITIONAL_HTML_DIR:=src-intl intl/
 # Droiddoc needs java source to run. Just pointing to a dummy location
 # and deleting output later in delete-ref target
 LOCAL_ADDITIONAL_JAVA_DIR := frameworks/base/core/java/android/annotation

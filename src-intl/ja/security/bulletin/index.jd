@@ -1,0 +1,137 @@
+page.title=Nexus のセキュリティに関する公開情報
+@jd:body
+
+<!--
+    Copyright 2016 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<div id="qv-wrapper">
+  <div id="qv">
+    <ol id="auto-toc">
+   </ol>
+  </div>
+</div>
+
+<div id="jd-content">
+ <div class="jd-descr" itemprop="articleBody">
+  <!--
+    Copyright 2015 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+  <div id="qv-wrapper">
+   <div id="qv">
+    <h2>
+     このドキュメントの内容
+    </h2>
+    <ol id="auto-toc">
+    </ol>
+   </div>
+  </div>
+  <p>
+   セキュリティは常に Android と Google Play における大きな焦点となっています。Android の開発では、その当初からセキュリティが念頭に置かれています。毎月提供する端末のアップデートは、Android ユーザーの安全を維持するうえで重要な役割を果たしています。このページでは、Nexus のセキュリティに関して提供可能な公開情報を掲載しています。こうしたセキュリティに関する公開情報に含まれる情報に従って、ユーザーは自分の端末に最新のセキュリティ アップデートを確実に適用することができます。下記のセキュリティ パッチ レベルを用いて端末のセキュリティ パッチ レベルを確認する方法については、
+   <a href="https://support.google.com/nexus/answer/4457705">
+    Nexus のドキュメント
+   </a>
+   をご覧ください。また、Nexus ファームウェア イメージも
+   <a href="https://developers.google.com/android/nexus/images">
+    Google デベロッパー サイト
+   </a>
+   に毎月リリースされています。
+  </p>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Nexus のセキュリティに関する公開情報
+     </th>
+     <th>
+      公開日
+     </th>
+     <th>
+      Android セキュリティ パッチ レベル
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-11-01.html">
+       2015 年 11 月
+      </a>
+     </td>
+     <td>
+      2015 年 11 月 2 日
+     </td>
+     <td>
+      2015 年 11 月 1 日: [2015-11-01]
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-10-01.html">
+       2015 年 10 月
+      </a>
+     </td>
+     <td>
+      2015 年 10 月 5 日
+     </td>
+     <td>
+      2015 年 10 月 1 日: [2015-10-01]
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-09-01.html">
+       2015 年 9 月
+      </a>
+     </td>
+     <td>
+      2015 年 9 月 9 日
+     </td>
+     <td>
+      なし
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-08-01.html">
+       2015 年 8 月
+      </a>
+     </td>
+     <td>
+      2015 年 8 月 13 日
+     </td>
+     <td>
+      なし
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <div class="content-footer-sac" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+  <div class="layout-content-col col-9" style="padding-top:4px">
+  </div>
+  <div class="paging-links layout-content-col col-4">
+  </div>
+ </div>
+</div>

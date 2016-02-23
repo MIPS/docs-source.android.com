@@ -1,0 +1,137 @@
+page.title=Nexus 安全公告
+@jd:body
+
+<!--
+    Copyright 2016 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<div id="qv-wrapper">
+  <div id="qv">
+    <ol id="auto-toc">
+   </ol>
+  </div>
+</div>
+
+<div id="jd-content">
+ <div class="jd-descr" itemprop="articleBody">
+  <!--
+    Copyright 2015 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+  <div id="qv-wrapper">
+   <div id="qv">
+    <h2>
+     本文内容
+    </h2>
+    <ol id="auto-toc">
+    </ol>
+   </div>
+  </div>
+  <p>
+   安全性一直是 Android 和 Google Play 的重中之重：Android 在构建之初就非常注重安全性。每个月为设备发布安全补丁便是一项旨在确保 Android 用户安全无虞的重要举措。本页面列出了我们已发布的 Nexus 安全公告。用户可根据这些安全公告提供的信息来确认自己的设备是否已安装最新的安全补丁。请参阅
+   <a href="https://support.google.com/nexus/answer/4457705">
+    Nexus 文档
+   </a>
+   中提供的有关说明，了解如何根据下方提供的安全补丁程序级别信息来检查自己的设备安全情况。我们每月还会在
+   <a href="https://developers.google.com/android/nexus/images">
+    Google Developers 网站
+   </a>
+   上发布 Nexus 固件映像。
+  </p>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Nexus 安全公告
+     </th>
+     <th>
+      发布日期
+     </th>
+     <th>
+      Android 安全补丁程序级别
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-11-01.html">
+       2015 年 11 月
+      </a>
+     </td>
+     <td>
+      2015 年 11 月 2 日
+     </td>
+     <td>
+      2015 年 11 月 1 日：[2015-11-01]
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-10-01.html">
+       2015 年 10 月
+      </a>
+     </td>
+     <td>
+      2015 年 10 月 5 日
+     </td>
+     <td>
+      2015 年 10 月 1 日：[2015-10-01]
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-09-01.html">
+       2015 年 9 月
+      </a>
+     </td>
+     <td>
+      2015 年 9 月 9 日
+     </td>
+     <td>
+      无
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <a href="2015-08-01.html">
+       2015 年 8 月
+      </a>
+     </td>
+     <td>
+      2015 年 8 月 13 日
+     </td>
+     <td>
+      无
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <div class="content-footer-sac" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+  <div class="layout-content-col col-9" style="padding-top:4px">
+  </div>
+  <div class="paging-links layout-content-col col-4">
+  </div>
+ </div>
+</div>
