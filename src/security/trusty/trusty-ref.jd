@@ -153,7 +153,7 @@ enum {
   IPC_HANDLE_POLL_READY   = 0x1,
   IPC_HANDLE_POLL_ERROR   = 0x2,
   IPC_HANDLE_POLL_HUP     = 0x4,
-  IPC_HANDLE_POLL_MSG     jjjj= 0x8,
+  IPC_HANDLE_POLL_MSG     = 0x8,
   IPC_HANDLE_POLL_SEND_UNBLOCKED = 0x10,
   … more values[TBD]
 };
