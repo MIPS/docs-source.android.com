@@ -193,7 +193,7 @@ actual resistor values (R1 - R4) are altered to meet this specification.</p>
 based on the microphone capsule resistance (Rmic) and the equivalent impedance
 values (ReqA-ReqD). Use the following formula:</p>
 
-<p><em>Rn=(Rmic*ReqN) / (ReqN-Rmic)</em></p>
+<p><em>Rn=(Rmic*ReqN) / (Rmic+ReqN)</em></p>
 
 <p>Where R<em>n</em> is the actual resistance of a button, Req<em>N</em> is the
 equivalent impedance value of that button (provided), and Rmic is the
