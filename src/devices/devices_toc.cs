@@ -231,6 +231,7 @@
         </div>
         <ul>
           <li><a href="<?cs var:toroot ?>devices/tv/HDMI-CEC.html">HDMI-CEC control service</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tv/reference-tv-app.html">Reference TV App</a></li>
         </ul>
       </li>
     </ul>
