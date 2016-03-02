@@ -24,6 +24,7 @@
     <ul>
       <li><a href="<?cs var:toroot ?>security/overview/kernel-security.html">Kernel Security</a></li>
       <li><a href="<?cs var:toroot ?>security/overview/app-security.html">App Security</a></li>
+      <li><a href="<?cs var:toroot ?>security/implement.html">Implementing Security</a></li>
       <li><a href="<?cs var:toroot ?>security/overview/updates-resources.html">Updates and Resources</a></li>
       <li class="nav-section">
         <div class="nav-section-header">
