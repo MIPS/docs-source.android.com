@@ -388,7 +388,7 @@ href="http://developer.android.com/reference/android/hardware/SensorManager.html
   fields of <code>sensors_event_t.acceleration</code>.</p>
 <p>Readings on all axes should be close to 0 when the device is immobile.</p>
 <p>If the device possesses a gyroscope, the linear acceleration sensor must use
-  the accelerometer gyroscope and accelerometer as input.</p>
+  the gyroscope and accelerometer as input.</p>
 <p>If the device doesn’t possess a gyroscope, the linear acceleration sensor must
   use the accelerometer and the magnetometer as input.</p>
 <h3 id="significant_motion">Significant motion</h3>
@@ -582,7 +582,7 @@ the time. This sensor must use a gyroscope as the main orientation change input.
   identical to that of the accelerometer. On Earth, the magnitude is around 9.8
   m/s^2.</p>
 <p>If the device possesses a gyroscope, the gravity sensor must use the
-  accelerometer gyroscope and accelerometer as input.</p>
+  gyroscope and accelerometer as input.</p>
 <p>If the device doesn’t possess a gyroscope, the gravity sensor must use the
   accelerometer and the magnetometer as input.</p>
 <h3 id="geomagnetic_rotation_vector">Geomagnetic rotation vector</h3>
@@ -727,8 +727,8 @@ the time. This sensor must use a gyroscope as the main orientation change input.
 <p>Low-power</p>
 <p>Implement only the wake-up version of this sensor.</p>
 <p><code>getDefaultSensor(SENSOR_TYPE_PICK_UP_GESTURE)</code> <em>returns a wake-up sensor</em></p>
-<p>A pick-up gesture sensor sensor triggers when the device is picked up
-  regardless of wherever is was before (desk, pocket, bag).</p>
+<p>A pick-up gesture sensor triggers when the device is picked up
+  regardless of wherever it was before (desk, pocket, bag).</p>
 <p>Each sensor event reports 1 in <code>sensors_event_t.data[0]</code>.</p>
 <h3 id="glance_gesture">Glance gesture</h3>
 <p>Underlying physical sensors: Undefined (anything low power)</p>
