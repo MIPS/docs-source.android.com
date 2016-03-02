@@ -30,22 +30,22 @@ you access to key documents and information about the program.</p>
 <h2 id="android-60">Android 6.0</h2>
 <p>Android 6.0 is the release of the development milestone code-named Marshmallow.
 The source code for the following tests can be synced with the
-'android-cts-6.0_r3' tag in the open-source tree.</p>
+'android-cts-6.0_r4' tag in the open-source tree.</p>
 <ul>
 <li><a href="6.0/android-6.0-cdd.pdf">Android 6.0 Compatibility Definition
 Document (CDD)</a></li>
 <li><a
-href="https://dl.google.com/dl/android/cts/android-cts-6.0_r3-linux_x86-arm.zip">Android
-6.0 R3 Compatibility Test Suite (CTS) - ARM</a></li>
+href="https://dl.google.com/dl/android/cts/android-cts-6.0_r4-linux_x86-arm.zip">Android
+6.0 R4 Compatibility Test Suite (CTS) - ARM</a></li>
 <li><a
-href="https://dl.google.com/dl/android/cts/android-cts-6.0_r3-linux_x86-x86.zip">Android
-6.0 R3 Compatibility Test Suite (CTS) - x86</a></li>
+href="https://dl.google.com/dl/android/cts/android-cts-6.0_r4-linux_x86-x86.zip">Android
+6.0 R4 Compatibility Test Suite (CTS) - x86</a></li>
 <li><a
-href="https://dl.google.com/dl/android/cts/android-cts-verifier-6.0_r3-linux_x86-arm.zip">Android
-6.0 R3 CTS Verifier - ARM</a></li>
+href="https://dl.google.com/dl/android/cts/android-cts-verifier-6.0_r4-linux_x86-arm.zip">Android
+6.0 R4 CTS Verifier - ARM</a></li>
 <li><a
-href="https://dl.google.com/dl/android/cts/android-cts-verifier-6.0_r3-linux_x86-x86.zip">Android
-6.0 R3 CTS Verifier - x86</a></li>
+href="https://dl.google.com/dl/android/cts/android-cts-verifier-6.0_r4-linux_x86-x86.zip">Android
+6.0 R4 CTS Verifier - x86</a></li>
 </ul>
 
 <h2 id="android-51">Android 5.1</h2>
