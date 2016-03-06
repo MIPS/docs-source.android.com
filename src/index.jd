@@ -41,6 +41,14 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}source/devices.html#running-android-hikey">
+        <h4>HiKey Reference Board</h4></a>
+        <p>AOSP now provides kernel source and board support for the HiKey Android
+        reference board, a certified 96Board available in 1GB RAM and 2GB RAM
+        configurations. For details on running Android on HiKey, see <strong><a
+        href="{@docRoot}source/devices.html#running-android-hikey">HiKey
+        Boards</a>.</strong></p>
+
 <a href="{@docRoot}devices/tech/ota/device_code.html">
         <h4>FPS Value Customization</h4></a>
         <p>Android allows for a vendor-specific installing image but previously
@@ -74,15 +82,6 @@ devices meet compatibility requirements.
         Size</a></strong> within the <strong><a
         href="{@docRoot}devices/tech/ota/index.html">OTA Updates</a></strong>
         section.</p>
-
-<a href="{@docRoot}security/trusty/index.html">
-        <h4>Trusty Components</h4></a>
-        <p>See <strong><a
-        href="{@docRoot}security/trusty/index.html">Trusty TEE</a></strong>
-        for information about an optional set of components for a
-        Trusted Execution Environment (TEE).
-        Trusty consists of an operating system, drivers for the Android kernel (Linux),
-        and libraries for Android systems software.</p>
 
 <a href="{@docRoot}source/initializing.html">
         <h4>JDK 8 for Latest Platform Development</h4></a>
