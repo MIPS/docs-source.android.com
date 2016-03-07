@@ -23,149 +23,6 @@ page.title=Nexus のセキュリティに関する公開情報 - 2015 年 12 月
   </div>
 </div>
 
-<div id="jd-content">
- <div class="jd-descr" itemprop="articleBody">
-  <!--
-    Copyright 2015 The Android Open Source Project
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-  <div id="qv-wrapper">
-   <div id="qv">
-    <h2>
-     このドキュメントの内容
-    </h2>
-    <ol id="auto-toc">
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#security_vulnerability_summary">
-       セキュリティの脆弱性の概要
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#mitigations">
-       リスクの軽減
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#acknowledgements">
-       謝辞
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#security_vulnerability_details">
-       セキュリティの脆弱性の詳細
-      </a>
-     </li>
-     <ol>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerabilities_in_mediaserver">
-        メディアサーバーでのリモートコード実行の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerability_in_skia">
-        Skia でのリモートコード実行の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_in_kernel">
-        カーネルでの権限昇格
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerabilities_in_display_driver">
-        ディスプレイ ドライバでのリモートコード実行の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerability_in_bluetooth">
-        Bluetooth でのリモートコード実行の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerabilities_in_libstagefright">
-        libstagefright での権限昇格の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_systemui">
-        SystemUI での権限昇格の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_native_frameworks_library">
-        Native Frameworks Library での情報開示の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_wi-fi">
-        Wi-Fi での権限昇格の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_system_server">
-        System Server での権限昇格の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerabilities_in_libstagefright">
-        libstagefright での情報開示の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_audio">
-        Audio での情報開示の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_media_framework">
-        Media Framework での情報開示の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_wi-fi">
-        Wi-Fi での情報開示の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_system_server19">
-        System Server での権限昇格の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_systemui">
-        SystemUI での情報開示の脆弱性
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#common_questions_and_answers">
-        一般的な質問と回答
-       </a>
-      </li>
-     </ol>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#revisions">
-       改訂
-      </a>
-     </li>
-    </ol>
-   </div>
-  </div>
-  <p>
-   <em>
-    2015 年 12 月 7 日公開 | 2015 年 12 月 22 日更新
-   </em>
-  </p>
   <p>
    Android のセキュリティに関する月例情報公開の一環として、Nexus 端末に対するセキュリティ アップデートを無線（OTA）アップデートで配信しました。また、Nexus ファームウェア イメージも
    <a href="https://developers.google.com/android/nexus/images">
@@ -440,13 +297,9 @@ page.title=Nexus のセキュリティに関する公開情報 - 2015 年 12 月
      KeenTeam
     </a>
     （
-    <a href="https://twitter.com/k33nteam">
-     @K33nTeam
-    </a>
+    <a href="https://twitter.com/k33nteam"> @K33nTeam </a>
     ）の Flanker（
-    <a href="https://twitter.com/flanker_hqd">
-     @flanker_hqd
-    </a>
+    <a href="https://twitter.com/flanker_hqd"> @flanker_hqd </a>
     ）: CVE-2015-6620
    </li>
    <li>
@@ -454,16 +307,12 @@ page.title=Nexus のセキュリティに関する公開情報 - 2015 年 12 月
      Qihoo 360 Technology Co.Ltd
     </a>
     の Guang Gong（龚广）（
-    <a href="https://twitter.com/oldfresher">
-     @oldfresher
-    </a>
+    <a href="https://twitter.com/oldfresher"> @oldfresher </a>
     、higongguang@gmail.com）: CVE-2015-6626
    </li>
    <li>
     EmberMitre Ltd の Mark Carter（
-    <a href="https://twitter.com/hanpingchinese">
-     @hanpingchinese
-    </a>
+    <a href="https://twitter.com/hanpingchinese"> @hanpingchinese </a>
     ）: CVE-2015-6630
    </li>
    <li>
@@ -484,17 +333,11 @@ page.title=Nexus のセキュリティに関する公開情報 - 2015 年 12 月
      KeenTeam
     </a>
     （
-    <a href="https://twitter.com/k33nteam">
-     @K33nTeam
-    </a>
+    <a href="https://twitter.com/k33nteam"> @K33nTeam </a>
     ）の Qidan He（
-    <a href="https://twitter.com/flanker_hqd">
-     @flanker_hqd
-    </a>
+    <a href="https://twitter.com/flanker_hqd"> @flanker_hqd </a>
     ）と Marco Grassi（
-    <a href="https://twitter.com/marcograss">
-     @marcograss
-    </a>
+    <a href="https://twitter.com/marcograss"> @marcograss </a>
     ）: CVE-2015-6622
    </li>
    <li>
@@ -502,9 +345,7 @@ page.title=Nexus のセキュリティに関する公開情報 - 2015 年 12 月
    </li>
    <li>
     Fundación Dr. Manuel Sadosky（アルゼンチン、ブエノスアイレス）Programa STIC の Joaquín Rinaudo（
-    <a href="https://twitter.com/xeroxnir">
-     @xeroxnir
-    </a>
+    <a href="https://twitter.com/xeroxnir"> @xeroxnir </a>
     ）: CVE-2015-6631
    </li>
   </ul>
@@ -1537,11 +1378,3 @@ page.title=Nexus のセキュリティに関する公開情報 - 2015 年 12 月
     2015 年 12 月 22 日: 謝辞にクレジットを追加
    </li>
   </ul>
- </div>
- <div class="content-footer-sac" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-  <div class="layout-content-col col-9" style="padding-top:4px">
-  </div>
-  <div class="paging-links layout-content-col col-4">
-  </div>
- </div>
-</div>
