@@ -41,6 +41,25 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}security/bulletin/index.html">
+        <h4>March Nexus Security Bulletin</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}security/bulletin/2016-03-01.html">March 2016 Nexus Security
+	Bulletin</a></strong> has been published. The bulletin describes
+        numerous vulnerabilities that have been fixed in the Android Open Source
+        Project (AOSP). In addition, new <strong><a
+        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">Build
+        Numbers</a></strong> are available corresponding to this security release.</p>
+
+<a href="{@docRoot}compatibility/downloads.html">
+        <h4>Android CTS 6.0 R4</h4></a>
+        <p>Version 6.0 R4 of the Android Compatibility Test Suite (CTS) is now
+        available for <strong><a
+        href="{@docRoot}compatibility/downloads.html#android-60">download</a></strong>.
+        In addition, the recommendation to use the <code>--skip-preconditions</code>
+        option has been published to <strong><a
+        href="{@docRoot}compatibility/cts/run.html">Running CTS Tests</a></strong>.</p>
+
 <a href="{@docRoot}source/devices.html#running-android-hikey">
         <h4>HiKey Reference Board</h4></a>
         <p>AOSP now provides kernel source and board support for the HiKey Android
@@ -72,26 +91,6 @@ devices meet compatibility requirements.
         href="{@docRoot}devices/accessories/headset/specification.html">Wired Audio Headset
         Specification</a></strong>, and a description of timestamp format on <strong><a
         href="{@docRoot}devices/input/getevent.html">Getevent</a></strong>.</p>
-
-<a href="{@docRoot}devices/tech/ota/reduce_size.html">
-        <h4>Reducing OTA Size</h4></a>
-        <p>The Android build team has reduced the size of over-the-air (OTA)
-        updates by eliminating unnecessary file changes between builds. And the team
-        now offers those same improvements to the public by describing them in
-        <strong><a href="{@docRoot}devices/tech/ota/reduce_size.html">Reducing OTA
-        Size</a></strong> within the <strong><a
-        href="{@docRoot}devices/tech/ota/index.html">OTA Updates</a></strong>
-        section.</p>
-
-<a href="{@docRoot}source/initializing.html">
-        <h4>JDK 8 for Latest Platform Development</h4></a>
-        <p>The master branch of Android now requires JDK 8 to build. See <strong><a
-        href="{@docRoot}source/requirements.html">Requirements</a></strong>
-        for a summary of Java versions by Android release. See <strong><a
-        href="{@docRoot}source/initializing.html#installing-the-jdk">Setting up
-        a Linux build environment</a></strong> or <strong><a
-        href="{@docRoot}source/initializing.html#installing-the-mac-jdk">Setting up a
-        Mac OS build environment</a></strong> for update instructions by operating system.</p>
     </div>
 
     <div class="col-8">
