@@ -24,12 +24,16 @@ page.title=Nexus Security Bulletin - February 2016
   </div>
 </div>
 
-<p><em>Published February 01, 2016 | Updated February 2, 2016</em></p>
+<p><em>Published February 01, 2016 | Updated March 7, 2016</em></p>
 
 <p>We have released a security update to Nexus devices through an over-the-air
 (OTA) update as part of our Android Security Bulletin Monthly Release process.
-The Nexus firmware images have also been released to the <a href="https://developers.google.com/android/nexus/images">Google Developer site</a>. Builds LMY49G or later and Android M with Security Patch Level of February 1,
-2016 or later address these issues. Refer to the <a href="https://support.google.com/nexus/answer/4457705">Nexus documentation</a> for instructions on how to check the security patch level.</p>
+The Nexus firmware images have also been released to the
+<a href="https://developers.google.com/android/nexus/images">Google Developer site</a>.
+Builds LMY49G or later and Android M with Security Patch Level of February 1,
+2016 or later address these issues. Refer to the
+<a href="https://support.google.com/nexus/answer/4457705">Nexus documentation</a>
+for instructions on how to check the security patch level.</p>
 
 <p>Partners were notified about the issues described in the bulletin on January 4,
 2016 or earlier. Where applicable, source code patches for these issues have been
@@ -43,7 +47,9 @@ it could allow remote code execution on an affected device while connected to
 the same network as the attacker.</p>
 
 <p>We have had no reports of active customer exploitation of these newly reported
-issues. Refer to the <a href="#mitigations">Mitigations</a> section for details on the <a href="https://source.android.com/security/enhancements/">Android security platform protections</a> and service protections such as SafetyNet, which improve the security of the
+issues. Refer to the <a href="#mitigations">Mitigations</a> section for details on the
+<a href="{@docRoot}security/enhancements/index.html">Android security platform protections</a>
+and service protections such as SafetyNet, which improve the security of the
 Android platform. We encourage all customers to accept these updates to their
 devices.</p>
 
@@ -51,7 +57,9 @@ devices.</p>
 
 
 <p>The table below contains a list of security vulnerabilities, the Common
-Vulnerability and Exposures ID (CVE), and their assessed severity. The <a href="https://source.android.com/security/overview/updates-resources.html#severity">severity assessment</a> is based on the effect that exploiting the vulnerability would possibly have
+Vulnerability and Exposures ID (CVE), and their assessed severity. The
+<a href="{@docRoot}security/overview/updates-resources.html#severity">severity assessment</a>
+is based on the effect that exploiting the vulnerability would possibly have
 on an affected device, assuming the platform and service mitigations are
 disabled for development purposes or if successfully bypassed.</p>
 <table>
@@ -197,24 +205,22 @@ the context of the kernel without requiring user interaction.</p>
  </tr>
  <tr>
     <td>CVE-2016-0801</td>
-    <td>ANDROID-25662029*</td>
+    <td><a href="https://android.googlesource.com/kernel/msm/+/68cdc8df1cb6622980b791ce03e99c255c9888af%5E!">ANDROID-25662029</a><br />
+   <a href="https://android.googlesource.com/kernel/msm/+/68cdc8df1cb6622980b791ce03e99c255c9888af%5E!">ANDROID-25662233</a></td>
     <td>Critical</td>
     <td>4.4.4, 5.0, 5.1.1, 6.0, 6.0.1</td>
     <td>Oct 25, 2015</td>
  </tr>
  <tr>
     <td>CVE-2016-0802</td>
-    <td>ANDROID-25306181*</td>
+    <td><a href="https://android.googlesource.com/kernel/msm/+/3fffc78f70dc101add8b82af878d53457713d005%5E%21/">ANDROID-25306181</a></td>
     <td>Critical</td>
     <td>4.4.4, 5.0, 5.1.1, 6.0, 6.0.1</td>
     <td>Oct 26,2015</td>
  </tr>
 </table>
-<p>* The patch for this issue is not in AOSP. The update is contained in the
-latest binary drivers for Nexus devices available from the <a href="https://developers.google.com/android/nexus/drivers">Google Developer site</a>.</p>
 
 <h3 id=remote_code_execution_vulnerability_in_mediaserver>Remote Code Execution Vulnerability in Mediaserver</h3>
-
 
 <p>During media file and data processing of a specially crafted file,
 vulnerabilities in mediaserver could allow an attacker to cause memory
@@ -488,3 +494,4 @@ manufacturers that include these updates should set the patch string level to:
 <ul>
   <li> February 01, 2016: Bulletin published.
   <li> February 02, 2016:  Bulletin revised to include AOSP links.
+  <li> March 07, 2016: Bulletin revised to include additional AOSP links.
