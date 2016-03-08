@@ -53,6 +53,10 @@ short) continuous test framework.</p>
     using: <code>cts-tradefed run cts --plan
       <plan_name>
       </code>
+<p class="note"><strong>Note:</strong> When running Android 6.0 (Marshmallow)
+CTS only, we recommend you use the <code>--skip-preconditions</code> option to
+skip the experimental pre-conditions feature that may cause issues for when
+executing CTS tests.</p>
   <li>View test progress and results reported on the console.
   <li>If your device is Android 5.0 or later and declares support for an ARM and a
     x86 ABI, you should run both the ARM and x86 CTS packages.
