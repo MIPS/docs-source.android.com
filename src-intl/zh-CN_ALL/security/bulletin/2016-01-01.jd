@@ -1,4 +1,4 @@
-page.title=Nexus 安全性公告 - 2016 年 1 月
+page.title=Nexus 安全公告 - 2016 年 1 月
 @jd:body
 
 <!--
@@ -43,99 +43,99 @@ page.title=Nexus 安全性公告 - 2016 年 1 月
   <div id="qv-wrapper">
    <div id="qv">
     <h2>
-     本文內容
+     本文内容
     </h2>
     <ol id="auto-toc">
      <li>
       <a href="http://source.android.com/security/bulletin/2016-01-01.html#security_vulnerability_summary">
-       安全性漏洞摘要
+       安全漏洞摘要
       </a>
      </li>
      <li>
       <a href="http://source.android.com/security/bulletin/2016-01-01.html#mitigations">
-       因應措施
+       缓解措施
       </a>
      </li>
      <li>
       <a href="http://source.android.com/security/bulletin/2016-01-01.html#acknowledgements">
-       特別銘謝
+       致谢
       </a>
      </li>
      <li>
       <a href="http://source.android.com/security/bulletin/2016-01-01.html#security_vulnerability_details">
-       安全性漏洞詳情
+       安全漏洞详情
       </a>
      </li>
      <ol>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#remote_code_execution_vulnerability_in_mediaserver">
-        媒體伺服器中的遠端程式碼執行漏洞
+        Mediaserver 中的远程代码执行漏洞
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_misc-sd_driver">
-        misc-sd 驅動程式中的權限升級漏洞
+        misc-sd 驱动程序中的提权漏洞
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_the_imagination_technologies_driver">
-        Imagination Technologies 驅動程式中的權限升級漏洞
+        Imagination Technologies 驱动程序中的提权漏洞
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerabilities_in_trustzone">
-        Trustzone 中的權限升級漏洞
+        TrustZone 中的提权漏洞
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_kernel">
-        核心中的權限升級漏洞
+        内核中的提权漏洞
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_bluetooth">
-        藍牙中的權限升級漏洞
+        蓝牙中的提权漏洞
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#information_disclosure_vulnerability_in_kernel">
-        核心中的資訊外洩漏洞
+        内核中的信息披露漏洞
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_setup_wizard">
-        設定精靈中的權限升級漏洞
+        设置向导中的提权漏洞
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_wi-fi">
-        Wi-Fi 中的權限升級漏洞
+        WLAN 中的提权漏洞
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#information_disclosure_vulnerability_in_bouncy_castle">
-        Bouncy Castle 中的資訊外洩漏洞
+        Bouncy Castle 中的信息披露漏洞
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#denial_of_service_vulnerability_in_syncmanager">
-        SyncManager 中的拒絕服務漏洞
+        SyncManager 中的拒绝服务漏洞
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#attack_surface_reduction_for_nexus_kernels">
-        縮減 Nexus 核心的受攻擊面
+        减少 Nexus 内核的受攻击面
        </a>
       </li>
       <li>
        <a href="http://source.android.com/security/bulletin/2016-01-01.html#common_questions_and_answers">
-        常見問題與解答
+        常见问题和解答
        </a>
       </li>
      </ol>
      <li>
       <a href="http://source.android.com/security/bulletin/2016-01-01.html#revisions">
-       修訂版本
+       修订版本
       </a>
      </li>
     </ol>
@@ -143,128 +143,119 @@ page.title=Nexus 安全性公告 - 2016 年 1 月
   </div>
   <p>
    <em>
-    發佈日期：2016 年 1 月 4 日 | 更新日期：2016 年 1 月 6 日
+    发布时间：2016 年 1 月 4 日 | 更新时间：2016 年 1 月 6 日
    </em>
   </p>
   <p>
-   Google 已透過 Android 安全性公佈欄每月公告程序中的無線 (OTA) 更新，
-發佈 Nexus 裝置的安全性更新。
-此外，Nexus 韌體映像檔也已經發佈到
+   在每月发布 Android 安全公告的过程中，我们都会通过无线 (OTA) 更新的方式发布针对 Nexus 设备的安全更新。我们还会在
    <a href="https://developers.google.com/android/nexus/images">
-    Google 開發人員網站
+    Google Developers 网站
    </a>
-   上。LMY49F 
-以上版本以及 Android 6.0 (安全修補等級在 2016 年 1 月 1 日之後) 
-均已解決了下列問題。詳情請參閱
+   上发布 Nexus 固件映像。安全补丁程序级别为 2016 年 1 月 1 日（或之后的日期）的 LMY49F 或更高版本的 Android L 系统以及所有 Android 6.0 系统都已解决本文所列的安全问题。如需了解详情，请参阅
    <a href="http://source.android.com/security/bulletin/2016-01-01.html#common_questions_and_answers">
-    常見問題與解答
+    常见问题和解答
    </a>
-   一節。
+   部分。
   </p>
   <p>
-   合作夥伴是在 2015 年 12 月 7 日或之前收到有關公告中
-所述問題的通知以及更新資訊。在適用情況下，這些問題的
-原始碼修補程式已經發佈到 Android 開放原始碼計劃 (AOSP) 存放區。
+   我们的合作伙伴在 2015 年 12 月 7 日或之前就已收到本公告所列问题的相关通知和更新。我们已在 Android 开放源代码项目 (AOSP) 代码库中发布了针对相关问题的源代码补丁程序（如果适用）。
   </p>
   <p>
-   在這些問題中，最嚴重的就是「最高」等級的安全性漏洞。當系統
-執行媒體檔案時，遠端程式碼可利用這類漏洞，透過電子郵件、
-網頁瀏覽活動和多媒體訊息等方法，擅自在受影響的裝置上執行。
+   这些问题中危险性最高的是一个严重程度为“严重”的安全漏洞，它可能会导致在处理媒体文件的过程中，可通过电子邮件、网页和彩信等多种方式在受影响的设备上执行远程代码。
   </p>
   <p>
-   針對各方新回報的這些漏洞，我們並未收到任何客戶濫用檢舉。想進一步瞭解
-   <a href="https://source.android.com/security/enhancements/">
-    Android 安全性平台防護措施
-   </a>
-   和服務防護措施 (例如 SafetyNet) 如何提高 Android 平台的安全性，請參閱
+   我们尚未收到用户因这些新报告的问题而遭到主动攻击的报告。请参阅
    <a href="http://source.android.com/security/bulletin/2016-01-01.html#mitigations">
-    因應措施
+    缓解措施
    </a>
-   一節。我們建議所有客戶接受這些裝置更新。
+   部分，详细了解
+   <a href="https://source.android.com/security/enhancements/">
+    Android 安全平台防护
+   </a>
+   和服务防护功能（如 SafetyNet）。这些功能可提高 Android 平台的安全性。我们建议所有用户在自己的设备上接受这些更新。
   </p>
   <h2 id="security_vulnerability_summary" style="margin-bottom:0px">
-   安全性漏洞摘要
+   安全漏洞摘要
   </h2>
   <hr/>
   <p>
-   下表列出各種安全性漏洞、相應的常見弱點與漏洞編號 (CVE) 及
-評定嚴重程度。
+   下表列出了安全漏洞、对应的 CVE（常见漏洞和风险识别码）以及评估得出的严重程度。
    <a href="https://source.android.com/security/overview/updates-resources.html#severity">
-    嚴重程度評定標準
+    严重程度评估
    </a>
-   是假設平台與服務的因應防護措施基於開發目的而被停用，或是遭到有心人士破解，然後推算當有人惡意運用漏洞時，裝置會受到多大的影響，據此評定漏洞的嚴重程度。
+   的依据是漏洞被利用后对受影响设备造成的影响大小（假设相关平台和服务缓解措施被成功规避或出于开发目的而被停用）。
   </p>
   <table>
    <tbody>
     <tr>
      <th>
-      問題
+      问题
      </th>
      <th>
       CVE
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
     </tr>
     <tr>
      <td>
-      媒體伺服器中的遠端程式碼執行漏洞
+      Mediaserver 中的远程代码执行漏洞
      </td>
      <td>
       CVE-2015-6636
      </td>
      <td>
-      最高
+      严重
      </td>
     </tr>
     <tr>
      <td>
-      misc-sd 驅動程式中的權限升級漏洞
+      misc-sd 驱动程序中的提权漏洞
      </td>
      <td>
       CVE-2015-6637
      </td>
      <td>
-      最高
+      严重
      </td>
     </tr>
     <tr>
      <td>
-      Imagination Technologies 驅動程式中的權限升級漏洞
+      Imagination Technologies 驱动程序中的提权漏洞
      </td>
      <td>
       CVE-2015-6638
      </td>
      <td>
-      最高
+      严重
      </td>
     </tr>
     <tr>
      <td>
-      Trustzone 中的權限升級漏洞
+      TrustZone 中的提权漏洞
      </td>
      <td>
       CVE-2015-6639
      </td>
      <td>
-      最高
+      严重
      </td>
     </tr>
     <tr>
      <td>
-      核心中的權限升級漏洞
+      内核中的提权漏洞
      </td>
      <td>
       CVE-2015-6640
      </td>
      <td>
-      最高
+      严重
      </td>
     </tr>
     <tr>
      <td>
-      藍牙中的權限升級漏洞
+      蓝牙中的提权漏洞
      </td>
      <td>
       CVE-2015-6641
@@ -275,7 +266,7 @@ page.title=Nexus 安全性公告 - 2016 年 1 月
     </tr>
     <tr>
      <td>
-      核心中的資訊外洩漏洞
+      内核中的信息披露漏洞
      </td>
      <td>
       CVE-2015-6642
@@ -286,7 +277,7 @@ page.title=Nexus 安全性公告 - 2016 年 1 月
     </tr>
     <tr>
      <td>
-      設定精靈中的權限升級漏洞
+      设置向导中的提权漏洞
      </td>
      <td>
       CVE-2015-6643
@@ -297,7 +288,7 @@ page.title=Nexus 安全性公告 - 2016 年 1 月
     </tr>
     <tr>
      <td>
-      Wi-Fi 中的權限升級漏洞
+      WLAN 中的提权漏洞
      </td>
      <td>
       CVE-2015-5310
@@ -308,7 +299,7 @@ page.title=Nexus 安全性公告 - 2016 年 1 月
     </tr>
     <tr>
      <td>
-      Bouncy Castle 中的資訊外洩漏洞
+      Bouncy Castle 中的信息披露漏洞
      </td>
      <td>
       CVE-2015-6644
@@ -319,7 +310,7 @@ page.title=Nexus 安全性公告 - 2016 年 1 月
     </tr>
     <tr>
      <td>
-      SyncManager 中的拒絕服務漏洞
+      SyncManager 中的拒绝服务漏洞
      </td>
      <td>
       CVE-2015-6645
@@ -330,7 +321,7 @@ page.title=Nexus 安全性公告 - 2016 年 1 月
     </tr>
     <tr>
      <td>
-      縮減 Nexus 核心的受攻擊面
+      减少 Nexus 内核的受攻击面
      </td>
      <td>
       CVE-2015-6646
@@ -342,65 +333,51 @@ page.title=Nexus 安全性公告 - 2016 年 1 月
    </tbody>
   </table>
   <h2 id="mitigations" style="margin-bottom:0px">
-   因應措施
+   缓解措施
   </h2>
   <hr/>
   <p>
-   本節概要說明
+   本部分概括总结了
    <a href="https://source.android.com/security/enhancements/index.html">
-    Android 安全性平台
+    Android 安全平台
    </a>
-   和 SafetyNet 等服務防護方案所提供的因應措施。這些措施
-可有效防範有心人士在 Android 系統上惡意運用安全性漏洞來達到
-他們的目的。
+   和服务防护功能（如 SafetyNet）提供的缓解措施。这些功能可降低 Android 上的安全漏洞被成功利用的可能性。
   </p>
   <ul>
    <li>
-    Android 平台持續推出新的版本來強化安全性，因此有心人士越來越難
-在 Android 系統上找出漏洞加以利用。我們建議所有使用者盡可能
-更新至最新版的 Android。
+    新版 Android 平台中的增强功能让攻击者更加难以利用 Android 上存在的许多问题。我们建议所有用户都尽可能更新到最新版 Android。
    </li>
    <li>
-    Android 安全性小組採用「驗證應用程式」和 SafetyNet 主動監控
-濫用情形，這些功能如果發現應用程式可能有害，將在安裝作業前
-發出警告。Google Play 內禁止發佈任何可用於獲取裝置 Root 權限的工具。為了
-在使用者安裝 Google Play 外的應用程式時提供保護，系統預設會啟用「驗證應用程式」，
-並向使用者發出警告，提醒他們留意目前已知會獲取 Root 權限的應用程式。「驗證應用程式」
-會盡可能找出已知會利用權限提高漏洞的惡意應用程式，
-並封鎖這類應用程式的安裝程序。如果使用者已安裝
-這類應用程式，「驗證應用程式」會通知使用者，
-並嘗試移除該應用程式。
+    Android 安全团队会积极利用“验证应用”功能和 SafetyNet 监控滥用行为，这些功能会在用户即将安装可能有害的应用时发出警告。Google Play 中禁止提供会获取设备 Root 权限的工具。为了保护从 Google Play 之外的来源安装应用的用户，“验证应用”功能在默认情况下将处于启用状态，并在发现已知会获取 Root 权限的应用时警告用户。“验证应用”功能会尝试识别并阻止用户安装会利用提权漏洞的已知恶意应用。如果用户已安装此类应用，那么“验证应用”功能将会通知用户并尝试移除所有此类应用。
    </li>
    <li>
-    在適用情況下，Google Hangouts 和 Messenger 應用程式不會自動
-將媒體內容傳送給媒體伺服器這類的處理程序。
+    由于已做了适当更新，因此 Google 环聊和 Messenger 应用不会自动将媒体内容传递给 mediaserver 这类进程。
    </li>
   </ul>
   <h2 id="acknowledgements" style="margin-bottom:0px">
-   特別銘謝
+   致谢
   </h2>
   <hr/>
   <p>
-   感謝以下研究人員做出的貢獻：
+   非常感谢以下研究人员做出的贡献：
   </p>
   <ul>
    <li>
-    Google Chrome 安全性小組的 Abhishek Arya、Oliver Chang 和 Martin Barbella：
-CVE-2015-6636、CVE-2015-6617
+    Google Chrome 安全团队的 Abhishek Arya、Oliver Chang 和 Martin Barbella：CVE-2015-6636、CVE-2015-6617
    </li>
    <li>
-    騰訊 (
+    腾讯 KEEN 实验室 (
     <a href="https://twitter.com/k33nteam">
      @K33nTeam
     </a>
-    ) KEEN 實驗室的 Sen Nie (
+    ) 的 Sen Nie (
     <a href="https://twitter.com/@nforest_">
      @nforest_
     </a>
     ) 和 jfang：CVE-2015-6637
    </li>
    <li>
-    Android Bionic 小組的 Yabin Cui：CVE-2015-6640
+    Android Bionic 团队的 Yabin Cui：CVE-2015-6640
    </li>
    <li>
     Google X 的 Tom Craig：CVE-2015-6641
@@ -413,17 +390,17 @@ CVE-2015-6636、CVE-2015-6617
     )：CVE-2015-6642
    </li>
    <li>
-    Jouni Malinen PGP 編號 EFC895FA：CVE-2015-5310
+    Jouni Malinen PGP id EFC895FA：CVE-2015-5310
    </li>
    <li>
-    Google 資訊安全性工程小組的 Quan Nguyen：CVE-2015-6644
+    Google 信息安全工程师团队的 Quan Nguyen：CVE-2015-6644
    </li>
    <li>
     Gal Beniamini (
     <a href="https://twitter.com/@laginimaineb">
      @laginimaineb
     </a>
-    ，
+    、
     <a href="http://bits-please.blogspot.com/">
      http://bits-please.blogspot.com
     </a>
@@ -431,39 +408,27 @@ CVE-2015-6636、CVE-2015-6617
    </li>
   </ul>
   <h2 id="security_vulnerability_details" style="margin-bottom:0px">
-   安全性漏洞詳情
+   安全漏洞详情
   </h2>
   <hr/>
   <p>
-   下列各節針對上方
+   我们在下面提供了上述
    <a href="http://source.android.com/security/bulletin/2016-01-01.html#security_vulnerability_summary">
-    安全性漏洞摘要
+    安全漏洞摘要
    </a>
-   中列出的各項安全性
-漏洞提供了詳細資訊，包括問題說明、嚴重程度評定原因，以及一份
-漏洞資訊表，顯示漏洞的 CVE、相關錯誤、嚴重程度、最新版本和回報日期。
-如果相關錯誤有 AOSP 變更，該錯誤編號會連結到相對應
-的變更。如果單一錯誤有多項相關變更，其他 AOSP 參考資料
-可透過該錯誤編號後面的編號連結開啟。
+   中列出的每个安全漏洞的详细信息，其中包括问题描述、严重程度阐述以及一个包含 CVE、相关 Bug、严重程度、已更新的版本及报告日期的表格。如果有解决 Bug ID 所对应问题的 AOSP 代码更改记录，我们也将提供相应链接。如果某个 Bug 有多条相关的代码更改记录，我们还将通过 Bug ID 后面的数字链接到更多 AOSP 参考信息。
   </p>
   <h3 id="remote_code_execution_vulnerability_in_mediaserver">
-   媒體伺服器中的遠端程式碼執行漏洞
+   Mediaserver 中的远程代码执行漏洞
   </h3>
   <p>
-   在處理某些特殊的媒體檔案及資料時，攻擊者
-可能會利用媒體伺服器中的漏洞造成記憶體出錯，
-並執行遠端程式碼當做媒體伺服器處理程序。
+   对于特制的文件，系统在处理其媒体文件和数据时，攻击者可通过 mediaserver 中的漏洞破坏内存并通过 mediaserver 进程执行远程代码。
   </p>
   <p>
-   受影響的功能是作業系統的核心部分，而多款
-應用程式都允許遠端內容連到這項功能，其中
-最常見的內容是多媒體訊息和瀏覽器中播放的媒體。
+   受影响的功能是操作系统的核心部分，有多个应用允许通过远程内容（最主要是彩信和浏览器媒体播放）使用该功能。
   </p>
   <p>
-   由於這個問題可能會讓遠端程式碼在媒體伺服器服務環境內
-執行，因此嚴重程度被評定為「最高」。媒體伺服器服務
-能夠存取音訊和視訊串流，以及第三方應用程式
-一般無法存取的權限。
+   由于该漏洞可用于通过 mediaserver 服务执行远程代码，因此我们将其严重程度评为“严重”。mediaserver 服务可以访问音频和视频流，还可以获取第三方应用通常无法获取的权限。
   </p>
   <table>
    <tbody>
@@ -472,16 +437,16 @@ CVE-2015-6636、CVE-2015-6617
       CVE
      </th>
      <th>
-      錯誤 (附有 AOSP 連結)
+      Bug（附 AOSP 链接）
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -494,13 +459,13 @@ CVE-2015-6636、CVE-2015-6617
       </a>
      </td>
      <td>
-      最高
+      严重
      </td>
      <td>
       5.0、5.1.1、6.0、6.0.1
      </td>
      <td>
-      Google 內部
+      Google 内部
      </td>
     </tr>
     <tr>
@@ -510,26 +475,22 @@ CVE-2015-6636、CVE-2015-6617
       </a>
      </td>
      <td>
-      最高
+      严重
      </td>
      <td>
       5.0、5.1.1、6.0、6.0.1
      </td>
      <td>
-      Google 內部
+      Google 内部
      </td>
     </tr>
    </tbody>
   </table>
   <h3 id="elevation_of_privilege_vulnerability_in_misc-sd_driver">
-   misc-sd 驅動程式中的權限升級漏洞
+   misc-sd 驱动程序中的提权漏洞
   </h3>
   <p>
-   MediaTek 所提供的 misc-sd 驅動程式中有一項權限
-升級漏洞，可讓本機惡意應用程式在核心內執行任何
-程式碼。由於這個問題可能導致本機裝置受到
-永久性破壞，使裝置必須以還原 (Re-flash) 作業系統的方式
-才能修復，因此嚴重程度被評定為「最高」。
+   MediaTek 所提供的 misc-sd 驱动程序中的提权漏洞可让本地恶意应用通过内核执行任意代码。由于该漏洞有可能会造成本地设备永久损坏，而您可能需要通过重写操作系统来修复设备，因此我们将其严重程度评为“严重”。
   </p>
   <table>
    <tbody>
@@ -538,16 +499,16 @@ CVE-2015-6636、CVE-2015-6617
       CVE
      </th>
      <th>
-      錯誤
+      Bug
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -558,7 +519,7 @@ CVE-2015-6636、CVE-2015-6617
       ANDROID-25307013*
      </td>
      <td>
-      最高
+      严重
      </td>
      <td>
       4.4.4、5.0、5.1.1、6.0、6.0.1
@@ -570,22 +531,17 @@ CVE-2015-6636、CVE-2015-6617
    </tbody>
   </table>
   <p>
-   *這個問題的修補程式並未放在 AOSP 中。該項更新
-是包含在
+   *针对该问题的补丁程序未在 AOSP 中发布。
    <a href="https://developers.google.com/android/nexus/drivers">
-    Google 開發人員網站
+    Google Developers 网站
    </a>
-   為 Nexus 裝置所提供的最新二進位檔驅動程式中。
+   上提供的 Nexus 设备的最新二进制驱动程序中包含相应更新。
   </p>
   <h3 id="elevation_of_privilege_vulnerability_in_the_imagination_technologies_driver">
-   Imagination Technologies 驅動程式中的權限升級漏洞
+   Imagination Technologies 驱动程序中的提权漏洞
   </h3>
   <p>
-   Imagination Technologies 核心驅動程式中的權限升級漏洞
-可讓本機惡意應用程式在核心內執行任何
-程式碼。由於這個問題可能導致本機裝置受到
-永久性破壞，使裝置必須以還原 (Re-flash) 作業系統的方式
-才能修復，因此嚴重程度被評定為「最高」。
+   Imagination Technologies 内核驱动程序中的提权漏洞可让本地恶意应用通过内核执行任意代码。由于该漏洞有可能会造成本地设备永久损坏，而您可能需要通过重写操作系统来修复设备，因此我们将其严重程度评为“严重”。
   </p>
   <table>
    <tbody>
@@ -594,16 +550,16 @@ CVE-2015-6636、CVE-2015-6617
       CVE
      </th>
      <th>
-      錯誤
+      Bug
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -614,35 +570,29 @@ CVE-2015-6636、CVE-2015-6617
       ANDROID-24673908*
      </td>
      <td>
-      最高
+      严重
      </td>
      <td>
       5.0、5.1.1、6.0、6.0.1
      </td>
      <td>
-      Google 內部
+      Google 内部
      </td>
     </tr>
    </tbody>
   </table>
   <p>
-   *這個問題的修補程式並未放在 AOSP 中。該項更新
-是包含在
+   *针对该问题的补丁程序未在 AOSP 中发布。
    <a href="https://developers.google.com/android/nexus/drivers">
-    Google 開發人員網站
+    Google Developers 网站
    </a>
-   為 Nexus 裝置所提供的最新二進位檔驅動程式中。
+   上提供的 Nexus 设备的最新二进制驱动程序中包含相应更新。
   </p>
   <h3 id="elevation_of_privilege_vulnerabilities_in_trustzone">
-   Trustzone 中的權限升級漏洞
+   TrustZone 中的提权漏洞
   </h3>
   <p>
-   Widevine QSEE TrustZone 應用程式中的權限升級漏洞
-可讓擁有 QSEECOM 存取權的應用程式在受到破壞且取得
-授權的情況下，在 Trustzone 環境中執行任何程式碼。由於這個問題
-可能導致本機裝置受到永久性破壞，
-使裝置必須以還原 (Re-flash) 作業系統的方式才能修復，
-因此嚴重程度被評定為「最高」。
+   Widevine QSEE TrustZone 应用中的提权漏洞可让具有 QSEECOM 访问权限的应用在受到入侵且获得授权的情况下，通过 Trustzone 执行任意代码。由于该漏洞有可能会造成本地设备永久损坏，而您可能需要通过重写操作系统来修复设备，因此我们将其严重程度评为“严重”。
   </p>
   <table>
    <tbody>
@@ -651,16 +601,16 @@ CVE-2015-6636、CVE-2015-6617
       CVE
      </th>
      <th>
-      錯誤
+      Bug
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -671,7 +621,7 @@ CVE-2015-6636、CVE-2015-6617
       ANDROID-24446875*
      </td>
      <td>
-      最高
+      严重
      </td>
      <td>
       5.0、5.1.1、6.0、6.0.1
@@ -688,7 +638,7 @@ CVE-2015-6636、CVE-2015-6617
       ANDROID-24441554*
      </td>
      <td>
-      最高
+      严重
      </td>
      <td>
       5.0、5.1.1、6.0、6.0.1
@@ -700,22 +650,17 @@ CVE-2015-6636、CVE-2015-6617
    </tbody>
   </table>
   <p>
-   *這個問題的修補程式並未放在 AOSP 中。該項更新
-是包含在
+   *针对该问题的补丁程序未在 AOSP 中发布。
    <a href="https://developers.google.com/android/nexus/drivers">
-    Google 開發人員網站
+    Google Developers 网站
    </a>
-   為 Nexus 裝置所提供的最新二進位檔驅動程式中。
+   上提供的 Nexus 设备的最新二进制驱动程序中包含相应更新。
   </p>
   <h3 id="elevation_of_privilege_vulnerability_in_kernel">
-   核心中的權限升級漏洞
+   内核中的提权漏洞
   </h3>
   <p>
-   核心中的權限升級漏洞可讓本機
-惡意應用程式在核心中執行任何程式碼。由於這個問題
-可能導致本機裝置受到永久性破壞，
-使裝置必須以還原 (Re-flash) 作業系統的方式才能修復，
-因此嚴重程度被評定為「最高」。
+   内核中的提权漏洞可让本地恶意应用通过内核执行任意代码。由于该漏洞有可能会造成本地设备永久损坏，而您可能需要通过重写操作系统来修复设备，因此我们将其严重程度评为“严重”。
   </p>
   <table>
    <tbody>
@@ -724,16 +669,16 @@ CVE-2015-6636、CVE-2015-6617
       CVE
      </th>
      <th>
-      錯誤 (附有 AOSP 連結)
+      Bug（附 AOSP 链接）
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -746,30 +691,26 @@ CVE-2015-6636、CVE-2015-6617
       </a>
      </td>
      <td>
-      最高
+      严重
      </td>
      <td>
       4.4.4、5.0、5.1.1、6.0
      </td>
      <td>
-      Google 內部
+      Google 内部
      </td>
     </tr>
    </tbody>
   </table>
   <h3 id="elevation_of_privilege_vulnerability_in_bluetooth">
-   藍牙中的權限升級漏洞
+   蓝牙中的提权漏洞
   </h3>
   <p>
-   藍牙元件中的權限升級漏洞可讓透過藍牙
-完成配對的遠端裝置取得使用者私人資訊 (聯絡人) 的
-存取權。由於這個問題可用於遠端取得
-「
+   蓝牙组件中的提权漏洞可让已通过蓝牙配对的远程设备获取对用户隐私信息（如通讯录）的访问权限。由于该漏洞可用于远程获取“
    <a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">
-    危險的
+    dangerous
    </a>
-   」權限 (只有安裝在本機的第三方應用程式
-才能存取這類權限)，因此嚴重程度被評定為「高」。
+   ”权限（只有安装在本地的第三方应用才可以获取这类权限），因此我们将其严重程度评为“高”。
   </p>
   <table>
    <tbody>
@@ -778,16 +719,16 @@ CVE-2015-6636、CVE-2015-6617
       CVE
      </th>
      <th>
-      錯誤 (附有 AOSP 連結)
+      Bug（附 AOSP 链接）
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -811,19 +752,16 @@ CVE-2015-6636、CVE-2015-6617
       6.0、6.0.1
      </td>
      <td>
-      Google 內部
+      Google 内部
      </td>
     </tr>
    </tbody>
   </table>
   <h3 id="information_disclosure_vulnerability_in_kernel">
-   核心中的資訊外洩漏洞
+   内核中的信息披露漏洞
   </h3>
   <p>
-   核心中的資訊外洩漏洞可讓有心人士用來
-規避系統中用於防範攻擊者惡意運用平台的
-安全措施。由於這些問題也能用來取得
-某些進階權限 (例如
+   内核中的信息披露漏洞可用于绕过相应的安全措施（这类措施可增加攻击者利用平台的难度）。由于这类漏洞可用于获取第三方应用无法获取的特权（如
    <a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">
     Signature
    </a>
@@ -831,7 +769,7 @@ CVE-2015-6636、CVE-2015-6617
    <a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">
     SignatureOrSystem
    </a>
-   等第三方應用程式無法存取的權限)，因此嚴重程度被評定為「高」。
+   权限），因此我们将其严重程度评为“高”。
   </p>
   <table>
    <tbody>
@@ -840,16 +778,16 @@ CVE-2015-6636、CVE-2015-6617
       CVE
      </th>
      <th>
-      錯誤
+      Bug
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -872,23 +810,17 @@ CVE-2015-6636、CVE-2015-6617
    </tbody>
   </table>
   <p>
-   *這個問題的修補程式並未放在 AOSP 中。該項更新
-是包含在
+   *针对该问题的补丁程序未在 AOSP 中发布。
    <a href="https://developers.google.com/android/nexus/drivers">
-    Google 開發人員網站
+    Google Developers 网站
    </a>
-   為 Nexus 裝置所提供的
-最新二進位檔驅動程式中。
+   上提供的 Nexus 设备的最新二进制驱动程序中包含相应更新。
   </p>
   <h3 id="elevation_of_privilege_vulnerability_in_setup_wizard">
-   設定精靈中的權限升級漏洞
+   设置向导中的提权漏洞
   </h3>
   <p>
-   設定精靈中的權限升級漏洞可讓能夠實際
-操作裝置的攻擊者取得裝置設定存取權，並
-手動執行裝置重設作業。有心人士可藉此
-規避恢復原廠設定的防護機制，因此這個問題的嚴重程度被評定
-為「中」。
+   设置向导中的提权漏洞可让实际拿到设备的攻击者获取对设备设置的访问权限，从而手动执行设备重置操作。由于该漏洞可用于以不正当的方式绕过“恢复出厂设置保护”机制，因此我们将其严重程度评为“中”。
   </p>
   <table>
    <tbody>
@@ -897,16 +829,16 @@ CVE-2015-6636、CVE-2015-6617
       CVE
      </th>
      <th>
-      錯誤 (附有 AOSP 連結)
+      Bug（附 AOSP 链接）
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -930,24 +862,20 @@ CVE-2015-6636、CVE-2015-6617
       5.1.1、6.0、6.0.1
      </td>
      <td>
-      Google 內部
+      Google 内部
      </td>
     </tr>
    </tbody>
   </table>
   <h3 id="elevation_of_privilege_vulnerability_in_wi-fi">
-   Wi-Fi 中的權限升級漏洞
+   WLAN 中的提权漏洞
   </h3>
   <p>
-   Wi-Fi 元件中的權限升級漏洞可讓
-鄰近本機的攻擊者取得 Wi-Fi 服務相關資訊的存取權。
-只有鄰近本機的裝置才會受到這個問題影響。由於這個問題
-可用於遠端取得「
+   WLAN 组件中的提权漏洞可让本地邻近区域内的攻击者获取对 WLAN 服务相关信息的访问权限。不过，只有本地邻近区域中的设备才会受到该漏洞的攻击。由于该漏洞可用于远程获取“
    <a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">
-    一般
+    normal
    </a>
-   」權限 (只有安裝在本機的第三方應用程式才能存取這類權限)，因此嚴重程度
-被評定為「中」。
+   ”权限（只有安装在本地的第三方应用才可以获取这类权限），因此我们将其严重程度评为“中”。
   </p>
   <table>
    <tbody>
@@ -956,16 +884,16 @@ CVE-2015-6636、CVE-2015-6617
       CVE
      </th>
      <th>
-      錯誤 (附有 AOSP 連結)
+      Bug（附 AOSP 链接）
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -990,16 +918,14 @@ CVE-2015-6636、CVE-2015-6617
    </tbody>
   </table>
   <h3 id="information_disclosure_vulnerability_in_bouncy_castle">
-   Bouncy Castle 中的資訊外洩漏洞
+   Bouncy Castle 中的信息披露漏洞
   </h3>
   <p>
-   Bouncy Castle 中的資訊外洩漏洞可讓本機
-惡意應用程式取得使用者私人資訊的存取權。由於這個問題
-可用於不當取得「
+   Bouncy Castle 中的信息披露漏洞可让本地恶意应用获取对用户隐私信息的访问权限。由于该漏洞可用于以不正当的方式获取“
    <a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">
-    危險的
+    dangerous
    </a>
-   」權限，因此嚴重程度被評定為「中」。
+   ”权限，因此我们将其严重程度评为“中”。
   </p>
   <table>
    <tbody>
@@ -1008,16 +934,16 @@ CVE-2015-6636、CVE-2015-6617
       CVE
      </th>
      <th>
-      錯誤 (附有 AOSP 連結)
+      Bug（附 AOSP 链接）
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -1036,19 +962,16 @@ CVE-2015-6636、CVE-2015-6617
       4.4.4、5.0、5.1.1、6.0、6.0.1
      </td>
      <td>
-      Google 內部
+      Google 内部
      </td>
     </tr>
    </tbody>
   </table>
   <h3 id="denial_of_service_vulnerability_in_syncmanager">
-   SyncManager 中的拒絕服務漏洞
+   SyncManager 中的拒绝服务漏洞
   </h3>
   <p>
-   SyncManager 中的拒絕服務漏洞可讓本機
-惡意應用程式造成裝置不斷重新啟動。由於這個問題可用來
-造成本機暫時拒絕服務，而這種情況可能必須透過恢復原廠設定的方式
-才能修正，因此嚴重程度被評定為「中」。
+   本地恶意应用可利用 SyncManager 中的拒绝服务漏洞让系统不断重新启动。由于该漏洞可导致本地服务暂时被拒，而该问题可能需要通过恢复出厂设置才能得到修正，因此我们将其严重程度评为“中”。
   </p>
   <table>
    <tbody>
@@ -1057,16 +980,16 @@ CVE-2015-6636、CVE-2015-6617
       CVE
      </th>
      <th>
-      錯誤 (附有 AOSP 連結)
+      Bug（附 AOSP 链接）
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -1085,21 +1008,16 @@ CVE-2015-6636、CVE-2015-6617
       4.4.4、5.0、5.1.1、6.0
      </td>
      <td>
-      Google 內部
+      Google 内部
      </td>
     </tr>
    </tbody>
   </table>
   <h3 id="attack_surface_reduction_for_nexus_kernels">
-   縮減 Nexus 核心的受攻擊面
+   减少 Nexus 内核的受攻击面
   </h3>
   <p>
-   所有 Android 核心都不支援 SysV IPC。由於這項支援功能會曝露
-額外的受攻擊面，既無法新增系統功能，又可能被惡意應用程式利用，
-因此我們已將此功能從作業系統中移除。此外，System V
-IPC 與 Android 的應用程式生命週期並不相容，原因是
-記憶體管理程式無法釋出分配的資源，導致全域核心
-資源漏出的情況發生。這項變更解決了如 CVE-2015-7613 這類的問題。
+   所有 Android 内核都不支持 SysV IPC。由于这项支持功能会暴露额外的受攻击面，既无法新增系统功能，又可能被恶意应用所利用，因此我们已将此功能从操作系统中移除。此外，由于内存管理器无法释放分配的资源，从而导致全局内核资源泄漏，因此 System V IPC 并不符合 Android 应用生命周期的要求。这项更改解决了 CVE-2015-7613 等问题。
   </p>
   <table>
    <tbody>
@@ -1108,16 +1026,16 @@ IPC 與 Android 的應用程式生命週期並不相容，原因是
       CVE
      </th>
      <th>
-      錯誤
+      Bug
      </th>
      <th>
-      嚴重程度
+      严重程度
      </th>
      <th>
-      最新版本
+      已更新的版本
      </th>
      <th>
-      回報日期
+      报告日期
      </th>
     </tr>
     <tr>
@@ -1134,53 +1052,46 @@ IPC 與 Android 的應用程式生命週期並不相容，原因是
       6.0
      </td>
      <td>
-      Google 內部
+      Google 内部
      </td>
     </tr>
    </tbody>
   </table>
   <p>
-   *這個問題的修補程式並未放在 AOSP 中。該項更新
-是包含在
+   *针对该问题的补丁程序未在 AOSP 中发布。
    <a href="https://developers.google.com/android/nexus/drivers">
-    Google 開發人員網站
+    Google Developers 网站
    </a>
-   為 Nexus 裝置所提供的
-最新二進位檔驅動程式中。
+   上提供的 Nexus 设备的最新二进制驱动程序中包含相应更新。
   </p>
   <h3 id="common_questions_and_answers">
-   常見問題與解答
+   常见问题和解答
   </h3>
   <p>
-   如果您在閱讀這篇公告後有任何疑問，建議您查看本節的
-常見問答。
+   本部分针对阅读本公告后可能产生的常见问题提供了相应的解答。
   </p>
   <p>
    <strong>
-    1. 如何判斷我目前的裝置軟體版本是否已修正這些問題？
+    1. 如何确定我的设备是否已更新到解决了这些问题的版本？
    </strong>
   </p>
   <p>
-   LMY49F 以上版本以及 Android 6.0 
-(安全修補等級在 2016 年 1 月 1 日之後) 
-均已解決了下列問題。請參閱
+   安全补丁程序级别为 2016 年 1 月 1 日（或之后的日期）的 LMY49F 或更高版本的 Android L 系统以及所有 Android 6.0 系统都已解决本文所列的安全问题。请参阅
    <a href="https://support.google.com/nexus/answer/4457705">
-    Nexus 說明文件
+    Nexus 文档
    </a>
-   ，瞭解如何查看安全修補等級。提供
-這些更新的裝置製造商應將修補程式字串等級設定為：
-[ro.build.version.security_patch]:[2016-01-01]
+   中提供的有关说明，了解如何检查安全补丁程序级别。提供这些更新的设备制造商应将补丁程序字符串级别设为 [ro.build.version.security_patch]:[2016-01-01]
   </p>
   <h2 id="revisions" style="margin-bottom:0px">
-   修訂版本
+   修订版本
   </h2>
   <hr/>
   <ul>
    <li>
-    2016 年 1 月 4 日：發佈公告。
+    2016 年 1 月 4 日：发布了本公告。
    </li>
    <li>
-    2016 年 1 月 6 日：修訂公告，加入 AOSP 連結。
+    2016 年 1 月 6 日：修订了公告，添加 AOSP 链接。
    </li>
   </ul>
  </div>
