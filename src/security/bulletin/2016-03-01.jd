@@ -24,7 +24,7 @@ page.title=Nexus Security Bulletin - March 2016
   </div>
 </div>
 
-<p><em>Published March 07, 2016</em></p>
+<p><em>Published March 07, 2016 | Updated March 08, 2016</em></p>
 
 <p>We have released a security update to Nexus devices through an over-the-air
 (OTA) update as part of our Android Security Bulletin Monthly Release process.
@@ -226,21 +226,23 @@ that third-party apps could not normally access.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bugs with AOSP links</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2016-0815</td>
-    <td>ANDROID-26365349</td>
+    <td><a href="https://android.googlesource.com/platform%2Fframeworks%2Fav/+/5403587a74aee2fb57076528c3927851531c8afb">ANDROID-26365349</a>
+    </td>
     <td>Critical</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
     <td>Google Internal</td>
  </tr>
  <tr>
     <td>CVE-2016-0816</td>
-    <td>ANDROID-25928803</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/4a524d3a8ae9aa20c36430008e6bd429443f8f1d">ANDROID-25928803</a>
+    </td>
     <td>Critical</td>
     <td>6.0, 6.0.1</td>
     <td>Google Internal</td>
@@ -266,14 +268,17 @@ that third-party apps cannot normally access.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bug with AOSP links</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2016-1621</td>
-    <td>ANDROID-23452792</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/5a6788730acfc6fd8f4a6ef89d2c376572a26b55">ANDROID-23452792</a>
+        <a href="https://android.googlesource.com/platform/external/libvpx/+/04839626ed859623901ebd3a5fd483982186b59d">[2]</a>
+        <a href="https://android.googlesource.com/platform/external/libvpx/+/5a9753fca56f0eeb9f61e342b2fccffc364f9426">[3]</a>
+    </td>
     <td>Critical</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0</td>
     <td>Google Internal</td>
@@ -283,19 +288,21 @@ that third-party apps cannot normally access.</p>
 
 <h3 id=elevation_of_privilege_in_conscrypt>Elevation of Privilege in Conscrypt</h3>
 
-<p>A vulnerability in Conscrypt could allow a specific type of invalid certificate, issued by an intermediate Certificate Authority (CA), to be incorrectly trusted. This may enable a man in the middle attack. This issue is rated as a Critical severity due to the possibility of an elevation of privilege and remote arbitrary code execution.</p>
+<p>A vulnerability in Conscrypt could allow a specific type of invalid certificate, issued by an intermediate Certificate Authority (CA), to be incorrectly trusted. This may enable a man-in-the-middle attack. This issue is rated as a Critical severity due to the possibility of an elevation of privilege and remote arbitrary code execution.</p>
 
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bug with AOSP links</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2016-0818</td>
-    <td>ANDROID-26232830</td>
+    <td><a href="https://android.googlesource.com/platform/external/conscrypt/+/c4ab1b959280413fb11bf4fd7f6b4c2ba38bd779">ANDROID-26232830</a>
+        <a href="https://android.googlesource.com/platform/external/conscrypt/+/4c9f9c2201116acf790fca25af43995d29980ee0">[2]</a>
+    </td>
     <td>Critical</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
     <td>Google Internal</td>
@@ -314,7 +321,7 @@ re-flashing the operating system.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bug</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
@@ -324,7 +331,7 @@ re-flashing the operating system.</p>
     <td>ANDROID-25364034*</td>
     <td>Critical</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
-    <td>Google Internal</td>
+    <td>Oct 29, 2015</td>
  </tr>
 </table>
 
@@ -343,7 +350,7 @@ kernel.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bug</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
@@ -359,7 +366,8 @@ kernel.</p>
 
 
 <p>* The patch for this issue is not in AOSP. The update is contained in the
-latest binary drivers for Nexus devices available from the <a href="https://developers.google.com/android/nexus/drivers">Google Developer site</a>.</p>
+latest binary drivers for Nexus devices available from the
+<a href="https://developers.google.com/android/nexus/drivers">Google Developer site</a>.</p>
 
 <h3 id=elevation_of_privilege_vulnerability_in_kernel_keyring_component>Elevation of Privilege Vulnerability in Kernel Keyring Component</h3>
 
@@ -372,11 +380,15 @@ repaired by re-flashing the operating system. However, in Android versions 5.0
 and above, SELinux rules prevents third-party applications from reaching the
 affected code.</p>
 
-<p><strong>Note: </strong>For reference, the patch in AOSP is available for specific kernel versions: <a href="https://android.googlesource.com/kernel%2Fcommon/+/8a8431507f8f5910db5ac85b72dbdc4ed8f6b308">4.1</a>, <a href="https://android.googlesource.com/kernel%2Fcommon/+/ba8bb5774ca7b1acc314c98638cf678ce0beb19a">3.18</a>, <a href="https://android.googlesource.com/kernel%2Fcommon/+/93faf7ad3d603c33b33e49318e81cf00f3a24a73">3.14</a>, and <a href="https://android.googlesource.com/kernel%2Fcommon/+/9fc5f368bb89b65b591c4f800dfbcc7432e49de5">3.10</a>.</p>
+<p><strong>Note:</strong> For reference, the patch in AOSP is available for specific kernel versions:
+<a href="https://android.googlesource.com/kernel/common/+/8a8431507f8f5910db5ac85b72dbdc4ed8f6b308">4.1</a>,
+<a href="https://android.googlesource.com/kernel/common/+/ba8bb5774ca7b1acc314c98638cf678ce0beb19a">3.18</a>,
+<a href="https://android.googlesource.com/kernel/common/+/93faf7ad3d603c33b33e49318e81cf00f3a24a73">3.14</a>,
+and <a href="https://android.googlesource.com/kernel/common/+/9fc5f368bb89b65b591c4f800dfbcc7432e49de5">3.10</a>.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bug</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
@@ -391,7 +403,7 @@ affected code.</p>
 </table>
 
 
-<h3 id=mitigation_bypass_vulnerability_in_the_kernel>Mitigation Bypass Vulnerability in the Kernel </h3>
+<h3 id=mitigation_bypass_vulnerability_in_the_kernel>Mitigation Bypass Vulnerability in the Kernel</h3>
 
 
 <p>A mitigation bypass vulnerability in the kernel could permit a bypass of
@@ -400,11 +412,13 @@ the platform. This issue is rated as High severity because it could permit a
 bypass of security measures in place to increase the difficulty of attackers
 exploiting the platform.</p>
 
-<p><strong>Note:</strong> There is an update for this issue is <a href="https://github.com/torvalds/linux/commit/8a5e5e02fc83aaf67053ab53b359af08c6c49aaf">located in the Linux upstream</a>.</p>
+<p><strong>Note:</strong> The update for this issue is
+<a href="https://github.com/torvalds/linux/commit/8a5e5e02fc83aaf67053ab53b359af08c6c49aaf">located in the Linux upstream</a>.</p>
+
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bug</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
@@ -424,14 +438,14 @@ exploiting the platform.</p>
 
 <p>There is an elevation of privilege vulnerability in a MediaTek connectivity
 kernel driver that could enable a local malicious application to execute
-arbitrary code within the context of the kernel. Normally a kernel code
-execution bug like this would be rated critical, but given that it requires
-first compromising the conn_launcher service, which may not even be possible,
-it justifies a downgrade to High severity rating.</p>
+arbitrary code within the context of the kernel. Normally a kernel code execution
+bug like this would be rated critical, but because it requires first compromising
+the conn_launcher service, it justifies a downgrade to High severity rating.
+</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bug</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
@@ -441,13 +455,14 @@ it justifies a downgrade to High severity rating.</p>
     <td>ANDROID-25873324*</td>
     <td>High</td>
     <td>6.0.1</td>
-    <td>Google internal</td>
+    <td>Nov 24, 2015</td>
  </tr>
 </table>
 
 
 <p>* The patch for this issue is not in AOSP. The update is contained in the
-latest binary drivers for Nexus devices available from the <a href="https://developers.google.com/android/nexus/drivers">Google Developer site</a>.</p>
+latest binary drivers for Nexus devices available from the
+<a href="https://developers.google.com/android/nexus/drivers">Google Developer site</a>.</p>
 
 <h3 id=information_disclosure_vulnerability_in_kernel>Information Disclosure Vulnerability in Kernel</h3>
 
@@ -458,11 +473,12 @@ the platform. These issues are rated as High severity because they could allow
 a local bypass of exploit mitigation technologies such as ASLR in a privileged
 process.</p>
 
-<p><strong>Note:</strong> There is a fix for this issue is <a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ab676b7d6fbf4b294bf198fb27ade5b0e865c7ce">located in Linux upstream</a>.</p>
+<p><strong>Note:</strong> The fix for this issue is
+<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ab676b7d6fbf4b294bf198fb27ade5b0e865c7ce">located in Linux upstream</a>.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bug</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
@@ -475,7 +491,9 @@ process.</p>
     <td>Google internal</td>
  </tr>
 </table>
-
+<p>* The patch for this issue is not in AOSP. The update is contained in the
+latest binary drivers for Nexus devices available from the
+<a href="https://developers.google.com/android/nexus/drivers">Google Developer site</a>.</p>
 
 <h3 id=information_disclosure_vulnerability_in_libstagefright>Information Disclosure Vulnerability in libstagefright</h3>
 
@@ -487,14 +505,15 @@ could also be used to gain elevated capabilities, such as <a href="http://develo
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bug with AOSP link</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2016-0824</td>
-    <td>ANDROID-25765591</td>
+    <td><a href="https://android.googlesource.com/platform/external/libmpeg2/+/ffab15eb80630dc799eb410855c93525b75233c3">ANDROID-25765591</a>
+    </td>
     <td>High</td>
     <td>6.0, 6.0.1</td>
     <td>Nov 18, 2015</td>
@@ -508,7 +527,10 @@ could also be used to gain elevated capabilities, such as <a href="http://develo
 <p>An information disclosure vulnerability in the Widevine Trusted Application
 could allow code running in the kernel context to access information in
 TrustZone secure storage. This issue is rated as High severity because it could
-be used to gain elevated capabilities, such as <a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">Signature</a> or <a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">SignatureOrSystem</a> permissions privileges.</p>
+be used to gain elevated capabilities, such as
+<a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">Signature</a> or
+<a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">SignatureOrSystem</a>
+permissions privileges.</p>
 <table>
  <tr>
     <th>CVE</th>
@@ -528,7 +550,8 @@ be used to gain elevated capabilities, such as <a href="http://developer.android
 
 
 <p>* The patch for this issue is not in AOSP. The update is contained in the
-latest binary drivers for Nexus devices available from the <a href="https://developers.google.com/android/nexus/drivers">Google Developer site</a>.</p>
+latest binary drivers for Nexus devices available from the
+<a href="https://developers.google.com/android/nexus/drivers">Google Developer site</a>.</p>
 
 <h3 id=elevation_of_privilege_vulnerability_in_mediaserver>Elevation of Privilege Vulnerability in Mediaserver </h3>
 
@@ -540,21 +563,23 @@ could be used to gain elevated capabilities, such as <a href="http://developer.a
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bugs with AOSP links</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2016-0826</td>
-    <td>ANDROID-26265403 </td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/c9ab2b0bb05a7e19fb057e79b36e232809d70122">ANDROID-26265403</a> 
+        <a href="https://android.googlesource.com/platform/frameworks/av/+/899823966e78552bb6dfd7772403a4f91471d2b0">[2]</a>
+    </td>
     <td>High</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
     <td>Dec 17, 2015</td>
  </tr>
  <tr>
     <td>CVE-2016-0827</td>
-    <td>ANDROID-26347509</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/9e29523b9537983b4c4b205ff868d0b3bca0383b">ANDROID-26347509</a></td>
     <td>High</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
     <td>Dec 28, 2015</td>
@@ -572,21 +597,22 @@ be used to gain elevated capabilities, such as <a href="http://developer.android
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bugs with AOSP links</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2016-0828</td>
-    <td>ANDROID-26338113 </td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/native/+/dded8fdbb700d6cc498debc69a780915bc34d755">ANDROID-26338113</a>
+    </td>
     <td>High</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1</td>
     <td>Dec 27, 2015</td>
  </tr>
  <tr>
     <td>CVE-2016-0829</td>
-    <td>ANDROID-26338109</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/native/+/d06421fd37fbb7fd07002e6738fac3a223cb1a62">ANDROID-26338109</a></td>
     <td>High</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
     <td>Dec 27, 2015</td>
@@ -606,14 +632,14 @@ could potentially only be fixed with a flash of the device.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>AOSP Link</th>
+    <th>Bug with AOSP link</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2016-0830</td>
-    <td><a href="https://android.googlesource.com/platform%2Fsystem%2Fbt/+/d77f1999ecece56c1cbb333f4ddc26f0b5bac2c5">ANDROID-26071376</a></td>
+    <td><a href="https://android.googlesource.com/platform/system/bt/+/d77f1999ecece56c1cbb333f4ddc26f0b5bac2c5">ANDROID-26071376</a></td>
     <td>High</td>
     <td>6.0, 6.0.1</td>
     <td>Google Internal</td>
@@ -621,7 +647,7 @@ could potentially only be fixed with a flash of the device.</p>
 </table>
 
 
-<h3 id=information_disclosure_vulnerability_in_telephony>Information Disclosure Vulnerability in Telephony </h3>
+<h3 id=information_disclosure_vulnerability_in_telephony>Information Disclosure Vulnerability in Telephony</h3>
 
 
 <p>An information disclosure vulnerability in the Telephony component could allow
@@ -631,14 +657,14 @@ permission.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug(s)</th>
+    <th>Bug with AOSP link</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2016-0831</td>
-    <td>ANDROID-25778215</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/opt/telephony/+/79eecef63f3ea99688333c19e22813f54d4a31b1">ANDROID-25778215</a></td>
     <td>Moderate</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1</td>
     <td>Nov 16, 2015</td>
@@ -691,4 +717,5 @@ manufacturers that include these updates should set the patch string level to:
 
 <ul>
   <li> March 07, 2016: Bulletin published.
+  <li> March 08, 2016: Bulletin revised to include AOSP links.
 </ul>
