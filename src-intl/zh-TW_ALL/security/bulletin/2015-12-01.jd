@@ -23,149 +23,6 @@ page.title=Nexus 安全性公告 - 2015 年 12 月
   </div>
 </div>
 
-<div id="jd-content">
- <div class="jd-descr" itemprop="articleBody">
-  <!--
-    Copyright 2015 The Android Open Source Project
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-  <div id="qv-wrapper">
-   <div id="qv">
-    <h2>
-     本文內容
-    </h2>
-    <ol id="auto-toc">
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#security_vulnerability_summary">
-       安全性漏洞摘要
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#mitigations">
-       因應措施
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#acknowledgements">
-       特別銘謝
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#security_vulnerability_details">
-       安全性漏洞詳情
-      </a>
-     </li>
-     <ol>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerabilities_in_mediaserver">
-        媒體伺服器中的遠端程式碼執行漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerability_in_skia">
-        Skia 中的遠端程式碼執行漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_in_kernel">
-        核心中的權限升級漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerabilities_in_display_driver">
-        顯示器驅動程式中的遠端程式碼執行漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerability_in_bluetooth">
-        藍牙中的遠端程式碼執行漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerabilities_in_libstagefright">
-        libstagefright 中的權限升級漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_systemui">
-        SystemUI 中的權限升級漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_native_frameworks_library">
-        原生架構程式庫中的資訊外洩漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_wi-fi">
-        Wi-Fi 中的權限升級漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_system_server">
-        系統伺服器中的權限升級漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerabilities_in_libstagefright">
-        libstagefright 中的資訊外洩漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_audio">
-        音訊中的資訊外洩漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_media_framework">
-        媒體架構中的資訊外洩漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_wi-fi">
-        Wi-Fi 中的資訊外洩漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_system_server19">
-        系統伺服器中的權限升級漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_systemui">
-        SystemUI 中的資訊外洩漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#common_questions_and_answers">
-        常見問題與解答
-       </a>
-      </li>
-     </ol>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#revisions">
-       修訂版本
-      </a>
-     </li>
-    </ol>
-   </div>
-  </div>
-  <p>
-   <em>
-    發佈日期：2015 年 12 月 7 日 | 更新日期：2015 年 12 月 22 日
-   </em>
-  </p>
   <p>
    Google 已透過 Android 安全性公佈欄每月公告程序中的無線 (OTA) 更新，
 發佈 Nexus 裝置的安全性更新。
@@ -462,13 +319,9 @@ CVE-2015-6619、CVE-2015-6633、CVE-2015-6634
      KeenTeam
     </a>
     (
-    <a href="https://twitter.com/k33nteam">
-     @K33nTeam
-    </a>
+    <a href="https://twitter.com/k33nteam">@K33nTeam </a>
     ) 的 Flanker (
-    <a href="https://twitter.com/flanker_hqd">
-     @flanker_hqd
-    </a>
+    <a href="https://twitter.com/flanker_hqd"> @flanker_hqd </a>
     )：CVE-2015-6620
    </li>
    <li>
@@ -476,17 +329,12 @@ CVE-2015-6619、CVE-2015-6633、CVE-2015-6634
      奇虎 360 科技有限公司
     </a>
     的 Guang Gong (龔廣) (
-    <a href="https://twitter.com/oldfresher">
-     @oldfresher
-    </a>
+    <a href="https://twitter.com/oldfresher">@oldfresher </a>
     ，higongguang@gmail.com)：CVE-2015-6626
    </li>
    <li>
     EmberMitre Ltd 的 Mark Carter (
-    <a href="https://twitter.com/hanpingchinese">
-     @hanpingchinese
-    </a>
-    )：CVE-2015-6630
+    <a href="https://twitter.com/hanpingchinese">@hanpingchinese </a>)：CVE-2015-6630
    </li>
    <li>
     Michał Bednarski (
@@ -506,17 +354,11 @@ CVE-2015-6619、CVE-2015-6633、CVE-2015-6634
      KeenTeam
     </a>
     (
-    <a href="https://twitter.com/k33nteam">
-     @K33nTeam
-    </a>
+    <a href="https://twitter.com/k33nteam">@K33nTeam</a>
     ) 的 Qidan He (
-    <a href="https://twitter.com/flanker_hqd">
-     @flanker_hqd
-    </a>
+    <a href="https://twitter.com/flanker_hqd">@flanker_hqd</a>
     ) 和 Marco Grassi (
-    <a href="https://twitter.com/marcograss">
-     @marcograss
-    </a>
+    <a href="https://twitter.com/marcograss">@marcograss</a>
     )：CVE-2015-6622
    </li>
    <li>
@@ -525,9 +367,7 @@ CVE-2015-6619、CVE-2015-6633、CVE-2015-6634
    <li>
     阿根廷布宜諾斯艾利斯 Dr. Manuel Sadosky 基金會
  Programa STIC 的 Joaquín Rinaudo (
-    <a href="https://twitter.com/xeroxnir">
-     @xeroxnir
-    </a>
+    <a href="https://twitter.com/xeroxnir"> @xeroxnir </a>
     )：CVE-2015-6631
    </li>
   </ul>
@@ -1635,11 +1475,3 @@ CVE-2015-6619、CVE-2015-6633、CVE-2015-6634
     2015 年 12 月 22 日：在「特別銘謝」部分新增遺漏的銘謝對象。
    </li>
   </ul>
- </div>
- <div class="content-footer-sac" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-  <div class="layout-content-col col-9" style="padding-top:4px">
-  </div>
-  <div class="paging-links layout-content-col col-4">
-  </div>
- </div>
-</div>

@@ -23,129 +23,6 @@ page.title=Nexus 보안 게시판 - 2016년 1월
   </div>
 </div>
 
-<div id="jd-content">
- <div class="jd-descr" itemprop="articleBody">
-  <!--
-    Copyright 2016 The Android Open Source Project
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-  <div id="qv-wrapper">
-   <div id="qv">
-    <h2>
-     이 문서에서 다루는 내용
-    </h2>
-    <ol id="auto-toc">
-     <li>
-      <a href="http://source.android.com/security/bulletin/2016-01-01.html#security_vulnerability_summary">
-       보안 취약성 요약
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2016-01-01.html#mitigations">
-       완화
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2016-01-01.html#acknowledgements">
-       사사
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2016-01-01.html#security_vulnerability_details">
-       보안 취약성 세부정보
-      </a>
-     </li>
-     <ol>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#remote_code_execution_vulnerability_in_mediaserver">
-        미디어 서버의 원격 코드 실행 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_misc-sd_driver">
-        misc-sd 드라이버의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_the_imagination_technologies_driver">
-        Imagination Technologies 드라이버의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerabilities_in_trustzone">
-        Trustzone의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_kernel">
-        커널의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_bluetooth">
-        블루투스의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#information_disclosure_vulnerability_in_kernel">
-        커널의 정보 공개 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_setup_wizard">
-        설치 마법사의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_wi-fi">
-        Wi-Fi의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#information_disclosure_vulnerability_in_bouncy_castle">
-        Bouncy Castle의 정보 공개 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#denial_of_service_vulnerability_in_syncmanager">
-        SyncManager의 서비스 거부(DoS) 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#attack_surface_reduction_for_nexus_kernels">
-        Nexus 커널의 공격 범위 축소
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#common_questions_and_answers">
-        일반적인 질문 및 답변
-       </a>
-      </li>
-     </ol>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2016-01-01.html#revisions">
-       버전
-      </a>
-     </li>
-    </ol>
-   </div>
-  </div>
-  <p>
-   <em>
-    2016년 1월 4일 게시됨 | 2016년 1월 6일 업데이트됨
-   </em>
-  </p>
   <p>
    Google의 Android 보안 게시판 월간 출시 과정의 일환으로 무선
 업데이트를 통해 Nexus 기기에 대한 보안 업데이트가 출시되었습니다.
@@ -392,13 +269,9 @@ Google Play 외부에서 애플리케이션을 설치하는 사용자를 보호�
    </li>
    <li>
     KEEN lab, Tencent(
-    <a href="https://twitter.com/k33nteam">
-     @K33nTeam
-    </a>
+    <a href="https://twitter.com/k33nteam"> @K33nTeam </a>
     )의 Sen Nie(
-    <a href="https://twitter.com/@nforest_">
-     @nforest_
-    </a>
+    <a href="https://twitter.com/@nforest_"> @nforest_ </a>
     ), jfang: CVE-2015-6637
    </li>
    <li>
@@ -422,9 +295,7 @@ Google Play 외부에서 애플리케이션을 설치하는 사용자를 보호�
    </li>
    <li>
     Gal Beniamini(
-    <a href="https://twitter.com/@laginimaineb">
-     @laginimaineb
-    </a>
+    <a href="https://twitter.com/@laginimaineb"> @laginimaineb </a>
     ,
     <a href="http://bits-please.blogspot.com/">
      http://bits-please.blogspot.com
@@ -1167,11 +1038,3 @@ Android 6.0 이상에서 해결됩니다. 보안 패치 수준을 확인하는 �
     2016년 1월 6일: 게시판이 수정되어 AOSP 링크 포함됨
    </li>
   </ul>
- </div>
- <div class="content-footer-sac" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-  <div class="layout-content-col col-9" style="padding-top:4px">
-  </div>
-  <div class="paging-links layout-content-col col-4">
-  </div>
- </div>
-</div>

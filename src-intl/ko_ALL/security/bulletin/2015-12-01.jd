@@ -23,149 +23,6 @@ page.title=Nexus 보안 게시판 - 2015년 12월
   </div>
 </div>
 
-<div id="jd-content">
- <div class="jd-descr" itemprop="articleBody">
-  <!--
-    Copyright 2015 The Android Open Source Project
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-  <div id="qv-wrapper">
-   <div id="qv">
-    <h2>
-     이 문서에서 다루는 내용
-    </h2>
-    <ol id="auto-toc">
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#security_vulnerability_summary">
-       보안 취약성 요약
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#mitigations">
-       완화
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#acknowledgements">
-       사사
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#security_vulnerability_details">
-       보안 취약성 세부정보
-      </a>
-     </li>
-     <ol>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerabilities_in_mediaserver">
-        미디어 서버의 원격 코드 실행 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerability_in_skia">
-        Skia의 원격 코드 실행 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_in_kernel">
-        커널의 권한 승격
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerabilities_in_display_driver">
-        디스플레이 드라이버의 원격 코드 실행 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#remote_code_execution_vulnerability_in_bluetooth">
-        블루투스의 원격 코드 실행 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerabilities_in_libstagefright">
-        libstagefright의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_systemui">
-        SystemUI의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_native_frameworks_library">
-        기본 프레임워크 라이브러리의 정보 공개 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_wi-fi">
-        Wi-Fi의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_system_server">
-        시스템 서버의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerabilities_in_libstagefright">
-        libstagefright의 정보 공개 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_audio">
-        오디오의 정보 공개 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_media_framework">
-        미디어 프레임워크의 정보 공개 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_wi-fi">
-        Wi-Fi의 정보 공개 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#elevation_of_privilege_vulnerability_in_system_server19">
-        시스템 서버의 권한 승격 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#information_disclosure_vulnerability_in_systemui">
-        SystemUI의 정보 공개 취약성
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2015-12-01.html#common_questions_and_answers">
-        일반적인 질문 및 답변
-       </a>
-      </li>
-     </ol>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2015-12-01.html#revisions">
-       버전
-      </a>
-     </li>
-    </ol>
-   </div>
-  </div>
-  <p>
-   <em>
-    2015년 12월 7일 게시됨 | 2015년 12월 22일 업데이트됨
-   </em>
-  </p>
   <p>
    Google의 Android 보안 게시판 월간 출시 과정의 일환으로 무선
 업데이트를 통해 Nexus 기기에 대한 보안 업데이트가 출시되었습니다.
@@ -467,13 +324,9 @@ CVE-2015-6619, CVE-2015-6633, CVE-2015-6634
      KeenTeam
     </a>
     (
-    <a href="https://twitter.com/k33nteam">
-     @K33nTeam
-    </a>
+    <a href="https://twitter.com/k33nteam"> @K33nTeam </a>
     )의 Flanker(
-    <a href="https://twitter.com/flanker_hqd">
-     @flanker_hqd
-    </a>
+    <a href="https://twitter.com/flanker_hqd"> @flanker_hqd </a>
     ): CVE-2015-6620
    </li>
    <li>
@@ -481,16 +334,12 @@ CVE-2015-6619, CVE-2015-6633, CVE-2015-6634
      Qihoo 360 Technology Co.Ltd
     </a>
     의 Guang Gong(龚广)(
-    <a href="https://twitter.com/oldfresher">
-     @oldfresher
-    </a>
+    <a href="https://twitter.com/oldfresher"> @oldfresher </a>
     , higongguang@gmail.com): CVE-2015-6626
    </li>
    <li>
     EmberMitre Ltd의 Mark Carter(
-    <a href="https://twitter.com/hanpingchinese">
-     @hanpingchinese
-    </a>
+    <a href="https://twitter.com/hanpingchinese"> @hanpingchinese </a>
     ): CVE-2015-6630
    </li>
    <li>
@@ -511,17 +360,11 @@ CVE-2015-6619, CVE-2015-6633, CVE-2015-6634
      KeenTeam
     </a>
     (
-    <a href="https://twitter.com/k33nteam">
-     @K33nTeam
-    </a>
+    <a href="https://twitter.com/k33nteam"> @K33nTeam </a>
     )의 Qidan He(
-    <a href="https://twitter.com/flanker_hqd">
-     @flanker_hqd
-    </a>
+    <a href="https://twitter.com/flanker_hqd"> @flanker_hqd </a>
     ), Marco Grassi(
-    <a href="https://twitter.com/marcograss">
-     @marcograss
-    </a>
+    <a href="https://twitter.com/marcograss"> @marcograss </a>
     ): CVE-2015-6622
    </li>
    <li>
@@ -529,9 +372,7 @@ CVE-2015-6619, CVE-2015-6633, CVE-2015-6634
    </li>
    <li>
     아르헨티나 부에노스아이레스 Fundación Dr. Manuel Sadosky, Programa STIC의 Joaquín Rinaudo(
-    <a href="https://twitter.com/xeroxnir">
-     @xeroxnir
-    </a>
+    <a href="https://twitter.com/xeroxnir"> @xeroxnir </a>
     ): CVE-2015-6631
    </li>
   </ul>
@@ -1630,11 +1471,3 @@ libstagefright의 정보 공개 취약성이 있습니다. 이 문제는
     2015년 12월 22일: 사사 섹션에 누락된 크레딧 추가됨
    </li>
   </ul>
- </div>
- <div class="content-footer-sac" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-  <div class="layout-content-col col-9" style="padding-top:4px">
-  </div>
-  <div class="paging-links layout-content-col col-4">
-  </div>
- </div>
-</div>
