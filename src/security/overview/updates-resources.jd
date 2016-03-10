@@ -201,12 +201,11 @@ Android users as an update from Google Play. </p>
 <h2 id=notifying_partners>Notifying partners</h2>
 
 <p>When a moderate or higher severity security vulnerability in AOSP is fixed,
-we'll notify <a href="http://www.openhandsetalliance.com/">Open Handset
-Alliance</a> members with the details of the issue and provide patches for the
-most recent three Android releases. The Android security team currently
-provides patches for Android versions 4.4 (KitKat), 5.0 (Lollipop), and 5.1
-(Lollipop MR1). This list of backport-supported versions changes with each new
-Android release.</p>
+we'll notify Android partners of issue details and provide patches for a minimum
+of the most recent three Android releases. The Android security team currently
+provides patches for Android versions 4.4 (KitKat), 5.0 (Lollipop), 5.1
+(Lollipop MR1), and 6.0 (Marshmallow). This list of backport-supported versions
+changes with each new Android release.</p>
 
 <h2 id=releasing_code_to_aosp>Releasing code to AOSP</h2>
 
