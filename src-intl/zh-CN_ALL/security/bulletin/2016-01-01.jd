@@ -16,6 +16,7 @@ page.title=Nexus 安全公告 - 2016 年 1 月
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+
 <div id="qv-wrapper">
   <div id="qv">
     <ol id="auto-toc">
@@ -23,129 +24,6 @@ page.title=Nexus 安全公告 - 2016 年 1 月
   </div>
 </div>
 
-<div id="jd-content">
- <div class="jd-descr" itemprop="articleBody">
-  <!--
-    Copyright 2016 The Android Open Source Project
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-  <div id="qv-wrapper">
-   <div id="qv">
-    <h2>
-     本文内容
-    </h2>
-    <ol id="auto-toc">
-     <li>
-      <a href="http://source.android.com/security/bulletin/2016-01-01.html#security_vulnerability_summary">
-       安全漏洞摘要
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2016-01-01.html#mitigations">
-       缓解措施
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2016-01-01.html#acknowledgements">
-       致谢
-      </a>
-     </li>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2016-01-01.html#security_vulnerability_details">
-       安全漏洞详情
-      </a>
-     </li>
-     <ol>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#remote_code_execution_vulnerability_in_mediaserver">
-        Mediaserver 中的远程代码执行漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_misc-sd_driver">
-        misc-sd 驱动程序中的提权漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_the_imagination_technologies_driver">
-        Imagination Technologies 驱动程序中的提权漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerabilities_in_trustzone">
-        TrustZone 中的提权漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_kernel">
-        内核中的提权漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_bluetooth">
-        蓝牙中的提权漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#information_disclosure_vulnerability_in_kernel">
-        内核中的信息披露漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_setup_wizard">
-        设置向导中的提权漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#elevation_of_privilege_vulnerability_in_wi-fi">
-        WLAN 中的提权漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#information_disclosure_vulnerability_in_bouncy_castle">
-        Bouncy Castle 中的信息披露漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#denial_of_service_vulnerability_in_syncmanager">
-        SyncManager 中的拒绝服务漏洞
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#attack_surface_reduction_for_nexus_kernels">
-        减少 Nexus 内核的受攻击面
-       </a>
-      </li>
-      <li>
-       <a href="http://source.android.com/security/bulletin/2016-01-01.html#common_questions_and_answers">
-        常见问题和解答
-       </a>
-      </li>
-     </ol>
-     <li>
-      <a href="http://source.android.com/security/bulletin/2016-01-01.html#revisions">
-       修订版本
-      </a>
-     </li>
-    </ol>
-   </div>
-  </div>
-  <p>
-   <em>
-    发布时间：2016 年 1 月 4 日 | 更新时间：2016 年 1 月 6 日
-   </em>
-  </p>
   <p>
    在每月发布 Android 安全公告的过程中，我们都会通过无线 (OTA) 更新的方式发布针对 Nexus 设备的安全更新。我们还会在
    <a href="https://developers.google.com/android/nexus/images">
@@ -367,13 +245,9 @@ page.title=Nexus 安全公告 - 2016 年 1 月
    </li>
    <li>
     腾讯 KEEN 实验室 (
-    <a href="https://twitter.com/k33nteam">
-     @K33nTeam
-    </a>
+    <a href="https://twitter.com/k33nteam"> @K33nTeam </a>
     ) 的 Sen Nie (
-    <a href="https://twitter.com/@nforest_">
-     @nforest_
-    </a>
+    <a href="https://twitter.com/@nforest_"> @nforest_ </a>
     ) 和 jfang：CVE-2015-6637
    </li>
    <li>
@@ -397,9 +271,7 @@ page.title=Nexus 安全公告 - 2016 年 1 月
    </li>
    <li>
     Gal Beniamini (
-    <a href="https://twitter.com/@laginimaineb">
-     @laginimaineb
-    </a>
+    <a href="https://twitter.com/@laginimaineb"> @laginimaineb </a>
     、
     <a href="http://bits-please.blogspot.com/">
      http://bits-please.blogspot.com
@@ -1094,11 +966,3 @@ page.title=Nexus 安全公告 - 2016 年 1 月
     2016 年 1 月 6 日：修订了公告，添加 AOSP 链接。
    </li>
   </ul>
- </div>
- <div class="content-footer-sac" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-  <div class="layout-content-col col-9" style="padding-top:4px">
-  </div>
-  <div class="paging-links layout-content-col col-4">
-  </div>
- </div>
-</div>
