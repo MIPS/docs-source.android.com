@@ -5067,10 +5067,12 @@ than 8,192 keys to be imported.</li>
 <h2 id="9_12_data_deletion">9.12. Data Deletion</h2>
 
 <p>Devices MUST provide users with a mechanism to perform a "Factory Data Reset"
-that allows logical and physical deletion of all data. This MUST satisfy relevant
-industry standards for data deletion such as NIST SP800-88. This MUST be used for
-the implementation of the wipeData() API (part of the Android Device Administration API)
-described in <a href="#3_9_device_administration">section 3.9 Device Administration</a>.</p>
+that allows logical and physical deletion of all data except for the system image
+and data in other partitions that can be regarded as part of the sytem image.
+This MUST satisfy relevant industry standards for data deletion such as NIST SP800-88.
+This MUST be used for the implementation of the wipeData() API (part of the Android Device
+Administration API) described in <a href="#3_9_device_administration">section 3.9 Device
+Administration</a>.</p>
 
 <p>Devices MAY provide a fast data wipe that conducts a logical data erase.</p>
 
