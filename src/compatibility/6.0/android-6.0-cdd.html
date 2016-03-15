@@ -4513,13 +4513,15 @@ USB host mode.</p>
 <ul>
   <li>The port MUST be connectable to a USB host that has a standard type-A or type
 -C USB port.</li>
-  <li>The port SHOULD use micro-A, micro-AB or type-C USB form factor. Existing and
-new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to the future platform releases.</li>
-  <li>The port SHOULD be centered in the middle of an edge. Device implementations
-SHOULD either locate the port on the bottom of the device (according to natural
+  <li>The port SHOULD use micro-B, micro-AB or Type-C USB form factor. Existing and
+new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong>
+so they will be able to upgrade to future platform releases.</li>
+  <li>The port SHOULD either be located on the bottom of the device (according to natural
 orientation) or enable software screen rotation for all apps (including home
 screen), so that the display draws correctly when the device is oriented with
-the port at bottom. Existing and new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to future platform releases.</li>
+the port at bottom. Existing and new Android devices are <strong>STRONGLY RECOMMENDED
+to meet these requirements</strong> so they will be able to upgrade to future platform
+releases.</li>
   <li>It SHOULD implement the Android Open Accessory (AOA) API and specification as
 documented in the Android SDK documentation, and if it is an Android Handheld
 device it MUST implement the AOA API. Device implementations implementing the
@@ -4534,7 +4536,8 @@ USB mass storage</li>
   </ul>
   </li>
   <li>It SHOULD implement support to draw 1.5 A current during HS chirp and traffic
-as specified in the USB battery charging specification [<a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">Resources, 120</a>]. Existing and new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to the future platform releases.</li>
+as specified in the USB Battery Charging Specification, Revision 1.2 [<a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">Resources, 120</a>]. Existing and new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to the future platform releases.</li>
+the Type-C resistor standard.</li>
   <li>The value of iSerialNumber in USB standard device descriptor MUST be equal to
 the value of android.os.Build.SERIAL.</li>
 </ul>
@@ -4552,7 +4555,7 @@ documentation [<a href="http://developer.android.com/reference/android/hardware/
   <li>MUST implement the Android USB host API as documented in the Android SDK, and
 MUST declare support for the hardware feature android.hardware.usb.host [<a href="http://developer.android.com/guide/topics/connectivity/usb/host.html">Resources, 121</a>].</li>
   <li>SHOULD support the Charging Downstream Port output current range of 1.5 A ~ 5 A
-as specified in the USB Battery Charging Specifications [<a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">Resources, 120</a>].</li>
+as specified in the USB Battery Charging Specification, Revision 1.2 [<a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">Resources, 120</a>].</li>
 </ul>
 
 <h2 id="7_8_audio">7.8. Audio</h2>
@@ -5621,7 +5624,7 @@ Android source code, at dalvik/docs</p>
 
 <p>119. Android USB Audio: <a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO</a></p>
 
-<p>120. USB Charging Specification: <a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf</a></p>
+<p>120. USB Battery Charging Specification, Revision 1.2: <a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip</a></p>
 
 <p>121. USB Host API:<a href="http://developer.android.com/guide/topics/connectivity/usb/host.html"> http://developer.android.com/guide/topics/connectivity/usb/host.html</a></p>
 
