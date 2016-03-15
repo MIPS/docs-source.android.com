@@ -4455,8 +4455,9 @@ separately purchased.</li>
 storage as shared storage for apps as included in the upstream Android Open
 Source Project; device implementations SHOULD use this configuration and
 software implementation. If a device implementation uses internal
-(non-removable) storage to satisfy the shared storage requirement, that storage
-MUST be 1GB in size or larger and mounted on /sdcard (or /sdcard MUST be a
+(non-removable) storage to satisfy the shared storage requirement, while that
+storage MAY share space with the application private data, it MUST be at least
+1GB in size and mounted on /sdcard (or /sdcard MUST be a
 symbolic link to the physical location if it is mounted elsewhere).</p>
 
 <p>Device implementations MUST enforce as documented the
