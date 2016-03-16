@@ -4884,8 +4884,8 @@ ensure that applications owned by and running on behalf a given user cannot
 list, read, or write to data owned by any other user. Note that removable
 media, such as SD card slots, can allow one user to access another&rsquo;s data by
 means of a host PC. For this reason, device implementations that use removable
-media for the external storage APIs MUST encrypt the contents of the SD card if
-multiuser is enabled using a key stored only on non-removable media accessible
+media for the primary external storage APIs MUST encrypt the contents of the SD
+card if multiuser is enabled using a key stored only on non-removable media accessible
 only to the system. As this will make the media unreadable by a host PC, device
 implementations will be required to switch to MTP or a similar system to
 provide host PCs with access to the current user&rsquo;s data. Accordingly, device
