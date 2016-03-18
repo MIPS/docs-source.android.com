@@ -16,8 +16,16 @@ page.title=Requirements
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
+
 <p>Before you download and build the Android source, ensure your system meets
-  the following requirements. Then see <a href="initializing.html">Initializing a
+  the following requirements. Then see <a href="initializing.html">Establishing a
   Build Environment</a> for installation instructions by operating system.</p>
 
 <h2 id=hardware-requirements>Hardware requirements</h2>
@@ -45,53 +53,70 @@ page.title=Requirements
 
 <p>The <a
   href="https://android.googlesource.com/">Android Open Source Project
-  (AOSP)</a> is routinely tested in-house on recent versions of
-  Ubuntu LTS (14.04), but most distributions should have the required
-  build tools available.</p>
+  (AOSP)</a> <code>master</code> branch is traditionally developed and tested
+  on Ubuntu Long Term Support (LTS) releases, but other distributions may be
+  used. See the list below for recommended versions.</p>
 
-<p>You workstation will need this software:</p>
+<p>You workstation must have the software listed below. See <a
+  href="initializing.html">Establishing a Build Environment</a> for
+  additional required packages and the commands to install them.</p>
 
-<ul>
+<h3 id=operating-system>Operating system</h3>
 
-  <li>A Linux or Mac OS operating system. It is also possible to build Android in a
-  virtual machine on unsupported systems such as Windows.</br>
+<p>Android is typically built with a Linux or Mac OS operating system. It is
+  also possible to build Android in a virtual machine on unsupported systems such
+  as Windows.</br>
 
-  For Linux:
+<h4 id=linux>Linux</h4>
+
   <ul>
     <li>Android 6.0 (Marshmallow) - AOSP master: Ubuntu 14.04 (Trusty)</li>
     <li>Android 2.3.x (Gingerbread) - Android 5.x (Lollipop): Ubuntu 12.04 (Precise)</li>
     <li>Android 1.5 (Cupcake) - Android 2.2.x (Froyo): Ubuntu 10.04 (Lucid)</li>
   </ul>
 
-  For Mac:
+<h4 id=mac>Mac OS (Intel/x86)</h4>
+
   <ul>
-    <li>Android 6.0 (Marshmallow) - AOSP master: Mac OS v10.10 (Yosemite) or later</li>
-    <li>Android 5.x (Lollipop): Mac OS v10.8 (Mountain Lion)</li>
-    <li>Android 4.1.x-4.3.x (Jelly Bean) - Android 4.4.x (KitKat): Mac OS v10.6 (Snow Leopard) or Mac OS X v10.7 (Lion)</li>
-    <li>Android 1.5 (Cupcake) - Android 4.0.x (Ice Cream Sandwich): Mac OS v10.5 (Leopard) or Mac OS X v10.6 (Snow Leopard)</li>
+    <li>Android 6.0 (Marshmallow) - AOSP master: Mac OS v10.10 (Yosemite) or
+    later with Xcode 4.5.2 and Command Line Tools</li>
+    <li>Android 5.x (Lollipop): Mac OS v10.8 (Mountain Lion) with Xcode 4.5.2
+    and Command Line Tools</li>
+    <li>Android 4.1.x-4.3.x (Jelly Bean) - Android 4.4.x (KitKat): Mac OS v10.6
+    (Snow Leopard) or Mac OS X v10.7 (Lion) and Xcode 4.2 (Apple's Developer
+    Tools)</li>
+    <li>Android 1.5 (Cupcake) - Android 4.0.x (Ice Cream Sandwich): Mac OS
+    v10.5 (Leopard) or Mac OS X v10.6 (Snow Leopard) and the Mac OS X v10.5
+    SDK</li>
   </ul>
-  </li>
 
-  <li>
-  Java Development Kit (JDK):
+<h3 id=jdk>Java Development Kit (JDK)</h3>
+
+<p>Please note, since there are no available supported OpenJDK 8 packages for
+  Ubuntu 14.04, the Ubuntu 15.04 packages must be installed manually. See <a
+  href="initializing.html#for-ubuntu-14-04">JDK for Ubuntu LTS 14.04</a> for precise instructions.</p>
   <ul>
-    <li>The master branch of Android in AOSP: Java 8
-    <li>Android 5.x (Lollipop) - Android 6.0 (Marshmallow): Java 7
-    <li>Android 2.3.x (Gingerbread) - Android 4.4.x (KitKat): Java 6
-    <li>Android 1.5 (Cupcake) - Android 2.2.x (Froyo): Java 5
+    <li>The master branch of Android in AOSP: Ubuntu - <a
+    href="http://openjdk.java.net/install/">OpenJDK 8</a>, Mac OS - <a
+    href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html#jdk-8u45-oth-JPR">jdk
+    8u45 or newer</a></li>
+    <li>Android 5.x (Lollipop) - Android 6.0 (Marshmallow): Ubuntu - <a
+    href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">Java
+    JDK 7</a>, Mac OS - <a
+    href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jdk-7u71-oth-JPR">jdk-7u71-macosx-x64.dmg</a></li>
+    <li>Android 2.3.x (Gingerbread) - Android 4.4.x (KitKat): Ubuntu - <a
+    href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">Java JDK 6</a>, Mac OS - <a
+    href="http://support.apple.com/kb/dl1572">Java JDK 6</a></li>
+    <li>Android 1.5 (Cupcake) - Android 2.2.x (Froyo): Ubuntu - <a
+    href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">Java JDK 5</a></li>
   </ul>
-  </li>
 
-  <li>
-  Python 2.6 -- 2.7, which you can download from <a href="http://www.python.org/download/">python.org</a>.</p>
-  </li>
-
-  <li>
-  GNU Make 3.81 -- 3.82, which you can download from <a href="http://ftp.gnu.org/gnu/make/">gnu.org</a>,</p>
-  </li>
-
-  <li>
-  Git 1.7 or newer. You can find it at <a href="http://git-scm.com/download">git-scm.com</a>.</p>
-  </li>
-
-</ul>
+<h3 id=packages>Key packages</h3>
+  <ul>
+    <li>Python 2.6 -- 2.7 from <a href="http://www.python.org/download/">python.org</a></li>
+    <li>GNU Make 3.81 -- 3.82 from <a
+    href="http://ftp.gnu.org/gnu/make/">gnu.org</a>; Android 3.2.x (Honeycomb) and
+    earlier will need to <a href="initializing.html#reverting-from-make-382">revert
+    from make 3.82</a> to avoid build errors</li>
+    <li>Git 1.7 or newer from <a href="http://git-scm.com/download">git-scm.com</a></li>
+  </ul>

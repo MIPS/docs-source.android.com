@@ -242,53 +242,13 @@ function umountAndroid() { hdiutil detach /Volumes/android; }
 <p>Once you've mounted the <code>android</code> volume, you'll do all your work there. You can eject it (unmount it) just like you would with an external drive.</p>
 
 <h3 id="installing-the-mac-jdk">Installing the JDK</h3>
-<p>The <code>master</code> branch of Android in the <a
-href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
-requires Java 8. On Mac OS, use <a
-href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html#jdk-8u45-oth-JPR">jdk 8u45 or newer</a>.</p>
 
-<p>The <code>5.0.x</code> branches of Android in the <a
-href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
-require Java 7. On Mac OS, use <a
-href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jdk-7u71-oth-JPR">jdk-7u71-macosx-x64.dmg</a>.</p>
+<p>See <a href="requirements.html">Requirements</a> for the version of Java to use when developing various versions of Android.</p>
 
-<p>To develop for versions of Android Gingerbread through KitKat, download and
-install the Java 6 version of the <a
-href="http://support.apple.com/kb/dl1572">Java JDK</a>.</p>
-
-<h3 id="master-branch">Master branch</h3>
-<p>To build the latest source in a Mac OS environment, you will need an Intel/x86
-machine running Mac OS X v10.10 (Yosemite) or later, along with Xcode
-4.5.2 or later including the Command Line Tools.</p>
-
-<h3 id="branch-60x">Branch 6.0.x</h3>
-<p>To build 6.0.x and earlier source in a Mac OS environment, you will need an Intel/x86
-machine running Mac OS X v10.10 (Yosemite), along with Xcode
-4.5.2 and Command Line Tools.</p>
-
-<h3 id="branch-50x">Branch 5.0.x</h3>
-<p>To build 5.0.x and earlier source in a Mac OS environment, you will need an Intel/x86
-machine running Mac OS X v10.8 (Mountain Lion), along with Xcode
-4.5.2 and Command Line Tools.</p>
-
-<h3 id="branch-44x">Branch 4.4.x</h3>
-<p>To build 4.2.x and earlier source in a Mac OS environment, you will need an Intel/x86
-machine running Mac OS X v10.6 (Snow Leopard) or Mac OS X v10.7 (Lion), along with Xcode
-4.2 (Apple's Developer Tools). Although Lion does not come with a JDK, it should
-install automatically when you attempt to build the source.</p>
-<p>The remaining sections for Mac OS apply only to those who wish to build
-earlier branches.</p>
-
-<h3 id="branch-40x">Branch 4.0.x and all earlier branches</h3>
-<p>To build android-4.0.x and earlier branches in a Mac OS environment, you need an
-Intel/x86 machine running Mac OS X v10.5 (Leopard) or Mac OS X v10.6 (Snow Leopard). You
-will need the Mac OS X v10.5 SDK.</p>
 <h4 id="installing-required-packages">Installing required packages</h4>
 <ul>
 <li>
 <p>Install Xcode from <a href="http://developer.apple.com/">the Apple developer site</a>.
-We recommend version 3.1.4 or newer (e.g., gcc 4.2).
-Version 4.x could cause difficulties.
 If you are not already registered as an Apple developer, you will have to
 create an Apple ID in order to download.</p>
 </li>
@@ -309,8 +269,11 @@ create an Apple ID in order to download.</p>
 </code></pre>
 </li>
 </ul>
+
 <h4 id="reverting-from-make-382">Reverting from make 3.82</h4>
-<p>For versions of Android before ICS, there is a bug in gmake 3.82 that prevents android from building.  You can install version 3.81 using MacPorts by taking the following steps:</p>
+<p>In Android 4.0.x (Ice Cream Sandwich) and earlier, a bug exists in gmake 3.82
+that prevents android from building. You can install version 3.81 using
+MacPorts with these steps:</p>
 <ul>
 <li>
 <p>Edit <code>/opt/local/etc/macports/sources.conf</code> and add a line that says</p>
@@ -336,6 +299,7 @@ create an Apple ID in order to download.</p>
 </code></pre>
 </li>
 </ul>
+
 <h4 id="setting-a-file-descriptor-limit">Setting a file descriptor limit</h4>
 <p>On Mac OS, the default limit on the number of simultaneous file descriptors open is too low and a highly parallel build process may exceed this limit.<br />
 </p>
