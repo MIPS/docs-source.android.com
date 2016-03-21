@@ -893,7 +893,15 @@ page.title=Dalvik bytecode
     <code>B:</code> first source register or pair (8 bits)<br/>
     <code>C:</code> second source register or pair (8 bits)</td>
   <td>Perform the identified binary operation on the two source registers,
-    storing the result in the destination register.</td>
+    storing the result in the destination register.
+    <p class="note"><strong>Note:</strong>
+    Contrary to other <code>-long</code> mathematical operations (which
+    take register pairs for both their first and their second source),
+    <code>shl-long</code>, <code>shr-long</code>, and <code>ushr-long</code>
+    take a register pair for their first source (the value to be shifted),
+    but a single register for their second source (the shifting distance).
+    </p>
+</td>
 </tr>
 <tr>
   <td>b0..cf 12x</td>
@@ -935,7 +943,17 @@ page.title=Dalvik bytecode
       (4 bits)<br/>
     <code>B:</code> second source register or pair (4 bits)</td>
   <td>Perform the identified binary operation on the two source registers,
-    storing the result in the first source register.</td>
+    storing the result in the first source register.
+    <p class="note"><strong>Note:</strong>
+    Contrary to other <code>-long/2addr</code> mathematical operations
+    (which take register pairs for both their destination/first source and
+    their second source), <code>shl-long/2addr</code>,
+    <code>shr-long/2addr</code>, and <code>ushr-long/2addr</code> take a
+    register pair for their destination/first source (the value to be
+    shifted), but a single register for their second source (the shifting
+    distance).
+    </p>
+  </td>
 </tr>
 <tr>
   <td>d0..d7 22s</td>
@@ -1461,21 +1479,24 @@ round-to-nearest and gradual underflow, except where stated otherwise.</p>
 </tr>
 <tr>
   <td>shl-long</td>
-  <td>int64 a, b;<br/>
+  <td>int64 a;<br/>
+    int32 b;<br/>
     int64 result = a &lt;&lt; (b &amp; 0x3f);
   </td>
   <td>Bitwise shift left (with masked argument).</td>
 </tr>
 <tr>
   <td>shr-long</td>
-  <td>int64 a, b;<br/>
+  <td>int64 a;<br/>
+    int32 b;<br/>
     int64 result = a &gt;&gt; (b &amp; 0x3f);
   </td>
   <td>Bitwise signed shift right (with masked argument).</td>
 </tr>
 <tr>
   <td>ushr-long</td>
-  <td>uint64 a, b;<br/>
+  <td>uint64 a;<br/>
+    int32 b;<br/>
     int64 result = a &gt;&gt; (b &amp; 0x3f);
   </td>
   <td>Bitwise unsigned shift right (with masked argument).</td>
