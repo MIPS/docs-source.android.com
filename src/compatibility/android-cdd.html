@@ -2302,7 +2302,7 @@ encoding profiles.</p>
 <p>Device implementations MUST support dynamic video resolution and frame rate
 switching through the standard Android APIs within the same stream for all VP8,
 VP9, H.264, and H.265 codecs in real time and up to the maximum resolution
-supported on the device.</p>
+supported by each codec on the device.</p>
 
 <p>Android device implementations with H.263 decoders, MUST support Baseline
 Profile Level 30.</p>
@@ -2347,7 +2347,7 @@ Level 4.2 and the HD 1080p decoding profile.</p>
 
 
 <p class="table_footnote">1 REQUIRED for when the height as reported by the
-Display.getSupportedModes() method is not smaller than the video resolution.</p>
+Display.getSupportedModes() method is equal or greater than the video resolution.</p>
 
 <p class="table_footnote">2 REQUIRED for Android Television device implementations.</p>
 
@@ -2386,7 +2386,7 @@ decoding profile.  </p>
 </table>
 
 <p class="table_footnote">1 REQUIRED for when the height as reported by the
-Display.getSupportedModes() method is not smaller than the video resolution.</p>
+Display.getSupportedModes() method is equal or greater than the video resolution.</p>
 
 <p class="table_footnote">2 REQUIRED for Android Television device implementations.</p>
 
