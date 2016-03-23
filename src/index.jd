@@ -41,6 +41,17 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}source/requirements.html">
+        <h4>Requirements Expanded, Build Environment Simplified</h4></a>
+        <p>The Android build <strong><a
+        href="{@docRoot}source/requirements.html">Requirements</a></strong>
+        have been expanded to include both the operating system and Java version needed for
+        each Android version and also broken down into hardware and software
+        requirements. Conversely, these same requirements have been removed from
+        <strong><a href="{@docRoot}source/initializing.html">Establishing a Build
+        Environment</a></strong> to separate those reference materials from the steps
+        needed to set up your workstation.</p>
+
 <a href="{@docRoot}security/bulletin/index.html">
         <h4>March Nexus Security Bulletin</h4></a>
         <p>The <strong><a
@@ -77,20 +88,6 @@ devices meet compatibility requirements.
         into the generated image. See <strong><a
         href="{@docRoot}devices/tech/ota/device_code.html">OTA Device-Specific
         Code</a>.</strong></p>
-
-<a href="{@docRoot}source/building-kernels.html">
-        <h4>User Feedback Implemented</h4></a>
-        <p>Input from the <strong>Site Feedback</strong> button has
-        prompted the following fixes: new devices on <strong><a
-        href="{@docRoot}source/building-kernels.html">Building Kernels</a></strong>,
-        the significant motion sensor being identified as a wake-up sensor on
-        <strong><a href="{@docRoot}devices/sensors/sensor-types.html">Sensor
-        Types</a></strong>, a new path for example download in <strong><a
-        href="{@docRoot}source/using-repo.html">Repo command reference</a></strong>, the correct
-        formula for determining actual resistance on <strong><a
-        href="{@docRoot}devices/accessories/headset/specification.html">Wired Audio Headset
-        Specification</a></strong>, and a description of timestamp format on <strong><a
-        href="{@docRoot}devices/input/getevent.html">Getevent</a></strong>.</p>
     </div>
 
     <div class="col-8">
