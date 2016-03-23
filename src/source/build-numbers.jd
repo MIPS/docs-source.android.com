@@ -189,6 +189,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
   <td>Nexus 5X</td>
 </tr>
 <tr>
+  <td>MHC19I</td>
+  <td>android-6.0.1_r21</td>
+  <td>Marshmallow</td>
+  <td>Nexus 6P</td>
+</tr>
+<tr>
   <td>MXC14G</td>
   <td>android-6.0.1_r18</td>
   <td>Marshmallow</td>
