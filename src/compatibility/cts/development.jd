@@ -123,6 +123,11 @@ updated from time to time as CTS for the given Android version matures.</p>
 </thead>
 <tbody>
 <tr>
+  <td>6.0</td>
+  <td>marshmallow-cts-dev</td>
+  <td>Monthly</td>
+</tr>
+<tr>
   <td>5.1</td>
   <td>lollipop-mr1-cts-dev</td>
   <td>Monthly</td>
@@ -135,17 +140,17 @@ updated from time to time as CTS for the given Android version matures.</p>
 <tr>
   <td>4.4</td>
   <td>kitkat-cts-dev</td>
-  <td>Odd month (Jan, Mar, etc.)</td>
+  <td>No releases planned</td>
 </tr>
 <tr>
   <td>4.3</td>
   <td>jb-mr2-cts-dev</td>
-  <td>First month of each quarter</td>
+  <td>No releases planned</td>
 </tr>
 <tr>
   <td>4.2</td>
   <td>jb-mr1.1-cts-dev</td>
-  <td>First month of each quarter</td>
+  <td>No releases planned</td>
 </tr>
 </table>
 
