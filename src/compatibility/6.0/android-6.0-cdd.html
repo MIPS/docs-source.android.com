@@ -4472,8 +4472,11 @@ permission.</p>
 <p>Device implementations that include multiple shared storage paths (such as both
 an SD card slot and shared internal storage) MUST allow only pre-installed &amp;
 privileged Android applications with the WRITE_EXTERNAL_STORAGE permission to
-write to the secondary external storage, except for their package-specific
-directories on the secondary external storage, but SHOULD expose content from
+write to the secondary external storage, except when writing to their
+package-specific directories or within the <code>URI</code> returned by firing
+the <code>ACTION_OPEN_DOCUMENT_TREE</code> intent.</p>
+
+<p>However, device implementations SHOULD expose content from
 both storage paths transparently through Android&rsquo;s media scanner service
 and android.provider.MediaStore.</p>
 
