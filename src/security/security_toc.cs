@@ -50,6 +50,16 @@
       </a>
     </div>
     <ul>
+      <li class="nav-section">
+         <div class="nav-section-header">
+           <a href="<?cs var:toroot ?>security/advisory/index.html">
+         <span class="en">Advisories</span>
+        </a>
+       </div>
+         <ul>
+           <li><a href="<?cs var:toroot ?>security/advisory/2016-03-18.html">2016-03-18</a></li>
+         </ul>
+      </li>
       <li><a href="<?cs var:toroot ?>security/bulletin/2016-03-01.html">March 2016</a></li>
       <li><a href="<?cs var:toroot ?>security/bulletin/2016-02-01.html">February 2016</a></li>
       <li><a href="<?cs var:toroot ?>security/bulletin/2016-01-01.html">January 2016</a></li>
