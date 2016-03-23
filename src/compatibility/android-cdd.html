@@ -812,18 +812,19 @@ implementations MUST conform.</p>
  </tr>
  <tr>
     <td>SECURITY_PATCH</td>
-    <td>A value indicating the security patch level of a build. It MUST signify that the
-build includes all security patches issued up through the designated Android Public
-Security Bulletin. It MUST be in the format, [YYYY-MM-DD], matching one of the Android
-Security Patch Level strings of the <a href="source.android.com/security/bulletin"> Public
-Security Bulletins</a>, for example "2015-11-01".</td>
+    <td>A value indicating the security patch level of a build. It MUST signify
+    that the build includes all security patches issued up through the
+    designated Android Public Security Bulletin. It MUST be in the format
+    [YYYY-MM-DD], matching one of the Android Security Patch Level strings of
+    the <a href="source.android.com/security/bulletin"> Public Security
+    Bulletins</a>, for example "2015-11-01".</td>
  </tr>
  <tr>
     <td>BASE_OS</td>
-    <td>A value representing the FINGERPRINT parameter of the build that is otherwise
-      identical to this build except for the patches provided in the Android Public
-      Security Bulletin. It MUST report the correct value and if such a build does not
-      exist, report an emtpy string ("").</td>
+    <td>A value representing the FINGERPRINT parameter of the build that is
+    otherwise identical to this build except for the patches provided in the
+    Android Public Security Bulletin. It MUST report the correct value and if
+    such a build does not exist, report an emtpy string ("").</td>
  </tr>
 </table>
 
@@ -2641,9 +2642,10 @@ device implementations when supported by hardware.</p>
 
 <p>While some of the requirements outlined in this section are stated as SHOULD
 since Android 4.3, the Compatibility Definition for a future version is planned
-to change these to MUST. Existing and new Android devices are <strong>STRONGLY RECOMMENDED</strong>
-to meet these requirements that are stated as SHOULD, or they will not be able to attain
-Android compatibility when upgraded to the future version.</p>
+to change these to MUST. Existing and new Android devices are <strong>STRONGLY
+RECOMMENDED</strong> to meet these requirements that are stated as SHOULD, or
+they will not be able to attain Android compatibility when upgraded to the
+future version.</p>
 
 <h3 id="5_4_1_raw_audio_capture">5.4.1. Raw Audio Capture</h3>
 
@@ -4225,12 +4227,12 @@ LE.</p>
 <ul>
   <li>MUST declare the hardware feature android.hardware.bluetooth_le.</li>
   <li>MUST enable the GATT (generic attribute profile) based Bluetooth APIs as
-described in the SDK documentation and
+  described in the SDK documentation and
   <a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">android.bluetooth</a>.
-</li>
-  <li>are STRONGLY RECOMMMENDED to implement a Resolvable Private Address (RPA)
-timeout no longer than 15 minutes and rotate the address at timeout to protect
-user privacy.</li>
+  </li>
+  <li>are STRONGLY RECOMMENDED to implement a Resolvable Private Address (RPA)
+  timeout no longer than 15 minutes and rotate the address at timeout to protect
+  user privacy.</li>
   <li>SHOULD support offloading of the filtering logic to the bluetooth chipset
   when implementing the
   <a href="https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html">ScanFilter
@@ -4805,17 +4807,18 @@ USB host mode.</p>
 </p>
 
 <ul>
-  <li>The port MUST be connectable to a USB host that has a standard type-A or type
--C USB port.</li>
-  <li>The port SHOULD use micro-B, micro-AB or Type-C USB form factor. Existing and
-new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong>
-so they will be able to upgrade to future platform releases.</li>
-  <li>The port SHOULD either be located on the bottom of the device (according to natural
-orientation) or enable software screen rotation for all apps (including home
-screen), so that the display draws correctly when the device is oriented with
-the port at bottom. Existing and new Android devices are <strong>STRONGLY RECOMMENDED
-to meet these requirements</strong> so they will be able to upgrade to future platform
-releases.</li>
+  <li>The port MUST be connectable to a USB host that has a standard type-A or
+  type-C USB port.</li>
+  <li>The port SHOULD use micro-B, micro-AB or Type-C USB form factor. Existing
+  and new Android devices are <strong>STRONGLY RECOMMENDED to meet these
+  requirements</strong> so they will be able to upgrade to the future platform
+  releases.</li>
+  <li>The port SHOULD either locate the port on the bottom of the device
+  (according to natural orientation) or enable software screen rotation for all
+  apps (including home screen), so that the display draws correctly when the
+  device is oriented with the port at bottom. Existing and new Android devices
+  are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they
+  will be able to upgrade to future platform releases.</li>
   <li>It MUST allow a USB host connected with the Android device to access the
   contents of the shared storage volume using either USB mass storage or Media
   Transfer Protocol.</li>
@@ -4835,10 +4838,15 @@ releases.</li>
     storage</li>
   </ul>
   </li>
-  <li>It SHOULD implement support to draw 1.5 A current during HS chirp and traffic
-as specified in the USB Battery Charging Specification, Revision 1.2 [<a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">Resources, 120</a>]. Existing and new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to the future platform releases.</li>
-  <li>The value of iSerialNumber in USB standard device descriptor MUST be equal to
-the value of android.os.Build.SERIAL.</li>
+  <li>It SHOULD implement support to draw 1.5 A current during HS chirp and
+  traffic as specified in the
+  <a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">USB
+  Battery Charging specification, revision 1.2</a>. Existing and new Android
+  devices are
+  <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will
+  be able to upgrade to the future platform releases.</li>
+  <li>The value of iSerialNumber in USB standard device descriptor MUST be equal
+  to the value of android.os.Build.SERIAL.</li>
 </ul>
 
 <p>If a device implementation includes a USB port supporting host mode, it:</p>
@@ -4849,13 +4857,18 @@ the value of android.os.Build.SERIAL.</li>
   <li>MAY use a non-standard port form factor, but if so MUST ship with a cable
   or cables adapting the port to a standard type-A or type-C USB port.</li>
   <li>MAY use a micro-AB USB port, but if so SHOULD ship with a cable or cables
-adapting the port to a standard type-A or type-C USB port.</li>
-  <li>is <strong>STRONGLY RECOMMENDED</strong> to implement the USB audio class as documented in the Android SDK
-documentation [<a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">Resources, 119</a>].</li>
-  <li>MUST implement the Android USB host API as documented in the Android SDK, and
-MUST declare support for the hardware feature android.hardware.usb.host [<a href="http://developer.android.com/guide/topics/connectivity/usb/host.html">Resources, 121</a>].</li>
-  <li>SHOULD support the Charging Downstream Port output current range of 1.5 A ~ 5 A
-as specified in the USB Battery Charging Specification, Revision 1.2 [<a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">Resources, 120</a>].</li>
+  adapting the port to a standard type-A or type-C USB port.</li>
+  <li>is <strong>STRONGLY RECOMMENDED</strong> to implement the
+  <a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">USB
+  audio class</a> as documented in the Android SDK documentation.</li>
+  <li>MUST implement the Android USB host API as documented in the Android SDK,
+  and MUST declare support for the hardware feature
+  <a href="http://developer.android.com/guide/topics/connectivity/usb/host.html">android.hardware.usb.host</a>.
+  </li>
+  <li>SHOULD support the Charging Downstream Port output current range of 1.5 A
+  ~ 5 A as specified in the
+  <a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">USB
+  Battery Charging specifications, revision 1.2</a>.</li>
 </ul>
 
 <h2 id="7_8_audio">7.8. Audio</h2>
@@ -5412,12 +5425,13 @@ TEE.</p>
 <h2 id="9_12_data_deletion">9.12. Data Deletion</h2>
 
 <p>Devices MUST provide users with a mechanism to perform a "Factory Data Reset"
-that allows logical and physical deletion of all data except for the system image and any
-operating system files required by the system image.  All user-generated data MUST be deleted.
-This MUST satisfy relevant industry standards for data deletion such as NIST SP800-88.
-This MUST be used for the implementation of the wipeData() API (part of the Android Device
-Administration API) described in <a href="#3_9_device_administration">section 3.9 Device
-Administration</a>.</p>
+that allows logical and physical deletion of all data except for the system
+image and any operating system files required by the system image. All
+user-generated data MUST be deleted. This MUST satisfy relevant industry
+standards for data deletion such as NIST SP800-88. This MUST
+be used for the implementation of the wipeData() API (part of the Android Device
+Administration API) described in <a href="#3_9_device_administration">section
+3.9 Device Administration</a>.</p>
 
 <p>Devices MAY provide a fast data wipe that conducts a logical data erase.</p>
 
@@ -5534,7 +5548,6 @@ refer to the <a href="https://android.googlesource.com/platform/docs/source.andr
 </p>
 
 <h1 id="13_contact_us">13. Contact Us</h1>
-
 
 <p>You can join the
 <a href="https://groups.google.com/forum/#!forum/android-compatibility">android-compatibility
