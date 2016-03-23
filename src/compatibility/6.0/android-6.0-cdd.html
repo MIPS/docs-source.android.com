@@ -999,8 +999,10 @@ symbols must be present, only the corresponding functions for OpenGL ES
 versions and extensions actually supported by the device must be fully
 implemented.</p>
 
-<p>Device implementations MUST NOT include a native library with the
-name libvulkan.so.</p>
+<p>Device implementations, if including a native library with the name libvulkan.so,
+MUST export function symbols and provide an implementation of the Vulkan 1.0 API
+and the VK_KHR_surface, VK_KHR_swapchain, and VK_KHR_android_surface extensions
+as defined by the Khronos Group and passing the Khronos conformance tests.</p>
 
 <p>Native code compatibility is challenging. For this reason, device implementers
 are <strong>STRONGLY RECOMMENDED</strong> to use the implementations of the libraries listed above from the upstream
