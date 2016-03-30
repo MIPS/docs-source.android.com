@@ -62,15 +62,15 @@ their own customizations.</p>
 <h2 id=key_files>Key files</h2>
 
 <p>SELinux for Android is accompanied by everything you need to enable SELinux
-now. You merely need to integrate the <a href="https://android.googlesource.com/kernel/common/">latest Android kernel</a> and then incorporate the files found in the <a href="https://android.googlesource.com/platform/external/sepolicy/">external/sepolicy</a> directory:</p>
+now. You merely need to integrate the <a href="https://android.googlesource.com/kernel/common/">latest Android kernel</a> and then incorporate the files found in the <a href="https://android.googlesource.com/platform/system/sepolicy/">system/sepolicy</a> directory:</p>
 
 <p><a href="https://android.googlesource.com/kernel/common/">https://android.googlesource.com/kernel/common/ </a></p>
 
-<p><a href="https://android.googlesource.com/platform/external/sepolicy/">https://android.googlesource.com/platform/external/sepolicy/</a></p>
+<p><a href="https://android.googlesource.com/platform/system/sepolicy/">https://android.googlesource.com/platform/system/sepolicy/</a></p>
 
 <p>Those files when compiled comprise the SELinux kernel security policy and cover
 the upstream Android operating system. You should not need to modify the
-external/sepolicy files directly. Instead, add your own device-specific policy
+system/sepolicy files directly. Instead, add your own device-specific policy
 files within the /device/manufacturer/device-name/sepolicy directory.</p>
 
 <p>Here are the files you must create or edit in order to implement SELinux:</p>
@@ -126,7 +126,7 @@ configuration is read by system_server during startup.
 <p>Then just update your BoardConfig.mk makefile - located in the directory
 containing the sepolicy subdirectory - to reference the sepolicy subdirectory
 and each policy file once created, as shown below. The BOARD_SEPOLICY variables
-and their meaning is documented in the external/sepolicy/README file.</p>
+and their meaning is documented in the system/sepolicy/README file.</p>
 
 <pre>
 BOARD_SEPOLICY_DIRS += \
@@ -224,7 +224,7 @@ These should
 be given domains EARLY in order to avoid adding rules to init or otherwise
 confusing <code>init</code> accesses with ones that are in their own policy.
   <li>Set up <code>BOARD_CONFIG.mk</code> to use <code>BOARD_SEPOLICY_*</code> variables. See
-the README in external/sepolicy for details on setting this up.
+the README in system/sepolicy for details on setting this up.
   <li> Examine the init.&lt;device&gt;.rc and fstab.&lt;device&gt; file and make sure every use of “mount”
 corresponds to a properly labeled filesystem or that a context= mount option is specified.
   <li> Go through each denial and create SELinux policy to properly handle each. See
