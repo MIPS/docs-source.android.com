@@ -41,6 +41,14 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}security/advisory/index.html">
+        <h4>Android Security Advisories</h4></a>
+        <p>The Android security team has released its <strong><a
+        href="{@docRoot}security/advisory/2016-03-18.html">first advisory</a></strong>,
+        a supplement to Nexus Security Bulletins that may not require security patches
+        or Nexus device updates but could still affect an Android user's overall
+        security.</p>
+
 <a href="{@docRoot}source/requirements.html">
         <h4>Requirements Expanded, Build Environment Simplified</h4></a>
         <p>The Android build <strong><a
@@ -78,16 +86,6 @@ devices meet compatibility requirements.
         configurations. For details on running Android on HiKey, see <strong><a
         href="{@docRoot}source/devices.html#running-android-hikey">HiKey
         Boards</a>.</strong></p>
-
-<a href="{@docRoot}devices/tech/ota/device_code.html">
-        <h4>FPS Value Customization</h4></a>
-        <p>Android allows for a vendor-specific installing image but previously
-        defined a private <code>animation_fps</code> variable that could not be overridden. The
-        variable was changed from private to protected (so it can be customized), and
-        the image generator can now optionally embed the FPS value (default is 20 FPS)
-        into the generated image. See <strong><a
-        href="{@docRoot}devices/tech/ota/device_code.html">OTA Device-Specific
-        Code</a>.</strong></p>
     </div>
 
     <div class="col-8">
