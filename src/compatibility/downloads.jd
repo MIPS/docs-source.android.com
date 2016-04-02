@@ -191,6 +191,7 @@ in the 'donut' branch in the open source tree.</p>
 <h2 id="cts-media-files">CTS Media Files</h2>
 <p>These media files are required for the CTS media stress tests.</p>
 <ul>
+<li><a href="https://dl.google.com/dl/android/cts/android-cts-media-1.2.zip">CTS Media 1.2</a></li>
 <li><a href="https://dl.google.com/dl/android/cts/android-cts-media-1.1.zip">CTS Media 1.1</a></li>
 <li><a href="https://dl.google.com/dl/android/cts/android-cts-media-1.0.zip">CTS Media 1.0</a></li>
 </ul>
