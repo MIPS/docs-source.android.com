@@ -42,12 +42,18 @@ month to the<a href="https://developers.google.com/android/nexus/images"> Google
  <tr>
     <td><a href="2016-04-02.html">April 2016</a></td>
     <td>Coming soon</td>
-    <td>March 4, 2016</td>
+    <td>April 4, 2016</td>
     <td>April 2, 2016: [2016-04-02]</td>
  </tr>
  <tr>
     <td><a href="2016-03-01.html">March 2016</a></td>
-    <td>Coming soon</td>
+    <td>
+      <a href="{@docRoot}intl/ja_ALL/security/bulletin/2016-03-01.html">日本語</a>&nbsp;/
+      <a href="{@docRoot}intl/ko_ALL/security/bulletin/2016-03-01.html">한국어</a>&nbsp;/
+      <a href="{@docRoot}intl/ru_ALL/security/bulletin/2016-03-01.html">ru</a>&nbsp;/<br />
+      <a href="{@docRoot}intl/zh-CN_ALL/security/bulletin/2016-03-01.html">中文&nbsp;(中国)</a>&nbsp;/
+      <a href="{@docRoot}intl/zh-TW_ALL/security/bulletin/2016-03-01.html">中文&nbsp;(台灣)</a>
+    </td>
     <td>March 7, 2016</td>
     <td>March 1, 2016: [2016-03-01]</td>
  </tr>
