@@ -36,9 +36,8 @@ address these issues. Refer to the
 for instructions on how to check the security patch level.</p>
 
 <p>Partners were notified about the issues described in the bulletin on February
-1, 2016 or earlier. Source code patches for these issues will be released to
-the Android Open Source Project (AOSP) repository over the next 48 hours. We
-will revise this bulletin with the AOSP links when they are available.</p>
+1, 2016 or earlier. Where applicable, source code patches for these issues have been
+released to the Android Open Source Project (AOSP) repository.</p>
 
 <p>The most severe of these issues is a Critical security vulnerability that could
 enable remote code execution on an affected device through multiple methods
@@ -428,7 +427,7 @@ exploiting the platform.</p>
     <td>ANDROID-26186802</td>
     <td>High</td>
     <td>6.0.1</td>
-    <td>Google internal</td>
+    <td>Google Internal</td>
  </tr>
 </table>
 
@@ -488,7 +487,7 @@ process.</p>
     <td>ANDROID-25739721*</td>
     <td>High</td>
     <td>6.0.1</td>
-    <td>Google internal</td>
+    <td>Google Internal</td>
  </tr>
 </table>
 <p>* The patch for this issue is not in AOSP. The update is contained in the
