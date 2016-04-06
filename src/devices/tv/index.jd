@@ -27,7 +27,7 @@ page.title=TV Input Framework
 <img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_tv.png" alt="Android TV HAL icon"/>
 
 <p>The Android TV Input Framework (TIF) simplifies delivery of live content to Android TV. The Android TIF provides a standard API for manufacturers to create input modules for controlling Android TV, and enables live TV search and recommendations via metadata published by the TV Input.</p>
-<p>The framework does not seek to implement TV standards or regional requirements, but does makes it easier for device manufacturers to meet regional digital TV broadcast standards without re-implementation. Documentation in this section might also be useful to third-party app developers who want to create custom TV Inputs.</p>
+<p>The framework does not seek to implement TV standards or regional requirements, but does make it easier for device manufacturers to meet regional digital TV broadcast standards without re-implementation. Documentation in this section might also be useful to third-party app developers who want to create custom TV Inputs.</p>
 
 <h2 id="components">Components</h2>
 
@@ -298,7 +298,7 @@ available in the AOSP source tree and the vendor develops its implementation.</p
 
 
 <p>The system TV App presents live TV content to the user. A reference TV
-App (Live Channels) is provided alongside the Android platform, which
+App (Live TV) is provided alongside the Android platform, which
 can be used as-is, customized, extended, or replaced by device manufacturers.
 The <a href="https://android.googlesource.com/platform/packages/apps/TV/">source code</a>
 is available in the Android Open Source Project, and you can get started with
@@ -349,20 +349,20 @@ compatibility test coverage. </p>
 installed apps to deliver software channels into the live TV experience. To
 ensure a compatible Android device implementation, the system TV App has some
 responsibilities regarding surfacing third-party TV inputs and channels to the
-user. The reference Live Channels app provides a compatible implementation; if
+user. The reference Live TV app provides a compatible implementation; if
 replacing the system TV App, device manufacturers must ensure their own apps
 provide similar compatibility, to meet developer expectations across all
 Android TV devices.</p>
 
 <p>The system TV App must surface third-party inputs alongside the device's
-default live TV service (even if the default live TV service is not using TIF).
+default live TV service.
 The promise of the developer APIs is that users will be able to find channels
 (once installed) within their standard TV experience.</p>
 
 <p>Visual differentiation between built-in channels and third-party channels is
 allowed, as defined in the TV App section of the Android CDD.</p>
 
-<p>The following sections show how the Live Channels application fulfills the CDD
+<p>The following sections show how the Live TV application fulfills the CDD
 requirements.</p>
 
 <h4 id=new_channel_setup>New channel setup</h4>
@@ -379,19 +379,41 @@ needs to ensure the user can activate this Setup activity, which is why the CDD
 requires third-party inputs be minimal navigation actions away from the main TV
 App.</p>
 
-<p>The reference Live Channels app provides the Channel Sources menu for accessing
+<p>The reference Live TV app provides the Channel Sources menu for accessing
 inputs.</p>
 
+<img src="images/LiveChannels_settings.png" alt="Go to Settings">
+<p class="img-caption"><strong>Figure 8.</strong> Go to <strong>Settings</strong>.</p>
 
-<p>See <a href="http://developer.android.com/training/tv/tif/tvinput.html#setup">Define You TV Input Sevice</a>
+<img src="images/LiveChannels_channel_sources.png" alt="Go to Channel source in Settings">
+<p class="img-caption"><strong>Figure 9.</strong> Go to <strong>Channel sources</strong> in Settings.</p>
+
+<img src="images/LiveChannels_sources.png" alt="Select your source from the list.">
+<p class="img-caption"><strong>Figure 10.</strong> Select your source from the list.</p>
+
+<img src="images/LiveChannels_Add_channel.png" alt="Add channels from your source">
+<p class="img-caption"><strong>Figure 11.</strong> Add channels from your source</p>
+
+<p>In addition a notification card is shown at the top of the TV App menu after a new TvInput is installed, to take the user directly to the Setup:</p>
+
+<img src="images/LiveChannels_set_up_sources.png" alt="Notification that shows new channel sources are available.">
+<p class="img-caption"><strong>Figure 12.</strong> Notification that shows new channel sources are available.</p>
+
+<p>If the user takes action through the notification, they can select to set up their sources as seen in Figure 10.</p>
+<p>See <a href="http://developer.android.com/training/tv/tif/tvinput.html#setup">Define Your TV Input Sevice</a>
 for developer expectations in this area.</p>
 
 <h4 id=customize_the_channel_list>Customize the channel list</h4>
 
 
 <p>Device manufacturers may provide a UI to hide certain channels and
-enable users to manage their own EPGs. Live Channels includes this facility.</p>
+enable users to manage their own EPGs. Live TV includes this facility.</p>
 
+<img src="images/LiveChannels_channel_list.png" alt="Open the channel list in Settings.">
+<p class="img-caption"><strong>Figure 13.</strong> Open the channel list in <strong>Settings</strong>.</p>
+
+<img src="images/LiveChannels_customize_channel-list.png" alt="Customize your channel list.">
+<p class="img-caption"><strong>Figure 14.</strong> Customize your channel list.</p>
 
 <h4 id=epg>EPG</h4>
 
@@ -409,7 +431,7 @@ is that users are able to find the channels they have installed. </p>
 
 
 <p>Manufacturers must implement the TV App to include search results for global
-search requests in order to ensure the best user experience. Live Channels provides an
+search requests in order to ensure the best user experience. Live TV provides an
 implementation (see <a href="https://android.googlesource.com/platform/packages/apps/TV/+/android-live-tv/src/com/android/tv/search/TvProviderSearch.java">com.android.tv.search.TvProviderSearch</a>) which provides results from third-party inputs (required for platform
 compatibility) as well as built-in inputs.</p>
 
@@ -420,7 +442,7 @@ compatibility) as well as built-in inputs.</p>
   <li> The <a href="{@docRoot}compatibility/android-cdd.pdf">Android CDD</a>
        and documented developer APIs are the definitive references.
   <li> CTS Verifier exercises the APIs as part of the compatibility testing program.
-Running this against Live Channels may be a useful way to see the EPG,
+Running this against Live TV may be a useful way to see the EPG,
 Search, Parental Control, and other requirements in the context of third-party
 inputs.
   <li> See <a href="http://developer.android.com/training/tv/tif/tvinput.html#setup">Define Your TV Input Service</a>
@@ -492,7 +514,7 @@ interoperate with the Android TIF. We recommend the hardware platform contain a
 microprocessor to receive CEC power on and other commands.</p>
 
 <img src="images/TV_App_CEC_integration.png" alt="CEC integration on Android TV">
-<p class="img-caption"><strong>Figure 8.</strong> CEC integration on Android TV</p>
+<p class="img-caption"><strong>Figure 15.</strong> CEC integration on Android TV</p>
 
 <ol>
   <li> The CEC bus receives a command from the currently active source to switch to a
@@ -568,4 +590,4 @@ overlay.
 Android TV.</p>
 
 <img src="images/TV_Input_DVR.png" alt="Digital video recording in Android TV">
-<p class="img-caption"><strong>Figure 9.</strong> Digital video recording in Android TV</p>
+<p class="img-caption"><strong>Figure 16.</strong> Digital video recording in Android TV</p>

@@ -2,7 +2,7 @@ page.title=Reference TV App
 @jd:body
 
 <!--
-    Copyright 2015 The Android Open Source Project
+    Copyright 2016 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -26,11 +26,11 @@ page.title=Reference TV App
 
 
 <p>A TV application that plays live TV content is required for Android TV devices.
-A reference TV application (<a href="https://play.google.com/store/apps/details?id=com.google.android.tv">Live Channels</a>) is provided alongside the Android platform, which can be used as-is,
+A reference TV application (<a href="https://play.google.com/store/apps/details?id=com.google.android.tv">Live TV</a>) is provided alongside the Android platform, which can be used as-is,
 customized, extended, or replaced. The <a href="https://android.googlesource.com/platform/packages/apps/TV/">source code</a> is available in the Android Open Source Project.</p>
 
 <p>This article summarizes how to get started with building a system TV App based
-on Live Channels on your Android television device and covers a couple of ways
+on Live TV on your Android television device and covers a couple of ways
 to customize the app. (You may extend your TV application to implement device
 manufacturer or country-specific features, however this is not in the scope of
 the reference TV App.)</p>
@@ -39,13 +39,13 @@ the reference TV App.)</p>
 
 
 <p>The TV application is a component of the <a href="{@docRoot}devices/tv/">TV Input Framework</a> (TIF) and cannot be used independently of the other components. This means
-that only devices with TIF will be able to run the <a href="https://play.google.com/store/apps/details?id=com.google.android.tv">Live Channels</a> application.</p>
+that only devices with TIF will be able to run the <a href="https://play.google.com/store/apps/details?id=com.google.android.tv">Live TV</a> application.</p>
 
-<p>The Live Channels application depends on Android APIs. Different branches have
+<p>The Live TV application depends on Android APIs. Different branches have
 different dependencies on API levels:</p>
 
 <p class="table-caption" id="table-1">
-  <strong>Table 1.</strong> Live Channels branches.</p>
+  <strong>Table 1.</strong> Live TV branches.</p>
 <table>
  <tr>
     <th>Branch</th>
@@ -70,8 +70,8 @@ APIs.</p>
 <h2 id=get_the_source>Get the source</h2>
 
 
-<p>To get started, select which version of Live Channels you’d like from Git. The
-instructions below are for the current version of Live Channels, but you can
+<p>To get started, select which version of Live TV you’d like from Git. The
+instructions below are for the current version of Live TV, but you can
 easily select an earlier version by appending the version name to the end of
 <code>android-live-tv</code> as seen in the table above.</p>
 
@@ -86,11 +86,11 @@ $ repo sync -j8 -c
 <h2 id=build>Build</h2>
 
 
-<p>To build the Live Channels code, run:</p>
+<p>To build the Live TV code, run:</p>
 
 <pre>
 $ . build/envsetup.sh
-$ tapas TV x86
+$ tapas LiveTv x86
 $ make LiveTv
 </pre>
 
@@ -98,23 +98,27 @@ $ make LiveTv
 <h2 id=push>Push</h2>
 
 
-<p>To push Live Channels to your test device:</p>
+<p>To push Live TV to your test device:</p>
 
 <pre>
 $ adb install -r -d $OUT/system/priv-app/LiveTv/LiveTv.apk
 </pre>
 
+<p>If the developer wants the LIVE TV app to have system permissions, the first time it
+is installed it needs to be pushed to /system/priv-app with:</p>
+
+<pre>adb push $OUT/system/priv-app/LiveTv/LiveTv.apk  /system/priv-app/LiveTv/</pre>
 
 <h2 id=test>Test</h2>
 
 
-<p>Once Live Channels is on your device, you should test that it is properly
+<p>Once Live TV is on your device, you should test that it is properly
 integrated. In addition to running the <a href="{@docRoot}compatibility/cts/index.html">Compatibility test suite</a> and the <a href="http://source.android.com/compatibility/cts/verifier.html">CTS Verifier tests</a> for the TV app, you can use these tests below:</p>
 
 <h3 id=unit_tests>Unit tests</h3>
 
 
-<p>There are unit and functional tests for the Live Channels app. You must have a
+<p>There are unit and functional tests for the Live TV app. You must have a
 device (or emulator) connected to run the tests.</p>
 
 <pre>
