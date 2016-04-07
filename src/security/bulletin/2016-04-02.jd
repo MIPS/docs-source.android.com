@@ -17,7 +17,7 @@ page.title=Nexus Security Bulletin—April 2016
     limitations under the License.
 -->
 
-<p><em>Published April 04, 2016 | Updated April 06, 2016</em></p>
+<p><em>Published April 04, 2016 | Updated April 07, 2016</em></p>
 
 <p>We have released a security update to Nexus devices through an over-the-air
 (OTA) update as part of our Android Security Bulletin Monthly Release process.
@@ -589,22 +589,23 @@ repaired by re-flashing the operating system.</p>
 <table>
  <tr>
     <th>CVE</th>
-    <th>Bug</th>
+    <th>Bug with AOSP link</th>
     <th>Severity</th>
     <th>Updated versions</th>
     <th>Date reported</th>
  </tr>
  <tr>
     <td>CVE-2016-0844</td>
-    <td>ANDROID-26324307*</td>
+    <td><a href="https://android.googlesource.com/platform/external/sepolicy/+/57531cacb40682be4b1189c721fd1e7f25bf3786">
+        ANDROID-26324307</a>*</td>
     <td>Critical</td>
     <td>6.0, 6.0.1</td>
     <td>Dec 25, 2015</td>
  </tr>
 </table>
-<p>* The patch for this issue is not in AOSP. It is
+<p>* An additional patch for this issue is located in
 <a href="https://us.codeaurora.org/cgit/quic/la/kernel/msm-3.18/commit/?id=90a9da2ea95e86b4f0ff493cd891a11da0ee67aa">
-located in Linux upstream</a>.</p>
+Linux upstream</a>.</p>
 
 <h3 id=elevation_of_privilege_vulnerability_in_kernel12>Elevation of Privilege Vulnerability in Kernel</h3>
 
@@ -1317,4 +1318,5 @@ have been addressed.</p>
 <ul>
   <li> April 04, 2016: Bulletin published.
   <li> April 06, 2016: Bulletin revised to include AOSP links.
+  <li> April 07, 2016:  Bulletin revised to include an additional AOSP link.
 </ul>
