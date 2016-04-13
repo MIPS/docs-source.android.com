@@ -122,7 +122,7 @@ for each class are represented by permissions. </p>
 <p>This says that all application domains are allowed to read and write files labeled
 app_data_file. Note that this rule relies upon macros defined in the
 global_macros file, and other helpful macros can also be found in the te_macros
-file, both of which can be found in the <a href="https://android.googlesource.com/platform/external/sepolicy/">external/sepolicy</a> directory in the AOSP source tree. Macros are provided for common groupings of classes, permissions and
+file, both of which can be found in the <a href="https://android.googlesource.com/platform/system/sepolicy/">system/sepolicy</a> directory in the AOSP source tree. Macros are provided for common groupings of classes, permissions and
 rules, and should be used whenever possible to help reduce the likelihood of
 failures due to denials on related permissions.</p>
 
