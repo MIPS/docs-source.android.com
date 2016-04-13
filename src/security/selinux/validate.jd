@@ -34,7 +34,7 @@ issuing the command:getenforce</p>
 <p>This will print the global SELinux mode: either Disabled, Enforcing, or
 Permissive. Please note, this command shows only the global SELinux mode. To
 determine the SELinux mode for each domain, you must examine the corresponding
-files or run the latest version of <code>sepolicy-analyze</code> with the appropriate (-p) flag, present in /platform/external/sepolicy/tools/.</p>
+files or run the latest version of <code>sepolicy-analyze</code> with the appropriate (-p) flag, present in /platform/system/sepolicy/tools/.</p>
 
 <h2 id=reading_denials>Reading denials</h2>
 
