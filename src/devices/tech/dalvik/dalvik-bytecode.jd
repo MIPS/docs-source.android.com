@@ -774,14 +774,22 @@ page.title=Dalvik bytecode
     <p><code>invoke-virtual</code> is used to invoke a normal virtual
     method (a method that is not <code>private</code>, <code>static</code>,
     or <code>final</code>, and is also not a constructor).</p>
-    <p><code>invoke-super</code> is used to invoke the closest superclass's
+    <p>When the <code>method_id</code> references a method of a non-interface
+    class, <code>invoke-super</code> is used to invoke the closest superclass's
     virtual method (as opposed to the one with the same <code>method_id</code>
     in the calling class). The same method restrictions hold as for
     <code>invoke-virtual</code>.</p>
+    <p>In Dex files version <code>037</code> or later, if the
+    <code>method_id</code> refers to an interface method,
+    <code>invoke-super</code> is used to invoke the most specific,
+    non-overridden version of that method defined on that interface.  The same
+    method restrictions hold as for <code>invoke-virtual</code>. In Dex files
+    prior to version <code>037</code>, having an interface
+    <code>method_id</code> is illegal and undefined.</p>
     <p><code>invoke-direct</code> is used to invoke a non-<code>static</code>
     direct method (that is, an instance method that is by its nature
-    non-overridable, namely either a <code>private</code> instance method
-    or a constructor).</p>
+    non-overridable, namely either a <code>private</code> instance method or a
+    constructor).</p>
     <p><code>invoke-static</code> is used to invoke a <code>static</code>
     method (which is always considered a direct method).</p>
     <p><code>invoke-interface</code> is used to invoke an
