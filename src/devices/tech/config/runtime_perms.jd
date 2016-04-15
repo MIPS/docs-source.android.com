@@ -57,8 +57,10 @@ hazards of granting or denying permissions.</p>
 model. Dangerous permissions are higher-risk permissions (such as
 <code>READ_CALENDAR</code>) that grant requesting applications access to private
 user data or control over the device that can negatively impact the user. To
-view a list of dangerous permissions, run the command: <code>adb shell pm list
-permissions -g -d</code> .</p>
+view a list of dangerous permissions, run the command:</p>
+<pre>
+adb shell pm list permissions -g -d
+</pre>
 
 <p>Android 6.0 does not change the behavior of normal permissions (all
 non-dangerous permissions including normal, system, and signature permissions).
