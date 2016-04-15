@@ -41,6 +41,22 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}source/build-numbers.html">
+        <h4>Build Numbers for April Security Updates</h4></a>
+        <p>New <strong><a
+        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">build
+        numbers</a></strong> have been published for Pixel C, Nexus 5, Nexus 6, Nexus 7,
+        Nexus 9, Nexus 5X, Nexus 6P, and Nexus Player running Android 6.0 and
+        Nexus 10 running Android 5.1.</p>
+
+<a href="{@docRoot}security/bulletin/index.html">
+        <h4>April Nexus Security Bulletin</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}security/bulletin/2016-04-02.html">April 2016 Nexus Security
+        Bulletin</a></strong> has been published. The bulletin describes
+        numerous vulnerabilities that have been fixed in the Android Open Source
+        Project (AOSP).</p>
+
 <a href="{@docRoot}compatibility/downloads.html">
         <h4>CTS Media Files 1.2</h4></a>
         <p>A new version of the media files required for Android Compatibility Test
@@ -66,16 +82,6 @@ devices meet compatibility requirements.
         Environment</a></strong> to separate those reference materials from the steps
         needed to set up your workstation.</p>
 
-<a href="{@docRoot}security/bulletin/index.html">
-        <h4>March Nexus Security Bulletin</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}security/bulletin/2016-03-01.html">March 2016 Nexus Security
-	Bulletin</a></strong> has been published. The bulletin describes
-        numerous vulnerabilities that have been fixed in the Android Open Source
-        Project (AOSP). In addition, new <strong><a
-        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">Build
-        Numbers</a></strong> are available corresponding to this security release.</p>
-
 <a href="{@docRoot}compatibility/downloads.html">
         <h4>Android CTS 6.0 R4</h4></a>
         <p>Version 6.0 R4 of the Android Compatibility Test Suite (CTS) is now
@@ -84,14 +90,6 @@ devices meet compatibility requirements.
         In addition, the recommendation to use the <code>--skip-preconditions</code>
         option has been published to <strong><a
         href="{@docRoot}compatibility/cts/run.html">Running CTS Tests</a></strong>.</p>
-
-<a href="{@docRoot}source/devices.html#running-android-hikey">
-        <h4>HiKey Reference Board</h4></a>
-        <p>AOSP now provides kernel source and board support for the HiKey Android
-        reference board, a certified 96Board available in 1GB RAM and 2GB RAM
-        configurations. For details on running Android on HiKey, see <strong><a
-        href="{@docRoot}source/devices.html#running-android-hikey">HiKey
-        Boards</a>.</strong></p>
     </div>
 
     <div class="col-8">
