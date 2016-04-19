@@ -41,6 +41,14 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}security/overview/updates-resources.html#reports">
+        <h4>Android Security 2015 Year in Review</h4></a>
+        <p>The Android Security team has published its <strong><a
+        href="{@docRoot}security/reports/Google_Android_Security_2015_Report_Final.pdf">2015
+        Year In Review</a></strong> and a new document of <strong><a
+        href="{@docRoot}security/reports/Google_Android_Security_PHA_classifications.pdf">Classifications
+        for Potentially Harmful Applications</a></strong>.</p>
+
 <a href="{@docRoot}source/build-numbers.html">
         <h4>Build Numbers for April Security Updates</h4></a>
         <p>New <strong><a
@@ -81,15 +89,6 @@ devices meet compatibility requirements.
         <strong><a href="{@docRoot}source/initializing.html">Establishing a Build
         Environment</a></strong> to separate those reference materials from the steps
         needed to set up your workstation.</p>
-
-<a href="{@docRoot}compatibility/downloads.html">
-        <h4>Android CTS 6.0 R4</h4></a>
-        <p>Version 6.0 R4 of the Android Compatibility Test Suite (CTS) is now
-        available for <strong><a
-        href="{@docRoot}compatibility/downloads.html#android-60">download</a></strong>.
-        In addition, the recommendation to use the <code>--skip-preconditions</code>
-        option has been published to <strong><a
-        href="{@docRoot}compatibility/cts/run.html">Running CTS Tests</a></strong>.</p>
     </div>
 
     <div class="col-8">
