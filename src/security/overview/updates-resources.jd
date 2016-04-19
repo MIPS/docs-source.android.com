@@ -249,6 +249,12 @@ href="https://groups.google.com/forum/?fromgroups#!forum/android-security-discus
 <h3 id=reports>Reports</h3>
 <p>Sometimes the Android Security team publishes reports or whitepapers. Here are some of the most recent.</p>
 <ul>
-  <li><a href="https://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2014_Report_Final.pdf">Android Security 2014 Year in Review</a></li>
-  <li><a href="https://static.googleusercontent.com/media/source.android.com/en//security/reports/Android_WhitePaper_Final_02092016.pdf">Android Security white paper</a></li>
+  <li><a href="{@docRoot}security/reports/Google_Android_Security_2015_Report_Final.pdf">
+      Android Security 2015 Year In Review</a></li>
+  <li><a href="{@docRoot}security/reports/Google_Android_Security_2014_Report_Final.pdf">
+      Android Security 2014 Year In Review</a></li>
+  <li><a href="{@docRoot}security/reports/Android_WhitePaper_Final_02092016.pdf">
+      Android Security white paper</a></li>
+  <li><a href="{@docRoot}security/reports/Google_Android_Security_PHA_classifications.pdf">
+      Classifications for Potentially Harmful Applications</a></li>
 </ul>
