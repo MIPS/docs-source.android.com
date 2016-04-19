@@ -164,7 +164,7 @@ easier for you to catch runtime problems in your code.</p>
 <h3 id="dont-use-finalizers">Don't Use Finalizers</h3>
 <p>Finalizers are a way to have a chunk of code executed when an object is
 garbage collected. While they can be handy for doing cleanup (particularly of
-external resources, there are no guarantees as to when a finalizer will be
+external resources), there are no guarantees as to when a finalizer will be
 called (or even that it will be called at all).</p>
 <p>Android doesn't use finalizers. In most cases, you can do what
 you need from a finalizer with good exception handling. If you absolutely need
