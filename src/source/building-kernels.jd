@@ -240,7 +240,7 @@ the prebuilt toolchain from:
 downloaded the kernel source and prebuilt gcc, you are ready to build the
 kernel. The following build commands use the hikey kernel:</p>
 <pre><code>$ export ARCH=arm64
-$ export CROSS_COMPILE=aach64-linux-android-
+$ export CROSS_COMPILE=aarch64-linux-android-
 $ cd hikey-linaro
 $ git checkout -b android-hikey-linaro-4.1 origin/android-hikey-linaro-4.1
 $ make hikey_defconfig
