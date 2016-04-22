@@ -122,6 +122,7 @@
       <li><a href="<?cs var:toroot ?>security/selinux/implement.html">Implementation</a></li>
       <li><a href="<?cs var:toroot ?>security/selinux/customize.html">Customization</a></li>
       <li><a href="<?cs var:toroot ?>security/selinux/validate.html">Validation</a></li>
+      <li><a href="<?cs var:toroot ?>security/selinux/device-policy.html">Writing Policy</a></li>
     </ul>
   </li>
   <li class="nav-section">
