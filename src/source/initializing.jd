@@ -73,11 +73,11 @@ found not to work on 14.04 using the instructions below.</em></p>
 <li>
 <p>Download the <code>.deb</code> packages for your architecture from
 <a
-href="http://packages.ubuntu.com/vivid/openjdk-8-jdk">http://packages.ubuntu.com/vivid/openjdk-8-jdk</a>:</p>
+href="http://archive.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/">http://archive.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/</a>:</p>
 <ul>
-<li><a href="http://packages.ubuntu.com/vivid/openjdk-8-jre-headless">openjdk-8-jre-headless</a></li>
-<li><a href="http://packages.ubuntu.com/vivid/openjdk-8-jre">openjdk-8-jre</a></li>
-<li><a href="http://packages.ubuntu.com/vivid/openjdk-8-jdk">openjdk-8-jdk</a></li>
+<li>openjdk-8-jre-headless</li>
+<li>openjdk-8-jre</li>
+<li>openjdk-8-jdk</li>
 </ul>
 <p>Remember, you may obtain the architecture for your machine with:</p>
 <code>$ uname -m</code>
@@ -86,8 +86,8 @@ href="http://packages.ubuntu.com/vivid/openjdk-8-jdk">http://packages.ubuntu.com
 </li>
 <li>
 <p>Optionally, confirm the checksums of the downloaded files using the information
-found on <a href="http://packages.ubuntu.com/vivid/openjdk-8-jdk"
->http://packages.ubuntu.com/vivid/openjdk-8-jdk</a>.</p>
+found on <a href="http://packages.ubuntu.com/"
+>http://packages.ubuntu.com</a>.</p>
 <p>For example with the sha256sum tool:</p>
 <pre><code>$ sha256sum {package file}</code></pre>
 </li>
