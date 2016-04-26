@@ -1,20 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Android 4.0 Compatibility Definition</title>
+<title>Android 2.3 Compatibility Definition</title>
 <link rel="stylesheet" type="text/css" href="cdd.css"/>
 </head>
 <body>
-<h1>Android 4.0 Compatibility Definition</h1>
-<!--
-<span style="color: red; font-weight: bold;"><h2>DRAFT 3</h2></span><br/>
-<span style="color: red;">Last updated: November 17, 2012</span>
--->
-<p>Revision 4<br/>
-Last updated: April 21, 2013
-</p>
-<p>Copyright &copy; 2012, Google Inc. All rights reserved.<br/>
+<h1>Android 2.3 Compatibility Definition</h1>
+<!-- <span style="color: red; font-weight: bold;"><h2>DRAFT</h2></span> -->
+<p>Copyright &copy; 2010, Google Inc. All rights reserved.<br/>
 <a href="mailto:compatibility@android.com">compatibility@android.com</a>
 </p>
 
@@ -28,7 +21,7 @@ Last updated: April 21, 2013
     <a href="#section-3.2">3.2. Soft API Compatibility</a><br/>
     <div style="margin-left: 2em;">
       <a href="#section-3.2.1">3.2.1. Permissions</a><br/>
-      <a href="#section-3.2.2">3.2.2. Build Parameters</a><br/>
+      <a href="#section-3.2.3">3.2.2. Build Parameters</a><br/>
       <a href="#section-3.2.3">3.2.3. Intent Compatibility</a><br/>
       <div style="margin-left: 2em;">
         <a href="#section-3.2.3.1">3.2.3.1. Core Application Intents</a><br/>
@@ -38,9 +31,6 @@ Last updated: April 21, 2013
       </div>
     </div>
     <a href="#section-3.3">3.3. Native API Compatibility</a><br/>
-    <div style="margin-left: 2em;">
-      <a href="#section-3.3.1">3.3.1 Application Binary Interfaces</a><br/>
-    </div>
     <a href="#section-3.4">3.4. Web Compatibility</a><br/>
     <div style="margin-left: 2em;">
       <a href="#section-3.4.1">3.4.1. WebView Compatibility</a><br/>
@@ -55,36 +45,28 @@ Last updated: April 21, 2013
       <a href="#section-3.8.2">3.8.2. Notifications</a><br/>
       <a href="#section-3.8.3">3.8.3. Search</a><br/>
       <a href="#section-3.8.4">3.8.4. Toasts</a><br/>
-      <a href="#section-3.8.5">3.8.5. Themes</a><br/>
-      <a href="#section-3.8.6">3.8.6. Live Wallpapers</a><br/>
-      <a href="#section-3.8.7">3.8.7. Recent Application Display</a><br/>
-      <a href="#section-3.8.8">3.8.8. Input Management Settings</a><br/>
+      <a href="#section-3.8.5">3.8.5. Live Wallpapers</a><br/>
     </div>
-    <a href="#section-3.9">3.9 Device Administration</a><br/>
-    <a href="#section-3.10">3.10 Accessibility</a><br/>
-    <a href="#section-3.11">3.11 Text-to-Speech</a><br/>
   </div>
   <a href="#section-4">4. Application Packaging Compatibility</a><br/>
   <a href="#section-5">5. Multimedia Compatibility</a><br/>
     <div style="margin-left: 2em;">
       <a href="#section-5.1">5.1. Media Codecs</a><br/>
-      <a href="#section-5.2">5.2. Video Encoding</a><br/>
-      <a href="#section-5.3">5.3. Audio Recording</a><br/>
-      <a href="#section-5.4">5.4. Audio Latency</a><br/>
-      <a href="#section-5.5">5.5. Network Protocols</a><br/>
+      <a href="#section-5.1.1">5.1.1. Media Decoders</a><br/>
+      <a href="#section-5.1.2">5.1.2. Media Encoders</a><br/>
+      <a href="#section-5.2">5.2. Audio Recording</a><br/>
+      <a href="#section-5.3">5.3. Audio Latency</a><br/>
     </div>
   <a href="#section-6">6. Developer Tool Compatibility</a><br/>
   <a href="#section-7">7. Hardware Compatibility</a><br/>
   <div style="margin-left: 2em;">
     <a href="#section-7.1">7.1. Display and Graphics</a><br/>
     <div style="margin-left: 2em;">
-      <a href="#section-7.1.1">7.1.1. Screen Configuration</a><br/>
+      <a href="#section-7.1.1">7.1.1. Screen Configurations</a><br/>
       <a href="#section-7.1.2">7.1.2. Display Metrics</a><br/>
-      <a href="#section-7.1.3">7.1.3. Screen Orientation</a><br/>
-      <a href="#section-7.1.4">7.1.4. 2D and 3D Graphics Accleration</a><br/>
-      <a href="#section-7.1.5">7.1.5. Legacy Application Compatibility Mode</a><br/>
-      <a href="#section-7.1.6">7.1.6. Screen Types</a><br/>
-      <a href="#section-7.1.7">7.1.7. Screen Technology</a><br/>
+      <a href="#section-7.1.3">7.1.3. Declared Screen Support</a><br/>
+      <a href="#section-7.1.4">7.1.4. Screen Orientation</a><br/>
+      <a href="#section-7.1.5">7.1.5. 3D Graphics Accleration</a><br/>
     </div>
     <a href="#section-7.2">7.2. Input Devices</a><br/>
     <div style="margin-left: 2em;">
@@ -92,8 +74,6 @@ Last updated: April 21, 2013
       <a href="#section-7.2.2">7.2.2. Non-touch Navigation</a><br/>
       <a href="#section-7.2.3">7.2.3. Navigation keys</a><br/>
       <a href="#section-7.2.4">7.2.4. Touchscreen input</a><br/>
-      <a href="#section-7.2.5">7.2.5. Fake touch input</a><br/>
-      <a href="#section-7.2.6">7.2.6. Microphone</a><br/>
     </div>
     <a href="#section-7.3">7.3. Sensors</a><br/>
     <div style="margin-left: 2em;">
@@ -151,22 +131,21 @@ Last updated: April 21, 2013
 
 <a name="section-1"></a><h2>1. Introduction</h2>
 <p>This document enumerates the requirements that must be met in order for
-devices to be compatible with Android 4.0.</p>
+mobile phones to be compatible with Android 2.3.</p>
 <p>The use of "must", "must not", "required", "shall", "shall not", "should",
 "should not", "recommended", "may" and "optional" is per the IETF standard
 defined in RFC2119 [<a href="#resources01">Resources, 1</a>].</p>
 <p>As used in this document, a "device implementer" or "implementer" is a
 person or organization developing a hardware/software solution running Android
-4.0. A "device implementation" or "implementation" is the hardware/software
+2.3. A "device implementation" or "implementation" is the hardware/software
 solution so developed.</p>
-<p>To be considered compatible with Android 4.0, device implementations
+<p>To be considered compatible with Android 2.3, device implementations
 MUST meet the requirements presented in this Compatibility Definition,
 including any documents incorporated via reference.</p>
 <p>Where this definition or the software tests described in <a
 href="#section-10">Section 10</a> is silent, ambiguous, or incomplete, it is
 the responsibility of the device implementer to ensure compatibility with
-existing implementations.</p>
-<p>For this reason, the Android Open Source Project [<a
+existing implementations. For this reason, the Android Open Source Project [<a
 href="#resources03">Resources, 3</a>] is both the reference and preferred
 implementation of Android. Device implementers are strongly encouraged to base
 their implementations to the greatest extent possible on the "upstream" source
@@ -176,7 +155,13 @@ strongly discouraged, as passing the software tests will become substantially
 more difficult. It is the implementer's responsibility to ensure full
 behavioral compatibility with the standard Android implementation, including
 and beyond the Compatibility Test Suite. Finally, note that certain component
-substitutions and modifications are explicitly forbidden by this document.</p>
+substitutions and modifications are explicitly forbidden by this document.</p> 
+<p>Please note that this Compatibility Definition is issued to correspond with
+the 2.3.3 update to Android, which is API level 10. This Definition obsoletes
+and replaces the Compatibility Definition for Android 2.3 versions prior to
+2.3.3. (That is, versions 2.3.1 and 2.3.2 are obsolete.) Future
+Android-compatible devices running Android 2.3 MUST ship with version 2.3.3 or
+later.</p>
 <a name="section-2"></a><h2>2. Resources</h2>
 <ol>
 <a name="resources01"></a><li>IETF RFC2119 Requirement Levels: <a href="http://www.ietf.org/rfc/rfc2119.txt">http://www.ietf.org/rfc/rfc2119.txt</a></li>
@@ -185,65 +170,46 @@ substitutions and modifications are explicitly forbidden by this document.</p>
 <a name="resources04"></a><li>API definitions and documentation: <a href="http://developer.android.com/reference/packages.html">http://developer.android.com/reference/packages.html</a></li>
 <a name="resources05"></a><li>Android Permissions reference: <a href="http://developer.android.com/reference/android/Manifest.permission.html">http://developer.android.com/reference/android/Manifest.permission.html</a></li>
 <a name="resources06"></a><li>android.os.Build reference: <a href="http://developer.android.com/reference/android/os/Build.html">http://developer.android.com/reference/android/os/Build.html</a></li>
-<a name="resources07"></a><li>Android 4.0 allowed version strings: <a href="http://source.android.com/compatibility/4.0/versions.html">http://source.android.com/compatibility/4.0/versions.html</a></li>
-<a name="resources08"></a><li>Renderscript: <a href="http://developer.android.com/guide/topics/graphics/renderscript.html">http://developer.android.com/guide/topics/graphics/renderscript.html</a></li>
-<a name="resources09"></a><li>Hardware Acceleration: <a href="http://developer.android.com/guide/topics/graphics/hardware-accel.html">http://developer.android.com/guide/topics/graphics/hardware-accel.html</a></li>
-<a name="resources10"></a><li>android.webkit.WebView class: <a href="http://developer.android.com/reference/android/webkit/WebView.html">http://developer.android.com/reference/android/webkit/WebView.html</a></li>
-<a name="resources11"></a><li>HTML5: <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">http://www.whatwg.org/specs/web-apps/current-work/multipage/</a></li>
-<a name="resources12"></a><li>HTML5 offline capabilities: <a href="http://dev.w3.org/html5/spec/Overview.html#offline">http://dev.w3.org/html5/spec/Overview.html#offline</a></li>
-<a name="resources13"></a><li>HTML5 video tag: <a href="http://dev.w3.org/html5/spec/Overview.html#video">http://dev.w3.org/html5/spec/Overview.html#video</a></li>
-<a name="resources14"></a><li>HTML5/W3C geolocation API: <a href="http://www.w3.org/TR/geolocation-API/">http://www.w3.org/TR/geolocation-API/</a></li>
-<a name="resources15"></a><li>HTML5/W3C webdatabase API: <a href="http://www.w3.org/TR/webdatabase/">http://www.w3.org/TR/webdatabase/</a></li>
-<a name="resources16"></a><li>HTML5/W3C IndexedDB API: <a href="http://www.w3.org/TR/IndexedDB/">http://www.w3.org/TR/IndexedDB/</a></li>
-<a name="resources17"></a><li>Dalvik Virtual Machine specification: available in the Android source code, at dalvik/docs</li>
-<a name="resources18"></a><li>AppWidgets: <a href="http://developer.android.com/guide/practices/ui_guidelines/widget_design.html">http://developer.android.com/guide/practices/ui_guidelines/widget_design.html</a></li>
-<a name="resources19"></a><li>Notifications: <a href="http://developer.android.com/guide/topics/ui/notifiers/notifications.html">http://developer.android.com/guide/topics/ui/notifiers/notifications.html</a></li>
-<a name="resources20"></a><li>Application Resources: <a href="http://code.google.com/android/reference/available-resources.html">http://code.google.com/android/reference/available-resources.html</a></li>
-<a name="resources21"></a><li>Status Bar icon style guide: <a href="http://developer.android.com/guide/practices/ui_guidelines/icon_design.html#statusbarstructure">http://developer.android.com/guide/practices/ui_guideline /icon_design.html#statusbarstructure</a></li>
-<a name="resources22"></a><li>Search Manager: <a href="http://developer.android.com/reference/android/app/SearchManager.html">http://developer.android.com/reference/android/app/SearchManager.html</a></li>
-<a name="resources23"></a><li>Toasts: <a href="http://developer.android.com/reference/android/widget/Toast.html">http://developer.android.com/reference/android/widget/Toast.html</a></li>
-<a name="resources24"></a><li>Themes: <a href="http://developer.android.com/guide/topics/ui/themes.html">http://developer.android.com/guide/topics/ui/themes.html</a></li>
-<a name="resources25"></a><li>R.style class: <a href="http://developer.android.com/reference/android/R.style.html">http://developer.android.com/reference/android/R.style.html</a></li>
-<a name="resources26"></a><li>Live Wallpapers: <a href="http://developer.android.com/resources/articles/live-wallpapers.html">http://developer.android.com/resources/articles/live-wallpapers.html</a></li>
-<a name="resources27"></a><li>Android Device Administration: <a href="http://developer.android.com/guide/topics/admin/device-admin.html">http://developer.android.com/guide/topics/admin/device-admin.html</a></li>
-<a name="resources28"></a><li>android.app.admin.DevicePolicyManager class: <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html</a></li>
-<a name="resources29"></a><li>Android Accessibility Service APIs: <a href="http://developer.android.com/reference/android/accessibilityservice/package-summary.html">http://developer.android.com/reference/android/accessibilityservice/package-summary.html</a></li>
-<a name="resources30"></a><li>Android Accessibility APIs: <a href="http://developer.android.com/reference/android/view/accessibility/package-summary.html">http://developer.android.com/reference/android/view/accessibility/package-summary.html</a></li>
-<a name="resources31"></a><li>Eyes Free project: <a href="http://http://code.google.com/p/eyes-free">http://code.google.com/p/eyes-free</a></li>
-<a name="resources32"></a><li>Text-To-Speech APIs: <a href="http://developer.android.com/reference/android/speech/tts/package-summary.html">http://developer.android.com/reference/android/speech/tts/package-summary.html</a></li>
-<a name="resources33"></a><li>Reference tool documentation (for adb, aapt, ddms): <a href="http://developer.android.com/guide/developing/tools/index.html">http://developer.android.com/guide/developing/tools/index.html</a></li>
-<a name="resources34"></a><li>Android apk file description: <a href="http://developer.android.com/guide/topics/fundamentals.html">http://developer.android.com/guide/topics/fundamentals.html</a></li>
-<a name="resources35"></a><li>Manifest files: <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">http://developer.android.com/guide/topics/manifest/manifest-intro.html</a></li>
-<a name="resources36"></a><li>Monkey testing tool: <a href="http://developer.android.com/guide/developing/tools/monkey.html">http://developer.android.com/guide/developing/tools/monkey.html</a></li>
-<a name="resources37"></a><li>Android android.content.pm.PackageManager class and Hardware Features List: <a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">http://developer.android.com/reference/android/content/pm/PackageManager.html</a></li>
-<a name="resources38"></a><li>Supporting Multiple Screens: <a href="http://developer.android.com/guide/practices/screens_support.html">http://developer.android.com/guide/practices/screens_support.html</a></li>
-<a name="resources39"></a><li>android.util.DisplayMetrics: <a href="http://developer.android.com/reference/android/util/DisplayMetrics.html">http://developer.android.com/reference/android/util/DisplayMetrics.html</a></li>
-<a name="resources40"></a><li>android.content.res.Configuration: <a href="http://developer.android.com/reference/android/content/res/Configuration.html">http://developer.android.com/reference/android/content/res/Configuration.html</a></li>
-<a name="resources41"></a><li>android.hardware.SensorEvent: <a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">http://developer.android.com/reference/android/hardware/SensorEvent.html</a></li>
-<a name="resources42"></a><li>Bluetooth API: <a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">http://developer.android.com/reference/android/bluetooth/package-summary.html</a></li>
-<a name="resources43"></a><li>NDEF Push Protocol: <a href="http://source.android.com/compatibility/ndef-push-protocol.pdf">http://source.android.com/compatibility/ndef-push-protocol.pdf</a></li>
-<a name="resources44"></a><li>MIFARE MF1S503X: <a href="http://www.nxp.com/documents/data_sheet/MF1S503x.pdf">http://www.nxp.com/documents/data_sheet/MF1S503x.pdf</a></li>
-<a name="resources45"></a><li>MIFARE MF1S703X: <a href="http://www.nxp.com/documents/data_sheet/MF1S703x.pdf">http://www.nxp.com/documents/data_sheet/MF1S703x.pdf</a></li>
-<a name="resources46"></a><li>MIFARE MF0ICU1: <a href="http://www.nxp.com/documents/data_sheet/MF0ICU1.pdf">http://www.nxp.com/documents/data_sheet/MF0ICU1.pdf</a></li>
-<a name="resources47"></a><li>MIFARE MF0ICU2: <a href="http://www.nxp.com/documents/short_data_sheet/MF0ICU2_SDS.pdf">http://www.nxp.com/documents/short_data_sheet/MF0ICU2_SDS.pdf</a></li>
-<a name="resources48"></a><li>MIFARE AN130511: <a href="http://www.nxp.com/documents/application_note/AN130511.pdf">http://www.nxp.com/documents/application_note/AN130511.pdf</a></li>
-<a name="resources49"></a><li>MIFARE AN130411: <a href="http://www.nxp.com/documents/application_note/AN130411.pdf">http://www.nxp.com/documents/application_note/AN130411.pdf</a></li>
-<a name="resources50"></a><li>Camera orientation API: <a href="http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation(int)">http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation(int)</a></li>
-<a name="resources51"></a><li>android.hardware.Camera: <a href="http://developer.android.com/reference/android/hardware/Camera.html">http://developer.android.com/reference/android/hardware/Camera.html</a></li>
-<a name="resources52"></a><li>Android Open Accessories: <a href="http://developer.android.com/guide/topics/usb/accessory.html">http://developer.android.com/guide/topics/usb/accessory.html</a></li>
-<a name="resources53"></a><li>USB Host API: <a href="http://developer.android.com/guide/topics/usb/host.html">http://developer.android.com/guide/topics/usb/host.html</a></li>
-<a name="resources54"></a><li>Android Security and Permissions reference: <a href="http://developer.android.com/guide/topics/security/security.html">http://developer.android.com/guide/topics/security/security.html</a></li>
-<a name="resources55"></a><li>Apps for Android: <a href="http://code.google.com/p/apps-for-android">http://code.google.com/p/apps-for-android</a></li>
-<a name="resources56"></a><li>android.app.DownloadManager class: <a href="http://developer.android.com/reference/android/app/DownloadManager.html">http://developer.android.com/reference/android/app/DownloadManager.html</a></li>
-<a name="resources57"></a><li>Android File Transfer: <a href="http://www.android.com/filetransfer">http://www.android.com/filetransfer</a></li>
-<a name="resources58"></a><li>Android Media Formats: <a href="http://developer.android.com/guide/appendix/media-formats.html">http://developer.android.com/guide/appendix/media-formats.html</a></li>
-<a name="resources59"></a><li>HTTP Live Streaming Draft Protocol: <a href="http://tools.ietf.org/html/draft-pantos-http-live-streaming-03">http://tools.ietf.org/html/draft-pantos-http-live-streaming-03</a></li>
-<a name="resources60"></a><li>Motion Event API: <a href="http://developer.android.com/reference/android/view/MotionEvent.html">http://developer.android.com/reference/android/view/MotionEvent.html</a></li>
-<a name="resources61"></a><li>Touch Input Configuration: <a href="http://source.android.com/tech/input/touch-devices.html">http://source.android.com/tech/input/touch-devices.html</a></li>
+<a name="resources07"></a><li>Android 2.3 allowed version strings: <a href="http://source.android.com/compatibility/2.3/versions.html">http://source.android.com/compatibility/2.3/versions.html</a></li>
+<a name="resources08"></a><li>android.webkit.WebView class: <a href="http://developer.android.com/reference/android/webkit/WebView.html">http://developer.android.com/reference/android/webkit/WebView.html</a></li>
+<a name="resources09"></a><li>HTML5: <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">http://www.whatwg.org/specs/web-apps/current-work/multipage/</a></li>
+<a name="resources10"></a><li>HTML5 offline capabilities: <a href="http://dev.w3.org/html5/spec/Overview.html#offline">http://dev.w3.org/html5/spec/Overview.html#offline</a></li>
+<a name="resources11"></a><li>HTML5 video tag: <a href="http://dev.w3.org/html5/spec/Overview.html#video">http://dev.w3.org/html5/spec/Overview.html#video</a></li>
+<a name="resources12"></a><li>HTML5/W3C geolocation API: <a href="http://www.w3.org/TR/geolocation-API/">http://www.w3.org/TR/geolocation-API/</a></li>
+<a name="resources13"></a><li>HTML5/W3C webdatabase API: <a href="http://www.w3.org/TR/webdatabase/">http://www.w3.org/TR/webdatabase/</a></li>
+<a name="resources14"></a><li>HTML5/W3C IndexedDB API: <a href="http://www.w3.org/TR/IndexedDB/">http://www.w3.org/TR/IndexedDB/</a></li>
+<a name="resources15"></a><li>Dalvik Virtual Machine specification: available in the Android source code, at dalvik/docs</li>
+<a name="resources16"></a><li>AppWidgets: <a href="http://developer.android.com/guide/practices/ui_guidelines/widget_design.html">http://developer.android.com/guide/practices/ui_guidelines/widget_design.html</a></li>
+<a name="resources17"></a><li>Notifications: <a href="http://developer.android.com/guide/topics/ui/notifiers/notifications.html">http://developer.android.com/guide/topics/ui/notifiers/notifications.html</a></li>
+<a name="resources18"></a><li>Application Resources: <a href="http://code.google.com/android/reference/available-resources.html">http://code.google.com/android/reference/available-resources.html</a></li>
+<a name="resources19"></a><li>Status Bar icon style guide: <a href="http://developer.android.com/guide/practices/ui_guidelines/icon_design.html#statusbarstructure">http://developer.android.com/guide/practices/ui_guideline /icon_design.html#statusbarstructure</a></li>
+<a name="resources20"></a><li>Search Manager: <a href="http://developer.android.com/reference/android/app/SearchManager.html">http://developer.android.com/reference/android/app/SearchManager.html</a></li>
+<a name="resources21"></a><li>Toasts: <a href="http://developer.android.com/reference/android/widget/Toast.html">http://developer.android.com/reference/android/widget/Toast.html</a></li>
+<a name="resources22"></a><li>Live Wallpapers: <a href="http://developer.android.com/resources/articles/live-wallpapers.html">http://developer.android.com/resources/articles/live-wallpapers.html</a></li>
+<a name="resources23"></a><li>Reference tool documentation (for adb, aapt, ddms): <a href="http://developer.android.com/guide/developing/tools/index.html">http://developer.android.com/guide/developing/tools/index.html</a></li>
+<a name="resources24"></a><li>Android apk file description: <a href="http://developer.android.com/guide/topics/fundamentals.html">http://developer.android.com/guide/topics/fundamentals.html</a></li>
+<a name="resources25"></a><li>Manifest files: <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">http://developer.android.com/guide/topics/manifest/manifest-intro.html</a></li>
+<a name="resources26"></a><li>Monkey testing tool: <a href="http://developer.android.com/guide/developing/tools/monkey.html">http://developer.android.com/guide/developing/tools/monkey.html</a></li>
+<a name="resources27"></a><li>Android Hardware Features List: <a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">http://developer.android.com/reference/android/content/pm/PackageManager.html</a></li>
+<a name="resources28"></a><li>Supporting Multiple Screens: <a href="http://developer.android.com/guide/practices/screens_support.html">http://developer.android.com/guide/practices/screens_support.html</a></li>
+<a name="resources29"></a><li>android.util.DisplayMetrics: <a href="http://developer.android.com/reference/android/util/DisplayMetrics.html">http://developer.android.com/reference/android/util/DisplayMetrics.html</a></li>
+<a name="resources30"></a><li>android.content.res.Configuration: <a href="http://developer.android.com/reference/android/content/res/Configuration.html">http://developer.android.com/reference/android/content/res/Configuration.html</a></li>
+<a name="resources31"></a><li>Sensor coordinate space: <a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">http://developer.android.com/reference/android/hardware/SensorEvent.html</a></li>
+<a name="resources32"></a><li>Bluetooth API: <a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">http://developer.android.com/reference/android/bluetooth/package-summary.html</a></li>
+<a name="resources33"></a><li>NDEF Push Protocol: <a href="http://source.android.com/compatibility/ndef-push-protocol.pdf">http://source.android.com/compatibility/ndef-push-protocol.pdf</a></li>
+<a name="resources34"></a><li>MIFARE MF1S503X: <a href="http://www.nxp.com/documents/data_sheet/MF1S503x.pdf">http://www.nxp.com/documents/data_sheet/MF1S503x.pdf</a></li>
+<a name="resources35"></a><li>MIFARE MF1S703X: <a href="http://www.nxp.com/documents/data_sheet/MF1S703x.pdf">http://www.nxp.com/documents/data_sheet/MF1S703x.pdf</a></li>
+<a name="resources36"></a><li>MIFARE MF0ICU1: <a href="http://www.nxp.com/documents/data_sheet/MF0ICU1.pdf">http://www.nxp.com/documents/data_sheet/MF0ICU1.pdf</a></li>
+<a name="resources37"></a><li>MIFARE MF0ICU2: <a href="http://www.nxp.com/documents/short_data_sheet/MF0ICU2_SDS.pdf">http://www.nxp.com/documents/short_data_sheet/MF0ICU2_SDS.pdf</a></li>
+<a name="resources38"></a><li>MIFARE AN130511: <a href="http://www.nxp.com/documents/application_note/AN130511.pdf">http://www.nxp.com/documents/application_note/AN130511.pdf</a></li>
+<a name="resources39"></a><li>MIFARE AN130411: <a href="http://www.nxp.com/documents/application_note/AN130411.pdf">http://www.nxp.com/documents/application_note/AN130411.pdf</a></li>
+<a name="resources40"></a><li>Camera orientation API: <a href="http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation(int)">http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation(int)</a></li>
+<a name="resources41"></a><li>android.hardware.Camera: <a href="http://developer.android.com/reference/android/hardware/Camera.html">http://developer.android.com/reference/android/hardware/Camera.html</a></li>
+<a name="resources42"></a><li>Android Security and Permissions reference: <a href="http://developer.android.com/guide/topics/security/security.html">http://developer.android.com/guide/topics/security/security.html</a></li>
+<a name="resources43"></a><li>Apps for Android: <a href="http://code.google.com/p/apps-for-android">http://code.google.com/p/apps-for-android</a></li>
 </ol>
-
 <p>Many of these resources are derived directly or indirectly from the Android
-4.0 SDK, and will be functionally identical to the information in that SDK's
+2.3 SDK, and will be functionally identical to the information in that SDK's
 documentation. In any cases where this Compatibility Definition or the
 Compatibility Test Suite disagrees with the SDK documentation, the SDK
 documentation is considered authoritative. Any technical details provided in
@@ -251,33 +217,41 @@ the references included above are considered by inclusion to be part of this
 Compatibility Definition.</p>
 
 <a name="section-3"></a><h2>3. Software</h2>
+<p>The Android platform includes a set of managed APIs, a set of native APIs,
+and a body of so-called "soft" APIs such as the Intent system and
+web-application APIs. This section details the hard and soft APIs that are
+integral to compatibility, as well as certain other relevant technical and
+user interface behaviors. Device implementations MUST comply with all the
+requirements in this section.</p>
+
 <a name="section-3.1"></a><h3>3.1. Managed API Compatibility</h3>
 <p>The managed (Dalvik-based) execution environment is the primary vehicle for
 Android applications. The Android application programming interface (API) is
 the set of Android platform interfaces exposed to applications running in the
 managed VM environment. Device implementations MUST provide complete
 implementations, including all documented behaviors, of any documented API
-exposed by the Android 4.0 SDK [<a href="#resources04">Resources, 4</a>].</p>
+exposed by the Android 2.3 SDK [<a href="#resources04">Resources, 4</a>].</p>
 <p>Device implementations MUST NOT omit any managed APIs, alter API interfaces
 or signatures, deviate from the documented behavior, or include no-ops, except
 where specifically allowed by this Compatibility Definition.</p>
 <p>This Compatibility Definition permits some types of hardware for which
 Android includes APIs to be omitted by device implementations. In such cases,
-the APIs MUST still be present and behave in a reasonable way. See
-<a href="#section-7">Section 7</a> for specific requirements for this scenario.
-</p>
+the APIs MUST still be present and behave in a reasonable way. See Section 7
+for specific requirements for this scenario.</p>
 
 <a name="section-3.2"></a><h3>3.2. Soft API Compatibility</h3>
 <p>In addition to the managed APIs from Section 3.1, Android also includes a
 significant runtime-only "soft" API, in the form of such things such as
 Intents, permissions, and similar aspects of Android applications that cannot
-be enforced at application compile time.</p>
+be enforced at application compile time. This section details the "soft" APIs
+and system behaviors required for compatibility with Android 2.3. Device
+implementations MUST meet all the requirements presented in this section.</p>
 <a name="section-3.2.1"></a><h4>3.2.1. Permissions</h4>
 <p>Device implementers MUST support and enforce all permission constants as
 documented by the Permission reference page [<a
 href="#resources05">Resources, 5</a>]. Note that Section 10 lists additional
 requirements related to the Android security model.</p>
-<a name="section-3.2.3"></a><h4>3.2.3. Build Parameters</h4>
+<a name="section-3.2.3"></a><h4>3.2.2. Build Parameters</h4>
 <p>The Android APIs include a number of constants on the <code>android.os.Build</code>
 class [<a href="#resources06">Resources, 6</a>] that are intended to describe
 the current device. To provide consistent, meaningful values across device
@@ -298,16 +272,8 @@ href="#resources07">Resources, 7</a>].</td>
 <tr>
 <td>android.os.Build.VERSION.SDK</td>
 <td>The version of the currently-executing Android system, in a format
-accessible to third-party application code. For Android 4.0.1 - 4.0.2, this
-field MUST have the integer value 14. For Android 4.0.3 or greater, this field
-MUST have the integer value 15.</td>
-</tr>
-<tr>
-<td>android.os.Build.VERSION.SDK_INT</td>
-<td>The version of the currently-executing Android system, in a format
-accessible to third-party application code. For Android 4.0.1 - 4.0.2, this
-field MUST have the integer value 14. For Android 4.0.3 or greater, this field
-MUST have the integer value 15.</td>
+accessible to third-party application code. For Android 2.3, this field MUST have
+the integer value 9.</td>
 </tr>
 <tr>
 <td>android.os.Build.VERSION.INCREMENTAL</td>
@@ -338,18 +304,6 @@ encodable as 7-bit ASCII and match the regular expression
 </td>
 </tr>
 <tr>
-<td>android.os.Build.CPU_ABI</td>
-<td>The name of the instruction set (CPU type + ABI convention) of native code.
-See <a href="#section-3.3">Section 3.3: Native API Compatibility</a>.
-</td>
-</tr>
-<tr>
-<td>android.os.Build.CPU_ABI2</td>
-<td>The name of the second instruction set (CPU type + ABI convention) of native code.
-See <a href="#section-3.3">Section 3.3: Native API Compatibility</a>.
-</td>
-</tr>
-<tr>
 <td>android.os.Build.DEVICE</td>
 <td>A value chosen by the device implementer identifying the specific
 configuration or revision of the body (sometimes called "industrial design")
@@ -362,17 +316,11 @@ match the regular expression <code>"^[a-zA-Z0-9.,_-]+$"</code>.</td>
 human-readable. It MUST follow this template:
 <br/><code>$(BRAND)/$(PRODUCT)/$(DEVICE):$(VERSION.RELEASE)/$(ID)/$(VERSION.INCREMENTAL):$(TYPE)/$(TAGS)</code><br/>
 For example:
-<br/><code>acme/mydevice/generic:4.0/IRK77/3359:userdebug/test-keys</code><br/>
+<br/><code>acme/mydevice/generic/generic:2.3/ERC77/3359:userdebug/test-keys</code><br/>
 The fingerprint MUST NOT include whitespace characters. If other fields included in the
 template above have whitespace characters, they MUST be replaced in the build
 fingerprint with another character, such as the underscore ("_") character.
 The value of this field MUST be encodable as 7-bit ASCII.</td>
-</tr>
-<tr>
-<td>android.os.Build.HARDWARE</td>
-<td>The name of the hardware (from the kernel command line or /proc).  It SHOULD be
-reasonably human-readable. The value of this field MUST be encodable as 7-bit ASCII and
-match the regular expression <code>"^[a-zA-Z0-9.,_-]+$"</code>.</td>
 </tr>
 <tr>
 <td>android.os.Build.HOST</td>
@@ -391,12 +339,6 @@ this field MUST be encodable as 7-bit ASCII and match the regular expression
 </td>
 </tr>
 <tr>
-<td>android.os.Build.MANUFACTURER</td>
-<td>The trade name of the Original Equipment Manufacturer (OEM) of the product.
-There are no requirements on the specific format of this field, except that it
-MUST NOT be null or the empty string ("").</td>
-</tr>
-<tr>
 <td>android.os.Build.MODEL</td>
 <td>A value chosen by the device implementer containing the name of the device
 as known to the end user. This SHOULD be the same name under which the device
@@ -407,16 +349,10 @@ format of this field, except that it MUST NOT be null or the empty string
 <tr>
 <td>android.os.Build.PRODUCT</td>
 <td>A value chosen by the device implementer containing the development name
-or code name of the product (SKU). MUST be human-readable, but is not necessarily
-intended for view by end users. The value of this field MUST be encodable as 7-bit
-ASCII and match the regular expression
+or code name of the device. MUST be human-readable, but is not necessarily
+intended for view by end users. The value of this field MUST be
+encodable as 7-bit ASCII and match the regular expression
 <code>"^[a-zA-Z0-9.,_-]+$"</code>.</td>
-</tr>
-<tr>
-<td>android.os.Build.SERIAL</td>
-<td>A hardware serial number, if available. The value of this field MUST be encodable
-as 7-bit ASCII and match the regular expression
-<code>"^([a-zA-Z0-9]{0,20})$"</code>.</td>
 </tr>
 <tr>
 <td>android.os.Build.TAGS</td>
@@ -447,16 +383,16 @@ that it MUST NOT be null or the empty string ("").</td>
 </tbody>
 </table>
 <a name="section-3.2.3"></a><h4>3.2.3. Intent Compatibility</h4>
-<p>
-Device implementations MUST honor Android's loose-coupling Intent system, as
-described in the sections below. By "honored", it is meant that the device
-implementer MUST provide an Android Activity or Service that specifies a
-matching Intent filter and binds to and implements correct behavior for each
-specified Intent pattern.</p>
+<p>Android uses Intents to achieve loosely-coupled integration between
+applications. This section describes requirements related to the Intent
+patterns that MUST be honored by device implementations. By "honored", it is
+meant that the device implementer MUST provide an Android Activity or Service
+that specifies a matching Intent filter and binds to and implements correct
+behavior for each specified Intent pattern.</p>
 <a name="section-3.2.3.1"></a><h4>3.2.3.1. Core Application Intents</h4>
 <p>The Android upstream project defines a number of core applications, such as
-contacts, calendar, photo gallery, music player, and so on. Device implementers
-MAY replace these applications with alternative versions.</p>
+a phone dialer, calendar, contacts book, music player, and so on. Device
+implementers MAY replace these applications with alternative versions.</p>
 <p>However, any such alternative versions MUST honor the same Intent patterns
 provided by the upstream project. For example, if a device contains an
 alternative music player, it must still honor the Intent pattern issued by
@@ -467,8 +403,10 @@ applications:</p>
 <li>Desk Clock</li>
 <li>Browser</li>
 <li>Calendar</li>
+<li>Calculator</li>
+<!-- <li>Camera</li> -->
 <li>Contacts</li>
-<!--<li>Email</li>-->
+<li>Email</li>
 <li>Gallery</li>
 <li>GlobalSearch</li>
 <li>Launcher</li>
@@ -492,25 +430,23 @@ patterns as the core Android system app.</p>
 apps; however, if it does, the device implementation MUST support all Intent
 patterns defined by each core Android system app being replaced.</p>
 <a name="section-3.2.3.2"></a><h4>3.2.3.2. Intent Overrides</h4>
-<p>As Android is an extensible platform, device implementations MUST allow each
-Intent pattern referenced in Section 3.2.3.2 to be overridden by third-party
-applications. The upstream Android open source implementation allows this by
-default; device implementers MUST NOT attach special privileges to system
-applications' use of these Intent patterns, or prevent third-party
-applications from binding to and assuming control of these patterns. This
-prohibition specifically includes but is not limited to disabling the
-"Chooser" user interface which allows the user to select between multiple
-applications which all handle the same Intent pattern.</p>
+<p>As Android is an extensible platform, device implementers MUST allow each
+Intent pattern referenced in Section 3.2.3.1 to be overridden by third-party
+applications. The upstream Android open source project allows this by default;
+device implementers MUST NOT attach special privileges to system applications'
+use of these Intent patterns, or prevent third-party applications from binding
+to and assuming control of these patterns. This prohibition specifically
+includes but is not limited to disabling the "Chooser" user interface which
+allows the user to select between multiple applications which all handle the
+same Intent pattern.</p>
 <a name="section-3.2.3.3"></a><h4>3.2.3.3. Intent Namespaces</h4>
-<p>Device implementations MUST NOT include any Android component that honors any
+<p>Device implementers MUST NOT include any Android component that honors any
 new Intent or Broadcast Intent patterns using an ACTION, CATEGORY, or other
-key string in the android.* or com.android.* namespace.  Device implementers
-MUST NOT include any Android components that honor any new Intent or Broadcast
-Intent patterns using an ACTION, CATEGORY, or other key string in a package
-space belonging to another organization. Device implementers MUST NOT alter or
-extend any of the Intent patterns used by the core apps listed in Section
-3.2.3.1. Device implementations MAY include Intent patterns using
-namespaces clearly and obviously associated with their own organization.</p>
+key string in the android.* namespace.  Device implementers MUST NOT include
+any Android components that honor any new Intent or Broadcast Intent patterns
+using an ACTION, CATEGORY, or other key string in a package space belonging to
+another organization. Device implementers MUST NOT alter or extend any of the
+Intent patterns used by the core apps listed in Section 3.2.3.1.</p>
 <p>This prohibition is analogous to that specified for Java language classes
 in Section 3.6.</p>
 <a name="section-3.2.3.4"></a><h4>3.2.3.4. Broadcast Intents</h4>
@@ -521,7 +457,6 @@ response to appropriate system events. Broadcast Intents are described in the
 SDK documentation.</p>
 
 <a name="section-3.3"></a><h3>3.3. Native API Compatibility</h3>
-<a name="section-3.3.1"></a><h4>3.3.1 Application Binary Interfaces</h4>
 <p>Managed code running in Dalvik can call into native code provided in the
 application .apk file as an ELF .so file compiled for the appropriate device
 hardware architecture. As native code is highly dependent on the underlying
@@ -543,7 +478,7 @@ API</li>
 <li>MUST report only those ABIs documented in the latest version of the
 Android NDK, in the file <code>docs/CPU-ARCH-ABIS.txt</code></li>
 <li>SHOULD be built using the source code and header files available in the
-upstream Android open source project</li>
+upstream Android open-source project</li>
 </ul>
 <p>The following native code APIs MUST be available to apps that include
 native code:</p>
@@ -559,8 +494,7 @@ native code:</p>
 <li>libGLESv2.so (OpenGL ES 2.0)</li>
 <li>libEGL.so (native OpenGL surface management)</li>
 <li>libjnigraphics.so</li>
-<li>libOpenSLES.so (OpenSL ES 1.0.1 audio support)</li>
-<li>libOpenMAXAL.so (OpenMAX AL 1.0.1 support)</li>
+<li>libOpenSLES.so (Open Sound Library audio support)</li>
 <li>libandroid.so (native Android activity support)</li>
 <li>Support for OpenGL, as described below</li>
 </ul>
@@ -573,6 +507,15 @@ upstream implementations of the libraries listed above to help ensure
 compatibility.</p>
 
 <a name="section-3.4"></a><h3>3.4. Web Compatibility</h3>
+<p>Many developers and applications rely on the behavior of the
+<code>android.webkit.WebView</code> class [<a
+href="#resources08">Resources, 8</a>]
+for their user interfaces, so the WebView implementation must be
+compatible across Android implementations. Similarly, a complete, modern web
+broswer is central to the Android user experience. Device implementations MUST
+include a version of <code>android.webkit.WebView</code> consistent with the
+upstream Android software, and MUST include a modern HTML5-capable browser, as
+described below.</p>
 <a name="section-3.4.1"></a><h4>3.4.1. WebView Compatibility</h4>
 <p>The Android Open Source implementation uses the WebKit rendering engine to
 implement the <code>android.webkit.WebView</code>. Because it is not feasible
@@ -581,34 +524,33 @@ implementers MUST use the specific upstream build of WebKit in the WebView
 implementation.  Specifically:</p>
 <ul>
 <li>Device implementations' <code>android.webkit.WebView</code>
-implementations MUST be based on the 534.30 WebKit build from the upstream
-Android Open Source tree for Android 4.0. This build includes a specific set
+implementations MUST be based on the 533.1 WebKit build from the upstream
+Android Open Source tree for Android 2.3. This build includes a specific set
 of functionality and security fixes for the WebView. Device implementers MAY
 include customizations to the WebKit implementation; however, any such
 customizations MUST NOT alter the behavior of the WebView, including rendering
 behavior.</li>
 <li>The user agent string reported by the WebView MUST be in this format:<br/>
-    <code>Mozilla/5.0 (Linux; U; Android $(VERSION); $(LOCALE); $(MODEL) Build/$(BUILD)) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30</code>
+    <code>Mozilla/5.0 (Linux; U; Android $(VERSION); $(LOCALE); $(MODEL) Build/$(BUILD)) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1</code>
   <ul>
   <li>The value of the $(VERSION) string MUST be the same as the value for <code>android.os.Build.VERSION.RELEASE</code></li>
   <li>The value of the $(LOCALE) string SHOULD follow the ISO conventions for country code and language, and SHOULD refer to the current configured locale of the device</li>
   <li>The value of the $(MODEL) string MUST be the same as the value for <code>android.os.Build.MODEL</code></li>
   <li>The value of the $(BUILD) string MUST be the same as the value for <code>android.os.Build.ID</code></li>
-  </ul>
-</li>
+  </ul></li>
 </ul>
 <p>The WebView component SHOULD include support for as much of HTML5 [<a
-href="#resources11">Resources, 11</a>] as possible.
+href="#resources09">Resources, 9</a>] as possible.
 Minimally, device implementations MUST support each of these APIs associated
 with HTML5 in the WebView:</p>
 <ul>
-<li>application cache/offline operation [<a href="#resources12">Resources, 12</a>]</li>
-<li>the &lt;video&gt; tag [<a href="#resources13">Resources, 13</a>]</li>
-<li>geolocation [<a href="#resources14">Resources, 14</a>]</li>
+<li>application cache/offline operation [<a href="#resources10">Resources, 10</a>]</li>
+<li>the &lt;video&gt; tag [<a href="#resources11">Resources, 11</a>]</li>
+<li>geolocation [<a href="#resources12">Resources, 12</a>]</li>
 </ul>
 <p>Additionally, device implementations MUST support the HTML5/W3C webstorage
-API [<a href="#resources15">Resources, 15</a>], and SHOULD support the
-HTML5/W3C IndexedDB API [<a href="#resources16">Resources, 16</a>]. <i>Note
+API [<a href="#resources13">Resources, 13</a>], and SHOULD support the
+HTML5/W3C IndexedDB API [<a href="#resources14">Resources, 14</a>]. <i>Note
 that as the web development standards bodies are transitioning to favor
 IndexedDB over webstorage, IndexedDB is expected to become a required
 component in a future version of Android.</i></p>
@@ -627,17 +569,17 @@ Section 3.4.1.</p>
 Browser application.</p>
 <p>The standalone Browser application (whether based on the upstream
 WebKit Browser application or a third-party replacement) SHOULD include support
-for as much of HTML5 [<a href="#resources11">Resources, 11</a>] as possible.
+for as much of HTML5 [<a href="#resources09">Resources, 9</a>] as possible.
 Minimally, device implementations MUST support each of these APIs associated
 with HTML5:</p>
 <ul>
-<li>application cache/offline operation [<a href="#resources12">Resources, 12</a>]</li>
-<li>the &lt;video&gt; tag [<a href="#resources13">Resources, 13</a>]</li>
-<li>geolocation [<a href="#resources14">Resources, 14</a>]</li>
+<li>application cache/offline operation [<a href="#resources10">Resources, 10</a>]</li>
+<li>the &lt;video&gt; tag [<a href="#resources11">Resources, 11</a>]</li>
+<li>geolocation [<a href="#resources12">Resources, 12</a>]</li>
 </ul>
 <p>Additionally, device implementations MUST support the HTML5/W3C webstorage
-API [<a href="#resources15">Resources, 15</a>], and SHOULD support the
-HTML5/W3C IndexedDB API [<a href="#resources16">Resources, 16</a>]. <i>Note
+API [<a href="#resources13">Resources, 13</a>], and SHOULD support the
+HTML5/W3C IndexedDB API [<a href="#resources14">Resources, 14</a>]. <i>Note
 that as the web development standards bodies are transitioning to favor
 IndexedDB over webstorage, IndexedDB is expected to become a required
 component in a future version of Android.</i></p>
@@ -645,7 +587,7 @@ component in a future version of Android.</i></p>
 <a name="section-3.5"></a><h3>3.5. API Behavioral Compatibility</h3>
 <p>The behaviors of each of the API types (managed, soft, native, and web)
 must be consistent with the preferred implementation of the upstream Android
-open source project [<a href="#resources03">Resources, 3</a>]. Some specific areas
+open-source project [<a href="#resources03">Resources, 3</a>]. Some specific areas
 of compatibility are:</p>
 <ul>
 <li>Devices MUST NOT change the behavior or semantics of a standard Intent</li>
@@ -715,105 +657,55 @@ compatibility definition.</p>
 <a name="section-3.7"></a><h3>3.7. Virtual Machine Compatibility</h3>
 <p>Device implementations MUST support the full Dalvik Executable (DEX)
 bytecode specification and Dalvik Virtual Machine semantics [<a
-href="#resources17">Resources, 17</a>].</p>
-<p>Device implementations MUST configure Dalvik to allocate memory in
-accordance with the upstream Android platform, and as specified by the following
-table.  (See <a href="#section-7.1.1">Section 7.1.1</a> for screen size and screen
-density definitions.)</p>
-
-<p>Note that memory values specified below are considered minimum values,
-and device implementations MAY allocate more memory per application.</p>
-<table>
-<tbody>
-<tr>
-<td><b>Screen Size</b></td>
-<td><b>Screen Density</b></td>
-<td><b>Application Memory</b></td>
-</tr>
-<tr>
-<td>small / normal / large</td>
-<td>ldpi / mdpi</td>
-<td>16MB</td>
-</tr>
-<tr>
-<td>small / normal / large</td>
-<td>tvdpi / hdpi</td>
-<td>32MB</td>
-</tr>
-<tr>
-<td>small / normal / large</td>
-<td>xhdpi</td>
-<td>64MB</td>
-</tr>
-<tr>
-<td>xlarge</td>
-<td>mdpi</td>
-<td>32MB</td>
-</tr>
-<tr>
-<td>xlarge</td>
-<td>tvdpi / hdpi</td>
-<td>64MB</td>
-</tr>
-<tr>
-<td>xlarge</td>
-<td>xhdpi</td>
-<td>128MB</td>
-</tr>
-</tbody>
-</table>
+href="#resources15">Resources, 15</a>].</p>
+<p>Device implementations with screens classified as medium- or low-density
+MUST configure Dalvik to allocate at least 16MB of memory to each application.
+Device implementations with screens classified as high-density or
+extra-high-density MUST configure Dalvik to allocate at least 24MB of memory
+to each application. Note that device implementations MAY allocate more memory
+than these figures.</p>
 
 <a name="section-3.8"></a><h3>3.8. User Interface Compatibility</h3>
+<p>The Android platform includes some developer APIs that allow developers to
+hook into the system user interface. Device implementations MUST incorporate
+these standard UI APIs into custom user interfaces they develop, as explained
+below.</p>
 <a name="section-3.8.1"></a><h4>3.8.1. Widgets</h4>
 <p>Android defines a component type and corresponding API and lifecycle that
 allows applications to expose an "AppWidget" to the end user [<a
-href="#resources18">Resources, 18</a>].
+href="#resources16">Resources, 16</a>].
 The Android Open Source reference release includes a Launcher application that
-includes user interface affordances allowing the user to add, view, and remove
+includes user interface elements allowing the user to add, view, and remove
 AppWidgets from the home screen.</p>
-<p>Device implementations MAY substitute an alternative to the reference Launcher
+<p>Device implementers MAY substitute an alternative to the reference Launcher
 (i.e. home screen).  Alternative Launchers SHOULD include built-in support for
-AppWidgets, and expose user interface affordances to add, configure, view, and
-remove AppWidgets directly within the Launcher. Alternative Launchers MAY omit
-these user interface elements; however, if they are omitted, the device
-implementation MUST provide a separate application accessible from the Launcher
-that allows users to add, configure, view, and remove AppWidgets.</p>
-<p>Device implementations MUST be capable of rendering widgets that are 4 x 4
-in the standard grid size. (See the App Widget Design Guidelines in the Android
-SDK documentation [<a
-href="#resources18">Resources, 18</a>] for details.</p>
+AppWidgets, and expose user interface elements to add, configure, view, and remove
+AppWidgets directly within the Launcher. Alternative Launchers MAY omit these
+user interface elements; however, if they are omitted, the device implementer
+MUST provide a separate application accessible from the Launcher that allows
+users to add, configure, view, and remove AppWidgets.</p>
 <a name="section-3.8.2"></a><h4>3.8.2. Notifications</h4>
 <p>Android includes APIs that allow developers to notify users of notable
-events [<a href="#resources19">Resources, 19</a>], using hardware and software
-features of the device.</p>
-<p>Some APIs allow applications to perform notifications or attract attention
-using hardware, specifically sound, vibration, and light. Device implementations
-MUST support notifications that use hardware features, as described in the SDK
-documentation, and to the extent possible with the device implementation
-hardware. For instance, if a device implementation includes a vibrator, it
-MUST correctly implement the vibration APIs. If a device implementation lacks
-hardware, the corresponding APIs MUST be implemented as no-ops. Note that this
-behavior is further detailed in <a href="#section-7">Section 7.</a></p>
+events [<a href="#resources17">Resources, 17</a>]. Device implementers MUST provide support for each
+class of notification so defined; specifically: sounds, vibration, light and
+status bar.</p>
 <p>Additionally, the implementation MUST correctly render all resources
 (icons, sound files, etc.) provided for in the APIs [<a
-href="#resources20">Resources, 20</a>], or in the
-Status/System Bar icon style guide [<a href="#resources21">Resources, 21</a>].
-Device implementers MAY provide an alternative user experience for
-notifications than that provided by the reference Android Open Source
-implementation; however, such alternative notification systems MUST support
-existing notification resources, as above.</p>
-<p>Android 4.0 includes support for rich notifications, such as interactive
-Views for ongoing notifications. Device implementations MUST properly display
-and execute rich notifications, as documented in the Android APIs.</p>
+href="#resources18">Resources, 18</a>], or in the
+Status Bar icon style guide [<a href="#resources19">Resources, 19</a>]. Device implementers MAY provide
+an alternative user experience for notifications than that provided by the
+reference Android Open Source implementation; however, such alternative
+notification systems MUST support existing notification resources, as
+above.</p>
 <a name="section-3.8.3"></a><h4>3.8.3. Search</h4>
-<p>Android includes APIs [<a href="#resources22">Resources, 22</a>] that allow
-developers to incorporate search into their applications, and expose their
-application's data into the global system search. Generally speaking, this
-functionality consists of a single, system-wide user interface that allows users
-to enter queries, displays suggestions as users type, and displays results. The
-Android APIs allow developers to reuse this interface to provide search within
-their own apps, and allow developers to supply results to the common global
-search user interface.</p>
+<p>Android includes APIs [<a href="#resources20">Resources, 20</a>] that allow developers to incorporate
+search into their applications, and expose their application's data into the
+global system search. Generally speaking, this functionality consists of a
+single, system-wide user interface that allows users to enter queries,
+displays suggestions as users type, and displays results. The Android APIs
+allow developers to reuse this interface to provide search within their own
+apps, and allow developers to supply results to the common global search user
+interface.</p>
 <p>Device implementations MUST include a single, shared, system-wide search
 user interface capable of real-time suggestions in response to user input.
 Device implementations MUST implement the APIs that allow developers to reuse
@@ -823,31 +715,20 @@ add suggestions to the search box when it is run in global search mode. If no
 third-party applications are installed that make use of this functionality,
 the default behavior SHOULD be to display web search engine results and
 suggestions.</p>
+<p>Device implementations MAY ship alternate search user interfaces, but
+SHOULD include a hard or soft dedicated search button, that can be used at any
+time within any app to invoke the search framework, with the behavior provided
+for in the API documentation.</p>
 <a name="section-3.8.4"></a><h4>3.8.4. Toasts</h4>
 <p>Applications can use the "Toast" API (defined in [<a
-href="#resources23">Resources, 23</a>]) to
+href="#resources21">Resources, 21</a>]) to
 display short non-modal strings to the end user, that disappear after a brief
 period of time. Device implementations MUST display Toasts from applications
 to end users in some high-visibility manner.</p>
-
-<a name="section-3.8.5"></a><h4>3.8.5. Themes</h4>
-<p>Android provides "themes" as a mechanism for applications to apply styles
-across an entire Activity or application. Android 3.0 introduced a new "Holo"
-or "holographic" theme as a set of defined styles for application developers to
-use if they want to match the Holo theme look and feel as defined by the Android
-SDK [<a href="#resources24">Resources, 24</a>]. Device implementations MUST NOT
-alter any of the Holo theme attributes exposed to applications
-[<a href="#resources25">Resources, 25</a>].</p>
-<p>Android 4.0 introduces a new "Device Default" theme as a set of defined
-styles for application developers to use if they want to match the look and feel
-of the device theme as defined by the device implementer. Device implementations
-MAY modify the DeviceDefault theme attributes exposed to applications
-[<a href="#resources25">Resources, 25</a>].</p>
-
-<a name="section-3.8.6"></a><h4>3.8.6. Live Wallpapers</h4>
+<a name="section-3.8.5"></a><h4>3.8.5. Live Wallpapers</h4>
 <p>Android defines a component type and corresponding API and lifecycle that
 allows applications to expose one or more "Live Wallpapers" to the end user
-[<a href="#resources26">Resources, 26</a>]. Live Wallpapers are animations,
+[<a href="#resources22">Resources, 22</a>]. Live Wallpapers are animations,
 patterns, or similar images with limited input capabilities that display as a
 wallpaper, behind other applications.</p>
 <p>Hardware is considered capable of reliably running live wallpapers if it
@@ -865,439 +746,247 @@ also use an OpenGL context.</p>
 described above SHOULD implement live wallpapers. Device implementations
 determined to not run live wallpapers reliably as described above MUST NOT
 implement live wallpapers.</p>
-<a name="section-3.8.7"></a><h4>3.8.7. Recent Application Display</h4>
-<p>The upstream Android 4.0 source code includes a user interface for
-displaying recent applications using a thumbnail image of the application's
-graphical state at the moment the user last left the application. Device
-implementations MAY alter or eliminate this user interface; however, a future
-version of Android is planned to make more extensive use of this
-functionality. Device implementations are strongly encouraged to use the
-upstream Android 4.0 user interface (or a similar thumbnail-based interface)
-for recent applications, or else they may not be compatible with a future
-version of Android.</p>
-<a name="section-3.8.8"></a><h4>3.8.8. Input Management Settings</h4>
-<p>Android 4.0 includes support for Input Management Engines. The Android 4.0
-APIs allow custom app IMEs to specify user-tunable settings. Device
-implementations MUST include a way for the user to access IME settings at all
-times when an IME that provides such user settings is displayed.</p>
-
-<a name="section-3.9"></a><h3>3.9 Device Administration</h3>
-<p>Android 4.0 includes features that allow security-aware applications
-to perform device administration functions at the system level, such as enforcing
-password policies or performing remote wipe, through the Android Device
-Administration API [<a href="#resources27">Resources, 27</a>]. Device
-implementations MUST provide an implementation of the <code>DevicePolicyManager
-</code> class [<a href="#resources28">Resources, 28</a>], and SHOULD support
-the full range of device administration policies defined in the Android SDK
-documentation [<a href="#resources27">Resources, 27</a>].</p>
-
-<p>If device implementations do not support the full range of device administration
-policies, they MUST NOT allow device administration applications to be enabled.
-Specifically, if a device does not support all device administration policies,
-the device implementation MUST respond to the
-<code>android.app.admin.DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN</code> intent,
-but MUST dislpay a message notifying the user that the device does not support
-device administration.</p>
-
-<a name="section-3.10"></a><h3>3.10 Accessibility</h3>
-<p>Android 4.0 provides an accessibility layer that helps users with disabilities
-to navigate their devices more easily. In addition, Android 4.0 provides
-platform APIs that enable accessibility service implementations to receive
-callbacks for user and system events and generate alternate feedback mechanisms,
-such as text-to-speech, haptic feedback, and trackball/d-pad navigation
-[<a href="#resources29">Resources, 29</a>]. Device implementations MUST provide an
-implementation of the Android accessibility framework consistent with the
-default Android implementation.  Specifically, device implementations MUST meet
-the following requirements.</p>
-<ul>
- <li>Device implementations MUST support third party accessibility service
-     implementations through the <code>android.accessibilityservice</code>
-     APIs [<a href="#resources30">Resources, 30</a>].</li>
- <li>Device implementations MUST generate <code>AccessibilityEvent</code>s 
-     and deliver these events to all registered <code>AccessibilityService
-     </code> implementations in a manner consistent with the default Android
-     implementation.</li>
- <li>Device implementations MUST provide a user-accessible mechanism to enable
-     and disable accessibility services, and MUST display this interface in
-     response to the
-     <code>android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS</code>
-     intent.</li>
-</ul>
-<p>Additionally, device implementations SHOULD provide an implementation
-of an accessibility service on the device, and SHOULD provide a mechanism
-for users to enable the accessibility service during device setup.  An open
-source implementation of an accessibility service is available from the Eyes
-Free project [<a href="#resources31">Resources, 31</a>].</p>
-
-<a name="section-3.11"></a><h3>3.11 Text-to-Speech</h3>
-<p>Android 4.0 includes APIs that allow applications to make use of
-text-to-speech (TTS) services, and allows service providers to provide
-implementations of TTS services [<a href="#resources32">Resources, 32</a>].
-Device implementations MUST meet these requirements related to the Android TTS
-framework:</p>
-<ul>
-  <li>Device implementations MUST support the Android TTS framework APIs and
-      SHOULD include a TTS engine supporting the languages available on the
-      device. Note that the upstream Android open source software includes a
-      full-featured TTS engine implementation.</li>
-  <li>Device implementations MUST support installation of third-party TTS
-      engines.</li>
-  <li>Device implementations MUST provide a user-accessible interface that allows
-      users to select a TTS engine for use at the system level.</li>
-</ul>
 
 <a name="section-4"></a><h2>4. Application Packaging Compatibility</h2>
 <p>Device implementations MUST install and run Android ".apk" files as
 generated by the "aapt" tool included in the official Android SDK [<a
-href="#resources33">Resources, 33</a>].</p>
+href="#resources23">Resources, 23</a>].</p>
 <p>Devices implementations MUST NOT extend either the .apk [<a
-href="#resources34">Resources, 34</a>], Android Manifest [<a
-href="#resources35">Resources, 35</a>],
-Dalvik bytecode [<a href="#resources17">Resources, 17</a>], or renderscript
-bytecode formats in such a way that would prevent those files from installing
-and running correctly on other compatible devices. Device implementers SHOULD
-use the reference upstream implementation of Dalvik, and the reference
-implementation's package management system.</p>
+href="#resources24">Resources, 24</a>], Android Manifest [<a
+href="#resources25">Resources, 25</a>],
+or Dalvik bytecode [<a href="#resources15">Resources, 15</a>] formats in such
+a way that would prevent those files from
+installing and running correctly on other compatible devices. Device
+implementers SHOULD use the reference upstream implementation of Dalvik, and
+the reference implementation's package management system.</p>
 
 <a name="section-5"></a><h2>5. Multimedia Compatibility</h2>
-<p>Device implementations MUST include at least one form of audio output, such as
+<p>Device implementations MUST fully implement all multimedia APIs. Device
+implementations MUST include support for all multimedia codecs described
+below, and SHOULD meet the sound processing guidelines described below. Device
+implementations MUST include at least one form of audio output, such as
 speakers, headphone jack, external speaker connection, etc.</p>
 <a name="section-5.1"></a><h3>5.1. Media Codecs</h3>
-<p>Device implementations MUST support the core media formats specified
-in the Android SDK documentation [<a href="#resources58">Resources, 58</a>] except
-where explicitly permitted in this document. Specifically, device implementations
-MUST support the media formats, encoders, decoders, file types and container
-formats defined in the tables below. All of these codecs are provided as
-software implementations in the preferred Android implementation from the Android
-Open Source Project.</p>
-
-<p><strong>Please note that neither Google nor the Open Handset Alliance make any
+<p>Device implementations MUST support the multimedia codecs as detailed in
+the following sections. All of these codecs are provided as software
+implementations in the preferred Android implementation from the Android
+Open-Source Project.</p>
+<p>Please note that neither Google nor the Open Handset Alliance make any
 representation that these codecs are unencumbered by third-party patents.
 Those intending to use this source code in hardware or software products are
 advised that implementations of this code, including in open source software
 or shareware, may require patent licenses from the relevant patent
-holders.</strong></p>
-
-<p>Note that these tables do not list specific bitrate requirements for
-most video codecs because current device hardware does not necessarily support
-bitrates that map exactly to the required bitrates specified by the relevant
-standards. Instead, device implementations SHOULD support the highest bitrate
-practical on the hardware, up to the limits defined by the specifications.</p>
-<div style="page-break-before: always;"></div>
-<table>
-<tbody>
-
+holders.</p>
+<p>The tables below do not list specific bitrate requirements for
+most video codecs. The reason for this is that in practice, current device
+hardware does not necessarily support bitrates that map exactly to the
+required bitrates specified by the relevant standards. Instead, device
+implementations SHOULD support the highest bitrate practical on the hardware,
+up to the limits defined by the specifications.</p>
+<a name="section-5.1.1"></a><h3>5.1.1. Media Decoders</h3>
+<p>Device implementations MUST include an implementation of an decoder for
+each codec and format described in the table below. Note that decoders for
+each of these media types are provided by the upstream Android Open-Source
+Project.</p>
+<table><tbody>
 <tr>
-<th>Type</th>
-<th>Format / Codec</th>
-<th>Encoder</th>
-<th>Decoder</th>
-<th>Details</th>
-<th>File Type(s) / Container Formats</th>
+<td rowspan="11"><b>Audio</b></td>
 </tr>
-
 <tr>
-<td rowspan="10">Audio</td>
+<td><b>Name</b></td>
+<td><b>Details</b></td>
+<td><b>File/Container Format</b></td>
+</tr>
+<tr>
 <td>AAC LC/LTP</td>
-<td style="text-align: center;">REQUIRED<br/>
-<small>Required for device implementations that include microphone hardware
-and define <code>android.hardware.microphone</code>.</small></td>
-<td style="text-align: center;">REQUIRED</td>
-<td rowspan="3">Mono/Stereo content in any combination of standard bit
-rates up to 160 kbps and sampling rates from 8 to 48kHz</td>
-<td rowspan="3">
-  <ul>
-    <li>3GPP (.3gp)</li>
-    <li>MPEG-4 (.mp4, .m4a)</li>
-    <li>ADTS raw AAC (.aac, decode in Android 3.1+, encode in Android 4.0+, ADIF not supported)</li>
-    <li>MPEG-TS (.ts, not seekable, Android 3.0+)</li>
-  </ul>
-</td>
+<td rowspan="3">Mono/Stereo content in any combination of standard bit rates up to 160 kbps and sampling rates between 8 to 48kHz</td>
+<td rowspan="3">3GPP (.3gp) and MPEG-4 (.mp4, .m4a). No support for raw AAC (.aac)</td>
 </tr>
 <tr>
 <td>HE-AACv1 (AAC+)</td>
-<td>&nbsp;</td>
-<td style="text-align: center;">REQUIRED</td>
 </tr>
-
 <tr>
 <td>HE-AACv2 (enhanced AAC+)</td>
-<td>&nbsp;</td>
-<td style="text-align: center;">REQUIRED</td>
 </tr>
-
 <tr>
 <td>AMR-NB</td>
-<td style="text-align: center;">REQUIRED<br/>
-<small>Required for device implementations that include microphone hardware
-and define <code>android.hardware.microphone</code>.</small></td>
-<td style="text-align: center;">REQUIRED</td>
 <td>4.75 to 12.2 kbps sampled @ 8kHz</td>
-<td>3GPP (.3gp)
-</td>
+<td>3GPP (.3gp)</td>
 </tr>
-
 <tr>
 <td>AMR-WB</td>
-<td style="text-align: center;">REQUIRED<br/>
-<small>Required for device implementations that include microphone hardware
-and define <code>android.hardware.microphone</code>.</small></td>
-<td style="text-align: center;">REQUIRED</td>
 <td>9 rates from 6.60 kbit/s to 23.85 kbit/s sampled @ 16kHz</td>
 <td>3GPP (.3gp)</td>
 </tr>
-
-<tr>
-<td>FLAC</td>
-<td>&nbsp;</td>
-<td style="text-align: center;">REQUIRED<br/><small>(Android 3.1+)</small></td>
-<td>Mono/Stereo (no multichannel). Sample rates up to 48 kHz (but up to 44.1
-kHz is recommended on devices with 44.1 kHz output, as the 48 to 44.1 kHz
-downsampler does not include a low-pass filter). 16-bit recommended;
-no dither applied for 24-bit.
-</td>
-<td>FLAC (.flac) only</td>
-</tr>
-
 <tr>
 <td>MP3</td>
-<td>&nbsp;</td>
-<td style="text-align: center;">REQUIRED</td>
-<td>Mono/Stereo 8-320Kbps constant (CBR) or variable bit-rate (VBR)
-</td>
+<td>Mono/Stereo 8-320Kbps constant (CBR) or variable bit-rate (VBR)</td>
 <td>MP3 (.mp3)</td>
 </tr>
-
 <tr>
 <td>MIDI</td>
-<td>&nbsp;</td>
-<td style="text-align: center;">REQUIRED</td>
-<td>MIDI Type 0 and 1. DLS Version 1 and 2. XMF and Mobile XMF. Support for ringtone formats RTTTL/RTX, OTA, and iMelody </td>
-<td>
-  <ul>
-    <li>Type 0 and 1 (.mid, .xmf, .mxmf)</li>
-    <li>RTTTL/RTX (.rtttl, .rtx)</li>
-    <li>OTA (.ota)</li>
-    <li>iMelody (.imy)</li>
-  </ul>
-</td>
+<td>MIDI Type 0 and 1. DLS Version 1 and 2. XMF and Mobile XMF. Support for ringtone formats RTTTL/RTX, OTA, and iMelody</td>
+<td>Type 0 and 1 (.mid, .xmf, .mxmf). Also RTTTL/RTX (.rtttl, .rtx), OTA (.ota), and iMelody (.imy)</td>
 </tr>
-
 <tr>
-<td>Vorbis</td>
+<td>Ogg Vorbis</td>
 <td>&nbsp;</td>
-<td style="text-align: center;">REQUIRED</td>
-<td>&nbsp;</td>
-<td>
-  <ul>
-    <li>Ogg (.ogg)</li>
-    <li>Matroska (.mkv)</li>
-  </ul>
-</td>
+<td>Ogg (.ogg)</td>
 </tr>
-
 <tr>
-<td>PCM/WAVE</td>
-<td>&nbsp;</td>
-<td style="text-align: center;">REQUIRED</td>
+<td>PCM</td>
 <td>8- and 16-bit linear PCM (rates up to limit of hardware)</td>
 <td>WAVE (.wav)</td>
 </tr>
-
 <tr>
-<td rowspan="5">Image</td>
-<td>JPEG</td>
-<td style="text-align: center;">REQUIRED</td>
-<td style="text-align: center;">REQUIRED</td>
-<td>Base+progressive</td>
-<td>JPEG (.jpg)</td>
+<td rowspan="5"><b>Image</b></td>
 </tr>
-
+<tr>
+<td>JPEG</td>
+<td>base+progressive</td>
+<td>&nbsp;</td>
+</tr>
 <tr>
 <td>GIF</td>
 <td>&nbsp;</td>
-<td style="text-align: center;">REQUIRED</td>
 <td>&nbsp;</td>
-<td>GIF (.gif)</td>
 </tr>
-
 <tr>
 <td>PNG</td>
-<td style="text-align: center;">REQUIRED</td>
-<td style="text-align: center;">REQUIRED</td>
 <td>&nbsp;</td>
-<td>PNG (.png)</td>
+<td>&nbsp;</td>
 </tr>
-
 <tr>
 <td>BMP</td>
 <td>&nbsp;</td>
-<td style="text-align: center;">REQUIRED</td>
 <td>&nbsp;</td>
-<td>BMP (.bmp)</td>
 </tr>
-
-
 <tr>
-<td>WEBP</td>
-<td style="text-align: center;">REQUIRED</td>
-<td style="text-align: center;">REQUIRED</td>
-<td>&nbsp;</td>
-<td>WebP (.webp)</td>
+<td rowspan="4"><b>Video</b></td>
 </tr>
-
 <tr>
-<td rowspan="4">Video</td>
 <td>H.263</td>
-<td style="text-align: center;">REQUIRED<br/>
-<small>Required for device implementations that include camera hardware
-and define <code>android.hardware.camera</code> or
-<code>android.hardware.camera.front</code>.</small></td>
-<td style="text-align: center;">REQUIRED</td>
 <td>&nbsp;</td>
-<td>
-  <ul>
-    <li>3GPP (.3gp)</li>
-    <li>MPEG-4 (.mp4)</li>
-  </ul>
-</td>
+<td>3GPP (.3gp) files</td>
 </tr>
-
 <tr>
-<td>H.264 AVC</td>
-<td style="text-align: center;">REQUIRED<br/>
-<small>Required for device implementations that include camera hardware
-and define <code>android.hardware.camera</code> or
-<code>android.hardware.camera.front</code>.</small></td>
-<td style="text-align: center;">REQUIRED</td>
-<td>Baseline Profile (BP)</td>
-<td>
-  <ul>
-    <li>3GPP (.3gp)</li>
-    <li>MPEG-4 (.mp4)</li>
-    <li>MPEG-TS (.ts, AAC audio only, not seekable, Android 3.0+)</li>
-  </ul>
-</td>
+<td>H.264</td>
+<td>&nbsp;</td>
+<td>3GPP (.3gp) and MPEG-4 (.mp4) files</td>
 </tr>
-
 <tr>
-<td>MPEG-4 SP</td>
+<td>MPEG4 Simple Profile</td>
 <td>&nbsp;</td>
-<td style="text-align: center;">REQUIRED</td>
-<td>&nbsp;</td>
-<td>3GPP (.3gp)</td>
+<td>3GPP (.3gp) file</td>
 </tr>
-
-<tr>
-<td>VP8</td>
-<td>&nbsp;</td>
-<td style="text-align: center;">REQUIRED<br/><small>(Android 2.3.3+)</small></td>
-<td>&nbsp;</td>
-<td><a href="http://www.webmproject.org/">WebM</a> (.webm) and Matroska (.mkv, Android 4.0+)</td>
-</tr>
-
-</tbody></table>
-
-<a name="section-5.2"></a><h3>5.2 Video Encoding</h3>
-<p>Android device implementations that include a rear-facing camera and declare
-<code>android.hardware.camera</code> SHOULD support the following video encoding
-profiles.</p>
-<table>
-  <thead>
-  <tr>
-    <th>&nbsp;</th>
-    <th>SD (Low quality)</th>
-    <th>SD (High quality)</th>
-    <th>HD (When supported by hardware)</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th>Video codec</th>
-    <td>H.264 Baseline Profile</td>
-    <td>H.264 Baseline Profile</td>
-    <td>H.264 Baseline Profile</td>
-  </tr>
-  <tr>
-    <th>Video resolution</th>
-    <td>176 x 144 px</td>
-    <td>480 x 360 px</td>
-    <td>1280 x 720 px</td>
-  </tr>
-  <tr>
-    <th>Video frame rate</th>
-    <td>12 fps</td>
-    <td>30 fps</td>
-    <td>30 fps</td>
-  </tr>
-  <tr>
-    <th>Video bitrate</th>
-    <td>56 Kbps</td>
-    <td>500 Kbps or higher</td>
-    <td>2 Mbps or higher</td>
-  </tr>
-  <tr>
-    <th>Audio codec</th>
-    <td>AAC-LC</td>
-    <td>AAC-LC</td>
-    <td>AAC-LC</td>
-  </tr>
-  <tr>
-    <th>Audio channels</th>
-    <td>1 (mono)</td>
-    <td>2 (stereo)</td>
-    <td>2 (stereo)</td>
-  </tr>
-  <tr>
-    <th>Audio bitrate</th>
-    <td>24 Kbps</td>
-    <td>128 Kbps</td>
-    <td>192 Kbps</td>
-  </tr>
-  </tbody>
+</tbody>
 </table>
 
-<a name="section-5.3"></a><h3>5.3. Audio Recording</h3>
+<a name="section-5.1.2"></a><h3>5.1.2. Media Encoders</h3>
+<p>Device implementations SHOULD include encoders for as many of the media
+formats listed in Section 5.1.1. as possible. However, some encoders do not
+make sense for devices that lack certain optional hardware; for instance,
+an encoder for the H.263 video does not make sense, if the device lacks any
+cameras. Device implementations MUST therefore implement media encoders
+according to the conditions described in the table below.</p>
+<p>See Section 7 for details on the conditions under which hardware may be
+omitted by device implementations.</p>
+<table><tbody>
+<tr>
+<td rowspan="5"><b>Audio</b></td>
+</tr>
+<tr>
+<td><b>Name</b></td>
+<td><b>Details</b></td>
+<td><b>File/Container Format</b></td>
+<td><b>Conditions</b></td>
+</tr>
+<tr>
+<td>AMR-NB</td>
+<td>4.75 to 12.2 kbps sampled @ 8kHz</td>
+<td>3GPP (.3gp)</td>
+<td rowspan="3">Device implementations that include microphone hardware and define
+<code>android.hardware.microphone</code> MUST include encoders for these audio
+formats.</td>
+</tr>
+<tr>
+<td>AMR-WB</td>
+<td>9 rates from 6.60 kbit/s to 23.85 kbit/s sampled @ 16kHz</td>
+<td>3GPP (.3gp)</td>
+</tr>
+<tr>
+<td>AAC LC/LTP</td>
+<td rowspan="1">Mono/Stereo content in any combination of standard bit rates up to 160 kbps and sampling rates between 8 to 48kHz</td>
+<td rowspan="1">3GPP (.3gp) and MPEG-4 (.mp4, .m4a).</td>
+</tr>
+<tr>
+<td rowspan="2"><b>Image</b></td>
+<td>JPEG</td>
+<td>base+progressive</td>
+<td>&nbsp;</td>
+<td rowspan="2">All device implementations MUST include encoders for these
+image formats, as Android 2.3 includes APIs that applications can use to
+programmatically generate files of these types.</td>
+</tr>
+<tr>
+<td>PNG</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><b>Video</b></td>
+<td>H.263</td>
+<td>&nbsp;</td>
+<td>3GPP (.3gp) files</td>
+<td>Device implementations that include camera hardware and define
+either <code>android.hardware.camera</code> or
+<code>android.hardware.camera.front</code> MUST include encoders for these
+video formats.</td>
+</tr>
+</tbody>
+</table>
+<p>In addition to the encoders listed above, device implementations SHOULD include an H.264
+encoder. Note that the Compatibility Definition for a future version is planned
+to change this requirement to "MUST". That is, H.264 encoding is optional in Android
+2.3 but <b>will be required</b> by a future version. Existing and new devices 
+that run Android 2.3 are <b>very strongly encouraged to meet
+this requirement in Android 2.3</b>, or they will not be able to attain
+Android compatibility when upgraded to the future version.</p>
+
+<a name="section-5.2"></a><h3>5.2. Audio Recording</h3>
 <p>When an application has used the <code>android.media.AudioRecord</code> API to
-start recording an audio stream, device implementations that include microphone
-hardware and declare <code>android.hardware.microphone</code> MUST sample and
+start recording an audio stream, device implementations SHOULD sample and
 record audio with each of these behaviors:</p>
 <ul>
+<li>Noise reduction processing, if present, SHOULD be disabled.</li>
+<li>Automatic gain control, if present, SHOULD be disabled.</li>
 <li>The device SHOULD exhibit approximately flat amplitude versus frequency
     characteristics; specifically, &plusmn;3 dB, from 100 Hz to 4000 Hz</li>
 <li>Audio input sensitivity SHOULD be set such that a 90 dB sound power level
-    (SPL) source at 1000 Hz yields RMS of 2500 for 16-bit samples.</li>
+    (SPL) source at 1000 Hz yields RMS of 5000 for 16-bit samples.</li>
 <li>PCM amplitude levels SHOULD linearly track input SPL changes over at least
     a 30 dB range from -18 dB to +12 dB re 90 dB SPL at the microphone.</li>
 <li>Total harmonic distortion SHOULD be less than 1% from 100 Hz to 4000 Hz at
     90 dB SPL input level.</li>
 </ul>
-<p>In addition to the above recording specifications, when an application has
-started recording an audio stream using the
-<code>android.media.MediaRecorder.AudioSource.VOICE_RECOGNITION</code> audio
-source:</p>
-<ul>
-<li>Noise reduction processing, if present, MUST be disabled.</li>
-<li>Automatic gain control, if present, MUST be disabled.</li>
-</ul>
-<p><b>Note:</b> while some of the requirements outlined above are stated as "SHOULD"
-for Android 4.0, the Compatibility Definition for a future version is planned
+<p><b>Note:</b> while the requirements outlined above are stated as "SHOULD"
+for Android 2.3, the Compatibility Definition for a future version is planned
 to change these to "MUST". That is, these requirements are optional in Android
-4.0 but <b>will be required</b> by a future version. Existing and new devices
-that run Android 4.0 are <b>very strongly encouraged to meet
-these requirements in Android 4.0</b>, or they will not be able to attain
+2.3 but <b>will be required</b> by a future version. Existing and new devices 
+that run Android 2.3 are <b>very strongly encouraged to meet
+these requirements in Android 2.3</b>, or they will not be able to attain
 Android compatibility when upgraded to the future version.</p>
 
-<a name="section-5.4"></a><h3>5.4. Audio Latency</h3>
+<a name="section-5.3"></a><h3>5.3. Audio Latency</h3>
 <p>Audio latency is broadly defined as the interval between when an
 application requests an audio playback or record operation, and when the
 device implementation actually begins the operation. Many classes of
 applications rely on short latencies, to achieve real-time effects such sound
 effects or VOIP communication. Device implementations that include microphone
 hardware and declare <code>android.hardware.microphone</code> SHOULD meet all
-audio latency requirements outlined in this section. See <a href="#section-7">
-Section 7</a> for details on the conditions under which microphone hardware may
-be omitted by device implementations.</p>
+audio latency requirements outlined in this section.  See Section 7 for
+details on the conditions under which microphone hardware may be omitted by
+device implementations.</p>
 <p>For the purposes of this section:</p>
 <ul>
 <li>"cold output latency" is defined to be the interval between when an
@@ -1330,47 +1019,37 @@ these properties:</p>
 <li>continuous input latency of 50 milliseconds or less</li>
 </ul>
 <p><b>Note:</b> while the requirements outlined above are stated as "SHOULD"
-for Android 4.0, the Compatibility Definition for a future version is planned
+for Android 2.3, the Compatibility Definition for a future version is planned
 to change these to "MUST". That is, these requirements are optional in Android
-4.0 but <b>will be required</b> by a future version. Existing and new devices
-that run Android 4.0 are <b>very strongly encouraged to meet
-these requirements in Android 4.0</b>, or they will not be able to attain
+2.3 but <b>will be required</b> by a future version. Existing and new devices 
+that run Android 2.3 are <b>very strongly encouraged to meet
+these requirements in Android 2.3</b>, or they will not be able to attain
 Android compatibility when upgraded to the future version.</p>
 <p>If a device implementation meets the requirements of this section, it MAY
 report support for low-latency audio, by reporting the feature
 "android.hardware.audio.low-latency" via the
 <code>android.content.pm.PackageManager</code> class. [<a
-href="#resources37">Resources, 37</a>] Conversely, if the device
+href="#resources27">Resources, 27</a>] Conversely, if the device
 implementation does not meet these requirements it MUST NOT report support for
 low-latency audio.</p>
 
-<a name="section-5.5"></a><h3>5.5. Network Protocols</h3>
-<p>Devices MUST support the media network protocols for audio and video playback
-as specified in the Android SDK documentation
-[<a href="#resources58">Resources, 58</a>].  Specifically, devices MUST support
-the following media network protocols:</p>
-<ul>
-<li>RTSP (RTP, SDP)</li>
-<li>HTTP(S) progressive streaming</li>
-<li>HTTP(S) Live Streaming draft protocol, Version 3 [<a href="#resources59">Resources, 59</a>]</li>
-</ul>
 <a name="section-6"></a><h2>6. Developer Tool Compatibility</h2>
 <p>Device implementations MUST support the Android Developer Tools provided in
 the Android SDK. Specifically, Android-compatible devices MUST be compatible
 with:</p>
 <ul>
-<li><b>Android Debug Bridge (known as adb)</b> [<a href="#resources33">Resources, 33</a>]<br/>
+<li><b>Android Debug Bridge (known as adb)</b> [<a href="#resources23">Resources, 23</a>]<br/>
 Device implementations MUST support all <code>adb</code> functions as
-documented in the Android SDK. The device-side <code>adb</code> daemon MUST
-be inactive by default, and there MUST be a user-accessible mechanism to turn
+documented in the Android SDK. The device-side <code>adb</code> daemon SHOULD
+be inactive by default, but there MUST be a user-accessible mechanism to turn
 on the Android Debug Bridge.</li>
-<li><b>Dalvik Debug Monitor Service (known as ddms)</b> [<a href="#resources33">Resources, 33</a>]<br/>
+<li><b>Dalvik Debug Monitor Service (known as ddms)</b> [<a href="#resources23">Resources, 23</a>]<br/>
 Device implementations MUST support all <code>ddms</code> features as documented in the
 Android SDK. As <code>ddms</code> uses <code>adb</code>, support for
 <code>ddms</code> SHOULD be inactive by default,
 but MUST be supported whenever the user has activated the Android Debug
 Bridge, as above.</li>
-<li><b>Monkey</b> [<a href="#resources36">Resources, 36</a>]<br/>
+<li><b>Monkey</b> [<a href="#resources26">Resources, 26</a>]<br/>
 Device implementations MUST include the Monkey framework, and make it
 available for applications to use.</li>
 </ul>
@@ -1386,22 +1065,24 @@ be provided for Windows XP, Windows Vista, and Windows 7, in both 32-bit and
 64-bit versions.</p>
 
 <a name="section-7"></a><h2>7. Hardware Compatibility</h2>
-<p>If a device includes a particular hardware component that has a
+<p>Android is intended to enable device implementers to create innovative form 
+factors and configurations. At the same time Android developers write
+innovative applications that rely on the various hardware and features
+available through the Android APIs. The requirements in this section strike a
+balance between innovations available to device implementers, and the needs of
+developers to ensure their apps are only available to devices where they will
+run properly.</p>
+<p>If a device includes a particular hardware component that has a 
 corresponding API for third-party developers, the device implementation MUST
 implement that API as described in the Android SDK documentation. If an API in
-the SDK interacts with a hardware component that is stated to be optional and
-the device implementation does not possess that component:</p>
+the SDK interacts with a hardware component that is stated to be optional and the device
+implementation does not possess that component:</p>
 <ul>
-<li>complete class definitions (as documented by the SDK) for the component's
-APIs MUST still be present</li>
-<li>the API's behaviors MUST be implemented as no-ops in some reasonable
-fashion</li>
-<li>API methods MUST return null values where permitted by the SDK
-documentation</li>
-<li>API methods MUST return no-op implementations of classes where null
-values are not permitted by the SDK documentation</li>
-<li>API methods MUST NOT throw exceptions not documented by the SDK
-documentation</li>
+<li>complete class definitions (as documented by the SDK) for the component's APIs MUST still be present</li>
+<li>the API's behaviors MUST be implemented as no-ops in some reasonable fashion</li>
+<li>API methods MUST return null values where permitted by the SDK documentation</li>
+<li>API methods MUST return no-op implementations of classes where null values are not permitted by the SDK documentation</li>
+<li>API methods MUST NOT throw exceptions not documented by the SDK documentation</li>
 </ul>
 <p>A typical example of a scenario where these requirements apply is the
 telephony API: even on non-phone devices, these APIs must be implemented as
@@ -1410,16 +1091,33 @@ reasonable no-ops.</p>
 information via the <code>getSystemAvailableFeatures()</code> and
 <code>hasSystemFeature(String)</code> methods on the
 <code>android.content.pm.PackageManager</code> class. [<a
-href="#resources37">Resources, 37</a>]</p>
+href="#resources27">Resources, 27</a>]</p>
 
 <a name="section-7.1"></a><h3>7.1. Display and Graphics</h3>
-<p>Android 4.0 includes facilities that automatically adjust application
+<p>Android 2.3 includes facilities that automatically adjust application
 assets and UI layouts appropriately for the device, to ensure that third-party
 applications run well on a variety of hardware configurations [<a
-href="#resources38">Resources, 38</a>]. Devices MUST properly implement these
+href="#resources28">Resources, 28</a>]. Devices MUST properly implement these
 APIs and behaviors, as detailed in this section.</p>
-
-<p>The units referenced by the requirements in this section are defined as follows:</p>
+<a name="section-7.1.1"></a><h4>7.1.1. Screen Configurations</h4>
+<p>Device implementations MAY use screens of any pixel dimensions, provided
+that they meet the following requirements:</p>
+<ul>
+<li>screens MUST be at least 2.5 inches in physical diagonal size</li>
+<li>density MUST be at least 100 dpi</li>
+<li>the aspect ratio MUST be between 1.333 (4:3) and 1.779 (16:9)</li>
+<li>the display technology used consists of square pixels</li>
+</ul>
+<p>Device implementations with a screen meeting the requirements above are
+considered compatible, and no additional action is necessary.  The Android
+framework implementation automatically computes display characteristics such
+as screen size bucket and density bucket. In the majority of cases, the
+framework decisions are the correct ones. If the default framework
+computations are used, no additional action is necessary.  Device implementers
+wishing to change the defaults, or use a screen that does not meet the
+requirements above MUST contact the Android Compatibility Team for guidance,
+as provided for in Section 12.</p>
+<p>The units used by the requirements above are defined as follows:</p>
 <ul>
 <li>"Physical diagonal size" is the distance in inches between two opposing
 corners of the illuminated portion of the display.</li>
@@ -1429,347 +1127,122 @@ horizontal and vertical dpi must fall within the range.</li>
 <li>"Aspect ratio" is the ratio of the longer dimension of the screen to the
 shorter dimension. For example, a display of 480x854 pixels would be 854 / 480
 = 1.779, or roughly "16:9".</li>
-<li>A "density-independent pixel" or ("dp") is the virtual pixel unit normalized to a
-160 dpi screen, calculated as:
-<code>pixels = dps * (density / 160)</code>.</li>
 </ul>
-
-
-<a name="section-7.1.1"></a><h4>7.1.1. Screen Configuration</h4>
-
-<p style="font-weight:bold;">Screen Size</p>
-<p>The Android UI framework supports a variety of different screen sizes, and
-allows applications to query the device screen size (aka "screen layout") via
-<code>android.content.res.Configuration.screenLayout</code> with the
-<code>SCREENLAYOUT_SIZE_MASK</code>. Device implementations MUST report the
-correct screen size as defined in the Android SDK documentation
-[<a href="#resources38">Resources, 38</a>] and determined by the upstream
-Android platform. Specifically, device implementations must report the correct
-screen size according to the following logical density-independent pixel (dp)
-screen dimensions.</p>
-<ul>
-<li>Devices MUST have screen sizes of at least 426 dp x 320 dp ('small')</li>
-<li>Devices that report screen size 'normal' MUST have screen sizes of at least
-470 dp x 320 dp</li>
-<li>Devices that report screen size 'large' MUST have screen sizes of at least
-640 dp x 480 dp</li>
-<li>Devices that report screen size 'xlarge' MUST have screen sizes of at least
-960 dp x 720 dp</li>
-</ul>
-<p>In addition, devices MUST have screen sizes of at least 2.5 inches in
-physical diagonal size.</p>
-
-<p>Devices MUST NOT change their reported screen size at any time.</p>
-<p>Applications optionally indicate which screen sizes they support via the
-<code>&lt;supports-screens&gt;</code> attribute in the AndroidManifest.xml
-file. Device implementations MUST correctly honor applications' stated support
-for small, normal, large, and xlarge screens, as described in the Android
-SDK documentation.</p>
-
-<p style="font-weight:bold;">Screen Aspect Ratio</p>
-<p>The aspect ratio MUST be between 1.3333 (4:3) and 1.85 (16:9).</p>
-
-<p style="font-weight:bold;">Screen Density</p>
-<p>The Android UI framework defines a set of standard logical densities to
-help application developers target application resources. Device
-implementations MUST report one of the following logical Android framework
-densities through the <code>android.util.DisplayMetrics</code> APIs, and MUST
-execute applications at this standard density.
-<ul>
-<li>120 dpi, known as 'ldpi'</li>
-<li>160 dpi, known as 'mdpi'</li>
-<li>213 dpi, known as 'tvdpi'</li>
-<li>240 dpi, known as 'hdpi'</li>
-<li>320 dpi, known as 'xhdpi'</li>
-</ul>
-Device implementations SHOULD define the standard Android framework density
-that is numerically closest to the physical density of the screen, unless that
-logical density pushes the reported screen size below the minimum supported.
-If the standard Android framework density that is numerically closest to the
-physical density results in a screen size that is smaller than the smallest
-supported compatible screen size (320 dp width), device implementations SHOULD
-report the next lowest standard Android framework density.</p>
-
+<p>Device implementations MUST use only displays with a single static
+configuration. That is, device implementations MUST NOT enable multiple
+screen configurations. For instance, since a typical television supports
+multiple resolutions such as 1080p, 720p, and so on, this configuration is not
+compatible with Android 2.3. (However, support for such configurations is
+under investigation and planned for a future version of Android.)</p>
 <a name="section-7.1.2"></a><h4>7.1.2. Display Metrics</h4>
 <p>Device implementations MUST report correct values for all display metrics
 defined in <code>android.util.DisplayMetrics</code> [<a
-href="#resources39">Resources, 39</a>].</p>
-
-<a name="section-7.1.3"></a><h4>7.1.3. Screen Orientation</h4>
-<p>Devices MUST support dynamic orientation by applications to
+href="#resources29">Resources, 29</a>].</p>
+<a name="section-7.1.3"></a><h4>7.1.3. Declared Screen Support</h4>
+<p>Applications optionally indicate which screen sizes they support via the
+<code>&lt;supports-screens&gt;</code> attribute in the AndroidManifest.xml
+file. Device implementations MUST correctly honor applications' stated support
+for small, medium, and large screens, as described in the Android
+SDK documentation.</p>
+<a name="section-7.1.4"></a><h4>7.1.4. Screen Orientation</h4>
+<p>Compatible devices MUST support dynamic orientation by applications to
 either portrait or landscape screen orientation. That is, the device must
 respect the application's request for a specific screen orientation. Device
 implementations MAY select either portrait or landscape orientation as the
-default.</p>
+default. Devices that cannot be physically rotated MAY meet this requirement
+by "letterboxing" applications that request portrait mode, using only a
+portion of the available display.</p>
 <p>Devices MUST report the correct value for the device's current orientation,
 whenever queried via the android.content.res.Configuration.orientation,
 android.view.Display.getOrientation(), or other APIs.</p>
-<p>Devices MUST NOT change the reported screen size or density when changing
-orientation.</p>
-<p>Devices MUST report which screen orientations they support (
-<code>android.hardware.screen.portrait</code> and/or
-<code>android.hardware.screen.landscape</code>) and MUST report at least one
-supported orientation.  For example, a device with a fixed-orientation
-landscape screen, such as a television or laptop, MUST only report
-<code>android.hardware.screen.landscape</code>.</p>
-
-<a name="section-7.1.4"></a><h4>7.1.4. 2D and 3D Graphics Acceleration</h4>
-<p>Device implementations MUST support both OpenGL ES 1.0 and 2.0, as embodied
-and detailed in the Android SDK documentations. Device implementations MUST
-also support Android Renderscript, as detailed in the Android SDK
-documentation [<a href="#resources08">Resources, 8</a>].</p>
-<p>Device implementations MUST also correctly identify themselves as
-supporting OpenGL ES 1.0 and 2.0. That is:</p>
+<a name="section-7.1.5"></a><h4>7.1.5. 3D Graphics Acceleration</h4>
+<p>Device implementations MUST support OpenGL ES 1.0, as required by the
+Android 2.3 APIs. For devices that lack 3D acceleration hardware, a software
+implementation of OpenGL ES 1.0 is provided by the upstream Android
+Open-Source Project. Device implementations SHOULD support OpenGL ES 2.0.</p>
+<p>Implementations MAY omit Open GL ES 2.0 support; however if support is
+ommitted, device implementations MUST NOT report as supporting OpenGL ES 2.0.
+Specifically, if a device implementations lacks OpenGL ES 2.0 support:</p>
 <ul>
-<li>The managed APIs (such as via the <code>GLES10.getString()</code> method)
-MUST report support for OpenGL ES 1.0 and 2.0</li>
-<li>The native C/C++ OpenGL APIs (that is, those available to apps via
-libGLES_v1CM.so, libGLES_v2.so, or libEGL.so) MUST report support for
-OpenGL ES 1.0 and 2.0.</li>
+<li>the managed APIs (such as via the <code>GLES10.getString()</code> method)
+MUST NOT report support for OpenGL ES 2.0</li>
+<li>the native C/C++ OpenGL APIs (that is, those available to apps via
+libGLES_v1CM.so, libGLES_v2.so, or libEGL.so) MUST NOT report support for
+OpenGL ES 2.0.</li>
 </ul>
-<p>Device implementations MAY implement any desired OpenGL ES extensions.
-However, device implementations MUST report via the OpenGL ES managed and
-native APIs all extension strings that they do support, and conversely MUST
-NOT report extension strings that they do not support.</p>
-<p>Note that Android 4.0 includes support for applications to optionally
+<p>Conversely, if a device implementation <i>does</i> support OpenGL ES 2.0,
+it MUST accurately report that support via the routes just listed.</p>
+<p>Note that Android 2.3 includes support for applications to optionally
 specify that they require specific OpenGL texture compression formats. These
 formats are typically vendor-specific. Device implementations are not required
-by Android 4.0 to implement any specific texture compression format. However,
+by Android 2.3 to implement any specific texture compression format. However,
 they SHOULD accurately report any texture compression formats that they do
 support, via the <code>getString()</code> method in the OpenGL API.</p>
 
-<p>Android 3.0 introduced a mechanism for applications to declare that they
-wanted to enable hardware acceleration for 2D graphics at the Application,
-Activity, Window or View level through the use of a manifest tag
-<code>android:hardwareAccelerated</code> or direct API calls
-[<a href="#resources09">Resources, 9</a>].</p>
-<p>In Android 4.0, device implementations MUST enable hardware acceleration by
-default, and MUST disable hardware acceleration if the developer so requests
-by setting <code>android:hardwareAccelerated="false"</code> or disabling
-hardware acceleration directly through the Android View APIs.</p>
-<p>In addition, device implementations MUST exhibit behavior consistent with the
-Android SDK documentation on hardware acceleration
-[<a href="#resources09">Resources, 9</a>].</p>
-<p>Android 4.0 includes a <code>TextureView</code> object that lets developers
-directly integrate hardware-accelerated OpenGL ES textures as rendering targets
-in a UI hierarchy. Device implementations MUST support the <code>TextureView
-</code> API, and MUST exhibit consistent behavior with the upstream Android
-implementation.</p>
-
-<a name="section-7.1.5"></a><h4>7.1.5. Legacy Application Compatibility Mode</h4>
-<p>Android 4.0 specifies a "compatibility mode" in which the framework
-operates in an 'normal' screen size equivalent (320dp width) mode for the benefit
-of legacy applications not developed for old versions of Android that pre-date
-screen-size independence. Device implementations MUST include support for legacy
-application compatibility mode as implemented by the upstream Android open source
-code. That is, device implementations MUST NOT alter the triggers or thresholds at
-which compatibility mode is activated, and MUST NOT alter the behavior of the
-compatibility mode itself.</p>
-
-<a name="section-7.1.6"></a><h4>7.1.6. Screen Types</h4>
-<p>Device implementation screens are classified as one of two types:</p>
-<ul>
-<li>Fixed-pixel display implementations: the screen is a single panel that supports only a
-single pixel width and height. Typically the screen is physically integrated with
-the device. Examples include mobile phones, tablets, and so on.</li>
-<li>Variable-pixel display implementations: the device implementation either has no
-embedded screen and includes a video output port such as VGA or HDMI for
-display, or has an embedded screen that can change pixel dimensions. Examples
-include televisions, set-top boxes, and so on.</li>
-</ul>
-<p style="font-weight: bold;">Fixed-Pixel Device Implementations</p>
-<p>Fixed-pixel device implementations MAY use screens of any pixel dimensions, provided
-that they meet the requirements defined this Compatibility Definition.</p>
-<p>Fixed-pixel implementations MAY include a video output port for use with an
-external display. However, if that display is ever used for running apps, the
-device MUST meet the following requirements:</p>
-<ul>
-<li>The device MUST report the same screen configuration and display metrics, as detailed
-in Sections 7.1.1 and 7.1.2, as the fixed-pixel display.</li>
-<li>The device MUST report the same logical density as the fixed-pixel display.</li>
-<li>The device MUST report screen dimensions that are the same as, or very close to,
-the fixed-pixel display.</li>
-</ul>
-<p>For example, a tablet that is 7" diagonal size with a 1024x600 pixel resolution is
-considered a fixed-pixel large mdpi display implementation.  If it contains a video
-output port that displays at 720p or 1080p, the device implementation MUST scale the output so that
-applications are only executed in a large mdpi window, regardless of whether the fixed-pixel display
-or video output port is in use.</p>
-
-<p style="font-weight: bold;">Variable-Pixel Device Implementations</p>
-<p>Variable-pixel device implementations MUST support one or both of 1280x720,
-or 1920x1080 (that is, 720p or 1080p). Device implementations with
-variable-pixel displays MUST NOT support any other screen configuration or
-mode. Device implementations with variable-pixel screens MAY change screen
-configuration or mode at runtime or boot-time. For example, a user of a
-set-top box may replace a 720p display with a 1080p display, and the device
-implementation may adjust accordingly.</p>
-
-<p>Additionally, variable-pixel device implementations MUST report the following
-configuration buckets for these pixel dimensions:</p>
-<ul>
-<li>1280x720 (also known as 720p): 'large' screen size, 'tvdpi' (213 dpi)
-density</li>
-<li>1920x1080 (also known as 1080p): 'large' screen size, 'xhdpi' (320 dpi)
-density</li>
-</ul>
-<p>For clarity, device implementations with variable pixel dimensions are
-restricted to 720p or 1080p in Android 4.0, and MUST be configured to report
-screen size and density buckets as noted above.</p>
-
-<a name="section-7.1.7"></a><h4>7.1.7. Screen Technology</h4>
-<p>The Android platform includes APIs that allow applications to render rich
-graphics to the display. Devices MUST support all of these APIs as defined by
-the Android SDK unless specifically allowed in this document.  Specifically:</p>
-<ul>
-<li>Devices MUST support displays capable of rendering 16-bit color graphics and
-SHOULD support displays capable of 24-bit color graphics.</li>
-<li>Devices MUST support displays capable of rendering animations.</li>
-<li>The display technology used MUST have a pixel aspect ratio (PAR) between
-    0.9 and 1.1. That is, the pixel aspect ratio MUST be near square (1.0) with
-    a 10% tolerance.</li>
-</ul>
-
 <a name="section-7.2"></a><h3>7.2. Input Devices</h3>
+<p>Android 2.3 supports a number of modalities for user input. Device
+implementations MUST support user input devices as provided for in this
+section.</p>
 <a name="section-7.2.1"></a><h4>7.2.1. Keyboard</h4>
 <p>Device implementations:</p>
 <ul>
-<li>MUST include support for the Input Management Framework (which allows third
-party developers to create Input Management Engines - i.e. soft keyboard) as
-detailed at <a href="http://developer.android.com">http://developer.android.com</a>
-</li>
-<li>MUST provide at least one soft keyboard implementation (regardless of whether
-a hard keyboard is present)</li>
+<li>MUST include support for the Input Management Framework (which allows third party developers to create Input Management Engines -- i.e. soft keyboard) as detailed at developer.android.com</li>
+<li>MUST provide at least one soft keyboard implementation (regardless of whether a hard keyboard is present)</li>
 <li>MAY include additional soft keyboard implementations</li>
 <li>MAY include a hardware keyboard</li>
 <li>MUST NOT include a hardware keyboard that does not match one of the
 formats specified in <code>android.content.res.Configuration.keyboard</code>
-[<a href="#resources40">Resources, 40</a>] (that is, QWERTY, or 12-key)</li>
+[<a href="#resources30">Resources, 30</a>] (that is, QWERTY, or 12-key)</li>
 </ul>
 <a name="section-7.2.2"></a><h4>7.2.2. Non-touch Navigation</h4>
 <p>Device implementations:</p>
 <ul>
-<li>MAY omit a non-touch navigation option (that is, may omit a trackball, d-pad,
-or wheel)</li>
+<li>MAY omit a non-touch navigation option (that is, may omit a trackball, d-pad, or wheel)</li>
 <li>MUST report the correct value for
-<code>android.content.res.Configuration.navigation</code>
-[<a href="#resources40">Resources, 40</a>]</li>
+<code>android.content.res.Configuration.navigation</code> [<a href="#resources30">Resources, 30</a>]</li>
 <li>MUST provide a reasonable alternative user interface mechanism for the
 selection and editing of text, compatible with Input Management Engines. The
-upstream Android open source software includes a selection mechanism suitable
-for use with devices that lack non-touch navigation inputs.</li>
+upstream Android Open-Source code includes a selection mechanism suitable for
+use with devices that lack non-touch navigation inputs.</li>
 </ul>
 <a name="section-7.2.3"></a><h4>7.2.3. Navigation keys</h4>
 <p>The Home, Menu and Back functions are essential to the Android navigation
 paradigm. Device implementations MUST make these functions available to the
-user at all times when running applications. These functions MAY be implemented
-via dedicated physical buttons (such as mechanical or capacitive touch buttons),
-or MAY be implemented using dedicated software keys, gestures, touch panel, etc.
-Android 4.0 supports both implementations.</p>
-
-<p>Device implementations MAY use a distinct portion of the screen to display
-the navigation keys, but if so, MUST meet these requirements:</p>
-
-<ul>
-  <li>Device implementation navigation keys MUST use a distinct portion of the
-      screen, not available to applications, and MUST NOT obscure or otherwise
-      interfere with the portion of the screen available to applications.</li>
-  <li>Device implementations MUST make available a portion of the display to
-      applications that meets the requirements defined in
-      <a href="section-7.1.1">Section 7.1.1</a>.</li>
-  <li>Device implementations MUST display the navigation keys when applications
-      do not specify a system UI mode, or specify
-      <code>SYSTEM_UI_FLAG_VISIBLE</code>.</li>
-  <li>Device implementations MUST present the navigation keys in an unobtrusive
-      "low profile" (eg. dimmed) mode when applications specify
-      <code>SYSTEM_UI_FLAG_LOW_PROFILE</code>.</li>
-  <li>Device implementations MUST hide the navigation keys when applications
-      specify <code>SYSTEM_UI_FLAG_HIDE_NAVIGATION</code>.</li>
-  <li>Device implementation MUST present a Menu key to applications when
-      targetSdkVersion &lt;= 10 and SHOULD NOT present a Menu key when the
-      targetSdkVersion &gt; 10.</li>
-</ul>
-
+user at all times, regardless of application state. These functions SHOULD be
+implemented via dedicated buttons. They MAY be implemented using software,
+gestures, touch panel, etc., but if so they MUST be always accessible and not
+obscure or interfere with the available application display area.</p>
+<p>Device implementers SHOULD also provide a dedicated search key. Device
+implementers MAY also provide send and end keys for phone calls.</p>
 <a name="section-7.2.4"></a><h4>7.2.4. Touchscreen input</h4>
 <p>Device implementations:</p>
 <ul>
-<li>MUST have a pointer input system of some kind (either mouse-like, or touch)</li>
-<li>MAY have a touchscreen of any modality (such as capacitive or resistive)</li>
-<li>SHOULD support fully independently tracked pointers, if a touchscreen supports multiple pointers</li>
-<li>MUST report the value of <code>android.content.res.Configuration.touchscreen</code> [<a href="#resources40">Resources, 40</a>]
-corresponding to the type of the specific touchscreen on the device</li>
-</ul>
-
-<p>Android 4.0 includes support for a variety of touch screens, touch pads, and fake touch input devices.
-Touch screen based device implementations are associated with a display [<a href="#resources61">Resources, 61</a>]
-such that the user has the impression of directly manipulating items on screen. Since the user is directly touching the screen,
-the system does not require any additional affordances to indicate the objects being manipulated.
-In contrast, a fake touch interface provides a user input system that approximates a subset of touchscreen capabilities.
-For example, a mouse or remote control that drives an on-screen cursor approximates touch, but requires the user to first
-point or focus then click. Numerous input devices like the mouse, trackpad, gyro-based air mouse, gyro-pointer, joystick,
-and multi-touch trackpad can support fake touch interactions. Android 4.0 includes the feature constant <code>android.hardware.faketouch</code>,
-which corresponds to a high-fidelity non-touch (that is, pointer-based) input device such as a mouse or trackpad that can adequately emulate touch-based
-input (including basic gesture support), and indicates that the device supports an emulated subset of touchscreen
-functionality. Device implementations that declare the fake touch feature MUST meet the fake touch requirements in <a href="section 7.2.5">Section 7.2.5</a>.</p>
-
-<p>Device implementations MUST report the correct feature corresponding to the type of input used. Device implementations that
-include a touchscreen (single-touch or better) MUST also report the platform feature constant <code>android.hardware.faketouch</code>.
-Device implementations that do not include a touchscreen (and rely on a pointer device only) MUST NOT report any touchscreen feature, and MUST report only
-<code>android.hardware.faketouch</code> if they meet the fake touch requirements in <a href="section 7.2.5">Section 7.2.5</a>.</p>
-
-<a name="section-7.2.5"></a><h4>7.2.5. Fake touch input</h4>
-<p>Device implementations that declare support for <code>android.hardware.faketouch</code></p>
-<ul>
-<li> MUST report the absolute X and Y screen positions of the pointer location and display a visual pointer on the screen[<a href="#resources60">Resources, 60</a>] </li>
-<li> MUST report touch event with the action code [<a href="#resources60">Resources, 60</a>] that specifies the state change
-that occurs on the pointer going <code>down</code> or <code>up</code> on the screen [<a href="#resources60">Resources, 60</a>] </li>
-<li> MUST support pointer <code>down</code> and <code>up</code> on an object on the screen, which allows users to emulate tap on an object on the screen</li>
-<li> MUST support pointer <code>down</code>, pointer <code>up</code>, pointer <code>down</code> then pointer <code>up</code> in the same place on an object on the screen
-within a time threshold, which allows users to emulate double tap on an object on the screen [<a href="#resources60">Resources, 60</a>]</li>
-<li>MUST support pointer <code>down</code> on an arbitrary point on the screen, pointer move to any other arbitrary point on the screen,
-followed by a pointer <code>up</code>, which allows users to emulate a touch drag</li>
-<li> MUST support pointer <code>down</code> then allow users to quickly move the object to a different position on the screen
-and then pointer <code>up</code> on the screen, which allows users to fling an object on the screen</li>
-</ul>
-
-<p>Devices that declare support for <code>android.hardware.faketouch.multitouch.distinct</code> MUST meet the requirements for
-faketouch above, and MUST also support distinct tracking of two or more independent pointer inputs.</p>
-
-<a name="section-7.2.6"></a><h4>7.2.6. Microphone</h4>
-<p>Device implementations MAY omit a microphone. However, if a device
-implementation omits a microphone, it MUST NOT report the
-<code>android.hardware.microphone</code> feature constant, and must implement
-the audio recording API as no-ops, per <a href="section-7">Section 7</a>.
-Conversely, device implementations that do possess a microphone:</p>
-<ul>
-<li>MUST report the <code>android.hardware.microphone</code> feature
-constant</li>
-<li>SHOULD meet the audio quality requirements in <a
-href="section-5.3">Section 5.3</a></li>
-<li>SHOULD meet the audio latency requirements in <a
-href="section-5.4">Section 5.4</a></li>
+<li>MUST have a touchscreen</li>
+<li>MAY have either capacitive or resistive touchscreen</li>
+<li>MUST report the value of <code>android.content.res.Configuration</code>
+[<a href="#resources30">Resources, 30</a>]
+reflecting corresponding to the type of the specific touchscreen on the
+device</li>
+<li>SHOULD support fully independently tracked pointers, if the touchscreen supports multiple pointers</li>
 </ul>
 
 <a name="section-7.3"></a><h3>7.3. Sensors</h3>
-<p>Android 4.0 includes APIs for accessing a variety of sensor types. Devices
+<p>Android 2.3 includes APIs for accessing a variety of sensor types. Devices
 implementations generally MAY omit these sensors, as provided for in the
-following subsections. If a device includes a particular sensor type that has a
+following subsections. If a device includes a particular sensor type that has a 
 corresponding API for third-party developers, the device implementation MUST
 implement that API as described in the Android SDK documentation. For example,
 device implementations:</p>
 <ul>
 <li>MUST accurately report the presence or absence of sensors per the
 <code>android.content.pm.PackageManager</code> class. [<a
-href="#resources37">Resources, 37</a>]</li>
+href="#resources27">Resources, 27</a>]</li>
 <li>MUST return an accurate list of supported sensors via the
 <code>SensorManager.getSensorList()</code> and similar methods</li>
 <li>MUST behave reasonably for all other sensor APIs (for example, by
 returning true or false as appropriate when applications attempt to register
 listeners, not calling sensor listeners when the corresponding sensors are not
 present; etc.)</li>
-<li>MUST report all sensor measurements using the relevant International System
-of Units (i.e. metric) values for each sensor type as defined in the Android SDK
-documentation [<a href="#resources41">Resources, 41</a>]</li>
 </ul>
 <p>The list above is not comprehensive; the documented behavior of the Android
 SDK is to be considered authoritative.</p>
@@ -1778,10 +1251,10 @@ provided by one or more other sensors. (Examples include the orientation
 sensor, and the linear acceleration sensor.) Device implementations SHOULD
 implement these sensor types, when they include the prerequisite physical
 sensors.</p>
-<p>The Android 4.0 APIs introduce a notion of a "streaming" sensor, which is
+<p>The Android 2.3 APIs introduce a notion of a "streaming" sensor, which is
 one that returns data continuously, rather than only when the data changes.
 Device implementations MUST continuously provide periodic data samples for any
-API indicated by the Android 4.0 SDK documentation to be a streaming
+API indicated by the Android 2.3 SDK documentation to be a streaming
 sensor.</p>
 <a name="section-7.3.1"></a><h4>7.3.1. Accelerometer</h4>
 <p>Device implementations SHOULD include a 3-axis accelerometer. If a device
@@ -1789,7 +1262,7 @@ implementation does include a 3-axis accelerometer, it:</p>
 <ul>
 <li>MUST be able to deliver events at 50 Hz or greater</li>
 <li>MUST comply with the Android sensor coordinate system as detailed
-in the Android APIs (see [<a href="#resources41">Resources, 41</a>])</li>
+in the Android APIs (see [<a href="#resources31">Resources, 31</a>])</li>
 <li>MUST be capable of measuring from freefall up to twice gravity (2g) or
 more on any three-dimensional vector</li>
 <li>MUST have 8-bits of accuracy or more</li>
@@ -1801,9 +1274,8 @@ If a device does include a 3-axis magnetometer, it:</p>
 <ul>
 <li>MUST be able to deliver events at 10 Hz or greater</li>
 <li>MUST comply with the Android sensor coordinate system as detailed
-in the Android APIs (see [<a href="#resources41">Resources, 41</a>]).</li>
-<li>MUST be capable of sampling a range of field strengths adequate to cover the
-geomagnetic field</li>
+in the Android APIs (see [<a href="#resources31">Resources, 31</a>]).</li>
+<li>MUST be capable of sampling a range of field strengths adequate to cover the geomagnetic field</li>
 <li>MUST have 8-bits of accuracy or more</li>
 <li>MUST have a standard deviation no greater than 0.5 &micro;T</li>
 </ul>
@@ -1817,16 +1289,10 @@ sensor.) Devices SHOULD NOT include a gyroscope sensor unless a 3-axis
 accelerometer is also included. If a device implementation includes a
 gyroscope, it:</p>
 <ul>
-<li>MUST be temperature compensated</li>
 <li>MUST be capable of measuring orientation changes up to 5.5*Pi
 radians/second (that is, approximately 1,000 degrees per second)</li>
 <li>MUST be able to deliver events at 100 Hz or greater</li>
-<li>MUST have 12-bits of accuracy or more</li>
-<li>MUST have a variance no greater than 1e-7 rad^2 / s^2 per Hz (variance per Hz, or rad^2 / s).
-The variance is allowed to vary with the sampling rate, but must be constrained by this value.
-In other words, if you measure the variance of the gyro at 1 Hz sampling rate it should be no
-greater than 1e-7 rad^2/s^2. </li>
-<li>MUST have timestamps as close to when the hardware event happened as possible. The constant latency must be removed.</li>
+<li>MUST have 8-bits of accuracy or more</li>
 </ul>
 <a name="section-7.3.5"></a><h4>7.3.5. Barometer</h4>
 <p>Device implementations MAY include a barometer (i.e. ambient air pressure
@@ -1839,7 +1305,7 @@ sensor.) If a device implementation includes a barometer, it:</p>
 <p>Device implementations MAY but SHOULD NOT include a thermometer (i.e.
 temperature sensor.) If a device implementation does include a thermometer, it
 MUST measure the temperature of the device CPU. It MUST NOT measure any other
-temperature. (Note that this sensor type is deprecated in the Android 4.0
+temperature. (Note that this sensor type is deprecated in the Android 2.3
 APIs.)</p>
 <a name="section-7.3.7"></a><h4>7.3.7. Photometer</h4>
 <p>Device implementations MAY include a photometer (i.e. ambient light
@@ -1856,32 +1322,36 @@ implementation has a proximity sensor, it MUST be have 1-bit of accuracy or
 more.</p>
 
 <a name="section-7.4"></a><h3>7.4. Data Connectivity</h3>
+<p>Network connectivity and access to the Internet are vital features of
+Android. Meanwhile, device-to-device interaction adds significant value to
+Android devices and applications. Device implementations MUST meet the
+data connectivity requirements in this section.</p>
 <a name="section-7.4.1"></a><h4>7.4.1. Telephony</h4>
-<p>"Telephony" as used by the Android 4.0 APIs and this document refers
+<p>"Telephony" as used by the Android 2.3 APIs and this document refers
 specifically to hardware related to placing voice calls and sending SMS
 messages via a GSM or CDMA network. While these voice calls may or may not be
-packet-switched, they are for the purposes of Android 4.0 considered
+packet-switched, they are for the purposes of Android 2.3 considered
 independent of any data connectivity that may be implemented using the same
 network. In other words, the Android "telephony" functionality and APIs refer
 specifically to voice calls and SMS; for instance, device implementations that
 cannot place calls or send/receive SMS messages MUST NOT report the
 "android.hardware.telephony" feature or any sub-features, regardless of
 whether they use a cellular network for data connectivity.</p>
-<p>Android 4.0 MAY be used on devices that do not include telephony hardware.
-That is, Android 4.0 is compatible with devices that are not phones.
+<p>Android 2.3 MAY be used on devices that do not include telephony hardware.
+That is, Android 2.3 is compatible with devices that are not phones.
 However, if a device implementation does include GSM or CDMA telephony, it
 MUST implement full support for the API for that technology. Device
 implementations that do not include telephony hardware MUST implement the full
 APIs as no-ops.</p>
 <a name="section-7.4.2"></a><h4>7.4.2. IEEE 802.11 (WiFi)</h4>
-<p>Android 4.0 device implementations SHOULD include support for one or more
+<p>Android 2.3 device implementations SHOULD include support for one or more
 forms of 802.11 (b/g/a/n, etc.) If a device implementation does include
 support for 802.11, it MUST implement the corresponding Android API.</p>
 <a name="section-7.4.3"></a><h4>7.4.3. Bluetooth</h4>
 <p>Device implementations SHOULD include a Bluetooth transceiver. Device
 implementations that do include a Bluetooth transceiver MUST enable the
 RFCOMM-based Bluetooth API as described in the SDK documentation [<a
-href="#resources42">Resources, 42</a>]. Device implementations SHOULD
+href="#resources32">Resources, 32</a>]. Device implementations SHOULD
 implement relevant Bluetooth profiles, such as A2DP, AVRCP, OBEX, etc. as
 appropriate for the device.</p>
 <p>The Compatibility Test Suite includes cases that cover basic operation of
@@ -1894,93 +1364,47 @@ human-driven Bluetooth test procedure described in Appendix A.</p>
 for Near-Field Communications (NFC). If a device implementation does include
 NFC hardware, then it:</p>
 <ul>
-  <li>MUST report the android.hardware.nfc feature from the
-      <code>android.content.pm.PackageManager.hasSystemFeature()</code> method.
-      [<a href="#resources37">Resources, 37</a>]</li>
-  <li>MUST be capable of reading and writing NDEF messages via the following NFC
-      standards:
-   <ul>
-    <li>MUST be capable of acting as an NFC Forum reader/writer
-        (as defined by the NFC Forum technical specification
-        NFCForum-TS-DigitalProtocol-1.0) via the following NFC standards:
-     <ul>
-      <li>NfcA (ISO14443-3A)</li>
-      <li>NfcB (ISO14443-3B) </li>
-      <li>NfcF (JIS 6319-4)</li>
-      <li>IsoDep (ISO 14443-4)</li>
-      <li>NFC Forum Tag Types 1, 2, 3, 4 (defined by the NFC Forum)</li>
-     </ul>
-    </li>
-   </ul>
-  </li>
-  <li>SHOULD be capable of reading and writing NDEF messages via the following
-      NFC standards. Note that while the NFC standards below are stated as
-      "SHOULD" for Android 4.0, the Compatibility Definition for a future
-      version is planned to change these to "MUST". That is, these stanards are
-      optional in Android 4.0 but <b>will be required</b> in future versions.
-      Existing and new devices that run Android 4.0 are <b>very strongly
-      encouraged to meet these requirements in Android 4.0</b> so they will be
-      able to upgrade to the future platform releases.
-    <ul>
-      <li>NfcV (ISO 15693)</li>
-    </ul>
-  </li>
-  <li>MUST be capable of transmitting and receiving data via the following
-      peer-to-peer standards and protocols:
-    <ul>
-      <li>ISO 18092</li>
-      <li>LLCP 1.0 (defined by the NFC Forum)</li>
-      <li>SDP 1.0 (defined by the NFC Forum)</li>
-      <li>NDEF Push Protocol [<a href="#resources43">Resources, 43</a>]</li>
-      <li>SNEP 1.0 (defined by the NFC Forum)</li>
-    </ul>
-  </li>
-  <li>MUST include support for Android Beam:
-   <ul>
-    <li>MUST implement the SNEP default server. Valid NDEF messages received
-        by the default SNEP server MUST be dispatched to applications using
-        the android.nfc.ACTION_NDEF_DISCOVERED intent. Disabling Android Beam
-        in settings MUST NOT disable dispatch of incoming NDEF message.</li>
-    <li>MUST implement the NPP server. Messages received by the NPP server MUST
-        be processed the same way as the SNEP default server.</li>
-    <li>MUST implement a SNEP client and attempt to send outbound P2P NDEF to
-        the default SNEP server when Android Beam is enabled. If no default
-        SNEP server is found then the client MUST attempt to send to an NPP
-        server.</li>
-    <li>MUST allow foreground activities to set the outbound P2P NDEF message
-        using android.nfc.NfcAdapter.setNdefPushMessage, and
-        android.nfc.NfcAdapter.setNdefPushMessageCallback, and
-        android.nfc.NfcAdapter.enableForegroundNdefPush.</li>
-    <li>SHOULD use a gesture or on-screen confirmation, such as 'Touch to Beam',
-        before sending outbound P2P NDEF messages.</li>
-    <li>SHOULD enable Android Beam by default</li>
-   </ul>
-  </li>
-  <li>MUST poll for all supported technologies while in NFC discovery mode.</li>
-  <li>SHOULD be in NFC discovery mode while the device is awake with the screen active
-      and the lock-screen unlocked.</li>
+<li>MUST report the android.hardware.nfc feature from the
+<code>android.content.pm.PackageManager.hasSystemFeature()</code> method. [<a href="#resources27">Resources, 27</a>]</li>
+<li>MUST be capable of reading and writing NDEF messages via the following NFC
+standards:<ul>
+<li>MUST be capable of acting as an NFC Forum reader/writer
+(as defined by the NFC Forum technical specification
+NFCForum-TS-DigitalProtocol-1.0) via the following NFC standards:<ul>
+  <li>NfcA (ISO14443-3A)</li>
+  <li>NfcB (ISO14443-3B) </li>
+  <li>NfcF (JIS 6319-4)</li>
+  <li>NfcV (ISO 15693)</li>
+  <li>IsoDep (ISO 14443-4)</li>
+  <li>NFC Forum Tag Types 1, 2, 3, 4 (defined by the NFC Forum)</li>
+</ul></li>
+<li>MUST be capable of transmitting and receiving data via the following
+peer-to-peer standards and protocols:<ul>
+  <li>ISO 18092</li>
+  <li>LLCP 1.0 (defined by the NFC Forum)</li>
+  <li>SDP 1.0 (defined by the NFC Forum)</li>
+  <li>NDEF Push Protocol [<a href="#resources33">Resources, 33</a>]</li>
+</ul></li>
+<li>MUST scan for all supported technologies while in NFC discovery mode.</li>
+<li>SHOULD be in NFC discovery mode while the device is awake with the screen active.</li>
 </ul>
-
 <p>(Note that publicly available links are not available for the JIS, ISO, and
 NFC Forum specifications cited above.)</p>
-<p>Additionally, device implementations MAY include reader/writer support for
-the following MIFARE technologies.</p>
+<p>Additionally, device implementations SHOULD support the following
+widely-deployed MIFARE technologies.</p>
 <ul>
-  <li>MIFARE Classic (NXP MF1S503x [<a href="#resources44">Resources, 44</a>],
-      MF1S703x [<a href="#resources44">Resources, 44</a>])</li>
-  <li>MIFARE Ultralight (NXP MF0ICU1 [<a href="#resources46">Resources, 46</a>],
-      MF0ICU2 [<a href="#resources46">Resources, 46</a>])</li>
-  <li>NDEF on MIFARE Classic (NXP AN130511 [<a href="#resources48">Resources, 48</a>],
-      AN130411 [<a href="#resources49">Resources, 49</a>])</li>
+  <li>MIFARE Classic (NXP MF1S503x [<a href="#resources34">Resources, 34</a>], MF1S703x [<a href="#resources35">Resources, 35</a>])</li>
+  <li>MIFARE Ultralight (NXP MF0ICU1 [<a href="#resources36">Resources, 36</a>], MF0ICU2 [<a href="#resources37">Resources, 37</a>])</li>
+  <li>NDEF on MIFARE Classic (NXP AN130511 [<a href="#resources38">Resources, 38</a>], AN130411 [<a href="#resources39">Resources, 39</a>])</li>
 </ul>
-<p>Note that Android 4.0 includes APIs for these MIFARE types. If a
-device implementation supports MIFARE in the reader/writer role, it:</p>
+<p>Note that Android 2.3.3 includes APIs for these MIFARE types. If a
+device implementation supports MIFARE, it:</p>
 <ul>
   <li>MUST implement the corresponding Android APIs as documented by the
   Android SDK</li>
   <li>MUST report the feature com.nxp.mifare from the
   <code>android.content.pm.PackageManager.hasSystemFeature()</code> method.
-  [<a href="#resources37">Resources, 37</a>] Note that this is not a standard
+  [<a href="#resources27">Resources, 27</a>] Note that this is not a standard
   Android feature, and as such does not appear as a constant on the
   <code>PackageManager</code> class.</li>
   <li>MUST NOT implement the corresponding Android APIs nor report the
@@ -1988,9 +1412,9 @@ device implementation supports MIFARE in the reader/writer role, it:</p>
   described in this section</li>
 </ul>
 <p>If a device implementation does not include NFC hardware, it MUST NOT
-declare the android.hardware.nfc feature from the
+declare the android.hardware.nfc feature from the 
 <code>android.content.pm.PackageManager.hasSystemFeature()</code> method [<a
-href="#resources37">Resources, 37</a>], and MUST implement the Android 4.0 NFC
+href="#resources27">Resources, 27</a>], and MUST implement the Android 2.3 NFC
 API as a no-op.</p>
 <p>As the classes <code>android.nfc.NdefMessage</code> and
 <code>android.nfc.NdefRecord</code> represent a protocol-independent data
@@ -2040,7 +1464,7 @@ implementation includes a front-facing camera, it:</p>
 <ul>
 <li>MUST have a resolution of at least VGA (that is, 640x480 pixels)</li>
 <li>MUST NOT use a front-facing camera as the default for the Camera API.
-That is, the camera API in Android 4.0 has specific support for front-facing
+That is, the camera API in Android 2.3 has specific support for front-facing
 cameras, and device implementations MUST NOT configure the API to to treat a
 front-facing camera as the default rear-facing camera, even if it is the only
 camera on the device.</li>
@@ -2056,14 +1480,15 @@ orientation.</li>
 <li>If the current application has explicitly requested that the Camera
 display be rotated via a call to the
 <code>android.hardware.Camera.setDisplayOrientation()</code> [<a
-href="#resources50">Resources, 50</a>] method, the camera preview MUST be
+href="#resources40">Resources, 40</a>] method, the camera preview MUST be
 mirrored horizontally relative to the orientation specified by the
 application.</li>
 <li>Otherwise, the preview MUST be mirrored along the device's default horizontal axis.</li>
 </ul>
-<li>MUST mirror the image displayed by the postview in the same manner as
-the camera preview image stream. (If the device implementation does not
-support postview, this requirement obviously does not apply.)</li>
+<li>MUST mirror the image data returned to any "postview" camera callback
+handlers, in the same manner as the camera preview image stream. (If the device
+implementation does not support postview callbacks, this requirement obviously
+does not apply.)</li>
 <li>MUST NOT mirror the final captured still image or video streams returned
 to application callbacks or committed to media storage</li>
 </ul>
@@ -2072,22 +1497,25 @@ to application callbacks or committed to media storage</li>
 camera-related APIs, for both front- and rear-facing cameras:</p>
 <ol>
 <li>If an application has never called
-<code>android.hardware.Camera.Parameters.setPreviewFormat(int)</code>, then the
-device MUST use <code>android.hardware.PixelFormat.YCbCr_420_SP</code> for
-preview data provided to application callbacks.</li>
-<li>If an application registers an <code>android.hardware.Camera.PreviewCallback
-</code> instance and the system calls the <code>onPreviewFrame()</code> method
-when the preview format is YCbCr_420_SP, the data in the <code>byte[]</code>
-passed into <code>onPreviewFrame()</code> must further be in the NV21 encoding
-format. That is, NV21 MUST be the default.</li>
-<li>Device implementations MUST support the YV12 format (as denoted by the
+android.hardware.Camera.Parameters.setPreviewFormat(int), then the device MUST
+use android.hardware.PixelFormat.YCbCr_420_SP for preview data provided to
+application callbacks.</li>
+<li>If an application registers an android.hardware.Camera.PreviewCallback
+instance and the system calls the onPreviewFrame() method when the preview
+format is YCbCr_420_SP, the data in the byte[] passed into onPreviewFrame()
+must further be in the NV21 encoding format. That is, NV21 MUST be the default.</li>
+<li>Device implementations SHOULD support the YV12 format (as denoted by the
 <code>android.graphics.ImageFormat.YV12</code> constant) for camera previews
-for both front- and rear-facing cameras.  (The hardware video decoder and camera
-may use any native pixel format, but the device implementation MUST support conversion
-to YV12.)</li>
+for both front- and rear-facing cameras. Note that the Compatibility
+Definition for a future version is planned to change this requirement to
+"MUST". That is, YV12 support is optional in Android 2.3 but <b>will be
+required</b> by a future version. Existing and new devices that run Android
+2.3 are <b>very strongly encouraged to meet this requirement in Android
+2.3</b>, or they will not be able to attain Android compatibility when
+upgraded to the future version.</li>
 </ol>
 <p>Device implementations MUST implement the full Camera API included in the
-Android 4.0 SDK documentation [<a href="#resources51">Resources, 51</a>]),
+Android 2.3 SDK documentation [<a href="#resources41">Resources, 41</a>]),
 regardless of whether the device includes hardware autofocus or other
 capabilities. For instance, cameras that lack autofocus MUST still call any
 registered <code>android.hardware.Camera.AutoFocusCallback</code> instances (even though
@@ -2105,34 +1533,38 @@ those documented as constants on the
 <code>android.hardware.Camera.Parameters</code>.  That is,
 device implementations MUST support all standard Camera parameters if the
 hardware allows, and MUST NOT support custom Camera parameter types.</p>
-<p>Device implementations MUST broadcast the <code>Camera.ACTION_NEW_PICTURE</code>
-intent whenever a new picture is taken by the camera and the entry of the picture
-has been added to the media store.</p>
-<p>Device implementations MUST broadcast the <code>Camera.ACTION_NEW_VIDEO</code>
-intent whenever a new video is recorded by the camera and the entry of the picture
-has been added to the media store.</p>
 <a name="section-7.5.4"></a><h4>7.5.4. Camera Orientation</h4>
 <p>Both front- and rear-facing cameras, if present, MUST be oriented so that
 the long dimension of the camera aligns with the screen's long dimention. That
-is, when the device is held in the landscape orientation, cameras MUST
+is, when the device is held in the landscape orientation, a cameras MUST
 capture images in the landscape orientation. This applies regardless of the
 device's natural orientation; that is, it applies to landscape-primary devices
 as well as portrait-primary devices.</p>
 
 
 <a name="section-7.6"></a><h3>7.6. Memory and Storage</h3>
+<p>The fundamental function of Android 2.3 is to run applications. Device
+implementations MUST the requirements of this section, to ensure adequate
+storage and memory for applications to run properly.</p>
 <a name="section-7.6.1"></a><h4>7.6.1. Minimum Memory and Storage</h4>
-<p>Device implementations MUST have at least 340MB of memory available to the
-kernel and userspace. The 340MB MUST be in addition to any memory dedicated to
-hardware components such as radio, video, and so on that is not under the
+<p>Device implementations MUST have at least 128MB of memory available to the
+kernel and userspace. The 128MB MUST be in addition to any memory dedicated to
+hardware components such as radio, memory, and so on that is not under the
 kernel's control.</p>
-<p>Device implementations MUST have at least 350MB of non-volatile storage
-available for application private data. That is, the <code>/data</code> partition MUST be at
-least 350MB.</p>
+<p>Device implementations MUST have at least 150MB of non-volatile storage
+available for user data. That is, the <code>/data</code> partition MUST be at
+least 150MB.</p>
+<p>Beyond the requirements above, device implementations SHOULD have at least
+1GB of non-volatile storage available for user data. Note that this higher
+requirement is planned to become a hard minimum in a future version of
+Android. Device implementations are strongly encouraged to meet these
+requirements now, or else they may not be eligible for compatibility for a
+future version of Android.</p>
 <p>The Android APIs include a Download Manager that applications may use to
-download data files [<a href="#resources56">Resources, 56</a>]. The device
-implementation of the Download Manager MUST be capable of downloading individual
-files of at least 100MB in size to the default "cache" location.</p>
+download data files. The Download Manager implementation MUST be capable of
+downloading individual files 55MB in size, or larger. The Download Manager
+implementation SHOULD be capable of downloading files 100MB in size, or
+larger.</p>
 <a name="section-7.6.2"></a><h4>7.6.2. Application Shared Storage</h4>
 <p>Device implementations MUST offer shared storage for applications. The
 shared storage provided MUST be at least 1GB in size.</p>
@@ -2149,18 +1581,7 @@ storage, such as a Secure Digital card. Alternatively, device implementations
 MAY allocate internal (non-removable) storage as shared storage for apps.</p>
 <p>Regardless of the form of shared storage used, device implementations MUST
 provide some mechanism to access the contents of shared storage from a host
-computer, such as USB mass storage (UMS) or Media Transfer Protocol (MTP). Device
-implementations MAY use USB mass storage, but SHOULD use Media Transfer
-Protocol. If the device implementation supports Media Transfer Protocol:</p>
-<ul>
-<li>The device implementation SHOULD be compatible with the reference Android
-MTP host, Android File Transfer [<a href="#resources57">Resources, 57</a>].</li>
-<li>The device implementation SHOULD report a USB device class of <code>0x00</code>.</li>
-<li>The device implementation SHOULD report a USB interface name of 'MTP'.</li>
-</ul>
-<p>If the device implementation lacks USB ports, it MUST provide a host
-computer with access to the contents of shared storage by some other means,
-such as a network file system.</p>
+computer, such as USB mass storage or Media Transfer Protocol.</p>
 <p>It is illustrative to consider two common examples. If a device
 implementation includes an SD card slot to satisfy the shared storage
 requirement, a FAT-formatted SD card 1GB in size or larger MUST be included
@@ -2175,37 +1596,27 @@ applications such as the media scanner and ContentProvider to transparently
 support files placed in both locations.</p>
 
 <a name="section-7.7"></a><h3>7.7. USB</h3>
-<p>Device implementations SHOULD include a USB client port, and SHOULD include
-a USB host port.</p>
-<p>If a device implementation includes a USB client port:</p>
+<p>Device implementations:</p>
 <ul>
-<li>the port MUST be connectable to a USB host with a standard USB-A port</li>
-<li>the port SHOULD use the micro USB form factor on the device side</li>
-<li>it MUST allow a host connected to the device to access the contents of the
-shared storage volume using either USB mass storage or Media Transfer
-Protocol</li>
-<li>it MUST implement the Android Open Accessory API and specification as documented
-in the Android SDK documentation, and MUST declare support for the hardware
-feature <code>android.hardware.usb.accessory</code> [<a href="#resources52">Resources,
-51</a>]</li>
+<li>MUST implement a USB client, connectable to a USB host with a standard
+USB-A port</li>
+<li>MUST implement the Android Debug Bridge over USB (as described in Section
+7)</li>
+<li>MUST implement the USB mass storage specification, to allow a host
+connected to the device to access the contents of the /sdcard volume </li>
+<li>SHOULD use the micro USB form factor on the device side</li>
+<li>MAY include a non-standard port on the device side, but if so MUST ship
+with a cable capable of connecting the custom pinout to standard USB-A
+port</li>
 </ul>
 
-<p>If a device implementation includes a USB host port:</p>
-<ul>
-<li>it MAY use a non-standard port form factor, but if so MUST ship with a
-cable or cables adapting the port to standard USB-A</li>
-<li>it MUST implement the Android USB host API as documented in the Android
-SDK, and MUST declare support for the hardware feature
-<code>android.hardware.usb.host</code> [<a href="#resources53">Resources,
-52</a>]</li>
-</ul>
-<p>Device implementations MUST implement the Android Debug Bridge. If a device
-implementation omits a USB client port, it MUST implement the Android Debug
-Bridge via local-area network (such as Ethernet or 802.11)</p>
 
 <a name="section-8"></a><h2>8. Performance Compatibility</h2>
-<p>Device implementations MUST meet the key performance metrics of an Android
-4.0 compatible device defined in the table below:</p>
+<p>Compatible implementations must ensure not only that applications simply
+run correctly on the device, but that they do so with reasonable performance
+and overall good user experience.  Device implementations MUST meet the key
+performance metrics of an Android 2.3 compatible device defined in the table
+below:</p>
 <table><tbody><tr>
 <td><b>Metric</b></td>
 <td><b>Performance Threshold</b></td>
@@ -2215,8 +1626,8 @@ Bridge via local-area network (such as Ethernet or 802.11)</p>
 <td>Application Launch Time</td>
 <td>The following applications should launch within the specified time.<ul>
 <li>Browser: less than 1300ms</li>
-<li>Contacts: less than 700ms</li>
-<li>Settings: less than 700ms</li>
+<li>MMS/SMS: less than 700ms</li>
+<li>AlarmClock: less than 650ms</li>
 </ul></td>
 <td>The launch time is measured as the total time to
 complete loading the default activity for the application, including the time
@@ -2236,7 +1647,7 @@ original launch time.</td>
 <a name="section-9"></a><h2>9. Security Model Compatibility</h2>
 <p>Device implementations MUST implement a security model consistent with the
 Android platform security model as defined in Security and Permissions
-reference document in the APIs [<a href="#resources54">Resources, 54</a>] in the
+reference document in the APIs [<a href="#resources42">Resources, 42</a>] in the
 Android developer documentation. Device implementations MUST support
 installation of self-signed applications without requiring any additional
 permissions/certificates from any third parties/authorities.  Specifically,
@@ -2245,7 +1656,7 @@ follow sub-sections.</p>
 <a name="section-9.1"></a><h3>9.1. Permissions</h3>
 <p>Device implementations MUST support the Android permissions model as
 defined in the Android developer documentation [<a
-href="#resources54">Resources, 54</a>]. Specifically,
+href="#resources42">Resources, 42</a>]. Specifically,
 implementations MUST enforce each permission defined as described in the SDK
 documentation; no permissions may be omitted, altered, or ignored.
 Implementations MAY add additional permissions, provided the new permission ID
@@ -2256,11 +1667,11 @@ in which each application runs as a unique Unix-style UID and in a separate
 process.  Device implementations MUST support running multiple applications as
 the same Linux user ID, provided that the applications are properly signed and
 constructed, as defined in the Security and Permissions reference [<a
-href="#resources54">Resources, 54</a>].</p>
+href="#resources42">Resources, 42</a>].</p>
 <a name="section-9.3"></a><h3>9.3. Filesystem Permissions</h3>
 <p>Device implementations MUST support the Android file access permissions
 model as defined in as defined in the Security and Permissions reference [<a
-href="#resources54">Resources, 54</a>].</p>
+href="#resources42">Resources, 42</a>].</p>
 <a name="section-9.4"></a><h3>9.4. Alternate Execution Environments</h3>
 <p>Device implementations MAY include runtime environments that execute
 applications using some other software or technology than the Dalvik virtual
@@ -2304,11 +1715,13 @@ applications, as described in this section.</p>
    using that runtime.</p>
 
 <a name="section-10"></a><h2>10. Software Compatibility Testing</h2>
-<p>Device implementations MUST pass all tests described in this section.</p>
+<p>The Android Open-Source Project includes various testing tools to verify
+that device implementations are compatible. Device implementations MUST pass
+all tests described in this section.</p>
 <p>However, note that no software test package is fully comprehensive. For
 this reason, device implementers are very strongly encouraged to make the
 minimum number of changes as possible to the reference and preferred
-implementation of Android 4.0 available from the Android Open Source Project.
+implementation of Android 2.3 available from the Android Open-Source Project.
 This will minimize the risk of introducing bugs that create incompatibilities
 requiring rework and potential device updates.</p>
 <a name="section-10.1"></a><h3>10.1. Compatibility Test Suite</h3>
@@ -2322,8 +1735,13 @@ source code.</p>
 <p>The CTS is designed to be run on an actual device. Like any software, the
 CTS may itself contain bugs.  The CTS will be versioned independently of this
 Compatibility Definition, and multiple revisions of the CTS may be released
-for Android 4.0. Device implementations MUST pass the latest CTS version
+for Android 2.3. Device implementations MUST pass the latest CTS version
 available at the time the device software is completed.</p>
+<p>MUST pass the most recent version of the Android Compatibility Test Suite
+(CTS) available at the time of the device implementation's software is
+completed. (The CTS is available as part of the Android Open Source Project [<a
+href="#resources02">Resources, 2</a>].) The CTS tests many, but not all, of the
+components outlined in this document.</p>
 <a name="section-10.2"></a><h3>10.2. CTS Verifier</h3>
 <p>Device implementations MUST correctly execute all applicable cases in the
 CTS Verifier. The CTS Verifier is included with the Compatibility Test Suite,
@@ -2344,10 +1762,11 @@ implementation that has passed the CTS Verfier only by the set of included
 locales, branding, etc. MAY omit the CTS Verifier test.</p>
 <a name="section-10.3"></a><h3>10.3. Reference Applications</h3>
 <p>Device implementers MUST test implementation compatibility using the
-following open source applications:</p>
+following open-source applications:</p>
 <ul>
-<li>The "Apps for Android" applications [<a href="#resources55">Resources, 55</a>].</li>
-<li>Replica Island (available in Android Market)</li>
+<li>The "Apps for Android" applications [<a href="#resources43">Resources, 43</a>].</li>
+<li>Replica Island (available in Android Market; only required for device
+    implementations that support with OpenGL ES 2.0)</li>
 </ul>
 <p>Each app above MUST launch and behave correctly on the implementation, for
 the implementation to be considered compatible.</p>
@@ -2355,7 +1774,7 @@ the implementation to be considered compatible.</p>
 
 <a name="section-11"></a><h2>11. Updatable Software</h2>
 <p>Device implementations MUST include a mechanism to replace the entirety of
-the system software. The mechanism need not perform "live" upgrades - that
+the system software. The mechanism need not perform "live" upgrades -- that
 is, a device restart MAY be required.</p>
 <p>Any method can be used, provided that it can replace the entirety of the
 software preinstalled on the device. For instance, any of the following
@@ -2367,9 +1786,8 @@ approaches will satisfy this requirement:</p>
 storage</li>
 </ul>
 <p>The update mechanism used MUST support updates without wiping user data.
-That is, the update mechanism MUST preserve application private data
-and application shared data. Note that the upstream Android software includes
-an update mechanism that satisfies this requirement.</p>
+Note that the upstream Android software includes an update mechanism that
+satisfies this requirement.</p>
 <p>If an error is found in a device implementation after it has been released
 but within its reasonable product lifetime that is determined in consultation
 with the Android Compatibility Team to affect the compatibility of third-party
@@ -2391,11 +1809,11 @@ protocol between devices, it cannot be fully tested by unit tests running on a
 single device. Consequently, device implementations MUST also pass the
 human-operated Bluetooth test procedure described below.</p>
 <p>The test procedure is based on the BluetoothChat sample app included in the
-Android open source project tree. The procedure requires two devices:</p>
+Android open-source project tree. The procedure requires two devices:</p>
 <ul>
 <li>a candidate device implementation running the software build to be tested</li>
 <li>a separate device implementation already known to be compatible, and of a
-    model from the device implementation being tested - that is, a "known
+    model from the device implementation being tested -- that is, a "known
     good" device implementation</li>
 </ul>
 <p>The test procedure below refers to these devices as the "candidate" and "known
@@ -2439,9 +1857,7 @@ the objective is to verify that the Bluetooth API and stack works correctly
 both when Activities are explicitly terminated (via the user pressing Back,
 which calls finish()), and implicitly sent to background (via the user
 pressing Home.) Each test sequence MUST be performed as described.</p>
-
-<div id="footerContent" xmlns:pdf="http://whatever">
-<pdf:pagenumber/>
+<div id="footerContent">
 </div>
 </body>
 </html>
