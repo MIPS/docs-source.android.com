@@ -157,15 +157,9 @@ number of tools including Memcheck for detecting memory-related errors in C and
 C++.</p>
 
 <ol>
-  <li>To install Valgrind, run:
+  <li>To build Valgrind, run:
 <pre>
 $ mmma -j6 external/valgrind
-</pre>
-  <li>Push Valgrind to the device:
-    <br>
-<pre>
-$ adb remount
-$ adb sync
 </pre>
   <li>Set up the temporary directory:
 <pre>
@@ -174,7 +168,6 @@ $ adb shell chmod 777 /data/local/tmp
 </pre>
   <li>Run the system server with Valgrind:
 <pre>
-$ adb root
 $ adb shell setprop wrap.system_server "logwrapper valgrind"
 $ adb shell stop && adb shell start
 </pre>
