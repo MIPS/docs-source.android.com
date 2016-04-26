@@ -159,7 +159,7 @@ C++.</p>
 <ol>
   <li>To install Valgrind, run:
 <pre>
-$ mmm -j6 external/valgrind
+$ mmma -j6 external/valgrind
 </pre>
   <li>Push Valgrind to the device:
     <br>
