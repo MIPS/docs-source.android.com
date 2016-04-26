@@ -27,9 +27,93 @@ incorporated via reference.
 </p>
 
 <p>
-You may view the CDD either as an HTML web page or an easily downloadable PDF:
+You may view the latest CDD either as an HTML web page or an easily downloadable PDF:
 </p>
   <ul>
-    <li><a href="android-cdd.html">HTML</li>
-    <li><a href="android-cdd.pdf">PDF</li>
+    <li><a href="android-cdd.html">HTML</a></li>
+    <li><a href="android-cdd.pdf">PDF</a></li>
   </ul>
+
+<p>Find older versions of the CDD and approved release version strings here:</p>
+
+<table>
+  <tr>
+    <th>Version</th>
+    <th>PDF</th>
+    <th>HTML/XHTML</th>
+    <th>Strings</th>
+  </tr>
+  <tr>
+    <td>6.0</td>
+    <td><a href="6.0/android-6.0-cdd.pdf">android-6.0-cdd.pdf</a> (archived copy of current)</td>
+    <td><a href="6.0/android-6.0-cdd.html">android-6.0-cdd.html</a> (archived copy of current)</td>
+    <td><a href="6.0/versions.html">Version 6.0</a></td>
+  </tr>
+  <tr>
+    <td>5.1</td>
+    <td><a href="5.1/android-5.1-cdd.pdf">android-5.1.cdd.pdf</a></td>
+    <td><a href="5.1/android-5.1-cdd.html">android-5.1-cdd.html</a></td>
+    <td><a href="5.1/versions.html">Version 5.1</a></td>
+  </tr>
+  <tr>
+    <td>5.0</td>
+    <td><a href="5.0/android-5.0-cdd.pdf">android-5.0.cdd.pdf</a></td>
+    <td><a href="5.0/android-5.0-cdd.html">android-5.0-cdd.html</a></td>
+    <td><a href="5.0/versions.html">Version 5.0</a></td>
+  </tr>
+  <tr>
+    <td>4.4</td>
+    <td><a href="4.4/android-4.4-cdd.pdf">android-4.4.cdd.pdf</a></td>
+    <td><a href="4.4/android-4.4-cdd.xhtml">android-4.4-cdd.xhtml</a></td>
+    <td><a href="4.4/versions.html">Version 4.4</a></td>
+  </tr>
+  <tr>
+    <td>4.3</td>
+    <td><a href="4.3/android-4.3-cdd.pdf">android-4.3.cdd.pdf</a></td>
+    <td><a href="4.3/android-4.3-cdd.xhtml">android-4.3-cdd.xhtml</a></td>
+    <td><a href="4.3/versions.html">Version 4.3</a></td>
+  </tr>
+  <tr>
+    <td>4.2</td>
+    <td><a href="4.2/android-4.2-cdd.pdf">android-4.2.cdd.pdf</a></td>
+    <td><a href="4.2/android-4.2-cdd.xhtml">android-4.2-cdd.xhtml</a></td>
+    <td><a href="4.2/versions.html">Version 4.2</a></td>
+  </tr>
+  <tr>
+    <td>4.1</td>
+    <td><a href="4.1/android-4.1-cdd.pdf">android-4.1.cdd.pdf</a></td>
+    <td><a href="4.1/android-4.1-cdd.html">android-4.1-cdd.html</a></td>
+    <td><a href="4.1/versions.html">Version 4.1</a></td>
+  </tr>
+  <tr>
+    <td>4.0</td>
+    <td><a href="4.0/android-4.0-cdd.pdf">android-4.0.cdd.pdf</a></td>
+    <td><a href="4.0/android-4.0-cdd.xhtml">android-4.0-cdd.xhtml</a></td>
+    <td><a href="4.0/versions.html">Version 4.0</a></td>
+  </tr>
+  <tr>
+    <td>2.3</td>
+    <td><a href="2.3/android-2.3-cdd.pdf">android-2.3.cdd.pdf</a><br/>
+    <a href="2.3/android-2.3.3-cdd.pdf">android-2.3.3-cdd.pdf</a></td>
+    <td><a href="2.3/android-2.3-cdd.html">android-2.3-cdd.html</a></td>
+    <td><a href="2.3/versions.html">Version 2.3</a></td>
+  </tr>
+  <tr>
+    <td>2.2</td>
+    <td><a href="2.2/android-2.2-cdd.pdf">android-2.2.cdd.pdf</a></td>
+    <td><a href="2.2/android-2.2-cdd.xhtml">android-2.2-cdd.xhtml</a></td>
+    <td><a href="2.2/versions.html">Version 2.2</a></td>
+  </tr>
+  <tr>
+    <td>2.1</td>
+    <td><a href="2.1/android-2.1-cdd.pdf">android-2.1.cdd.pdf</a></td>
+    <td><a href="2.1/android-2.1-cdd.xhtml">android-2.1-cdd.xhtml</a></td>
+    <td><a href="2.1/versions.html">Version 2.1</a></td>
+  </tr>
+  <tr>
+    <td>1.6</td>
+    <td><a href="1.6/android-1.6-cdd.pdf">android-1.6.cdd.pdf</a></td>
+    <td><a href="1.6/android-1.6-cdd.html">android-1.6-cdd.html</a></td
+    <td></td>
+  </tr>
+</table>
