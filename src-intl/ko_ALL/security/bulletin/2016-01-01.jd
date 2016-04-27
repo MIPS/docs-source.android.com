@@ -125,7 +125,8 @@ Android 오픈소스 프로젝트(AOSP) 저장소에 배포되었습니다.
       Trustzone의 권한 승격 취약성
      </td>
      <td>
-      CVE-2015-6639
+      CVE-2015-6639<br />
+      CVE-2015-6647
      </td>
      <td>
       심각
@@ -265,7 +266,7 @@ Google Play 외부에서 애플리케이션을 설치하는 사용자를 보호�
   </p>
   <ul>
    <li>
-    Chrome 보안팀의 Abhishek Arya, Oliver Chang, Martin Barbella: CVE-2015-6636, CVE-2015-6617
+    Chrome 보안팀의 Abhishek Arya, Oliver Chang, Martin Barbella: CVE-2015-6636
    </li>
    <li>
     KEEN lab, Tencent(
