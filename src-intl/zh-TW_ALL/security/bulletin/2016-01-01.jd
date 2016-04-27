@@ -122,7 +122,8 @@ page.title=Nexus 安全性公告 - 2016 年 1 月
       Trustzone 中的權限升級漏洞
      </td>
      <td>
-      CVE-2015-6639
+      CVE-2015-6639<br />
+      CVE-2015-6647
      </td>
      <td>
       最高
@@ -263,7 +264,7 @@ page.title=Nexus 安全性公告 - 2016 年 1 月
   <ul>
    <li>
     Google Chrome 安全性小組的 Abhishek Arya、Oliver Chang 和 Martin Barbella：
-CVE-2015-6636、CVE-2015-6617
+CVE-2015-6636
    </li>
    <li>
     騰訊 (
