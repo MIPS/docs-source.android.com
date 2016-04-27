@@ -114,7 +114,8 @@ page.title=Nexus 安全公告 - 2016 年 1 月
       TrustZone 中的提权漏洞
      </td>
      <td>
-      CVE-2015-6639
+      CVE-2015-6639<br />
+      CVE-2015-6647
      </td>
      <td>
       严重
@@ -241,7 +242,7 @@ page.title=Nexus 安全公告 - 2016 年 1 月
   </p>
   <ul>
    <li>
-    Google Chrome 安全团队的 Abhishek Arya、Oliver Chang 和 Martin Barbella：CVE-2015-6636、CVE-2015-6617
+    Google Chrome 安全团队的 Abhishek Arya、Oliver Chang 和 Martin Barbella：CVE-2015-6636
    </li>
    <li>
     腾讯 KEEN 实验室 (
