@@ -2,7 +2,7 @@ page.title=Establishing a Build Environment
 @jd:body
 
 <!--
-    Copyright 2015 The Android Open Source Project
+    Copyright 2016 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -71,30 +71,30 @@ with Ubuntu 14.04. <em>Newer package versions (e.g. those for 15.10, 16.04) were
 found not to work on 14.04 using the instructions below.</em></p>
 <ol>
 <li>
-<p>Download the <code>.deb</code> packages for your architecture from
-<a
-href="http://archive.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/">http://archive.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/</a>:</p>
+<p>Download the <code>.deb</code> packages for 64-bit architecture from
+<a href="http://archive.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/">archive.ubuntu.com</a>:</p>
 <ul>
-<li>openjdk-8-jre-headless</li>
-<li>openjdk-8-jre</li>
-<li>openjdk-8-jdk</li>
+<li><a
+href="http://archive.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jre-headless_8u45-b14-1_amd64.deb">openjdk-8-jre-headless_8u45-b14-1_amd64.deb</a>
+with SHA256 <code>0f5aba8db39088283b51e00054813063173a4d8809f70033976f83e214ab56c0</code></li>
+<li><a
+href="http://archive.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jre_8u45-b14-1_amd64.deb">openjdk-8-jre_8u45-b14-1_amd64.deb</a>
+with SHA256 <code>9ef76c4562d39432b69baf6c18f199707c5c56a5b4566847df908b7d74e15849</code></li>
+<li><a
+href="http://archive.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk_8u45-b14-1_amd64.deb">openjdk-8-jdk_8u45-b14-1_amd64.deb</a>
+with SHA256 <code>6e47215cf6205aa829e6a0a64985075bd29d1f428a4006a80c9db371c2fc3c4c</code></li>
 </ul>
-<p>Remember, you may obtain the architecture for your machine with:</p>
-<code>$ uname -m</code>
-<p>With <code>x86_64</code> representing a 64-bit (amd64) Linux kernel architecture and
-<code>i386/i486/i586/i686</code> representing a 32-bit (i386) system.</p>
 </li>
 <li>
-<p>Optionally, confirm the checksums of the downloaded files using the information
-found on <a href="http://packages.ubuntu.com/"
->http://packages.ubuntu.com</a>.</p>
-<p>For example with the sha256sum tool:</p>
-<pre><code>$ sha256sum {package file}</code></pre>
+<p>Optionally, confirm the checksums of the downloaded files against the SHA256
+string listed with each package above.</p>
+<p>For example, with the <code>sha256sum</code> tool:</p>
+<pre><code>$ sha256sum {downloaded.deb file}</code></pre>
 </li>
 <li>
 <p>Install the packages:</p>
 <pre><code>$ sudo apt-get update</pre></code>
-<p>Run dpkg for each of the .deb files you downloaded. It may produce errors due to
+<p>Run <code>dpkg</code> for each of the .deb files you downloaded. It may produce errors due to
 missing dependencies:</p>
 <pre><code>$ sudo dpkg -i {downloaded.deb file}</pre></code>
 <p>To fix missing dependencies:</p>
