@@ -113,7 +113,8 @@ page.title=Nexus のセキュリティに関する公開情報 - 2016 年 1 月
       TrustZone での権限昇格の脆弱性
      </td>
      <td>
-      CVE-2015-6639
+      CVE-2015-6639<br />
+      CVE-2015-6647
      </td>
      <td>
       重大
@@ -240,7 +241,7 @@ page.title=Nexus のセキュリティに関する公開情報 - 2016 年 1 月
   </p>
   <ul>
    <li>
-    Google Chrome セキュリティ チームの Abhishek Arya、Oliver Chang、Martin Barbella: CVE-2015-6636、CVE-2015-6617
+    Google Chrome セキュリティ チームの Abhishek Arya、Oliver Chang、Martin Barbella: CVE-2015-6636
    </li>
    <li>
     Tencent KEEN lab（
