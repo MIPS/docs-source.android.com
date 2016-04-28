@@ -162,10 +162,8 @@ pass media to processes such as mediaserver.
        of <a href="http://c0reteam.org">C0RE Team</a>, <a
        href="http://www.360safe.com/">Qihoo 360</a>: CVE-2016-0804
   <li> David Riley of the Google Pixel C Team: CVE-2016-0812
-  <li> Dongkwan Kim (<a href="mailto:dkay@kaist.ac.kr">dkay@kaist.ac.kr</a>) of System Security Lab, KAIST: CVE-2015-6614
   <li> Gengjia Chen (<a href="https://twitter.com/@chengjia4574">@chengjia4574</a>)
        of Lab IceSword, Qihoo 360: CVE-2016-0805
-  <li> Hongil Kim (<a href="mailto:hongilk@kaist.ac.kr">hongilk@kaist.ac.kr</a>) of System Security Lab, KAIST: CVE-2015-6614
   <li> Qidan He (<a href="https://twitter.com/@Flanker_hqd">@Flanker_hqd</a>) of
        KeenLab (<a href="https://twitter.com/keen_lab">@keen_lab</a>), Tencent: CVE-2016-0811
   <li> Seven Shen (<a href="https://twitter.com/@lingtongshen">@lingtongshen</a>)
