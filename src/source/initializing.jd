@@ -55,8 +55,10 @@ OS below.</p>
 <h3 id="installing-the-jdk">Installing the JDK</h3>
 <p>The <code>master</code> branch of Android in the <a
 href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
-requires Java 8. On Ubuntu, use <a href="http://openjdk.java.net/install/">OpenJDK</a>.</p>
-<p>Java 8: For the latest version of Android</p>
+requires Java 8. On Ubuntu, use <a
+href="http://openjdk.java.net/install/">OpenJDK</a>.</p>
+<p>See  <a href="requirements.html#jdk">JDK Requirements</a> for older
+versions.</p>
 
 <h4 id="for-ubuntu-15-04">For Ubuntu &gt;= 15.04</h4>
 <p>Run the following:</p>
@@ -112,12 +114,6 @@ $ sudo update-alternatives --config javac
 <p>If, during a build, you encounter version errors for Java, set its
 path as described in the <a href="building.html#wrong-java-version">Wrong
 Java Version</a> section.</p>
-
-<p>To develop older versions of Android, download and install the corresponding version of the <a
-href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">Java JDK</a>:<br/>
-Java 7: for Lollipop through Marshmallow<br/>
-Java 6: for Gingerbread through KitKat<br/>
-Java 5: for Cupcake through Froyo</p>
 
 <h3 id="installing-required-packages-ubuntu-1404">Installing required packages (Ubuntu 14.04)</h3>
 <p>You will need a 64-bit version of Ubuntu. Ubuntu 14.04 is recommended.</p>
