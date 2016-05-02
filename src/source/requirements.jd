@@ -101,8 +101,7 @@ page.title=Requirements
     href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html#jdk-8u45-oth-JPR">jdk
     8u45 or newer</a></li>
     <li>Android 5.x (Lollipop) - Android 6.0 (Marshmallow): Ubuntu - <a
-    href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">Java
-    JDK 7</a>, Mac OS - <a
+    href="http://openjdk.java.net/install/">OpenJDK 7</a>, Mac OS - <a
     href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jdk-7u71-oth-JPR">jdk-7u71-macosx-x64.dmg</a></li>
     <li>Android 2.3.x (Gingerbread) - Android 4.4.x (KitKat): Ubuntu - <a
     href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">Java JDK 6</a>, Mac OS - <a

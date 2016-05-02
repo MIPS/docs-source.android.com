@@ -136,7 +136,7 @@ Please follow the machine setup instructions at
 <p>This may be caused by:</p>
 <ul>
 <li>
-<p>Failing to install the correct JDK as specified in <a href="initializing.html">Initializing the Build Environment</a>.</p>
+<p>Failing to install the correct JDK as specified in <a href="requirements.html#jdk">JDK Requirements</a>.</p>
 </li>
 <li>
 <p>Another JDK previously installed appearing in your path. Prepend the correct JDK to the beginning of your PATH or remove the problematic JDK.</p>
