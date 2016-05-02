@@ -27,7 +27,7 @@ page.title=Compatibility Test Suite
 <h2 id="how-does-the-cts-work">How does the CTS work?</h2>
 
 <p>The Compatibility Test Suite (CTS) is a free, commercial-grade test suite,
-available for <a href="../downloads.html">download</a>.  The CTS represents the
+available for <a href="downloads.html">download</a>.  The CTS represents the
 "mechanism" of compatibility.</p>
 
 <p>The CTS runs on a desktop machine and executes test cases directly on
@@ -51,7 +51,7 @@ Android .apk files to run on the actual device target.</p>
 </ul>
 
 <p>The Compatibility Test Suite Verifier (CTS Verifier) is a supplement to the
-CTS available for <a href="../downloads.html">download</a>. CTS Verifier
+CTS available for <a href="downloads.html">download</a>. CTS Verifier
 provides tests for APIs and functions that cannot be tested on a stationary
 device without manual input (e.g. audio quality, accelerometer, etc).</p>
 
