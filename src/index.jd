@@ -41,6 +41,23 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}compatibility/cdd.html">
+        <h4>CDD as Web Page, Older Versions Available</h4></a>
+        <p>The Android Compatibility Definition Document (CDD) is now published
+        as a <strong><a href="{@docRoot}compatibility/android-cdd.html">web
+        page</a></strong> for easy access, and all older versions of the CDD and
+        associated version strings are now listed on a central <strong><a
+        href="{@docRoot}compatibility/cdd.html">Compatibility Definition Document</a>
+        </strong> page.</p>
+
+<a href="{@docRoot}compatibility/cts/camera-hal.html">
+        <h4>Camera HAL Testing Checklist</h4></a>
+        <p>A new <strong><a
+        href="{@docRoot}compatibility/cts/camera-hal.html">Camera HAL Testing
+        Checklist</a></strong> describes all of the tests available for the Camera
+        hardware abstraction layer, including native, the Compatibility Test Suite
+        (CTS), manual tests, and the Image Test Suite (ITS).</p>
+
 <a href="{@docRoot}security/overview/updates-resources.html#reports">
         <h4>Android Security 2015 Year in Review</h4></a>
         <p>The Android Security team has published its <strong><a
@@ -70,25 +87,6 @@ devices meet compatibility requirements.
         <p>A new version of the media files required for Android Compatibility Test
         Suite (CTS) media stress tests is now available for <strong><a
         href="{@docRoot}compatibility/downloads.html#cts-media-files">download</a></strong>.</p>
-
-<a href="{@docRoot}security/advisory/index.html">
-        <h4>Android Security Advisories</h4></a>
-        <p>The Android security team has released its <strong><a
-        href="{@docRoot}security/advisory/2016-03-18.html">first advisory</a></strong>,
-        a supplement to Nexus Security Bulletins that may not require security patches
-        or Nexus device updates but could still affect an Android user's overall
-        security.</p>
-
-<a href="{@docRoot}source/requirements.html">
-        <h4>Requirements Expanded, Build Environment Simplified</h4></a>
-        <p>The Android build <strong><a
-        href="{@docRoot}source/requirements.html">Requirements</a></strong>
-        have been expanded to include both the operating system and Java version needed for
-        each Android version and also broken down into hardware and software
-        requirements. Conversely, these same requirements have been removed from
-        <strong><a href="{@docRoot}source/initializing.html">Establishing a Build
-        Environment</a></strong> to separate those reference materials from the steps
-        needed to set up your workstation.</p>
     </div>
 
     <div class="col-8">
