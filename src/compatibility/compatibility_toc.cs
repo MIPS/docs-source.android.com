@@ -57,9 +57,9 @@
           </li>
           <li><a href="<?cs var:toroot ?>compatibility/cts/interpret.html">Interpret Results</a></li>
           <li><a href="<?cs var:toroot ?>compatibility/cts/development.html">Develop CTS</a></li>
+          <li><a href="<?cs var:toroot ?>compatibility/cts/downloads.html">Downloads</a></li>
         </ul>
       </li>
-      <li><a href="<?cs var:toroot ?>compatibility/downloads.html">Downloads</a></li>
       <li><a href="<?cs var:toroot ?>compatibility/contact-us.html">Contact Us</a></li>
     </ul>
 <!-- End Compatibility -->

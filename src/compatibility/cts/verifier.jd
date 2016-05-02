@@ -42,7 +42,7 @@ page.title=Using CTS Verifier
 <ul>
   <li>Install the <a href="http://developer.android.com/sdk/index.html">Android
 SDK</a> on the Linux computer <li>Download the appropriate <a
-href="{@docRoot}compatibility/downloads.html">CTS Verifier.apk</a> for the
+href="downloads.html">CTS Verifier.apk</a> for the
 version of Android under test.
   <li>Install CTS Verifier.apk to the <em>Device Under Test</em> (DUT). <br>
     <code>adb install -r -g CtsVerifier.apk</code>
