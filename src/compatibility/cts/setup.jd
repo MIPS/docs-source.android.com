@@ -82,12 +82,12 @@ href="{@docRoot}source/requirements.html#jdk">JDK requirements</a>.</p>
 
 <h3 id=CTS_files>CTS files</h3>
 
-<p><a href="{@docRoot}compatibility/downloads.html">Download</a> and open the CTS
+<p><a href="downloads.html">Download</a> and open the CTS
 packages matching your devices' Android version and all the Application Binary
 Interfaces (ABIs) your devices support.</p>
 
 <p>Download and open the latest version of the <a
-href="{@docRoot}compatibility/downloads.html#cts-media-files">CTS Media
+href="downloads.html#cts-media-files">CTS Media
 Files</a>.</p>
 
 <h3 id=system_detect>Device detection</h3>

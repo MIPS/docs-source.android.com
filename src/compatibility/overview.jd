@@ -70,7 +70,7 @@ compatible.</p>
 <p><em>Minimize costs and overhead associated with compatibility.</em>
     Ensuring compatibility should be easy and inexpensive to
 device manufacturers. The testing tool is free, open source, and
-available for <a href="downloads.html">download</a>.
+available for <a href="cts/downloads.html">download</a>.
 It is designed to be used for continuous self-testing
 during the device development process to eliminate the cost of changing your
 workflow or sending your device to a third party for testing. Meanwhile, there
