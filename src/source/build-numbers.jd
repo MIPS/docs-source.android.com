@@ -176,12 +176,44 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <p><a href="https://developers.google.com/android/nexus/drivers">https://developers.google.com/android/nexus/drivers</a></p>
 <table>
   <thead>
-<tr>
-  <th>Build</th>
-<th>Branch</th>
-<th>Version</th>
-<th>Supported devices</th>
-</tr>
+    <tr>
+      <th>Build</th>
+      <th>Branch</th>
+      <th>Version</th>
+      <th>Supported devices</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MOB30J</td>
+      <td>android-6.0.1_r43</td>
+      <td>Marshmallow</td>
+      <td>Nexus 7 (flo/deb)</td>
+    </tr>
+    <tr>
+      <td>MOB30I</td>
+      <td>android-6.0.1_r42</td>
+      <td>Marshmallow</td>
+      <td>Nexus 6</td>
+    </tr>
+    <tr>
+      <td>MOB30H</td>
+      <td>android-6.0.1_r41</td>
+      <td>Marshmallow</td>
+      <td>Nexus 5</td>
+    </tr>
+    <tr>
+      <td>MOB30G</td>
+      <td>android-6.0.1_r40</td>
+      <td>Marshmallow</td>
+      <td>Nexus 9 (volantis/volantisg), Nexus Player</td>
+    </tr>
+    <tr>
+      <td>MTC19T</td>
+      <td>android-6.0.1_r25</td>
+      <td>Marshmallow</td>
+      <td>Nexus 5X, Nexus 6P</td>
+    </tr>
 <tr>
   <td>M5C14J</td>
   <td>android-6.0.1_r31</td>
@@ -192,7 +224,7 @@ following table. Factory images and binaries for Nexus devices can be downloaded
   <td>MOB30D</td>
   <td>android-6.0.1_r30</td>
   <td>Marshmallow</td>
-  <td>Nexus 5, Nexus 6, Nexus 7 (flo/deb), Nexus 9 (volantis/volantisg), Nexus Player, and Android One</td>
+  <td>Nexus 5, Nexus 6, Nexus 7 (flo/deb), Nexus 9 (volantis/volantisg), Nexus Player</td>
 </tr>
 <tr>
   <td>MHC19Q</td>
@@ -1130,9 +1162,6 @@ following table. Factory images and binaries for Nexus devices can be downloaded
   <td></td>
   <td></td>
 </tr>
-</thead>
-<tbody>
-
 </tbody>
 </table>
 <p>The branches froyo, gingerbread, ics-mr0, ics-mr1, jb-dev,
