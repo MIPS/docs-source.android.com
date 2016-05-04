@@ -138,3 +138,20 @@ applications cannot be distributed without some form of <strong>trust</strong> a
 Typically this comes in the form of a digital signature by an entity
 trusted by the user of the product on which the application runs.</p>
 
+<h2 id=downloading_building>Downloading and building Trusty</h2>
+
+<p>You can find the Trusty implementation in the Android Open Source Project (AOSP) here:<br/>
+<a href="https://android-review.googlesource.com/#/admin/projects/?filter=trusty">https://android-review.googlesource.com/#/admin/projects/?filter=trusty</a></p>
+
+<p>The Trusty kernel branches on AOSP are here:<br/>
+<a href="https://android.googlesource.com/kernel/common/+/android-trusty-3.10">https://android.googlesource.com/kernel/common/+/android-trusty-3.10</a><br/>
+<a href="https://android.googlesource.com/kernel/common/+/android-trusty-3.18">https://android.googlesource.com/kernel/common/+/android-trusty-3.18</a></p>
+
+<p>To make Trusty, run the following commands (assuming the Android toolchain is already in the path):</p>
+<pre>
+$ repo init -u https://android.googlesource.com/trusty/manifest
+$ repo sync
+$ make -j24 generic-arm64
+</pre>
+
+<p>You may select another supported build target from: <code>device/*/*/project/*</code></p>
