@@ -41,6 +41,27 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}security/bulletin/index.html">
+        <h4>May Android Security Bulletin</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}security/bulletin/2016-05-01.html">May 2016 Android Security
+        Bulletin</a></strong> has been published along with updates to the <strong><a
+        href="{@docRoot}security/overview/updates-resources.html#severity">Android
+        Security severity ratings</a></strong>. The bulletin describes vulnerabilities that have
+        been fixed in the Android Open Source Project (AOSP) and in components outside
+        of AOSP.</p>
+
+<a href="{@docRoot}compatibility/cts/downloads.html">
+        <h4>CTS Updated to 6.0R6, 5.1R7 and 5.0R6</h4></a>
+        <p>New versions of the Compatibility Test Suite (CTS) have been
+        released for Android 6.0, 5.1, and 5.0. In additon, the <strong><a
+        href="{@docRoot}compatibility/cts/downloads.html">Downloads</a></strong> page has been
+        moved under <strong><a
+        href="{@docRoot}compatibility/cts/index.html">CTS</a></strong> since links to
+        the Android Compatibility Definition Document (CDD) have been moved to a
+        dedicated <strong><a href="{@docRoot}compatibility/cdd.html">Compatibility
+        Definition Document</a></strong> page.</p>
+
 <a href="{@docRoot}compatibility/cdd.html">
         <h4>CDD as Web Page, Older Versions Available</h4></a>
         <p>The Android Compatibility Definition Document (CDD) is now published
@@ -73,20 +94,6 @@ devices meet compatibility requirements.
         numbers</a></strong> have been published for Pixel C, Nexus 5, Nexus 6, Nexus 7,
         Nexus 9, Nexus 5X, Nexus 6P, Nexus Player, and Android One running Android 6.0 and
         Nexus 10 running Android 5.1.</p>
-
-<a href="{@docRoot}security/bulletin/index.html">
-        <h4>April Nexus Security Bulletin</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}security/bulletin/2016-04-02.html">April 2016 Nexus Security
-        Bulletin</a></strong> has been published. The bulletin describes
-        numerous vulnerabilities that have been fixed in the Android Open Source
-        Project (AOSP).</p>
-
-<a href="{@docRoot}compatibility/downloads.html">
-        <h4>CTS Media Files 1.2</h4></a>
-        <p>A new version of the media files required for Android Compatibility Test
-        Suite (CTS) media stress tests is now available for <strong><a
-        href="{@docRoot}compatibility/downloads.html#cts-media-files">download</a></strong>.</p>
     </div>
 
     <div class="col-8">
