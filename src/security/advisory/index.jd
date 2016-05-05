@@ -39,10 +39,18 @@ group to receive a notification when we publish an advisory.</p>
 <table>
  <tr>
     <th>Android Security Advisory</th>
+    <th>Languages</th>
     <th>Published Date</th>
  </tr>
  <tr>
     <td><a href="2016-03-18.html">2016-03-18</a></td>
+    <td>
+      <a href="{@docRoot}intl/ja_ALL/security/advisory/2016-03-18.html">日本語</a>&nbsp;/
+      <a href="{@docRoot}intl/ko_ALL/security/advisory/2016-03-18.html">한국어</a>&nbsp;/
+      <a href="{@docRoot}intl/ru_ALL/security/advisory/2016-03-18.html">ru</a>&nbsp;/
+      <a href="{@docRoot}intl/zh-CN_ALL/security/advisory/2016-03-18.html">中文&nbsp;(中国)</a>&nbsp;/
+      <a href="{@docRoot}intl/zh-TW_ALL/security/advisory/2016-03-18.html">中文&nbsp;(台灣)</a>
+    </td>
     <td>March 18, 2016</td>
  </tr>
 </table>
