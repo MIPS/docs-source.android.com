@@ -209,6 +209,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
       <td>Nexus 9 (volantis/volantisg), Nexus Player</td>
     </tr>
     <tr>
+      <td>MXC89F</td>
+      <td>android-6.0.1_r32</td>
+      <td>Marshmallow</td>
+      <td>Pixel C</td>
+    </tr>
+    <tr>
       <td>MTC19T</td>
       <td>android-6.0.1_r25</td>
       <td>Marshmallow</td>
