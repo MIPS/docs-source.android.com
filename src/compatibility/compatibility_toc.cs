@@ -51,8 +51,9 @@
             </a>
             </div>
            <ul>
-            <li><a href="<?cs var:toroot ?>compatibility/cts/rotation-vector.html">Rotation Vector Crosscheck</a></li>
             <li><a href="<?cs var:toroot ?>compatibility/cts/camera-hal.html">Camera HAL Testing</a></li>
+            <li><a href="<?cs var:toroot ?>compatibility/cts/near-ultrasound.html">Near Ultrasound Tests</a></li>
+            <li><a href="<?cs var:toroot ?>compatibility/cts/rotation-vector.html">Rotation Vector Crosscheck</a></li>
            </ul>
           </li>
           <li><a href="<?cs var:toroot ?>compatibility/cts/interpret.html">Interpret Results</a></li>
