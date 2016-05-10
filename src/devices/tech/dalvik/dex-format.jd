@@ -198,7 +198,8 @@ values are unlikely to be needed).</p>
   <td>method prototype identifiers list. These are identifiers for all
     prototypes referred to by this file. This list must be sorted in
     return-type (by <code>type_id</code> index) major order, and then
-    by arguments (also by <code>type_id</code> index). The list must not
+    by argument list (lexicographic ordering, individual arguments
+    ordered by <code>type_id</code> index). The list must not
     contain any duplicate entries.
   </td>
 </tr>
@@ -1232,7 +1233,7 @@ may appear in a <code>.dex</code> file.
 <tr>
   <td>type_ids_size</td>
   <td>uint</td>
-  <td>count of elements in the type identifiers list</td>
+  <td>count of elements in the type identifiers list, at most 65535</td>
 </tr>
 <tr>
   <td>type_ids_off</td>
@@ -1247,7 +1248,7 @@ may appear in a <code>.dex</code> file.
 <tr>
   <td>proto_ids_size</td>
   <td>uint</td>
-  <td>count of elements in the prototype identifiers list</td>
+  <td>count of elements in the prototype identifiers list, at most 65535</td>
 </tr>
 <tr>
   <td>proto_ids_off</td>
