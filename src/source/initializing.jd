@@ -254,7 +254,8 @@ create an Apple ID in order to download.</p>
 <pre>
 <code>export PATH=/opt/local/bin:$PATH</code>
 </pre>
-<p class="note"><strong>Note:</strong> If you do not have a <code>.bash_profile</code> file in your home directory, create one.</p>
+<p class="note"><strong>Note:</strong> If you do not have a
+<code>.bash_profile</code> file in your home directory, create one.</p>
 </li>
 <li>
 <p>Get make, git, and GPG packages from MacPorts: </p>
@@ -297,7 +298,9 @@ MacPorts with these steps:</p>
 </ul>
 
 <h4 id="setting-a-file-descriptor-limit">Setting a file descriptor limit</h4>
-<p>On Mac OS, the default limit on the number of simultaneous file descriptors open is too low and a highly parallel build process may exceed this limit.<br />
+<p>On Mac OS, the default limit on the number of simultaneous file descriptors
+open is too low and a highly parallel build process may exceed this limit.<br
+/>
 </p>
 <p>To increase the cap, add the following lines to your <code>~/.bash_profile</code>: </p>
 <pre><code># set the number of open files to be 1024
@@ -306,10 +309,14 @@ ulimit -S -n 1024
 <h2 id="optimizing-a-build-environment">Optimizing a build environment (optional)</h2>
 <p><a name="ccache"></a></p>
 <h3 id="setting-up-ccache">Setting up ccache</h3>
-<p>You can optionally tell the build to use the ccache compilation tool.
-Ccache acts as a compiler cache that can be used to speed up rebuilds.
+<p>You can optionally tell the build to use the ccache compilation tool, which
+is especially useful for build servers and other high-volume production
+environments. Ccache acts as a compiler cache that can be used to speed up rebuilds.
 This works very well if you use <code>make clean</code> often, or if you frequently
 switch between different build products.</p>
+<p class="note"><strong>Note:</strong> If you're instead conducting incremental
+builds (such as an individual developer rather than a build server), ccache may
+slow your builds down by making you pay for cache misses.</p>
 <p>Put the following in your <code>.bashrc</code> (or equivalent):</p>
 <pre><code>export USE_CCACHE=1
 </code></pre>
