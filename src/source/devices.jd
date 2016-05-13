@@ -78,7 +78,7 @@ wiki</a></li>
 <p>Use the following commands to download, build, and run Android on a HiKey
 board.</p>
 
-<h3>Compiling userspace</h3>
+<h3 id="compiling-userspace">Compiling userspace</h3>
 <ol>
 <li>Download the Android source tree:<br>
 <pre><code>$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master<br>
@@ -98,7 +98,7 @@ $ make -j32</code></pre></li>
 <p class="note"><b>Note:</b> For 4GB eMMC, instead of <code>$ make -j32</code>
 use: <code>$ make -j32 TARGET_USERDATAIMAGE_4GB=true</code>.</p>
 
-<h3>Installing initial fastboot and ptable</h3>
+<h3 id="installing-fastboot-ptable">Installing initial fastboot and ptable</h3>
 <ol>
 <li>Select special bootloader mode by linking J15 1-2 and 3-4 pins (for details,
 refer to the
@@ -111,7 +111,7 @@ $ ./flash-all.sh /dev/ttyUSB1 [4g]</code></pre></li>
 <li>Remove jumper 3-4 and power the board.</li>
 </ol>
 
-<h3>Flashing images</h3>
+<h3 id="flashing-images">Flashing images</h3>
 <ol>
 <li>Enter fastboot mode by linking J15 1-2 and 5-6 pins.</li>
 <li>Run the following commands:<br>
@@ -120,12 +120,12 @@ $ fastboot flash -w system out/target/product/hikey/system.img</code></pre></li>
 <li>Remove jumper 5-6 and power the board.</li>
 </ol>
 
-<h3>Building the kernel</h3>
+<h3 id="building-kernel">Building the kernel</h3>
 <ol>
 <li>Run the following commands:<br>
 <pre><code>$ git clone <a href="https://android.googlesource.com/kernel/hikey-linaro">https://android.googlesource.com/kernel/hikey-linaro</a><br>
 $ cd hikey-linaro<br>
-$ git checkout -b android-hikey-linaro-4.1 origin/android-hikey-linaro-4.1<br>
+$ git checkout -b android-hikey-linaro-4.4 origin/android-hikey-linaro-4.4<br>
 $ make ARCH=arm64 hikey_defconfig<br>
 $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- -j24</code></pre></li>
 <li>Copy output to the hikey kernel directory
@@ -140,12 +140,12 @@ hikey-kernel directory.</li>
 </li>
 </ol>
 
-<h3>Setting monitor resolution</h3>
+<h3 id="setting-resolution">Setting monitor resolution</h3>
 <p>Edit <code>device/linaro/hikey/bootloader/EFI/BOOT/grub.cfg</code> and
 configure the <code>video</code> setting. Example setting for a 24" monitor:
 <code>video=HDMI-A-1:1280x800@60</code>.</p>
 
-<h3>Configuring kernel serial output (uart3)</h3>
+<h3 id="configuring-output">Configuring kernel serial output (uart3)</h3>
 <p>Set the J2 low speed expansion connector to 1 - Gnd, 11 - Rx, 13 - Tx . For
 details, refer to the
 <a href="https://www.96boards.org/wp-content/uploads/2015/02/HiKey_User_Guide_Rev0.2.pdf">HiKey
