@@ -115,7 +115,7 @@ $ ./flash-all.sh /dev/ttyUSB1 [4g]</code></pre></li>
 <ol>
 <li>Enter fastboot mode by linking J15 1-2 and 5-6 pins.</li>
 <li>Run the following commands:<br>
-<pre><code>$ fastboot flash boot out/target/product/hikey/boot_fat.uefi.img<br>
+<pre><code>$ fastboot flash boot out/target/product/hikey/boot.img<br>
 $ fastboot flash -w system out/target/product/hikey/system.img</code></pre></li>
 <li>Remove jumper 5-6 and power the board.</li>
 </ol>
@@ -134,16 +134,16 @@ $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- -j24</code></pre></li>
 <li>Copy hi6220-hikey.dtb
 (<code>arch/arm64/boot/dts/hisilicon/hi6220-hikey.dtb</code>) to the
 hikey-kernel directory.</li>
-<li>Copy the Image directory <code>(arch/arm64/boot/Image</code>) to the
+<li>Copy the Image file <code>(arch/arm64/boot/Image-dtb</code>) to the
 hikey-kernel directory.</li>
 </ul>
 </li>
 </ol>
 
 <h3 id="setting-resolution">Setting monitor resolution</h3>
-<p>Edit <code>device/linaro/hikey/bootloader/EFI/BOOT/grub.cfg</code> and
-configure the <code>video</code> setting. Example setting for a 24" monitor:
-<code>video=HDMI-A-1:1280x800@60</code>.</p>
+<p>Edit <code>device/linaro/hikey/BoardConfig.mk</code> parameter
+<code>BOARD_KERNEL_CMDLINE</code> and configure the <code>video</code> setting.
+Example setting for a 24" monitor: <code>video=HDMI-A-1:1280x800@60</code>.</p>
 
 <h3 id="configuring-output">Configuring kernel serial output (uart3)</h3>
 <p>Set the J2 low speed expansion connector to 1 - Gnd, 11 - Rx, 13 - Tx . For
