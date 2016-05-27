@@ -70,7 +70,7 @@ following command assumes you've opened the package archive in your home
 directory:</p>
 <hr>
 <pre>
-export PATH=$PATH:$HOME/android-sdk-linux/platform-tools
+$ export PATH=$PATH:$HOME/android-sdk-linux/build-tools/&lt;version&gt;
 </pre>
 
 <p class="note"><strong>Note:</strong> Please ensure your starting path and
