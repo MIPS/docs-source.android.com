@@ -130,13 +130,18 @@ $ make ARCH=arm64 hikey_defconfig<br>
 $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- -j24</code></pre></li>
 <li>Copy output to the hikey kernel directory
 (<code>/kernel/hikey-linaro</code>):
-<ul>
+<ol>
 <li>Copy hi6220-hikey.dtb
 (<code>arch/arm64/boot/dts/hisilicon/hi6220-hikey.dtb</code>) to the
 hikey-kernel directory.</li>
 <li>Copy the Image file <code>(arch/arm64/boot/Image-dtb</code>) to the
-hikey-kernel directory.</li>
-</ul>
+hikey-kernel directory.
+<li>Make the boot image:
+<pre>
+$ make bootimage -j24
+</pre>
+</li>
+</ol>
 </li>
 </ol>
 
