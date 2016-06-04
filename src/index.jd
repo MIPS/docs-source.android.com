@@ -41,6 +41,19 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}compatibility/cts/rotation-vector.html">
+        <h4>Rotation Vector CV Crosscheck Enhancements</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}compatibility/cts/rotation-vector.html">Rotation Vector CV
+        Crosscheck</a></strong> Compatibility Test Suite instructions have been
+        augmented with a <strong><a
+        href="https://www.youtube.com/watch?v=MsDVmsH1PaI">video tutorial</a></strong>
+        and steps for <strong><a
+        href="{@docRoot}compatibility/cts/rotation-vector.html#troubleshooting">troubleshooting</a></strong>
+        and <strong><a
+        href="{@docRoot}compatibility/cts/rotation-vector.html#reporting">reporting
+        feedback</a></strong>.</p>
+
 <a href="{@docRoot}compatibility/cts/verifier.html">
         <h4>Audio Framework and Near Ultrasound CTS Tests</h4></a>
         <p>Find comprehensive guides for testing the <strong><a
@@ -90,15 +103,6 @@ devices meet compatibility requirements.
         the Android Compatibility Definition Document (CDD) have been moved to a
         dedicated <strong><a href="{@docRoot}compatibility/cdd.html">Compatibility
         Definition Document</a></strong> page.</p>
-
-<a href="{@docRoot}compatibility/cdd.html">
-        <h4>CDD as Web Page, Older Versions Available</h4></a>
-        <p>The Android Compatibility Definition Document (CDD) is now published
-        as a <strong><a href="{@docRoot}compatibility/android-cdd.html">web
-        page</a></strong> for easy access, and all older versions of the CDD and
-        associated version strings are now listed on a central <strong><a
-        href="{@docRoot}compatibility/cdd.html">Compatibility Definition Document</a>
-        </strong> page.</p>
     </div>
 
     <div class="col-8">
