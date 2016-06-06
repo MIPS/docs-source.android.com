@@ -185,6 +185,18 @@ following table. Factory images and binaries for Nexus devices can be downloaded
   </thead>
   <tbody>
     <tr>
+      <td>MOB30M</td>
+      <td>android-6.0.1_r46</td>
+      <td>Marshmallow</td>
+      <td>Nexus 5, Nexus 6, Nexus 7 (flo/deb), Nexus 9 (volantis/volantisg), Nexus Player</td>
+    </tr>
+    <tr>
+      <td>MTC19V</td>
+      <td>android-6.0.1_r45</td>
+      <td>Marshmallow</td>
+      <td>Nexus 5X, Nexus 6P</td>
+    </tr>
+    <tr>
       <td>MOB30J</td>
       <td>android-6.0.1_r43</td>
       <td>Marshmallow</td>
@@ -209,10 +221,22 @@ following table. Factory images and binaries for Nexus devices can be downloaded
       <td>Nexus 9 (volantis/volantisg), Nexus Player</td>
     </tr>
     <tr>
+      <td>MXC89H</td>
+      <td>android-6.0.1_r33</td>
+      <td>Marshmallow</td>
+      <td>Pixel C</td>
+    </tr>
+    <tr>
       <td>MXC89F</td>
       <td>android-6.0.1_r32</td>
       <td>Marshmallow</td>
       <td>Pixel C</td>
+    </tr>
+    <tr>
+      <td>MMB30J</td>
+      <td>android-6.0.1_r28</td>
+      <td>Marshmallow</td>
+      <td>Nexus 6, Nexus 7 (deb)</td>
     </tr>
     <tr>
       <td>MTC19T</td>
