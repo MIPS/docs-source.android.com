@@ -167,9 +167,6 @@ system needs to be configured to allow such access.</p>
 <p>Those new rules take effect the next time a device is plugged in.
 It might therefore be necessary to unplug the device and plug it
 back into the computer.</p>
-<p>This is known to work on both Ubuntu Hardy Heron (8.04.x LTS) and
-Lucid Lynx (10.04.x LTS). Other versions of Ubuntu or other
-variants of GNU/Linux might require different configurations.</p>
 <h3 id="using-a-separate-output-directory">Using a separate output directory</h3>
 <p>By default, the output of each build is stored in the <code>out/</code>
 subdirectory of the matching source tree.</p>
