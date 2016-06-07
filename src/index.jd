@@ -41,6 +41,20 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/drm.html">
+        <h4>Feedback Fixes DRM Path, Keystore API, Jack Argument</h4></a>
+        <p>As a result of your feedback: the path to <strong><a
+        href="{@docRoot}devices/drm.html">DRM</a></strong> source code has been
+        updated (from <code>/frameworks/base/drm/</code> to
+        <code>/frameworks/av/drm/</code>), <strong><a
+        href="{@docRoot}security/keystore/index.html">Keystore</a></strong>
+        documentation now links to the more relevant <strong><a
+        href="https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html">GenSpec
+        API</a></strong>, and an error in the <strong><a
+        href="{@docRoot}source/jack.html">Jack</a></strong> <code>export
+        ANDROID_JACK_EXTRA_ARGS</code> command has been fixed. Please keep the feedback
+        coming!</p>
+
 <a href="{@docRoot}compatibility/cts/rotation-vector.html">
         <h4>Rotation Vector CV Crosscheck Enhancements</h4></a>
         <p>The <strong><a
@@ -92,17 +106,6 @@ devices meet compatibility requirements.
         numbers</a></strong> have been published for Nexus 5, Nexus 6, Nexus 7,
         Nexus 9, Nexus 5X, Nexus 6P, and Nexus Player running Android 6.0 to
         support the May Android security release.</p>
-
-<a href="{@docRoot}compatibility/cts/downloads.html">
-        <h4>CTS Updated to 6.0R6, 5.1R7 and 5.0R6</h4></a>
-        <p>New versions of the Compatibility Test Suite (CTS) have been
-        released for Android 6.0, 5.1, and 5.0. In additon, the <strong><a
-        href="{@docRoot}compatibility/cts/downloads.html">Downloads</a></strong> page has been
-        moved under <strong><a
-        href="{@docRoot}compatibility/cts/index.html">CTS</a></strong> since links to
-        the Android Compatibility Definition Document (CDD) have been moved to a
-        dedicated <strong><a href="{@docRoot}compatibility/cdd.html">Compatibility
-        Definition Document</a></strong> page.</p>
     </div>
 
     <div class="col-8">
