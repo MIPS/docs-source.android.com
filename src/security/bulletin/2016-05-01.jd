@@ -20,7 +20,7 @@ page.title=Android Security Bulletin—May 2016
 <p><em>Published May 02, 2016 | Updated May 04, 2016</em></p>
 
 <p>The Android Security Bulletin contains details of security vulnerabilities
-affecting Android devices. Alongside with the bulletin, we have released a
+affecting Android devices. Alongside the bulletin, we have released a
 security update to Nexus devices through an over-the-air (OTA) update. The
 Nexus firmware images have also been released to the
 <a href="https://developers.google.com/android/nexus/images">Google Developer site</a>.
