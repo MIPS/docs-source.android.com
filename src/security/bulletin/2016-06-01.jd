@@ -17,7 +17,7 @@ page.title=Android Security Bulletin—June 2016
     limitations under the License.
 -->
 
-<p><em>Published June 06, 2016</em></p>
+<p><em>Published June 06, 2016 | Updated June 07, 2016</em></p>
 
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -29,9 +29,8 @@ to the <a href="https://support.google.com/nexus/answer/4457705#nexus_devices">
 Nexus documentation</a> to learn how to check the security patch level.</p>
 
 <p>Partners were notified about the issues described in the bulletin on May 02,
-2016 or earlier. Source code patches for these issues will be released to the
-Android Open Source Project (AOSP) repository in the next 48 hours. We will
-revise this bulletin with the AOSP links when they are available.</p>
+2016 or earlier. Where applicable, source code patches for these issues have
+been released to the Android Open Source Project (AOSP) repository.</p>
 
 <p>The most severe issue is a Critical security vulnerability that could enable
 remote code execution on an affected device through multiple methods such as
@@ -190,12 +189,6 @@ or successfully bypassed.</p>
     <td>Yes</td>
  </tr>
  <tr>
-    <td>Elevation of Privilege Vulnerability in Framework UI</td>
-    <td>CVE-2016-2496</td>
-    <td>Moderate</td>
-    <td>Yes</td>
- </tr>
- <tr>
     <td>Information Disclosure Vulnerability in Qualcomm Wi-Fi Driver</td>
     <td>CVE-2016-2498</td>
     <td>Moderate</td>
@@ -263,7 +256,6 @@ be successfully exploited on Android.</p>
   <li> Hao Chen, Guang Gong, and Wenlin Yang of Mobile Safe Team, Qihoo 360 Technology
     Co. Ltd.: CVE-2016-2470, CVE-2016-2471, CVE-2016-2472, CVE-2016-2473,
     CVE-2016-2498
-  <li> <a href="http://www.iwobanas.com">Iwo Banas</a>: CVE-2016-2496
   <li> Jianqiang Zhao(<a href="https://twitter.com/jianqiangzhao">&#64;jianqiangzhao</a>)
     and pjf (<a href="http://weibo.com/jfpan">weibo.com/jfpan</a>) of IceSword Lab,
     Qihoo 360 Technology Co. Ltd.: CVE-2016-2490, CVE-2016-2491
@@ -327,7 +319,7 @@ content, most notably MMS and browser playback of media.</p>
  </tr>
  <tr>
     <td>CVE-2016-2463</td>
-    <td>27855419</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/2b6f22dc64d456471a1dc6df09d515771d1427c8">27855419</a></td>
     <td>Critical</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -367,7 +359,9 @@ content, most notably MMS and browser playback of media.</p>
  </tr>
  <tr>
     <td>CVE-2016-2464</td>
-    <td>23167726</td>
+    <td><a href="https://android.googlesource.com/platform/external/libvpx/+/cc274e2abe8b2a6698a5c47d8aa4bb45f1f9538d">23167726</a>
+       [<a href="https://android.googlesource.com/platform/external/libvpx/+/65c49d5b382de4085ee5668732bcb0f6ecaf7148">2</a>]
+    </td>
     <td>Critical</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -400,13 +394,18 @@ operating system to repair the device.</p>
  </tr>
  <tr>
     <td>CVE-2016-2465</td>
-    <td>27407865</td>
+    <td>27407865*</td>
     <td>Critical</td>
     <td>Nexus 5, Nexus 5X, Nexus 6, Nexus 6P</td>
     <td>Feb 21, 2016</td>
  </tr>
 </table>
-
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 <h3 id=elevation_of_privilege_vulnerability_in_qualcomm_sound_driver>
 Elevation of Privilege Vulnerability in Qualcomm Sound Driver</h3>
@@ -432,20 +431,25 @@ operating system to repair the device.</p>
  </tr>
  <tr>
     <td>CVE-2016-2466</td>
-    <td>27947307</td>
+    <td>27947307*</td>
     <td>Critical</td>
     <td>Nexus 6</td>
     <td>Feb 27, 2016</td>
  </tr>
  <tr>
     <td>CVE-2016-2467</td>
-    <td>28029010</td>
+    <td>28029010*</td>
     <td>Critical</td>
     <td>Nexus 5</td>
     <td>Mar 13, 2014</td>
  </tr>
 </table>
-
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 <h3 id=elevation_of_privilege_vulnerability_in_qualcomm_gpu_driver>
 Elevation of Privilege Vulnerability in Qualcomm GPU Driver</h3>
@@ -472,19 +476,25 @@ to repair the device.</p>
  </tr>
  <tr>
     <td>CVE-2016-2468</td>
-    <td>27475454</td>
+    <td>27475454*</td>
     <td>Critical</td>
     <td>Nexus 5, Nexus 5X, Nexus 6, Nexus 6P, Nexus 7</td>
     <td>Mar 2, 2016</td>
  </tr>
  <tr>
     <td>CVE-2016-2062</td>
-    <td>27364029</td>
+    <td>27364029*</td>
     <td>Critical</td>
     <td>Nexus 5X, Nexus 6P</td>
     <td>Mar 6, 2016</td>
  </tr>
 </table>
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 
 <h3 id=elevation_of_privilege_vulnerability_in_qualcomm_wi-fi_driver>
@@ -511,12 +521,18 @@ operating system to repair the device.</p>
  </tr>
  <tr>
     <td>CVE-2016-2474</td>
-    <td>27424603</td>
+    <td>27424603*</td>
     <td>Critical</td>
     <td>Nexus 5X</td>
     <td>Google Internal</td>
  </tr>
 </table>
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 
 <h3 id=elevation_of_privilege_vulnerability_in_broadcom_wi-fi_driver>
@@ -542,12 +558,18 @@ High because it could be used to gain local access to elevated capabilities.</p>
  </tr>
  <tr>
     <td>CVE-2016-2475</td>
-    <td>26425765</td>
+    <td>26425765*</td>
     <td>High</td>
     <td>Nexus 5, Nexus 6, Nexus 6P, Nexus 7 (2013), Nexus 9, Nexus Player, Pixel C</td>
     <td>Jan 6, 2016</td>
  </tr>
 </table>
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 
 <h3 id=elevation_of_privilege_vulnerability_in_qualcomm_sound_driver>
@@ -574,19 +596,25 @@ a service that can call the driver.</p>
  </tr>
  <tr>
     <td>CVE-2016-2066</td>
-    <td>26876409</td>
+    <td>26876409*</td>
     <td>High</td>
     <td>Nexus 5, Nexus 5X, Nexus 6, Nexus 6P</td>
     <td>Jan 29, 2016</td>
  </tr>
  <tr>
     <td>CVE-2016-2469</td>
-    <td>27531992</td>
+    <td>27531992*</td>
     <td>High</td>
     <td>Nexus 5, Nexus 6, Nexus 6P</td>
     <td>Mar 4, 2016</td>
  </tr>
 </table>
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 
 <h3 id=elevation_of_privilege_vulnerability_in_mediaserver>
@@ -618,7 +646,11 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2476</td>
-    <td>27207275</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/295c883fe3105b19bcd0f9e07d54c6b589fc5bff">27207275</a>
+       [<a href="https://android.googlesource.com/platform/frameworks/av/+/94d9e646454f6246bf823b6897bd6aea5f08eda3">2</a>]
+       [<a href="https://android.googlesource.com/platform/frameworks/av/+/0bb5ced60304da7f61478ffd359e7ba65d72f181">3</a>]
+       [<a href="https://android.googlesource.com/platform/frameworks/av/+/db829699d3293f254a7387894303451a91278986">4</a>]
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -626,7 +658,8 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2477</td>
-    <td>27251096</td>
+    <td><a href="https://android.googlesource.com/platform/hardware/qcom/media/+/f22c2a0f0f9e030c240468d9d18b9297f001bcf0">27251096</a>
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -634,7 +667,8 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2478</td>
-    <td>27475409</td>
+    <td><a href="https://android.googlesource.com/platform/hardware/qcom/media/+/f22c2a0f0f9e030c240468d9d18b9297f001bcf0">27475409</a>
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -642,7 +676,8 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2479</td>
-    <td>27532282</td>
+    <td><a href="https://android.googlesource.com/platform/hardware/qcom/media/+/46e305be6e670a5a0041b0b4861122a0f1aabefa">27532282</a>
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -650,7 +685,8 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2480</td>
-    <td>27532721</td>
+    <td><a href="https://android.googlesource.com/platform/hardware/qcom/media/+/560ccdb509a7b86186fac0fce1b25bd9a3e6a6e8">27532721</a>
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -658,7 +694,8 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2481</td>
-    <td>27532497</td>
+    <td><a href="https://android.googlesource.com/platform/hardware/qcom/media/+/89913d7df36dbeb458ce165856bd6505a2ec647d">27532497</a>
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -666,7 +703,8 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2482</td>
-    <td>27661749</td>
+    <td><a href="https://android.googlesource.com/platform/hardware/qcom/media/+/46e305be6e670a5a0041b0b4861122a0f1aabefa">27661749</a>
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -674,7 +712,8 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2483</td>
-    <td>27662502</td>
+    <td><a href="https://android.googlesource.com/platform/hardware/qcom/media/+/89913d7df36dbeb458ce165856bd6505a2ec647d">27662502</a>
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -682,7 +721,8 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2484</td>
-    <td>27793163</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/7cea5cb64b83d690fe02bc210bbdf08f5a87636f">27793163</a>
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -690,7 +730,8 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2485</td>
-    <td>27793367</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/7cea5cb64b83d690fe02bc210bbdf08f5a87636f">27793367</a>
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -698,7 +739,8 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2486</td>
-    <td>27793371</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/ad40e57890f81a3cf436c5f06da66396010bd9e5">27793371</a>
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -706,7 +748,10 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2487</td>
-    <td>27833616</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/918eeaa29d99d257282fafec931b4bda0e3bae12">27833616</a>
+       [<a href="https://android.googlesource.com/platform/frameworks/av/+/d2f47191538837e796e2b10c1ff7e1ee35f6e0ab">2</a>]
+       [<a href="https://android.googlesource.com/platform/frameworks/av/+/4e32001e4196f39ddd0b86686ae0231c8f5ed944">3</a>]
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -738,19 +783,25 @@ compromising a service that can call the driver.</p>
  </tr>
  <tr>
     <td>CVE-2016-2061</td>
-    <td>27207747</td>
+    <td>27207747*</td>
     <td>High</td>
     <td>Nexus 5X, Nexus 6P</td>
     <td>Feb 15, 2016</td>
  </tr>
  <tr>
     <td>CVE-2016-2488</td>
-    <td>27600832</td>
+    <td>27600832*</td>
     <td>High</td>
     <td>Nexus 5, Nexus 5X, Nexus 6, Nexus 6P, Nexus 7 (2013)</td>
     <td>Google Internal</td>
  </tr>
 </table>
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 
 <h3 id=elevation_of_privilege_vulnerability_in_qualcomm_video_driver_2>
@@ -776,12 +827,18 @@ compromising a service that can call the driver.</p>
  </tr>
  <tr>
     <td>CVE-2016-2489</td>
-    <td>27407629</td>
+    <td>27407629*</td>
     <td>High</td>
     <td>Nexus 5, Nexus 5X, Nexus 6, Nexus 6P</td>
     <td>Feb 21, 2016</td>
  </tr>
 </table>
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 
 <h3 id=elevation_of_privilege_vulnerability_in_nvidia_camera_driver>
@@ -807,19 +864,25 @@ compromising a service to call the driver.</p>
  </tr>
  <tr>
     <td>CVE-2016-2490</td>
-    <td>27533373</td>
+    <td>27533373*</td>
     <td>High</td>
     <td>Nexus 9</td>
     <td>Mar 6, 2016</td>
  </tr>
  <tr>
     <td>CVE-2016-2491</td>
-    <td>27556408</td>
+    <td>27556408*</td>
     <td>High</td>
     <td>Nexus 9</td>
     <td>Mar 8, 2016</td>
  </tr>
 </table>
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 
 <h3 id=elevation_of_privilege_vulnerability_in_qualcomm_wi-fi_driver_2>
@@ -846,33 +909,39 @@ a service that can call the driver.</p>
  </tr>
  <tr>
     <td>CVE-2016-2470</td>
-    <td>27662174</td>
+    <td>27662174*</td>
     <td>High</td>
     <td>Nexus 7 (2013)</td>
     <td>Mar 13, 2016</td>
  </tr>
  <tr>
     <td>CVE-2016-2471</td>
-    <td>27773913</td>
+    <td>27773913*</td>
     <td>High</td>
     <td>Nexus 7 (2013)</td>
     <td>Mar 19, 2016</td>
  </tr>
  <tr>
     <td>CVE-2016-2472</td>
-    <td>27776888</td>
+    <td>27776888*</td>
     <td>High</td>
     <td>Nexus 7 (2013)</td>
     <td>Mar 20, 2016</td>
  </tr>
  <tr>
     <td>CVE-2016-2473</td>
-    <td>27777501</td>
+    <td>27777501*</td>
     <td>High</td>
     <td>Nexus 7 (2013)</td>
     <td>Mar 20, 2016</td>
  </tr>
 </table>
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 
 <h3 id=elevation_of_privilege_vulnerability_in_mediatek_power_management_driver>
@@ -899,12 +968,18 @@ the device and an elevation to root to call the driver.</p>
  </tr>
  <tr>
     <td>CVE-2016-2492</td>
-    <td>28085410</td>
+    <td>28085410*</td>
     <td>High</td>
     <td>Android One</td>
     <td>Apr 7, 2016</td>
  </tr>
 </table>
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 
 <h3 id=elevation_of_privilege_vulnerability_in_sd_card_emulation_layer>
@@ -936,7 +1011,8 @@ permissions privileges, which are not accessible to a third-party application.</
  </tr>
  <tr>
     <td>CVE-2016-2494</td>
-    <td>28085658</td>
+    <td><a href="https://android.googlesource.com/platform/system/core/+/864e2e22fcd0cba3f5e67680ccabd0302dfda45d">28085658</a>
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -968,13 +1044,18 @@ compromising a service to call the driver.</p>
  </tr>
  <tr>
     <td>CVE-2016-2493</td>
-    <td>26571522</td>
+    <td>26571522*</td>
     <td>High</td>
     <td>Nexus 5, Nexus 6, Nexus 6P, Nexus 7 (2013), Nexus Player, Pixel C</td>
     <td>Google Internal</td>
  </tr>
 </table>
-
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 <h3 id=remote_denial_of_service_vulnerability_in_mediaserver>
 Remote Denial of Service Vulnerability in Mediaserver</h3>
@@ -1000,45 +1081,13 @@ issue is rated as High due to the possibility of remote denial of service.</p>
  </tr>
  <tr>
     <td>CVE-2016-2495</td>
-    <td>28076789</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/45737cb776625f17384540523674761e6313e6d4">28076789</a>
+       [<a href="https://android.googlesource.com/platform/frameworks/av/+/b57b3967b1a42dd505dbe4fcf1e1d810e3ae3777">2</a>]
+    </td>
     <td>High</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
     <td>Apr 6, 2016</td>
- </tr>
-</table>
-
-
-<h3 id=elevation_of_privilege_vulnerability_in_framework_ui>
-Elevation of Privilege Vulnerability in Framework UI</h3>
-
-
-<p>An elevation of privilege vulnerability in the Framework UI permission dialog
-window could enable an attacker to gain access to unauthorized files in private
-storage. This issue is rated as Moderate because it could be used to improperly
-gain "<a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">dangerous</a>" permissions.</p>
-<table>
-  <col width="19%">
-  <col width="16%">
-  <col width="10%">
-  <col width="19%">
-  <col width="18%">
-  <col width="16%">
- <tr>
-    <th>CVE</th>
-    <th>Android bugs</th>
-    <th>Severity</th>
-    <th>Updated Nexus devices</th>
-    <th>Updated AOSP versions</th>
-    <th>Date reported</th>
- </tr>
- <tr>
-    <td>CVE-2016-2496</td>
-    <td>26677796</td>
-    <td>Moderate</td>
-    <td><a href="#nexus_devices">All Nexus</a></td>
-    <td>6.0, 6.1</td>
-    <td>May 26, 2015</td>
  </tr>
 </table>
 
@@ -1066,12 +1115,18 @@ that can call the driver.</p>
  </tr>
  <tr>
     <td>CVE-2016-2498</td>
-    <td>27777162</td>
+    <td>27777162*</td>
     <td>Moderate</td>
     <td>Nexus 7 (2013)</td>
     <td>Mar 20, 2016</td>
  </tr>
 </table>
+<p>
+* The patch for this issue is not in AOSP. The update is contained in the latest
+binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.
+</p>
 
 
 <h3 id=information_disclosure_vulnerability_in_mediaserver>
@@ -1098,7 +1153,8 @@ because it could be used to access data without permission.</p>
  </tr>
  <tr>
     <td>CVE-2016-2499</td>
-    <td>27855172</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/dd3546765710ce8dd49eb23901d90345dec8282f">27855172</a>
+    </td>
     <td>Moderate</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -1131,7 +1187,8 @@ Moderate because it could be used to access data without permission.</p>
  </tr>
  <tr>
     <td>CVE-2016-2500</td>
-    <td>19285814</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/9878bb99b77c3681f0fda116e2964bac26f349c3">19285814</a>
+    </td>
     <td>Moderate</td>
     <td><a href="#nexus_devices">All Nexus</a></td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -1178,4 +1235,10 @@ options:</p>
 
 <ul>
   <li> June 06, 2016: Bulletin published.</li>
-  </ul>
+  <li>June 07, 2016:
+    <ul>
+      <li>Bulletin revised to include AOSP links.
+      <li>CVE-2016-2496 removed from bulletin.
+    </ul>
+  </li>
+</ul>
