@@ -63,11 +63,11 @@ page.title=Requirements
 
 <h3 id=operating-system>Operating system</h3>
 
-<p>Android is typically built with a Linux or Mac OS operating system. It is
+<p>Android is typically built with a GNU/Linux or Mac OS operating system. It is
   also possible to build Android in a virtual machine on unsupported systems such
   as Windows.</br>
 
-<h4 id=linux>Linux</h4>
+<h4 id=linux>GNU/Linux</h4>
 
   <ul>
     <li>Android 6.0 (Marshmallow) - AOSP master: Ubuntu 14.04 (Trusty)</li>
