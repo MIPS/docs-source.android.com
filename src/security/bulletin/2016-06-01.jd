@@ -17,7 +17,7 @@ page.title=Android Security Bulletin—June 2016
     limitations under the License.
 -->
 
-<p><em>Published June 06, 2016 | Updated June 07, 2016</em></p>
+<p><em>Published June 06, 2016 | Updated June 08, 2016</em></p>
 
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -189,6 +189,12 @@ or successfully bypassed.</p>
     <td>Yes</td>
  </tr>
  <tr>
+    <td>Elevation of Privilege Vulnerability in Framework UI</td>
+    <td>CVE-2016-2496</td>
+    <td>Moderate</td>
+    <td>Yes</td>
+ </tr>
+ <tr>
     <td>Information Disclosure Vulnerability in Qualcomm Wi-Fi Driver</td>
     <td>CVE-2016-2498</td>
     <td>Moderate</td>
@@ -256,6 +262,7 @@ be successfully exploited on Android.</p>
   <li> Hao Chen, Guang Gong, and Wenlin Yang of Mobile Safe Team, Qihoo 360 Technology
     Co. Ltd.: CVE-2016-2470, CVE-2016-2471, CVE-2016-2472, CVE-2016-2473,
     CVE-2016-2498
+  <li> <a href="http://www.iwobanas.com">Iwo Banas</a>: CVE-2016-2496
   <li> Jianqiang Zhao(<a href="https://twitter.com/jianqiangzhao">&#64;jianqiangzhao</a>)
     and pjf (<a href="http://weibo.com/jfpan">weibo.com/jfpan</a>) of IceSword Lab,
     Qihoo 360 Technology Co. Ltd.: CVE-2016-2490, CVE-2016-2491
@@ -1091,6 +1098,41 @@ issue is rated as High due to the possibility of remote denial of service.</p>
  </tr>
 </table>
 
+<h3 id=elevation_of_privilege_vulnerability_in_framework_ui>
+Elevation of Privilege Vulnerability in Framework UI</h3>
+
+
+<p>An elevation of privilege vulnerability in the Framework UI permission dialog
+window could enable an attacker to gain access to unauthorized files in private
+storage. This issue is rated as Moderate because it could be used to improperly
+gain "<a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">dangerous</a>" permissions.</p>
+<table>
+  <col width="19%">
+  <col width="16%">
+  <col width="10%">
+  <col width="19%">
+  <col width="18%">
+  <col width="16%">
+ <tr>
+    <th>CVE</th>
+    <th>Android bugs</th>
+    <th>Severity</th>
+    <th>Updated Nexus devices</th>
+    <th>Updated AOSP versions</th>
+    <th>Date reported</th>
+ </tr>
+ <tr>
+    <td>CVE-2016-2496</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/native/+/03a53d1c7765eeb3af0bc34c3dff02ada1953fbf">26677796</a>
+       [<a href="https://android.googlesource.com/platform/frameworks/base/+/613f63b938145bb86cd64fe0752eaf5e99b5f628">2</a>]
+       [<a href="https://android.googlesource.com/platform/packages/apps/PackageInstaller/+/2068c7997265011ddc5e4dfa3418407881f7f81e">3</a>]
+    </td>
+    <td>Moderate</td>
+    <td><a href="#nexus_devices">All Nexus</a></td>
+    <td>6.0, 6.1</td>
+    <td>May 26, 2015</td>
+ </tr>
+</table>
 
 <h3 id=information_disclosure_vulnerability_in_qualcomm_wi-fi_driver>
 Information Disclosure Vulnerability in Qualcomm Wi-Fi Driver</h3>
@@ -1241,4 +1283,5 @@ options:</p>
       <li>CVE-2016-2496 removed from bulletin.
     </ul>
   </li>
+  <li>June 08, 2016: CVE-2016-2496 added back to bulletin.</li>
 </ul>
