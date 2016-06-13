@@ -4537,6 +4537,10 @@ device it MUST implement the AOA API. Device implementations implementing the
 AOA specification:
   <ul>
     <li>MUST declare support for the hardware feature android.hardware.usb.accessory [<a href="http://developer.android.com/guide/topics/connectivity/usb/accessory.html">Resources, 118</a>].</li>
+    <li>MUST support establishing an
+<a href="http://source.android.com/devices/accessories/aoa.html">AOA protocol based communication</a>
+on first time connection with a USB host machine that acts as an accessory, without the need for the
+user to change the default USB mode.</li>
     <li>MUST implement the USB audio class as documented in the Android SDK
 documentation [<a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">Resources, 119</a>].</li>
     <li>And also the USB mass storage class, MUST include the string "android"
