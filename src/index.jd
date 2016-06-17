@@ -41,6 +41,12 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}compatibility/cts/downloads.html">
+        <h4>Android 6.0, 5.1, and 5.0 CTS Downloads</h4></a>
+        <p>Android 6.0 R7, 5.1 R8, and 5.0 R7 Compatibility Test Suite (CTS)
+        and CTS Verifier are available for <strong><a
+        href="{@docRoot}compatibility/cts/downloads.html#android-60">Download</a></strong>.</p>
+
 <a href="{@docRoot}security/bulletin/2016-06-01.html">
         <h4>June Android Security Bulletin</h4></a>
         <p>The <strong><a
@@ -99,12 +105,6 @@ devices meet compatibility requirements.
         Android Open Source Project (AOSP) and linked from <strong><a
         href="{@docRoot}devices/tech/debug/native-memory.html">Debugging Native Memory
         Use</a></strong>.</p>
-
-<a href="{@docRoot}security/trusty/index.html">
-        <h4>Trusty Build Instructions</h4></a>
-        <p>Links and commands have been added for <strong><a
-        href="{@docRoot}security/trusty/index.html#downloading_building">downloading
-        and building</a></strong> the Trusty Trusted Execution Environment (TEE).</p>
     </div>
 
     <div class="col-8">
