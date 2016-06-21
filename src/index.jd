@@ -41,6 +41,25 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/debug/index.html">
+        <h4>Crash Dump and Tomstone Details for debuggerd</h4></a>
+        <p><strong><a href="{@docRoot}devices/tech/debug/index.html">Debugging
+        Native Android Platform Code</a></strong> now contains detailed
+        breakdowns of <strong><a
+        href="{@docRoot}devices/tech/debug/index.html#crashdump">crash
+        dumps</a></strong> and <strong><a
+        href="{@docRoot}devices/tech/debug/index.html#tombstones">tombstones</a></strong>
+        to help parse the output of <code>debuggerd</code>.</p>
+
+<a href="{@docRoot}source/requirements.html#binaries">
+        <h4>Binaries Highlighted, Building the System Renamed</h4></a>
+        <p>To ease use, the former Building the System page has been renamed
+        <strong><a href="{@docRoot}source/building.html">Preparing to
+        Build</a></strong> with links to proprietary binaries (blobs) added to
+        Preparing to Build and the central <strong><a
+        href="{@docRoot}source/requirements.html#binaries">Requirements</a></strong>
+        list.</p>
+
 <a href="{@docRoot}compatibility/cts/downloads.html">
         <h4>Android 6.0, 5.1, and 5.0 CTS Downloads</h4></a>
         <p>Android 6.0 R7, 5.1 R8, and 5.0 R7 Compatibility Test Suite (CTS)
@@ -84,27 +103,6 @@ devices meet compatibility requirements.
         and <strong><a
         href="{@docRoot}compatibility/cts/rotation-vector.html#reporting">reporting
         feedback</a></strong>.</p>
-
-<a href="{@docRoot}compatibility/cts/verifier.html">
-        <h4>Audio Framework and Near Ultrasound CTS Tests</h4></a>
-        <p>Find comprehensive guides for testing the <strong><a
-        href="{@docRoot}compatibility/cts/audio-framework.html">Audio
-        Framework</a></strong> and <strong><a
-        href="{@docRoot}compatibility/cts/near-ultrasound.html">Near
-        Ultrasound</a></strong> capabilities of Android devices within the
-        Compatibility Test Suite <strong><a
-        href="{@docRoot}compatibility/cts/verifier.html">CTS Verifier</a></strong> section.</p>
-
-<a href="{@docRoot}devices/tech/debug/native-memory.html">
-        <h4>Malloc Debugging and Native Memory Tracking</h4></a>
-        <p>New documents on <strong><a
-        href="https://android.googlesource.com/platform/bionic/+/master/libc/malloc_debug/README.md">malloc
-        debugging</a></strong> and <strong><a
-        href="https://android.googlesource.com/platform/bionic/+/master/libc/malloc_debug/README_api.md">native
-        memory tracking using libc Callbacks</a></strong> have been published to the
-        Android Open Source Project (AOSP) and linked from <strong><a
-        href="{@docRoot}devices/tech/debug/native-memory.html">Debugging Native Memory
-        Use</a></strong>.</p>
     </div>
 
     <div class="col-8">
