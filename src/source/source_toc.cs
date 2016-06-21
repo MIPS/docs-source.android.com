@@ -40,7 +40,7 @@
        <ul>
         <li><a href="<?cs var:toroot ?>source/initializing.html">Establishing a Build Environment</a></li>
         <li><a href="<?cs var:toroot ?>source/downloading.html">Downloading the Source</a></li>
-        <li><a href="<?cs var:toroot ?>source/building.html">Building the System</a></li>
+        <li><a href="<?cs var:toroot ?>source/building.html">Preparing to Build</a></li>
         <li><a href="<?cs var:toroot ?>source/jack.html">Compiling with Jack</a></li>
         <li><a href="<?cs var:toroot ?>source/devices.html">Selecting Devices</a></li>
         <li><a href="<?cs var:toroot ?>source/running.html">Running Builds</a></li>

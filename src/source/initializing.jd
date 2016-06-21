@@ -305,35 +305,59 @@ ulimit -S -n 1024
 </code></pre>
 <h2 id="optimizing-a-build-environment">Optimizing a build environment (optional)</h2>
 <p><a name="ccache"></a></p>
+
 <h3 id="setting-up-ccache">Setting up ccache</h3>
+
 <p>You can optionally tell the build to use the ccache compilation tool, which
+is a compiler cache for C and C++ that can help make builds faster. It
 is especially useful for build servers and other high-volume production
 environments. Ccache acts as a compiler cache that can be used to speed up rebuilds.
 This works very well if you use <code>make clean</code> often, or if you frequently
 switch between different build products.</p>
+
 <p class="note"><strong>Note:</strong> If you're instead conducting incremental
 builds (such as an individual developer rather than a build server), ccache may
 slow your builds down by making you pay for cache misses.</p>
+
+<p>To use ccache, issue these commands in the root of the source tree:</p>
+
+<pre>
+$ export USE_CCACHE=1
+$ export CCACHE_DIR=/&lt;path_of_your_choice&gt;/.ccache
+$ prebuilts/misc/linux-x86/ccache/ccache -M 50G
+</pre>
+
+<p>The suggested cache size is 50-100G.</p>
+
 <p>Put the following in your <code>.bashrc</code> (or equivalent):</p>
-<pre><code>export USE_CCACHE=1
-</code></pre>
+<pre>
+export USE_CCACHE=1
+</pre>
+
 <p>By default the cache will be stored in <code>~/.ccache</code>.
 If your home directory is on NFS or some other non-local filesystem,
-you will want to specify the directory in your <code>.bashrc</code> file as well:</p>
-<pre><code>export CCACHE_DIR=&lt;path-to-your-cache-directory&gt;
-</code></pre>
-<p>The suggested cache size is 50-100GB.
-You will need to run the following command once you have downloaded
-the source code:</p>
-<pre><code>prebuilts/misc/linux-x86/ccache/ccache -M 50G
-</code></pre>
+you will want to specify the directory in your <code>.bashrc</code> file too.</p>
+
 <p>On Mac OS, you should replace <code>linux-x86</code> with <code>darwin-x86</code>:</p>
-<pre><code>prebuilts/misc/darwin-x86/ccache/ccache -M 50G
-</code></pre>
+
+<pre>
+$ prebuilts/misc/darwin-x86/ccache/ccache -M 50G
+</pre>
+
 <p>When building Ice Cream Sandwich (4.0.x) or older, ccache is in
 a different location:</p>
-<pre><code>prebuilt/linux-x86/ccache/ccache -M 50G
-</code></pre>
+
+<pre>
+prebuilt/linux-x86/ccache/ccache -M 50G
+</pre>
+
 <p>This setting is stored in the CCACHE_DIR and is persistent.</p>
+
+<p>On Linux, you can watch ccache being used by doing the following:</p>
+
+<pre>
+$ watch -n1 -d prebuilts/misc/linux-x86/ccache/ccache -s
+</pre>
+
 <h2 id="next-download-the-source">Next: Download the source</h2>
 <p>Your build environment is good to go! Proceed to <a href="downloading.html">downloading the source</a>.</p>
