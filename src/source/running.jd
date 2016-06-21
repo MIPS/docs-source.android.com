@@ -154,65 +154,45 @@ USB, including photos and movies. Be sure to back up any precious files before
 unlocking the bootloader.</p>
 
 <p>With the device in fastboot mode, unlock the bootloader using:</p>
-<pre><code>$ fastboot oem unlock
-</code></pre>
+
+<pre>
+$ fastboot oem unlock
+</pre>
+
 <p>The procedure must be confirmed on-screen.</p>
 
 <p>On Nexus 10, after unlocking the bootloader, the internal storage remains
 unformatted. You can format the device using:</p>
-<pre><code>$ fastboot format cache
+
+<pre>
+$ fastboot format cache
 $ fastboot format userdata
-</code></pre>
+</pre>
 
 <p>To re-lock the bootloader, use:</p>
-<pre><code>$ fastboot oem lock
-</code></pre>
+
+<pre>$ fastboot oem lock
+</pre>
+
 <p class="note"><strong>Note</strong>: Re-locking the bootloading on a Motoroal Xoom
 erases user data (including the shared USB data).</p>
-
-<h2 id="obtaining-proprietary-binaries">Obtaining proprietary binaries</h2>
-
-<p>AOSP cannot be used from pure source code only and requires additional
-hardware-related proprietary libraries to run, specifically for hardware
-graphics acceleration.</p>
-
-<h3 id="downloading-proprietary-binaries">Downloading proprietary binaries</h3>
-
-<p>You can download official binaries for the supported devices running tagged
-AOSP release branches from <a
-href="https://developers.google.com/android/nexus/drivers">Google's Nexus
-driver page</a>. These binaries add access to additional hardware capabilities
-with non-open source code. To instead build the AOSP master branch, use the
-<a href="https://developers.google.com/android/nexus/blobs-preview">Binaries
-Preview for Nexus Devices</a>. When building the master branch for a device, use
-the binaries for the <a href="{@docRoot}source/build-numbers.html">most recent
-numbered release</a> or with the most recent date.</p>
-
-<h3 id="extracting-proprietary-binaries">Extracting proprietary binaries</h3>
-
-<p>Each set of binaries comes as a self-extracting script in a compressed
-archive. Uncompress each archive, run the included self-extracting script from
-the root of the source tree, then confirm that you agree to the terms
-of the enclosed license agreement. The binaries and their matching makefiles
-will be installed in the <code>vendor/</code> hierarchy of the source tree.</p>
-
-<h3 id="cleaning-up">Cleaning up</h3>
-
-<p>To ensure the newly installed binaries are properly taken into account after
-being extracted, delete the existing output of any previous build using:</p>
-<pre><code>$ make clobber
-</code></pre>
 
 <h2 id="selecting-device-build">Selecting a device build</h2>
 
 <p>The recommended builds for devices are available from the lunch menu,
 accessed when running the <code>lunch</code> command with no arguments. You can
-download factory images and binaries for Nexus devices from:</p>
+download factory images and binaries for Nexus devices from developers.google.com:</p>
 
 <ul>
-<li><a href="https://developers.google.com/android/nexus/images">https://developers.google.com/android/nexus/images</a></li>
-<li><a href="https://developers.google.com/android/nexus/drivers">https://developers.google.com/android/nexus/drivers</a></li>
+<li><a href="https://developers.google.com/android/nexus/blobs-preview">Preview binaries (blobs)</a></li>
+<li><a href="https://developers.google.com/android/nexus/images">Factory images for released devices</a></li>
+<li><a href="https://developers.google.com/android/nexus/drivers">Support binaries (drivers) for release devices</a></li>
 </ul>
+
+<p>See <a href="building.html#obtaining-proprietary-binaries">Obtaining
+proprietary binaries</a> for more details and <a
+href="requirements.html#binaries">Device binaries requirements</a> for other
+resources.</p>
 
 <table>
 <thead>
@@ -336,10 +316,22 @@ writes the boot, recovery, and system partitions together, and then reboots the
 system. Flashing also erases all user data, similarly to <code>fastboot oem
 unlock</code>.</p>
 
-<p>To flash a device, set the device in
-<a href="#booting-into-fastboot-mode">fastboot mode</a> (if necessary) and run:
-<pre><code>$ fastboot -w flashall
-</code></pre>
+<p>Place the device in fastboot mode either manually by holding the appropriate
+key combination at boot, or from the shell with:</p>
+
+<pre>
+$ adb reboot bootloader
+</pre>
+
+<p>Once the device is in fastboot mode, run:</p>
+
+<pre>
+$ fastboot flashall -w
+</pre>
+
+<p>The <code>-w</code> option wipes the <code>/data</code> partition on the
+device; this is useful for your first time flashing a particular device but is
+otherwise unnecessary.</p>
 
 <p class="note"><strong>Note</strong>: Filesystems created via fastboot on Motorola Xoom
 do not function optimally. We recommend re-creating filesystems through
