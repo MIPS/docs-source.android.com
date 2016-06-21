@@ -2,7 +2,7 @@ page.title=Requirements
 @jd:body
 
 <!--
-    Copyright 2015 The Android Open Source Project
+    Copyright 2016 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ page.title=Requirements
 
 <ul>
 
-  <li>A 64-bit environment is required for Gingerbread (2.3.x) and newer versions, including the master
+  <li>A 64-bit environment is required for Gingerbread (2.3.x) and newer
+  versions, including the master
   branch. You can compile older versions on 32-bit systems.
   </li>
 
@@ -118,4 +119,23 @@ page.title=Requirements
     earlier will need to <a href="initializing.html#reverting-from-make-382">revert
     from make 3.82</a> to avoid build errors</li>
     <li>Git 1.7 or newer from <a href="http://git-scm.com/download">git-scm.com</a></li>
+  </ul>
+
+<h3 id=binaries>Device binaries</h3>
+<p>Download previews, factory images, drivers, over-the-air (OTA) updates, and
+other blobs below. See <a
+href="{@docRoot}source/building.html#obtaining-proprietary-binaries">Obtaining
+proprietary binaries<a> for additional details.</p>
+  <ul>
+    <li><a
+    href="https://developers.google.com/android/nexus/blobs-preview">Preview
+    binaries (blobs)</a> - for AOSP <code>master</code> branch development</li>
+    <li><a href="https://developers.google.com/android/nexus/images">Factory
+    images</a> - for the supported devices running tagged AOSP release
+    branches</li>
+    <li><a href="https://developers.google.com/android/nexus/drivers">Binary
+    hardware support files</a> - for devices running tagged AOSP release
+    branches</li>
+    <li><a href="https://developers.google.com/android/nexus/ota">OTA images</a>
+    - for manually updating Nexus devices over the air</li>
   </ul>
