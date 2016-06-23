@@ -41,6 +41,20 @@ devices meet compatibility requirements.
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/config/connect_tests.html">
+        <h4>Network Connectivity Tests</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}devices/tech/config/connect_tests.html">Android
+        Connectivity Testing Suite</a></strong> validates the functionality of various
+        aspects of the Bluetooth, Wi-Fi and cellular radios. The suite includes the
+        <strong><a
+        href="https://android.googlesource.com/platform/external/sl4a/+/master/README.md">Scripting
+        Layer For Android</a></strong>, the <strong><a
+        href="https://android.googlesource.com/platform/packages/apps/Test/connectivity/+/master/sl4n/README.md">Scripting
+        Layer For Native</a></strong> and the <strong><a
+        href="https://android.googlesource.com/platform/tools/test/connectivity/+/master/acts/README.md">Android
+        Comms Test Suite</a></strong>.</p>
+
 <a href="{@docRoot}devices/tech/debug/index.html">
         <h4>Crash Dump and Tomstone Details for debuggerd</h4></a>
         <p><strong><a href="{@docRoot}devices/tech/debug/index.html">Debugging
@@ -90,19 +104,6 @@ devices meet compatibility requirements.
         href="{@docRoot}source/jack.html">Jack</a></strong> <code>export
         ANDROID_JACK_EXTRA_ARGS</code> command has been fixed. Please keep the feedback
         coming!</p>
-
-<a href="{@docRoot}compatibility/cts/rotation-vector.html">
-        <h4>Rotation Vector CV Crosscheck Enhancements</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}compatibility/cts/rotation-vector.html">Rotation Vector CV
-        Crosscheck</a></strong> Compatibility Test Suite instructions have been
-        augmented with a <strong><a
-        href="https://www.youtube.com/watch?v=MsDVmsH1PaI">video tutorial</a></strong>
-        and steps for <strong><a
-        href="{@docRoot}compatibility/cts/rotation-vector.html#troubleshooting">troubleshooting</a></strong>
-        and <strong><a
-        href="{@docRoot}compatibility/cts/rotation-vector.html#reporting">reporting
-        feedback</a></strong>.</p>
     </div>
 
     <div class="col-8">
