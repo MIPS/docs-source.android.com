@@ -78,6 +78,11 @@ public class HelloWorldTest implements IRemoteTest {
 and rebuild tradefed from your shell:</p>
 <pre><code>m -jN</code></pre>
 
+<p>Note that <code>System.out</code> in the example above may not actually
+direct output to the console. While this is acceptable for this test example,
+you should establish logging in Trade Federation as described in <a
+href="#logging">Logging (D, I, R)</a>.</p>
+
 <p>If the build does not succeed, consult
 <a href="/devices/tech/test_infra/tradefed/fundamentals/machine_setup.html">Machine
 Setup</a> to ensure you didn't miss a step.</p>
