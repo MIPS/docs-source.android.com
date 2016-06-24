@@ -28,115 +28,107 @@ page.title=Graphics architecture
 <p><em>What every developer should know about Surface, SurfaceHolder, EGLSurface,
 SurfaceView, GLSurfaceView, SurfaceTexture, TextureView, and SurfaceFlinger</em>
 </p>
-<p>This document describes the essential elements of Android's "system-level"
-  graphics architecture, and how it is used by the application framework and
-  multimedia system.  The focus is on how buffers of graphical data move through
-  the system.  If you've ever wondered why SurfaceView and TextureView behave the
-  way they do, or how Surface and EGLSurface interact, you've come to the right
+<p>This page describes the essential elements of system-level graphics
+architecture in Android N and how it is used by the application framework and
+multimedia system. The focus is on how buffers of graphical data move through
+the system. If you've ever wondered why SurfaceView and TextureView behave the
+way they do, or how Surface and EGLSurface interact, you are in the correct
 place.</p>
 
 <p>Some familiarity with Android devices and application development is assumed.
-You don't need detailed knowledge of the app framework, and very few API calls
-will be mentioned, but the material herein doesn't overlap much with other
-public documentation.  The goal here is to provide a sense for the significant
-events involved in rendering a frame for output, so that you can make informed
-choices when designing an application.  To achieve this, we work from the bottom
-up, describing how the UI classes work rather than how they can be used.</p>
+You don't need detailed knowledge of the app framework and very few API calls
+are mentioned, but the material doesn't overlap with other public
+documentation. The goal here is to provide details on the significant events
+involved in rendering a frame for output to help you make informed choices
+when designing an application. To achieve this, we work from the bottom up,
+describing how the UI classes work rather than how they can be used.</p>
 
 <p>Early sections contain background material used in later sections, so it's a
 good idea to read straight through rather than skipping to a section that sounds
-interesting.  We start with an explanation of Android's graphics buffers,
+interesting. We start with an explanation of Android's graphics buffers,
 describe the composition and display mechanism, and then proceed to the
 higher-level mechanisms that supply the compositor with data.</p>
 
-<p>This document is chiefly concerned with the system as it exists in Android 4.4
-("KitKat").  Earlier versions of the system worked differently, and future
-versions will likely be different as well.  Version-specific features are called
-out in a few places.</p>
+<p class="note">This page includes references to AOSP source code and
+<a href="https://github.com/google/grafika">Grafika</a>, a Google open source
+project for testing.</p>
 
-<p>At various points I will refer to source code from the AOSP sources or from
-Grafika.  Grafika is a Google open source project for testing; it can be found at
-<a
-href="https://github.com/google/grafika">https://github.com/google/grafika</a>.
-It's more "quick hack" than solid example code, but it will suffice.</p>
 <h2 id="BufferQueue">BufferQueue and gralloc</h2>
 
-<p>To understand how Android's graphics system works, we have to start behind the
-scenes.  At the heart of everything graphical in Android is a class called
-BufferQueue.  Its role is simple enough: connect something that generates
-buffers of graphical data (the "producer") to something that accepts the data
-for display or further processing (the "consumer").  The producer and consumer
-can live in different processes.  Nearly everything that moves buffers of
+<p>To understand how Android's graphics system works, we must start behind the
+scenes. At the heart of everything graphical in Android is a class called
+BufferQueue. Its role is simple: connect something that generates buffers of
+graphical data (the <em>producer</em>) to something that accepts the data for
+display or further processing (the <em>consumer</em>). The producer and consumer
+can live in different processes. Nearly everything that moves buffers of
 graphical data through the system relies on BufferQueue.</p>
 
-<p>The basic usage is straightforward.  The producer requests a free buffer
-(<code>dequeueBuffer()</code>), specifying a set of characteristics including width,
-height, pixel format, and usage flags.  The producer populates the buffer and
-returns it to the queue (<code>queueBuffer()</code>).  Some time later, the consumer
-acquires the buffer (<code>acquireBuffer()</code>) and makes use of the buffer contents.
-When the consumer is done, it returns the buffer to the queue
+<p>Basic usage is straightforward: The producer requests a free buffer
+(<code>dequeueBuffer()</code>), specifying a set of characteristics including
+width, height, pixel format, and usage flags. The producer populates the buffer
+and returns it to the queue (<code>queueBuffer()</code>). Some time later, the
+consumer acquires the buffer (<code>acquireBuffer()</code>) and makes use of the
+buffer contents. When the consumer is done, it returns the buffer to the queue
 (<code>releaseBuffer()</code>).</p>
 
-<p>Most recent Android devices support the "sync framework".  This allows the
-system to do some nifty thing when combined with hardware components that can
-manipulate graphics data asynchronously.  For example, a producer can submit a
+<p>Recent Android devices support the <em>sync framework</em>, which enables the
+system to do nifty things when combined with hardware components that can
+manipulate graphics data asynchronously. For example, a producer can submit a
 series of OpenGL ES drawing commands and then enqueue the output buffer before
-rendering completes.  The buffer is accompanied by a fence that signals when the
-contents are ready.  A second fence accompanies the buffer when it is returned
-to the free list, so that the consumer can release the buffer while the contents
-are still in use.  This approach improves latency and throughput as the buffers
+rendering completes. The buffer is accompanied by a fence that signals when the
+contents are ready. A second fence accompanies the buffer when it is returned
+to the free list, so the consumer can release the buffer while the contents are
+still in use. This approach improves latency and throughput as the buffers
 move through the system.</p>
 
-<p>Some characteristics of the queue, such as the maximum number of buffers it can
-hold, are determined jointly by the producer and the consumer.</p>
+<p>Some characteristics of the queue, such as the maximum number of buffers it
+can hold, are determined jointly by the producer and the consumer.</p>
 
-<p>The BufferQueue is responsible for allocating buffers as it needs them.  Buffers
-are retained unless the characteristics change; for example, if the producer
-starts requesting buffers with a different size, the old buffers will be freed
-and new buffers will be allocated on demand.</p>
+<p>The BufferQueue is responsible for allocating buffers as it needs them.
+Buffers are retained unless the characteristics change; for example, if the
+producer requests buffers with a different size, old buffers are freed and new
+buffers are allocated on demand.</p>
 
-<p>The data structure is currently always created and "owned" by the consumer.  In
-Android 4.3 only the producer side was "binderized", i.e. the producer could be
-in a remote process but the consumer had to live in the process where the queue
-was created.  This evolved a bit in 4.4, moving toward a more general
+<p>Currently, the consumer always creates and owns the data structure. In
+Android 4.3, only the producer side was binderized (i.e. producer could be
+in a remote process but consumer had to live in the process where the queue
+was created). Android 4.4 and later releases moved toward a more general
 implementation.</p>
 
-<p>Buffer contents are never copied by BufferQueue.  Moving that much data around
-would be very inefficient.  Instead, buffers are always passed by handle.</p>
+<p>Buffer contents are never copied by BufferQueue (moving that much data around
+would be very inefficient). Instead, buffers are always passed by handle.</p>
 
 <h3 id="gralloc_HAL">gralloc HAL</h3>
 
-<p>The actual buffer allocations are performed through a memory allocator called
-"gralloc", which is implemented through a vendor-specific HAL interface (see
-<a
-href="https://android.googlesource.com/platform/hardware/libhardware/+/kitkat-release/include/hardware/gralloc.h">hardware/libhardware/include/hardware/gralloc.h</a>).
-The <code>alloc()</code> function takes the arguments you'd expect -- width,
-height, pixel format -- as well as a set of usage flags.  Those flags merit
-closer attention.</p>
+<p>Buffer allocations are performed through the <em>gralloc</em> memory
+allocator, which is implemented through a vendor-specific HAL interface (for
+details, refer to <code>hardware/libhardware/include/hardware/gralloc.h</code>).
+The <code>alloc()</code> function takes expected arguments (width, height, pixel
+format) as well as a set of usage flags that merit closer attention.</p>
 
-<p>The gralloc allocator is not just another way to allocate memory on the native
-heap.  In some situations, the allocated memory may not be cache-coherent, or
-could be totally inaccessible from user space.  The nature of the allocation is
-determined by the usage flags, which include attributes like:</p>
+<p>The gralloc allocator is not just another way to allocate memory on the
+native heap; in some situations, the allocated memory may not be cache-coherent
+or could be totally inaccessible from user space. The nature of the allocation
+is determined by the usage flags, which include attributes such as:</p>
 
 <ul>
-<li>how often the memory will be accessed from software (CPU)</li>
-<li>how often the memory will be accessed from hardware (GPU)</li>
-<li>whether the memory will be used as an OpenGL ES ("GLES") texture</li>
-<li>whether the memory will be used by a video encoder</li>
+<li>How often the memory will be accessed from software (CPU)</li>
+<li>How often the memory will be accessed from hardware (GPU)</li>
+<li>Whether the memory will be used as an OpenGL ES (GLES) texture</li>
+<li>Whether the memory will be used by a video encoder</li>
 </ul>
 
-<p>For example, if your format specifies RGBA 8888 pixels, and you indicate
-the buffer will be accessed from software -- meaning your application will touch
-pixels directly -- then the allocator needs to create a buffer with 4 bytes per
-pixel in R-G-B-A order.  If instead you say the buffer will only be
-accessed from hardware and as a GLES texture, the allocator can do anything the
-GLES driver wants -- BGRA ordering, non-linear "swizzled" layouts, alternative
-color formats, etc.  Allowing the hardware to use its preferred format can
-improve performance.</p>
+<p>For example, if your format specifies RGBA 8888 pixels, and you indicate the
+buffer will be accessed from software (meaning your application will touch
+pixels directly) then the allocator must create a buffer with 4 bytes per pixel
+in R-G-B-A order. If instead you say the buffer will be only accessed from
+hardware and as a GLES texture, the allocator can do anything the GLES driver
+wants&mdash;BGRA ordering, non-linear swizzled layouts, alternative color
+formats, etc. Allowing the hardware to use its preferred format can improve
+performance.</p>
 
-<p>Some values cannot be combined on certain platforms.  For example, the "video
-encoder" flag may require YUV pixels, so adding "software access" and specifying
+<p>Some values cannot be combined on certain platforms. For example, the video
+encoder flag may require YUV pixels, so adding software access and specifying
 RGBA 8888 would fail.</p>
 
 <p>The handle returned by the gralloc allocator can be passed between processes
@@ -144,88 +136,92 @@ through Binder.</p>
 
 <h2 id="SurfaceFlinger">SurfaceFlinger and Hardware Composer</h2>
 
-<p>Having buffers of graphical data is wonderful, but life is even better when you
-get to see them on your device's screen.  That's where SurfaceFlinger and the
+<p>Having buffers of graphical data is wonderful, but life is even better when
+you get to see them on your device's screen. That's where SurfaceFlinger and the
 Hardware Composer HAL come in.</p>
 
 <p>SurfaceFlinger's role is to accept buffers of data from multiple sources,
-composite them, and send them to the display.  Once upon a time this was done
+composite them, and send them to the display. Once upon a time this was done
 with software blitting to a hardware framebuffer (e.g.
 <code>/dev/graphics/fb0</code>), but those days are long gone.</p>
 
 <p>When an app comes to the foreground, the WindowManager service asks
-SurfaceFlinger for a drawing surface.  SurfaceFlinger creates a "layer" - the
-primary component of which is a BufferQueue - for which SurfaceFlinger acts as
-the consumer.  A Binder object for the producer side is passed through the
+SurfaceFlinger for a drawing surface. SurfaceFlinger creates a layer (the
+primary component of which is a BufferQueue) for which SurfaceFlinger acts as
+the consumer. A Binder object for the producer side is passed through the
 WindowManager to the app, which can then start sending frames directly to
 SurfaceFlinger.</p>
 
-<p class="note"><strong>Note:</strong> The WindowManager uses the term "window" instead of
-"layer" for this and uses "layer" to mean something else.  We're going to use the
-SurfaceFlinger terminology.  It can be argued that SurfaceFlinger should really
-be called LayerFlinger.</p>
+<p class="note"><strong>Note:</strong> While this section uses SurfaceFlinger
+terminology, WindowManager uses the term <em>window</em> instead of
+<em>layer</em>&hellip;and uses layer to mean something else. (It can be argued
+that SurfaceFlinger should really be called LayerFlinger.)</p>
 
-<p>For most apps, there will be three layers on screen at any time: the "status
-bar" at the top of the screen, the "navigation bar" at the bottom or side, and
-the application's UI.  Some apps will have more or less, e.g. the default home app has a
+<p>Most applications have three layers on screen at any time: the status bar at
+the top of the screen, the navigation bar at the bottom or side, and the
+application UI. Some apps have more, some less (e.g. the default home app has a
 separate layer for the wallpaper, while a full-screen game might hide the status
-bar.  Each layer can be updated independently.  The status and navigation bars
+bar. Each layer can be updated independently. The status and navigation bars
 are rendered by a system process, while the app layers are rendered by the app,
 with no coordination between the two.</p>
 
 <p>Device displays refresh at a certain rate, typically 60 frames per second on
-phones and tablets.  If the display contents are updated mid-refresh, "tearing"
+phones and tablets. If the display contents are updated mid-refresh, tearing
 will be visible; so it's important to update the contents only between cycles.
 The system receives a signal from the display when it's safe to update the
-contents.  For historical reasons we'll call this the VSYNC signal.</p>
+contents. For historical reasons we'll call this the VSYNC signal.</p>
 
 <p>The refresh rate may vary over time, e.g. some mobile devices will range from 58
-to 62fps depending on current conditions.  For an HDMI-attached television, this
-could theoretically dip to 24 or 48Hz to match a video.  Because we can update
-the screen only once per refresh cycle, submitting buffers for display at
-200fps would be a waste of effort as most of the frames would never be seen.
-Instead of taking action whenever an app submits a buffer, SurfaceFlinger wakes
-up when the display is ready for something new.</p>
+to 62fps depending on current conditions. For an HDMI-attached television, this
+could theoretically dip to 24 or 48Hz to match a video. Because we can update
+the screen only once per refresh cycle, submitting buffers for display at 200fps
+would be a waste of effort as most of the frames would never be seen. Instead of
+taking action whenever an app submits a buffer, SurfaceFlinger wakes up when the
+display is ready for something new.</p>
 
-<p>When the VSYNC signal arrives, SurfaceFlinger walks through its list of layers
-looking for new buffers.  If it finds a new one, it acquires it; if not, it
-continues to use the previously-acquired buffer.  SurfaceFlinger always wants to
-have something to display, so it will hang on to one buffer.  If no buffers have
-ever been submitted on a layer, the layer is ignored.</p>
+<p>When the VSYNC signal arrives, SurfaceFlinger walks through its list of
+layers looking for new buffers. If it finds a new one, it acquires it; if not,
+it continues to use the previously-acquired buffer. SurfaceFlinger always wants
+to have something to display, so it will hang on to one buffer. If no buffers
+have ever been submitted on a layer, the layer is ignored.</p>
 
-<p>Once SurfaceFlinger has collected all of the buffers for visible layers, it
-asks the Hardware Composer how composition should be performed.</p>
+<p>After SurfaceFlinger has collected all buffers for visible layers, it asks
+the Hardware Composer how composition should be performed.</p>
 
 <h3 id="hwcomposer">Hardware Composer</h3>
 
-<p>The Hardware Composer HAL ("HWC") was first introduced in Android 3.0
-("Honeycomb") and has evolved steadily over the years.  Its primary purpose is
-to determine the most efficient way to composite buffers with the available
-hardware.  As a HAL, its implementation is device-specific and usually
-implemented by the display hardware OEM.</p>
+<p>The Hardware Composer HAL (HWC) was introduced in Android 3.0 and has evolved
+steadily over the years. Its primary purpose is to determine the most efficient
+way to composite buffers with the available hardware. As a HAL, its
+implementation is device-specific and usually done by the display hardware OEM.</p>
 
-<p>The value of this approach is easy to recognize when you consider "overlay
-planes."  The purpose of overlay planes is to composite multiple buffers
-together, but in the display hardware rather than the GPU.  For example, suppose
-you have a typical Android phone in portrait orientation, with the status bar on
-top and navigation bar at the bottom, and app content everywhere else.  The contents
-for each layer are in separate buffers.  You could handle composition by
-rendering the app content into a scratch buffer, then rendering the status bar
-over it, then rendering the navigation bar on top of that, and finally passing the
-scratch buffer to the display hardware.  Or, you could pass all three buffers to
-the display hardware, and tell it to read data from different buffers for
-different parts of the screen.  The latter approach can be significantly more
-efficient.</p>
+<p>The value of this approach is easy to recognize when you consider <em>overlay
+planes</em>, the purpose of which is to composite multiple buffers together in
+the display hardware rather than the GPU. For example, consider a typical
+Android phone in portrait orientation, with the status bar on top, navigation
+bar at the bottom, and app content everywhere else. The contents for each layer
+are in separate buffers. You could handle composition using either of the
+following methods:</p>
 
-<p>As you might expect, the capabilities of different display processors vary
-significantly.  The number of overlays, whether layers can be rotated or
-blended, and restrictions on positioning and overlap can be difficult to express
-through an API.  So, the HWC works like this:</p>
+<ul>
+<li>Rendering the app content into a scratch buffer, then rendering the status
+bar over it, the navigation bar on top of that, and finally passing the scratch
+buffer to the display hardware.</li>
+<li>Passing all three buffers to the display hardware and tell it to read data
+from different buffers for different parts of the screen.</li>
+</ul>
+
+<p>The latter approach can be significantly more efficient.</p>
+
+<p>Display processor capabilities vary significantly. The number of overlays,
+whether layers can be rotated or blended, and restrictions on positioning and
+overlap can be difficult to express through an API. The HWC attempts to
+accommodate such diversity through a series of decisions:</p>
 
 <ol>
-<li>SurfaceFlinger provides the HWC with a full list of layers, and asks, "how do
+<li>SurfaceFlinger provides HWC with a full list of layers and asks, "How do
 you want to handle this?"</li>
-<li>The HWC responds by marking each layer as "overlay" or "GLES composition."</li>
+<li>HWC responds by marking each layer as overlay or GLES composition.</li>
 <li>SurfaceFlinger takes care of any GLES composition, passing the output buffer
 to HWC, and lets HWC handle the rest.</li>
 </ol>
@@ -234,24 +230,21 @@ to HWC, and lets HWC handle the rest.</li>
 it's possible to get the best performance out of every device.</p>
 
 <p>Overlay planes may be less efficient than GL composition when nothing on the
-screen is changing.  This is particularly true when the overlay contents have
-transparent pixels, and overlapping layers are being blended together.  In such
-cases, the HWC can choose to request GLES composition for some or all layers
-and retain the composited buffer.  If SurfaceFlinger comes back again asking to
-composite the same set of buffers, the HWC can just continue to show the
-previously-composited scratch buffer.  This can improve the battery life of an
-idle device.</p>
+screen is changing. This is particularly true when overlay contents have
+transparent pixels and overlapping layers are blended together. In such cases,
+the HWC can choose to request GLES composition for some or all layers and retain
+the composited buffer. If SurfaceFlinger comes back asking to composite the same
+set of buffers, the HWC can continue to show the previously-composited scratch
+buffer. This can improve the battery life of an idle device.</p>
 
-<p>Devices shipping with Android 4.4 ("KitKat") typically support four overlay
-planes.  Attempting to composite more layers than there are overlays will cause
-the system to use GLES composition for some of them; so the number of layers
-used by an application can have a measurable impact on power consumption and
-performance.</p>
+<p>Devices running Android 4.4 and later typically support four overlay planes.
+Attempting to composite more layers than overlays causes the system to use GLES
+composition for some of them, meaning the number of layers used by an app can
+have a measurable impact on power consumption and performance.</p>
 
-<p>You can see exactly what SurfaceFlinger is up to with the command <code>adb shell
-dumpsys SurfaceFlinger</code>.  The output is verbose.  The part most relevant to our
-current discussion is the HWC summary that appears near the bottom of the
-output:</p>
+<p>You can see exactly what SurfaceFlinger is up to with the command <code>adb
+shell dumpsys SurfaceFlinger</code>. The output is verbose; the relevant section
+is HWC summary that appears near the bottom of the output:</p>
 
 <pre>
     type    |          source crop              |           frame           name
@@ -263,39 +256,39 @@ output:</p>
   FB TARGET | [    0.0,    0.0, 1080.0, 1920.0] | [    0,    0, 1080, 1920] HWC_FRAMEBUFFER_TARGET
 </pre>
 
-<p>This tells you what layers are on screen, whether they're being handled with
-overlays ("HWC") or OpenGL ES composition ("GLES"), and gives you a bunch of
-other facts you probably won't care about ("handle" and "hints" and "flags" and
-other stuff that we've trimmed out of the snippet above).  The "source crop" and
-"frame" values will be examined more closely later on.</p>
+<p>The summary includes what layers are on screen and whether they are handled
+with overlays (HWC) or OpenGL ES composition (GLES). It also includes other data
+you likely don't care about (handle, hints, flags, etc.) and which has been
+trimmed from the snippet above; source crop and frame values will be examined
+more closely later on.</p>
 
-<p>The FB_TARGET layer is where GLES composition output goes.  Since all layers
+<p>The FB_TARGET layer is where GLES composition output goes. Since all layers
 shown above are using overlays, FB_TARGET isn’t being used for this frame. The
 layer's name is indicative of its original role: On a device with
 <code>/dev/graphics/fb0</code> and no overlays, all composition would be done
-with GLES, and the output would be written to the framebuffer.  On recent devices there
-generally is no simple framebuffer, so the FB_TARGET layer is a scratch buffer.</p>
+with GLES, and the output would be written to the framebuffer. On newer devices,
+generally is no simple framebuffer so the FB_TARGET layer is a scratch buffer.</p>
 
-<p class="note"><strong>Note:</strong> This is why screen grabbers written for old versions of Android no
-longer work: They're trying to read from the Framebuffer, but there is no such
-thing.</p>
+<p class="note"><strong>Note:</strong> This is why screen grabbers written for
+older versions of Android no longer work: They are trying to read from the
+Framebuffer, but there is no such thing.</p>
 
-<p>The overlay planes have another important role: they're the only way to display
-DRM content.  DRM-protected buffers cannot be accessed by SurfaceFlinger or the
-GLES driver, which means that your video will disappear if HWC switches to GLES
-composition.</p>
+<p>The overlay planes have another important role: They're the only way to
+display DRM content. DRM-protected buffers cannot be accessed by SurfaceFlinger
+or the GLES driver, which means your video will disappear if HWC switches to
+GLES composition.</p>
 
-<h3 id="triple-buffering">The Need for Triple-Buffering</h3>
+<h3 id="triple-buffering">Triple-Buffering</h3>
 
 <p>To avoid tearing on the display, the system needs to be double-buffered: the
-front buffer is displayed while the back buffer is being prepared.  At VSYNC, if
-the back buffer is ready, you quickly switch them.  This works reasonably well
+front buffer is displayed while the back buffer is being prepared. At VSYNC, if
+the back buffer is ready, you quickly switch them. This works reasonably well
 in a system where you're drawing directly into the framebuffer, but there's a
-hitch in the flow when a composition step is added.  Because of the way
+hitch in the flow when a composition step is added. Because of the way
 SurfaceFlinger is triggered, our double-buffered pipeline will have a bubble.</p>
 
 <p>Suppose frame N is being displayed, and frame N+1 has been acquired by
-SurfaceFlinger for display on the next VSYNC.  (Assume frame N is composited
+SurfaceFlinger for display on the next VSYNC. (Assume frame N is composited
 with an overlay, so we can't alter the buffer contents until the display is done
 with it.)  When VSYNC arrives, HWC flips the buffers.  While the app is starting
 to render frame N+2 into the buffer that used to hold frame N, SurfaceFlinger is
@@ -318,9 +311,7 @@ responsive to touch input.</p>
 
 <img src="images/surfaceflinger_bufferqueue.png" alt="SurfaceFlinger with BufferQueue" />
 
-<p class="img-caption">
-  <strong>Figure 1.</strong> SurfaceFlinger + BufferQueue
-</p>
+<p class="img-caption"><strong>Figure 1.</strong> SurfaceFlinger + BufferQueue</p>
 
 <p>The diagram above depicts the flow of SurfaceFlinger and BufferQueue. During
 frame:</p>
@@ -730,35 +721,34 @@ if it doesn't.</p>
 
 <h2 id="surfacetexture">SurfaceTexture</h2>
 
-<p>The SurfaceTexture class is a relative newcomer, added in Android 3.0
-("Honeycomb").  Just as SurfaceView is the combination of a Surface and a View,
-SurfaceTexture is the combination of a Surface and a GLES texture.  Sort of.</p>
+<p>The SurfaceTexture class was introduced in Android 3.0. Just as SurfaceView
+is the combination of a Surface and a View, SurfaceTexture is a rough
+combination of a Surface and a GLES texture (with a few caveats).</p>
 
-<p>When you create a SurfaceTexture, you are creating a BufferQueue for which your
-app is the consumer.  When a new buffer is queued by the producer, your app is
-notified via callback (<code>onFrameAvailable()</code>).  Your app calls
+<p>When you create a SurfaceTexture, you are creating a BufferQueue for which
+your app is the consumer. When a new buffer is queued by the producer, your app
+is notified via callback (<code>onFrameAvailable()</code>). Your app calls
 <code>updateTexImage()</code>, which releases the previously-held buffer,
 acquires the new buffer from the queue, and makes some EGL calls to make the
-buffer available to GLES as an "external" texture.</p>
+buffer available to GLES as an external texture.</p>
 
 <p>External textures (<code>GL_TEXTURE_EXTERNAL_OES</code>) are not quite the
-same as textures created by GLES (<code>GL_TEXTURE_2D</code>).  You have to
+same as textures created by GLES (<code>GL_TEXTURE_2D</code>): You have to
 configure your renderer a bit differently, and there are things you can't do
-with them. But the key point is this: You can render textured polygons directly
-from the data received by your BufferQueue.</p>
+with them. The key point is that you can render textured polygons directly
+from the data received by your BufferQueue. gralloc supports a wide variety of
+formats, so we need to guarantee the format of the data in the buffer is
+something GLES can recognize. To do so, when SurfaceTexture creates the
+BufferQueue, it sets the consumer usage flags to
+<code>GRALLOC_USAGE_HW_TEXTURE</code>, ensuring that any buffer created by
+gralloc would be usable by GLES.</p>
 
-<p>You may be wondering how we can guarantee the format of the data in the
-buffer is something GLES can recognize -- gralloc supports a wide variety
-of formats.  When SurfaceTexture created the BufferQueue, it set the consumer's
-usage flags to <code>GRALLOC_USAGE_HW_TEXTURE</code>, ensuring that any buffer
-created by gralloc would be usable by GLES.</p>
-
-<p>Because SurfaceTexture interacts with an EGL context, you have to be careful to
-call its methods from the correct thread.  This is spelled out in the class
-documentation.</p>
+<p>Because SurfaceTexture interacts with an EGL context, you must be careful to
+call its methods from the correct thread (this is detailed in the class
+documentation).</p>
 
 <p>If you look deeper into the class documentation, you will see a couple of odd
-calls.  One retrieves a timestamp, the other a transformation matrix, the value
+calls. One retrieves a timestamp, the other a transformation matrix, the value
 of each having been set by the previous call to <code>updateTexImage()</code>.
 It turns out that BufferQueue passes more than just a buffer handle to the consumer.
 Each buffer is accompanied by a timestamp and transformation parameters.</p>
@@ -844,12 +834,73 @@ render it with GLES commands on each EGLSurface (forwarding the transform and
 timestamp from SurfaceTexture).  The encoder thread pulls the encoded output
 from MediaCodec and stashes it in memory.</p>
 
+
+<h3 id="secure-texture-video-playback">Secure Texture Video Playback</h3>
+<p>Android N supports GPU post-processing of protected video content. This
+allows using the GPU for complex non-linear video effects (such as warps),
+mapping protected video content onto textures for use in general graphics scenes
+(e.g., using OpenGL ES), and virtual reality (VR).</p>
+
+<img src="images/graphics_secure_texture_playback.png" alt="Secure Texture Video Playback" />
+<p class="img-caption"><strong>Figure 3.</strong>Secure texture video playback</p>
+
+<p>Support is enabled using the following two extensions:</p>
+<ul>
+<li><strong>EGL extension</strong>
+(<code><a href="https://www.khronos.org/registry/egl/extensions/EXT/EGL_EXT_protected_content.txt">EGL_EXT_protected_content</code></a>).
+Allows the creation of protected GL contexts and surfaces, which can both
+operate on protected content.</li>
+<li><strong>GLES extension</strong>
+(<code><a href="https://www.khronos.org/registry/gles/extensions/EXT/EXT_protected_textures.txt">GL_EXT_protected_textures</code></a>).
+Allows tagging textures as protected so they can be used as framebuffer texture
+attachments.</li>
+</ul>
+
+<p>Android N also updates SurfaceTexture and ACodec
+(<code>libstagefright.so</code>) to allow protected content to be sent even if
+the windows surface does not queue to the window composer (i.e., SurfaceFlinger)
+and provide a protected video surface for use within a protected context. This
+is done by setting the correct protected consumer bits
+(<code>GRALLOC_USAGE_PROTECTED</code>) on surfaces created in a protected
+context (verified by ACodec).</p>
+
+<p>These changes benefit app developers who can create apps that perform
+enhanced video effects or apply video textures using protected content in GL
+(for example, in VR), end users who can view high-value video content (such as
+movies and TV shows) in GL environment (for example, in VR), and OEMs who can
+achieve higher sales due to added device functionality (for example, watching HD
+movies in VR). The new EGL and GLES extensions can be used by system on chip
+(SoCs) providers and other vendors, and are currently implemented on the
+Qualcomm MSM8994 SoC chipset used in the Nexus 6P.
+
+<p>Secure texture video playback sets the foundation for strong DRM
+implementation in the OpenGL ES environment. Without a strong DRM implementation
+such as Widevine Level 1, many content providers would not allow rendering of
+their high-value content in the OpenGL ES environment, preventing important VR
+use cases such as watching DRM protected content in VR.</p>
+
+<p>AOSP includes framework code for secure texture video playback; driver
+support is up to the vendor. Partners must implement the
+<code>EGL_EXT_protected_content</code> and
+<code>GL_EXT_protected_textures extensions</code>. When using your own codec
+library (to replace libstagefright), note the changes in
+<code>/frameworks/av/media/libstagefright/SurfaceUtils.cpp</code> that allow
+buffers marked with <code>GRALLOC_USAGE_PROTECTED</code> to be sent to
+ANativeWindows (even if the ANativeWindow does not queue directly to the window
+composer) as long as the consumer usage bits contain
+<code>GRALLOC_USAGE_PROTECTED</code>. For detailed documentation on implementing
+the extensions, refer to the Khronos Registry
+(<a href="https://www.khronos.org/registry/egl/extensions/EXT/EGL_EXT_protected_content.txt">EGL_EXT_protected_content</a>,
+<a href="https://www.khronos.org/registry/gles/extensions/EXT/EXT_protected_textures.txt">GL_EXT_protected_textures</a>).</p>
+
+<p>Partners may also need to make hardware changes to ensure that protected
+memory mapped onto the GPU remains protected and unreadable by unprotected
+code.</p>
+
 <h2 id="texture">TextureView</h2>
 
-<p>The TextureView class was
-<a href="http://android-developers.blogspot.com/2011/11/android-40-graphics-and-animations.html">introduced</a>
-in Android 4.0 ("Ice Cream Sandwich").  It's the most complex of the View
-objects discussed here, combining a View with a SurfaceTexture.</p>
+<p>The TextureView class introduced in Android 4.0 and is the most complex of
+the View objects discussed here, combining a View with a SurfaceTexture.</p>
 
 <p>Recall that the SurfaceTexture is a "GL consumer", consuming buffers of graphics
 data and making them available as textures.  TextureView wraps a SurfaceTexture,
