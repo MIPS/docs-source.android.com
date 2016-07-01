@@ -307,7 +307,8 @@ href="https://developer.android.com/preview/features/security-config.html">Netwo
 Security Configuration</a> for more details.
 </p>
 <h2 id="application-signing">Application Signing</h2>
-<p>Code signing allows developers to identify the author of the application and to
+<p><a href="{@docRoot}security/apksigning/index.html">Code signing</a>
+  allows developers to identify the author of the application and to
   update their application without creating complicated interfaces and
   permissions. Every application that is run on the Android platform must be
   signed by the developer.  Applications that attempt to install without being
