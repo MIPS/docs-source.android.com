@@ -327,6 +327,16 @@
       </li>
 
       <li class="nav-section">
+        <div class="nav-section-header">
+            <a href="<?cs var:toroot ?>devices/tech/display/index.html">
+              <span class="en">Display Settings</span></a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/display/dnd.html">Do Not Disturb</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
         <div class="nav-section-header empty">
           <a href="<?cs var:toroot ?>devices/halref/index.html">
             <span class="en">HAL File Reference</span>
