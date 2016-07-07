@@ -226,8 +226,8 @@ you want to handle this?"</li>
 to HWC, and lets HWC handle the rest.</li>
 </ol>
 
-<p>Since the decision-making code can be custom tailored by the hardware vendor,
-it's possible to get the best performance out of every device.</p>
+<p>Since hardware vendors can custom tailor decision-making code, it's possible
+to get the best performance out of every device.</p>
 
 <p>Overlay planes may be less efficient than GL composition when nothing on the
 screen is changing. This is particularly true when overlay contents have
@@ -242,160 +242,26 @@ Attempting to composite more layers than overlays causes the system to use GLES
 composition for some of them, meaning the number of layers used by an app can
 have a measurable impact on power consumption and performance.</p>
 
-<p>You can see exactly what SurfaceFlinger is up to with the command <code>adb
-shell dumpsys SurfaceFlinger</code>. The output is verbose; the relevant section
-is HWC summary that appears near the bottom of the output:</p>
-
-<pre>
-    type    |          source crop              |           frame           name
-------------+-----------------------------------+--------------------------------
-        HWC | [    0.0,    0.0,  320.0,  240.0] | [   48,  411, 1032, 1149] SurfaceView
-        HWC | [    0.0,   75.0, 1080.0, 1776.0] | [    0,   75, 1080, 1776] com.android.grafika/com.android.grafika.PlayMovieSurfaceActivity
-        HWC | [    0.0,    0.0, 1080.0,   75.0] | [    0,    0, 1080,   75] StatusBar
-        HWC | [    0.0,    0.0, 1080.0,  144.0] | [    0, 1776, 1080, 1920] NavigationBar
-  FB TARGET | [    0.0,    0.0, 1080.0, 1920.0] | [    0,    0, 1080, 1920] HWC_FRAMEBUFFER_TARGET
-</pre>
-
-<p>The summary includes what layers are on screen and whether they are handled
-with overlays (HWC) or OpenGL ES composition (GLES). It also includes other data
-you likely don't care about (handle, hints, flags, etc.) and which has been
-trimmed from the snippet above; source crop and frame values will be examined
-more closely later on.</p>
-
-<p>The FB_TARGET layer is where GLES composition output goes. Since all layers
-shown above are using overlays, FB_TARGET isn’t being used for this frame. The
-layer's name is indicative of its original role: On a device with
-<code>/dev/graphics/fb0</code> and no overlays, all composition would be done
-with GLES, and the output would be written to the framebuffer. On newer devices,
-generally is no simple framebuffer so the FB_TARGET layer is a scratch buffer.</p>
-
-<p class="note"><strong>Note:</strong> This is why screen grabbers written for
-older versions of Android no longer work: They are trying to read from the
-Framebuffer, but there is no such thing.</p>
-
-<p>The overlay planes have another important role: They're the only way to
-display DRM content. DRM-protected buffers cannot be accessed by SurfaceFlinger
-or the GLES driver, which means your video will disappear if HWC switches to
-GLES composition.</p>
-
-<h3 id="triple-buffering">Triple-Buffering</h3>
-
-<p>To avoid tearing on the display, the system needs to be double-buffered: the
-front buffer is displayed while the back buffer is being prepared. At VSYNC, if
-the back buffer is ready, you quickly switch them. This works reasonably well
-in a system where you're drawing directly into the framebuffer, but there's a
-hitch in the flow when a composition step is added. Because of the way
-SurfaceFlinger is triggered, our double-buffered pipeline will have a bubble.</p>
-
-<p>Suppose frame N is being displayed, and frame N+1 has been acquired by
-SurfaceFlinger for display on the next VSYNC. (Assume frame N is composited
-with an overlay, so we can't alter the buffer contents until the display is done
-with it.)  When VSYNC arrives, HWC flips the buffers.  While the app is starting
-to render frame N+2 into the buffer that used to hold frame N, SurfaceFlinger is
-scanning the layer list, looking for updates.  SurfaceFlinger won't find any new
-buffers, so it prepares to show frame N+1 again after the next VSYNC.  A little
-while later, the app finishes rendering frame N+2 and queues it for
-SurfaceFlinger, but it's too late.  This has effectively cut our maximum frame
-rate in half.</p>
-
-<p>We can fix this with triple-buffering.  Just before VSYNC, frame N is being
-displayed, frame N+1 has been composited (or scheduled for an overlay) and is
-ready to be displayed, and frame N+2 is queued up and ready to be acquired by
-SurfaceFlinger.  When the screen flips, the buffers rotate through the stages
-with no bubble.  The app has just less than a full VSYNC period (16.7ms at 60fps) to
-do its rendering and queue the buffer. And SurfaceFlinger / HWC has a full VSYNC
-period to figure out the composition before the next flip.  The downside is
-that it takes at least two VSYNC periods for anything that the app does to
-appear on the screen.  As the latency increases, the device feels less
-responsive to touch input.</p>
-
-<img src="images/surfaceflinger_bufferqueue.png" alt="SurfaceFlinger with BufferQueue" />
-
-<p class="img-caption"><strong>Figure 1.</strong> SurfaceFlinger + BufferQueue</p>
-
-<p>The diagram above depicts the flow of SurfaceFlinger and BufferQueue. During
-frame:</p>
-
-<ol>
-<li>red buffer fills up, then slides into BufferQueue</li>
-<li>after red buffer leaves app, blue buffer slides in, replacing it</li>
-<li>green buffer and systemUI* shadow-slide into HWC (showing that SurfaceFlinger
-still has the buffers, but now HWC has prepared them for display via overlay on
-the next VSYNC).</li>
-</ol>
-
-<p>The blue buffer is referenced by both the display and the BufferQueue.  The
-app is not allowed to render to it until the associated sync fence signals.</p>
-
-<p>On VSYNC, all of these happen at once:</p>
-
-<ul>
-<li>red buffer leaps into SurfaceFlinger, replacing green buffer</li>
-<li>green buffer leaps into Display, replacing blue buffer, and a dotted-line
-green twin appears in the BufferQueue</li>
-<li>the blue buffer’s fence is signaled, and the blue buffer in App empties**</li>
-<li>display rect changes from &lt;blue + SystemUI&gt; to &lt;green +
-SystemUI&gt;</li>
-</ul>
-
-<p><strong>*</strong> - The System UI process is providing the status and nav
-bars, which for our purposes here aren’t changing, so SurfaceFlinger keeps using
-the previously-acquired buffer.  In practice there would be two separate
-buffers, one for the status bar at the top, one for the navigation bar at the
-bottom, and they would be sized to fit their contents.  Each would arrive on its
-own BufferQueue.</p>
-
-<p><strong>**</strong> - The buffer doesn’t actually “empty”; if you submit it
-without drawing on it you’ll get that same blue again.  The emptying is the
-result of clearing the buffer contents, which the app should do before it starts
-drawing.</p>
-
-<p>We can reduce the latency by noting layer composition should not require a
-full VSYNC period.  If composition is performed by overlays, it takes essentially
-zero CPU and GPU time. But we can't count on that, so we need to allow a little
-time.  If the app starts rendering halfway between VSYNC signals, and
-SurfaceFlinger defers the HWC setup until a few milliseconds before the signal
-is due to arrive, we can cut the latency from 2 frames to perhaps 1.5.  In
-theory you could render and composite in a single period, allowing a return to
-double-buffering; but getting it down that far is difficult on current devices.
-Minor fluctuations in rendering and composition time, and switching from
-overlays to GLES composition, can cause us to miss a swap deadline and repeat
-the previous frame.</p>
-
-<p>SurfaceFlinger's buffer handling demonstrates the fence-based buffer
-management mentioned earlier.  If we're animating at full speed, we need to
-have an acquired buffer for the display ("front") and an acquired buffer for
-the next flip ("back").  If we're showing the buffer on an overlay, the
-contents are being accessed directly by the display and must not be touched.
-But if you look at an active layer's BufferQueue state in the <code>dumpsys
-SurfaceFlinger</code> output, you'll see one acquired buffer, one queued buffer, and
-one free buffer.  That's because, when SurfaceFlinger acquires the new "back"
-buffer, it releases the current "front" buffer to the queue.  The "front"
-buffer is still in use by the display, so anything that dequeues it must wait
-for the fence to signal before drawing on it.  So long as everybody follows
-the fencing rules, all of the queue-management IPC requests can happen in
-parallel with the display.</p>
-
 <h3 id="virtual-displays">Virtual Displays</h3>
 
-<p>SurfaceFlinger supports a "primary" display, i.e. what's built into your phone
-or tablet, and an "external" display, such as a television connected through
-HDMI.  It also supports a number of "virtual" displays, which make composited
-output available within the system.  Virtual displays can be used to record the
+<p>SurfaceFlinger supports a primary display, i.e. what's built into your phone
+or tablet, and an external display, such as a television connected through
+HDMI. It also supports a number of virtual displays that can make composited
+output available within the system. Virtual displays can be used to record the
 screen or send it over a network.</p>
 
 <p>Virtual displays may share the same set of layers as the main display
-(the "layer stack") or have its own set.  There is no VSYNC for a virtual
+(the layer stack) or have its own set. There is no VSYNC for a virtual
 display, so the VSYNC for the primary display is used to trigger composition for
 all displays.</p>
 
-<p>In the past, virtual displays were always composited with GLES.  The Hardware
-Composer managed composition for only the primary display.  In Android 4.4, the
+<p>In the past, virtual displays were always composited with GLES; the Hardware
+Composer managed composition for only the primary display. In Android 4.4, the
 Hardware Composer gained the ability to participate in virtual display
 composition.</p>
 
-<p>As you might expect, the frames generated for a virtual display are written to a
-BufferQueue.</p>
+<p>As you might expect, the frames generated for a virtual display are written
+to a BufferQueue.</p>
 
 <h3 id="screenrecord">Case study: screenrecord</h3>
 
