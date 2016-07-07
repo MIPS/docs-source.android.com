@@ -145,7 +145,19 @@
         </div>
         <ul>
           <li><a href="<?cs var:toroot ?>devices/graphics/architecture.html">Architecture</a></li>
-          <li><a href="<?cs var:toroot ?>devices/graphics/implement.html">Implementation</a></li>
+          <li class="nav-section">
+            <div class="nav-section-header">
+              <a href="<?cs var:toroot ?>devices/graphics/implement.html">
+                <span class="en">Implementing</span>
+              </a>
+            </div>
+            <ul>
+              <li><a href="<?cs var:toroot ?>devices/graphics/implement-hwc.html">Hardware Composer HAL</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/implement-vsync.html">VSYNC</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/implement-vulkan.html">Vulkan</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/implement-vdisplays.html">Virtual Displays</a></li>
+            </ul>
+         </li>
          <li class="nav-section">
             <div class="nav-section-header">
               <a href="<?cs var:toroot ?>devices/graphics/testing.html">
