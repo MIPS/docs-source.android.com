@@ -74,7 +74,7 @@ run at the time the denial was generated. In this case, it’s a pretty good hin
 <p>And here is another example:</p>
 
 <pre>
-$ adb shell su -c dmesg | grep 'avc: '
+$ adb shell su root dmesg | grep 'avc: '
 &lt;5> type=1400 audit: avc:  denied  { read write } for  pid=177
 comm="rmt_storage" name="mem" dev="tmpfs" ino=6004 scontext=u:r:rmt:s0
 tcontext=u:object_r:kmem_device:s0 tclass=chr_file
@@ -101,7 +101,7 @@ enforcing mode is enabled.</p>
 root issue:</p>
 
 <pre>
-$ adb shell su -c setenforce 0
+$ adb shell su root setenforce 0
 </pre>
 
 <p>Or at the kernel command line (during early device bring-up):</p>
@@ -124,13 +124,13 @@ $ sudo apt-get install policycoreutils
 <p>To use it on Ubuntu 12.04, run:</p>
 
 <pre>
-$ adb shell su -c dmesg | audit2allow
+$ adb shell su root dmesg | audit2allow
 </pre>
 
 <p>On Ubuntu 14.04 and newer, audit2allow requires you to specify the Android policy
 using the -p option, e.g.
 <pre>
-$ adb shell su -c dmesg | audit2allow -p out/target/product/&lt;device&gt;/root/sepolicy
+$ adb shell su root dmesg | audit2allow -p out/target/product/&lt;device&gt;/root/sepolicy
 </pre>
 
 <p>Nevertheless, care must be taken to examine each potential addition for
