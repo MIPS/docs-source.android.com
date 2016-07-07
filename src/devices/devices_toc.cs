@@ -295,6 +295,17 @@
 
       <li class="nav-section">
         <div class="nav-section-header">
+            <a href="<?cs var:toroot ?>devices/tech/connect/index.html">
+              <span class="en">Connectivity</span>
+            </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/connect/felica.html">Host Card Emulation of FeliCa</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/datausage/index.html">
             <span class="en">Data Usage</span>
           </a>
