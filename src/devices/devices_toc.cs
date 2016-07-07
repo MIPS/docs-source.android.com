@@ -299,6 +299,7 @@
         </div>
         <ul>
           <li><a href="<?cs var:toroot ?>devices/tech/connect/felica.html">Host Card Emulation of FeliCa</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/connect/ril.html">Radio Interface Layer (RIL)</a></li>
         </ul>
       </li>
 
