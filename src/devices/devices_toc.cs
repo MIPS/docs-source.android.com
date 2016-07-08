@@ -200,6 +200,8 @@
           </a>
         </div>
         <ul>
+          <li><a href="<?cs var:toroot ?>devices/media/framework-hardening.html">Framework
+          Hardening</a></li>
           <li><a href="<?cs var:toroot ?>devices/media/soc.html">SoC Dependencies</a></li>
           <li><a href="<?cs var:toroot ?>devices/media/oem.html">OEM Dependencies</a></li>
         </ul>
