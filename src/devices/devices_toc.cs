@@ -269,6 +269,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/constraints.html">Constraints</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/configure.html">Configuration</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/gc-debug.html">Garbage Collection</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/dalvik/jit-compiler.html">JIT Compilation</a></li>
         </ul>
       </li>
 
