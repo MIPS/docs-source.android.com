@@ -379,6 +379,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/admin/managed-profiles.html">Managed Profiles</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/admin/provision.html">Provisioning</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/admin/multiuser-apps.html">Multiuser Apps</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/admin/enterprise-telephony.html">Enterprise Telephony</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/admin/testing-setup.html">Testing Setup</a></li>
         </ul>
       </li>
