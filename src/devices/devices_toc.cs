@@ -286,6 +286,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/config/kernel.html">Kernel Configuration</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/config/kernel_network_tests.html">Kernel Network Tests</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/config/low-ram.html">Low RAM</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/config/namespaces_libraries.html">Namespaces for Libraries</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/config/renderer.html">OpenGLRenderer</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/config/runtime_perms.html">Runtime Permissions</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/config/uicc.html">UICC</a></li>
