@@ -61,6 +61,7 @@
            <li><a href="<?cs var:toroot ?>security/advisory/2016-03-18.html">2016-03-18</a></li>
          </ul>
       </li>
+      <li><a href="<?cs var:toroot ?>security/bulletin/2016-07-01.html">July 2016</a></li>
       <li><a href="<?cs var:toroot ?>security/bulletin/2016-06-01.html">June 2016</a></li>
       <li><a href="<?cs var:toroot ?>security/bulletin/2016-05-01.html">May 2016</a></li>
       <li><a href="<?cs var:toroot ?>security/bulletin/2016-04-02.html">April 2016</a></li>
