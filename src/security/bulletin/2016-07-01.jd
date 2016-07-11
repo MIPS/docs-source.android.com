@@ -17,7 +17,7 @@ page.title=Android Security Bulletin—July 2016
     limitations under the License.
 -->
 
-<p><em>Published July 06, 2016 | Updated July 07, 2016</em></p>
+<p><em>Published July 06, 2016 | Updated July 11, 2016</em></p>
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
 update to Nexus devices through an over-the-air (OTA) update. The Nexus firmware
@@ -532,8 +532,9 @@ successfully exploited on Android.</p>
   and pjf (<a href="http://weibo.com/jfpan">weibo.com/jfpan</a>) of IceSword Lab,
   <a href="http://www.360.com">Qihoo 360 Technology Co. Ltd</a>: CVE-2016-3814,
   CVE-2016-3802, CVE-2016-3769, CVE-2016-3807, CVE-2016-3808
-  <li>Marco Nelissen of Google: CVE-2016-3818, CVE-2016-3750
+  <li>Marco Nelissen of Google: CVE-2016-3818
   <li>Mark Brand of Google Project Zero: CVE-2016-3757
+  <li><a href="https://github.com/michalbednarski">Michał Bednarski</a>: CVE-2016-3750
   <li>Mingjian Zhou (<a href="https://twitter.com/Mingjian_Zhou">@Mingjian_Zhou</a>),
   Chiachih Wu (<a href="https://twitter.com/chiachih_wu">@chiachih_wu</a>), and
   Xuxian Jiang of <a href="http://c0reteam.org">C0RE Team</a>: CVE-2016-3747,
@@ -933,7 +934,7 @@ have access to.</p>
    <td>High</td>
    <td><a href="#all_nexus">All Nexus</a></td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
-   <td>Google internal</td>
+   <td>Dec 16, 2015</td>
   </tr>
 </table>
 
@@ -2917,4 +2918,5 @@ map as follows:</p>
       <li>Added attribution for CVE-2016-2501 and CVE-2016-2502
     </ul>
   </li>
+  <li>July 11, 2016: Updated attribution for CVE-2016-3750</li>
 </ul>
