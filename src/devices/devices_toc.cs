@@ -331,6 +331,7 @@
         </div>
         <ul>
           <li><a href="<?cs var:toroot ?>devices/tech/connect/block-numbers.html">Block Phone Numbers</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/connect/data-saver.html">Data Saver Mode</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/connect/felica.html">Host Card Emulation of FeliCa</a></li>
         </ul>
       </li>
