@@ -155,8 +155,25 @@
           </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/graphics/architecture.html">Architecture</a></li>
-          <li class="nav-section">
+         <li class="nav-section">
+            <div class="nav-section-header">
+              <a href="<?cs var:toroot ?>devices/graphics/architecture.html">
+                <span class="en">Architecture</span>
+              </a>
+            </div>
+            <ul>
+              <li><a href="<?cs var:toroot ?>devices/graphics/arch-bq-gralloc.html">BufferQueue</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/arch-sf-hwc.html">SurfaceFlinger and HWC</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/arch-sh.html">Surface and SurfaceHolder</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/arch-egl-opengl.html">OpenGL ES</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/arch-vulkan.html">Vulkan</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/arch-sv-glsv.html">SurfaceView</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/arch-st.html">SurfaceTexture</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/arch-tv.html">TextureView</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/arch-gameloops.html">Game Loops</a></li>
+            </ul>
+         </li>
+         <li class="nav-section">
             <div class="nav-section-header">
               <a href="<?cs var:toroot ?>devices/graphics/implement.html">
                 <span class="en">Implementing</span>
