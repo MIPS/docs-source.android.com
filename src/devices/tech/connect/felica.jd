@@ -34,11 +34,6 @@ destined for that region improves their usefulness.</p>
 
 <p>HCE FeliCa requires NFC hardware that supports the NFC-F (JIS 6319-4) standard.</p>
 
-<img src="images/host_card.png" width="800" alt="HCE of FeliCa" id="HCE of FeliCa architecture" />
-<p class="img-caption">
-  <strong>Figure 1.</strong> HCE of FeliCa architecture
-  </p>
-
 <p>Host Card Emulation (HCE) of FeliCa is essentially a parallel implementation to
 the existing HCE implementation on Android; it creates new classes for FeliCa
 where it makes sense and merges with the existing HCE implementation where
