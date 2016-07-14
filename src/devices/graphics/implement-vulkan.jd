@@ -39,21 +39,22 @@ Architecture</a>.</p>
 
 <p>To implement Vulkan, a device:</p>
 <ul>
-<li>Must include Vulkan Loader (provided by Android) in the build.</li>
-<li>May optionally enumerate a Vulkan Driver (provided by SoCs such as GPU IHVs)
-that implements the
+<li>Must include the Vulkan Loader (provided by Android) in the build.</li>
+<li>Must include a Vulkan driver (provided by SoCs such as GPU IHVs) that
+implements the
 <a href="https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html">Vulkan
-API</a>. The driver is required to support Vulkan functionality in the presence
-of capable GPU hardware. Consult your SoC vendor to request driver support.</li>
+API</a>. To support Vulkan functionality, the Android device needs capable GPU
+hardware and the associated driver. Consult your SoC vendor to request driver
+support.</li>
 </ul>
-<p>If a Vulkan driver is enumerated, the device must have the
+<p>If a Vulkan driver is available on the device, the device needs to declare
 <code>FEATURE_VULKAN_HARDWARE_LEVEL</code> and
 <code>FEATURE_VULKAN_HARDWARE_VERSION</code> system features, with versions that
 accurately reflect the capabilities of the device.</p>
 
 <h2 id=vulkan_loader>Vulkan Loader</h2>
 <p>The primary interface between Vulkan applications and a device's Vulkan
-driver is the loader, which is part of AOSP
+driver is the Vulkan loader, which is part of Android Open Source Project (AOSP)
 (<code>platform/frameworks/native/vulkan</code>) and installed at
 <code>/system/lib[64]/libvulkan.so</code>. The loader provides the core Vulkan
 API entry points, as well as entry points of a few extensions that are required
@@ -63,14 +64,17 @@ than the driver. The loader also supports enumerating and loading layers that
 can expose additional extensions and/or intercept core API calls on their way to
 the driver.</p>
 
-<p>The NDK includes a stub <code>libvulkan.so</code> exporting the same symbols
-as the loader. Calling the Vulkan functions exported from
-<code>libvulkan.so</code> enters trampoline functions in the loader, which then
-dispatch to the appropriate layer or driver based on their first argument. The
-<code>vkGet*ProcAddr</code> calls return the function pointers to which the
-trampolines would dispatch, so calling through these function pointers (rather
-than the exported symbols) is slightly more efficient as it skips the trampoline
-and dispatch.</p>
+<p>The NDK includes a stub <code>libvulkan.so</code> library that exports the
+same symbols as the loader and which is used for linking. When running on a
+device, applications call the Vulkan functions exported from
+<code>libvulkan.so</code> (the real library, not the stub) to enter trampoline
+functions in the loader (which then dispatch to the appropriate layer or driver
+based on their first argument). The <code>vkGetDeviceProcAddr</code> calls
+return the function pointers to which the trampolines would dispatch (i.e. it
+calls directly into the core API code), so calling through these function
+pointers (rather than the exported symbols) is slightly more efficient as it
+skips the trampoline and dispatch. However, <code>vkGetInstanceProcAddr</code>
+must still call into trampoline code.</p>
 
 <h2 id=driver_emun>Driver enumeration and loading</h2>
 <p>Android expects the GPUs available to the system to be known when the system
@@ -80,7 +84,8 @@ discovering and loading the driver. Preferred paths for 32-bit and 64-bit Vulkan
 drivers are:</p>
 
 <p>
-<pre>/vendor/lib/hw/vulkan.&lt;ro.product.platform&gt;.so
+<pre>
+/vendor/lib/hw/vulkan.&lt;ro.product.platform&gt;.so
 /vendor/lib64/hw/vulkan.&lt;ro.product.platform&gt;.so
 </pre>
 </p>
@@ -109,8 +114,7 @@ driver, though that driver can support multiple physical devices. The
 <p>The Vulkan loader supports enumerating and loading layers that can expose
 additional extensions and/or intercept core API calls on their way to the
 driver. Android 7.0 does not include layers on the system image; however,
-applications may include layers in their APK and SoC developer tools (ARM DS-5,
-Adreno SDK, PowerVR Tools, etc.) may also include layers.</p>
+applications may include layers in their APK.</p>
 <p>When using layers, keep in mind that Android's security model and policies
 differ significantly from other platforms. In particular, Android does not allow
 loading external code into a non-debuggable process on production (non-rooted)
@@ -136,10 +140,10 @@ Developers choose layers (and versions of those layers) to use in their
 application; different applications using the same layer may still use
 different versions. Developers choose which of these layers to ship in their
 application package.</li>
-<li><strong>Injected layers</strong>. Includes layers such as framerate, social
-network, or game launcher overlays provided by the user or some other
-application without the application's knowledge or consent. These violate
-Android's security policies and will not be supported.</li>
+<li><strong>Injected (implicit) layers</strong>. Includes layers such as
+framerate, social network, or game launcher overlays provided by the user or
+some other application without the application's knowledge or consent. These
+violate Android's security policies and are not supported.</li>
 </ul>
 
 <p>In the normal state, the loader searches for layers only in the application's
@@ -149,11 +153,12 @@ separate manifest file as the developer deliberately included these layers and
 reasons to avoid loading libraries before enabling them don't apply.</p>
 
 <p>Android allows layers to be ported with build-environment changes between
-Android and other platforms. The interface between layers and the loader must
-match the interface used by the
-<a href="http://lunarg.com/vulkan-sdk/">LunarG</a> loader used on Windows and
-Linux. Versions of the LunarG validation layers that have been verified to build
-and work on Android are hosted in the android_layers branch of the
+Android and other platforms. For details on the interface between layers and the
+loader, refer to
+<a href="https://github.com/KhronosGroup/Vulkan-LoaderAndValidationLayers/blob/master/loader/LoaderAndLayerInterface.md">Vulkan
+Loader Specification and Architecture Overview</a>. Versions of the LunarG
+validation layers that have been verified to build and work on Android are
+hosted in the android_layers branch of the
 <a href="https://github.com/KhronosGroup/Vulkan-LoaderAndValidationLayers/tree/android_layers">KhronosGroup/Vulkan-LoaderAndValidationLayers</a>
 project on GitHub.</p>
 
@@ -161,9 +166,9 @@ project on GitHub.</p>
 <p>The Window System Integration (WSI) extensions <code>VK_KHR_surface</code>,
 <code>VK_KHR_android_surface</code>, and <code>VK_KHR_swapchain</code> are
 implemented by the platform and live in <code>libvulkan.so</code>. The
-<code>VkSwapchain</code> object and all interaction with
-<code>ANativeWindow</code> is handled by the platform and not exposed to
-drivers. The WSI implementation relies on the
+<code>VkSurfaceKHR</code> and <code>VkSwapchainKHR</code> objects and all
+interaction with <code>ANativeWindow</code> is handled by the platform and is
+not exposed to drivers. The WSI implementation relies on the
 <code>VK_ANDROID_native_buffer</code> extension (described below) which must be
 supported by the driver; this extension is only used by the WSI implementation
 and will not be exposed to applications.</p>
@@ -185,8 +190,8 @@ VkResult VKAPI vkGetSwapchainGrallocUsageANDROID(
 </pre>
 </p>
 
-<p>The format and <code>imageUsage</code> parameters are taken from the
-<code>VkSwapchainCreateInfoKHR</code> structure. The driver should fill
+<p>The <code>format</code> and <code>imageUsage</code> parameters are taken from
+the <code>VkSwapchainCreateInfoKHR</code> structure. The driver should fill
 <code>*grallocUsage</code> with the gralloc usage flags required for the format
 and usage (which are combined with the usage flags requested by the swapchain
 consumer when allocating buffers).</p>
@@ -234,7 +239,6 @@ the following data:</p>
   .queueFamilyCount    = VkSwapChainCreateInfoWSI::queueFamilyCount
   .pQueueFamilyIndices = VkSwapChainCreateInfoWSI::pQueueFamilyIndices
 </pre></p>
-
 
 <h3 id=acquire_image>Aquiring images</h3>
 <p><code>vkAcquireImageANDROID</code> acquires ownership of a swapchain image
@@ -290,8 +294,6 @@ signalled rather than having it provided as input. If the queue is already idle
 when this function is called, it is allowed (but not required) to set
 <code>*pNativeFenceFd</code> to -1. The file descriptor returned in
 *<code>pNativeFenceFd</code> is owned and will be closed by the caller.</p>
-
-
 
 <h3 id=update_drivers>Updating drivers</h3>
 
