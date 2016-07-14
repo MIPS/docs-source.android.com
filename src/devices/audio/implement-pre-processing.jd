@@ -96,7 +96,7 @@ pre_processing {
 }
 </pre></p>
 
-<h2 id="tuning">Source tuning</h2>
+<h2 id=tuning>Source tuning</h2>
 
 <p><code>AudioSource</code> tuning does not have explicit requirements on audio
 gain or audio processing with the exception of voice recognition
@@ -107,7 +107,15 @@ gain or audio processing with the exception of voice recognition
 <li>Close-talk config: 90dB SPL reads RMS of 2500 (16bit samples)</li>
 <li>Level tracks linearly from -18dB to +12dB relative to 90dB SPL</li>
 <li>THD &lt; 1% (90dB SPL in 100 to 4000Hz range)</li>
-<li>8kHz sampling rate (anti-aliasing)</li>
+<li>Near-ultrasound requirements (for testing, see
+<a href="{@docRoot}compatibility/cts/near-ultrasound.html">Near Ultrasound
+Tests</a>):
+<ul>
+<li>Support for SUPPORT_PROPERTY_MIC_NEAR_ULTRASOUND as defined in section 7.8.3
+of the CDD.</li>
+<li>Support one or both of 44100 or 48000 sampling rates with no band-pass or
+anti-aliasing filters.</li>
+</ul></li>
 <li>Effects/pre-processing must be disabled by default</li>
 </ul>
 
@@ -122,24 +130,25 @@ gain or audio processing with the exception of voice recognition
 </li>
 <li>Automatic Gain Control
 <ul>
-<li>Tuned for close-talk for <code>VOICE_COMMUNICATION</code> and main phone mic</li>
+<li>Tuned for close-talk for <code>VOICE_COMMUNICATION</code> and main phone
+mic</li>
 <li>Tuned for far-talk for <code>CAMCORDER</code></li>
 </ul>
 </li>
 </ul>
 
-<h2 id="more">Resources</h2>
+<h2 id="resources">Resources</h2>
 
 <p>For more information, refer to the following resources:</p>
 
 <ul>
 <li>Android documentation for
-<a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">
-audiofx package</a></li>
+<a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">audiofx
+package</a></li>
 
 <li>Android documentation for
-<a href="http://developer.android.com/reference/android/media/audiofx/NoiseSuppressor.html">
-Noise Suppression audio effect</a></li>
+<a href="http://developer.android.com/reference/android/media/audiofx/NoiseSuppressor.html">Noise
+Suppression audio effect</a></li>
 
 <li><code>device/samsung/manta/audio_effects.conf</code> file for the Nexus 10</li>
 </ul>
