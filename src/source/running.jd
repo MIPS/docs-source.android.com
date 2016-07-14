@@ -177,6 +177,79 @@ $ fastboot format userdata
 <p class="note"><strong>Note</strong>: Re-locking the bootloading on a Motoroal Xoom
 erases user data (including the shared USB data).</p>
 
+<h2 id="flash-unlock">Using Flash Unlock</h2>
+
+<p>
+Android 7.0 introduces a new system API, <code>getFlashLockState()</code>, to
+transmit bootloader state.
+</p>
+
+<p>
+Android 7.0 added the following system API that returns the bootloader’s lock
+status on compliant devices:
+</p>
+
+<pre>
+PersistentDataBlockManager.getFlashLockState()
+</pre>
+
+<table>
+  <tr>
+   <th>Return value</th>
+   <th>Conditions</th>
+  </tr>
+  <tr>
+   <td><code>FLASH_LOCK_UNKNOWN</code>
+   </td>
+   <td>Returned only by devices upgrading to Android 7.0 that have not supported
+bootloader changes required to get the flash lock status if they support
+flashing lock/unlock capability.
+<p>
+New Android 7.0 devices must be in either <code>FLASH_LOCK_LOCKED</code> or <code>FLASH_LOCK_UNLOCKED</code> state.
+If a device is upgrading to Android 7.0 and does not support flashing unlock/lock
+capability, then it should simply return <code>FLASH_LOCK_LOCKED</code> state.
+   </td>
+  </tr>
+  <tr>
+   <td><code>FLASH_LOCK_LOCKED</code>
+   </td>
+   <td>Should be returned by any device that does not support flashing
+lock/unlock (i.e. the device is always locked), or any device that does support
+flashing lock/unlock and is in the locked state.
+   </td>
+  </tr>
+  <tr>
+   <td><code>FLASH_LOCK_UNLOCKED</code>
+   </td>
+   <td>Returned by any device that supports flashing lock/unlock and is
+currently in the unlocked state.
+   </td>
+  </tr>
+</table>
+
+<h3 id="examples-and-source">Examples and source</h3>
+
+<p>
+In the Android 7.0 release, the Android Open Source Project (AOSP) contains a reference
+implementation that returns a value based on the <code>ro.boot.flash.locked
+</code>boot property.
+</p>
+
+<p>
+The code lives in:
+</p>
+
+<pre>
+frameworks/base/services/core/java/com/android/server/PersistentDataBlockService.java
+frameworks/base/core/java/android/service/persistentdata/PersistentDataBlockManager.java
+</pre>
+
+<h3 id="validation">Validation</h3>
+<p>
+Manufacturers should test the values returned by devices with locked and
+unlocked bootloaders.
+</p>
+
 <h2 id="selecting-device-build">Selecting a device build</h2>
 
 <p>The recommended builds for devices are available from the lunch menu,
