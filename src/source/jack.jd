@@ -44,6 +44,11 @@ compilation and a Jack compilation server.
 Using a separate package such as ProGuard is no longer necessary.
 </ul>
 
+<p class="note">Note that beginning in Android 7.0 (N), Jack supports code coverage with JaCoCo.
+See <a href="https://android.googlesource.com/platform/prebuilts/sdk/+/master/tools/README-jack-code-coverage.md">
+Code Coverage with JaCoCo</a> and <a href="https://developer.android.com/preview/j8-jack.html">
+Java 9 Language Features</a> for details.</p>
+
 <img src="{@docRoot}images/jack-overview.png" height="75%" width="75%" alt="Jack overview" />
 <p class="img-caption"><strong>Figure 1. </strong>Jack (Java Android Compiler Kit)</p>
 
