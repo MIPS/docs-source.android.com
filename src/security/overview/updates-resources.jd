@@ -285,12 +285,32 @@ href="https://groups.google.com/forum/?fromgroups#!forum/android-security-discus
 <h3 id=reports>Reports</h3>
 <p>Sometimes the Android Security team publishes reports or whitepapers. Here are some of the most recent.</p>
 <ul>
-  <li><a href="{@docRoot}security/reports/Google_Android_Security_2015_Report_Final.pdf">
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2015_Report_Final.pdf">
       Android Security 2015 Year In Review</a></li>
-  <li><a href="{@docRoot}security/reports/Google_Android_Security_2014_Report_Final.pdf">
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2014_Report_Final.pdf">
       Android Security 2014 Year In Review</a></li>
-  <li><a href="{@docRoot}security/reports/Android_WhitePaper_Final_02092016.pdf">
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Android_WhitePaper_Final_02092016.pdf">
       Android Security white paper</a></li>
-  <li><a href="{@docRoot}security/reports/Google_Android_Security_PHA_classifications.pdf">
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_PHA_classifications.pdf">
       Classifications for Potentially Harmful Applications</a></li>
 </ul>
+
+<h3 id=slides>Android Bootcamp 2016 slides</h3>
+<p>The Android Security team has published their Android Bootcamp 2016 slides that cover new security features.</p>
+<ul>
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Android-Bootcamp-2016-Verified-Boot-and-Encryption.pdf">
+      Verified boot and encryption</a></li>
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Android-Bootcamp-2016-SafetyNet.pdf">
+      SafetyNet</a></li>
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/New-App-Lifecycle-for-Encryption.pdf">
+      New app life cycle for encryption</a></li>
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Android-Bootcamp-2016-Keeping-Google-Play-safe.pdf">
+      Keeping Google Play safe</a></li>
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Android-Bootcamp-2016-Defense-in-depth-efforts.pdf">
+      Defense in depth efforts</a></li>
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Android-Bootcamp-2016-Android-Keystore-Attestation.pdf">
+      Keystore attestation</a></li>
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Android-Bootcamp-2016-Android-Attack-Team.pdf">
+      Android attack team</a></li>
+</ul>
+
