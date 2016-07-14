@@ -43,7 +43,7 @@ Vulkan.</a></p>
 execute commands on the GPU with significantly reduced overhead. Vulkan also
 provides a more direct mapping to the capabilities found in current graphics
 hardware, minimizing opportunities for driver bugs and reducing developer
-testing time (e.g. less time required to troubleshoot OpenGL bugs).</p>
+testing time (e.g. less time required to troubleshoot Vulkan bugs).</p>
 
 <p>For general information on Vulkan, refer to the
 <a href="http://khr.io/vulkanlaunchoverview">Vulkan Overview</a> or see the list
@@ -52,9 +52,18 @@ of <a href="#resources">Resources</a> below.</p>
 <h2 id=vulkan_components>Vulkan components</h2>
 <p>Vulkan support includes the following components:</p>
 <p><img src="{@docRoot}devices/graphics/images/ape_graphics_vulkan.png"></p>
-<p class=caption>Figure 1: Vulkan components</p>
+<p class=img-caption>Figure 1: Vulkan components</p>
 
 <ul>
+<li><strong>Vulkan Validation Layers</strong> (<em>provided in the Android
+NDK</em>). A set of libraries used by developers during the development of
+Vulkan apps. The Vulkan runtime library and the Vulkan driver from graphics
+vendors do not contain runtime error-checking to keep Vulkan runtime efficient.
+Instead, the validation libraries are used (only during development) to find
+errors in an application's use of the Vulkan API. The Vulkan Validation
+libraries are linked into the app during development and perform this error
+checking. After all API usage issues are found, the aplication no longer needs
+to include these libraries in the app.</li>
 <li><strong>Vulkan Runtime </strong><em>(provided by Android)</em>. A native
 library <code>(libvulkan.so</code>) that provides a new public native API
 called <a href="https://www.khronos.org/vulkan">Vulkan</a>. Most functionality
@@ -64,8 +73,7 @@ developer tools), and manages the interaction between the driver and platform
 dependencies such as BufferQueue.</li>
 <li><strong>Vulkan Driver </strong><em>(provided by SoC)</em>. Maps the Vulkan
 API onto hardware-specific GPU commands and interactions with the kernel
-graphics driver. It is expected the same single kernel driver will service both
-the Vulkan and OpenGL ES API drivers.</li>
+graphics driver.</li>
 </ul>
 
 <h2 id=modified_components>Modified components</h2>
@@ -89,20 +97,35 @@ gralloc</a> (for details on <code>ANativeWindow</code>, see
 ES</a>).
 
 <h2 id=apis>Vulkan API</h2>
-<p>Vulkan support also includes a new public native (NDK) Vulkan API; details at
-<a href="https://www.khronos.org/vulkan/">https://www.khronos.org/vulkan/</a>.
-No system UI or extensions are required.</p>
+<p>The Android platform includes an
+<a href="https://developer.android.com/ndk/guides/graphics/index.html">Android-specific
+implementation</a> of the <a href="https://www.khronos.org/vulkan/">Vulkan API
+specification</a> from the Khronos Group. Android applications must use the
+<a href="{@docRoot}devices/graphics/implement-vulkan.html#wsi">Window System
+Integration (WSI) extensions</a> to output their rendering.</p>
 
 <h2 id=resources>Resources</h2>
-<p>Use the following resources to learn more about Vulkan</p>
+<p>Use the following resources to learn more about Vulkan:</p>
 <ul>
+
 <li>
-<a href="https://partner-android.googlesource.com/platform/frameworks/native/+/nyc-dev/vulkan/">Vulkan
-Loader </a>(libvulkan.so) on Partner repo (platform/frameworks/native/vulkan)</li>
-<li>
-<a href="https://partner-android.googlesource.com/platform/frameworks/native/+/4e89bf211e668a4e47c9a70d10d03c4b9dd5b97d/vulkan/doc">Vulkan Developer's
-Guide</a></li>
+<a href="https://googleplex-android.git.corp.google.com/platform/frameworks/native/+/nyc-dr1-release/vulkan/#">Vulkan
+Loader </a>(libvulkan.so) at <code>platform/frameworks/native/vulkan</code>.
+Contains Android's Vulkan loader, as well as some Vulkan-related tools useful to
+platform developers.</li>
+
+<li><a href="https://android.googlesource.com/platform/frameworks/native/+/master/vulkan/doc/implementors_guide/implementors_guide.html">Vulkan
+Implementor's Guide</a>. Intended for GPU IHVs writing Vulkan drivers for
+Android and OEMs integrating those drivers for specific devices. It describes
+how a Vulkan driver interacts with the system, how GPU-specific tools should be
+installed, and Android-specific requirements.</li>
+
 <li><a href="https://developer.android.com/ndk/guides/graphics/index.html">Vulkan
-Graphics API</a></li>
-<li><a href="https://www.khronos.org/#slider_vulkan">Vulkan News</a></li>
+Graphics API Guide</a>. Includes information on getting started with using
+Vulkan in an Android app, details on Vulkan design guidelines on the Android
+platform, how to use Vulkan's shader compilers, and how to use use validation
+layers to help assure stability in apps using Vulkan.</li>
+
+<li><a href="https://www.khronos.org/#slider_vulkan">Vulkan News</a>. Covers
+events, patches, tutorials, and more Vulkan-related news articles.</li>
 </ul>
