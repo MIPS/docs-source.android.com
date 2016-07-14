@@ -38,7 +38,16 @@ the subpages for tools and methods not described below.</p>
 <p>When a dynamically-linked executable starts, several signal handlers are
 registered that connect to <code>debuggerd</code> (or <code>debuggerd64)</code> in the event that signal
 is sent to the process. The <code>debuggerd</code> process dumps registers and unwinds the
-stack. Here is example output (with timestamps and extraneous information removed):</p>
+stack.</p>
+
+<p>It's possible for <code>debuggerd</code> to attach only if nothing else is
+already attached. This means that using tools like <code>strace</code> or
+<code>gdb</code> will prevent <code>debuggerd</code> from working. Also, if
+you call <code>prctl(PR_SET_DUMPABLE, 0)</code> you can prevent
+<code>debuggerd</code> from attaching. This can be useful if you wish to
+explicitly opt out of crash reporting.</p>
+
+<p>Here is example output (with timestamps and extraneous information removed):</p>
 
 <pre>
 *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
@@ -195,7 +204,9 @@ to find the corresponding assembler instruction.</p>
 Tombstone written to: /data/tombstones/tombstone_06
 </pre>
 
-<p>This tells you where <code>debuggerd</code> wrote extra information.</p>
+<p>This tells you where <code>debuggerd</code> wrote extra information.
+<code>debuggerd</code> will keep up to 10 tombstones, cycling through
+the numbers 00 to 09 and overwriting existing tombstones as necessary.</p>
 
 <p>The tombstone contains the same information as the crash dump, plus a
 few extras. For example, it includes backtraces for <i>all</i> threads (not
