@@ -17,7 +17,7 @@ page.title=Android Security Bulletin—July 2016
     limitations under the License.
 -->
 
-<p><em>Published July 06, 2016 | Updated July 11, 2016</em></p>
+<p><em>Published July 06, 2016 | Updated July 14, 2016</em></p>
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
 update to Nexus devices through an over-the-air (OTA) update. The Nexus firmware
@@ -503,6 +503,7 @@ successfully exploited on Android.</p>
 <ul>
   <li>Abhishek Arya, Oliver Chang, and Martin Barbella of Google Chrome Security
   Team: CVE-2016-3756, CVE-2016-3741, CVE-2016-3743, CVE-2016-3742
+  <li>Adam Donenfeld et al. of Check Point Software Technologies Ltd.: CVE-2016-2503
   <li>Adam Powell of Google: CVE-2016-3752
   <li>Alex Chapman and Paul Stone of Context Information Security: CVE-2016-3763
   <li>Andy Tyler (<a href="https://twitter.com/ticarpi">@ticarpi</a>) of
@@ -2919,4 +2920,5 @@ map as follows:</p>
     </ul>
   </li>
   <li>July 11, 2016: Updated attribution for CVE-2016-3750</li>
+  <li>July 14, 2016: Updated attribution for CVE-2016-2503</li>
 </ul>
