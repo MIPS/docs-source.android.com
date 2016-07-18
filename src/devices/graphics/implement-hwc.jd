@@ -152,7 +152,8 @@ is a function pointer of type <code>HWC2_PFN_CREATE_LAYER</code>, which is
 returned when the enumerated value <code>HWC2_FUNCTION_CREATE_LAYER</code> is
 passed into <code>getFunction</code>.</p>
 <p>For detailed documentation on functions (including functions required for
-every HWC2 implementation), refer to the HWC2 header.</p>
+every HWC2 implementation), refer to the
+<a href="{@docRoot}devices/halref/hwcomposer2_8h.html">HWC2 header</a>.</p>
 
 <h3 id="layer_display_handles">Layer and display handles</h3>
 <p>Layers and displays are manipulated by opaque handles.</p>
@@ -315,4 +316,5 @@ other words, the meaning of the fence is "the content of the buffer you provided
 for frame N has now replaced the previous content." This is non-speculative,
 since this fence should signal shortly after <code>presentDisplay</code> is
 called as soon as the hardware presents this frame's content.</p>
-<p>For implementation details, refer to the HWC2 header.</p>
+<p>For implementation details, refer to the
+<a href="{@docRoot}devices/halref/hwcomposer2_8h.html">HWC2 header</a>.</p>
