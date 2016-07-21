@@ -26,6 +26,13 @@ page.title=Camera
 
 <img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_camera.png" alt="Android Camera HAL icon"/>
 
+<p class="note"><strong>Note:</strong> Please see the following pages for the most up-to-date information:<br>
+<a href="{@docRoot}devices/halref/camera_8h_source.html">camera.h</a> source file<br>
+<a href="{@docRoot}devices/halref/camera3_8h_source.html">camera3.h</a> source file<br>
+<a href="{@docRoot}devices/halref/camera__common_8h_source.html">camera_common.h</a> source file<br>
+<a href="https://developer.android.com/reference/android/hardware/camera2/CameraMetadata.html">CameraMetadata</a> developer reference
+</p>
+
 <p>Android's camera Hardware Abstraction Layer (HAL) connects the higher level
 camera framework APIs in <a href="http://developer.android.com/reference/android/hardware/package-summary.html">android.hardware</a> to your underlying camera driver and hardware. The camera subsystem includes implementations for camera pipeline components while the camera HAL provides interfaces for use in implementing your version of these components.</p>
 
