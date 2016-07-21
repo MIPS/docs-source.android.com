@@ -76,22 +76,27 @@ $ git commit -s
 description will be pushed to the public AOSP repository, so please follow our
 guidelines for writing changelist descriptions: </p>
 <ul>
-<li>
-<p>Start with a one-line summary (60 characters max), followed by a blank line.
-This format is used by git and gerrit for various displays. </p>
-<pre><code>short description on first line
 
-more detailed description of your patch,
-which is likely to take up multiple lines.
-</code></pre>
-</li>
 <li>
-<p>The description should focus on what issue it solves, and how it solves it. The second part is somewhat optional when implementing new features, though desirable.</p>
+<p>Start with a one-line summary (50 characters maximum), followed by a blank line.
+This format is used by git and gerrit for various displays.</p>
+</li>
+
+<li>
+<p>Starting on the third line, enter a longer description, which must hard-wrap at 72 characters maximum. This description should focus on what issue the change solves, and how it solves it. The second part is somewhat optional when implementing new features, though desirable.</p>
 </li>
 <li>
 <p>Include a brief note of any assumptions or background information that may be important when another contributor works on this feature next year. </p>
 </li>
 </ul>
+
+<p>Here is an example commit message:</p>
+<pre><code>short description on first line
+
+more detailed description of your patch,
+which is likely to take up multiple lines.
+</code></pre>
+
 <p>A unique change ID and your name and email as provided during <code>repo init</code> will be automatically added to your commit message. </p>
 <h2 id="upload-to-gerrit">Upload to gerrit</h2>
 <p>Once you have committed your change to your personal history, upload it to gerrit with</p>
