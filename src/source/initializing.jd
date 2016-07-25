@@ -126,6 +126,10 @@ Java Version</a> section.</p>
 <p class="note"><strong>Note:</strong> To use SELinux tools for policy
 analysis, also install the <code>python-networkx</code> package.</p>
 
+<p class="note"><strong>Note:</strong> If you are using LDAP and want
+to run ART host tests, also install the <code>libnss-sss:i386</code>
+package.</p>
+
 <h3 id="installing-required-packages-ubuntu-1204">Installing required packages (Ubuntu 12.04)</h3>
 <p>You may use Ubuntu 12.04 to build older versions of Android. Version 12.04 is not supported on master or recent releases.</p>
 <pre><code>$ sudo apt-get install git gnupg flex bison gperf build-essential \
