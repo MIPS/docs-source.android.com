@@ -119,9 +119,13 @@
   <li class="nav-section">
     <div class="nav-section-header">
       <a href="<?cs var:toroot ?>security/encryption/index.html">
-        <span class="en">Full Disk Encryption</span>
+        <span class="en">Encryption</span>
       </a>
     </div>
+    <ul>
+      <li><a href="<?cs var:toroot ?>security/encryption/file-based.html">File-Based Encryption</a></li>
+      <li><a href="<?cs var:toroot ?>security/encryption/full-disk.html">Full-Disk Encryption</a></li>
+    </ul>
   </li>
   <li class="nav-section">
     <div class="nav-section-header">
