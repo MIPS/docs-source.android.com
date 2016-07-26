@@ -128,6 +128,7 @@
           <li><a href="<?cs var:toroot ?>devices/audio/tv.html">TV Audio</a></li>
         </ul>
       </li>
+      <li><a href="<?cs var:toroot ?>devices/automotive.html">Automotive</a></li>
       <li><a href="<?cs var:toroot ?>devices/bluetooth.html">Bluetooth</a></li>
       <li class="nav-section">
         <div class="nav-section-header">
