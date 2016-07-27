@@ -86,6 +86,16 @@
   </li>
   <li class="nav-section">
     <div class="nav-section-header">
+      <a href="<?cs var:toroot ?>security/apksigning/index.html">
+        <span class="en">Application Signing</span>
+      </a>
+    </div>
+    <ul>
+      <li><a href="<?cs var:toroot ?>security/apksigning/v2.html">APK Signature Scheme v2</a></li>
+    </ul>
+  </li>
+  <li class="nav-section">
+    <div class="nav-section-header">
       <a href="<?cs var:toroot ?>security/authentication/index.html">
         <span class="en">Authentication</span>
       </a>
