@@ -1902,6 +1902,8 @@ be ordered by initial offset and must not overlap.</p>
     encoded elements. This list should <i>not</i> include inherited
     methods unless overridden by the class that this item represents. The
     methods must be sorted by <code>method_idx</code> in increasing order.
+    The <code>method_idx</code> of a virtual method must <i>not</i> be the same
+    as any direct method.
   </td>
 </tr>
 </tbody>
