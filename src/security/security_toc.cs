@@ -32,6 +32,7 @@
           </a>
         </div>
         <ul>
+          <li><a href="<?cs var:toroot ?>security/enhancements/enhancements70.html">Android 7.0</a></li>
           <li><a href="<?cs var:toroot ?>security/enhancements/enhancements60.html">Android 6.0</a></li>
           <li><a href="<?cs var:toroot ?>security/enhancements/enhancements50.html">Android 5.0</a></li>
           <li><a href="<?cs var:toroot ?>security/enhancements/enhancements44.html">Android 4.4</a></li>
