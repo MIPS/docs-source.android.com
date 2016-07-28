@@ -118,7 +118,7 @@ various uses.</p>
       <td>Run the specified test plan</td>
     </tr>
     <tr>
-      <td><code>-- package/-p &lt;test_package_name&gt;  [--package/-p &lt;test_package2&gt;...]</code></td>
+      <td><code>--package/-p &lt;test_package_name&gt;  [--package/-p &lt;test_package2&gt;...]</code></td>
       <td>Run the specified test packages</td>
     </tr>
     <tr>
@@ -294,8 +294,20 @@ various uses.</p>
       <td>Run CTS on the specific device.</td>
     </tr>
     <tr>
-      <td><code>--abi 32|64</code></td>
-      <td>Forces the test to run on the given ABI. By default CTS runs a test once for each ABI the device supports.</td>
+      <td><code>--include-filter &lt;module_name&gt;  [--include-filter &lt;module2&gt;...]</code></td>
+      <td>Run only with the specified modules</td>
+    </tr>
+    <tr>
+      <td><code>--exclude-filter &lt;module_name&gt;  [--exclude-filter &lt;module2&gt;...]</code></td>
+      <td>Exclude the specified modules from the run</td>
+    </tr>
+    <tr>
+      <td><code>--log-level-display/-l &lt;log_level&gt;</code></td>
+      <td>Run with the minimum specified log level displayed to STDOUT. Valid values: [VERBOSE, DEBUG, INFO, WARN, ERROR, ASSERT].</td>
+    </tr>
+    <tr>
+      <td><code>--abi &lt;abi_name&gt;</code></td>
+      <td>Force the test to run on the given ABI. By default CTS runs a test once for each ABI the device supports.</td>
     </tr>
     <tr>
       <td><code>--logcat</code>, <code>--bugreport</code>, and <code>--screenshoot-on-failure</code></td>
