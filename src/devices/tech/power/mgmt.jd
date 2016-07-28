@@ -269,8 +269,8 @@ bool name="config_enableAutoPowerModes"&gt;true&lt;/bool&gt;
 </li>
 <li>Confirm that preloaded apps and services:
 <ul>
-<li>Use the new
-<a href="https://developer.android.com/preview/behavior-changes.html#behavior-power">power-saving
+<li>Use the
+<a href="https://developer.android.com/training/monitoring-device-state/doze-standby.html">power-saving
 optimization guidelines</a>. For details, see <a href="#test-apps">Testing and
 optimizing applications</a>.
 <p><strong>OR</strong></p>
@@ -303,7 +303,7 @@ and
 <h4 id="test-apps">Testing and optimizing applications</h4>
 <p>Test all applications (especially preloaded applications) in Doze mode. For
 details, refer to
-<a href="https://developer.android.com/preview/testing/guide.html#doze-standby">Testing
+<a href="https://developer.android.com/training/monitoring-device-state/doze-standby.html#testing_doze_and_app_standby">Testing
 Doze and App Standby</a>.</p>
 
 <p class="note"><strong>Note</strong>: MMS/SMS/Telephony services function independently
