@@ -17,7 +17,7 @@ page.title=Nexus Security Bulletin—April 2016
     limitations under the License.
 -->
 
-<p><em>Published April 04, 2016 | Updated July 11, 2016</em></p>
+<p><em>Published April 04, 2016 | Updated August 1, 2016</em></p>
 
 <p>We have released a security update to Nexus devices through an over-the-air
 (OTA) update as part of our Android Security Bulletin Monthly Release process.
@@ -217,7 +217,7 @@ Power Management Component</td>
  <tr>
     <td>Information Disclosure Vulnerability in GCM Encryption</td>
     <td>CVE-2016-2427</td>
-    <td>Moderate</td>
+    <td>None</td>
  </tr>
 </table>
 
@@ -281,7 +281,6 @@ Team: CVE-2016-0834, CVE-2016-0841, CVE-2016-0840, CVE-2016-0839, CVE-2016-0838
   Product Security Initiative: CVE-2016-2420, CVE-2016-0849
   <li> Peter Pi (<a href="https://twitter.com/heisecode">@heisecode</a>)
   of Trend Micro: CVE-2016-2418, CVE-2016-2413, CVE-2016-2419
-  <li> Quan Nguyen of Google Information Security Team: CVE-2016-2427
   <li> Richard Shupak: CVE-2016-2415
   <li> Romain Trouvé (<a href="https://twitter.com/bouuntyyy">@bouuntyyy)</a> of
   <a href="https://labs.mwrinfosecurity.com/">MWR Labs</a>: CVE-2016-0850
@@ -1266,6 +1265,10 @@ Information Disclosure Vulnerability in GCM Encryption</h3>
  allow an authentication key to be leaked. This issue is rated as Moderate
  severity because an application installed on the device could use it to gain
  dangerous level data or capabilities without permission.</p>
+<p>After further analysis of this issue, we have determined there is no
+ vulnerability in Android. Further, the update originally provided will cause
+ an interoperability issue and must be reverted to ensure application
+ compatibility.</p>
 
 <table>
  <tr>
@@ -1277,11 +1280,8 @@ Information Disclosure Vulnerability in GCM Encryption</h3>
  </tr>
  <tr>
     <td>CVE-2016-2427</td>
-    <td><a href="https://android.googlesource.com/platform/libcore/+/efd369d996fd38c50a50ea0de8f20507253cb6de">
-        ANDROID-26234568</a>
-        [<a href="https://android.googlesource.com/platform/external/bouncycastle/+/b3bddea0f33c0459293c6419569ad151b4a7b44b">2</a>]
-    </td>
-    <td>Moderate</td>
+    <td>Coming soon</td>
+    <td>None</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1</td>
     <td>Google Internal</td>
  </tr>
@@ -1321,4 +1321,5 @@ have been addressed.</p>
   <li> April 06, 2016: Bulletin revised to include AOSP links.
   <li> April 07, 2016: Bulletin revised to include an additional AOSP link.
   <li> July 11, 2016: Updated description of CVE-2016-2427.
+  <li> August 01, 2015: Updated description of CVE-2016-2427
 </ul>
