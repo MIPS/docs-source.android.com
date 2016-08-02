@@ -397,6 +397,7 @@
         <ul>
           <li><a href="<?cs var:toroot ?>devices/tech/display/dnd.html">Do Not Disturb</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/display/multi-window.html">Multi-Window</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/display/hdr.html">HDR Video</a></li>
         </ul>
       </li>
 
