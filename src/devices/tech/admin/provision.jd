@@ -97,17 +97,20 @@ and sets the DeviceAdminSample as the profile owner:</p>
 
 <pre>adb shell am start -a android.app.action.PROVISION_MANAGED_PROFILE \
           -c android.intent.category.DEFAULT \
-	      -e wifiSsid $(printf '%q' \"GoogleGuest\") \
+	      -e wifiSsid $(printf '%q' \"WifiSSID\") \
           -e deviceAdminPackage "com.google.android.deviceadminsample" \
 	      -e android.app.extra.deviceAdminPackageName $(printf '%q'
                         .DeviceAdminSample\$DeviceAdminSampleReceiver) \
 	      -e android.app.extra.DEFAULT_MANAGED_PROFILE_NAME "My Organisation"
 </pre>
 
-<h2 id=device_owner_provisioning_via_nfc>Device owner provisioning via NFC</h2>
+<h2 id=device_owner_provisioning_via_nfc>Device owner provisioning</h2>
+<p>Use one of the following methods to set up device owner (DO)
+provisioning.</p>
 
-<p>Device owner provisioning via NFC is similar to the profile owner method but
-requires more bootstrapping. To use this method,
+<h3 id=do_provision_nfc>Provisioning via NFC</h3>
+<p>DO provisioning via NFC is similar to the profile owner method but requires
+more bootstrapping. To use this method,
 <a href="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html">NFC
 bump</a> the device during the initial setup step (i.e., first page of the setup
 wizard). This low-touch flow configures Wi-Fi, installs the DPC, and sets the
@@ -132,14 +135,12 @@ mimetype from the setup experience:</p>
       &lt;item&gt;application/com.android.managedprovisioning&lt;/item&gt;
 </pre>
 
-<h2 id=device_owner_provisioning_with_activation_code>Device owner provisioning
-with activation code</h2>
-
-<p>Select <em>Add Work Account</em> from the setup/out-of-box experience (this
-triggers a lookup of the EMM from Android servers). The device installs the EMM
-app and starts provisioning flow. As an extra option, Android device
-administration supports the option of using email address with a six-digit
-activation code to bootstrap the process as part of setup.</p>
+<h3 id=do_provision_cs>Provisioning via Cloud Services</h2>
+<p>Device owner provisioning via cloud services includes the ability to
+provision a device in device owner mode during out-of-the-box setup. The device
+can collect credentials (or tokens) and use them to perform a lookup to a cloud
+service, which can then be used to initiate the device owner provisioning
+process.</p>
 
 <h2 id=emm_benefits>EMM benefits</h2>
 
@@ -175,3 +176,9 @@ the end goal of making corporate data accessible to apps in the managed
 profile. For testing guidance, see
 <a href="{@docRoot}devices/tech/admin/testing-setup.html">Setting up Device
 Testing</a>.</p>
+
+<h2 id=automate>Automated provisioning testing</h2>
+<p>To automate the testing of enterprise provisioning processes, use
+the Android for Work (AfW) Test Harness. For details, see
+<a href="{@docRoot}devices/tech/admin/testing-provision.html">Testing Device
+Provisioning</a>.</p>
