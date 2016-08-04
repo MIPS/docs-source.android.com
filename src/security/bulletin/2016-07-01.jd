@@ -1736,7 +1736,7 @@ the latest binary drivers for Nexus devices available from the
 <h3 id="elevation-of-privilege-vulnerability-in-qualcomm-components">
 Elevation of privilege vulnerability in Qualcomm components</h3>
 <p>The table below contains security vulnerabilities affecting Qualcomm components
-including the bootloader, camera driver, character drive, networking, sound
+including the bootloader, camera driver, character driver, networking, sound
 driver and video driver.</p>
 <p>The most severe of these issues is rated as Critical due to possibility of
 arbitrary code execution leading to the possibility of a local permanent device
