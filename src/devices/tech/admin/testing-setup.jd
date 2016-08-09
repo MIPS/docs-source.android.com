@@ -1,4 +1,4 @@
-page.title=Setting up Device Testing
+page.title=Testing Device Administration
 @jd:body
 
 <!--
@@ -71,6 +71,12 @@ enterprise mobility management (EMM) providers.</p>
 <p>To verify the device owner was correctly setup, go to <em>Settings >
 Security > Device Administrators</em> and confirm TestDPC is in the
 list. Verify it cannot be disabled (this signifies it is a device owner).</p>
+
+<h2 id=automate>Automated provisioning testing</h2>
+<p>To automate the testing of enterprise provisioning processes, use
+the Android for Work (AfW) Test Harness. For details, see
+<a href="{@docRoot}devices/tech/admin/testing-provision.html">Testing Device
+Provisioning</a>.</p>
 
 <h2 id="troubleshooting">Bug reports and logs</h2>
 <p>In Android N, device owner Device Policy Client (DPCs) can get bug reports
