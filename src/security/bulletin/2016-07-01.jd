@@ -37,7 +37,7 @@ This bulletin also includes links to patches outside of AOSP.</p>
 enable remote code execution on an affected device through multiple methods such
 as email, web browsing, and MMS when processing media files.</p>
 <p>We have had no reports of active customer exploitation or abuse of these newly
-reported issues. Refer to the <a href="mitigations">Android and Google service mitigations</a>
+reported issues. Refer to the <a href="#mitigations">Android and Google service mitigations</a>
 section for details on the
 <a href="{@docRoot}security/enhancements/index.html">Android
 security platform protections</a> and service protections such as SafetyNet,
