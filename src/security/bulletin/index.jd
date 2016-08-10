@@ -25,10 +25,14 @@ updates.</p>
 <p>To get notifications when we publish a new bulletin, join the
 <a href="https://groups.google.com/forum/#!forum/android-security-updates">Android Security Updates group</a>,
 and set your email delivery preference to receive all updates.
-Refer to the<a href="https://support.google.com/nexus/answer/4457705"> Nexus documentation</a>
+Refer to the
+<a href="https://support.google.com/nexus/answer/4457705">Nexus documentation</a>
 for instructions on how to check the security patch level, using the security
-patch level provided below. The Nexus firmware images are also released each
-month to the<a href="https://developers.google.com/android/nexus/images"> Google Developer site</a>.
+patch level provided below. In general, it takes about one and a half calendar
+weeks for the OTA to reach every Nexus device. The Nexus firmware images are
+also released each month to the
+<a href="https://developers.google.com/android/nexus/images">Google Developer
+site</a>.
 </p>
 
 
