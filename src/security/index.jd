@@ -81,9 +81,9 @@ page.title=Security
   </li>
   <li>
     <p><strong>Android Application Runtime</strong>: Android applications are most often written
-      in the Java programming language and run in the Dalvik virtual machine.
+      in the Java programming language and run in the Android runtime (ART).
       However, many applications, including core Android services and applications
-      are native applications or include native libraries. Both Dalvik and native
+      are native applications or include native libraries. Both ART and native
       applications run within the same security environment, contained within the
       Application Sandbox. Applications get a dedicated part of the filesystem in
       which they can write private data, including databases and raw files.</p>
