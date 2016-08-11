@@ -25,7 +25,9 @@ page.title=Compatibility Test Suite Downloads
 </div>
 
 <p>Thank you for your interest in Android Compatibility! The links below give
-you access to key documents and information about the program.</p>
+you access to key documents and information about the program. As CTS is
+updated, new versions are added to this page. CTS versions are denoted by
+R&lt;number&gt; in the link name.</p>
 
 <h2 id="android-60">Android 6.0</h2>
 <p>Android 6.0 is the release of the development milestone code-named Marshmallow.
