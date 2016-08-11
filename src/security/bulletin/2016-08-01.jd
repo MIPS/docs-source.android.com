@@ -16,7 +16,7 @@ page.title=Android Security Bulletin—August 2016
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<p><em>Published August 01, 2016 | Updated August 02, 2016</em></p>
+<p><em>Published August 01, 2016 | Updated August 16, 2016</em></p>
 <p>
 The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -53,6 +53,7 @@ We encourage all customers to accept these updates to their devices.
 </p>
 <h2 id="announcements">Announcements</h2>
 <ul>
+<li>Bulletin revised to correct CVE-2016-3856 to CVE-2016-2060.</li>
 <li>This bulletin has two security patch level strings to provide Android
 partners with the flexibility to move more quickly to fix a subset of
 vulnerabilities that are similar across all Android devices. See <a
@@ -377,7 +378,7 @@ driver</td>
   </tr>
   <tr>
    <td>Vulnerabilities in Qualcomm components</td>
-   <td>CVE-2016-3854, CVE-2016-3855, CVE-2016-3856</td>
+   <td>CVE-2016-3854, CVE-2016-3855, CVE-2016-2060</td>
    <td>High</td>
    <td>No</td>
   </tr>
@@ -2646,10 +2647,9 @@ networking, sound driver, and video driver.
    <td>May 2016</td>
   </tr>
   <tr>
-   <td>CVE-2016-3856</td>
-   <td><a href="https://source.codeaurora.org/quic/la/platform/system/netd/commit/?h=LA.BF64.1.2.1&id=cc2853e6cec8ca2cf92430ad9a83358b131fc417">
-   QC-CR#959631</a>
-[<a href="https://source.codeaurora.org/quic/la/platform/system/netd/commit/?h=LA.BR.1&id=568ef402f6d5a7a50c126aafc78c4edf59abba1c">2</a>]</td>
+   <td>CVE-2016-2060</td>
+   <td><a href="https://source.codeaurora.org/quic/la/platform/system/netd/commit/?id=e9925f5acb4401588e23ea8a27c3e318f71b5cf8">
+   QC-CR#959631</a></td>
    <td>Moderate</td>
    <td>None</td>
    <td>Apr 2016</td>
@@ -2759,4 +2759,5 @@ belongs. These prefixes map as follows:
 <ul>
   <li>August 01, 2016: Bulletin published.</li>
   <li>August 02, 2016: Bulletin revised to include AOSP links.</li>
+  <li>August 16, 2016: CVE-2016-3856 corrected to CVE-2016-2060 and updated the reference URL.</li>
 </ul>
