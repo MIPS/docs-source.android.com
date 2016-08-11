@@ -90,7 +90,7 @@ page.title=System and kernel security
   the operating system.</p>
 <p>Like all security features, the Application Sandbox is not unbreakable.
   However, to break out of the Application Sandbox in a properly configured
-  device, one must compromise the security of the the Linux kernel.</p>
+  device, one must compromise the security of the Linux kernel.</p>
 <h3 id="system-partition-and-safe-mode">System Partition and Safe Mode</h3>
 <p>The system partition contains Android's kernel as well as the operating system
   libraries, application runtime, application framework, and applications.  This
