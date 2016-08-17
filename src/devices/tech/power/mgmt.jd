@@ -42,10 +42,6 @@ cloud messaging services preloaded on a device are typically exempted from App
 Standby and Doze by default (although app developers can intent their
 applications into this setting). Users can exempt applications via the Settings
 menu.</li>
-<li><strong><a href="#sustained_performance">Sustained Performance</a></strong>.
-To address performance variations during high device temperatures, Android 7.0
-includes support for sustained performance, enabling OEMs to provide hints on
-device performance capabilities for long-running applications.</li>
 </ul>
 
 <p>The following sections describe these enhancements.</p>
@@ -339,75 +335,3 @@ Standby modes. To provide transparency to the user, the Settings menu
 > All apps and then selecting the app to turn off (or back on) optimization.
 However, users cannot unexempt any application or service that is exempted by
 default in the system image.</p>
-
-<h2 id=sustained_performance>Sustained performance</h2>
-<p>For long-running applications (games, camera, RenderScript, audio
-processing), performance can vary dramatically as device temperature limits are
-reached and system on chip (SoC) engines are throttled. App developers creating
-high-performance, long-running apps are limited because the capabilities of the
-underlying platform are a moving target when the device begins to heat up.</p>
-
-<p>To address these limitations, Android 7.0 includes support for sustained
-performance, enabling OEMs to provide hints on device performance capabilities
-for long-running applications. App developers can use these hints to tune
-applications for a predictable, consistent level of device performance over long
-periods of time.</p>
-
-<h3 id=architecture>Architecture</h3>
-<p>An Android application can request the platform to enter a sustained
-performance mode where the Android device can keep a consistent level of
-performance for prolonged periods of time.</p>
-
-<p><img src="../images/power_sustained_perf.png"></p>
-<p class="img-caption"><strong>Figure 1.</strong> Sustained performance mode
-architecture</p>
-
-<h3 id=implementation>Implementation</h3>
-<p>To support sustained performance in Android 7.0, OEMs must:</p>
-<ul>
-<li>Make device-specific changes to the power HAL to either lock the maximum
-CPU/GPU frequencies <strong>or</strong> perform other optimizations to prevent
-thermal throttling.</li>
-<li>Implement the new hint <code>POWER_HINT_SUSTAINED_PERFORMANCE</code> in
-power HAL.</li>
-<li>Declare support by returning TRUE through the
-<code>isSustainedPerformanceModeSupported()</code> API.</li>
-<li>Implement <code>Window.setSustainedPerformanceMode</code>.</li>
-</ul>
-
-<p>In the Nexus reference implementation, the power hint caps the
-maximum frequencies of the CPU and GPU at the highest sustainable levels. Keep
-in mind that lowering the MAX bar in CPU/GPU frequency will lower the frame
-rate, but this lower rate is preferred in this mode due to its sustainability.
-For example, a device using normal max clocks might be able to render at 60
-FPS for a few minutes, but after the device heats up,  it may throttle to 30 FPS
-by the end of 30 minutes. When using sustained mode, the device can, for
-example, render consistently at 45 FPS for the entire 30 minutes. The goal is a
-frame rate when using the mode that is as high (or higher) than the frame rate
-when not using the mode, and consistent over time so that developers don't have
-to chase a moving target.</p>
-<p>We strongly recommend implementing sustained mode such that the device
-achieves the highest possible sustained performance—not just the minimum values
-required to pass the test (e.g. choose the highest possible MAX frequency caps
-that do not cause the device to thermally throttle over time).</p>
-
-<p class="note"><strong>Note</strong>: Capping MAX clock rates is not required
-to implement sustained mode.</p>
-
-
-<h3 id=validation>Validation</h3>
-<p>OEMs can use a new Android 7.0 CTS test to verify their implementation of the
-sustained performance API. The test runs a workload for approximately 30 minutes
-and benchmarks the performance with and without sustained mode enabled:</p>
-<ul>
-<li>With sustained mode enabled, the frame rate must remain relatively constant
-(test measures the percentage of change in frame rate over time and requires a
-&lt;5% change).</li>
-<li>With sustained mode enabled, the frame rate must not be lower than the frame
-rate at the end of 30 minutes with the mode disabled.</li>
-</ul>
-<p>In addition, you can manually test your implementation with several CPU- and
-GPU-intensive workloads to ensure the device does not thermally throttle after
-30 minutes of use. In internal testing, we used sample workloads including
-games and benchmarking apps (e.g.
-<a href="https://gfxbench.com/result.jsp">gfxbench</a>).</p>
