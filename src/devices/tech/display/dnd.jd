@@ -24,7 +24,7 @@ page.title=Configuring DND
   </div>
 </div>
 
-<p>Android N supports the following do not disturb (DND) configurations.</p>
+<p>Android 7.0 supports the following do not disturb (DND) configurations.</p>
 
 <h2 id="third_party">Third-party automatic rules</h3>
 <p>Third-party applications can use the DND Access API to control DND rules:</p>
