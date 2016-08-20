@@ -97,7 +97,7 @@ language.</li>
 <h2 id=high_level>High-level components</h2>
 
 <ul>
-<li><a href="{@docRoot}devices/graphics/arch-sv.html">SurfaceView and
+<li><a href="{@docRoot}devices/graphics/arch-sv-glsv.html">SurfaceView and
 GLSurfaceView</a>. SurfaceView combines a Surface and a View. SurfaceView's View
 components are composited by SurfaceFlinger (and not the app), enabling
 rendering from a separate thread/process and isolation from app UI rendering.
