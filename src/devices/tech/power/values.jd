@@ -39,7 +39,7 @@ multiplies the current by the time for which the subsystem was active and
 computes the mAh value, which is then used to estimate the amount of battery
 drained by the application/subsystem.</p>
 
-<p>Devices with Bluetooth, modem, and Wi-Fi controllers running Android N and
+<p>Devices with Bluetooth, modem, and Wi-Fi controllers running Android 7.0 and
 higher can provide additional power values obtained from chipset data.</p>
 
 
@@ -346,7 +346,7 @@ sample file in AOSP, see
 </table>
 
 <h2 id="le-bt-scans">Low Energy (LE) and Bluetooth scans</h2>
-<p>For devices running Android N, the system collects data for Low Energy (LE)
+<p>For devices running Android 7.0, the system collects data for Low Energy (LE)
 scans and Bluetooth network traffic (such as RFCOMM and L2CAP) and associates
 these activities with the initiating application. Bluetooth scans are associated
 with the application that initiated the scan, but batch scans are not (and
