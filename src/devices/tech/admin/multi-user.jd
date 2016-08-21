@@ -172,7 +172,7 @@ behavior in mind:</p>
   by secondary users.</li>
 </ul>
 
-<p>Android N includes several enhancements, including:</p>
+<p>Android 7.0 includes several enhancements, including:</p>
 
 <ul>
   <li><em>Toggle work profile</em>. Users can disable their managed profile
@@ -187,6 +187,6 @@ behavior in mind:</p>
   <code>device_admin</code> must implement always-on VPN.</li>
 </ul>
 
-<p>For more details on Android N device administration features, refer to
+<p>For more details on Android 7.0 device administration features, refer to
 <a href="https://developer.android.com/preview/features/afw.html">Android
 for Work Updates</a>.</p>
