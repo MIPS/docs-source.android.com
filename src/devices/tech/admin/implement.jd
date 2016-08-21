@@ -36,7 +36,7 @@ following components to function with managed profiles.</p>
 general requirements.</p>
 
 <h3 id=HAL_values>Thermal HAL values</h3>
-<p>Android N includes support for HardwarePropertiesManager API, a new device
+<p>Android 7.0 includes support for HardwarePropertiesManager API, a new device
 monitoring and health reporting API that enables applications to query the state
 of device hardware. This API is exposed via
 <code>android.os.HardwarePropertiesManager</code> and makes calls through
