@@ -27,7 +27,7 @@ page.title=Supporting Multi-Window
 <p>
 In Android 7.0, users can have multiple apps simultaneously displayed on their
 device screen with the new platform feature, multi-window. In addition to the
-default implementation of multi-window, Android Nougat supports a few varieties
+default implementation of multi-window, Android 7.0 supports a few varieties
 of multi-window: split-screen, free-form, and picture-in-picture.
 </p>
 
@@ -48,7 +48,7 @@ config file on their devices to enable or disable multi-window support.
 
 <h2 id="implementation">Implementation</h2>
 <p>
-Multi-window support is enabled by default in Android N. To disable it, set
+Multi-window support is enabled by default in Android 7.0. To disable it, set
 the <code>config_supportsMultiWindow</code> flag to false in the <a
 href="https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml">config.xml</a>
 file.
