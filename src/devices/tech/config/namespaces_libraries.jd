@@ -26,11 +26,11 @@ page.title=Namespaces for Native Libraries
 </div>
 
 <p>
-Android N introduces namespaces for native libraries to limit internal API
+Android 7.0 introduces namespaces for native libraries to limit internal API
 visibility and resolve situations when apps accidentally end up using platform
 libraries instead of their own. See the <a
 href="http://android-developers.blogspot.com/2016/06/improving-stability-with-private-cc.html">Improving
-Stability with Private C/C++ Symbol Restrictions in Android N</a> Android
+Stability with Private C/C++ Symbol Restrictions in Android 7.0</a> Android
 Developers blog post</a> for application-specific changes.
 </p>
 
