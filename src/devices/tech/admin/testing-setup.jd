@@ -79,7 +79,7 @@ the Android for Work (AfW) Test Harness. For details, see
 Provisioning</a>.</p>
 
 <h2 id="troubleshooting">Bug reports and logs</h2>
-<p>In Android N, device owner Device Policy Client (DPCs) can get bug reports
+<p>In Android 7.0, device owner Device Policy Client (DPCs) can get bug reports
 and view logs for enterprise processes on a managed device.</p>
 
 <p>To trigger a bug report (i.e., the equivalent data collected by <code>adb
