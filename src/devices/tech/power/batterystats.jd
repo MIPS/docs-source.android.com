@@ -564,7 +564,7 @@ existing chipsets and compatible firmware on new chipsets.</p>
 
 <p>Additionally, OEMs must continue to configure and submit the power profile
 for their devices. However, when the platform detects that Bluetooth, cellular
-(as of Android N), or Wi-Fi radio power data is available from the chipset, it
+(as of Android 7.0), or Wi-Fi radio power data is available from the chipset, it
 uses chipset data instead of power profile data. For details, see
 <a href="{@docRoot}devices/tech/power/values.html#values">Power values</a>.</p>
 
