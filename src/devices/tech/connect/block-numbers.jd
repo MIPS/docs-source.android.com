@@ -50,11 +50,11 @@ calling and texting.
 <h2 id="features">Features</h2>
 
 <p>
-The Android N release introduces a <code>BlockedNumberProvider</code> content
+The Android 7.0 release introduces a <code>BlockedNumberProvider</code> content
 provider that stores a list of phone numbers the user has specified should not
 be able to contact them via telephony communications (calls, SMS, MMS). The
 system will respect the numbers in the blocked list by restricting calls and
-texts from those numbers. Android N displays the list of blocked numbers and
+texts from those numbers. Android 7.0 displays the list of blocked numbers and
 allows the user to add and remove numbers.
 </p>
 

@@ -232,10 +232,10 @@ been performed if needed, SurfaceFlinger will call <code>presentDisplay</code>.
 This is the HWC device's cue to complete the composition process and display the
 final result.</p>
 
-<h2 id="multiple_displays">Multiple displays in Android N</h2>
+<h2 id="multiple_displays">Multiple displays in Android 7.0</h2>
 <p>While the HWC2 interface is quite flexible when it comes to the number of
 displays in the system, the rest of the Android framework is not yet as
-flexible. When designing a HWC2 implementation intended for use on Android N,
+flexible. When designing a HWC2 implementation intended for use on Android 7.0,
 there are some additional restrictions not present in the HWC definition itself:
 </p>
 

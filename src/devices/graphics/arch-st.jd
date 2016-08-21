@@ -144,7 +144,7 @@ timestamp from SurfaceTexture).  The encoder thread pulls the encoded output
 from MediaCodec and stashes it in memory.</p>
 
 <h2 id=st_vid_play>Secure texture video playback</h2>
-<p>Android N supports GPU post-processing of protected video content. This
+<p>Android 7.0 supports GPU post-processing of protected video content. This
 allows using the GPU for complex non-linear video effects (such as warps),
 mapping protected video content onto textures for use in general graphics scenes
 (e.g., using OpenGL ES), and virtual reality (VR).</p>
@@ -164,7 +164,7 @@ Allows tagging textures as protected so they can be used as framebuffer texture
 attachments.</li>
 </ul>
 
-<p>Android N also updates SurfaceTexture and ACodec
+<p>Android 7.0 also updates SurfaceTexture and ACodec
 (<code>libstagefright.so</code>) to allow protected content to be sent even if
 the windows surface does not queue to the window composer (i.e., SurfaceFlinger)
 and provide a protected video surface for use within a protected context. This

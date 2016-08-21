@@ -27,7 +27,7 @@ page.title=Implementing ART Just-In-Time (JIT) Compiler
 </div>
 
 <p>
-Android N adds a just-in-time (JIT) compiler with code profiling to Android
+Android 7.0 adds a just-in-time (JIT) compiler with code profiling to Android
 runtime (ART) that constantly improves the performance of Android apps as they
 run. The JIT compiler complements ART's current ahead-of-time (AOT) compiler and
 improves runtime performance, saves storage space, and speeds app updates and
@@ -178,7 +178,7 @@ and as such will take more space and may miss on other optimizations.
 </p>
 
 <p>
-In Android N, there's a generic way to specify the level of
+In Android 7.0, there's a generic way to specify the level of
 compilation/verification based on the different use cases. For example, the
 default option for install time is to do only verification (and postpone
 compilation to a later stage). The compilation levels can be configured via
