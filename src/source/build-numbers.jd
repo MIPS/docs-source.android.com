@@ -41,6 +41,11 @@ API levels and NDK releases provided for convenience:</p>
 </thead>
 <tbody>
 <tr>
+<td>Nougat</td>
+<td>7.0</td>
+<td>API level 24</td>
+</tr>
+<tr>
 <td>Marshmallow</td>
 <td>6.0</td>
 <td>API level 23</td>
@@ -184,6 +189,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>NRD90M</td>
+      <td>android-7.0.0_r1</td>
+      <td>Nougat</td>
+      <td>Nexus 9 (volantis), Nexus Player, Pixel C</td>
+    </tr>
     <tr>
       <td>MXC89L</td>
       <td>android-6.0.1_r63</td>
