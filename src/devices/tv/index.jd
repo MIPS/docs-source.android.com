@@ -317,7 +317,7 @@ TIF or the reference TV App.</p>
   <li> Auto-detect TV Inputs
   <li> Let TV Inputs initiate channel setup
   <li> Control parental settings
-  <li> Edit channel
+  <li> Edit channels
 </ul>
 
 <h3 id="viewing">Viewing</h3>
@@ -327,7 +327,7 @@ TIF or the reference TV App.</p>
   <li> Access and navigate all TV channels
   <li> Access TV program information bar
   <li> Display Electronic Programming Guide (EPG) data
-  <li> Support multiple audio and subtitle track support
+  <li> Support multiple audio and subtitle tracks
   <li> Supply parental control PIN challenge
   <li> Allow TV Input UI overlay for:
   <ul>
@@ -336,6 +336,7 @@ TIF or the reference TV App.</p>
   <li> Populate search results for TV channels and programs
   <li> Display app linking cards
   <li> Support timeshifting APIs
+  <li> Handle DVR functionality and support TV recording APIs
 </ul>
 
 <p>This feature set will increase in line with new Android versions
@@ -400,7 +401,7 @@ inputs.</p>
 <p class="img-caption"><strong>Figure 12.</strong> Notification that shows new channel sources are available.</p>
 
 <p>If the user takes action through the notification, they can select to set up their sources as seen in Figure 10.</p>
-<p>See <a href="http://developer.android.com/training/tv/tif/tvinput.html#setup">Define Your TV Input Sevice</a>
+<p>See <a href="http://developer.android.com/training/tv/tif/tvinput.html#setup">Define Your TV Input Service</a>
 for developer expectations in this area.</p>
 
 <h4 id=customize_the_channel_list>Customize the channel list</h4>
@@ -434,6 +435,87 @@ is that users are able to find the channels they have installed. </p>
 search requests in order to ensure the best user experience. Live TV provides an
 implementation (see <a href="https://android.googlesource.com/platform/packages/apps/TV/+/android-live-tv/src/com/android/tv/search/TvProviderSearch.java">com.android.tv.search.TvProviderSearch</a>) which provides results from third-party inputs (required for platform
 compatibility) as well as built-in inputs.</p>
+
+<h4 id="time-shifting">Time shifting</h4>
+<p>
+For devices on Android 6.0 and above, the TV App must support the Android
+framework <a
+href="https://developer.android.com/reference/android/media/tv/TvView.html">time
+shifting APIs</a>. Additionally, manufacturers must implement playback controls
+in the TV App, which allow users to  pause, resume, rewind, and fast forward the
+playback.
+</p>
+<p>
+For TV Inputs that support time shifting, the TV App needs to display playback
+controls.
+</p>
+
+<p>
+<img src="images/TIF_timeshift.png" alt="Playback controls">
+</p>
+<p class="img-caption"><strong>Figure 15.</strong> Playback controls</p>
+
+<h4 id="dvr">DVR</h4>
+<p>
+For devices on Android 7.0 and above, the TV App must support the Android
+framework <a
+href="https://developer.android.com/reference/android/media/tv/TvRecordingClient.html">TV
+recording APIs</a>, to support, list, and play recorded programs.
+</p>
+<p>
+This allows device manufacturers to plug their DVR subsystems into TIF and
+dramatically reduce the integration effort it takes to enable or integrate DVR
+functionality on a TV device. It also enables third parties to provide
+aftermarket DVR systems that can be plugged into an Android TV device.
+</p>
+<p>
+In addition to recording live content, the TV App also handles resource
+conflict. For example, if the device has two tuners, it can record two programs at
+the same time. If the user asks to record three, the TV App must handle the
+conflict and should either surface a notification or request that the user
+schedules a priority for these requests.
+</p>
+<p>
+TV Apps can also implement more sophisticated logic like asking a user if they’d
+like to record all future episodes in a series when they request to record one
+episode.
+</p>
+<p>
+See the following diagram for a view into a possible DVR implementation in
+Android TV.
+</p>
+<p>
+<img src="images/TV_Input_DVR.png" alt="Digital video recording in Android TV">
+</p>
+<p class="img-caption"><strong>Figure 16.</strong> Digital video recording in Android TV</p>
+
+<ol>
+<li>The TV Input Service tells the TV App how many tuners are available so that
+the TV App can handle possible resource conflict.
+<li>The TV App receives a user-initiated request to record a TV program.
+<li>The TV App stores the recording schedule in its internal database.
+<li>When it’s time to record, the TV App passes a request to tune to the channel
+associated with the recording.
+<li>The TV Input Service receives this request, responds with whether or not
+there are appropriate resources, and tunes to the channel.
+<li>Then the TV App passes a request to start recording to
+the TV Input Manger.
+<li>The TV Input Service receives this request and starts recording.
+<li>The TV Input Service stores the actual video data in its storage, which can
+be external storage or cloud storage.
+<li>When it's time to finish the recording, the TV App passes the stop recording
+request to the TV Input Manager.
+<li>Once the TV Input Service receives the request, it stops the recording and
+adds its associated metadata to the TV Provider so that the TV App can show the
+recording to users when requested.</li>
+</ol>
+
+<p>
+For more information about implementing Recording features in your TV Input
+service, see this <a
+href="https://developer.android.com/preview/features/tv-recording-api.html">TV
+Recording</a> article.
+</p>
 
 <h3 id=useful_resources>Useful resources</h3>
 
@@ -544,7 +626,7 @@ interoperate with the Android TIF. We recommend the hardware platform contain a
 microprocessor to receive CEC power on and other commands.</p>
 
 <img src="images/TV_App_CEC_integration.png" alt="CEC integration on Android TV">
-<p class="img-caption"><strong>Figure 15.</strong> CEC integration on Android TV</p>
+<p class="img-caption"><strong>Figure 17.</strong> CEC integration on Android TV</p>
 
 <ol>
   <li> The CEC bus receives a command from the currently active source to switch to a
@@ -595,29 +677,3 @@ activates broadcast apps.
 <p>For voice search/recommendation, the broadcast app may support In-app search
 for voice search.</p>
 
-<h3 id="dvr">DVR</h3>
-
-<p>Android TV supports digital video recording (DVR) with device manufacturer development. The
-DVR function works like so:</p>
-
-<ol>
-  <li> DVR recording function / Live Buffer can be implemented by any TV Input.
-  <li> TV App passes on key inputs to TV Input (including recording/pause/fast
-forward/ rewind keys).
-  <li> When playing the recorded content, the TV Input handles it with trick play
-overlay.
-  <li> DVR app enables users to browse and manage recorded program.
-</ol>
-
-<p>For voice search/recommendation:</p>
-
-<ul>
-  <li>DVR app supports In-app search for Voice search.
-  <li>DVR app can propose recommendation using notifications.
-</ul>
-
-<p>See the following diagram for a view into a possible DVR implementation in
-Android TV.</p>
-
-<img src="images/TV_Input_DVR.png" alt="Digital video recording in Android TV">
-<p class="img-caption"><strong>Figure 16.</strong> Digital video recording in Android TV</p>
