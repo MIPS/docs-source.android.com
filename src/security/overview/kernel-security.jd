@@ -95,8 +95,8 @@ page.title=System and kernel security
 <p>The system partition contains Android's kernel as well as the operating system
   libraries, application runtime, application framework, and applications.  This
   partition is set to read-only. When a user boots the device into Safe Mode,
-  only core Android applications are available. This ensures that the user can
-  boot their phone into an environment that is free of third-party software.</p>
+  third-party applications may be launched manually by the device owner but are
+  not launched by default on start up.</p>
 <h3 id="filesystem-permissions">Filesystem Permissions</h3>
 <p>In a UNIX-style environment, filesystem permissions ensure that one user cannot
   alter or read another user's files. In the case of Android, each application
