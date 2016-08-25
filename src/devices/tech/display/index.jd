@@ -33,7 +33,7 @@ settings such as do not disturb (DND) configurations and multi-window
 
 <p>In Android 7.0, the Settings Home page is enhanced with suggested
 settings and customizable status notifications. The feature is implemented
-automatically, and partners can configure it.</p>
+automatically, and device implementers can configure it.</p>
 
 
 <p>The source code for these enhancements is in these files:</p>

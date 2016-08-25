@@ -396,10 +396,10 @@ scene to the required display signals to produce that scene.
 
 <h4>Display discovery</h4>
 
-<p>HDR display discovery is only supported via HWC2. Partners must selectively
-enable the HWC2 adapter that is released with Android 7.0 for this feature
-to work. Therefore, platforms must add support for HWC2 or extend the AOSP
-framework to allow a way to provide this information. HWC2 exposes a new
+<p>HDR display discovery is only supported via HWC2. Device implementers must
+selectively enable the HWC2 adapter that is released with Android 7.0 for this
+feature to work. Therefore, platforms must add support for HWC2 or extend the
+AOSP framework to allow a way to provide this information. HWC2 exposes a new
 API to propagate HDR Static Data to the framework and the application.</p>
 
 <h4>HDMI</h4>
