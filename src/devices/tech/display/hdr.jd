@@ -406,7 +406,9 @@ API to propagate HDR Static Data to the framework and the application.</p>
 
 <ul>
 <li>A connected HDMI display advertises
-its HDR capability through HDMI EDID as defined in CTA-861.3
+its HDR capability through HDMI EDID as defined in
+<a href="https://standards.cta.tech/kwspub/published_docs/CTA-861.3-Preview.pdf">
+CTA-861.3</a>
 section 4.2.</li>
 <li>The following EOTF mapping shall be used:<ul>
 <li>ET_0 Traditional gamma - SDR Luminance Range: not mapped to any HDR
