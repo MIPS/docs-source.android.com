@@ -171,11 +171,11 @@ expensive).
 <h2 id="tuning">Tuning</h2>
 
 <p>
-Partners may precompile (some of) the system apps if they want so. Initial JIT
-performance vs pre-compiled depends on the the app, but in general they are
-quite close. It might be worth noting that precompiled apps will not be profiled
-and as such will take more space and may miss on other optimizations.
-</p>
+Device implementers may precompile (some of) the system apps if they want so.
+Initial JIT performance vs pre-compiled depends on the the app, but in general
+they are quite close. It might be worth noting that precompiled apps will not
+be profiled and as such will take more space and may miss on other
+optimizations.  </p>
 
 <p>
 In Android 7.0, there's a generic way to specify the level of
@@ -261,7 +261,6 @@ remove compiled code</h3>
 <h2 id="validation">Validation</h2>
 
 <p>
-To ensure their version of the feature works as intended, partners should run
-the ART test in <code>android/art/test</code>. Also, see the CTS test
-<code>hostsidetests/compilation</code> for userdedug builds.
-</p>
+To ensure their version of the feature works as intended, device implementers
+should run the ART test in <code>android/art/test</code>. Also, see the CTS
+test <code>hostsidetests/compilation</code> for userdedug builds.  </p>
