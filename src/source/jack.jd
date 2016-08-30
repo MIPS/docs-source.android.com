@@ -35,7 +35,7 @@ which consists of multiple tools, such as javac, ProGuard, jarjar, and dx.</p>
 
 <ul>
   <li> <strong>Completely open source</strong><br>
-Available in AOSP; partners are welcome to contribute.
+Available in AOSP; users are welcome to contribute.
   <li> <strong>Speeds compilation time</strong><br>
 
 Jack has specific supports to reduce compilation time: pre-dexing, incremental

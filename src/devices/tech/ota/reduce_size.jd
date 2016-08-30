@@ -41,8 +41,8 @@ and provides a cleaner build file diff (see below).</p>
 
 <p>This document provides an explanation of some of the build changes that have
 been added to AOSP to reduce unnecessary file changes between builds.  For
-partners who maintain their own build system,  it provides a guide to some of
-the changes that need to be made to reduce OTA size.</p>
+device implementers who maintain their own build system,  it provides a guide
+to some of the changes that need to be made to reduce OTA size.</p>
 
 <h3 id=the_build_diff_tool>The build diff tool</h3>
 
