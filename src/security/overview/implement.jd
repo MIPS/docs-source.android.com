@@ -40,7 +40,7 @@ Security Team incorporates tests into the
 <a href="{@docRoot}compatibility/cts-intro.html">Android Compatibility Test
 Suite</a> (CTS) and
 <a href="http://tools.android.com/tips/lint">Android Lint</a>. We encourage
-partners to contribute tests that can help other Android users (view
+device implementers to contribute tests that can help other Android users (view
 security-related tests at
 <code>root/cts/tests/tests/security/src/android/security/cts</code>).</p>
 
