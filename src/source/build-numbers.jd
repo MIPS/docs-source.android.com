@@ -190,10 +190,40 @@ following table. Factory images and binaries for Nexus devices can be downloaded
   </thead>
   <tbody>
     <tr>
+      <td>NRD90S</td>
+      <td>android-7.0.0_r4</td>
+      <td>Nougat</td>
+      <td>Nexus 5X</td>
+    </tr>
+    <tr>
+      <td>NRD90R</td>
+      <td>android-7.0.0_r3</td>
+      <td>Nougat</td>
+      <td>Nexus 9 (volantis), Nexus Player, Pixel C</td>
+    </tr>
+    <tr>
       <td>NRD90M</td>
       <td>android-7.0.0_r1</td>
       <td>Nougat</td>
-      <td>Nexus 9 (volantis), Nexus Player, Pixel C</td>
+      <td>Nexus 5X, Nexus 9 (volantis), Nexus Player, Pixel C</td>
+    </tr>
+    <tr>
+      <td>MTC20K</td>
+      <td>android-6.0.1_r67</td>
+      <td>Marshmallow</td>
+      <td>Nexus 5X</td>
+    </tr>
+    <tr>
+      <td>MOB31E</td>
+      <td>android-6.0.1_r66</td>
+      <td>Marshmallow</td>
+      <td>Nexus 5, Nexus 6, Nexus 9 (volantis)</td>
+    </tr>
+    <tr>
+      <td>MMB30W</td>
+      <td>android-6.0.1_r65</td>
+      <td>Marshmallow</td>
+      <td>Nexus 6</td>
     </tr>
     <tr>
       <td>MXC89L</td>
