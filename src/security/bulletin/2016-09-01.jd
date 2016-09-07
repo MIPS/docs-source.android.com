@@ -17,7 +17,7 @@ page.title=Android Security Bulletin—September 2016
     limitations under the License.
 -->
 
-<p><em>Published September 06, 2016</em>
+<p><em>Published September 06, 2016 | Updated September 07, 2016</em>
 </p>
 
 <p>
@@ -35,9 +35,9 @@ receive a single OTA update with the September 06, 2016 security patch level.
 
 <p>
 Partners were notified about the issues described in the bulletin on August 05,
-2016 or earlier. Where applicable, source code patches for these issues will be
-released to the Android Open Source Project (AOSP) repository in the next 48
-hours. We will revise this bulletin with the AOSP links when they are available.
+2016 or earlier. Where applicable, source code patches for these issues have
+been released to the Android Open Source Project (AOSP) repository. This
+bulletin also includes links to patches outside of AOSP.
 </p>
 
 <p>
@@ -566,7 +566,12 @@ remote code execution in applications that use this library.
   </tr>
   <tr>
    <td>CVE-2016-3861</td>
-   <td>A-29250543</td>
+   <td><a href="https://android.googlesource.com/platform/system/core/+/ecf5fd58a8f50362ce9e8d4245a33d56f29f142b">
+       A-29250543</a>
+      [<a href="https://android.googlesource.com/platform/frameworks/av/+/3944c65637dfed14a5a895685edfa4bacaf9f76e">2</a>]
+      [<a href="https://android.googlesource.com/platform/frameworks/base/+/866dc26ad4a98cc835d075b627326e7d7e52ffa1">3</a>]
+      [<a href="https://android.googlesource.com/platform/frameworks/native/+/1f4b49e64adf4623eefda503bca61e253597b9bf">4</a>]
+   </td>
    <td>Critical</td>
    <td>All Nexus</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -598,7 +603,8 @@ remote code execution within the context of the Mediaserver process.
   </tr>
   <tr>
    <td>CVE-2016-3862</td>
-   <td>A-29270469</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/e739d9ca5469ed30129d0fa228e3d0f2878671ac">
+       A-29270469</a></td>
    <td>Critical</td>
    <td>All Nexus</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -630,7 +636,8 @@ remote code execution in an application that uses MediaMuxer.
   </tr>
   <tr>
    <td>CVE-2016-3863</td>
-   <td>A-29161888</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/119a012b2a9a186655da4bef3ed4ed8dd9b94c26">
+       A-29161888</a></td>
    <td>High</td>
    <td>All Nexus</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -663,7 +670,8 @@ third-party application.
   </tr>
   <tr>
    <td>CVE-2016-3870</td>
-   <td>A-29421804</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/1e9801783770917728b7edbdeff3d0ec09c621ac">
+       A-29421804</a>
    <td>High</td>
    <td>All Nexus</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -671,7 +679,11 @@ third-party application.
   </tr>
   <tr>
    <td>CVE-2016-3871</td>
-   <td>A-29422022</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/c2639afac631f5c1ffddf70ee8a6fe943d0bedf9">
+       A-29422022</a>
+      [<a href="https://android.googlesource.com/platform/frameworks/av/+/3c4edac2a5b00dec6c8579a0ee658cfb3bb16d94">2</a>]
+      [<a href="https://android.googlesource.com/platform/frameworks/av/+/c17ad2f0c7e00fd1bbf01d0dfed41f72d78267ad">3</a>]
+   </td>
    <td>High</td>
    <td>All Nexus</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -679,7 +691,10 @@ third-party application.
   </tr>
   <tr>
    <td>CVE-2016-3872</td>
-   <td>A-29421675</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/630ed150f7201ddadb00b8b8ce0c55c4cc6e8742">
+       A-29421675</a>
+      [<a href="https://android.googlesource.com/platform/frameworks/av/+/9f9ba255a0c59544f3555c9c45512c3a2fac5fad">2</a>]
+   </td>
    <td>High</td>
    <td>All Nexus</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -711,7 +726,8 @@ for any developer or security settings modifications.
   </tr>
   <tr>
    <td>CVE-2016-3875</td>
-   <td>A-26251884</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/69729fa8b13cadbf3173fe1f389fe4f3b7bd0f9c">
+       A-26251884</a></td>
    <td>High</td>
    <td>None*</td>
    <td>6.0, 6.0.1</td>
@@ -748,7 +764,8 @@ or security settings modifications.
   </tr>
   <tr>
    <td>CVE-2016-3876</td>
-   <td>A-29900345</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/91fc934bb2e5ea59929bb2f574de6db9b5100745">
+       A-29900345</a></td>
    <td>High</td>
    <td>All Nexus</td>
    <td>6.0, 6.0.1, 7.0</td>
@@ -779,7 +796,8 @@ as High due to the possibility of remote denial of service.
   </tr>
   <tr>
    <td>CVE-2016-3899</td>
-   <td>A-29421811</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/97837bb6cbac21ea679843a0037779d3834bed64">
+       A-29421811</a></td>
    <td>High</td>
    <td>All Nexus</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -787,7 +805,8 @@ as High due to the possibility of remote denial of service.
   </tr>
   <tr>
    <td>CVE-2016-3878</td>
-   <td>A-29493002</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/7109ce3f8f90a28ca9f0ee6e14f6ac5e414c62cf">
+       A-29493002</a></td>
    <td>High</td>
    <td>All Nexus*</td>
    <td>6.0, 6.0.1</td>
@@ -795,7 +814,8 @@ as High due to the possibility of remote denial of service.
   </tr>
   <tr>
    <td>CVE-2016-3879</td>
-   <td>A-29770686</td>
+   <td><a href="https://android.googlesource.com/platform/external/sonivox/+/cadfb7a3c96d4fef06656cf37143e1b3e62cae86">
+       A-29770686</a></td>
    <td>High</td>
    <td>All Nexus*</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -803,7 +823,8 @@ as High due to the possibility of remote denial of service.
   </tr>
   <tr>
    <td>CVE-2016-3880</td>
-   <td>A-25747670</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/68f67ef6cf1f41e77337be3bc4bff91f3a3c6324">
+       A-25747670</a></td>
    <td>High</td>
    <td>All Nexus</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -811,7 +832,8 @@ as High due to the possibility of remote denial of service.
   </tr>
   <tr>
    <td>CVE-2016-3881</td>
-   <td>A-30013856</td>
+   <td><a href="https://android.googlesource.com/platform/external/libvpx/+/4974dcbd0289a2530df2ee2a25b5f92775df80da">
+       A-30013856</a></td>
    <td>High</td>
    <td>All Nexus</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -848,7 +870,8 @@ capabilities without explicit user permission.
   </tr>
   <tr>
    <td>CVE-2016-3883</td>
-   <td>A-28557603</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/opt/telephony/+/b2c89e6f8962dc7aff88cb38aa3ee67d751edda9">
+       A-28557603</a></td>
    <td>Moderate</td>
    <td>All Nexus</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -882,7 +905,8 @@ initiation or user permission.
   </tr>
   <tr>
    <td>CVE-2016-3884</td>
-   <td>A-29421441</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/61e9103b5725965568e46657f4781dd8f2e5b623">
+       A-29421441</a></td>
    <td>Moderate</td>
    <td>All Nexus</td>
    <td>6.0, 6.0.1, 7.0</td>
@@ -914,7 +938,8 @@ the possibility of local arbitrary code execution in a privileged process.
   </tr>
   <tr>
    <td>CVE-2016-3885</td>
-   <td>A-29555636</td>
+   <td><a href="https://android.googlesource.com/platform/system/core/+/d7603583f90c2bc6074a4ee2886bd28082d7c65b">
+       A-29555636</a></td>
    <td>Moderate</td>
    <td>All Nexus</td>
    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -945,7 +970,8 @@ as Moderate because it is a local bypass of user permissions.
   </tr>
   <tr>
    <td>CVE-2016-3886</td>
-   <td>A-30107438</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/6ca6cd5a50311d58a1b7bf8fbef3f9aa29eadcd5">
+       A-30107438</a></td>
    <td>Moderate</td>
    <td>All Nexus</td>
    <td>7.0</td>
@@ -977,7 +1003,8 @@ that is outside of the application’s permission levels.
   </tr>
   <tr>
    <td>CVE-2016-3887</td>
-   <td>A-29899712</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/335702d106797bce8a88044783fa1fc1d5f751d0">
+       A-29899712</a></td>
    <td>Moderate</td>
    <td>All Nexus</td>
    <td>7.0</td>
@@ -1009,7 +1036,8 @@ should prevent the device from being used before it is set up.
   </tr>
   <tr>
    <td>CVE-2016-3888</td>
-   <td>A-29420123</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/opt/telephony/+/b8d1aee993dcc565e6576b2f2439a8f5a507cff6">
+       A-29420123</a></td>
    <td>Moderate</td>
    <td>All Nexus</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -1042,7 +1070,10 @@ all its data.
   </tr>
   <tr>
    <td>CVE-2016-3889</td>
-   <td>A-29194585</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/e206f02d46ae5e38c74d138b51f6e1637e261abe">
+       A-29194585</a>
+      [<a href="https://android.googlesource.com/platform/packages/apps/Settings/+/bd5d5176c74021e8cf4970f93f273ba3023c3d72">2</a>]
+   </td>
    <td>Moderate</td>
    <td>All Nexus</td>
    <td>6.0, 6.0.1, 7.0</td>
@@ -1074,7 +1105,10 @@ because it requires an uncommon device configuration.
   </tr>
   <tr>
    <td>CVE-2016-3890</td>
-   <td>A-28347842</td>
+   <td><a href="https://android.googlesource.com/platform/system/core/+/268068f25673242d1d5130d96202d3288c91b700">
+       A-28347842</a>
+      [<a href="https://android.googlesource.com/platform/system/core/+/014b01706cc64dc9c2ad94a96f62e07c058d0b5d">2</a>]
+   </td>
    <td>Moderate</td>
    <td>None*</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -1111,7 +1145,8 @@ without permission.
   </tr>
   <tr>
    <td>CVE-2016-3895</td>
-   <td>A-29983260</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/native/+/363247929c35104b3e5ee9e637e9dcf579080aee">
+       A-29983260</a></td>
    <td>Moderate</td>
    <td>All Nexus</td>
    <td>6.0, 6.0.1, 7.0</td>
@@ -1143,7 +1178,8 @@ permission.
   </tr>
   <tr>
    <td>CVE-2016-3896</td>
-   <td>A-29767043</td>
+   <td><a href="https://android.googlesource.com/platform/packages/apps/Email/+/cb2dfe43f25cb0c32cc73aa4569c0a5186a4ef43">
+       A-29767043</a></td>
    <td>Moderate</td>
    <td>None*</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -1179,7 +1215,10 @@ because it could be used to access data without permission.
   </tr>
   <tr>
    <td>CVE-2016-3897</td>
-   <td>A-25624963</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/55271d454881b67ff38485fdd97598c542cc2d55">
+       A-25624963</a>
+      [<a href="https://android.googlesource.com/platform/frameworks/base/+/81be4e3aac55305cbb5c9d523cf5c96c66604b39">2</a>]
+   </td>
    <td>Moderate</td>
    <td>None*</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -1216,7 +1255,8 @@ critical function.
   </tr>
   <tr>
    <td>CVE-2016-3898</td>
-   <td>A-29832693</td>
+   <td><a href="https://android.googlesource.com/platform/packages/services/Telephony/+/d1d248d10cf03498efb7041f1a8c9c467482a19d">
+       A-29832693</a></td>
    <td>Moderate</td>
    <td>All Nexus</td>
    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -2349,5 +2389,6 @@ belongs. These prefixes map as follows:
 
 <h2 id="revisions">Revisions</h2>
 <ul>
-<li>September 06, 2016: Bulletin published.</li>
+  <li>September 06, 2016: Bulletin published.</li>
+  <li>September 07, 2016: Bulletin revised to include AOSP links.</li>
 </ul>
