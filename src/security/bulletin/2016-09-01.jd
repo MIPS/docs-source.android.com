@@ -17,7 +17,7 @@ page.title=Android Security Bulletin—September 2016
     limitations under the License.
 -->
 
-<p><em>Published September 06, 2016 | Updated September 07, 2016</em>
+<p><em>Published September 06, 2016 | Updated September 12, 2016</em>
 </p>
 
 <p>
@@ -478,6 +478,7 @@ Mobile</a>: CVE-2016-3863</li>
 <li>Jann Horn of Google Project Zero: CVE-2016-3885</li>
 <li>Jianqiang Zhao (<a href="https://twitter.com/jianqiangzhao">@jianqiangzhao</a>)
 and <a href="http://weibo.com/jfpan">pjf</a> of IceSword Lab, Qihoo 360: CVE-2016-3858</li>
+<li>Joshua Drake (<a href="https://twitter.com/jduck">@jduck</a>): CVE-2016-3861</li>
 <li><a href="https://github.com/AndroidDeveloperLB/">Liran Barsisa</a> of
 <a href="https://sync.me/">Sync.Me</a>: CVE-2016-3877</li>
 <li>Madhu Priya Murugan of CISPA, Saarland University: CVE-2016-3896</li>
@@ -2391,4 +2392,6 @@ belongs. These prefixes map as follows:
 <ul>
   <li>September 06, 2016: Bulletin published.</li>
   <li>September 07, 2016: Bulletin revised to include AOSP links.</li>
+  <li>September 12, 2016: Bulletin revised to update attribution for
+      CVE-2016-3861</li>
 </ul>
