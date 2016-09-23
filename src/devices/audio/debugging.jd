@@ -46,8 +46,11 @@ done debugging; the tee sink should not be left enabled in production builds.
 </p>
 
 <p>
-The instructions in the remainder of this section are for Android 5.0,
-and may require changes for other versions.
+The instructions in the remainder of this section are for Android 5.x and 6.x.
+For Android 7.x, replace "/data/misc/media" with "/data/misc/audioserver".
+Additionally, you must use a userdebug or eng build.
+If you use a userdebug build, then disable verity with
+adb root &amp;&amp; adb disable-verity &amp;&amp; adb reboot.
 </p>
 
 <h3 id="compile">Compile-time setup</h3>
