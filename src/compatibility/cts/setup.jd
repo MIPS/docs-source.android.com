@@ -178,7 +178,7 @@ to run the accessibility tests with:<br>
 <code>adb install -r android-cts/repository/testcases/CtsDelegatingAccessibilityService.apk</code><br>
 On the device, enable: <strong>Settings > Accessibility > Accessibility >
 Delegating Accessibility Service</strong></p>
-<p class="note"><strong>Note:</strong> For CTS 2.3 R4 and beyond on devices that declare the
+<p class="note"><strong>Note:</strong> For CTS 2.3 R4 through CTS 6.0 on devices that declare the
 <code>android.software.device_admin feature</code>, set up your device to run
 the device administration tests with:<br>
 <code>adb install -r android-cts/repository/testcases/CtsDeviceAdmin.apk</code><br>
