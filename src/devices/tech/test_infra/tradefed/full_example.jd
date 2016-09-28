@@ -406,7 +406,7 @@ public void run(ITestInvocationListener listener) throws DeviceNotAvailableExcep
 <p>TF configurations also include a help system, which automatically displays
 help text for <code>@Option</code> fields. Try it now, and you should see the
 help text for <code>my_option</code>:</p>
-<pre><code>tf&gt; run --help example/helloworld
+<pre><code>tf&gt; run example/helloworld --help
 Printing help for only the important options. To see help for all options, use the --help-all flag
 
   cmd_options options:
@@ -444,7 +444,7 @@ all <code>@Option</code> fields, regardless of importance. For details, see
 
 <p>The configuration help should also update to indicate the default value of
 <code>my_option</code>:</p>
-<pre><code>tf&gt; run --help example/helloworld
+<pre><code>tf&gt; run example/helloworld --help
   test options:
     -m, --my_option      this is the option's help text Default: fromxml.
 </code></pre>
@@ -459,7 +459,7 @@ logging to stdout by passing in the <code>--log-level-display</code> arg.</p>
 
 <p>Try this now, and you should see the 'I have device' log message reappear on
 stdout, in addition to being logged to a file:</p>
-<pre><code>tf &gt;run --log-level-display info example/helloworld
+<pre><code>tf &gt;run example/helloworld --log-level-display info
 …
 05-24 18:53:50 I/HelloWorldTest: Hello, TF World! I have device 004ad9880810a548
 </code></pre>
