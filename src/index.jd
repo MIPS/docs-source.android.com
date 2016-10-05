@@ -40,8 +40,17 @@ devices meet compatibility requirements.</p>
 <div class="wrap">
 
 <div class="landing-docs">
-  <div class="col-9">
+  <div class="col-8">
   <h3>What's New</h3>
+
+<h4>October Android Security Bulletin</h4>
+<p>The <strong><a href="{@docRoot}security/bulletin/2016-10-01.html">October
+2016 Android Security Bulletin</a></strong> has been published along with links
+to associated fixes. In addition, new
+<strong><a href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">build
+numbers</a></strong> have been published for Nexus 5, Nexus 6, Nexus 7, Nexus
+9, Nexus 5X, Nexus 6P, and Nexus Player running Android 6.0 and 7.0 to
+support the October Android security release.</p>
 
 <h4>New Android Build Numbers and CTS Downloads</h4>
 <p>Android 7.0 R.1, 6.0 R9, 5.1 R10, and 5.0 R9 Compatibility Test Suite (CTS)
@@ -82,48 +91,18 @@ HAL</strong></a> enables Android Automotive implementations.</p>
 
 <h4>Security Improvements</h4>
 <p>
-Android now strictly enforces
-<a href="{@docRoot}security/verifiedboot/verified-boot.html"><strong>verified
-boot</strong></a> and requires a
-<a href="{@docRoot}security/overview/app-security.html#certificate-authorities"><strong>same-system
-trusted CA store</strong></a>.
-<a href="{@docRoot}security/apksigning/index.html#v2"><strong>APK signature
-scheme v2</strong></a> performs signature checking across the entire file.
 Security hardening of <a href="{@docRoot}devices/media/framework-hardening.html"><strong>media
 framework</strong></a> and
-<a href="{@docRoot}devices/camera/versioning.html#hardening">camera service</strong></a>
+<strong><a href="{@docRoot}devices/camera/versioning.html#hardening">camera service</strong></a>
 splits mediaserver into multiple processes with restricted permissions and
 capabilities (may require changes to HAL implementations).
 For more changes, see
 <a href="{@docRoot}security/enhancements/enhancements70.html"><strong>7.0
 security enhancements</strong></a>.</p>
 
-<h4>Audio, Camera, &amp; Graphics Updates</h4>
-<p>
-<a href="{@docRoot}devices/audio/implement-policy.html"><strong>Audio policy
-improvements</strong></a> include changes to policy configuration files, a
-reorganization of audio policy code, and new extensions for audio policy routing
-APIs.
-Android now supports
-<a href="{@docRoot}devices/graphics/arch-vulkan.html"><strong>Vulkan</strong></a>
-(low­-overhead, cross-platform API for high-performance 3D graphics) and
-<a href="{@docRoot}devices/graphics/testing.html"><strong>OpenGL
-3.2</strong></a>; check with your SoC for driver support.
-Enhancements to
-<a href="{@docRoot}devices/camera/versioning.html"><strong>camera3</strong></a>
-support devices with high-end cameras.</p>
-
-<h4>OEM Customizations</h4>
-<p>Users can now
-<a href="{@docRoot}devices/tech/connect/block-numbers.html"><strong>restrict
-calls and texts</strong></a> (impacts apps using blocking features).
-Do-not-disturb (DND) rules can now
-<a href="{@docRoot}devices/tech/display/dnd.html"><strong>suppress visual
-interruptions</strong></a>.</p>
-
 </div>
 
-<div class="col-6">
+<div class="col-8">
 
 <h3>Getting Started</h3>
 <a href="{@docRoot}source/index.html"><h4>Explore the Source</h4></a>
