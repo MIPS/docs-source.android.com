@@ -34,7 +34,7 @@ receive a single OTA update with the October 05, 2016 security patch level.
 Partners were notified about the issues described in the bulletin on September
 06, 2016 or earlier.  Where applicable, source code patches for these issues
 have been released to the Android Open Source Project (AOSP) repository. This
-bulletin also includes links to patches outside of AOSP. 
+bulletin also includes links to patches outside of AOSP.
 </p>
 <p>
 The most severe of these issues are Critical security vulnerabilities in
@@ -465,6 +465,8 @@ We would like to thank these researchers for their contributions:
   <a href="http://weibo.com/jfpan">pjf</a> of IceSword Lab, Qihoo 360: CVE-2016-6688,
   CVE-2016-6677, CVE-2016-6673, CVE-2016-6687, CVE-2016-6686, CVE-2016-6681,
   CVE-2016-6682, CVE-2016-3930</li>
+  <li>Joshua Drake (<a href="https://twitter.com/jduck">@jduck</a>):
+      CVE-2016-3920</li>
   <li>Maciej Szawłowski of Google security team: CVE-2016-3905</li>
   <li>Mark Brand of Google Project Zero: CVE-2016-6689</li>
   <li><a href="https://github.com/michalbednarski">Michał Bednarski</a>:
@@ -478,10 +480,11 @@ We would like to thank these researchers for their contributions:
   <li>Samuel Tan of Google: CVE-2016-3925</li>
   <li><a href="mailto:sbauer@plzdonthack.me">Scott Bauer</a>
   (<a href="https://twitter.com/ScottyBauer1">@ScottyBauer1</a>):
-  CVE-2016-3936, CVE-2016-3928, CVE-2016-3902, CVE-2016-3937</li>
+  CVE-2016-3936, CVE-2016-3928, CVE-2016-3902, CVE-2016-3937, CVE-2016-6696</li>
   <li>Seven Shen (<a href="https://twitter.com/lingtongshen">@lingtongshen</a>) of
   Trend Micro Mobile Threat Research Team: CVE-2016-6685, CVE-2016-6683,
-  CVE-2016-6680, CVE-2016-6679, CVE-2016-3903</li>
+  CVE-2016-6680, CVE-2016-6679, CVE-2016-3903, CVE-2016-6693, CVE-2016-6694,
+  CVE-2016-6695</li>
   <li><a href="mailto:vancouverdou@gmail.com">Wenke Dou</a>, Mingjian Zhou
   (<a href="https://twitter.com/Mingjian_Zhou">@Mingjian_Zhou</a>), Chiachih Wu
   (<a href="https://twitter.com/chiachih_wu">@chiachih_wu</a>), and Xuxian Jiang of
@@ -2437,5 +2440,7 @@ belongs. These prefixes map as follows:
 <h2 id="revisions">Revisions</h2>
 <ul>
   <li>October 03, 2016: Bulletin published.</li>
-  <li>October 04, 2016: Bulletin revised to include AOSP links.</li>
+  <li>October 04, 2016: Bulletin revised to include AOSP links and update
+      attributions for CVE-2016-3920, CVE-2016-6693, CVE-2016-6694,
+      CVE-2016-6695, and CVE-2016-6696.</li>
 </ul>
