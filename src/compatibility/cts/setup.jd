@@ -140,6 +140,13 @@ one with at least speed class 10 or higher to ensure it can pass the CTS.</em>
 </li>
 </ol>
 
+<h3 id=developer_uicc>Developer UICC</h3>
+
+<p>In order to run CTS carrier API tests, the device needs to has a SIM card
+with carrier privilege rules on it. See <a
+href="{@docRoot}devices/tech/config/uicc.html#prepare_uicc">Preparing
+the UICC</a>.</p>
+
 <h2 id=config_device>Android device configuration</h2>
 <ol>
   <li>Factory data reset the device: <strong>Settings > Backup &amp; reset > Factory data reset</strong>
