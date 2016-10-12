@@ -30,8 +30,12 @@ page.title=System and kernel security
   native code is constrained by the Application Sandbox.  Whether that code is
   the result of included application behavior or a exploitation of an application
   vulnerability, the system would prevent the rogue application from harming
-  other applications, the Android system, or the device itself.</p>
-<h3 id="linux-security">Linux Security</h3>
+  other applications, the Android system, or the device itself. See <a
+  href="{@docRoot}devices/tech/config/kernel.html">Kernel Configuration</a> for
+  measures you can take to strengthen the kernel on your devices. See the <a
+  href="{@docRoot}compatibility/cdd.html">Android Compatibility Definition
+  Document (CDD)</a> for required settings.</p>
+<h2 id="linux-security">Linux Security</h2>
 <p>The foundation of the Android platform is the Linux kernel. The Linux kernel
   itself has been in widespread use for years, and is used in millions of
   security-sensitive environments. Through its history of constantly being
@@ -56,7 +60,7 @@ page.title=System and kernel security
   <li>Ensures that user A does not exhaust user B's devices (e.g. telephony, GPS,
     bluetooth)</li>
 </ul>
-<h3 id="the-application-sandbox">The Application Sandbox</h3>
+<h2 id="the-application-sandbox">The Application Sandbox</h2>
 <p>The Android platform takes advantage of the Linux user-based protection as a
   means of identifying and isolating application resources.  The Android system
   assigns a unique user ID (UID) to each Android application and runs it as that user
@@ -91,33 +95,33 @@ page.title=System and kernel security
 <p>Like all security features, the Application Sandbox is not unbreakable.
   However, to break out of the Application Sandbox in a properly configured
   device, one must compromise the security of the Linux kernel.</p>
-<h3 id="system-partition-and-safe-mode">System Partition and Safe Mode</h3>
+<h2 id="system-partition-and-safe-mode">System Partition and Safe Mode</h2>
 <p>The system partition contains Android's kernel as well as the operating system
   libraries, application runtime, application framework, and applications.  This
   partition is set to read-only. When a user boots the device into Safe Mode,
   third-party applications may be launched manually by the device owner but are
   not launched by default on start up.</p>
-<h3 id="filesystem-permissions">Filesystem Permissions</h3>
+<h2 id="filesystem-permissions">Filesystem Permissions</h2>
 <p>In a UNIX-style environment, filesystem permissions ensure that one user cannot
   alter or read another user's files. In the case of Android, each application
   runs as its own user. Unless the developer explicitly exposes files to other
   applications, files created by one application cannot be read or altered by
   another application.</p>
-<h3 id="se-linux">Security-Enhanced Linux</h3>
+<h2 id="se-linux">Security-Enhanced Linux</h2>
 <p>Android uses Security-Enhanced
   Linux (SELinux) to apply access control policies and establish an environment of
   mandatory access control (mac). See <a
 href="{@docRoot}security/selinux/index.html">Validating
     Security-Enhanced Linux in
     Android</a> for details.</p>
-<h3 id="crypto">Cryptography</h3>
+<h2 id="crypto">Cryptography</h2>
 <p> Android provides a set of cryptographic APIs for use by applications. These
   include  implementations of standard and commonly used cryptographic primitives
   such as AES, RSA, DSA, and SHA. Additionally, APIs are provided for higher level
   protocols such as SSL and HTTPS. </p>
 <p> Android 4.0 introduced the <a href="http://developer.android.com/reference/android/security/KeyChain.html">KeyChain</a> class to allow applications to use the system credential storage for private
   keys and certificate chains. </p>
-<h3>Rooting of Devices</h3>
+<h2 id="rooting-devices">Rooting of Devices</h2>
 <p> By default, on Android only the kernel and a small subset of the core
   applications run with root permissions. Android does not prevent a user or
   application with root permissions from modifying the operating system, kernel,
@@ -151,8 +155,8 @@ href="{@docRoot}security/selinux/index.html">Validating
   devices uses the device password to protect the encryption key, so modifying
   the bootloader or operating system is not sufficient to access user data
   without the user’s device password. </p>
-<h3>User Security Features</h3>
-<h4 id="filesystem-encryption">Filesystem Encryption</h4>
+<h2 id="user-security">User Security Features</h2>
+<h3 id="filesystem-encryption">Filesystem Encryption</h3>
 <p>Android 3.0 and later provides full filesystem encryption, so all user data can
   be encrypted in the kernel using the dmcrypt implementation of AES128 with CBC
   and ESSIV:SHA256. The encryption key is protected by AES128 using a key
@@ -173,7 +177,7 @@ href="{@docRoot}security/encryption/index.html">Encryption</a>.</p>
   this password protects the cryptographic key for full filesystem encryption.</p>
 <p>Use of a password and/or password complexity rules can be required by a device
   administrator.</p>
-<h3 id="device-administration">Device Administration</h3>
+<h2 id="device-administration">Device Administration</h2>
 <p>Android 2.2 and later provide the Android Device Administration API, which
   provides device administration features at the system level. For example, the
   built-in Android Email application uses the APIs to improve Exchange support.
