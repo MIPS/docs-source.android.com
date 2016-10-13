@@ -9,7 +9,7 @@ LOCAL_ADDITIONAL_HTML_DIR:=src-intl intl/
 # and deleting output later in delete-ref target
 LOCAL_ADDITIONAL_JAVA_DIR := frameworks/base/core/java/android/annotation
 # FIXME FIXME FIXME LOCAL_ADDITIONAL_DEPENDENCIES := tradefed-docs
-LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR := build/tools/droiddoc/templates-sac
+LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR := build/make/tools/droiddoc/templates-sac
 LOCAL_MODULE := online-sac
 LOCAL_DROIDDOC_OPTIONS:= \
         -toroot / \
