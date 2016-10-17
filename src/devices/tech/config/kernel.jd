@@ -318,15 +318,15 @@ CONFIG_SND_USB_AUDIO=y
 CONFIG_SND_USB_MIDI=y
 </pre>
 
-<h2 id="Seccomp-BPF-TSYNC">Seccomp-BPF with TSYNC Requirement</h2>
+<h2 id="Seccomp-BPF-TSYNC">Seccomp-BPF with TSYNC</h2>
 <p>
 Seccomp-BPF is a kernel security technology that
 enables the creation of sandboxes to restrict the system calls a process is
-allowed to make. The TSYNC feature enables the use of seccomp-bpf from
+allowed to make. The TSYNC feature enables the use of Seccomp-BPF from
 multithreaded programs.
 </p>
 <p>
-This requirement is limited to architectures that have seccomp support upstream:
+This ability is limited to architectures that have seccomp support upstream:
 ARM, ARM64, x86, and x86_64.
 </p>
 <h3 id="backport-ARM-32">Backporting for Kernel 3.10 for ARM-32, X86, X86_64</h3>
