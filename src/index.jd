@@ -43,6 +43,16 @@ devices meet compatibility requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>Seccomp-BPF with TSYNC</h4>
+<p>
+Instructions for configuring <strong><a
+href="{@docRoot}devices/tech/config/kernel.html#Seccomp-BPF-TSYNC">Seccomp-BPF
+with TSYNC</a></strong> are now included in <strong>Kernel
+Configuration</a></strong>. Seccomp-BPF enables the creation of sandboxes to
+restrict the system calls a process is allowed to make, while TSYNC enables the
+use of Seccomp-BPF from multithreaded programs.
+</p>
+
 <h4>October Android Security Bulletin</h4>
 <p>The <strong><a href="{@docRoot}security/bulletin/2016-10-01.html">October
 2016 Android Security Bulletin</a></strong> has been published along with links
@@ -88,17 +98,6 @@ the device is powered on but not unlocked.
 support enables simultaneous display of multiple apps on a device screen.
 The <a href="{@docRoot}devices/automotive.html"><strong>Vehicle
 HAL</strong></a> enables Android Automotive implementations.</p>
-
-<h4>Security Improvements</h4>
-<p>
-Security hardening of <a href="{@docRoot}devices/media/framework-hardening.html"><strong>media
-framework</strong></a> and
-<strong><a href="{@docRoot}devices/camera/versioning.html#hardening">camera service</strong></a>
-splits mediaserver into multiple processes with restricted permissions and
-capabilities (may require changes to HAL implementations).
-For more changes, see
-<a href="{@docRoot}security/enhancements/enhancements70.html"><strong>7.0
-security enhancements</strong></a>.</p>
 
 </div>
 
