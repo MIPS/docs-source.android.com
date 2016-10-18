@@ -43,6 +43,14 @@ devices meet compatibility requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>Project Log Improvements</h4>
+<p>
+The link to the <strong><a
+href="https://android.googlesource.com/platform/docs/source.android.com/+log/master?no-merges"
+target="_blank">docs/source.android.com project log</a></strong> in AOSP has
+been refined to eliminate results from merges.
+</p>
+
 <h4>Seccomp-BPF with TSYNC</h4>
 <p>
 Instructions for configuring <strong><a
