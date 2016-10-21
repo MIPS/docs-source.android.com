@@ -42,6 +42,11 @@ API levels and NDK releases provided for convenience:</p>
 <tbody>
 <tr>
 <td>Nougat</td>
+<td>7.1</td>
+<td>API level 25</td>
+</tr>
+<tr>
+<td>Nougat</td>
 <td>7.0</td>
 <td>API level 24</td>
 </tr>
@@ -189,6 +194,24 @@ following table. Factory images and binaries for Nexus devices can be downloaded
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>NDE63P</td>
+      <td>android-7.1.0_r4</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
+    <tr>
+      <td>NDE63L</td>
+      <td>android-7.1.0_r2</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
+    <tr>
+      <td>NDE63H</td>
+      <td>android-7.1.0_r1</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
     <tr>
       <td>NBD90Z</td>
       <td>android-7.0.0_r14</td>
