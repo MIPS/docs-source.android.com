@@ -16,7 +16,7 @@ page.title=Android Security Bulletin—August 2016
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<p><em>Published August 01, 2016 | Updated August 16, 2016</em></p>
+<p><em>Published August 01, 2016 | Updated October 21, 2016</em></p>
 <p>
 The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -366,7 +366,7 @@ driver</td>
   </tr>
   <tr>
    <td>Information disclosure vulnerability in kernel networking component</td>
-   <td>CVE-2016-4578</td>
+   <td>CVE-2016-4486</td>
    <td>Moderate</td>
    <td>Yes</td>
   </tr>
@@ -2555,7 +2555,7 @@ privileged process.
    <th>Date reported</th>
   </tr>
   <tr>
-   <td>CVE-2016-4578</td>
+   <td>CVE-2016-4486</td>
    <td>A-28620102
 <p>
 <a href="http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=5f8e44741f9f216e33736ea4ec65ca9ac03036e6">
@@ -2759,5 +2759,7 @@ belongs. These prefixes map as follows:
 <ul>
   <li>August 01, 2016: Bulletin published.</li>
   <li>August 02, 2016: Bulletin revised to include AOSP links.</li>
-  <li>August 16, 2016: CVE-2016-3856 corrected to CVE-2016-2060 and updated the reference URL.</li>
+  <li>August 16, 2016: CVE-2016-3856 corrected to CVE-2016-2060 and updated the
+      reference URL.</li>
+  <li>October 21, 2016: Corrected typo in CVE-2016-4486.</li>
 </ul>
