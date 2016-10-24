@@ -26,10 +26,11 @@ header.hide=1
 <h1 itemprop="name" style="margin-bottom:0;">Welcome to the Android Open Source Project!</h1>
 
 <p>Android is an open source software stack for a wide range of mobile devices
-and a corresponding open source project led by Google. This site offers the
-information and source code you need to create custom variants of the Android
-stack, port devices and accessories to the Android platform, and ensure your
-devices meet compatibility requirements.</p>
+and a corresponding open source project led by Google. This site and the Android
+Open Source Project (AOSP) repository offer the information and source code you
+need to create custom variants of the Android stack, port devices and
+accessories to the Android platform, and ensure your devices meet compatibility
+requirements.</p>
 
 <h2 align="center">Android 7.0 Updates Available</h2>
 
@@ -43,13 +44,19 @@ devices meet compatibility requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>Android 7.1 and API level 25</h4>
+<p>The full source code for Android 7.1, the OS version running on the Pixel
+phones, is now available in AOSP. This release includes an increase in API
+levels to 25. See <strong><a
+href="{@docRoot}source/build-numbers.html">Codenames, Tags, and Build
+Numbers</a></strong> for specific build IDs and branch tags included in this
+release.</p>
+
 <h4>Project Log Improvements</h4>
-<p>
-The link to the <strong><a
+<p>The link to the <strong><a
 href="https://android.googlesource.com/platform/docs/source.android.com/+log/master?no-merges"
 target="_blank">docs/source.android.com project log</a></strong> in AOSP has
-been refined to eliminate results from merges.
-</p>
+been refined to eliminate results from merges.</p>
 
 <h4>Seccomp-BPF with TSYNC</h4>
 <p>
@@ -92,21 +99,6 @@ href="{@docRoot}source/read-bug-reports.html">Reading Bug Reports</a></strong>
 now contains information on event log tags, wake locks, and Bluetooth Low
 Energy (BLE) scans.</p>
 
-<h4>Key Features</h4>
-<p>
-<a href="{@docRoot}devices/tech/dalvik/jit-compiler.html"><strong>Just-in-time
-(JIT) compiler</strong></a> with code profiling to Android runtime (ART)
-continually improves app performance and now offers <a
-href="{@docRoot}devices/tech/dalvik/jit-compiler.html#recommendation"><strong>Recommendations</a></strong>
-for use. <a
-href="{@docRoot}security/encryption/file-based.html"><strong>Direct boot and
-file-based encryption</strong></a> allows certain apps to run securely when
-the device is powered on but not unlocked.
-<a href="{@docRoot}devices/tech/display/multi-window.html"><strong>Multi-window</strong></a>
-support enables simultaneous display of multiple apps on a device screen.
-The <a href="{@docRoot}devices/automotive.html"><strong>Vehicle
-HAL</strong></a> enables Android Automotive implementations.</p>
-
 </div>
 
 <div class="col-8">
@@ -116,9 +108,9 @@ HAL</strong></a> enables Android Automotive implementations.</p>
 <p>Get the complete Android platform and modify and build it to suit your needs.
 You can also
 <strong><a href="https://android-review.googlesource.com/#/q/status:open">contribute
-to</a></strong> the <strong><a href="https://android.googlesource.com/">Android
-Open Source Project (AOSP) repository</a></strong> to make your changes
-available to everyone else in the Android ecosystem.</p>
+to</a></strong> the <strong><a href="https://android.googlesource.com/">AOSP
+repository</a></strong> to make your changes available to everyone else in the
+Android ecosystem.</p>
 
 <a href="{@docRoot}source/index.html"><img border="0"
 src="images/android_framework_small.png" alt="Android framework summary"
