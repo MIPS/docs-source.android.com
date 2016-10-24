@@ -336,6 +336,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/connect/block-numbers.html">Block Phone Numbers</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/connect/call-notification.html">Call Notifications</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/connect/data-saver.html">Data Saver Mode</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/connect/emergency-affordance.html">Emergency Affordance</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/connect/felica.html">Host Card Emulation of FeliCa</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/connect/ril.html">Radio Interface Layer (RIL)</a></li>
         </ul>
