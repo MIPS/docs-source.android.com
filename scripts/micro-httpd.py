@@ -17,7 +17,8 @@
 # Usage:
 #  Serve the docs build directory on localhost:8080 (default):
 #  $ ./docs/source.android.com/scripts/micro-httpd.py
-#
+#  Serve a different output directory (appends target/common/docs/online-sac):
+#  $ OUT_DIR=/path/to/out ./docs/source.android.com/scripts/micro-httpd.py
 #  Serve using a different port on localhost:
 #  $ HTTP_PORT=9090 ./docs/source.android.com/scripts/micro-httpd.py
 
@@ -27,14 +28,15 @@ import os
 import sys
 import socket
 
-DOCS_DIR = 'out/target/common/docs/online-sac'
 PORT = int(os.environ.get('HTTP_PORT', 8080))
+OUT_DIR = os.environ.get('OUT_DIR', os.path.join(os.path.dirname(__file__),
+                                                 '../../../out'))
 
-croot_dir = os.path.join(os.path.dirname(__file__), '../../..')
-docs_out = os.path.join(croot_dir, DOCS_DIR)
+out_dir_sac = os.path.abspath(os.path.join(OUT_DIR,
+                                           'target/common/docs/online-sac'))
 
-if not os.path.isdir(docs_out):
-    sys.exit("Error: Docs build directory doesn't exist: %s" % DOCS_DIR)
+if not os.path.isdir(out_dir_sac):
+    sys.exit("Error: Docs build directory doesn't exist: {0}".format(out_dir_sac))
 
 Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
 
@@ -44,7 +46,8 @@ try:
 except socket.error as sockerr:
     sys.exit("Error: Address already in use. Kill blocking process (or wait a moment)")
 
-print("Serving docs at: http://{0}:{1}".format(socket.gethostname(), PORT))
+print("Serving directory: {0}".format(out_dir_sac))
+print("Web server address: http://{0}:{1}".format(socket.gethostname(), PORT))
 
-os.chdir(docs_out)
+os.chdir(out_dir_sac)
 httpd.serve_forever()
