@@ -1,7 +1,24 @@
 #!/usr/bin/env bash
 ##
-## How to use:
-## From the repo root directory (croot):
+## Copyright (C) 2016 The Android Open Source Project
+##
+## Licensed under the Apache License, Version 2.0 (the "License");
+## you may not use this file except in compliance with the License.
+## You may obtain a copy of the License at
+##
+##      http://www.apache.org/licenses/LICENSE-2.0
+##
+## Unless required by applicable law or agreed to in writing, software
+## distributed under the License is distributed on an "AS IS" BASIS,
+## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+## See the License for the specific language governing permissions and
+## limitations under the License.
+##
+##
+## Build and stage the source.android.com website.
+##
+## Usage:
+## From the repo's root directory (croot):
 ##   $ ./docs/source.android.com/scripts/build2stage.sh [options] server-number
 ##
 ## To build/stage from anywhere, add an alias or scripts/ to PATH.
@@ -13,6 +30,16 @@
 ##   $ build2stage.sh -b
 ## Stage only (using existing build):
 ##   $ build2stage.sh -s 13
+##
+## The script uses some environmental variables that can be set locally or
+## in /etc/profile.d/build2stage-conf.sh, or passed via the command-line:
+##
+## Change output directory used for generated files and to stage from:
+##   $ OUT_DIR=/path/to/dir build2stage.sh
+## Change build target:
+##   $ BUILD_TARGET=aosp_x86_64 build2stage.sh
+## Location of staging tool:
+##   $ AE_STAGING=/path/to/ae_staging build2stage 13
 
 usage() {
   echo "Usage: $(basename $0) [options] server-number"
@@ -28,13 +55,26 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
+##
 ## VARS
+##
+
+# Sourced for env vars
+: ${AE_STAGING_CONF:="/etc/profile.d/build2stage-conf.sh"}
+
+# Retrieve App Engine staging config 'AE_STAGING' if it doesn't already exist
+if [ -z "$AE_STAGING" ] && [ -e "$AE_STAGING_CONF" ]; then
+  source "$AE_STAGING_CONF"
+fi
 
 # Determine repo root relative to the location of this script
 REPO_ROOT="$(cd $(dirname $0)/../../..; pwd -P)"
-DOCS_OUT_ROOT="$REPO_ROOT/out/target/common/docs"
-SAC_OUT_ROOT="$DOCS_OUT_ROOT/online-sac"
-AE_STAGING_CONF="/etc/profile.d/build2stage-conf.sh"
+# Directory for output files
+: ${OUT_DIR:="${REPO_ROOT}/out"}
+# Lunch build config
+: ${BUILD_TARGET:="aosp_arm-eng"}
+# Docs output directory and where to stage from
+OUT_DIR_SAC="${OUT_DIR}/target/common/docs/online-sac"
 LOG_NAME="[$(basename $0)]"
 
 # Parse options
@@ -50,7 +90,7 @@ while getopts "bsh" opt; do
 done
 
 ##
-## Check args
+## CHECK ARGS
 ##
 
 # Get final command-line arg
@@ -66,14 +106,9 @@ if [ -z "$BUILD_ONLY_FLAG" ]; then
   fi
 fi
 
-if [ -n "$STAGE_ONLY_FLAG" ] && [ ! -d "$SAC_OUT_ROOT" ]; then
+if [ -n "$STAGE_ONLY_FLAG" ] && [ ! -d "$OUT_DIR_SAC" ]; then
   echo "${LOG_NAME} Error: Unable to stage without a build" 1>&2
   exit 1
-fi
-
-# Retrieve App Engine staging config 'AE_STAGING' if it doesn't already exist
-if [ -z "$AE_STAGING" ] && [ -e "$AE_STAGING_CONF" ]; then
-  source "$AE_STAGING_CONF"
 fi
 
 # If staging, require staging config
@@ -83,12 +118,10 @@ if [ -z "$BUILD_ONLY_FLAG" ] && [ -z "$AE_STAGING" ]; then
   exit 1
 fi
 
-# Default lunch build config
-: ${BUILD_TARGET:="aosp_arm-eng"}
-
 ##
 ## BUILD DOCS
 ##
+
 if [ -n "$STAGE_ONLY_FLAG" ]; then
   echo "${LOG_NAME} Not building"
 
@@ -96,9 +129,9 @@ else
   cd "$REPO_ROOT"
 
   # Delete old output
-  if [ -d "$SAC_OUT_ROOT" ]; then
-    echo "${LOG_NAME} Removing old build: ${SAC_OUT_ROOT}"
-    rm -rf "$SAC_OUT_ROOT"*
+  if [ -d "$OUT_DIR_SAC" ]; then
+    echo "${LOG_NAME} Removing old build: ${OUT_DIR_SAC}"
+    rm -rf "$OUT_DIR_SAC"*
   fi
 
   # Initialize the build environment
@@ -114,20 +147,21 @@ fi
 ##
 ## STAGE DOCS
 ##
+
 if [ -n "$BUILD_ONLY_FLAG" ]; then
   echo "${LOG_NAME} Not staging"
 
 else
   # Make sure there's something to stage
-  if [ ! -d "$SAC_OUT_ROOT" ]; then
-    echo "${LOG_NAME} Error: Unable to stage without a build" 1>&2
+  if [ ! -d "$OUT_DIR_SAC" ]; then
+    echo "${LOG_NAME} Error: Unable to stage without a build directory" 1>&2
     exit 1
   fi
 
   ## Set staging server
 
   # Parse current value for yaml key 'application'
-  STAGING_SERVER=$(cat "$SAC_OUT_ROOT/app.yaml" | grep "^application:" | \
+  STAGING_SERVER=$(cat "${OUT_DIR_SAC}/app.yaml" | grep "^application:" | \
                      cut -d ':' -f2- | tr -d ' ')
   # Remove any trailing numbers in case it's already been set
   STAGING_SERVER=$(echo "$STAGING_SERVER" | sed 's/[0-9]\{1,10\}$//')
@@ -139,10 +173,10 @@ else
 
   # Replace application key in tmp app.yaml with specified staging server
   sed "s/^application:.*/application: ${STAGING_SERVER}/" \
-      "$SAC_OUT_ROOT/app.yaml" > "$tmpfile"
+      "${OUT_DIR_SAC}/app.yaml" > "$tmpfile"
 
   # Copy in new app.yaml content
-  cp "$tmpfile" "${SAC_OUT_ROOT}/app.yaml"
+  cp "$tmpfile" "${OUT_DIR_SAC}/app.yaml"
   rm "$tmpfile"
 
   echo "${LOG_NAME} Configured stage for ${STAGING_SERVER}"
@@ -151,11 +185,8 @@ else
   ##
   echo "${LOG_NAME} Start staging ..."
 
-  # Go to the output directory to stage content
-  cd "$DOCS_OUT_ROOT"
-
   # Stage to specified server
-  if $AE_STAGING update online-sac; then
+  if $AE_STAGING update "$OUT_DIR_SAC"; then
     echo "${LOG_NAME} Content now available at staging instance ${STAGING_NUM}"
   else
     echo "${LOG_NAME} Error: Unable to stage to ${STAGING_SERVER}" 1>&2
