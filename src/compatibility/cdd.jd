@@ -65,6 +65,12 @@ You may view the latest CDD either as an HTML web page or an easily downloadable
     <th>Strings</th>
   </tr>
   <tr>
+    <td>7.0</td>
+    <td><a href="7.0/android-7.0-cdd.pdf">android-7.0-cdd.pdf</a></td>
+    <td><a href="7.0/android-7.0-cdd.html">android-7.0-cdd.html</a></td>
+    <td><a href="7.0/versions.html">Version 7.0</a></td>
+  </tr>
+  <tr>
     <td>6.0</td>
     <td><a href="6.0/android-6.0-cdd.pdf">android-6.0-cdd.pdf</a></td>
     <td><a href="6.0/android-6.0-cdd.html">android-6.0-cdd.html</a></td>
