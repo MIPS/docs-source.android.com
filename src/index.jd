@@ -44,6 +44,12 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>Using Filters for Smaller System Images</h4>
+<p>Implementing ART Just-In-Time (JIT) Compiler now contains recommendations
+for <strong><a
+href="{@docRoot}devices/tech/dalvik/jit-compiler.html#system_image_compilation_level">minimizing
+the system image size</a></strong> with the <code>interpret-only</code> filter in JIT.</p>
+
 <h4>New CTS Downloads</h4>
 <p>Android 7.0 R.2 Compatibility Test Suite (CTS) is available for <strong><a
 href="{@docRoot}compatibility/cts/downloads.html#android-70">Download</a></strong>.
