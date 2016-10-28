@@ -265,6 +265,8 @@ remove compiled code</h3>
 
 <h2 id="recommendation">Recommendation</h2>
 
+<h3 id="runtime_compilation_level">Level of compilation/verification</h3>
+
 <p>
 Note that it is strongly recommended to use the default following
 <code>pm.dexopt</code> settings and it is the only path we have tested and will
@@ -345,6 +347,44 @@ pm.dexopt.boot
 The compilation filter used after an over-the-air update. We
 <strong>strongly</strong> recommend <code>verify-profile</code> for this
 option, to avoid very long updates.
+</p>
+
+<h3 id="system_image_compilation_level">System image</h3>
+
+This section gives recommendations on how to minimize the system image size
+while retaining the highest level of performance. Note these complement
+the above guidelines on the
+<a href="#runtime_compilation_level">level of compilation/verification</a>.
+
+<p>
+To achieve the best performance with a minimal system image size, we
+strongly recommend compiling prebuilts with the <code>interpret-only</code>
+filter. To do this, edit the following files to include these entries.
+</p>
+
+<p>Add the following entry to <code>BoardConfig.mk</code>:</p>
+
+<pre>WITH_DEXPREOPT := true</pre>
+
+<p>Add the following entry to <code>device.mk</code>:</p>
+
+<pre>
+PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=interpret-only
+</pre>
+
+<p>
+Using the <code>interpret-only</code> filter will reduce the optimized code
+size for prebuilts by roughly half (depending on the the application) when
+compared with the <code>speed</code> filter. It also allows the runtime to
+profile the prebuilts and perform profile-guided compilation to further
+save on data partition storage.
+</p>
+
+<p>
+We advise against using a lower compilation/verification level
+(e.g. <code>verify-none</code>) or disabling the optimization for prebuilts
+as an effort to further save space on the system image. That will lead to slower
+application startup and increased memory consumption.
 </p>
 
 <h2 id="validation">Validation</h2>
