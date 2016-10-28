@@ -44,6 +44,13 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>Panic Button Support for Indian Phones</h4>
+<p>AOSP now provides support for the Panic button required on phones sold in
+India from 1 January 2017 through the  <strong><a
+href="{@docRoot}devices/tech/connect/emergency-affordance.html">Emergency
+Affordance</a></strong> feature. See the guide for details on enabling this
+feature.</p>
+
 <h4>Android 7.1 and API level 25</h4>
 <p>The full source code for Android 7.1, the OS version running on the Pixel
 phones, is now available in AOSP. This release includes an increase in API
@@ -86,18 +93,6 @@ href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">Build
 Numbers</a></strong> have been published for Android 7.0 on Nexus 6P, Nexus 5X,
 Nexus 9 (volantis), Nexus Player, and Pixel C and Android 6.0 on Nexus 5, Nexus
 5X, Nexus 6, Nexus 6P, and Nexus 9 (volantis).</p>
-
-<h4>Feedback Fixes</h4>
-<p>User feedback has resulted in the addition of the <a
-href="https://g.co/ABH">g.co/ABH</a> warning about operating system safety to
-the <em>User experience</em> section of <strong><a
-href="{@docRoot}security/verifiedboot/verified-boot.html#user_experience">Verifying
-Boot</a></strong> and timing of security updates to Nexus devices in <strong><a
-href="{@docRoot}security/bulletin/index.html">Android Security
-Bulletins</a></strong>. In addition, <strong><a
-href="{@docRoot}source/read-bug-reports.html">Reading Bug Reports</a></strong>
-now contains information on event log tags, wake locks, and Bluetooth Low
-Energy (BLE) scans.</p>
 
 </div>
 
