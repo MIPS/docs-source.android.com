@@ -44,6 +44,12 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>Android 7.0 CDD is Here</h4>
+<p>The <strong><a href="{@docRoot}compatibility/cdd.html">Android Compatibility
+Definition Document (CDD)</a></strong> for <strong><a
+href="{@docRoot}compatibility/7.0/android-7.0-cdd.html">Android 7.0 on the API level
+24</a></strong> is now available to the public.</p>
+
 <h4>Using Filters for Smaller System Images</h4>
 <p>Implementing ART Just-In-Time (JIT) Compiler now contains recommendations
 for <strong><a
@@ -84,15 +90,6 @@ Configuration</a></strong>. Seccomp-BPF enables the creation of sandboxes to
 restrict the system calls a process is allowed to make, while TSYNC enables the
 use of Seccomp-BPF from multithreaded programs.
 </p>
-
-<h4>October Android Security Bulletin</h4>
-<p>The <strong><a href="{@docRoot}security/bulletin/2016-10-01.html">October
-2016 Android Security Bulletin</a></strong> has been published along with links
-to associated fixes. In addition, new
-<strong><a href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">build
-numbers</a></strong> have been published for Nexus 5, Nexus 6, Nexus 7, Nexus
-9, Nexus 5X, Nexus 6P, and Nexus Player running Android 6.0 and 7.0 to
-support the October Android security release.</p>
 
 </div>
 
