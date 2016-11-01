@@ -351,14 +351,17 @@ option, to avoid very long updates.
 
 <h3 id="system_image_compilation_level">System image</h3>
 
+<p>
 This section gives recommendations on how to minimize the system image size
-while retaining the highest level of performance. Note these complement
-the above guidelines on the
+while retaining the highest possible level of performance.
+Note these complement the above guidelines on the
 <a href="#runtime_compilation_level">level of compilation/verification</a>.
+</p>
 
 <p>
-To achieve the best performance with a minimal system image size, we
-strongly recommend compiling prebuilts with the <code>interpret-only</code>
+System image size can be reduced by opting for a lower level of compilation for
+prebuilts. To achieve the best compromise between app performance and image size,
+we strongly recommend compiling prebuilts with the <code>interpret-only</code>
 filter. To do this, edit the following files to include these entries.
 </p>
 
