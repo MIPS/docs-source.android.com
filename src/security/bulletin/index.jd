@@ -20,20 +20,31 @@ page.title=Android Security Bulletins
 built from day one with security in mind. Monthly device updates are an
 important tool to make and keep Android users safe. This page contains the
 available Android Security Bulletins. These security bulletins also include
-information users can follow to ensure their Nexus device has the latest security
+information users can follow to ensure their device has the latest security
 updates.</p>
-<p>To get notifications when we publish a new bulletin, join the
+<p>To get notifications when a new bulletin is published, join the
 <a href="https://groups.google.com/forum/#!forum/android-security-updates">Android
 Security Updates group</a>, and set your email delivery preference to receive
-all updates. Refer to the
-<a href="https://support.google.com/nexus/answer/4457705">Nexus documentation</a>
-for instructions on how to check the security patch level, using the security
-patch level provided below. In general, it takes about one and a half calendar
+all updates. To learn how to check if a device is up to date using the security
+patch level, read the instructions on the
+<a href="https://support.google.com/nexus/answer/4457705">Pixel and Nexus
+update schedule</a>. In general, it takes about one and a half calendar
 weeks for the OTA to reach every Nexus device. The Nexus firmware images are
 also released each month to the
 <a href="https://developers.google.com/android/nexus/images">Google Developer
 site</a>.
 </p>
+
+<p>Fixes listed in the public bulletin come from various different sources: the
+Android Open Source Project (AOSP), the upstream Linux kernel, and system-on-chip
+(SOC) manufacturers. For device manufacturers:</p>
+<ul>
+  <li>Android platform fixes are merged into AOSP 24-48 hours after the security
+      bulletin is released and can be picked up directly from there.</li>
+  <li>Upstream linux kernel fixes are linked to directly from the bulletin on
+      release and can be picked up from there.</li>
+  <li>Fixes from SOC manfacturers are available directly from the manufacturers.</li>
+</ul>
 
 
 <table>
@@ -46,6 +57,15 @@ site</a>.
     <th>Languages</th>
     <th>Published Date</th>
     <th>Security Patch Level</th>
+ </tr>
+ <tr>
+    <td><a href="2016-11-01.html">November 2016</a></td>
+    <td>Coming soon
+    </td>
+    <td>November 7, 2016</td>
+    <td>2016-11-01<br>
+        2016-11-05<br>
+        2016-11-06</td>
  </tr>
  <tr>
     <td><a href="2016-10-01.html">October 2016</a></td>
