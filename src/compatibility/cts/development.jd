@@ -123,6 +123,11 @@ updated from time to time as CTS for the given Android version matures.</p>
 </thead>
 <tbody>
 <tr>
+  <td>7.0</td>
+    <td>nougat-cts-dev</td>
+      <td>Monthly</td>
+      </tr>
+<tr>
   <td>6.0</td>
   <td>marshmallow-cts-dev</td>
   <td>Monthly</td>
@@ -135,7 +140,7 @@ updated from time to time as CTS for the given Android version matures.</p>
 <tr>
   <td>5.0</td>
   <td>lollipop-cts-dev</td>
-  <td>Monthly</td>
+  <td>No releases planned</td>
 </tr>
 <tr>
   <td>4.4</td>
@@ -168,11 +173,11 @@ Open Source Project (AOSP).
 
 <h3 id="auto-merge">Auto-merge flow</h3>
 
-<p>CTS development branches have been setup so that changes submitted to each
+<p>CTS development branches have been set up so that changes submitted to each
 branch will automatically merge as below:<br>
 jb-dev-> jb-mr1.1-cts-dev -> jb-mr2-cts-dev  -> kitkat-cts-dev ->
-lollipop-cts-dev -> lollipop-mr1-cts-dev -> &lt;private-development-branch for
-Android M&gt;</p>
+lollipop-cts-dev -> lollipop-mr1-cts-dev -> marshmallow-cts-dev ->
+nougat-cts-dev -> &lt;private-development-branch for Android N MR1&gt;</p>
 
 <p>If a changelist (CL) fails to merge correctly, the author of the CL will get
 an email with instructions on how to resolve the conflict. In most of the
