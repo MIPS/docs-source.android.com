@@ -34,12 +34,16 @@
 ## The script uses some environmental variables that can be set locally or
 ## in /etc/profile.d/build2stage-conf.sh, or passed via the command-line:
 ##
-## Change output directory used for generated files and to stage from:
-##   $ OUT_DIR=/path/to/dir build2stage.sh
+## Change output directory used for generated files:
+##   $ OUT_DIR=/path/to/dir build2stage.sh -b
 ## Change build target:
-##   $ BUILD_TARGET=aosp_x86_64 build2stage.sh
-## Location of staging tool:
-##   $ AE_STAGING=/path/to/ae_staging build2stage 13
+##   $ BUILD_TARGET=aosp_x86_64 build2stage.sh -b
+## Location of staging tool and output directory:
+##   $ AE_STAGING=/path/to/ae_staging OUT_DIR=/path/to/dir build2stage 13
+##
+## This script attempts to determine if called from within a gitc client and
+## set the output directory accordingly. If it's not building correctly, you can
+## try setting the REPO_ROOT and OUT_DIR variables in your environment.
 
 usage() {
   echo "Usage: $(basename $0) [options] server-number"
@@ -62,22 +66,49 @@ fi
 # Sourced for env vars
 : ${AE_STAGING_CONF:="/etc/profile.d/build2stage-conf.sh"}
 
-# Retrieve App Engine staging config 'AE_STAGING' if it doesn't already exist
-if [ -z "$AE_STAGING" ] && [ -e "$AE_STAGING_CONF" ]; then
+# Retrieve App Engine staging config 'AE_STAGING' (and other vars if there)
+if [ -e "$AE_STAGING_CONF" ]; then
   source "$AE_STAGING_CONF"
 fi
 
-# Determine repo root relative to the location of this script
-REPO_ROOT="$(cd $(dirname $0)/../../..; pwd -P)"
-# Directory for output files
-: ${OUT_DIR:="${REPO_ROOT}/out"}
+LOG_PREFIX="[$(basename $0)]"
 # Lunch build config
 : ${BUILD_TARGET:="aosp_arm-eng"}
+
+# gitc clients should output to a different directory.
+# Test if using gitc by checking user's current dir or this script's location
+GITC_CLIENT_PREFIX="/gitc/manifest-rw"
+GITC_CONF="/gitc/.config"
+if [ -f "$GITC_CONF" ]; then
+  GITC_OUT_PREFIX=$(grep 'gitc_dir' "$GITC_CONF" 2>/dev/null | cut -d '=' -f2)
+fi
+
+## SET REPO ROOT
+
+# If user is currently within a gitc client dir, use that project as repo root
+if [[ -z "$REPO_ROOT" && "$(pwd -P)" == "${GITC_CLIENT_PREFIX}/"* ]]; then
+  gitc_client_name=$(echo "$(pwd -P)" | cut -d '/' -f4) #get 3rd dir name
+  REPO_ROOT="${GITC_CLIENT_PREFIX}/${gitc_client_name}"
+fi
+
+# If not set, determine repo root relative to location of this script itself
+: ${REPO_ROOT:="$(cd $(dirname $0)/../../..; pwd -P)"}
+
+## SET OUTPUT DIR
+
+# If repo root within gitc client, set gitc output directory
+if [[ -z "$OUT_DIR" && "$REPO_ROOT" == "${GITC_CLIENT_PREFIX}/"* ]]; then
+  gitc_client_name=$(echo "$REPO_ROOT" | cut -d '/' -f4) #get 3rd dir name
+  OUT_DIR="${GITC_OUT_PREFIX}/${gitc_client_name}/out"
+fi
+
+# Directory for output files
+: ${OUT_DIR:="${REPO_ROOT}/out"}
 # Docs output directory and where to stage from
 OUT_DIR_SAC="${OUT_DIR}/target/common/docs/online-sac"
-LOG_NAME="[$(basename $0)]"
 
-# Parse options
+## PARSE OPTIONS
+
 while getopts "bsh" opt; do
   case $opt in
     b) BUILD_ONLY_FLAG=1;;
@@ -100,21 +131,31 @@ STAGING_NUM="$last"
 if [ -z "$BUILD_ONLY_FLAG" ]; then
   # Must be a number
   if ! [[ "$STAGING_NUM" =~ ^[0-9]+$ ]] ; then
-    echo "${LOG_NAME} Error: Argument for server instance must be a number" 1>&2
+    echo "${LOG_PREFIX} Error: Argument for server instance must be a number" 1>&2
     usage
     exit 1
   fi
 fi
 
 if [ -n "$STAGE_ONLY_FLAG" ] && [ ! -d "$OUT_DIR_SAC" ]; then
-  echo "${LOG_NAME} Error: Unable to stage without a build" 1>&2
+  echo "${LOG_PREFIX} Error: Unable to stage without a build" 1>&2
   exit 1
 fi
 
 # If staging, require staging config
 if [ -z "$BUILD_ONLY_FLAG" ] && [ -z "$AE_STAGING" ]; then
-  echo "${LOG_NAME} Error: No value for AE_STAGING" 1>&2
+  echo "${LOG_PREFIX} Error: No value for AE_STAGING" 1>&2
   echo "Set in local environment or ${AE_STAGING_CONF}" 1>&2
+  exit 1
+fi
+
+if [ ! -d "$REPO_ROOT" ]; then
+  echo "${LOG_PREFIX} Error: Repo directory doesn't exist: ${REPO_ROOT}" 1>&2
+  exit 1
+fi
+
+if [ ! -d "$(dirname $OUT_DIR)" ]; then
+  echo "${LOG_PREFIX} Error: Output root dir doesn't exist: $(dirname $OUT_DIR)" 1>&2
   exit 1
 fi
 
@@ -122,15 +163,18 @@ fi
 ## BUILD DOCS
 ##
 
+echo "${LOG_PREFIX} Using repo: ${REPO_ROOT}"
+echo "${LOG_PREFIX} Output dir: ${OUT_DIR}"
+
 if [ -n "$STAGE_ONLY_FLAG" ]; then
-  echo "${LOG_NAME} Not building"
+  echo "${LOG_PREFIX} Not building"
 
 else
   cd "$REPO_ROOT"
 
   # Delete old output
   if [ -d "$OUT_DIR_SAC" ]; then
-    echo "${LOG_NAME} Removing old build: ${OUT_DIR_SAC}"
+    echo "${LOG_PREFIX} Removing old build: ${OUT_DIR_SAC}"
     rm -rf "$OUT_DIR_SAC"*
   fi
 
@@ -149,12 +193,12 @@ fi
 ##
 
 if [ -n "$BUILD_ONLY_FLAG" ]; then
-  echo "${LOG_NAME} Not staging"
+  echo "${LOG_PREFIX} Not staging"
 
 else
   # Make sure there's something to stage
   if [ ! -d "$OUT_DIR_SAC" ]; then
-    echo "${LOG_NAME} Error: Unable to stage without a build directory" 1>&2
+    echo "${LOG_PREFIX} Error: Unable to stage without a build directory" 1>&2
     exit 1
   fi
 
@@ -179,17 +223,17 @@ else
   cp "$tmpfile" "${OUT_DIR_SAC}/app.yaml"
   rm "$tmpfile"
 
-  echo "${LOG_NAME} Configured stage for ${STAGING_SERVER}"
+  echo "${LOG_PREFIX} Configured stage for ${STAGING_SERVER}"
 
   ## Stage
   ##
-  echo "${LOG_NAME} Start staging ..."
+  echo "${LOG_PREFIX} Start staging ..."
 
   # Stage to specified server
   if $AE_STAGING update "$OUT_DIR_SAC"; then
-    echo "${LOG_NAME} Content now available at staging instance ${STAGING_NUM}"
+    echo "${LOG_PREFIX} Content now available at staging instance ${STAGING_NUM}"
   else
-    echo "${LOG_NAME} Error: Unable to stage to ${STAGING_SERVER}" 1>&2
+    echo "${LOG_PREFIX} Error: Unable to stage to ${STAGING_SERVER}" 1>&2
     exit 1
   fi
 fi
