@@ -44,6 +44,11 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>New CTS Downloads</h4>
+<p>Android 7.0 R3, Android 6.0 R12, and Android 5.1 R13 versions of the
+Compatibility Test Suite (CTS) and CTS Verifier are available for <strong><a
+href="{@docRoot}compatibility/cts/downloads.html">Download</a></strong>.</p>
+
 <h4>Android 7.0 CDD is Here</h4>
 <p>The <strong><a href="{@docRoot}compatibility/cdd.html">Android Compatibility
 Definition Document (CDD)</a></strong> for <strong><a
@@ -55,10 +60,6 @@ href="{@docRoot}compatibility/7.0/android-7.0-cdd.html">Android 7.0 on the API l
 for <strong><a
 href="{@docRoot}devices/tech/dalvik/jit-compiler.html#system_image_compilation_level">minimizing
 the system image size</a></strong> with the <code>interpret-only</code> filter in JIT.</p>
-
-<h4>New CTS Downloads</h4>
-<p>Android 7.0 R.2 Compatibility Test Suite (CTS) is available for <strong><a
-href="{@docRoot}compatibility/cts/downloads.html#android-70">Download</a></strong>.
 
 <h4>Panic Button Support for Indian Phones</h4>
 <p>AOSP now provides support for the Panic button required on phones sold in
