@@ -138,7 +138,7 @@ but are still saved to <code>/data/misc/media</code> upon track closure.
 <p>Try these ideas for more useful results:</p>
 
 <ul>
-<li>Disable touch sounds and key clicks.</li>
+<li>Disable touch sounds and key clicks to reduce interruptions in test output.</li>
 <li>Maximize all volumes.</li>
 <li>Disable apps that make sound or record from microphone,
 if they are not of interest to your test.
