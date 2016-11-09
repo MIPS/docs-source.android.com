@@ -110,6 +110,25 @@ Numbers</a>.<br>
 compatibility of your final system image, CTS must be executed on devices with
 a user build.</p>
 
+<h3 id=first-api-level>First API level build property</h3>
+
+<p>Certain CTS requirements depend on the build a device was originally shipped
+with. For example, devices that originally ship with earlier builds may be excluded from
+system requirements that apply to devices that ship with later builds.</p>
+
+<p>To make this information available to CTS, device manufacturers may define
+the build-time property: <code>ro.product.first_api_level</code>. The value of this
+property is the first API level the device was commercially launched with.</p>
+
+<p>OEMs can add <code>PRODUCT_PROPERTY_OVERRIDES</code> into their device.mk file to set
+this property, as shown in the following example: </p> 
+
+<pre>
+#ro.product.first_api_level indicates the first api level, device has been commercially launched on.
+PRODUCT_PROPERTY_OVERRIDES +=\
+ro.product.first_api_level=21
+</pre>
+
 <h3 id=storage_requirements>Storage requirements</h3>
 <p>The CTS media stress tests require video clips to be on external storage
 (<code>/sdcard</code>). Most of the clips are from <a
