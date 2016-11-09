@@ -16,7 +16,7 @@ page.title=Android Security Bulletin—November 2016
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<p><em>Published November 07, 2016</em></p>
+<p><em>Published November 07, 2016 | Updated November 08, 2016</em></p>
 <p>
 The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -29,10 +29,10 @@ these issues. Refer to the
 and Nexus update schedule</a> to learn how to check a device's security patch level.</p>
 <p>
 Partners were notified of the issues described in the bulletin on October 20,
-2016 or earlier. Source code patches for these issues will be released to the
-Android Open Source Project (AOSP) repository in the next 48 hours. We will
-revise this bulletin with the AOSP links when they are available. This bulletin
-also includes links to patches outside of AOSP.</p>
+2016 or earlier. Where applicable, source code patches for these issues have
+been released to the Android Open Source Project (AOSP) repository. This
+bulletin also includes links to patches outside of AOSP.
+</p>
 <p>
 The most severe of these issues is a Critical security vulnerability that could
 enable remote code execution on an affected device through multiple methods such
@@ -157,7 +157,7 @@ Security patch levels of 2016-11-01 or later must address the following issues.<
    <td>Yes</td>
   </tr>
   <tr>
-   <td>Information disclosure vulnerability in Conscrypt and BoringSSL</td>
+   <td>Information disclosure vulnerability in Conscrypt</td>
    <td>CVE-2016-6709</td>
    <td>High</td>
    <td>Yes</td>
@@ -587,7 +587,8 @@ remote code execution within the context of the Mediaserver process.
   </tr>
   <tr>
    <td>CVE-2016-6699</td>
-   <td>A-31373622</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/3b1c9f692c4d4b7a683c2b358fc89e831a641b88">
+       A-31373622</a></td>
    <td>Critical</td>
    <td>All</td>
    <td>7.0</td>
@@ -654,7 +655,8 @@ execution within the context of the gallery process.
   </tr>
   <tr>
    <td>CVE-2016-6701</td>
-   <td>A-30190637</td>
+   <td><a href="https://android.googlesource.com/platform/external/skia/+/aca73722873e908633ff27375f6f93a08cbb7dd3">
+       A-30190637</a></td>
    <td>High</td>
    <td>All</td>
    <td>7.0</td>
@@ -757,7 +759,11 @@ third-party application.
   </tr>
   <tr>
    <td>CVE-2016-6704</td>
-   <td>A-30229821</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/c6c446f9e022adf20064e65a17574804f8af8e7d">
+       A-30229821</a>
+     [<a href="https://android.googlesource.com/platform/hardware/qcom/audio/+/9cb9810ecb63c8ff55ecf4bc77431dc5b0688b5f">2</a>]
+     [<a href="https://android.googlesource.com/platform/system/media/+/a6274f03b4dfe1c3a22af51e3a17ea56a314e747">3</a>]
+   </td>
    <td>High</td>
    <td>All</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -765,7 +771,10 @@ third-party application.
   </tr>
   <tr>
    <td>CVE-2016-6705</td>
-   <td>A-30907212</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/3a03fa24d21f97e84e796ac5ef14b3f434c0e8f1">
+       A-30907212</a>
+      [<a href="https://android.googlesource.com/platform/frameworks/av/+/bd04b47d38a89f1dada1c6da2ef4a3d235c166b8">2</a>]
+   </td>
    <td>High</td>
    <td>All</td>
    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -773,7 +782,9 @@ third-party application.
   </tr>
   <tr>
    <td>CVE-2016-6706</td>
-   <td>A-31385713</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/1d4feebdb85db46e138530f360d9ff2490e14353">
+       A-31385713</a>
+   </td>
    <td>High</td>
    <td>All</td>
    <td>7.0</td>
@@ -805,7 +816,9 @@ third-party application.
   </tr>
   <tr>
    <td>CVE-2016-6707</td>
-   <td>A-31350622</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/16024ea7c4bae08c972cf6b3734029aad33e8870">
+       A-31350622</a>
+   </td>
    <td>High</td>
    <td>All</td>
    <td>6.0, 6.0.1, 7.0</td>
@@ -836,19 +849,20 @@ requirements for any developer or security setting modifications.
   </tr>
   <tr>
    <td>CVE-2016-6708</td>
-   <td>A-30693465</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/c9c73fde339b4db496f2c1ff8c18df1e9db5a7c1">
+       A-30693465</a>
+   </td>
    <td>High</td>
    <td>All</td>
    <td>7.0</td>
    <td>Google internal</td>
   </tr>
 </table>
-<h3 id="id-in-conscrypt-and-boringssl">Information disclosure vulnerability in
-Conscrypt and BoringSSL</h3>
+<h3 id="id-in-conscrypt">Information disclosure vulnerability in Conscrypt</h3>
 <p>
-An information disclosure vulnerability in Conscrypt and BoringSSL could enable
-a man-in-the middle attacker to gain access to sensitive information if a
-non-standard cipher suite is used by an application. This issue is rated as High
+An information disclosure vulnerability in Conscrypt could enable
+an attacker to gain access to sensitive information if a
+legacy encryption API is used by an application. This issue is rated as High
 because it could be used to access data without permission.
 </p>
 <table>
@@ -868,7 +882,9 @@ because it could be used to access data without permission.
   </tr>
   <tr>
    <td>CVE-2016-6709</td>
-   <td>A-31081987</td>
+   <td><a href="https://android.googlesource.com/platform/external/conscrypt/+/44ef9535b9afb123d150d8e0362e4bb50794dd41">
+       A-31081987</a>
+   </td>
    <td>High</td>
    <td>All</td>
    <td>6.0, 6.0.1, 7.0</td>
@@ -901,7 +917,10 @@ to.
   </tr>
   <tr>
    <td>CVE-2016-6710</td>
-   <td>A-30537115</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/9fab683c9598d234dd8461335c276ed3e37c91e8">
+       A-30537115</a>
+      [<a href="https://android.googlesource.com/platform/packages/providers/DownloadProvider/+/243e62949f7208d3b82eda3ee4ec22d3dbc1fb19">2</a>]
+   </td>
    <td>High</td>
    <td>All</td>
    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -967,7 +986,9 @@ rated as High due to the possibility of remote denial of service.
   </tr>
   <tr>
    <td>CVE-2015-0410</td>
-   <td>A-30703445</td>
+   <td><a href="https://android.googlesource.com/platform/libcore/+/21098574528bdf99dd50a74a60e161573e999108">
+       A-30703445</a>
+   </td>
    <td>High</td>
    <td>All</td>
    <td>7.0</td>
@@ -998,7 +1019,9 @@ rated as High due to the possibility of remote denial of service.
   </tr>
   <tr>
    <td>CVE-2016-6711</td>
-   <td>A-30593765</td>
+   <td><a href="https://android.googlesource.com/platform/external/libvpx/+/063be1485e0099bc81ace3a08b0ec9186dcad693">
+       A-30593765</a>
+   </td>
    <td>High</td>
    <td>None*</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -1006,7 +1029,9 @@ rated as High due to the possibility of remote denial of service.
   </tr>
   <tr>
    <td>CVE-2016-6712</td>
-   <td>A-30593752</td>
+   <td><a href="https://android.googlesource.com/platform/external/libvpx/+/fdb1b40e7bb147c07bda988c9501ad223795d12d">
+       A-30593752</a>
+   </td>
    <td>High</td>
    <td>None*</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -1014,7 +1039,8 @@ rated as High due to the possibility of remote denial of service.
   </tr>
   <tr>
    <td>CVE-2016-6713</td>
-   <td>A-30822755</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/8cafca0e8b1ed8125918e203118c5a4e612fd56c">
+       A-30822755</a></td>
    <td>High</td>
    <td>All</td>
    <td>6.0, 6.0.1, 7.0</td>
@@ -1022,7 +1048,9 @@ rated as High due to the possibility of remote denial of service.
   </tr>
   <tr>
    <td>CVE-2016-6714</td>
-   <td>A-31092462</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/5bdb0a6b72782e505671a387bb5f83222d891d6a">
+       A-31092462</a>
+   </td>
    <td>High</td>
    <td>All</td>
    <td>6.0, 6.0.1, 7.0</td>
@@ -1059,7 +1087,9 @@ initiation or user permission).
   </tr>
   <tr>
    <td>CVE-2016-6715</td>
-   <td>A-29833954</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/3de09838fb0996bb4b420630800ad34e828fd1b6">
+       A-29833954</a>
+   </td>
    <td>Moderate</td>
    <td>All</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -1092,7 +1122,9 @@ require either user initiation or user permission).
   </tr>
   <tr>
    <td>CVE-2016-6716</td>
-   <td>A-30778130</td>
+   <td><a href="https://android.googlesource.com/platform/packages/apps/Launcher3/+/e83fc11c982e67dd0181966f5f3a239ea6b14924">
+       A-30778130</a>
+   </td>
    <td>Moderate</td>
    <td>All</td>
    <td>7.0</td>
@@ -1124,7 +1156,9 @@ exploitation of a separate vulnerability.
   </tr>
   <tr>
    <td>CVE-2016-6717</td>
-   <td>A-31350239</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/45d9bbabbe7920bf4e0a68074b97d8260aef2e07">
+       A-31350239</a>
+   </td>
    <td>Moderate</td>
    <td>All</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -1158,7 +1192,9 @@ require either user initiation or user permission.)
   </tr>
   <tr>
    <td>CVE-2016-6718</td>
-   <td>A-30455516</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/fecfd550edeca422c0d9f32a9c0abe73398a1ff1">
+       A-30455516</a>
+   </td>
    <td>Moderate</td>
    <td>All</td>
    <td>7.0</td>
@@ -1191,7 +1227,10 @@ either user initiation or user permission).
   </tr>
   <tr>
    <td>CVE-2016-6719</td>
-   <td>A-29043989</td>
+   <td><a href="https://android.googlesource.com/platform/packages/apps/Bluetooth/+/e1b6db10e913c09d0b695368336137f6aabee462">
+       A-29043989</a>
+      [<a href="https://android.googlesource.com/platform/frameworks/base/+/b1dc1757071ba46ee653d68f331486e86778b8e4">2</a>]
+   </td>
    <td>Moderate</td>
    <td>All</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -1223,7 +1262,11 @@ without permission.
   </tr>
   <tr>
    <td>CVE-2016-6720</td>
-   <td>A-29422020</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/0f177948ae2640bfe4d70f8e4248e106406b3b0a">
+       A-29422020</a>
+      [<a href="https://android.googlesource.com/platform/frameworks/av/+/2c75e1c3b98e4e94f50c63e2b7694be5f948477c">2</a>]
+      [<a href="https://android.googlesource.com/platform/frameworks/av/+/7c88b498fda1c2b608a9dd73960a2fd4d7b7e3f7">3</a>]
+      [<a href="https://android.googlesource.com/platform/frameworks/av/+/640b04121d7cd2cac90e2f7c82b97fce05f074a5">4</a>]</td>
    <td>Moderate</td>
    <td>All</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -1231,7 +1274,8 @@ without permission.
   </tr>
   <tr>
    <td>CVE-2016-6721</td>
-   <td>A-30875060</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/f6bf0102bdc1adff973e08d8ce9c869c4e2efade">
+       A-30875060</a></td>
    <td>Moderate</td>
    <td>All</td>
    <td>6.0, 6.0.1, 7.0</td>
@@ -1239,7 +1283,8 @@ without permission.
   </tr>
   <tr>
    <td>CVE-2016-6722</td>
-   <td>A-31091777</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/89c03b3b9ff74a507a8b8334c50b08b334483556">
+       A-31091777</a></td>
    <td>Moderate</td>
    <td>All</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -1270,7 +1315,10 @@ issue is rated as Moderate because it requires an uncommon device configuration.
   </tr>
   <tr>
    <td>CVE-2016-6723</td>
-   <td>A-30100884</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/d5b0d0b1df2e1a7943a4bb2034fd21487edd0264">
+       A-30100884</a>
+      [<a href="https://android.googlesource.com/platform/frameworks/base/+/31f351160cdfd9dbe9919682ebe41bde3bcf91c6">2</a>]
+   </td>
    <td>Moderate</td>
    <td>All</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -1302,7 +1350,9 @@ requires a factory reset to fix.
   </tr>
   <tr>
    <td>CVE-2016-6724</td>
-   <td>A-30568284</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/7625010a2d22f8c3f1aeae2ef88dde37cbebd0bf">
+       A-30568284</a>
+   </td>
    <td>Moderate</td>
    <td>All</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -1847,9 +1897,11 @@ that uses Expat.
     <th>Updated AOSP versions</th>
     <th>Date reported</th>
   </tr>
+
   <tr>
    <td>CVE-2016-0718</td>
-   <td>A-28698301</td>
+   <td><a href="https://android.googlesource.com/platform/external/expat/+/52ac633b73856ded34b33bd4adb4ab793bbbe963">
+       A-28698301</a></td>
    <td>High</td>
    <td>None*</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -1857,7 +1909,8 @@ that uses Expat.
   </tr>
   <tr>
    <td>CVE-2012-6702</td>
-   <td>A-29149404</td>
+   <td><a href="https://android.googlesource.com/platform/external/expat/+/a11ff32280a863bff93df13ad643912ad9bf1302">
+       A-29149404</a></td>
    <td>Moderate</td>
    <td>None*</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -1865,7 +1918,8 @@ that uses Expat.
   </tr>
   <tr>
    <td>CVE-2016-5300</td>
-   <td>A-29149404</td>
+   <td><a href="https://android.googlesource.com/platform/external/expat/+/a11ff32280a863bff93df13ad643912ad9bf1302">
+       A-29149404</a></td>
    <td>Moderate</td>
    <td>None*</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -1873,19 +1927,20 @@ that uses Expat.
   </tr>
   <tr>
    <td>CVE-2015-1283</td>
-   <td>A-27818751</td>
+   <td><a href="https://android.googlesource.com/platform/external/expat/+/13b40c2040a17038b63a61e2b112c634da203d3b"> 
+       A-27818751</a></td>
    <td>Low</td>
    <td>None*</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
    <td>Jul 24, 2015</td>
   </tr>
 </table>
+
 <p>
 * Supported Google devices on Android 7.0 or later that have installed all
 available updates are not affected by this vulnerability.
 </p>
-<h3 id="rce-in-webview">Remote code execution
-vulnerability in Webview</h3>
+<h3 id="rce-in-webview">Remote code execution vulnerability in Webview</h3>
 <p>
 A remote code execution vulnerability in Webview could enable a remote attacker
 to execute arbitrary code when the user is navigating to a website. This issue
@@ -1945,7 +2000,10 @@ remote code execution in applications that use Freetype.
   </tr>
   <tr>
    <td>CVE-2014-9675</td>
-   <td>A-24296662</td>
+   <td><a href="https://android.googlesource.com/platform/external/freetype/+/f720f0dbcf012d6c984dbbefa0875ef9840458c6">
+       A-24296662</a>
+      [<a href="https://android.googlesource.com/platform/external/pdfium/+/96f965ff7411f1edba72140fd70740e63cabec71">2</a>]
+   </td>
    <td>High</td>
    <td>None*</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1</td>
@@ -2654,5 +2712,7 @@ belongs. These prefixes map as follows:
 
 <h2 id="revisions">Revisions</h2>
 <ul>
-<li>November 07, 2016: Bulletin published.</li>
+  <li>November 07, 2016: Bulletin published.</li>
+  <li>November 08: Bulletin revised to include AOSP links and updated
+      description for CVE-2016-6709.</li>
 </ul>
