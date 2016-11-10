@@ -44,6 +44,14 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>A/B System Updates</h4>
+<p>A/B system updates ensure a workable booting system remains on the disk
+during an over-the-air (OTA) update, reducing the likelihood of an inactive
+device afterward. See <strong><a
+href="{@docRoot}devices/tech/ota/ab_updates.html">A/B System
+Updates</a></strong> for a detailed description of this feature and
+instructions for implementing it.</p>
+
 <h4>November Android Security Bulletin</h4>
 <p>The <strong><a href="{@docRoot}security/bulletin/2016-11-01.html">November
 2016 Android Security Bulletin</a></strong> has been published along with links
@@ -76,14 +84,6 @@ India from 1 January 2017 through the  <strong><a
 href="{@docRoot}devices/tech/connect/emergency-affordance.html">Emergency
 Affordance</a></strong> feature. See the guide for details on enabling this
 feature.</p>
-
-<h4>Android 7.1 and API level 25</h4>
-<p>The full source code for Android 7.1, the OS version running on the Pixel
-phones, is now available in AOSP. This release includes an increase in API
-levels to 25. See <strong><a
-href="{@docRoot}source/build-numbers.html">Codenames, Tags, and Build
-Numbers</a></strong> for specific build IDs and branch tags included in this
-release.</p>
 
 </div>
 
