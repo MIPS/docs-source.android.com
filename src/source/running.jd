@@ -174,7 +174,7 @@ $ fastboot format userdata
 <pre>$ fastboot oem lock
 </pre>
 
-<p class="note"><strong>Note</strong>: Re-locking the bootloading on a Motoroal Xoom
+<p class="note"><strong>Note</strong>: Re-locking the bootloading on a Motorola Xoom
 erases user data (including the shared USB data).</p>
 
 <h2 id="flash-unlock">Using Flash Unlock</h2>
