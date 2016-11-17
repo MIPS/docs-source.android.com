@@ -16,7 +16,7 @@ page.title=Android Security Bulletin—November 2016
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<p><em>Published November 07, 2016 | Updated November 08, 2016</em></p>
+<p><em>Published November 07, 2016 | Updated November 17, 2016</em></p>
 <p>
 The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -476,7 +476,7 @@ We would like to thank these researchers for their contributions:</p>
   <li>Abhishek Arya, Oliver Chang, and Martin Barbella of Google Chrome Security
   Team: CVE-2016-6722</li>
   <li>Andrei Kapishnikov and Miriam Gershenson of Google: CVE-2016-6703</li>
-  <li>Ao Wang (<a href="http://twitter.com/@r4y2_wa">@r4y2_wa</a>) and
+  <li>Ao Wang and
      <a href="http://weibo.com/ele7enxxh">Zinuo Han</a> of
      <a href="http://www.pkav.net">PKAV</a>, Silence Information Technology:
   CVE-2016-6700, CVE-2016-6702</li>
@@ -500,6 +500,9 @@ We would like to thank these researchers for their contributions:</p>
 <a href="http://weibo.com/jfpan">pjf</a> of IceSword Lab,
 <a href="http://www.360.com">Qihoo 360 Technology Co. Ltd</a>.: CVE-2016-6739,
   CVE-2016-3904, CVE-2016-3907, CVE-2016-6698</li>
+  <li>Marco Grassi (<a href="http://twitter.com/marcograss">@marcograss</a>) of
+  Keen Lab of Tencent (<a href="http://twitter.com/keen_lab">@keen_lab</a>):
+  CVE-2016-6828</li>
   <li>Mark Brand of Project Zero: CVE-2016-6706</li>
   <li>Mark Renouf of Google: CVE-2016-6724</li>
   <li>Michał Bednarski (<a
@@ -2715,4 +2718,5 @@ belongs. These prefixes map as follows:
   <li>November 07, 2016: Bulletin published.</li>
   <li>November 08: Bulletin revised to include AOSP links and updated
       description for CVE-2016-6709.</li>
+  <li>November 17: Bulletin revised to include attribution for CVE-2016-6828.</li>
 </ul>
