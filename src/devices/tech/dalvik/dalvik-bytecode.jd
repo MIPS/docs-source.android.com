@@ -486,7 +486,7 @@ page.title=Dalvik bytecode
 <tr>
   <td>23 22c</td>
   <td>new-array vA, vB, type@CCCC</td>
-  <td><code>A:</code> destination register (8 bits)<br/>
+  <td><code>A:</code> destination register (4 bits)<br/>
     <code>B:</code> size register<br/>
     <code>C:</code> type index</td>
   <td>Construct a new array of the indicated type and size. The type
