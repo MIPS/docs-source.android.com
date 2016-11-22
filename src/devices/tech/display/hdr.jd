@@ -123,8 +123,6 @@ basically the information in the EDID Static Metadata Data Block as defined
 in CTA-861.3:</p>
 
 <ul>
-<li><code>public Display.HdrCapabilities getHdrCapabilities()</code><br>
-Returns the display's HDR capabilities.</li>
 
 <li><code>public Display.HdrCapabilities getHdrCapabilities()</code><br>
 Returns the display's HDR capabilities.</li>
