@@ -17,17 +17,9 @@ page.title=Configuring Display Settings
     limitations under the License.
 -->
 
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
-
 <p>This section covers AOSP implementation of various Android display
 settings such as do not disturb (DND) configurations and multi-window
-(split-screen, free-form, and picture-in-picture) options.</p>
+(split-screen, free-form, and picture-in-picture) and Night Light options.</p>
 
 <h2 id="settingshome">Settings Home screen enhancements</h2>
 
