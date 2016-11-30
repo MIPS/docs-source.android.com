@@ -26,20 +26,25 @@ page.title=Reference TV App
 
 
 <p>A TV application that plays live TV content is required for Android TV devices.
-A reference TV application (<a href="https://play.google.com/store/apps/details?id=com.google.android.tv">Live TV</a>) is provided alongside the Android platform, which can be used as-is,
-customized, extended, or replaced. The <a href="https://android.googlesource.com/platform/packages/apps/TV/">source code</a> is available in the Android Open Source Project.</p>
+A reference TV application (<a href="https://play.google.com/store/apps/details?id=com.google.android.tv">Live TV</a>)
+is provided alongside the Android platform, which can be used as-is,
+customized, extended, or replaced. The
+<a href="https://android.googlesource.com/platform/packages/apps/TV/">source code</a>
+is available in the Android Open Source Project.</p>
 
-<p>This article summarizes how to get started with building a system TV App based
-on Live TV on your Android television device and covers a couple of ways
-to customize the app. (You may extend your TV application to implement device
+<p>This article summarizes how to build and customize a system TV App based
+on Live TV for your Android television device. (You may extend your TV application to implement device
 manufacturer or country-specific features, however this is not in the scope of
 the reference TV App.)</p>
 
 <h2 id=dependencies>Dependencies</h2>
 
 
-<p>The TV application is a component of the <a href="{@docRoot}devices/tv/">TV Input Framework</a> (TIF) and cannot be used independently of the other components. This means
-that only devices with TIF will be able to run the <a href="https://play.google.com/store/apps/details?id=com.google.android.tv">Live TV</a> application.</p>
+<p>The TV application is a component of the
+<a href="{@docRoot}devices/tv/">TV Input Framework</a> (TIF) and cannot be used
+independently of the other components. This means that only devices with TIF
+will be able to run the
+<a href="https://play.google.com/store/apps/details?id=com.google.android.tv">Live TV</a> application.</p>
 
 <p>The Live TV application depends on Android APIs. Different branches have
 different dependencies on API levels:</p>
@@ -49,36 +54,40 @@ different dependencies on API levels:</p>
 <table>
  <tr>
     <th>Branch</th>
-    <th>API level</th>
+    <th>Target API level</th>
+    <th>Minimum API level</th>
  </tr>
+ <tr>
+    <td><a href="https://android.googlesource.com/platform/packages/apps/TV/+/master">master</a></td>
+    <td>24 (Android 7.0)</td>
+    <td>23</td>
+ </tr>
+
  <tr>
     <td><a href="https://android.googlesource.com/platform/packages/apps/TV/+/android-live-tv">android-live-tv</a></td>
     <td>23 (Android 6.0)</td>
+    <td>21</td>
  </tr>
  <tr>
     <td><a href="https://android.googlesource.com/platform/packages/apps/TV/+/android-live-tv-l-mr1">android-live-tv-l-mr1</a></td>
     <td>22 (Android 5.1)</td>
+    <td>21</td>
  </tr>
 </table>
 
-
-<p>There is no runtime dependency on the API level as the code is
-retro-compatible. The same APK can be used for devices with Android 5.1 and 6.0
-as runtime checks will enable/disable features with dependencies on Android 6.0
-APIs.</p>
 
 <h2 id=get_the_source>Get the source</h2>
 
 
 <p>To get started, select which version of Live TV you’d like from Git. The
 instructions below are for the current version of Live TV, but you can
-easily select an earlier version by appending the version name to the end of
-<code>android-live-tv</code> as seen in the table above.</p>
+easily select an earlier version by changing the branch from master to a
+different one listed in the table above.</p>
 
 
 <pre>
-$ mkdir android-live-tv && cd android-live-tv
-$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b  android-live-tv
+$ mkdir live-tv && cd live-tv
+$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master
 $ repo sync -j8 -c
 </pre>
 
