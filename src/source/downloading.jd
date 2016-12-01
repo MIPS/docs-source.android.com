@@ -30,6 +30,10 @@ page.title=Downloading the Source
   and the date they were made. This document describes how to download the source tree for a
   specific Android code-line.
 </p>
+<p>
+ To instead start with a factory image for a specific device, see
+ <a href="running.html#selecting-device-build">Selecting a device build</a>.
+</p>
 <h2 id="installing-repo">
   Installing Repo
 </h2>
