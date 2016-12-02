@@ -1847,6 +1847,9 @@ android.software.live_tv.</p>
 installed TV application (TV App). The Android Open Source Project provides an implementation of the TV
 App.</p>
 
+The default TV app must provide accesss to channels from installed inputs and third-party inputs.
+Note that the installed inputs encompass all the inputs provided by default, whether they are TIF-based or not.
+
 <p>The TV App MUST provide facilities to install and use TV Channels
 [<a href="http://developer.android.com/reference/android/media/tv/TvContract.Channels.html">Resources, 56</a>]
  and meet the following requirements:</p>
@@ -2439,11 +2442,14 @@ devices only when supported by hardware.</p>
 <p class="table_footnote">2 STRONGLY RECOMMENDED for existing Android Television device implementations when
 supported by hardware.</p>
 
-<p>Android device implementations, when supporting H.265 codec as described in <a href="#5_1_3_video_codecs">section 5.1.3</a>, MUST support the Main Profile Level 3 Main tier and the following SD video
-decoding profiles and SHOULD support the HD decoding profiles. Android
-Television devices MUST support the Main Profile Level 4.1 Main tier and the HD
-1080p decoding profile and SHOULD support Main10 Level 5 Main Tier profile and
-the UHD decoding profile.</p>
+<p>Android device implementations, when supporting H.265 codec as described in
+<a href="#5_1_3_video_codecs">section 5.1.3</a>, MUST support the Main Profile
+Level 3 Main tier and the following SD video decoding profiles and SHOULD
+support the HD decoding profiles.
+Android Television devices MUST support the Main Profile Level 4.1 Main tier and
+the HD 1080p decoding profile and is STRONGLY RECOMMENDED to support the UHD
+decoding profile. If UHD decoding is supported, then it MUST support Main10
+Level 5 Main Tier profile.</p>
 <table>
  <tr>
     <th></th>
