@@ -17,13 +17,15 @@ page.title=Implementing Circular Icons
     limitations under the License.
 -->
 
-<p>Circular app icons are supported in Android 7.1 and later. Circular app
-icons are not enabled by default. To use circular icons in your device
-implementation, you must edit the resource overlay on your device to enable
-them.</p>
+<p>Circular <a
+href="https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html">launcher
+icons</a> are supported in Android 7.1.1 and later. Circular launcher icons are not
+enabled by default. To use circular icons in your device implementation, you
+must edit the resource overlay on your device to enable them.</p>
 
-<p>The resource overlay file is at <a
-href="https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml">/android/frameworks/base/core/res/res/values/config.xml</a>
+<p>The resource overlay file is at:
+<code><a
+href="https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml">/android/frameworks/base/core/res/res/values/config.xml</a></code>
 
 <p>To enable circular icons, change the <code>config_useRoundIcon</code>
 setting, shown below, from <code>false</code> to <code>true</code>:</p>
