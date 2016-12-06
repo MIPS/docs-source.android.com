@@ -1,4 +1,4 @@
-page.title=Launcher Shortcuts
+page.title=App Shortcuts
 @jd:body
 
 <!--
@@ -26,16 +26,18 @@ page.title=Launcher Shortcuts
 
 
 <p>
-The Android 7.1 (N MR1) release allows developers to define action-specific
-shortcuts in their apps that can be displayed in a launcher. These launcher
-shortcuts let users quickly start common or recommended tasks within an app.
+The Android 7.1.1 release allows developers to define action-specific
+shortcuts in their apps that can be displayed in a launcher. These <a
+href="https://developer.android.com/guide/topics/ui/shortcuts.html">app
+shortcuts</a> let users quickly start common or recommended tasks within an
+app.
 </p>
 
 <h2 id="overview">Overview</h2>
 
 <p>
 Each shortcut references an intent that launches a specific action in the app
-when users select the shortcut. Examples of actions you can express as launcher
+when users select the shortcut. Examples of actions you can express as app
 shortcuts include:
 </p>
 
