@@ -2989,6 +2989,90 @@ that has a name.)</p>
 </tbody>
 </table>
 
+<h3 id="dalvik-annotation-method-parameters">dalvik.annotation.MethodParameters</h3>
+<h4>appears on methods</h4>
+
+<p class="note"><strong>Note:</strong> This annotation was added after Android
+7.1. Its presence on earlier Android releases will be ignored.</p>
+
+<p>A <code>MethodParameters</code> annotation is optional and can be used to
+provide parameter metadata such as parameter names and modifiers.</p>
+
+<p>The annotation can be omitted from a method or constructor safely when the
+parameter metadata is not required at runtime.
+<code>java.lang.reflect.Parameter.isNamePresent()</code> can be used to check
+whether metadata is present for a parameter, and the associated reflection
+methods such as <code>java.lang.reflect.Parameter.getName()</code> will fall
+back to default behavior at runtime if the information is not present.</p>
+
+<p>When including parameter metadata, compilers must include information
+for generated classes such as enums, since the parameter metadata
+includes whether or not a parameter is synthetic or mandated.</p>
+
+<p>A <code>MethodParameters</code> annotation describes only individual method
+parameters. Therefore, compilers may omit the annotation entirely
+for constructors and methods that have no parameters, for the sake of code-size
+and runtime efficiency.</p>
+
+<p>The arrays documented below must be the same size as for the
+<code>method_id_item</code> dex structure associated with the method, otherwise
+a <code>java.lang.reflect.MalformedParametersException</code> will be thrown at
+runtime.</p>
+
+<p>That is: <code>method_id_item.proto_idx</code> ->
+<code>proto_id_item.parameters_off</code> ->
+<code>type_list.size</code> must be the same as <code>names().length</code> and
+<code>accessFlags().length</code>.</p>
+
+<p>Because <code>MethodParameters</code> describes all formal method
+parameters, even those not explicitly or implicitly declared in source code,
+the size of the arrays may differ from the Signature or other metadata
+information that is based only on explicit parameters declared in source
+code. <code>MethodParameters</code> will also not include any information about
+type annotation receiver parameters that do not exist in the actual method
+signature.</p>
+
+<table class="format">
+<thead>
+<tr>
+  <th>Name</th>
+  <th>Format</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>names</td>
+  <td>String[]</td>
+  <td>The names of formal parameters for the associated method. The array
+must not be null but must be empty if there are no formal parameters. A value in
+the array must be null if the formal parameter with that index has no name.<br>
+If parameter name strings are empty or contain '.', ';', '[' or '/' then a
+<code>java.lang.reflect.MalformedParametersException</code> will be thrown at
+runtime.
+  </td>
+</tr>
+<tr>
+  <td>accessFlags</td>
+  <td>int[]</td>
+  <td>The access flags of the formal parameters for the associated method. The
+array must not be null but must be empty if there are no formal parameters.<br>
+
+The value is a bit mask with the following values:<br>
+  <ul>
+    <li>0x0010 : final, the parameter was declared final</li>
+    <li>0x1000 : synthetic, the parameter was introduced by the compiler</li>
+    <li>0x8000 : mandated, the parameter is synthetic but also implied by the language
+specification</li>
+  </ul>
+
+If any bits are set outside of this set then a
+<code>java.lang.reflect.MalformedParametersException</code> will be thrown at runtime.
+  </td>
+</tr>
+</tbody>
+</table>
+
 <h3 id="dalvik-signature">dalvik.annotation.Signature</h3>
 <h4>appears on classes, fields, and methods</h4>
 
