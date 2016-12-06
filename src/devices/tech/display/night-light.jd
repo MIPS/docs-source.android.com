@@ -1,7 +1,7 @@
 page.title=Implementing Night Light
 @jd:body
 <!--
-    Copyright 2015 The Android Open Source Project
+    Copyright 2016 The Android Open Source Project
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
@@ -22,7 +22,7 @@ page.title=Implementing Night Light
 
 <p>
 Research suggests that blue light from screens can have a negative impact on
-sleep. Android 7.0.1 includes a feature called Night Light that reduces the
+sleep. Android 7.1.1 includes a feature called Night Light that reduces the
 amount of blue light emitted by the device display to better match the natural
 light of the user's time of day and location.
 </p>
@@ -36,7 +36,7 @@ performance, and app compatibility.
 <h2 id="implementation">Implementation</h2>
 <p>
 Device manufacturers can enable the default implementation of the feature by
-using the following flags defined in
+using the following flags defined in:
 <code><a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml">
 /android/frameworks/base/core/res/res/values/config.xml</a></code>
 
