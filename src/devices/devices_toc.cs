@@ -400,8 +400,8 @@
           <li><a href="<?cs var:toroot ?>devices/tech/display/app-shortcuts.html">App Shortcuts</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/display/circular-icons.html">Circular Icons</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/display/dnd.html">Do Not Disturb</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/display/multi-window.html">Multi-Window</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/display/hdr.html">HDR Video</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/display/multi-window.html">Multi-Window</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/display/night-light.html">Night Light</a></li>
         </ul>
       </li>
