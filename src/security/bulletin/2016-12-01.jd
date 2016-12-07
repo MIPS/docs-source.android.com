@@ -17,7 +17,7 @@ page.title=Android Security Bulletin—December 2016
     limitations under the License.
 -->
 
-<p><em>Published December 05, 2016</em></p>
+<p><em>Published December 05, 2016 | Updated December 07, 2016</em></p>
 <p>
 The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -32,10 +32,9 @@ level.
 </p>
 <p>
 Partners were notified of the issues described in the bulletin on November 07,
-2016 or earlier. Source code patches for these issues will be released to the
-Android Open Source Project (AOSP) repository in the next 48 hours. We will
-revise this bulletin with the AOSP links when they are available. This bulletin
-also includes links to patches outside of AOSP.
+2016 or earlier. Source code patches for these issues have been released to the
+Android Open Source Project (AOSP) repository and linked from this bulletin.
+This bulletin also includes links to patches outside of AOSP.
 </p>
 <p>
 The most severe of these issues are Critical security vulnerabilities in
@@ -450,6 +449,8 @@ We would like to thank these researchers for their contributions:
   href="mailto:arnow117@gmail.com">Hanxiang Wen</a>, Chiachih Wu (<a
   href="https://twitter.com/chiachih_wu">@chiachih_wu</a>), and Xuxian Jiang of <a
   href="http://c0reteam.org">C0RE Team</a>: CVE-2016-6759</li>
+  <li>Nathan Crandall (<a href="https://twitter.com/natecray">@natecray</a>) of
+  Tesla Motors Product Security Team: CVE-2016-6915, CVE-2016-6916, CVE-2016-6917</li>
   <li>Nightwatch Cybersecurity Research (<a
   href="https://twitter.com/nightwatchcyber">@nightwatchcyber</a>): CVE-2016-5341</li>
   <li>Pengfei Ding (丁鹏飞), Chenfu Bao (包沉浮), Lenx Wei (韦韬) of Baidu X-Lab:
@@ -498,7 +499,7 @@ href="https://twitter.com/idhyt3r">@idhyt3r</a>) of Bottle Tech, Yong Wang (王�
 Mithra of Google for their contributions to this security bulletin.
 </p>
 
-<h2 id="2016-12-01-details">2016-12-01 security patch level-Vulnerability
+<h2 id="2016-12-01-details">2016-12-01 security patch level—Vulnerability
 details</h2>
 <p>
 In the sections below, we provide details for each of the security
@@ -592,7 +593,10 @@ accessible to a third-party application.
   </tr>
   <tr>
     <td>CVE-2016-6762</td>
-    <td>A-31251826</td>
+   <td><a href="https://android.googlesource.com/platform/system/core/+/1ee4892e66ba314131b7ecf17e98bb1762c4b84c">
+       A-31251826</a>
+      [<a href="https://android.googlesource.com/platform/bionic/+/3656958a16590d07d1e25587734e000beb437740">2</a>]
+   </td>
     <td>High</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -626,7 +630,8 @@ service.
   </tr>
   <tr>
     <td>CVE-2016-6763</td>
-    <td>A-31530456</td>
+    <td><a href="https://android.googlesource.com/platform/packages/services/Telephony/+/1294620627b1e9afdf4bd0ad51c25ed3daf80d84">
+        A-31530456</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -658,38 +663,42 @@ rated as High due to the possibility of remote denial of service.
     <th>Date reported</th>
   </tr>
   <tr>
-    <td>CVE-2016-6766</td>
-    <td>A-31318219</td>
-    <td>High</td>
-    <td>All</td>
-    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
-    <td>Sep 5, 2016</td>
+   <td>CVE-2016-6766 </td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/0d13824315b0491d44e9c6eb5db06489ab0fcc20">
+       A-31318219</a></td>
+   <td>High</td>
+   <td>All</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
+   <td>Sep 5, 2016</td>
   </tr>
   <tr>
-    <td>CVE-2016-6765</td>
-    <td>A-31449945</td>
-    <td>High</td>
-    <td>All</td>
-    <td>4.4.4, 5.0.2, 5.1.1, 7.0</td>
-    <td>Sep 13, 2016</td>
+   <td>CVE-2016-6765</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/fd9cc97d4dfe2a2fbce2c0f1704d7a27ce7cbc44">
+       A-31449945</a></td>
+   <td>High</td>
+   <td>All</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 7.0</td>
+   <td>Sep 13, 2016</td>
   </tr>
   <tr>
-    <td>CVE-2016-6764</td>
-    <td>A-31681434</td>
-    <td>High</td>
-    <td>All</td>
-    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
-    <td>Sep 22, 2016</td>
+   <td>CVE-2016-6764</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/0d13824315b0491d44e9c6eb5db06489ab0fcc20">
+       A-31681434</a></td>
+   <td>High</td>
+   <td>All</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
+   <td>Sep 22, 2016</td>
   </tr>
   <tr>
-    <td>CVE-2016-6767</td>
-    <td>A-31833604</td>
-    <td>High</td>
-    <td>None*</td>
-    <td>4.4.4</td>
-    <td>Google internal</td>
+   <td>CVE-2016-6767</td>
+   <td>A-31833604</td>
+   <td>High</td>
+   <td>None*</td>
+   <td>4.4.4</td>
+   <td>Google internal</td>
   </tr>
 </table>
+
 <p>
 * Supported Google devices on Android 7.0 or later that have installed all
 available updates are not affected by this vulnerability.
@@ -723,7 +732,8 @@ Framesequence library.
   </tr>
   <tr>
     <td>CVE-2016-6768</td>
-    <td>A-31631842</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/ex/+/0ada9456d0270cb0e357a43d9187a6418d770760">
+        A-31631842</a></td>
     <td>High</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -797,7 +807,8 @@ a constrained process.
   </tr>
   <tr>
     <td>CVE-2016-6770</td>
-    <td>A-30202228</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/2c61c57ac53cbb270b4e76b9d04465f8a3f6eadc">
+        A-30202228</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -832,7 +843,8 @@ constrained process.
   </tr>
   <tr>
     <td>CVE-2016-6771</td>
-    <td>A-31566390</td>
+    <td><a href="https://android.googlesource.com/platform/packages/services/Telephony/+/a39ff9526aee6f2ea4f6e02412db7b33d486fd7d">
+        A-31566390</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0</td>
@@ -866,7 +878,9 @@ a privileged process.
   </tr>
   <tr>
     <td>CVE-2016-6772</td>
-    <td>A-31856351</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/opt/net/wifi/+/a5a18239096f6faee80f15f3fff39c3311898484">
+        A-31856351</a>
+       [<a href="https://android.googlesource.com/platform/frameworks/opt/net/wifi/+/29a2baf3195256bab6a0a4a2d07b7f2efa46b614">2</a>]</td>
     <td>Moderate</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
@@ -901,7 +915,9 @@ without permission.
   </tr>
   <tr>
     <td>CVE-2016-6773</td>
-    <td>A-30481714</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/026745ef046e646b8d04f4f57d8320042f6b29b0">
+        A-30481714</a>
+       [<a href="https://android.googlesource.com/platform/external/libavc/+/6676aeb4195e7c7379915c0972f3d209410f0641">2</a>]</td>
     <td>Moderate</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0</td>
@@ -936,7 +952,8 @@ because it first requires compromising a privileged process.
   </tr>
   <tr>
     <td>CVE-2016-6774</td>
-    <td>A-31251489</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/e2d4f5fc313ecb4ba587b20fff6d346f8cd51775">
+        A-31251489</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>7.0</td>
@@ -945,7 +962,7 @@ because it first requires compromising a privileged process.
 </table>
 
 
-<h2 id="2016-12-05-details">2016-12-05 security patch level-Vulnerability
+<h2 id="2016-12-05-details">2016-12-05 security patch level—Vulnerability
 details</h2>
 <p>
 In the sections below, we provide details for each of the security
@@ -985,11 +1002,9 @@ operating system to repair the device.
   <tr>
     <td>CVE-2016-4794</td>
     <td>A-31596597<br>
-        <a
-href="http://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=6710e594f71ccaad8101bc64321152af7cd9ea28">
-Upstream kernel</a> <a
-href="http://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=4f996e234dad488e5d9ba0858bc1bae12eff82c3">
-[2]</a></td>
+       <a href="http://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=6710e594f71ccaad8101bc64321152af7cd9ea28">
+       Upstream kernel</a>
+      [<a href="http://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=4f996e234dad488e5d9ba0858bc1bae12eff82c3">2</a>]</td>
     <td>Critical</td>
     <td>Pixel C, Pixel, Pixel XL</td>
     <td>Apr 17, 2016</td>
@@ -997,11 +1012,9 @@ href="http://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit
   <tr>
     <td>CVE-2016-5195</td>
     <td>A-32141528<br>
-        <a
-href="https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=9691eac5593ff1e2f82391ad327f21d90322aec1">
-Upstream kernel</a> <a
-href="https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=e45a502bdeae5a075257c4f061d1ff4ff0821354">
-[2]</a></td>
+       <a href="https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=9691eac5593ff1e2f82391ad327f21d90322aec1">
+       Upstream kernel</a>
+      [<a href="https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=e45a502bdeae5a075257c4f061d1ff4ff0821354">2</a>]</td>
     <td>Critical</td>
     <td>Nexus 5X, Nexus 6, Nexus 6P, Nexus 9, Android One, Pixel C, Nexus
 Player, Pixel, Pixel XL</td>
@@ -1548,7 +1561,7 @@ compromising a privileged process.
   <tr>
     <td>CVE-2016-6786</td>
     <td>A-30955111
-Upstream kernel</td>
+       <a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f63a8daa5812afef4f06c962351687e1ff9ccb2b">Upstream kernel</a></td>
     <td>High</td>
     <td>Nexus 5X, Nexus 6, Nexus 6P, Nexus 9, Android One, Pixel C, Nexus
 Player, Pixel, Pixel XL</td>
@@ -1557,7 +1570,7 @@ Player, Pixel, Pixel XL</td>
   <tr>
     <td>CVE-2016-6787</td>
     <td>A-31095224
-Upstream kernel</td>
+       <a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f63a8daa5812afef4f06c962351687e1ff9ccb2b">Upstream kernel</a></td>
     <td>High</td>
     <td>Nexus 5X, Nexus 6, Nexus 6P, Nexus 9, Android One, Pixel C, Nexus
 Player, Pixel, Pixel XL</td>
@@ -2036,9 +2049,8 @@ because it first requires compromising a privileged process.
     <td>CVE-2016-6756</td>
     <td>A-29464815<br>
         <a href="https://source.codeaurora.org/quic/la//kernel/msm-3.10/commit/?id=f91d28dcba304c9f3af35b5bebaa26233c8c13a5">
-QC-CR#1042068</a>
-<a href="https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit/?id=3a214ef870dc97437c7de79a1507dfe5079dce88">
-[2]</a></td>
+        QC-CR#1042068</a>
+       [<a href="https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit/?id=3a214ef870dc97437c7de79a1507dfe5079dce88">2</a>]</td>
     <td>Moderate</td>
     <td>Nexus 5X, Nexus 6, Nexus 6P, Android One, Pixel, Pixel XL</td>
     <td>Jun 17, 2016</td>
@@ -2368,5 +2380,7 @@ belongs. These prefixes map as follows:
 </table>
 <h2 id="revisions">Revisions</h2>
 <ul>
-<li>December 05, 2016: Bulletin published.</li>
+  <li>December 05, 2016: Bulletin published.</li>
+  <li>December 07, 2016: Bulletin revised to include AOSP links and updated
+      attribution for CVE-2016-6915, CVE-2016-6916 and CVE-2016-6917.</li>
 </ul>
