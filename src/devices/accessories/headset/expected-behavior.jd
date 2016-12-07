@@ -1,4 +1,4 @@
-page.title=Headset Requirements
+page.title=Headset Expected Behavior
 @jd:body
 
 <!--
@@ -23,6 +23,20 @@ page.title=Headset Requirements
    </ol>
   </div>
 </div>
+
+<p>
+This article details the functional requirements for
+<a href="plug-headset-spec.html">3.5 mm plug</a> and
+<a href="usb-headset-spec.html">USB</a> headsets.</p>
+<p>
+When verifying the behaviors of the device and the audio headset, note that the
+requirements:</p>
+<ul>
+  <li>only apply when no other audio accessories (e.g. Bluetooth) are
+  available</li>
+  <li>cover the default behavior for devices and do not apply to applications
+  that use audio routing APIs to select which audio peripheral to use</li>
+</ul>
 
 <h2 id=media>Media</h2>
 
@@ -88,21 +102,10 @@ conversation should continue on the headset. The call should not get
 disconnected, and the microphone should not be muted. If present, volume
 buttons should behave identically to media playback.</p>
 
-<p>Pressing the play/pause button while a phone call is in progress should toggle
-the microphone state between muted and unmuted. If a user receives calls while
-using the headset, the voice assistance button should allow handling of those
-calls:</p>
-
-<ul>
-  <li> While in a phone call, pressing quickly on the play/pause button should mute
-the microphone. And if pressed quickly again, the microphone should un-mute.
-  <li> While in a phone call, a long press on the play/pause button should end the
-telephone call.
-  <li> While receiving a phone call, pressing quickly on the play/pause button should
-accept the call.
-  <li> While receiving a phone call, a long press on the play/pause button should
-reject the call.
-</ul>
+<p class="note"><strong>Note</strong>: The actions to mute and hang up a phone
+call may differ across Android devices. This documents the most common behavior;
+but for some devices, a short press on the headset mutes the call, and a long
+press hangs up.</p>
 
 <h3 id=one_button>One button</h3>
 
@@ -154,8 +157,8 @@ located by touch only.</p>
 
 <h3 id=spacing>Spacing</h3>
 
-<p>Buttons must be more than 5mm and must have at least 5mm distance between
-buttons. For four-button headsets, there must be at least 9mm of space between
+<p>Buttons must be more than 5 mm and must have at least 5 mm distance between
+buttons. For four-button headsets, there must be at least 9 mm of space between
 button D and the cluster of other buttons. </p>
 
 <img src="images/button_spacing.png" alt="Button spacing requirements">
