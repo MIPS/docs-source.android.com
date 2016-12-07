@@ -32,7 +32,7 @@ need to create custom variants of the Android stack, port devices and
 accessories to the Android platform, and ensure your devices meet compatibility
 requirements.</p>
 
-<h2 align="center">Android 7.0 Updates Available</h2>
+<h2 align="center">Android 7.1.1 Updates Available</h2>
 
 </div>
 
@@ -44,46 +44,54 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
-<h4>A/B System Updates</h4>
-<p>A/B system updates ensure a workable booting system remains on the disk
-during an over-the-air (OTA) update, reducing the likelihood of an inactive
-device afterward. See <strong><a
-href="{@docRoot}devices/tech/ota/ab_updates.html">A/B System
-Updates</a></strong> for a detailed description of this feature and
-instructions for implementing it.</p>
+<h4>dalvik.annotation.MethodParameters</h4>
+<p>A <code>dalvik.annotation.MethodParameters</code> annotation has been added
+to AOSP after Android 7.1 that is optional and can be used to provide parameter
+metadata such as parameter names and modifiers. See <strong><a
+href="devices/tech/dalvik/dex-format.html#dalvik-annotation-method-parameters">Dalvik
+Executable format</a></strong> for a complete description.</p>
 
-<h4>November Android Security Bulletin</h4>
-<p>The <strong><a href="{@docRoot}security/bulletin/2016-11-01.html">November
+<h4>December Android Security Bulletin</h4>
+<p>The <strong><a href="{@docRoot}security/bulletin/2016-12-01.html">December
 2016 Android Security Bulletin</a></strong> has been published along with links
 to associated fixes. In addition, new
 <strong><a href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">build
-numbers</a></strong> have been published for Pixel, Pixel XL, Pixel C,
-Nexus 6, Nexus 9, Nexus 5X, Nexus 6P, and Nexus Player running Android
-6.0.1, 7.0, and 7.1 to support the November Android security release.</p>
+numbers</a></strong> have been published for Nexus 6 running Android 7.0 and
+Pixel, Pixel XL, Pixel C, Nexus 5X, Nexus 6P, and Nexus Player running Android
+7.1.1 to support the December Android security release.</p>
 
-<h4>New CTS Downloads</h4>
-<p>Android 7.0 R3, Android 6.0 R12, and Android 5.1 R13 versions of the
-Compatibility Test Suite (CTS) and CTS Verifier are available for <strong><a
-href="{@docRoot}compatibility/cts/downloads.html">Download</a></strong>.</p>
+<h4>Retail Demo Mode</h4>
+<p>Android 7.1.1 includes system-level support for <strong><a
+href="devices/tech/display/retail-mode.html">retail demo mode</a></strong> to
+offer a quick, safe, and consistent demonstration of an Android device and
+significantly reduce the cost and complexity of a retail mode for
+manufacturers.</p>
 
-<h4>Android 7.0 CDD is Here</h4>
-<p>The <strong><a href="{@docRoot}compatibility/cdd.html">Android Compatibility
-Definition Document (CDD)</a></strong> for <strong><a
-href="{@docRoot}compatibility/7.0/android-7.0-cdd.html">Android 7.0 on the API level
-24</a></strong> is now available to the public.</p>
+<h4>Night Light</h4>
+<p>Android 7.1.1 includes a <strong><a
+href="{@docRoot}devices/tech/display/night-light.html">night light</a></strong>
+feature that reduces the amount of blue light emitted by the device display to
+better match the natural light of the user's time of day and location.</p>
 
-<h4>Using Filters for Smaller System Images</h4>
-<p>Implementing ART Just-In-Time (JIT) Compiler now contains recommendations
-for <strong><a
-href="{@docRoot}devices/tech/dalvik/jit-compiler.html#system_image_compilation_level">minimizing
-the system image size</a></strong> with the <code>interpret-only</code> filter in JIT.</p>
+<h4>App Shortcuts</h4>
+<p>Android 7.1.1 allows developers to define action-specific <strong><a
+href="{@docRoot}devices/tech/display/app-shortcuts.html">app
+shortcuts</a></strong> to let users quickly start common or
+recommended tasks.</p>
 
-<h4>Panic Button Support for Indian Phones</h4>
-<p>AOSP now provides support for the Panic button required on phones sold in
-India from 1 January 2017 through the  <strong><a
-href="{@docRoot}devices/tech/connect/emergency-affordance.html">Emergency
-Affordance</a></strong> feature. See the guide for details on enabling this
-feature.</p>
+<h4>Circular Icons</h4>
+<p>Android 7.1.1 supports <strong><a
+href="{@docRoot}devices/tech/display/circular-icons.html">circular app
+icons</a></strong> that can be enabled with a small configuration change.</p>
+
+<h4>ART Memory Optimization</h4>
+<p>Starting with Android 7.1, two options are provided for controlling how
+memory is used when compiling everything besides the boot image:
+<code>dalvik.vm.dex2oat-very-large</code> and
+<code>dalvik.vm.dex2oat-swap</code>. See the <em>dalvik.vm Properties</em>
+section of <strong><a
+href="{@docRoot}devices/tech/dalvik/configure.html#dalvik_vm_properties">Configuring
+ART</a></strong> for details.</p>
 
 </div>
 
