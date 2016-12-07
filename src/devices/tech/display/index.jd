@@ -18,8 +18,10 @@ page.title=Configuring Display Settings
 -->
 
 <p>This section covers AOSP implementation of various Android display
-settings such as do not disturb (DND) configurations and multi-window
-(split-screen, free-form, and picture-in-picture) and Night Light options.</p>
+settings, including app shortcuts, circular launcher icons, do not disturb
+(DND), multi-window (split-screen, free-form, and picture-in-picture), high
+dynamic range (HDR) video, night light, and retail demo mode. See the subpages
+of this section for details.</p>
 
 <h2 id="settingshome">Settings Home screen enhancements</h2>
 
