@@ -339,6 +339,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
       <td>Nexus 5X, Nexus 9 (volantis), Nexus Player, Pixel C</td>
     </tr>
     <tr>
+      <td>M4B30Z</td>
+      <td>android-6.0.1_r77</td>
+      <td>Marshmallow</td>
+      <td>Nexus 5</td>
+    </tr>
+    <tr>
       <td>MOB31K</td>
       <td>android-6.0.1_r74</td>
       <td>Marshmallow</td>
