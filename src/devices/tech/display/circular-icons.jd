@@ -18,17 +18,19 @@ page.title=Implementing Circular Icons
 -->
 
 <p>Circular <a
-href="https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html">launcher
-icons</a> are supported in Android 7.1.1 and later. Circular launcher icons are not
-enabled by default. To use circular icons in your device implementation, you
-must edit the resource overlay on your device to enable them.</p>
+  href="https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html">launcher
+  icons</a> are supported in Android 7.1.1 and later. Circular launcher icons
+are not enabled by default. To use circular icons in your device
+implementation, you must edit the <a
+  href="{@docRoot}source/add-device.html#use-resource-overlays">resource
+  overlay</a> on your device to enable them.</p>
 
-<p>The resource overlay file is at:
+<p>The resource file you are using an overlay on is at:
 <code><a
-href="https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml">/android/frameworks/base/core/res/res/values/config.xml</a></code>
+href="https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml">frameworks/base/core/res/res/values/config.xml</a></code>
 
 <p>To enable circular icons, change the <code>config_useRoundIcon</code>
-setting, shown below, from <code>false</code> to <code>true</code>:</p>
+setting in your overlay file from <code>false</code> to <code>true</code>:</p>
 
 <pre>
 &lt;!-- Flag indicating whether round icons should be parsed from the application manifest. --&gt;
