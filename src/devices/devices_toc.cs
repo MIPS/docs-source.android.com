@@ -43,8 +43,10 @@
           </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/accessories/headset/specification.html">Specification</a></li>
-          <li><a href="<?cs var:toroot ?>devices/accessories/headset/requirements.html">Requirements</a></li>
+          <li><a href="<?cs var:toroot ?>devices/accessories/headset/plug-headset-spec.html">3.5 mm Headset Spec</a></li>
+          <li><a href="<?cs var:toroot ?>devices/accessories/headset/jack-headset-spec.html">3.5 mm Jack Spec</a></li>
+          <li><a href="<?cs var:toroot ?>devices/accessories/headset/usb-headset-spec.html">USB Headset Spec</a></li>
+          <li><a href="<?cs var:toroot ?>devices/accessories/headset/expected-behavior.html">Expected Behavior</a></li>
           <li><a href="<?cs var:toroot ?>devices/accessories/headset/testing.html">Testing</a></li>
         </ul>
       </li>
