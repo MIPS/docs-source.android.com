@@ -32,7 +32,6 @@ following essential elements:</p>
   <a href="https://developer.android.com/training/enterprise/app-compatibility.html">Ensuring
   Compatibility with Managed Profiles</a>)</li>
   <li>Device owner</li>
-  <li>Activation code provisioning</li>
   </ul>
 
 <p>For a complete list of requirements, see
