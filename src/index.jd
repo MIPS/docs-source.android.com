@@ -32,7 +32,7 @@ need to create custom variants of the Android stack, port devices and
 accessories to the Android platform, and ensure your devices meet compatibility
 requirements.</p>
 
-<h2 align="center">Android 7.1.1 Updates Available</h2>
+<h2 align="center">Android 7.1 Updates Available</h2>
 
 </div>
 
@@ -43,6 +43,11 @@ requirements.</p>
 <div class="landing-docs">
   <div class="col-8">
   <h3>What's New</h3>
+
+<h4>CTS and CTS Verifier 7.1 R1</h4>
+<p>Android Compatibility Test Suite (CTS) and CTS Verifier 7.1 are available
+for <strong><a
+href="{@docRoot}compatibility/cts/downloads.html#android-71">download</a></strong>.</p>
 
 <h4>USB headset specification</h4>
 <p>New guidelines for creating
@@ -84,11 +89,6 @@ better match the natural light of the user's time of day and location.</p>
 href="{@docRoot}devices/tech/display/app-shortcuts.html">app
 shortcuts</a></strong> to let users quickly start common or
 recommended tasks.</p>
-
-<h4>Circular Icons</h4>
-<p>Android 7.1.1 supports <strong><a
-href="{@docRoot}devices/tech/display/circular-icons.html">circular app
-icons</a></strong> that can be enabled with a small configuration change.</p>
 
 </div>
 
