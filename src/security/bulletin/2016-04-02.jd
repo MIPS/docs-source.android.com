@@ -17,7 +17,7 @@ page.title=Nexus Security Bulletin—April 2016
     limitations under the License.
 -->
 
-<p><em>Published April 04, 2016 | Updated August 1, 2016</em></p>
+<p><em>Published April 04, 2016 | Updated December 19, 2016</em></p>
 
 <p>We have released a security update to Nexus devices through an over-the-air
 (OTA) update as part of our Android Security Bulletin Monthly Release process.
@@ -213,11 +213,6 @@ Power Management Component</td>
     <td>Information Disclosure Vulnerability in Framework</td>
     <td>CVE-2016-2426</td>
     <td>Moderate</td>
- </tr>
- <tr>
-    <td>Information Disclosure Vulnerability in GCM Encryption</td>
-    <td>CVE-2016-2427</td>
-    <td>None</td>
  </tr>
 </table>
 
@@ -1257,37 +1252,6 @@ permission.</p>
  </tr>
 </table>
 
-
-<h3 id=information-disclosure-in-gcm-encryption>
-Information Disclosure Vulnerability in GCM Encryption</h3>
-
-<p>In the AES-GCM encoding in RFC 5084, the use of the default tag size could
- allow an authentication key to be leaked. This issue is rated as Moderate
- severity because an application installed on the device could use it to gain
- dangerous level data or capabilities without permission.</p>
-<p>After further analysis of this issue, we have determined there is no
- vulnerability in Android. Further, the update originally provided will cause
- an interoperability issue and must be reverted to ensure application
- compatibility.</p>
-
-<table>
- <tr>
-    <th>CVE</th>
-    <th>Bug with AOSP links</th>
-    <th>Severity</th>
-    <th>Updated versions</th>
-    <th>Date reported</th>
- </tr>
- <tr>
-    <td>CVE-2016-2427</td>
-    <td>Coming soon</td>
-    <td>None</td>
-    <td>5.0.2, 5.1.1, 6.0, 6.0.1</td>
-    <td>Google Internal</td>
- </tr>
-</table>
-
-
 <h2 id=common_questions_and_answers>Common Questions and Answers</h2>
 
 
@@ -1321,5 +1285,6 @@ have been addressed.</p>
   <li> April 06, 2016: Bulletin revised to include AOSP links.
   <li> April 07, 2016: Bulletin revised to include an additional AOSP link.
   <li> July 11, 2016: Updated description of CVE-2016-2427.
-  <li> August 01, 2015: Updated description of CVE-2016-2427
+  <li> August 01, 2016: Updated description of CVE-2016-2427
+  <li> December 19, 2016: Updated to remove CVE-2016-2427, which was reverted.
 </ul>
