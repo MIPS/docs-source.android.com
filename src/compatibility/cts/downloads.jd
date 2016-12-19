@@ -29,6 +29,25 @@ you access to key documents and information about the program. As CTS is
 updated, new versions are added to this page. CTS versions are denoted by
 R&lt;number&gt; in the link name.</p>
 
+<h2 id="android-71">Android 7.1</h2>
+<p>Android 7.1 is the release of the development milestone code-named Nougat-MR1.
+The source code for the following tests can be synced with the
+'android-cts-7.1_r1' tag in the open-source tree.</p>
+<ul>
+<li><a
+href="https://dl.google.com/dl/android/cts/android-cts-7.1_r1-linux_x86-arm.zip">Android
+7.1 R1 Compatibility Test Suite (CTS) - ARM</a></li>
+<li><a
+href="https://dl.google.com/dl/android/cts/android-cts-7.1_r1-linux_x86-x86.zip">Android
+7.1 R1 Compatibility Test Suite (CTS) - x86</a></li>
+<li><a
+href="https://dl.google.com/dl/android/cts/android-cts-verifier-7.1_r1-linux_x86-arm.zip">Android
+7.1 R1 CTS Verifier - ARM</a></li>
+<li><a
+href="https://dl.google.com/dl/android/cts/android-cts-verifier-7.1_r1-linux_x86-x86.zip">Android
+7.1 R1 CTS Verifier - x86</a></li>
+</ul>
+
 <h2 id="android-70">Android 7.0</h2>
 <p>Android 7.0 is the release of the development milestone code-named Nougat.
 The source code for the following tests can be synced with the
