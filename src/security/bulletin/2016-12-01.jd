@@ -17,7 +17,7 @@ page.title=Android Security Bulletin—December 2016
     limitations under the License.
 -->
 
-<p><em>Published December 05, 2016 | Updated December 07, 2016</em></p>
+<p><em>Published December 05, 2016 | Updated December 21, 2016</em></p>
 <p>
 The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -1204,15 +1204,10 @@ Upstream kernel</a></td>
   </tr>
 </table>
 
-<h3>Vulnerabilities in Qualcomm components</h3>
+<h3 id="vulnerabilities-in-qc-components">Vulnerabilities in Qualcomm components</h3>
 <p>
 The following vulnerabilities affects Qualcomm components and is described in
-further detail in Qualcomm AMSS November 2015 security bulletin. An elevation of
-privilege vulnerability in the Qualcomm MSM interface could enable a local
-malicious application to execute arbitrary code within the context of the
-kernel. This issue is rated as Critical due to the possibility of a local
-permanent device compromise, which may require reflashing the operating system
-to repair the device.
+further detail in Qualcomm AMSS November 2015 security bulletin.
 </p>
 <table>
   <col width="19%">
@@ -2298,7 +2293,7 @@ level to:
   <li>[ro.build.version.security_patch]:[2016-12-05]</li>
 </ul>
 <p>
-<strong>2. Why does this bulletin have three security patch levels?</strong>
+<strong>2. Why does this bulletin have two security patch levels?</strong>
 </p>
 <p>
 This bulletin has two security patch levels so that Android partners have the
@@ -2383,4 +2378,6 @@ belongs. These prefixes map as follows:
   <li>December 05, 2016: Bulletin published.</li>
   <li>December 07, 2016: Bulletin revised to include AOSP links and updated
       attribution for CVE-2016-6915, CVE-2016-6916 and CVE-2016-6917.</li>
+  <li>December 21, 2016: Corrected typos in CVE-2016-8411 description and
+      Common Questions and Answers.</li>
 </ul>
