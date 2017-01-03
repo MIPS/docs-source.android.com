@@ -62,18 +62,28 @@
            <li><a href="<?cs var:toroot ?>security/advisory/2016-03-18.html">2016-03-18</a></li>
          </ul>
       </li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-12-01.html">December 2016</a></li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-11-01.html">November 2016</a></li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-10-01.html">October 2016</a></li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-09-01.html">September 2016</a></li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-08-01.html">August 2016</a></li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-07-01.html">July 2016</a></li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-06-01.html">June 2016</a></li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-05-01.html">May 2016</a></li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-04-02.html">April 2016</a></li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-03-01.html">March 2016</a></li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-02-01.html">February 2016</a></li>
-      <li><a href="<?cs var:toroot ?>security/bulletin/2016-01-01.html">January 2016</a></li>
+      <li><a href="<?cs var:toroot ?>security/bulletin/2017-01-01.html">January 2017</a></li>
+      <li class="nav-section">
+         <div class="nav-section-header">
+           <a href="<?cs var:toroot ?>security/bulletin/2016.html">
+         <span class="en">2016 Bulletins</span>
+        </a>
+       </div>
+         <ul>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-12-01.html">December 2016</a></li>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-11-01.html">November 2016</a></li>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-10-01.html">October 2016</a></li>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-09-01.html">September 2016</a></li>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-08-01.html">August 2016</a></li>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-07-01.html">July 2016</a></li>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-06-01.html">June 2016</a></li>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-05-01.html">May 2016</a></li>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-04-02.html">April 2016</a></li>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-03-01.html">March 2016</a></li>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-02-01.html">February 2016</a></li>
+           <li><a href="<?cs var:toroot ?>security/bulletin/2016-01-01.html">January 2016</a></li>
+         </ul>
+      </li>
       <li class="nav-section">
          <div class="nav-section-header">
            <a href="<?cs var:toroot ?>security/bulletin/2015.html">
