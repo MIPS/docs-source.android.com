@@ -65,6 +65,12 @@ You may view the latest CDD either as an HTML web page or an easily downloadable
     <th>Strings</th>
   </tr>
   <tr>
+    <td>7.1</td>
+    <td>Coming soon</td>
+    <td>Coming soon</td>
+    <td><a href="7.1/versions.html">Version 7.1</a></td>
+  </tr>
+  <tr>
     <td>7.0</td>
     <td><a href="7.0/android-7.0-cdd.pdf">android-7.0-cdd.pdf</a></td>
     <td><a href="7.0/android-7.0-cdd.html">android-7.0-cdd.html</a></td>
@@ -141,6 +147,6 @@ You may view the latest CDD either as an HTML web page or an easily downloadable
     <td>1.6</td>
     <td><a href="1.6/android-1.6-cdd.pdf">android-1.6.cdd.pdf</a></td>
     <td><a href="1.6/android-1.6-cdd.html">android-1.6-cdd.html</a></td
-    <td></td>
+    <td>&nbsp;</td>
   </tr>
 </table>
