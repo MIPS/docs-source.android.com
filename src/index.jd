@@ -44,6 +44,15 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>January Android Security Bulletin</h4>
+<p>The <strong><a href="{@docRoot}security/bulletin/2017-01-01.html">January
+2017 Android Security Bulletin</a></strong> has been published along with links
+to associated fixes. In addition, new
+<strong><a href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">build
+numbers</a></strong> have been published for Nexus 6 running Android 7.0 and
+7.1.1 and also Pixel, Pixel XL, Pixel C, Nexus 5X, Nexus 6P, Nexus 9, and Nexus
+Player running Android 7.1.1 to support the January Android security release.</p>
+
 <h4>CTS and CTS Verifier 7.1 R1</h4>
 <p>Android Compatibility Test Suite (CTS) and CTS Verifier 7.1 are available
 for <strong><a
@@ -62,21 +71,11 @@ metadata such as parameter names and modifiers. See <strong><a
 href="devices/tech/dalvik/dex-format.html#dalvik-annotation-method-parameters">Dalvik
 Executable format</a></strong> for a complete description.</p>
 
-<h4>December Android Security Bulletin</h4>
-<p>The <strong><a href="{@docRoot}security/bulletin/2016-12-01.html">December
-2016 Android Security Bulletin</a></strong> has been published along with links
-to associated fixes. In addition, new
-<strong><a href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">build
-numbers</a></strong> have been published for Nexus 6 running Android 7.0 and
-Pixel, Pixel XL, Pixel C, Nexus 5X, Nexus 6P, and Nexus Player running Android
-7.1.1 to support the December Android security release.</p>
-
 <h4>Retail Demo Mode</h4>
 <p>Android 7.1.1 includes system-level support for <strong><a
 href="devices/tech/display/retail-mode.html">retail demo mode</a></strong> to
 offer a quick, safe, and consistent demonstration of an Android device and
-significantly reduce the cost and complexity of a retail mode for
-manufacturers.</p>
+reduce the cost and complexity of a retail mode for manufacturers.</p>
 
 <h4>Night Light</h4>
 <p>Android 7.1.1 includes a <strong><a
