@@ -16,7 +16,7 @@ page.title=Android Security Bulletin—January 2017
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<p><em>Published January 03, 2017 | Updated January 04, 2017</em></p>
+<p><em>Published January 03, 2017 | Updated January 05, 2017</em></p>
 
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -589,7 +589,7 @@ remote code execution within the context of the Mediaserver process.
         A-31607432</a></td>
     <td>Critical</td>
     <td>All</td>
-    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
     <td>Sep 18, 2016</td>
   </tr>
 </table>
@@ -660,7 +660,7 @@ Framesequence library.
        A-32338390</a></td>
    <td>High</td>
    <td>All</td>
-   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 21, 2016</td>
   </tr>
 </table>
@@ -694,7 +694,7 @@ third-party application.
        A-31677614</a></td>
    <td>High</td>
    <td>All</td>
-   <td>7.0, 7.1</td>
+   <td>7.0, 7.1.1</td>
    <td>Sep 21, 2016</td>
   </tr>
 </table>
@@ -728,7 +728,7 @@ third-party application.
        A-32095626</a></td>
    <td>High</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 11, 2016</td>
   </tr>
   <tr>
@@ -737,7 +737,7 @@ third-party application.
        A-32585400</a></td>
    <td>High</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 11, 2016</td>
   </tr>
 </table>
@@ -771,7 +771,7 @@ third-party application.
        A-32255299</a></td>
    <td>High</td>
    <td>All</td>
-   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 18, 2016</td>
   </tr>
 </table>
@@ -805,7 +805,7 @@ third-party application.
        A-32660278</a></td>
    <td>High</td>
    <td>All</td>
-   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Nov 4, 2016</td>
   </tr>
 </table>
@@ -838,7 +838,7 @@ used to access data without permission.
        A-32523490</a></td>
    <td>High</td>
    <td>All</td>
-   <td>6.0, 6.0.1, 7.0, 7.1</td>
+   <td>6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Google internal</td>
   </tr>
 </table>
@@ -872,7 +872,7 @@ service.
 [<a href="https://android.googlesource.com/platform/frameworks/base/+/47e81a2596b00ee7aaca58716ff164a1708b0b29">2</a>]</td>
    <td>High</td>
    <td>All</td>
-   <td>6.0, 6.0.1, 7.0, 7.1</td>
+   <td>6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Jul 20, 2016</td>
   </tr>
 </table>
@@ -904,7 +904,7 @@ rated as High due to the possibility of remote denial of service.
        A-31647370</a></td>
    <td>High</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Sep 19, 2016</td>
   </tr>
   <tr>
@@ -913,7 +913,7 @@ rated as High due to the possibility of remote denial of service.
        A-32322258</a></td>
    <td>High</td>
    <td>All</td>
-   <td>6.0, 6.0.1, 7.0, 7.1</td>
+   <td>6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 20, 2016</td>
   </tr>
   <tr>
@@ -922,7 +922,7 @@ rated as High due to the possibility of remote denial of service.
        A-32577290</a></td>
    <td>High</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 29, 2016</td>
   </tr>
   <tr>
@@ -931,7 +931,7 @@ rated as High due to the possibility of remote denial of service.
        A-30436808</a></td>
    <td>High</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Google internal</td>
   </tr>
 </table>
@@ -963,7 +963,7 @@ possibility of remote denial of service.
        A-31752213</a></td>
    <td>High</td>
    <td>All</td>
-   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Sep 23, 2016</td>
   </tr>
 </table>
@@ -997,7 +997,7 @@ user permission).
        A-32219099</a></td>
    <td>Moderate</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 15, 2016</td>
   </tr>
 </table>
@@ -1030,7 +1030,7 @@ without permission.
        A-31781965</a></td>
    <td>Moderate</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Sep 27, 2016</td>
   </tr>
   <tr>
@@ -1039,7 +1039,7 @@ without permission.
        A-32377688</a></td>
    <td>Moderate</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 21, 2016</td>
   </tr>
 </table>
@@ -1072,7 +1072,7 @@ without permission.
        A-32438594</a></td>
    <td>Moderate</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 25, 2016</td>
   </tr>
   <tr>
@@ -1081,7 +1081,7 @@ without permission.
        A-32635664</a></td>
    <td>Moderate</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 25, 2016</td>
   </tr>
   <tr>
@@ -1090,7 +1090,7 @@ without permission.
        A-32624850</a></td>
    <td>Moderate</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 25, 2016</td>
   </tr>
   <tr>
@@ -1100,7 +1100,7 @@ without permission.
 [<a href="https://android.googlesource.com/platform/hardware/qcom/audio/+/d72ea85c78a1a68bf99fd5804ad9784b4102fe57">2</a>]</td>
    <td>Moderate</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 18, 2016</td>
   </tr>
   <tr>
@@ -1110,7 +1110,7 @@ without permission.
 [<a href="https://android.googlesource.com/platform/hardware/qcom/audio/+/d72ea85c78a1a68bf99fd5804ad9784b4102fe57">2</a>]</td>
    <td>Moderate</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 25, 2016</td>
   </tr>
   <tr>
@@ -1119,7 +1119,7 @@ without permission.
        A-32448258</a></td>
    <td>Moderate</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 26, 2016</td>
   </tr>
   <tr>
@@ -1129,7 +1129,7 @@ without permission.
 [<a href="https://android.googlesource.com/platform/hardware/qcom/audio/+/d72ea85c78a1a68bf99fd5804ad9784b4102fe57">2</a>]</td>
    <td>Moderate</td>
    <td>All</td>
-   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1</td>
+   <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
    <td>Oct 25, 2016</td>
   </tr>
 </table>
@@ -2707,63 +2707,43 @@ access sensitive data without permission.
    </td>
    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/c66c43ad571ed2590dcd55a762c73c90d9744bac">
        A-32588756</a>
-[<a href="https://android.googlesource.com/platform/hardware/qcom/audio/+/d72ea85c78a1a68bf99fd5804ad9784b4102fe57">2</a>]
-   </td>
-   <td>Moderate
-   </td>
-   <td>All
-   </td>
-   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1
-   </td>
-   <td>Oct 18, 2016
-   </td>
+[<a href="https://android.googlesource.com/platform/hardware/qcom/audio/+/d72ea85c78a1a68bf99fd5804ad9784b4102fe57">2</a>]</td>
+   <td>Moderate</td>
+   <td>All</td>
+   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Oct 18, 2016</td>
   </tr>
   <tr>
-   <td>CVE-2017-0400
-   </td>
+   <td>CVE-2017-0400</td>
    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/c66c43ad571ed2590dcd55a762c73c90d9744bac">
        A-32438598</a>
 [<a href="https://android.googlesource.com/platform/hardware/qcom/audio/+/d72ea85c78a1a68bf99fd5804ad9784b4102fe57">2</a>]
    </td>
-   <td>Moderate
-   </td>
-   <td>All
-   </td>
-   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1
-   </td>
-   <td>Oct 25, 2016
-   </td>
+   <td>Moderate</td>
+   <td>All</td>
+   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Oct 25, 2016</td>
   </tr>
   <tr>
-   <td>CVE-2017-0401
-   </td>
+   <td>CVE-2017-0401</td>
    <td><a href="https://android.googlesource.com/platform/hardware/qcom/audio/+/ed79f2cc961d7d35fdbbafdd235c1436bcd74358">
        A-32588016</a>
    </td>
-   <td>Moderate
-   </td>
-   <td>All
-   </td>
-   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1
-   </td>
-   <td>Oct 26, 2016
-   </td>
+   <td>Moderate</td>
+   <td>All</td>
+   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Oct 26, 2016</td>
   </tr>
   <tr>
-   <td>CVE-2017-0402
-   </td>
+   <td>CVE-2017-0402</td>
    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/c66c43ad571ed2590dcd55a762c73c90d9744bac">
        A-32588352</a>
 [<a href="https://android.googlesource.com/platform/hardware/qcom/audio/+/d72ea85c78a1a68bf99fd5804ad9784b4102fe57">2</a>]
    </td>
-   <td>Moderate
-   </td>
-   <td>All
-   </td>
-   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1
-   </td>
-   <td>Oct 25, 2016
-   </td>
+   <td>Moderate</td>
+   <td>All</td>
+   <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Oct 25, 2016</td>
   </tr>
 </table>
 
@@ -2897,9 +2877,9 @@ each issue. This column has a few options:</p>
   <li><strong>Some Google devices</strong>: If an issue doesn't affect all Google
   devices, the affected Google devices are listed in the <em>Updated Google
   devices</em> column.</li>
-  <li><strong>No Google devices</strong>: If no Google devices running Android 7.0
-  are affected by the issue, the table will have "None" in the <em>Updated Google
-  devices</em> column.</li>
+  <li><strong>No Google devices</strong>: If no Google devices running the
+  latest available version of Android are affected by the issue, the table
+  will have "None" in the <em>Updated Google devices</em> column.</li>
 </ul>
 <p><strong>4. What do the entries in the references column map to?</strong></p>
 
@@ -2937,4 +2917,5 @@ belongs. These prefixes map as follows:</p>
 <ul>
  <li>January 03, 2017: Bulletin published.</li>
  <li>January 04, 2017: Bulletin revised to include AOSP links.</li>
+ <li>January 05, 2017: Clarified AOSP version number from 7.1 to 7.1.1.</li>
 </ul>
