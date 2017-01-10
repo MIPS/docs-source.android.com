@@ -368,6 +368,7 @@
           </a>
         </div>
         <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/debug/native-crash.html">Diagnosing Native Crashes</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/debug/asan.html">AddressSanitizer</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/debug/dumpsys.html">Dumpsys</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/debug/native-memory.html">Native Memory Use</a></li>

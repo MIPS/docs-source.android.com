@@ -35,10 +35,10 @@ the subpages for tools and methods not described below.</p>
 
 <h2 id=debuggerd>debuggerd</h2>
 
-<p>When a dynamically-linked executable starts, several signal handlers are
+<p>The <code>debuggerd</code> process dumps registers and unwinds the
+stack. When a dynamically-linked executable starts, several signal handlers are
 registered that connect to <code>debuggerd</code> (or <code>debuggerd64)</code> in the event that signal
-is sent to the process. The <code>debuggerd</code> process dumps registers and unwinds the
-stack.</p>
+is sent to the process.</p>
 
 <p>It's possible for <code>debuggerd</code> to attach only if nothing else is
 already attached. This means that using tools like <code>strace</code> or
@@ -49,7 +49,7 @@ explicitly opt out of crash reporting.</p>
 
 <p>Here is example output (with timestamps and extraneous information removed):</p>
 
-<pre>
+<pre class="no-pretty-print">
 *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
 Build fingerprint: 'Android/aosp_flounder/flounder:5.1.51/AOSP/enh08201009:eng/test-keys'
 Revision: '0'
@@ -89,255 +89,8 @@ a lot of extra information that can be helpful in debugging a crash, in
 particular the stack traces for all the threads in the crashing process (not
 just the thread that caught the signal) and a full memory map.</p>
 
-<h2 id=crashdump>Crash dumps</h2>
-
-<p>If you don't have a specific crash that you're investigating right now,
-the platform source includes a tool for testing <code>debuggerd</code> called crasher. If
-you <code>mm</code> in <code>system/core/debuggerd/</code> you'll get both a <code>crasher</code>
-and a <code>crasher64</code> on your path (the latter allowing you to test
-64-bit crashes). Crasher can crash in a large number of interesting ways based
-on the command line arguments you provide. Use <code>crasher --help</code>
-to see the currently supported selection.</p>
-
-<p>To introduce the difference pieces in a crash dump, let's work through the example above:
-
-<pre>*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***</pre>
-
-<p>The line of asterisks with spaces is helpful if you're searching a log
-for native crashes. The string "*** ***" rarely shows up in logs other than
-at the beginning of a native crash.</p>
-
-<pre>
-Build fingerprint:
-'Android/aosp_flounder/flounder:5.1.51/AOSP/enh08201009:eng/test-keys'
-</pre>
-
-<p>The fingerprint lets you identify exactly which build the crash occurred
-on. This is exactly the same as the <code>ro.build.fingerprint</code> system property.</p>
-
-<pre>
-Revision: '0'
-</pre>
-
-<p>The revision refers to the hardware rather than the software. This is
-usually unused but can be useful to help you automatically ignore bugs known
-to be caused by bad hardware. This is exactly the same as the <code>ro.revision</code>
-system property.</p>
-
-<pre>
-ABI: 'arm'
-</pre>
-
-<p>The ABI is one of arm, arm64, mips, mips64, x86, or x86-64. This is
-mostly useful for the <code>stack</code> script mentioned above, so that it knows
-what toolchain to use.</p>
-
-<pre>
-pid: 1656, tid: 1656, name: crasher &gt;&gt;&gt; crasher &lt;&lt;&lt;
-</pre>
-
-<p>This line identifies the specific thread in the process that crashed. In
-this case, it was the process' main thread, so the process ID and thread
-ID match. The first name is the thread name, and the name surrounded by
-&gt;&gt;&gt; and &lt;&lt;&lt; is the process name. For an app, the process name
-is typically the fully-qualified package name (such as com.facebook.katana),
-which is useful when filing bugs or trying to find the app in Google Play. The
-pid and tid can also be useful in finding the relevant log lines preceding
-the crash.</p>
-
-<pre>
-signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
-</pre>
-
-<p>This line tells you which signal (SIGABRT) was received, and more about
-how it was received (SI_TKILL). The signals reported by <code>debuggerd</code> are SIGABRT,
-SIGBUS, SIGFPE, SIGILL, SIGSEGV, and SIGTRAP. The signal-specific codes vary
-based on the specific signal.</p>
-
-<pre>
-Abort message: 'some_file.c:123: some_function: assertion "false" failed'
-</pre>
-
-<p>Not all crashes will have an abort message line, but aborts will. This
-is automatically gathered from the last line of fatal logcat output for
-this pid/tid, and in the case of a deliberate abort is likely to give an
-explanation of why the program killed itself.</p>
-
-<pre>
-r0 00000000 r1 00000678 r2 00000006 r3 f70b6dc8
-r4 f70b6dd0 r5 f70b6d80 r6 00000002 r7 0000010c
-r8 ffffffed r9 00000000 sl 00000000 fp ff96ae1c
-ip 00000006 sp ff96ad18 lr f700ced5 pc f700dc98 cpsr 400b0010
-</pre>
-
-<p>The register dump shows the content of the CPU registers at the time the
-signal was received. (This section varies wildly between ABIs.) How useful
-these are will depend on the exact crash.<p>
-
-<pre>
-backtrace:
-    #00 pc 00042c98 /system/lib/libc.so (tgkill+12)
-    #01 pc 00041ed1 /system/lib/libc.so (pthread_kill+32)
-    #02 pc 0001bb87 /system/lib/libc.so (raise+10)
-    #03 pc 00018cad /system/lib/libc.so (__libc_android_abort+34)
-    #04 pc 000168e8 /system/lib/libc.so (abort+4)
-    #05 pc 0001a78f /system/lib/libc.so (__libc_fatal+16)
-    #06 pc 00018d35 /system/lib/libc.so (__assert2+20)
-    #07 pc 00000f21 /system/xbin/crasher
-    #08 pc 00016795 /system/lib/libc.so (__libc_init+44)
-    #09 pc 00000abc /system/xbin/crasher
-</pre>
-
-<p>The backtrace shows you where in the code we were at the time of
-crash. The first column is the frame number (matching gdb's style where
-the deepest frame is 0). The PC values are relative to the location of the
-shared library rather than absolute addresses. The next column is the name
-of the mapped region (which is usually a shared library or executable, but
-might not be for, say, JIT-compiled code). Finally, if symbols are available,
-the symbol that the PC value corresponds to is shown, along with the offset
-into that symbol in bytes. You can use this in conjunction with <code>objdump(1)</code>
-to find the corresponding assembler instruction.</p>
-
-<h2 id=tombstones>Tombstones</h2>
-
-<pre>
-Tombstone written to: /data/tombstones/tombstone_06
-</pre>
-
-<p>This tells you where <code>debuggerd</code> wrote extra information.
-<code>debuggerd</code> will keep up to 10 tombstones, cycling through
-the numbers 00 to 09 and overwriting existing tombstones as necessary.</p>
-
-<p>The tombstone contains the same information as the crash dump, plus a
-few extras. For example, it includes backtraces for <i>all</i> threads (not
-just the crashing thread), the floating point registers, raw stack dumps,
-and memory dumps around the addresses in registers. Most usefully it also
-includes a full memory map (similar to <code>/proc/<i>pid</i>/maps</code>). Here's an
-annotated example from a 32-bit ARM process crash:</p>
-
-<pre>
-memory map: (fault address prefixed with ---&gt;)
----&gt;ab15f000-ab162fff r-x 0 4000 /system/xbin/crasher (BuildId:
-b9527db01b5cf8f5402f899f64b9b121)
-</pre>
-
-<p>There are two things to note here. The first is that this line is prefixed
-with "---&gt;". The maps are most useful when your crash isn't just a null
-pointer dereference. If the fault address is small, it's probably some variant
-of a null pointer dereference. Otherwise looking at the maps around the fault
-address can often give you a clue as to what happened. Some possible issues
-that can be recognized by looking at the maps include:</p>
-
-<ul>
-<li>Reads/writes past the end of a block of memory.</li>
-<li>Reads/writes before the beginning of a block of memory.</li>
-<li>Attempts to execute non-code.</li>
-<li>Running off the end of a stack.</li>
-<li>Attempts to write to code (as in the example above).</li>
-</ul>
-
-<p>The second thing to note is that executables and shared libraries files
-will show the BuildId (if present) in Android M and later, so you can see
-exactly which version of your code crashed. (Platform binaries include a
-BuildId by default since Android M. NDK r12 and later automatically pass
-<code>-Wl,--build-id</code> to the linker too.)<p>
-
-<pre>
-ab163000-ab163fff r--      3000      1000  /system/xbin/crasher
-ab164000-ab164fff rw-         0      1000
-f6c80000-f6d7ffff rw-         0    100000  [anon:libc_malloc]
-</pre>
-
-<p>On Android the heap isn't necessarily a single region. Heap regions will
-be labeled <code>[anon:libc_malloc]</code>.</p>
-
-<pre>
-f6d82000-f6da1fff r--         0     20000  /dev/__properties__/u:object_r:logd_prop:s0
-f6da2000-f6dc1fff r--         0     20000  /dev/__properties__/u:object_r:default_prop:s0
-f6dc2000-f6de1fff r--         0     20000  /dev/__properties__/u:object_r:logd_prop:s0
-f6de2000-f6de5fff r-x         0      4000  /system/lib/libnetd_client.so (BuildId: 08020aa06ed48cf9f6971861abf06c9d)
-f6de6000-f6de6fff r--      3000      1000  /system/lib/libnetd_client.so
-f6de7000-f6de7fff rw-      4000      1000  /system/lib/libnetd_client.so
-f6dec000-f6e74fff r-x         0     89000  /system/lib/libc++.so (BuildId: 8f1f2be4b37d7067d366543fafececa2) (load base 0x2000)
-f6e75000-f6e75fff ---         0      1000
-f6e76000-f6e79fff r--     89000      4000  /system/lib/libc++.so
-f6e7a000-f6e7afff rw-     8d000      1000  /system/lib/libc++.so
-f6e7b000-f6e7bfff rw-         0      1000  [anon:.bss]
-f6e7c000-f6efdfff r-x         0     82000  /system/lib/libc.so (BuildId: d189b369d1aafe11feb7014d411bb9c3)
-f6efe000-f6f01fff r--     81000      4000  /system/lib/libc.so
-f6f02000-f6f03fff rw-     85000      2000  /system/lib/libc.so
-f6f04000-f6f04fff rw-         0      1000  [anon:.bss]
-f6f05000-f6f05fff r--         0      1000  [anon:.bss]
-f6f06000-f6f0bfff rw-         0      6000  [anon:.bss]
-f6f0c000-f6f21fff r-x         0     16000  /system/lib/libcutils.so (BuildId: d6d68a419dadd645ca852cd339f89741)
-f6f22000-f6f22fff r--     15000      1000  /system/lib/libcutils.so
-f6f23000-f6f23fff rw-     16000      1000  /system/lib/libcutils.so
-f6f24000-f6f31fff r-x         0      e000  /system/lib/liblog.so (BuildId: e4d30918d1b1028a1ba23d2ab72536fc)
-f6f32000-f6f32fff r--      d000      1000  /system/lib/liblog.so
-f6f33000-f6f33fff rw-      e000      1000  /system/lib/liblog.so
-</pre>
-
-<p>Typically a shared library will have three adjacent entries. One will be
-readable and executable (code), one will be read-only (read-only
-data), and one will be read-write (mutable data). The first column
-shows the address ranges for the mapping, the second column the permissions
-(in the usual Unix <code>ls(1)</code> style), the third column the offset into the file
-(in hex), the fourth column the size of the region (in hex), and the fifth
-column the file (or other region name).</p>
-
-<pre>
-f6f34000-f6f53fff r-x         0     20000  /system/lib/libm.so (BuildId: 76ba45dcd9247e60227200976a02c69b)
-f6f54000-f6f54fff ---         0      1000
-f6f55000-f6f55fff r--     20000      1000  /system/lib/libm.so
-f6f56000-f6f56fff rw-     21000      1000  /system/lib/libm.so
-f6f58000-f6f58fff rw-         0      1000
-f6f59000-f6f78fff r--         0     20000  /dev/__properties__/u:object_r:default_prop:s0
-f6f79000-f6f98fff r--         0     20000  /dev/__properties__/properties_serial
-f6f99000-f6f99fff rw-         0      1000  [anon:linker_alloc_vector]
-f6f9a000-f6f9afff r--         0      1000  [anon:atexit handlers]
-f6f9b000-f6fbafff r--         0     20000  /dev/__properties__/properties_serial
-f6fbb000-f6fbbfff rw-         0      1000  [anon:linker_alloc_vector]
-f6fbc000-f6fbcfff rw-         0      1000  [anon:linker_alloc_small_objects]
-f6fbd000-f6fbdfff rw-         0      1000  [anon:linker_alloc_vector]
-f6fbe000-f6fbffff rw-         0      2000  [anon:linker_alloc]
-f6fc0000-f6fc0fff r--         0      1000  [anon:linker_alloc]
-f6fc1000-f6fc1fff rw-         0      1000  [anon:linker_alloc_lob]
-f6fc2000-f6fc2fff r--         0      1000  [anon:linker_alloc]
-f6fc3000-f6fc3fff rw-         0      1000  [anon:linker_alloc_vector]
-f6fc4000-f6fc4fff rw-         0      1000  [anon:linker_alloc_small_objects]
-f6fc5000-f6fc5fff rw-         0      1000  [anon:linker_alloc_vector]
-f6fc6000-f6fc6fff rw-         0      1000  [anon:linker_alloc_small_objects]
-f6fc7000-f6fc7fff rw-         0      1000  [anon:arc4random _rsx structure]
-f6fc8000-f6fc8fff rw-         0      1000  [anon:arc4random _rs structure]
-f6fc9000-f6fc9fff r--         0      1000  [anon:atexit handlers]
-f6fca000-f6fcafff ---         0      1000  [anon:thread signal stack guard page]
-</pre>
-
-<p>
-Note that since Android 5.0 (Lollipop), the C library names most of its anonymous mapped
-regions so there are fewer mystery regions.
-</p>
-
-<pre>
-f6fcb000-f6fccfff rw- 0 2000 [stack:5081]
-</pre>
-
-<p>
-Regions named <code>[stack:<i>tid</i>]</code> are the stacks for the given threads.
-</p>
-
-<pre>
-f6fcd000-f702afff r-x         0     5e000  /system/bin/linker (BuildId: 84f1316198deee0591c8ac7f158f28b7)
-f702b000-f702cfff r--     5d000      2000  /system/bin/linker
-f702d000-f702dfff rw-     5f000      1000  /system/bin/linker
-f702e000-f702ffff rw-         0      2000
-f7030000-f7030fff r--         0      1000
-f7031000-f7032fff rw-         0      2000
-ffcd7000-ffcf7fff rw-         0     21000
-ffff0000-ffff0fff r-x         0      1000  [vectors]
-</pre>
-
-<p>Whether you see <code>[vector]</code> or <code>[vdso]</code> depends on the architecture. ARM uses [vector], while all other architectures use <a href="http://man7.org/linux/man-pages/man7/vdso.7.html">[vdso].</a></p>
+<p>For more information about diagnosing native crashes and tombstones, see
+<a href="{@docRoot}devices/tech/debug/native-crash.html">Diagnosing Native Crashes</a></p>
 
 <h2 id=native>Native Debugging with GDB</h2>
 
@@ -347,7 +100,7 @@ ffff0000-ffff0fff r-x         0      1000  [vectors]
 
 <p>Current versions of gdbclient just require the process ID (PID). So to debug a process with
 PID 1234, simply run:</p>
-<pre>
+<pre class="no-pretty-print">
 $ gdbclient 1234
 </pre>
 <p>The script will set up port forwarding, start the appropriate
@@ -360,7 +113,7 @@ the host, configure <code>gdb</code> to find symbols, and connect
 <p>If you want to debug a process as it starts, you’ll need to use <code>gdbserver</code>
 or <code>gdbserver64</code> manually, but that’s easy too:</p>
 
-<pre>
+<pre class="no-pretty-print">
 $ adb shell gdbserver :5039 /system/bin/<em>my_test_app</em>
 Process my_test_app created; pid = 3460
 Listening on port 5039
@@ -369,7 +122,7 @@ Listening on port 5039
 <p>Identify the app’s PID from the <code>gdbserver</code> output, and then in
 another window:</p>
 
-<pre>
+<pre class="no-pretty-print">
 $ gdbclient <em>&lt;app pid&gt;</em>
 </pre>
 
@@ -384,14 +137,14 @@ The error messages from <code>gdb</code> if you made the wrong choice are unhelp
 <p>If you want <code>debuggerd</code> to suspend crashed processes so you can
 attach <code>gdb</code>, set the appropriate property:</p>
 
-<pre>
+<pre class="no-pretty-print">
 $ adb shell setprop debug.db.uid 999999                 # &lt;= M
 $ adb shell setprop debug.debuggerd.wait_for_gdb true   # &gt; M
 </pre>
 
 <p>At the end of the usual crash output, <code>debuggerd</code> will give you
 instructions on how to connect <code>gdb</code> using the typical command:
-<pre>
+<pre class="no-pretty-print">
 $ gdbclient &lt;pid&gt;
 </pre>
 
@@ -402,7 +155,7 @@ instruction set it is disassembling (ARM or Thumb). The instruction set that is
 chosen as the default when symbol information is missing can be switched
 between ARM or Thumb like so:</p>
 
-<pre>
+<pre class="no-pretty-print">
 $ set arm fallback-mode arm   # or 'thumb'
 </pre>
 
@@ -415,23 +168,26 @@ href="http://valgrind.org/">Valgrind</a> on Android. This tool suite contains a
 number of tools including Memcheck for detecting memory-related errors in C and
 C++.</p>
 
+<p>Android platform developers usually use
+<a href="{@docRoot}devices/tech/debug/asan.html">AddressSanitizer (ASan)</a> rather than valgrind.</p>
+
 <ol>
   <li>To build Valgrind, run:
-<pre>
+<pre class="no-pretty-print">
 $ mmma -j6 external/valgrind
 </pre>
   <li>Set up the temporary directory:
-<pre>
+<pre class="no-pretty-print">
 $ adb shell mkdir /data/local/tmp
 $ adb shell chmod 777 /data/local/tmp
 </pre>
   <li>Run the system server with Valgrind:
-<pre>
+<pre class="no-pretty-print">
 $ adb shell setprop wrap.system_server "logwrapper valgrind"
 $ adb shell stop && adb shell start
 </pre>
   <li>For debug symbols, push unstripped libraries to <code>/data/local/symbols</code>:
-<pre>
+<pre class="no-pretty-print">
 $ adb shell mkdir /data/local/symbols
 $ adb push $OUT/symbols /data/local/symbols
 </pre>
