@@ -973,7 +973,6 @@ NVIDIA 視訊驅動程式中的權限升級漏洞可能會讓本機惡意應用�
 <h3>Qualcomm 元件中的漏洞</h3>
 <p>
 以下列出會影響 Qualcomm 元件的安全性漏洞，詳情請參考 2015 年 11 月的 Qualcomm AMSS 安全性公告。
-Qualcomm MSM 介面中的權限升級漏洞可能會讓本機惡意應用程式在核心環境內執行任何指令。由於這個問題可能導致本機裝置的安全性徹底被破壞，造成使用者必須以還原 (Re-flash) 作業系統的方式才能修復裝置，因此嚴重程度被評定為「最高」。
 </p>
 <table>
   <col width="19%">
@@ -990,8 +989,7 @@ Qualcomm MSM 介面中的權限升級漏洞可能會讓本機惡意應用程式�
   </tr>
   <tr>
    <td>CVE-2016-8411</td>
-   <td>A-31805216**<br>
-       QC-CR#912775</td>
+   <td>A-31805216**</td>
    <td>最高</td>
    <td>Nexus 6、Nexus 6P、Android One</td>
    <td>Qualcomm 內部</td>

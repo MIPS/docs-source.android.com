@@ -955,7 +955,7 @@ NVIDIA GPU 驱动程序中的提权漏洞可让本地恶意应用通过内核执
 
 <h3>Qualcomm 组件中的漏洞</h3>
 <p>
-下列漏洞会影响 Qualcomm 组件；此外，2015 年 11 月的 Qualcomm AMSS 安全公告也对这些安全漏洞进行了详细说明。Qualcomm MSM 接口中的提权漏洞可让本地恶意应用通过内核执行任意代码。由于该漏洞有可能会造成本地设备永久损坏，而用户可能需要通过重写操作系统来修复设备，因此我们将其严重程度评为“严重”。
+下列漏洞会影响 Qualcomm 组件；此外，2015 年 11 月的 Qualcomm AMSS 安全公告也对这些安全漏洞进行了详细说明。
 </p>
 <table>
   <col width="19%">
@@ -972,7 +972,7 @@ NVIDIA GPU 驱动程序中的提权漏洞可让本地恶意应用通过内核执
   </tr>
   <tr>
    <td>CVE-2016-8411</td>
-   <td>A-31805216**<br>QC-CR#912775</td>
+   <td>A-31805216**</td>
    <td>严重</td>
    <td>Nexus 6、Nexus 6P、Android One</td>
    <td>Qualcomm 内部</td>
