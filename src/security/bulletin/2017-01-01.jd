@@ -1561,80 +1561,70 @@ October 2016 security bulletins.
   </tr>
   <tr>
     <td>CVE-2016-8438</td>
-    <td>A-31624565**<br>
-        QC-CR#1023638</td>
+    <td>A-31624565**</td>
     <td>Critical</td>
     <td>None***</td>
     <td>Qualcomm internal</td>
   </tr>
   <tr>
     <td>CVE-2016-8442</td>
-    <td>A-31625910**<br>
-        QC-CR#1038173</td>
+    <td>A-31625910**</td>
     <td>Critical</td>
     <td>None***</td>
     <td>Qualcomm internal</td>
   </tr>
   <tr>
     <td>CVE-2016-8443</td>
-    <td>A-32576499**<br>
-        QC-CR#964185</td>
+    <td>A-32576499**</td>
     <td>Critical</td>
     <td>None***</td>
     <td>Qualcomm internal</td>
   </tr>
   <tr>
     <td>CVE-2016-8437</td>
-    <td>A-31623057**<br>
-        QC-CR#1009695</td>
+    <td>A-31623057**</td>
     <td>High</td>
     <td>None***</td>
     <td>Qualcomm internal</td>
   </tr>
   <tr>
     <td>CVE-2016-8439</td>
-    <td>A-31625204**<br>
-        QC-CR#1027804</td>
+    <td>A-31625204**</td>
     <td>High</td>
     <td>None***</td>
     <td>Qualcomm internal</td>
   </tr>
   <tr>
     <td>CVE-2016-8440</td>
-    <td>A-31625306**<br>
-        QC-CR#1036747</td>
+    <td>A-31625306**</td>
     <td>High</td>
     <td>None***</td>
     <td>Qualcomm internal</td>
   </tr>
   <tr>
     <td>CVE-2016-8441</td>
-    <td>A-31625904**<br>
-        QC-CR#1027769</td>
+    <td>A-31625904**</td>
     <td>High</td>
     <td>None***</td>
     <td>Qualcomm internal</td>
   </tr>
   <tr>
     <td>CVE-2016-8398</td>
-    <td>A-31548486**<br>
-        QC-CR#877705</td>
+    <td>A-31548486**</td>
     <td>High</td>
     <td>Nexus 5X, Nexus 6, Nexus 6P, Android One</td>
     <td>Qualcomm internal</td>
   </tr>
   <tr>
     <td>CVE-2016-8459</td>
-    <td>A-32577972**<br>
-        QC-CR#988462</td>
+    <td>A-32577972**</td>
     <td>High</td>
     <td>None***</td>
     <td>Qualcomm internal</td>
   </tr>
   <tr>
     <td>CVE-2016-5080</td>
-    <td>A-31115235**<br>
-        QC-CR#1032374</td>
+    <td>A-31115235**</td>
     <td>Moderate</td>
     <td>Nexus 5X</td>
     <td>Qualcomm internal</td>
