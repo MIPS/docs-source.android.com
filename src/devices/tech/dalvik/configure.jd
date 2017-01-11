@@ -271,18 +271,20 @@ for trusted system code.
 
 <h2 id=with_dexpreopt_pic>WITH_DEXPREOPT_PIC</h2>
 
-<p>In post-L AOSP, <code>WITH_DEXPREOPT_PIC</code> can be specified to enable
-position-independent code (PIC). With this, compiled code from the image
-doesn’t have to be relocated from /system into /data/dalvik-cache, saving space
-in the data partition. However, there is a slight runtime impact because it
-disables an optimization that takes advantage of position-dependent code.
-Typically, devices wanting to save space in /data should enable PIC
-compilation.</p>
+<p>In Android 5.1.0 through Android 6.0.1, <code>WITH_DEXPREOPT_PIC</code> can
+be specified to enable position-independent code (PIC). With this, compiled
+code from the image doesn’t have to be relocated from /system into
+/data/dalvik-cache, saving space in the data partition. However, there is a
+slight runtime impact because it disables an optimization that takes advantage
+of position-dependent code.  Typically, devices wanting to save space in /data
+should enable PIC compilation.</p>
 
 <p>Example usage (in product’s device.mk):</p>
 
 <pre><code>WITH_DEXPREOPT := true
 WITH_DEXPREOPT_PIC := true</code></pre>
+
+<p>Starting in Android 7.0, PIC compilation is enabled by default.</p>
 
 <h2 id=with_art_small_mode>WITH_ART_SMALL_MODE</h2>
 
