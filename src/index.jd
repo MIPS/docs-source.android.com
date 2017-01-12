@@ -44,6 +44,14 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>CTS and CTS Verifier 7.0, 6.0, and 5.1</h4>
+<p>Android Compatibility Test Suite (CTS) and CTS Verifier 7.0 R5, 6.0 R14, and
+5.1 R15 are available for <strong><a
+href="{@docRoot}compatibility/cts/downloads.html">download</a></strong>. These
+releases contain test fixes and verify security patches up to the <strong><a
+href="{@docRoot}security/bulletin/2016-12-01.html">December 2016 Public
+Security Bulletin</a></strong>.</p>
+
 <h4>January Android Security Bulletin</h4>
 <p>The <strong><a href="{@docRoot}security/bulletin/2017-01-01.html">January
 2017 Android Security Bulletin</a></strong> has been published along with links
@@ -52,11 +60,6 @@ to associated fixes. In addition, new
 numbers</a></strong> have been published for Nexus 6 running Android 7.0 and
 7.1.1 and also Pixel, Pixel XL, Pixel C, Nexus 5X, Nexus 6P, Nexus 9, and Nexus
 Player running Android 7.1.1 to support the January Android security release.</p>
-
-<h4>CTS and CTS Verifier 7.1 R1</h4>
-<p>Android Compatibility Test Suite (CTS) and CTS Verifier 7.1 are available
-for <strong><a
-href="{@docRoot}compatibility/cts/downloads.html#android-71">download</a></strong>.</p>
 
 <h4>USB headset specification</h4>
 <p>New guidelines for creating
@@ -82,12 +85,6 @@ reduce the cost and complexity of a retail mode for manufacturers.</p>
 href="{@docRoot}devices/tech/display/night-light.html">night light</a></strong>
 feature that reduces the amount of blue light emitted by the device display to
 better match the natural light of the user's time of day and location.</p>
-
-<h4>App Shortcuts</h4>
-<p>Android 7.1.1 allows developers to define action-specific <strong><a
-href="{@docRoot}devices/tech/display/app-shortcuts.html">app
-shortcuts</a></strong> to let users quickly start common or
-recommended tasks.</p>
 
 </div>
 
