@@ -44,6 +44,14 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>Diagnosing Native Crashes</h4>
+<p><strong><a
+href="{@docRoot}devices/tech/debug/native-crash.html">Native crashes</a></strong>
+are now described in detail, fully explaining the <strong><a
+href="{@docRoot}devices/tech/debug/native-crash.html#crashtypes">types of
+crashes</a></strong> expected and including the clues for finding them in
+<code>debuggerd</code> output.</p>
+
 <h4>CTS and CTS Verifier 7.0, 6.0, and 5.1</h4>
 <p>Android Compatibility Test Suite (CTS) and CTS Verifier 7.0 R5, 6.0 R14, and
 5.1 R15 are available for <strong><a
@@ -79,12 +87,6 @@ Executable format</a></strong> for a complete description.</p>
 href="devices/tech/display/retail-mode.html">retail demo mode</a></strong> to
 offer a quick, safe, and consistent demonstration of an Android device and
 reduce the cost and complexity of a retail mode for manufacturers.</p>
-
-<h4>Night Light</h4>
-<p>Android 7.1.1 includes a <strong><a
-href="{@docRoot}devices/tech/display/night-light.html">night light</a></strong>
-feature that reduces the amount of blue light emitted by the device display to
-better match the natural light of the user's time of day and location.</p>
 
 </div>
 
