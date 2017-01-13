@@ -16,7 +16,7 @@ page.title=Android Security Bulletin—January 2017
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<p><em>Published January 03, 2017 | Updated January 05, 2017</em></p>
+<p><em>Published January 03, 2017 | Updated January 12, 2017</em></p>
 
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -362,12 +362,6 @@ issues, as well as the following issues.</p>
   <tr>
    <td>Elevation of privilege vulnerability in Broadcom Wi-Fi driver</td>
    <td>CVE-2016-8464, CVE-2016-8465, CVE-2016-8466</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in bootloader</td>
-   <td>CVE-2016-8467</td>
    <td>Moderate</td>
    <td>Yes</td>
   </tr>
@@ -2448,45 +2442,6 @@ site</a>.
 </p>
 
 
-<h3 id="eop-in-bootloader">Elevation of privilege vulnerability in
-bootloader</h3>
-<p>
-An elevation of privilege vulnerability in the bootloader could enable a local
-attacker to execute arbitrary modem commands on the device. This issue is rated
-as Moderate because it is a local bypass of user interaction requirements
-(access to functionality that would normally require either user initiation or
-user permission).
-</p>
-
-<table>
-  <col width="19%">
-  <col width="20%">
-  <col width="10%">
-  <col width="23%">
-  <col width="17%">
-  <tr>
-    <th>CVE</th>
-    <th>References</th>
-    <th>Severity</th>
-    <th>Updated Google devices</th>
-    <th>Date reported</th>
-  </tr>
-  <tr>
-    <td>CVE-2016-8467</td>
-    <td>A-30308784*</td>
-    <td>Moderate</td>
-    <td>Nexus 6, Nexus 6P</td>
-    <td>Jun 29, 2016</td>
-  </tr>
-</table>
-<p>
-* The patch for this issue is not publicly available. The update is contained
-in the latest binary drivers for Nexus devices available from the
-<a href="https://developers.google.com/android/nexus/drivers">Google Developer
-site</a>.
-</p>
-
-
 <h3 id="eop-in-binder">Elevation of privilege vulnerability in Binder</h3>
 <p>
 An elevation of privilege vulnerability in Binder could enable a local
@@ -2908,4 +2863,5 @@ belongs. These prefixes map as follows:</p>
  <li>January 03, 2017: Bulletin published.</li>
  <li>January 04, 2017: Bulletin revised to include AOSP links.</li>
  <li>January 05, 2017: Clarified AOSP version number from 7.1 to 7.1.1.</li>
+ <li>January 12, 2017: Removed duplicate entry for CVE-2016-8467.</li>
 </ul>
