@@ -44,6 +44,14 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>Android 7.1 CDD</h4>
+<p>The <strong><a href="{@docRoot}compatibility/7.1/android-7.1-cdd.html">7.1
+version</a></strong> of the <strong><a
+href="{@docRoot}compatibility/cdd.html">Android Compatibility Definition
+Document</a></strong> (CDD) has been published. See its <strong><a
+href="https://android.googlesource.com/platform/compatibility/cdd/+log/nougat-mr1-dev/?pretty=full&no-merges">change
+log</a></strong> for a summary of updates.</p>
+
 <h4>Diagnosing Native Crashes</h4>
 <p><strong><a
 href="{@docRoot}devices/tech/debug/native-crash.html">Native crashes</a></strong>
@@ -81,12 +89,6 @@ to AOSP after Android 7.1 that is optional and can be used to provide parameter
 metadata such as parameter names and modifiers. See <strong><a
 href="devices/tech/dalvik/dex-format.html#dalvik-annotation-method-parameters">Dalvik
 Executable format</a></strong> for a complete description.</p>
-
-<h4>Retail Demo Mode</h4>
-<p>Android 7.1.1 includes system-level support for <strong><a
-href="devices/tech/display/retail-mode.html">retail demo mode</a></strong> to
-offer a quick, safe, and consistent demonstration of an Android device and
-reduce the cost and complexity of a retail mode for manufacturers.</p>
 
 </div>
 
