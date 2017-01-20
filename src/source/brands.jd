@@ -96,7 +96,7 @@ logo and custom typeface may not be used (with or without the Android robot).</p
 
 <div class="wrap">
 <div class="col-4">
-  <img alt="android-robot" style="float:left;margin-right:10px" src="images/Android_Robot_100.png">
+  <img alt="android-robot" style="float:left;margin-right:10px" src="/source/images/Android_Robot_100.png">
   <p style="padding-top:20px">
   <a href="http://developer.android.com/images/brand/Android_Robot_100.png">100x118</a><br>
   <a href="http://developer.android.com/images/brand/Android_Robot_200.png">200x237</a><br>
