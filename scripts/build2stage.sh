@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 ##
 ## Copyright (C) 2016 The Android Open Source Project
 ##
@@ -26,6 +27,8 @@
 ## Examples:
 ## Build and stage on staging instance 13:
 ##   $ build2stage.sh 13
+## Build and generate reference docs, stage on instance 13:
+##   $ build2stage.sh -r 13
 ## Build only (outputs to out/target/common/docs/online-sac):
 ##   $ build2stage.sh -b
 ## Stage only (using existing build):
@@ -48,6 +51,7 @@
 usage() {
   echo "Usage: $(basename $0) [options] server-number"
   echo "Options:"
+  echo " -r    Generate reference docs (HAL, TradeFed)"
   echo " -b    Build docs without staging"
   echo " -s    Stage only using an existing build"
   echo " -h    Print this help and exit"
@@ -109,10 +113,11 @@ OUT_DIR_SAC="${OUT_DIR}/target/common/docs/online-sac"
 
 ## PARSE OPTIONS
 
-while getopts "bsh" opt; do
+while getopts "bsrh" opt; do
   case $opt in
     b) BUILD_ONLY_FLAG=1;;
     s) STAGE_ONLY_FLAG=1;;
+    r) BUILD_REF_HAL=1; BUILD_REF_TRADEFED=1;;
     h | *)
       usage
       exit 0
@@ -186,6 +191,31 @@ else
 
   # Build the docs and output to: out/target/common/docs/online-sac
   make online-sac-docs
+
+  # Reference dir used for tradefed
+  rm -rf "${OUT_DIR_SAC}/reference"
+  rm "${OUT_DIR_SAC}/navtree_data.js"
+
+  if [ -n "$BUILD_REF_HAL" ]; then
+    # HAL reference
+    if command -v doxygen >/dev/null 2>&1; then
+      #run doxygen
+      make setup-hal-ref #docs/source.android.com/Android.mk
+
+      #will use central js files instead
+      rm "${OUT_DIR_SAC}/devices/halref/jquery.js"
+      rm "${OUT_DIR_SAC}/devices/halref/functions_~.html"
+    else
+      echo "${LOG_PREFIX} Error: Requires doxygen to build HAL reference" 1>&2
+      exit 1
+    fi
+  fi
+
+  if [ -n "$BUILD_REF_TRADEFED" ]; then
+    # Trade Federation reference
+    make tradefed-docs
+    make setup-tradefed-ref #docs/source.android.com/Android.mk
+  fi
 fi
 
 ##
