@@ -277,6 +277,16 @@ resources.</p>
 </thead>
 <tbody>
 <tr>
+  <td>Pixel XL</td>
+<td>marlin</td>
+<td>aosp_marlin-userdebug</td>
+</tr>
+<tr>
+  <td>Pixel</td>
+<td>sailfish</td>
+<td>aosp_sailfish-userdebug</td>
+  </tr>
+<tr>
   <td>HiKey</td>
 <td>hikey</td>
 <td>hikey-userdebug</td>
