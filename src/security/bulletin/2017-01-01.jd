@@ -16,7 +16,7 @@ page.title=Android Security Bulletin—January 2017
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<p><em>Published January 03, 2017 | Updated January 24, 2017</em></p>
+<p><em>Published January 03, 2017 | Updated February 2, 2017</em></p>
 
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -821,7 +821,8 @@ service.
    <td>CVE-2017-0389</td>
    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/a014b6be3c7c6fb5cf9352a05baf84fca7a133c7">
        A-31850211</a>
-[<a href="https://android.googlesource.com/platform/frameworks/base/+/47e81a2596b00ee7aaca58716ff164a1708b0b29">2</a>]</td>
+[<a href="https://android.googlesource.com/platform/frameworks/base/+/47e81a2596b00ee7aaca58716ff164a1708b0b29">2</a>]
+[<a href="https://android.googlesource.com/platform/frameworks/base/+/006e0613016c1a0e0627f992f5a93a7b7198edba#">3</a>]</td>
    <td>High</td>
    <td>All</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -2832,4 +2833,5 @@ belongs. These prefixes map as follows:</p>
  <li>January 05, 2017: Clarified AOSP version number from 7.1 to 7.1.1.</li>
  <li>January 12, 2017: Removed duplicate entry for CVE-2016-8467.</li>
  <li>January 24, 2017: Updated description and severity for CVE-2017-0381.</li>
+ <li>February 2, 2017: Updated CVE-2017-0389 with additional patch link.</li>
 </ul>
