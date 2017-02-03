@@ -699,3 +699,33 @@ wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
   POSTINSTALL_PATH_system=usr/bin/postinst \
   FILESYSTEM_TYPE_system=ext4
 </pre>
+
+<h3 id="compilation">App compilation in background</h3>
+
+<p>Compiling apps in the background for A/B updates requires the following two
+additions to the product's device configuration (in the product's device.mk):</p>
+
+<ol>
+  <li>Include the native components in the build. This ensures the compilation
+  script and binaries are compiled and included in the system image.
+  <pre>
+  # A/B OTA dexopt package
+  PRODUCT_PACKAGES += otapreopt_script
+</pre>
+  </li>
+  <li>Connect the compilation script to <code>update_engine</code> such that it
+  is run as a post-install step.
+  <pre>
+  # A/B OTA dexopt update_engine hookup
+  AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+  </pre>
+  </li>
+</ol>
+
+<p>See <a href="{@docRoot}devices/tech/dalvik/configure.html#other_odex">First
+boot installation of DEX_PREOPT files</a> to install the preopted files in the
+unused second system partition.</p>
