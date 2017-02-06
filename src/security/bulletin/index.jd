@@ -16,13 +16,29 @@ page.title=Android Security Bulletins
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+   </ol>
+  </div>
+</div>
+
 <p>Security has always been a major focus for Android and Google Play: Android was
 built from day one with security in mind. Monthly device updates are an
 important tool to make and keep Android users safe. This page contains the
 available Android Security Bulletins. These security bulletins also include
 information users can follow to ensure their device has the latest security
-updates.</p>
-<p>To get notifications when a new bulletin is published, join the
+updates. Android device and chipset manufacturers may also publish security
+vulnerability details specific to their products, such as:</p>
+<ul>
+  <li><a href="https://lgsecurity.lge.com/security_updates.html">LG</a></li>
+  <li><a href="https://motorola-global-portal.custhelp.com/app/software-upgrade-security/g_id/5593">Motorola</a></li>
+  <li><a href="http://security.samsungmobile.com/smrupdate.html">Samsung</a></li>
+</ul>
+
+<h3 id="notification">Notifications</h3>
+<p>To get notifications when a new Android bulletin is published, join the
 <a href="https://groups.google.com/forum/#!forum/android-security-updates">Android
 Security Updates group</a>, and set your email delivery preference to receive
 all updates. To learn how to check if a device is up to date using the security
@@ -34,6 +50,7 @@ also released each month to the
 <a href="https://developers.google.com/android/nexus/images">Google Developer
 site</a>.
 </p>
+<h3 id="sources">Sources</h3>
 
 <p>Fixes listed in the public bulletin come from various different sources: the
 Android Open Source Project (AOSP), the upstream Linux kernel, and system-on-chip
@@ -45,7 +62,7 @@ Android Open Source Project (AOSP), the upstream Linux kernel, and system-on-chi
       release and can be picked up from there.</li>
   <li>Fixes from SOC manfacturers are available directly from the manufacturers.</li>
 </ul>
-
+<h3 id="bulletins">Bulletins</h3>
 
 <table>
   <col width="19%">
@@ -57,6 +74,14 @@ Android Open Source Project (AOSP), the upstream Linux kernel, and system-on-chi
     <th>Languages</th>
     <th>Published Date</th>
     <th>Security Patch Level</th>
+ </tr>
+ <tr>
+    <td><a href="2017-02-01.html">February 2017</a></td>
+    <td>Coming soon
+    </td>
+    <td>February 6, 2017</td>
+    <td>2017-02-01<br>
+        2017-02-05</td>
  </tr>
  <tr>
     <td><a href="2017-01-01.html">January 2017</a></td>
