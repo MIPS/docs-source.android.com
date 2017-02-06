@@ -34,7 +34,155 @@ impact on Android security, including code that qualifies
 for the <a href="https://www.google.com/about/appsecurity/patch-rewards/">Patch
 Rewards</a> program.</p>
 
-<h2 id=2016>2016</h2>
+
+<h2 id="2017">2017</h2>
+<div style="LINE-HEIGHT:25px;">
+
+<p>Alexandru Blanda</p>
+
+<p>Ben Actis (<a href="https://twitter.com/ben_ra">@Ben_RA</a>)</p>
+
+<p>Chiachih Wu (<a href="https://twitter.com/chiachih_wu">@chiachih_wu</a>)
+of <a href="http://c0reteam.org">C0RE Team</a></p>
+
+<p>Daniel Dakhno</p>
+
+<p>Daniel Micay of Copperhead Security</p>
+
+<p>Daxing Guo (<a href="https://twitter.com/freener0">@freener0</a>) of Xuanwu
+  Lab, Tencent</p>
+  
+<p><a href="mailto:derrek.haxx@gmail.com">derrek</a>
+  (<a href="https://twitter.com/derrekr6">@derrekr6</a>)</p>
+  
+<p>Di Shen (<a href="https://twitter.com/returnsme">@returnsme</a>) of KeenLab
+  (<a href="https://twitter.com/keen_lab">@keen_lab</a>), Tencent</p>
+  
+<p>donfos (Aravind Machiry) of Shellphish Grill Team, UC Santa Barbara</p>
+
+<p><a href="http://www.linkedin.com/in/dzima">Dzmitry Lukyanenka</a></p>
+
+<p>En He (<a href="http://twitter.com/heeeeen4x">@heeeeen4x</a>) of
+<a href="http://www.ms509.com">MS509Team</a></p>
+
+<p>Frank Liberato of Chrome</p>
+
+<p>Gal Beniamini of Project Zero</p>
+
+<p>Gengjia Chen (<a href="https://twitter.com/chengjia4574">@chengjia4574</a>)
+   of IceSword Lab, Qihoo 360 Technology Co. Ltd.</p>
+   
+<p>Google WebM Team</p>
+
+<p>Guang Gong (龚广) (<a href="http://twitter.com/oldfresher">@oldfresher</a>) of
+  Alpha Team, <a href="http://www.360.com">Qihoo 360 Technology Co. Ltd.</a></p>
+
+<p><a href="mailto:arnow117@gmail.com">Hanxiang Wen</a> of <a
+  href="http://c0reteam.org">C0RE Team</a></p>
+
+<p>Hao Chen of Alpha Team, Qihoo 360 Technology Co. Ltd.</p>
+
+<p><a href="mailto:hlhan@bupt.edu.cn">Hongli Han</a> of
+   <a href="http://c0reteam.org">C0RE Team</a></p>
+
+<p>Jeff Sharkey of Google</p>
+
+<p>Jeff Trim</p>
+
+<p>Jianqiang Zhao (<a href="https://twitter.com/jianqiangzhao">@jianqiangzhao</a>)
+   of IceSword Lab, Qihoo 360</p>
+   
+<p>Jon Sawyer (<a href="http://twitter.com/jcase">@jcase</a>)</p>
+
+<p>Jun Cheng of Alibaba Inc.</p>
+
+<p>ma.la of LINE Corporation</p>
+
+<p>Max Spector of Google:</p>
+
+<p>Michael Goberman of IBM Security X-Force</p>
+
+<p>Mingjian Zhou (<a href="https://twitter.com/Mingjian_Zhou">@Mingjian_Zhou</a>)
+of <a href="http://c0reteam.org">C0RE Team</a></p>
+
+<p>Monk Avel</p>
+
+<p>Nikolay Elenkov of LINE Corporation</p>
+
+<p>Peter Pi (<a href="https://twitter.com/heisecode">@heisecode</a>)
+   of Trend Micro</p>
+  
+<p><a href="http://weibo.com/jfpan">pjf</a> of IceSword Lab, Qihoo 360
+  Technology Co. Ltd.</p>
+  
+<p>Qidan He (何淇丹) (<a href="https://twitter.com/flanker_hqd">@flanker_hqd</a>)
+  of KeenLab, Tencent (腾讯科恩实验室)</p>
+  
+<p>Roee Hay of IBM Security X-Force</p>
+
+<p>Sagi Kedmi of IBM X-Force Research</p>
+
+<p>Scott Bauer (<a href="http://twitter.com/ScottyBauer1">@ScottyBauer1</a>)</p>
+
+<p>Sean Beaupre (<a href="https://twitter.com/firewaterdevs">@firewaterdevs</a>)</p>
+
+<p>Seven Shen (<a href="https://twitter.com/lingtongshen">@lingtongshen</a>) of
+  Trend Micro Mobile Threat Research Team</p>
+  
+<p>Stephen Morrow</p>
+
+<p><a href="mailto:segfault5514@gmail.com">Tong Lin</a>
+of <a href="http://c0reteam.org">C0RE Team</a></p>
+
+<p>V.E.O (<a href="https://twitter.com/vysea">@VYSEa</a>) of Mobile Threat
+  Research Team, <a href="http://www.trendmicro.com">Trend Micro</a></p>
+  
+<p>Weichao Sun (<a href="https://twitter.com/sunblate">@sunblate</a>) of
+  Alibaba Inc.</p>
+  
+<p><a href="mailto:vancouverdou@gmail.com">Wenke Dou</a> of
+   <a href="http://c0reteam.org">C0RE Team</a></p>
+   
+<p>Wish Wu (<a href="https://twitter.com/wish_wu">@wish_wu</a>)
+(<a href="http://www.weibo.com/wishlinux">吴潍浠</a> 此彼) of Ant-financial Light-Year
+  Security Lab</p>
+  
+<p><a href="mailto:wisedd@gmail.com">Xiaodong Wang</a>
+of <a href="http://c0reteam.org">C0RE Team</a></p>
+
+<p>Xuxian Jiang of <a href="http://c0reteam.org">C0RE Team</a></p>
+
+<p><a href="mailto:bigwyfone@gmail.com">Yanfeng Wang</a>
+of <a href="http://c0reteam.org">C0RE Team</a></p>
+
+<p><a href="mailto:yaojun8558363@gmail.com">Yao Jun</a> of
+   <a href="http://c0reteam.org">C0RE Team</a></p>
+   
+<p>Yong Wang (王勇) (<a href="https://twitter.com/ThomasKing2014">@ThomasKing2014</a>)
+   of Alibaba Inc.</p>
+   
+<p><a href="mailto:computernik@gmail.com">Yuan-Tsung Lo</a> of
+   <a href="http://c0reteam.org">C0RE Team</a></p>
+
+<p>Yuqi Lu (<a href="https://twitter.com/nikos233__">@nikos233</a>)
+of <a href="http://c0reteam.org">C0RE Team</a></p>
+
+<p>Yuxiang Li (<a href="https://twitter.com/xbalien29">@Xbalien29</a>) of
+  Tencent Security Platform Department</p>
+  
+<p>Zhanpeng Zhao (行之) (<a href="https://twitter.com/0xr0ot">@0xr0ot</a>) of
+  Security Research Lab, <a href="http://www.cmcm.com/">Cheetah Mobile</a></p>
+
+<p><a href="mailto:zhouzhenster@gmail.com">Zhen Zhou</a> (
+ <a href="https://twitter.com/henices">@henices</a>) of 
+ <a href="http://www.nsfocus.com">NSFocus</a></p>
+  
+ <p><a href="mailto:sundaywind2004@gmail.com">Zhixin Li</a> of 
+ <a href="http://www.nsfocus.com">NSFocus</a></p>
+ 
+ </div>
+ 
+<h2 id="2016">2016</h2>
 
 <div style="LINE-HEIGHT:25px;">
 
@@ -45,8 +193,6 @@ Rewards</a> program.</p>
 <p>Adam Powell of Google</p>
 
 <p>Alex Chapman of Context Information Security</p>
-
-<p>Alexandru Blanda</p>
 
 <p>Altaf Shaik of <a
 href="http://www.isti.tu-berlin.de/security_in_telecommunications">Security in
@@ -68,8 +214,6 @@ Telecommunications</a></p>
 <p>Askyshang of Security Platform Department, Tencent</p>
 
 <p>Baozeng Ding of Alibaba Mobile Security Group</p>
-
-<p>Ben Actis (<a href="https://twitter.com/ben_ra">@Ben_RA</a>)</p>
 
 <p>Ben Hawkes of Google Project Zero</p>
 
@@ -113,12 +257,6 @@ Telecommunications</a></p>
 <p>Dawei Peng (<a href="http://weibo.com/u/5622360291">Vinc3nt4H</a>) of
 <a href="http://jaq.alibaba.com">Alibaba Mobile Security Team</a></p>
 
-<p>>Daxing Guo (<a href="https://twitter.com/freener0">@freener0</a>) of Xuanwu
-  Lab, Tencent</p>
-
-<p><a href="mailto:derrek.haxx@gmail.com">derrek</a> (<a
-  href="https://twitter.com/derrekr6">@derrekr6</a>)</p>
-
 <p>Di Shen (<a href="https://twitter.com/returnsme">&#64;returnsme</a>) of KeenLab
    (<a href="https://twitter.com/keen_lab">&#64;keen_lab</a>), Tencent</p>
 
@@ -128,8 +266,6 @@ Telecommunications</a></p>
 
 <p>Dominik Schürmann of <a href="https://www.ibr.cs.tu-bs.de">Institute for
   Operating Systems and Computer Networks</a>, TU Braunschweig</p>
-
-<p>donfos (Aravind Machiry) of Shellphish Grill Team, UC Santa Barbara</p>
 
 <p><a href="mailto:dshe002@ucr.edu">Dongdong She</a> of UC Riverside</p>
 
@@ -164,8 +300,6 @@ Telecommunications</a></p>
 
 <p>Giovanni Vigna of University of California, Santa Barbara</p>
 
-<p>Google WebM Team</p>
-
 <p>Greg Kaiser of Google Android Team</p>
 
 <p>Guang Gong (龚广) (<a href="https://twitter.com/oldfresher">@oldfresher</a>)
@@ -180,12 +314,9 @@ Telecommunications</a></p>
 
 <p>Hao Qin of Security Research Lab, <a href="http://www.cmcm.com">Cheetah Mobile</a></p>
 
-<p> Herbert Bos of Vrije Universiteit Amsterdam</p>
+<p>Herbert Bos of Vrije Universiteit Amsterdam</p>
 
 <p>Hongil Kim (<a href="mailto:hongilk@kaist.ac.kr">hongilk@kaist.ac.kr</a>) of System Security Lab, KAIST</p>
-
-<p><a href="mailto:hlhan@bupt.edu.cn">Hongli Han</a> of <a
-  href="http://c0reteam.org">C0RE Team</a></p>
 
 <p>Imre Rad of <a href="http://www.search-lab.hu/">Search-Lab Ltd.</a></p>
 
@@ -205,13 +336,9 @@ Telecommunications</a></p>
 
 <p>Jianqiang Zhao (<a href="https://twitter.com/jianqiangzhao">@jianqiangzhao</a>) of IceSword Lab, Qihoo 360</p>
 
-<p>Jon Sawyer (<a href="http://twitter.com/jcase">@jcase</a>)</p>
-
 <p>Joshua Drake (<a href="https://twitter.com/jduck">@jduck</a>)</p>
 
 <p>Jouni Malinen PGP id EFC895FA</p>
-
-<p>Jun Cheng of Alibaba Inc.</p>
 
 <p>Kai Lu (<a href="https://twitter.com/K3vinLuSec">@K3vinLuSec</a>) of
 Fortinet's FortiGuard Labs</p>
@@ -251,8 +378,6 @@ Fortinet's FortiGuard Labs</p>
 <p>MengLuo Gou (<a href="https://twitter.com/idhyt3r">@idhyt3r</a>) of Bottle
    Tech</p>
 
-<p>Michael Goberman of IBM Security X-Force</p>
-
 <p>Michał Bednarski (<a href="https://github.com/michalbednarski">github.com/michalbednarski</a>)</p>
 
 <p>Min Chong of Android Security</p>
@@ -261,8 +386,6 @@ Fortinet's FortiGuard Labs</p>
  of <a href="http://c0reteam.org">C0RE Team</a>, <a href="http://www.360safe.com/">Qihoo 360</a></p>
 
 <p>Miriam Gershenson of Google</p>
-
-<p>Monk Avel</p>
 
 <p>Nancy Wang of Vertu Corporation LTD</p>
 
@@ -325,9 +448,6 @@ of TEAM Lv51</p>
 <p><a href="mailto:sbauer@plzdonthack.me">Scott Bauer</a>
   (<a href="https://twitter.com/ScottyBauer1">@ScottyBauer1</a>)</p>
 
-<p>Sean Beaupre
-  (<a href="https://twitter.com/firewaterdevs">@firewaterdevs</a>)</p>
-
 <p>Sen Nie (<a href="https://twitter.com/@nforest_">@nforest_</a>) of KEEN lab,
    Tencent (<a href="https://twitter.com/k33nteam">@K33nTeam</a>)</p>
 
@@ -342,8 +462,6 @@ of TEAM Lv51</p>
 <p>Shinjo Park (<a href="https://twitter.com/ad_ili_rai">@ad_ili_rai</a>) of
 <a href="http://www.isti.tu-berlin.de/security_in_telecommunications">Security in
 Telecommunications</a></p>
-
-<p>Stephen Morrow</p>
 
 <p>Stuart Henderson</p>
 
@@ -368,9 +486,6 @@ SentinelOne / RedNaga</p>
 <p>trotmaster (<a href="https://twitter.com/trotmaster99">@trotmaster99</a>)</p>
 
 <p>Vasily Vasilev</p>
-
-<p>V.E.O (<a href="https://twitter.com/vysea">@VYSEa</a>) of Mobile Threat
-  Research Team, <a href="http://www.trendmicro.com">Trend Micro</a></p>
 
 <p>Victor Chang of Google</p>
 
@@ -452,8 +567,6 @@ of Alibaba Inc.</p>
    of <a href="http://c0reteam.org">C0RE Team</a></p>
 
 <p>Yulong Zhang of Baidu X-Lab</p>
-
-<p>Yuqi Lu (<a href="https://twitter.com/nikos233__">@nikos233</a>)</p>
 
 <p><a href="http://yurushao.info">Yuru Shao</a> of University of Michigan Ann Arbor</p>
 
