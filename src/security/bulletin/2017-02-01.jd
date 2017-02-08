@@ -16,7 +16,7 @@ page.title=Android Security Bulletin—February 2017
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<p><em>Published February 06, 2017</em></p>
+<p><em>Published February 06, 2017 | Updated February 8, 2017</em></p>
 <p>
 The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -404,7 +404,7 @@ We would like to thank these researchers for their contributions:
   <li><a href="mailto:segfault5514@gmail.com">Tong Lin</a>,
  <a href="mailto:computernik@gmail.com">Yuan-Tsung Lo</a>, Chiachih Wu (
  <a href="https://twitter.com/chiachih_wu">@chiachih_wu</a>), and Xuxian Jiang of
- <a href="http://c0reteam.org">C0RE Team</a>: CVE-2017-0436</li>
+ <a href="http://c0reteam.org">C0RE Team</a>: CVE-2017-0436, CVE-2016-8481, CVE-2017-0435</li>
   <li>V.E.O (<a href="https://twitter.com/vysea">@VYSEa</a>) of
  <a href="http://blog.trendmicro.com/trendlabs-security-intelligence/category/mobile">Mobile
   Threat Response Team</a>, <a href="http://www.trendmicro.com">Trend Micro</a>:
@@ -492,7 +492,8 @@ process.
   </tr>
   <tr>
     <td>CVE-2017-0405</td>
-    <td>A-31960359</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/native/+/16110b86db164e8d2b6864fed58f0385fe7d0979">
+    A-31960359</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>7.0, 7.1.1</td>
@@ -527,7 +528,9 @@ remote code execution within the context of the Mediaserver process.
   </tr>
   <tr>
     <td>CVE-2017-0406</td>
-    <td>A-32915871</td>
+    <td><a href="https://android.googlesource.com/platform/external/libhevc/+/fed702734d86801cc86b4865a57e2f2028c4b575">
+    A-32915871</a>
+[<a href="https://android.googlesource.com/platform/external/libhevc/+/df7b56457184600e3d2b7cbac87ebe7001f7cb48">2</a>]</td>
     <td>Critical</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -535,7 +538,8 @@ remote code execution within the context of the Mediaserver process.
   </tr>
   <tr>
     <td>CVE-2017-0407</td>
-    <td>A-32873375</td>
+    <td><a href="https://android.googlesource.com/platform/external/libhevc/+/7546c106004910a4583b2d7d03c6498ecf383da7">
+    A-32873375</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -569,7 +573,8 @@ remote code execution in an application that uses this library.
   </tr>
   <tr>
     <td>CVE-2017-0408</td>
-    <td>A-32769670</td>
+    <td><a href="https://android.googlesource.com/platform/external/libgdx/+/e6da772e70c9754966aabf4ddac73bb99eb1742b">
+    A-32769670</a></td>
     <td>High</td>
     <td>All</td>
     <td>7.1.1</td>
@@ -604,7 +609,8 @@ possibility of remote code execution in an application that uses this library.
   </tr>
   <tr>
     <td>CVE-2017-0409</td>
-    <td>A-31999646</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/72886b6964f6539908c8e127cd13c3091d2e5a8b">
+    A-31999646</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -638,7 +644,8 @@ requirements.
   </tr>
   <tr>
     <td>CVE-2016-5552</td>
-    <td>A-31858037</td>
+    <td><a href="https://android.googlesource.com/platform/libcore/+/4b3f2c6c5b84f80fae8eeeb46727811e055715ea">
+    A-31858037</a></td>
     <td>High</td>
     <td>All</td>
     <td>7.0, 7.1.1</td>
@@ -674,7 +681,8 @@ to a third-party application.
   </tr>
   <tr>
     <td>CVE-2017-0410</td>
-    <td>A-31929765</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/native/+/b4d6b292bce7d82c93fd454078dedf5a1302b9fa">
+    A-31929765</a></td>
     <td>High</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -682,7 +690,9 @@ to a third-party application.
   </tr>
   <tr>
     <td>CVE-2017-0411</td>
-    <td>A-33042690</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/203725e4d58e16334d84998c1483c374f541ed9f">
+    A-33042690</a>
+[<a href="https://android.googlesource.com/platform/frameworks/base/+/31a06019d13d7b00ca35fc8512191c643acb8e84">2</a>]</td>
     <td>High</td>
     <td>All</td>
     <td>7.0, 7.1.1</td>
@@ -690,14 +700,15 @@ to a third-party application.
   </tr>
   <tr>
     <td>CVE-2017-0412</td>
-    <td>A-33039926</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/203725e4d58e16334d84998c1483c374f541ed9f">
+    A-33039926</a>
+[<a href="https://android.googlesource.com/platform/frameworks/base/+/31a06019d13d7b00ca35fc8512191c643acb8e84">2</a>]</td>
     <td>High</td>
     <td>All</td>
     <td>7.0, 7.1.1</td>
     <td>Nov 21, 2016</td>
   </tr>
 </table>
-
 
 <h3 id="eop-in-mediaserver">Elevation of privilege vulnerability in
 Mediaserver</h3>
@@ -726,7 +737,8 @@ to a third-party application.
   </tr>
   <tr>
     <td>CVE-2017-0415</td>
-    <td>A-32706020</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/native/+/2e16d5fac149dab3c3e8f1b2ca89f45cf55a7b34">
+    A-32706020</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -762,7 +774,9 @@ to a third-party application.
   </tr>
   <tr>
     <td>CVE-2017-0416</td>
-    <td>A-32886609</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/b0bcddb44d992e74140a3f5eedc7177977ea8e34">
+    A-32886609</a>
+ [<a href="https://android.googlesource.com/platform/frameworks/av/+/321ea5257e37c8edb26e66fe4ee78cca4cd915fe">2</a>]</td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -770,7 +784,8 @@ to a third-party application.
   </tr>
   <tr>
     <td>CVE-2017-0417</td>
-    <td>A-32705438</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/b0bcddb44d992e74140a3f5eedc7177977ea8e34">
+    A-32705438</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -778,7 +793,9 @@ to a third-party application.
   </tr>
   <tr>
     <td>CVE-2017-0418</td>
-    <td>A-32703959</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/b0bcddb44d992e74140a3f5eedc7177977ea8e34">
+    A-32703959</a>
+[<a href="https://android.googlesource.com/platform/hardware/libhardware/+/534098cb29e1e4151ba2ed83d6a911d0b6f48522">2</a>]</td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -786,14 +803,14 @@ to a third-party application.
   </tr>
   <tr>
     <td>CVE-2017-0419</td>
-    <td>A-32220769</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/a155de4d70e0b9ac8fc02b2bdcbb2e8e6cca46ff">
+    A-32220769</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
     <td>Oct 15, 2016</td>
   </tr>
 </table>
-
 
 <h3 id="id-in-aosp-mail">Information disclosure vulnerability in AOSP Mail</h3>
 <p>
@@ -821,7 +838,8 @@ access to.
   </tr>
   <tr>
     <td>CVE-2017-0420</td>
-    <td>A-32615212</td>
+    <td><a href="https://android.googlesource.com/platform/packages/apps/UnifiedEmail/+/2073799a165e6aa15117f8ad76bb0c7618b13909">
+    A-32615212</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -857,7 +875,8 @@ access to.
   </tr>
   <tr>
     <td>CVE-2017-0413</td>
-    <td>A-32161610</td>
+    <td><a href="https://android.googlesource.com/platform/packages/apps/Messaging/+/74059eb379ea07b9c7f46bf2112a60de8e4cfc8e">
+    A-32161610</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -865,7 +884,8 @@ access to.
   </tr>
   <tr>
     <td>CVE-2017-0414</td>
-    <td>A-32807795</td>
+    <td><a href="https://android.googlesource.com/platform/packages/apps/Messaging/+/30ab77f42d20c33c0aa9e6ffd2b164d096db32dd">
+    A-32807795</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -901,7 +921,8 @@ access to.
   </tr>
   <tr>
     <td>CVE-2017-0421</td>
-    <td>A-32555637</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/858064e946dc8dbf76bff9387e847e211703e336">
+    A-32555637</a></td>
     <td>High</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -935,7 +956,8 @@ This issue is rated as High due to the possibility of remote denial of service.
   </tr>
   <tr>
     <td>CVE-2017-0422</td>
-    <td>A-32322088</td>
+    <td><a href="https://android.googlesource.com/platform/bionic/+/dba3df609436d7697305735818f0a840a49f1a0d">
+    A-32322088</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -970,7 +992,8 @@ the Bluetooth stack.
   </tr>
   <tr>
     <td>CVE-2017-0423</td>
-    <td>A-32612586</td>
+    <td><a href="https://android.googlesource.com/platform/packages/apps/Bluetooth/+/4c1f39e1cf203cb9db7b85e75b5fc32ec7132083">
+    A-32612586</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1006,7 +1029,8 @@ process.
   </tr>
   <tr>
     <td>CVE-2017-0424</td>
-    <td>A-32322450</td>
+    <td><a href="https://android.googlesource.com/platform/packages/apps/Messaging/+/e9b7e3a6b7a8886693d298401a20788816a5afdc">
+    A-32322450</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1041,7 +1065,8 @@ without permission.
   </tr>
   <tr>
     <td>CVE-2017-0425</td>
-    <td>A-32720785</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/a155de4d70e0b9ac8fc02b2bdcbb2e8e6cca46ff">
+    A-32720785</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1076,7 +1101,9 @@ without permission.
   </tr>
   <tr>
     <td>CVE-2017-0426</td>
-    <td>A-32799236</td>
+    <td><a href="https://android.googlesource.com/platform/system/sepolicy/+/ae46511bfa62b56938b3df824bb2ee737dceaa7a">
+    A-32799236</a>
+[<a href="https://android.googlesource.com/platform/system/core/+/0e7324e9095a209d4f06ba00812b2b2976fe2846">2</a>]</td>
     <td>Moderate</td>
     <td>All</td>
     <td>7.0, 7.1.1</td>
@@ -2056,6 +2083,6 @@ belongs. These prefixes map as follows:</p>
 
 <h2 id="revisions">Revisions</h2>
 <ul>
-<li>February 06, 2017: Bulletin published.</li>
+  <li>February 06, 2017: Bulletin published.</li>
+  <li>February 08, 2017: Bulletin revised to include AOSP links.</li>
 </ul>
-
