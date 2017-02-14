@@ -461,6 +461,31 @@ the correspondence.</p>
   </td>
 </tr>
 <tr>
+  <td>AG|<i>op</i> BBBB F|E|D|C HHHH
+  <td>45cc</td>
+  <td>
+    <i>[<code>A=5</code>] <code>op</code></i> {vC, vD, vE, vF, vG}, meth@BBBB, proto@HHHH<br>
+    <i>[<code>A=4</code>] <code>op</code></i> {vC, vD, vE, vF}, meth@BBBB, proto@HHHH<br>
+    <i>[<code>A=3</code>] <code>op</code></i> {vC, vD, vE}, meth@BBBB, proto@HHHH<br>
+    <i>[<code>A=2</code>] <code>op</code></i> {vC, vD}, meth@BBBB, proto@HHHH<br>
+    <i>[<code>A=1</code>] <code>op</code></i> {vC}, meth@BBBB, proto@HHHH
+  </td>
+  <td>invoke-polymorphic
+  </td>
+</tr>
+<tr>
+  <td>AA|<i>op</i> BBBB CCCC HHHH
+  <td>4rcc</td>
+  <td>
+    <code>op></code> {vCCCC .. vNNNN}, meth@BBBB, proto@HHHH
+    <p><i>wheere <code>NNNN = CCCC+AA-1</code>, that is <code>A</code>
+    determines the count <code>0..255</code>, and <code>C</code>
+    determines the first register</i></p>
+  </td>
+  <td>invoke-polymorphic/range
+  </td>
+</tr>
+<tr>
   <td>AA|<i>op</i> BBBB<sub>lo</sub> BBBB BBBB BBBB<sub>hi</sub></td>
   <td>51l</td>
   <td><i><code>op</code></i> vAA, #+BBBBBBBBBBBBBBBB</td>
