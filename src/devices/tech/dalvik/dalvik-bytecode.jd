@@ -1013,7 +1013,54 @@ page.title=Dalvik bytecode
   </td>
 </tr>
 <tr>
-  <td>e3..ff 10x</td>
+  <td>e3..f9 10x</td>
+  <td><i>(unused)</i></td>
+  <td>&nbsp;</td>
+  <td><i>(unused)</i></td>
+</tr>
+<tr>
+  <td>fa 45cc</td>
+  <td>invoke-polymorphic {vC, vD, vE, vF, vG}, meth@BBBB, proto@HHHH</td>
+  <td>
+    <code>A:</code> argument word count (4 bits) </br>
+    <code>B:</code> method reference index (16 bits) </br>
+    <code>C:</code> method handle reference to invoke (16 bits) </br>
+    <code>D..G:</code> argument registers (4 bits each) </br>
+    <code>H:</code> prototype reference index (16 bits) </br>
+  </td>
+  <td>
+    Invoke the indicated method handle. The result (if any) may be stored
+    with an appropriate <code>move-result*</code> variant as the immediately
+    subsequent instruction.
+    <p> The method reference must be to <code>java.lang.invoke.MethodHandle.invoke</code>
+        or <code>java.lang.invoke.MethodHandle.invokeExact</code>.
+    <p> The prototype reference describes the argument types provided
+        and the expected return type.
+    <p> The <code>invoke-polymorphic</code> bytecode may raise exceptions when it
+        executes. The exceptions are described in the API documentation
+        for <code>java.lang.invoke.MethodHandle.invoke</code> and
+        <code>java.lang.invoke.MethodHandle.invokeExact</code>.
+    <p> Present in Dex files from version <code>038</code> onwards.
+  </td>
+</tr>
+<tr>
+  <td>fb 4rcc</td>
+  <td>invoke-polymorphic/range {vCCCC .. vNNNN}, meth@BBBB, proto@HHHH</td>
+  <td>
+    <code>A:</code> argument word count (8 bits) </br>
+    <code>B:</code> method reference index (16 bits) </br>
+    <code>C:</code> method handle reference to invoke (16 bits) </br>
+    <code>H:</code> prototype reference index (16 bits) </br>
+    <code>N = A + C - 1</code>
+  </td>
+  <td>
+    Invoke the indicated method handle. See the <code>invoke-polymorphic</code>
+    description above for details.
+    <p> Present in Dex files from version <code>038</code> onwards.
+  </td>
+</tr>
+<tr>
+  <td>fc..ff 10x</td>
   <td><i>(unused)</i></td>
   <td>&nbsp;</td>
   <td><i>(unused)</i></td>
