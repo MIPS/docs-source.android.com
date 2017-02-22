@@ -106,7 +106,7 @@ refer to the
 User Guide</a>).</li>
 <li>Connect USB to PC to get ttyUSB device (ex: <code>/dev/ttyUSB1</code>).</li>
 <li>Power the board:<br>
-<pre><code>$ cd device/linaro/hikey/installer<br>
+<pre><code>$ cd device/linaro/hikey/installer/hikey<br>
 $ ./flash-all.sh /dev/ttyUSB1 [4g]</code></pre></li>
 <li>Remove jumper 3-4 and power the board.</li>
 </ol>
@@ -125,33 +125,31 @@ $ fastboot flash -w system out/target/product/hikey/system.img</code></pre></li>
 <li>Run the following commands:<br>
 <pre><code>$ git clone <a href="https://android.googlesource.com/kernel/hikey-linaro">https://android.googlesource.com/kernel/hikey-linaro</a><br>
 $ cd hikey-linaro<br>
-$ git checkout -b android-hikey-linaro-4.4 origin/android-hikey-linaro-4.4<br>
+$ git checkout -b android-hikey-linaro-4.9 origin/android-hikey-linaro-4.9<br>
 $ make ARCH=arm64 hikey_defconfig<br>
 $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- -j24</code></pre></li>
 <li>Copy output to the hikey kernel directory
 (<code>/kernel/hikey-linaro</code>):
-<ol>
+<ol style="list-style-type:lower-alpha">
 <li>Copy hi6220-hikey.dtb
 (<code>arch/arm64/boot/dts/hisilicon/hi6220-hikey.dtb</code>) to the
-hikey-kernel directory.</li>
+hikey-kernel directory as file hi6220-hikey.dtb-4.9.</li>
 <li>Copy the Image file <code>(arch/arm64/boot/Image-dtb</code>) to the
-hikey-kernel directory.
+hikey-kernel directory as file Image-dtb-4.9.</li></ol>
 <li>Make the boot image:
 <pre>
 $ make bootimage -j24
 </pre>
 </li>
 </ol>
-</li>
-</ol>
 
 <h3 id="setting-resolution">Setting monitor resolution</h3>
-<p>Edit <code>device/linaro/hikey/BoardConfig.mk</code> parameter
+<p>Edit <code>device/linaro/hikey/hikey/BoardConfig.mk</code> parameter
 <code>BOARD_KERNEL_CMDLINE</code> and configure the <code>video</code> setting.
 Example setting for a 24" monitor: <code>video=HDMI-A-1:1280x800@60</code>.</p>
 
 <h3 id="configuring-output">Configuring kernel serial output (uart3)</h3>
-<p>Set the J2 low speed expansion connector to 1 - Gnd, 11 - Rx, 13 - Tx . For
+<p>Set the J2 low speed expansion connector to 1 - Gnd, 11 - Rx, 13 - Tx. For
 details, refer to the
 <a href="https://www.96boards.org/wp-content/uploads/2015/02/HiKey_User_Guide_Rev0.2.pdf">HiKey
-User Guide</a>).</p>
+User Guide</a>.</p>
