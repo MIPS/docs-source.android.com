@@ -80,7 +80,7 @@ for a detailed description of the hash tree and dm-verity table.</p>
 
 <p>As described in the <a href="#introduction">Introduction</a>, the hash tree is 
 integral to dm-verity. The 
-<a href="https://code.google.com/p/cryptsetup/wiki/DMVerity">cryptsetup</a> tool will 
+<a href="https://gitlab.com/cryptsetup/cryptsetup/wikis/DMVerity">cryptsetup</a> tool will 
 generate a hash tree for you. Alternatively, a compatible one is defined here:</p>
 
 <pre>
