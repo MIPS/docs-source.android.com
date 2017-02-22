@@ -1060,7 +1060,66 @@ page.title=Dalvik bytecode
   </td>
 </tr>
 <tr>
-  <td>fc..ff 10x</td>
+  <td>fc 35c</td>
+  <td>invoke-custom {vC, vD, vE, vF, vG}, call_site@BBBB</td>
+  <td>
+    <code>A:</code> argument word count (4 bits) <br>
+    <code>B:</code> call site reference index (16 bits) <br>
+    <code>C..G:</code> argument registers (4 bits each)
+  </td>
+  <td> Resolves and invokes the indicated call site.
+    The result from the invocation (if any) may be stored with an
+    appropriate <code>move-result*</code> variant as the immediately
+    subsequent instruction.
+
+    <p> This instruction executes in two phases: call site
+        resolution and call site invocation.
+
+    <p> Call site resolution checks whether the indicated
+      call site has an associated <code>java.lang.invoke.CallSite</code> instance.
+      If not, the bootstrap linker method for the indicated call site is
+      invoked using arguments present in the DEX file
+      (see <a href="dex-format.html#call-site-item">call_site_item</a>). The
+      bootstrap linker method returns
+      a <code>java.lang.invoke.CallSite</code> instance that will then
+      be associated with the indicated call site if no association
+      exists. Another thread may have already made the association first,
+      and if so execution of the instruction continues with the
+      first associated <code>java.lang.invoke.CallSite</code> instance.
+
+    <p> Call site invocation is made on the <code>java.lang.invoke.MethodHandle</code> target of the
+      resolved <code>java.lang.invoke.CallSite</code> instance. The target is invoked as if
+      executing <code>invoke-polymorphic</code> (described above)
+      using the method handle and arguments to
+      the <code>invoke-custom</code> instruction as the arguments to an
+      exact method handle invocation.
+
+    <p> Exceptions raised by the bootstrap linker method are wrapped
+      in a <code>java.lang.BootstrapMethodError</code>.  A <code>BootstrapMethodError</code> is also raised if:
+      <ul>
+        <li>the bootstrap linker method fails to return a <code>java.lang.invoke.CallSite</code> instance.</li>
+        <li>the returned <code>java.lang.invoke.CallSite</code> has a <code>null</code> method handle target.</li>
+        <li>the method handle target is not of the requested type.</li>
+      </ul>
+    <p> Present in Dex files from version <code>038</code> onwards.
+  </td>
+</tr>
+<tr>
+  <td>fd 3rc</td>
+  <td>invoke-custom/range {vCCCC .. vNNNN}, call_site@BBBB</td>
+  <td>
+    <code>A:</code> argument word count (8 bits) <br>
+    <code>B:</code> call site reference index (16 bits) <br>
+    <code>C:</code> first argument register (16-bits) <br>
+    <code>N = A + C - 1</code>
+  </td>
+  <td>
+    Resolve and invoke a call site. See the <code>invoke-custom</code> description above for details.
+    <p> Present in Dex files from version <code>038</code> onwards.
+  </td>
+</tr>
+<tr>
+  <td>fe..ff 10x</td>
   <td><i>(unused)</i></td>
   <td>&nbsp;</td>
   <td><i>(unused)</i></td>
