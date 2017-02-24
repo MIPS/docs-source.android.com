@@ -462,6 +462,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/lifecycle.html">Test Lifecycle</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/options.html">Option Handling</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/full_example.html">An End-to-End Example</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/vts.html">Systems Testing With VTS</a></li>
           <li id="tradefed-tree-list" class="nav-section">
             <div class="nav-section-header">
               <a href="<?cs var:toroot ?>reference/packages.html">
