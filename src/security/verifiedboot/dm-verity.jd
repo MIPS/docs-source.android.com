@@ -122,7 +122,7 @@ you have only a single hash.</li>
 </ol>
 
 <p>The result of this is a single hash, which is your root hash. This and your salt
-are used during the construction of your dm-verity mapping hash table.</p>
+are used during the construction of your dm-verity mapping table.</p>
 
 <h3 id="mapping-table">Building the dm-verity mapping table</h3>
 
