@@ -44,8 +44,17 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
-<h4>Background App Compilation in A/B System Updates</h4>
+<h4>New Dalvik Bytecodes and Formats</h4>
+<p>Dalvik now offers new <strong><a
+href="{@docRoot}devices/tech/dalvik/dalvik-bytecode.html">bytecode formats 45cc
+and 4rcc</a></strong> and placeholder opcodes for <strong><a
+href="{@docRoot}devices/tech/dalvik/instruction-formats.html">invoke-polymorphic
+and invoke-polymorphic/range</a></strong>, which are the first dex instructions
+that use these new formats. In addition to a method_idx that gives the invoked
+method, these instructions also provide a proto_idx that gives the (static)
+type signature of the call site.</p>
 
+<h4>Background App Compilation in A/B System Updates</h4>
 <p>Examples for
 <strong><a href="{@docRoot}devices/tech/dalvik/configure.html#other_odex">installing</a></strong> and
 <strong><a href="{@docRoot}devices/tech/ota/ab_updates.html#configuration">configuring</a></strong>
@@ -85,13 +94,6 @@ href="{@docRoot}compatibility/cts/downloads.html">download</a></strong>. These
 releases contain test fixes and verify security patches up to the <strong><a
 href="{@docRoot}security/bulletin/2016-12-01.html">December 2016 Public
 Security Bulletin</a></strong>.</p>
-
-<h4>dalvik.annotation.MethodParameters</h4>
-<p>A <code>dalvik.annotation.MethodParameters</code> annotation has been added
-to AOSP after Android 7.1 that is optional and can be used to provide parameter
-metadata such as parameter names and modifiers. See <strong><a
-href="devices/tech/dalvik/dex-format.html#dalvik-annotation-method-parameters">Dalvik
-Executable format</a></strong> for a complete description.</p>
 
 </div>
 
