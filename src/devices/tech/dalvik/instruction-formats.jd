@@ -465,7 +465,7 @@ the correspondence.</p>
   </td>
 </tr>
 <tr>
-  <td>AG|<i>op</i> BBBB F|E|D|C HHHH
+  <td>A|G|<i>op</i> BBBB F|E|D|C HHHH
   <td>45cc</td>
   <td>
     <i>[<code>A=5</code>] <code>op</code></i> {vC, vD, vE, vF, vG}, meth@BBBB, proto@HHHH<br>
