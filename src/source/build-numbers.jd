@@ -195,6 +195,36 @@ following table. Factory images and binaries for Nexus devices can be downloaded
   </thead>
   <tbody>
     <tr>
+      <td>N6F26U</td>
+      <td>android-7.1.1_r28</td>
+      <td>Nougat</td>
+      <td>Nexus 6</td>
+    </tr>
+    <tr>
+      <td>NUF26N</td>
+      <td>android-7.1.1_r27</td>
+      <td>Nougat</td>
+      <td>Nexus 6P</td>
+    </tr>
+    <tr>
+      <td>NOF27C</td>
+      <td>android-7.1.1_r26</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
+    <tr>
+      <td>NOF27B</td>
+      <td>android-7.1.1_r25</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
+    <tr>
+      <td>N4F26T</td>
+      <td>android-7.1.1_r24</td>
+      <td>Nougat</td>
+      <td>Nexus 5X, Nexus 6P, Nexus 9 (volantis/volantisg), Pixel C</td>
+    </tr>
+    <tr>
       <td>NMF26X</td>
       <td>android-7.1.1_r22</td>
       <td>Nougat</td>
@@ -345,6 +375,17 @@ following table. Factory images and binaries for Nexus devices can be downloaded
       <td>Pixel XL, Pixel</td>
     </tr>
     <tr>
+      <td>NBD92E</td>
+      <td>android-7.0.0_r31</td>
+      <td>Nougat</td>
+      <td>Nexus 6</td>
+    <tr>
+    <tr>
+      <td>NBD92D</td>
+      <td>android-7.0.0_r30</td>
+      <td>Nougat</td>
+      <td>Nexus 6</td>
+    <tr>
       <td>NBD91Z</td>
       <td>android-7.0.0_r29</td>
       <td>Nougat</td>
@@ -444,6 +485,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
       <td>android-7.0.0_r1</td>
       <td>Nougat</td>
       <td>Nexus 5X, Nexus 9 (volantis), Nexus Player, Pixel C</td>
+    </tr>
+    <tr>
+      <td>MOB31T</td>
+      <td>android-6.0.1_r79</td>
+      <td>Marshmallow</td>
+      <td>Nexus 6</td>
     </tr>
     <tr>
       <td>MOB31S</td>
