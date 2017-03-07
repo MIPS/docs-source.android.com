@@ -1930,7 +1930,7 @@ passed in order and without any type conversions.
 <li><code>java.lang.invoke.MethodType</code></li>
 </ol>
 
-<p>And any remaining parameter types correspond to the additional arguments being passed to the bootstrap linker method.
+<p>The parameter types of any additional arguments are determined from their constant values.
 
 <h3 id="method-handle-item">method_handle_item</h3>
 <h4>appears in the method_handles section</h4>
@@ -1957,7 +1957,7 @@ passed in order and without any type conversions.
   <td><i>(unused)</i></td>
 </tr>
 <tr>
-  <td>field_or_method_id/td>
+  <td>field_or_method_id</td>
   <td>ushort</td>
   <td>Field or method id depending on whether the method handle type is an accessor or a method invoker</td>
 </tr>
