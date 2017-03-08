@@ -16,7 +16,7 @@ page.title=Android Security Bulletin—March 2017
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<p><em>Published March 06, 2017</em></p>
+<p><em>Published March 06, 2017 | Updated March 07, 2017</em></p>
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
 update to Google devices through an over-the-air (OTA) update. The Google device
@@ -122,14 +122,14 @@ CVE-2017-0470, CVE-2017-0471, CVE-2017-0472, CVE-2017-0473, CVE-2017-0474</td>
    <td>Yes</td>
   </tr>
   <tr>
-   <td>Elevation of privilege vulnerability in Audioserver</td>
-   <td>CVE-2017-0479, CVE-2017-0480</td>
+   <td>Elevation of privilege vulnerability in NFC</td>
+   <td>CVE-2017-0481</td>
    <td>High</td>
    <td>Yes</td>
   </tr>
   <tr>
-   <td>Elevation of privilege vulnerability in NFC</td>
-   <td>CVE-2017-0481</td>
+   <td>Elevation of privilege vulnerability in Audioserver</td>
+   <td>CVE-2017-0479, CVE-2017-0480</td>
    <td>High</td>
    <td>Yes</td>
   </tr>
@@ -137,18 +137,6 @@ CVE-2017-0470, CVE-2017-0471, CVE-2017-0472, CVE-2017-0473, CVE-2017-0474</td>
    <td>Denial of service vulnerability in Mediaserver</td>
    <td>CVE-2017-0482, CVE-2017-0483, CVE-2017-0484, CVE-2017-0485,
 CVE-2017-0486, CVE-2017-0487, CVE-2017-0488</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Update: Denial of service vulnerability in Mediaserver</td>
-   <td>CVE-2017-0390</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Update: Denial of service vulnerability in Mediaserver</td>
-   <td>CVE-2017-0392</td>
    <td>High</td>
    <td>Yes</td>
   </tr>
@@ -629,7 +617,8 @@ remote code execution within the context of a privileged process.</p>
   </tr>
   <tr>
     <td>CVE-2016-2182</td>
-    <td>A-32096880</td>
+    <td><a href="https://android.googlesource.com/platform/external/boringssl/+/54bf62a81586d99d0a951ca3342d569b59e69b80">
+        A-32096880</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -661,79 +650,90 @@ remote code execution within the context of the Mediaserver process.</p>
     <th>Date reported</th>
   </tr>
   <tr>
-    <td>CVE-2017-0466</td>
-    <td>A-33139050</td>
-    <td>Critical</td>
-    <td>All</td>
-    <td>6.0, 6.0.1, 7.0, 7.1.1</td>
-    <td>Nov 25, 2016</td>
+   <td>CVE-2017-0466</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/c4f152575bd6d8cc6db1f89806e2ba1fd1bb314f">A-33139050</a>
+[<a href="https://android.googlesource.com/platform/external/libavc/+/ec9ab83ac437d31f484a86643e2cc66db8efae4c">2</a>]
+   </td>
+   <td>Critical</td>
+   <td>All</td>
+   <td>6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Nov 25, 2016</td>
   </tr>
   <tr>
-    <td>CVE-2017-0467</td>
-    <td>A-33250932</td>
-    <td>Critical</td>
-    <td>All</td>
-    <td>6.0, 6.0.1, 7.0, 7.1.1</td>
-    <td>Nov 30, 2016</td>
+   <td>CVE-2017-0467</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/c4f152575bd6d8cc6db1f89806e2ba1fd1bb314f">A-33250932</a>
+[<a href="https://android.googlesource.com/platform/external/libavc/+/fd9a12f9fdd9dd3e66c59dd7037e864b948085f7">2</a>]
+   </td>
+   <td>Critical</td>
+   <td>All</td>
+   <td>6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Nov 30, 2016</td>
   </tr>
   <tr>
-    <td>CVE-2017-0468</td>
-    <td>A-33351708</td>
-    <td>Critical</td>
-    <td>All</td>
-    <td>6.0, 6.0.1, 7.0, 7.1.1</td>
-    <td>Dec 5, 2016</td>
+   <td>CVE-2017-0468</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/0e8b1dff88e08b9d738d2360f05b96108e190995">A-33351708</a>
+   [<a href="https://android.googlesource.com/platform/external/libavc/+/fd9a12f9fdd9dd3e66c59dd7037e864b948085f7">2</a>]
+   </td>
+   <td>Critical</td>
+   <td>All</td>
+   <td>6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Dec 5, 2016</td>
   </tr>
   <tr>
-    <td>CVE-2017-0469</td>
-    <td>A-33450635</td>
-    <td>Critical</td>
-    <td>All</td>
-    <td>6.0, 6.0.1, 7.0, 7.1.1</td>
-    <td>Dec 8, 2016</td>
+   <td>CVE-2017-0469</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/21851eaecc814be709cb0c20f732cb858cfe1440">
+       A-33450635</a></td>
+   <td>Critical</td>
+   <td>All</td>
+   <td>6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Dec 8, 2016</td>
   </tr>
   <tr>
-    <td>CVE-2017-0470</td>
-    <td>A-33818500</td>
-    <td>Critical</td>
-    <td>All</td>
-    <td>6.0, 6.0.1, 7.0, 7.1.1</td>
-    <td>Dec 21, 2016</td>
+   <td>CVE-2017-0470</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/6aac82003d665708b4e21e9b91693b642e2fa64f">
+       A-33818500</a></td>
+   <td>Critical</td>
+   <td>All</td>
+   <td>6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Dec 21, 2016</td>
   </tr>
   <tr>
-    <td>CVE-2017-0471</td>
-    <td>A-33816782</td>
-    <td>Critical</td>
-    <td>All</td>
-    <td>6.0, 6.0.1, 7.0, 7.1.1</td>
-    <td>Dec 21, 2016</td>
+   <td>CVE-2017-0471</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/4a61d15e7b0ab979ba7e80db8ddbde025c1ce6cc">
+       A-33816782</a></td>
+   <td>Critical</td>
+   <td>All</td>
+   <td>6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Dec 21, 2016</td>
   </tr>
   <tr>
-    <td>CVE-2017-0472</td>
-    <td>A-33862021</td>
-    <td>Critical</td>
-    <td>All</td>
-    <td>6.0, 6.0.1, 7.0, 7.1.1</td>
-    <td>Dec 23, 2016</td>
+   <td>CVE-2017-0472</td>
+   <td><a href="https://android.googlesource.com/platform/external/libhevc/+/dfa7251ff270ae7e12a019e6735542e36b2a47e0">
+       A-33862021</a></td>
+   <td>Critical</td>
+   <td>All</td>
+   <td>6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Dec 23, 2016</td>
   </tr>
   <tr>
-    <td>CVE-2017-0473</td>
-    <td>A-33982658</td>
-    <td>Critical</td>
-    <td>All</td>
-    <td>6.0, 6.0.1, 7.0, 7.1.1</td>
-    <td>Dec 30, 2016</td>
+   <td>CVE-2017-0473</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/0a4463e2beddb8290e05ad552e48b17686f854ce">
+       A-33982658</a></td>
+   <td>Critical</td>
+   <td>All</td>
+   <td>6.0, 6.0.1, 7.0, 7.1.1</td>
+   <td>Dec 30, 2016</td>
   </tr>
   <tr>
-    <td>CVE-2017-0474</td>
-    <td>A-32589224</td>
-    <td>Critical</td>
-    <td>All</td>
-    <td>7.0, 7.1.1</td>
-    <td>Google internal</td>
+   <td>CVE-2017-0474</td>
+   <td><a href="https://android.googlesource.com/platform/external/libvpx/+/6f5927de29337fa532c64d0ef8c7cb68f7c89889">
+       A-32589224</a></td>
+   <td>Critical</td>
+   <td>All</td>
+   <td>7.0, 7.1.1</td>
+   <td>Google internal</td>
   </tr>
 </table>
-
 
 <h3 id="eop-in-recovery-verifier">Elevation of privilege vulnerability in
 recovery verifier</h3>
@@ -760,7 +760,8 @@ to repair the device.</p>
   </tr>
   <tr>
     <td>CVE-2017-0475</td>
-    <td>A-31914369</td>
+    <td><a href="https://android.googlesource.com/platform/bootable/recovery/+/2c6c23f651abb3d215134dfba463eb72a5e9f8eb">
+        A-31914369</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -793,7 +794,8 @@ remote code execution within the context of an unprivileged process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0476</td>
-    <td>A-33388925</td>
+    <td><a href="https://android.googlesource.com/platform/packages/apps/Messaging/+/8ba22b48ebff50311d7eaa8d512f9d507f0bdd0d">
+        A-33388925</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -825,7 +827,8 @@ remote code execution in an application that uses this library.</p>
   </tr>
   <tr>
     <td>CVE-2017-0477</td>
-    <td>A-33621647</td>
+   <td><a href="https://android.googlesource.com/platform/external/libgdx/+/fba04a52f43315cdb7dd38766822af0324eab7c5">
+       A-33621647</a></td>
     <td>High</td>
     <td>All</td>
     <td>7.1.1</td>
@@ -859,7 +862,8 @@ Framesequence library.</p>
   </tr>
   <tr>
     <td>CVE-2017-0478</td>
-    <td>A-33718716</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/ex/+/7c824f17b3eea976ca58be7ea097cb807126f73b">
+        A-33718716</a></td>
     <td>High</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -867,6 +871,38 @@ Framesequence library.</p>
   </tr>
 </table>
 
+<h3 id="eop-in-nfc">Elevation of privilege vulnerability in NFC</h3>
+<p>An elevation of privilege vulnerability in NFC could enable a proximate
+attacker to execute arbitrary code within the context of a privileged process.
+This issue is rated as High because it could be used to gain local access to
+elevated capabilities, which are not normally accessible to a third-party
+application.</p>
+
+<table>
+  <col width="18%">
+  <col width="17%">
+  <col width="10%">
+  <col width="19%">
+  <col width="18%">
+  <col width="17%">
+  <tr>
+    <th>CVE</th>
+    <th>References</th>
+    <th>Severity</th>
+    <th>Updated Google devices</th>
+    <th>Updated AOSP versions</th>
+    <th>Date reported</th>
+  </tr>
+  <tr>
+    <td>CVE-2017-0481</td>
+    <td><a href="https://android.googlesource.com/platform/external/libnfc-nci/+/c67cc6ad2addddcb7185a33b08d27290ce54e350">
+        A-33434992</a></td>
+    <td>High</td>
+    <td>All</td>
+    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
+    <td>Nov 6, 2016</td>
+  </tr>
+</table>
 
 <h3 id="eop-in-audioserver">Elevation of privilege vulnerability in
 Audioserver</h3>
@@ -893,7 +929,10 @@ to a third-party application.</p>
   </tr>
   <tr>
     <td>CVE-2017-0479</td>
-    <td>A-32707507</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/22e26d8ee73488c58ba3e7928e5da155151abfd0">
+       A-32707507</a>
+[<a href="https://android.googlesource.com/platform/frameworks/av/+/8415635765380be496da9b4578d8f134a527d86b">2</a>]
+   </td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -901,44 +940,14 @@ to a third-party application.</p>
   </tr>
   <tr>
     <td>CVE-2017-0480</td>
-    <td>A-32705429</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/22e26d8ee73488c58ba3e7928e5da155151abfd0">
+       A-32705429</a>
+[<a href="https://android.googlesource.com/platform/frameworks/av/+/8415635765380be496da9b4578d8f134a527d86b">2</a>]
+   </td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
     <td>Nov 7, 2016</td>
-  </tr>
-</table>
-
-
-<h3 id="eop-in-nfc">Elevation of privilege vulnerability in NFC</h3>
-<p>An elevation of privilege vulnerability in NFC could enable a proximate
-attacker to execute arbitrary code within the context of a privileged process.
-This issue is rated as High because it could be used to gain local access to
-elevated capabilities, which are not normally accessible to a third-party
-application.</p>
-
-<table>
-  <col width="18%">
-  <col width="17%">
-  <col width="10%">
-  <col width="19%">
-  <col width="18%">
-  <col width="17%">
-  <tr>
-    <th>CVE</th>
-    <th>References</th>
-    <th>Severity</th>
-    <th>Updated Google devices</th>
-    <th>Updated AOSP versions</th>
-    <th>Date reported</th>
-  </tr>
-  <tr>
-    <td>CVE-2017-0481</td>
-    <td>A-33434992</td>
-    <td>High</td>
-    <td>All</td>
-    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
-    <td>Google internal</td>
   </tr>
 </table>
 
@@ -965,7 +974,13 @@ rated as High severity due to the possibility of remote denial of service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0482</td>
-    <td>A-33090864</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/ec9ab83ac437d31f484a86643e2cc66db8efae4c">
+        A-33090864</a>
+[<a href="https://android.googlesource.com/platform/external/libavc/+/0e8b1dff88e08b9d738d2360f05b96108e190995">2</a>]
+[<a href="https://android.googlesource.com/platform/external/libavc/+/a467b1fb2956fdcee5636ab63573a4bca8150dbe">3</a>]
+[<a href="https://android.googlesource.com/platform/external/libavc/+/3695b6bdaa183bb2852da06b63ebd5b9c2cace36">4</a>]
+[<a href="https://android.googlesource.com/platform/external/libavc/+/c4f152575bd6d8cc6db1f89806e2ba1fd1bb314f">5</a>]
+[<a href="https://android.googlesource.com/platform/external/libavc/+/fd9a12f9fdd9dd3e66c59dd7037e864b948085f7">6</a>]</td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -973,7 +988,9 @@ rated as High severity due to the possibility of remote denial of service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0483</td>
-    <td>A-33137046</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/bc62c086e9ba7530723dc8874b83159f4d77d976">
+        A-33137046</a>
+[<a href="https://android.googlesource.com/platform/frameworks/av/+/5cabe32a59f9be1e913b6a07a23d4cfa55e3fb2f">2</a>]</td>
     <td>High</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -981,7 +998,9 @@ rated as High severity due to the possibility of remote denial of service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0484</td>
-    <td>A-33298089</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/fd9a12f9fdd9dd3e66c59dd7037e864b948085f7">
+        A-33298089</a>
+[<a href="https://android.googlesource.com/platform/external/libavc/+/a467b1fb2956fdcee5636ab63573a4bca8150dbe">2</a>]</td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -989,7 +1008,8 @@ rated as High severity due to the possibility of remote denial of service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0485</td>
-    <td>A-33387820</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/3695b6bdaa183bb2852da06b63ebd5b9c2cace36">
+        A-33387820</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -997,7 +1017,8 @@ rated as High severity due to the possibility of remote denial of service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0486</td>
-    <td>A-33621215</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/19814b7ad4ea6f0cc4cab34e50ebab2e180fc269">
+        A-33621215</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1005,7 +1026,8 @@ rated as High severity due to the possibility of remote denial of service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0487</td>
-    <td>A-33751193</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/aa78b96e842fc1fb70a18acff22be35c7a715b23">
+        A-33751193</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1013,78 +1035,14 @@ rated as High severity due to the possibility of remote denial of service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0488</td>
-    <td>A-34097213</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/0340381cd8c220311fd4fe2e8b23e1534657e399">
+        A-34097213</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
     <td>Google internal</td>
   </tr>
 </table>
-
-
-<h3 id="update:-dos-in-mediaserver">Update: Denial of service vulnerability in
-Mediaserver</h3>
-<p>A denial of service vulnerability in Mediaserver could enable an attacker to
-use a specially crafted file to cause a device hang or reboot. This issue is
-rated as High due to the possibility of remote denial of service.</p>
-
-<table>
-  <col width="18%">
-  <col width="17%">
-  <col width="10%">
-  <col width="19%">
-  <col width="18%">
-  <col width="17%">
-  <tr>
-    <th>CVE</th>
-    <th>References</th>
-    <th>Severity</th>
-    <th>Updated Google devices</th>
-    <th>Updated AOSP versions</th>
-    <th>Date reported</th>
-  </tr>
-  <tr>
-    <td>CVE-2017-0390</td>
-    <td>A-31647370</td>
-    <td>High</td>
-    <td>All</td>
-    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
-    <td>Sep 19, 2016</td>
-  </tr>
-</table>
-
-
-<h3 id="update:-dos-in-mediaserver-2">Update: Denial of service vulnerability
-in Mediaserver</h3>
-<p>A denial of service vulnerability in Mediaserver could enable an attacker to
-use a specially crafted file to cause a device hang or reboot. This issue is
-rated as High due to the possibility of remote denial of service.</p>
-
-<table>
-  <col width="18%">
-  <col width="17%">
-  <col width="10%">
-  <col width="19%">
-  <col width="18%">
-  <col width="17%">
-  <tr>
-    <th>CVE</th>
-    <th>References</th>
-    <th>Severity</th>
-    <th>Updated Google devices</th>
-    <th>Updated AOSP versions</th>
-    <th>Date reported</th>
-  </tr>
-  <tr>
-    <td>CVE-2017-0392</td>
-    <td>A-32577290</td>
-    <td>High</td>
-    <td>All</td>
-    <td>7.0, 7.1.1</td>
-    <td>Oct 29, 2016</td>
-  </tr>
-</table>
-
 
 <h3 id="eop-in-location-manager">Elevation of privilege vulnerability in
 Location Manager</h3>
@@ -1110,7 +1068,8 @@ inaccurate data.</p>
   </tr>
   <tr>
     <td>CVE-2017-0489</td>
-    <td>A-33091107</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/d22261fef84481651e12995062105239d551cbc6">
+       A-33091107</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1142,7 +1101,11 @@ either user initiation or user permission. </p>
   </tr>
   <tr>
     <td>CVE-2017-0490</td>
-    <td>A-33178389</td>
+   <td><a href="https://android.googlesource.com/platform/packages/apps/CertInstaller/+/1166ca8adba9b49c9185dad11b28b02e72124d95">
+       A-33178389</a>
+[<a href="https://android.googlesource.com/platform/packages/apps/CertInstaller/+/1ad3b1e3256a226be362de1a4959f2a642d349b7">2</a>]
+[<a href="https://android.googlesource.com/platform/frameworks/opt/net/wifi/+/41c42f5bb544acf8bede2d05c6325657d92bd83c">3</a>]
+   </td>
     <td>Moderate</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1175,7 +1138,9 @@ it is a local bypass of user interaction requirements.</p>
   </tr>
   <tr>
     <td>CVE-2017-0491</td>
-    <td>A-32553261</td>
+    <td><a href="https://android.googlesource.com/platform/packages/apps/PackageInstaller/+/5c49b6bf732c88481466dea341917b8604ce53fa">
+        A-32553261</a>
+   </td>
     <td>Moderate</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1209,7 +1174,9 @@ permission.</p>
   </tr>
   <tr>
     <td>CVE-2017-0492</td>
-    <td>A-30150688</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/f4bed684c939b0f8809ef404b8609fe4ef849263">
+       A-30150688</a>
+   </td>
     <td>Moderate</td>
     <td>All</td>
     <td>7.1.1</td>
@@ -1242,7 +1209,8 @@ sensitive data without permission.</p>
   </tr>
   <tr>
     <td>CVE-2017-0494</td>
-    <td>A-32764144</td>
+    <td><a href="https://android.googlesource.com/platform/packages/apps/Messaging/+/3f9821128abd66c4cd2f040d8243efb334bfad2d">
+        A-32764144</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1275,7 +1243,8 @@ without permission.</p>
   </tr>
   <tr>
     <td>CVE-2017-0495</td>
-    <td>A-33552073</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/85c0ec4106659a11c220cd1210f8d76c33d9e2ae">
+        A-33552073</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1309,14 +1278,17 @@ rated as Moderate because it may require a factory reset to repair the device.</
     <td>CVE-2017-0496</td>
     <td>A-31554152*</td>
     <td>Moderate</td>
-    <td>None*</td>
+    <td>None**</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1</td>
     <td>Sep 14, 2016</td>
   </tr>
 </table>
-<p>* Supported Google devices on Android 7.0 or later that have installed all
+<p>* The patch for this issue is not publicly available. The update is contained in
+the latest binary drivers for Google devices available from the <a
+href="https://developers.google.com/android/nexus/drivers">Google Developer
+site</a>.</p>
+<p>** Supported Google devices on Android 7.0 or later that have installed all
 available updates are not affected by this vulnerability.</p>
-
 
 <h3 id="dos-in-mediaserver-2">Denial of service vulnerability in
 Mediaserver</h3>
@@ -1341,7 +1313,8 @@ rated as Moderate because it requires an uncommon device configuration.</p>
   </tr>
   <tr>
     <td>CVE-2017-0497</td>
-    <td>A-33300701</td>
+    <td><a href="https://android.googlesource.com/platform/external/skia/+/8888cbf8e74671d44e9ff92ec3847cd647b8cdfb">
+        A-33300701</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>7.0, 7.1.1</td>
@@ -1373,7 +1346,10 @@ Moderate because it may require a factory reset to repair the device. </p>
   </tr>
   <tr>
     <td>CVE-2017-0498</td>
-    <td>A-30352311</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/1c4d535d0806dbeb6d2fa5cea0373cbd9ab6d33b">
+        A-30352311</a>
+[<a href="https://android.googlesource.com/platform/frameworks/base/+/5f621b5b1549e8379aee05807652d5111382ccc6">2</a>]
+   </td>
     <td>Moderate</td>
     <td>All</td>
     <td>5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1404,7 +1380,8 @@ the possibility of a temporary denial of service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0499</td>
-    <td>A-32095713</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/22e26d8ee73488c58ba3e7928e5da155151abfd0">
+       A-32095713</a></td>
     <td>Low</td>
     <td>All</td>
     <td>5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -3154,6 +3131,7 @@ belongs. These prefixes map as follows:</p>
 </table>
 <h2 id="revisions">Revisions</h2>
 <ul>
-<li>March 06, 2017: Bulletin published.</li>
+  <li>March 06, 2017: Bulletin published.</li>
+  <li>March 07, 2017: Bulletin revised to include AOSP links.</li>
 </ul>
 
