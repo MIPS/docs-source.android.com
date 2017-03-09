@@ -86,5 +86,5 @@ $ make vts -j</code></pre></li>
 <h2 id="support">Support</h2>
 <p>You can view a user manual at
 <code><a href=" https://android.googlesource.com/platform/test/vts/+/master/README.md">/test/vts/doc</a></code>.
-For questions on VTS, contact
-<a href="mailto:android-vts@google.com">android-vts@google.com</a>.</p>
+For questions on VTS, please join
+<a href="https://groups.google.com/forum/#!forum/android-vts">android-vts@googlegroups.com</a>.</p>
