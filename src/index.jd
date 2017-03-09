@@ -44,6 +44,22 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>March Android Security Bulletin</h4>
+<p>The <strong><a href="{@docRoot}security/bulletin/2017-03-01.html">March
+2017 Android Security Bulletin</a></strong> has been published along with links
+to associated fixes. In addition, new
+<strong><a href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">build
+numbers</a></strong> have been published for Nexus 6 running Android 7.0 and
+7.1.1 and also Pixel, Pixel XL, Pixel C, Nexus 5X, Nexus 6P, Nexus 9, and Nexus
+Player running Android 7.1.1 to support the March Android security release.</p>
+
+<h4>Systems Testing With VTS</h4>
+<p>The Vendor Test Suite (VTS) automates HAL and OS kernel testing.
+<strong><a href="{@docRoot}devices/tech/test_infra/tradefed/fundamentals/vts.html">New
+documentation</a></strong> covers how to use VTS to test an Android native
+system implementation, set up a testing environment then test a patch using
+a VTS plan.</p>
+
 <h4>New Dalvik Bytecodes and Formats</h4>
 <p>Dalvik now offers new <strong><a
 href="{@docRoot}devices/tech/dalvik/dalvik-bytecode.html">bytecode formats 45cc
@@ -62,15 +78,6 @@ type signature of the call site.</p>
 for optimizing user apps so they are ready to run after the device reboots
 during an A/B system update.</p>
 
-<h4>February Android Security Bulletin</h4>
-<p>The <strong><a href="{@docRoot}security/bulletin/2017-02-01.html">February
-2017 Android Security Bulletin</a></strong> has been published along with links
-to associated fixes. In addition, new
-<strong><a href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">build
-numbers</a></strong> have been published for Nexus 6 running Android 7.0 and
-7.1.1 and also Pixel, Pixel XL, Pixel C, Nexus 5X, Nexus 6P, Nexus 9, and Nexus
-Player running Android 7.1.1 to support the February Android security release.</p>
-
 <h4>Android 7.1 CDD</h4>
 <p>The <strong><a href="{@docRoot}compatibility/7.1/android-7.1-cdd.html">7.1
 version</a></strong> of the <strong><a
@@ -86,14 +93,6 @@ are now described in detail, fully explaining the <strong><a
 href="{@docRoot}devices/tech/debug/native-crash.html#crashtypes">types of
 crashes</a></strong> expected and including the clues for finding them in
 <code>debuggerd</code> output.</p>
-
-<h4>CTS and CTS Verifier 7.0, 6.0, and 5.1</h4>
-<p>Android Compatibility Test Suite (CTS) and CTS Verifier 7.0 R5, 6.0 R14, and
-5.1 R15 are available for <strong><a
-href="{@docRoot}compatibility/cts/downloads.html">download</a></strong>. These
-releases contain test fixes and verify security patches up to the <strong><a
-href="{@docRoot}security/bulletin/2016-12-01.html">December 2016 Public
-Security Bulletin</a></strong>.</p>
 
 </div>
 
