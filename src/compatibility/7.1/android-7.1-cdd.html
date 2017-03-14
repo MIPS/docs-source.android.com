@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>
-     Android 7.0, (N) Compatibility Definition
-    </title>
-    <link href="source/android-cdd.css" rel="stylesheet" type="text/css"/>
-  </head>
-  <meta charset="UTF-8">
+ <head>
+  <title>
+   Android 7.1 Compatibility Definition
+  </title>
+  <link href="source/android-cdd.css" rel="stylesheet" type="text/css"/>
+ </head>
   <body>
-    <h1>Android 7.1 Compatibility Definition</h1>
     <h6>
       Table of Contents
     </h6>
@@ -821,7 +819,7 @@
           <td></td>
         </tr>
         <tr>
-          <td rowspan="5">
+          <td rowspan="6">
             Connectivity
           </td>
           <td>
@@ -914,7 +912,7 @@
             Cellular radio
           </td>
           <td>
-            <a href="#7_4_5_minimum-network-capability">7.4.5. Minimum Network Capability</a>
+            <a href="#7_4_5_minimum_network_capability">7.4.5. Minimum Network Capability</a>
           </td>
           <td></td>
           <td></td>
@@ -1337,7 +1335,7 @@
         </li>
         <li>MUST honor the <a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFC_PAYMENT_SETTINGS">android.settings.NFC_PAYMENT_SETTINGS</a> intent to show a default app settings menu for Tap and Pay, if the device implementation reports android.hardware.nfc.hce.
         </li>
-        <li>MUST honor the <a href="https://developer.android.com/reference/android/telecom/TelecomManager.html#ACTION_CHANGE_DEFAULT_DIALER"><code>android.telecom.action.CHANGE_DEFAULT_DIALER</code></a> intent to show a dialog to allow the user to change the default Phone application, if the device implementation reports <code>android.hardware.telephony</code> .
+        <li>MUST honor the <a href="https://developer.android.com/reference/android/telecom/TelecomManager.html#ACTION_CHANGE_DEFAULT_DIALER">android.telecom.action.CHANGE_DEFAULT_DIALER</a> intent to show a dialog to allow the user to change the default Phone application, if the device implementation reports <code>android.hardware.telephony</code> .
         </li>
         <li>MUST honor the <a href="https://developer.android.com/reference/android/provider/Settings.html#ACTION_VOICE_INPUT_SETTINGS">android.settings.ACTION_VOICE_INPUT_SETTINGS</a> intent when the device supports the VoiceInteractionService and show a default app settings menu for voice input and assist.
         </li>
@@ -1414,7 +1412,7 @@
         </li>
         <li>libstdc++ (Minimal support for C++)
         </li>
-        <li>libvukan.so (Vulkan)
+        <li>libvulkan.so (Vulkan)
         </li>
         <li>libz (Zlib compression)
         </li>
@@ -1466,7 +1464,7 @@
       <ul>
         <li>MUST report 0 <code>VkPhysicalDevices</code> through the <code>vkEnumeratePhysicalDevices</code> call.
         </li>
-        <li>MUST NOT delare any of the Vulkan feature flags <a href="https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_LEVEL"><code>PackageManager#FEATURE_VULKAN_HARDWARE_LEVEL</code></a> and <a href="https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_VERSION"><code>PackageManager#FEATURE_VULKAN_HARDWARE_VERSION</code></a> .
+        <li>MUST NOT declare any of the Vulkan feature flags <a href="https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_LEVEL"><code>PackageManager#FEATURE_VULKAN_HARDWARE_LEVEL</code></a> and <a href="https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_VERSION"><code>PackageManager#FEATURE_VULKAN_HARDWARE_VERSION</code></a> .
         </li>
       </ul>
       <h3 id="3_3_2_32-bit_arm_native_code_compatibility">
@@ -2099,7 +2097,7 @@
         </li>
         <li>MUST display <a href="https://developer.android.com/reference/android/app/NotificationManager.html#addAutomaticZenRule%28android.app.AutomaticZenRule%29">Automatic DND rules</a> created by applications alongside the user-created and pre-defined rules.
         </li>
-        <li>MUST honor the <a href="https://developer.android.com/reference/android/app/NotificationManager.Policy.html#suppressedVisualEffects"><code>suppressedVisualEffects</code></a> values passed along the <a href="https://developer.android.com/reference/android/app/NotificationManager.Policy.html#NotificationManager.Policy%28int,%20int,%20int,%20int%29"><code>NotificationManager.Policy</code></a> .
+        <li>MUST honor the <a href="https://developer.android.com/reference/android/app/NotificationManager.Policy.html#suppressedVisualEffects"><code>suppressedVisualEffects</code></a> values passed along the <a href="https://developer.android.com/reference/android/app/NotificationManager.Policy.html#NotificationManager.Policy%28int,%20int,%20int,%20int%29"><code>NotificationManager.Policy</code></a> and if an app has set any of the SUPPRESSED_EFFECT_SCREEN_OFF or SUPPRESSED_EFFECT_SCREEN_ON flags, it SHOULD indicate to the user that the visual effects are suppressed in the DND settings menu.
         </li>
       </ul>
       <h3 id="3_8_4_search">
@@ -2186,7 +2184,7 @@
       <ul>
         <li>MUST support at least up to 20 displayed activities.
         </li>
-        <li>MUST at least display the title of 4 activities at a time.
+        <li>SHOULD display the titles of at least 4 activities at a time.
         </li>
         <li>MUST implement the <a href="http://developer.android.com/about/versions/android-5.0.html#ScreenPinning">screen pinning behavior</a> and provide the user with a settings menu to toggle the feature.
         </li>
@@ -2274,12 +2272,12 @@
         3.9.1.1 Device owner provisioning
       </h4>
       <p>
-        If a device implementation declares the <code>android.software.device_admin</code> feature then it MUST implement the provisioning of the <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp%28java.lang.String%29">Device Owner app</a> of a Device Policy Client (DPC) application as indicated below:
+        If a device implementation declares the <code>android.software.device_admin</code> feature then it MUST implement the provisioning of the <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String)">Device Owner app</a> of a Device Policy Client (DPC) application as indicated below:
       </p>
       <ul>
         <li>When the device implementation has no user data configured yet, it:
           <ul>
-            <li>MUST report <code>true</code> for <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProvisioningAllowed%28java.lang.String%29"><code>DevicePolicyManager.isProvisioningAllowed(ACTION_PROVISION_MANAGED_DEVICE)</code></a> .
+            <li>MUST report <code>true</code> for <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProvisioningAllowed(java.lang.String)"><code>DevicePolicyManager.isProvisioningAllowed(ACTION_PROVISION_MANAGED_DEVICE)</code></a> .
             </li>
             <li>MUST enroll the DPC application as the Device Owner app in response to the intent action <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE"><code>android.app.action.PROVISION_MANAGED_DEVICE</code></a> .
             </li>
@@ -2289,7 +2287,7 @@
         </li>
         <li>When the device implementation has user data, it:
           <ul>
-            <li>MUST report <code>false</code> for the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProvisioningAllowed%28java.lang.String%29"><code>DevicePolicyManager.isProvisioningAllowed(ACTION_PROVISION_MANAGED_DEVICE)</code></a> .
+            <li>MUST report <code>false</code> for the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProvisioningAllowed(java.lang.String)"><code>DevicePolicyManager.isProvisioningAllowed(ACTION_PROVISION_MANAGED_DEVICE)</code></a> .
             </li>
             <li>MUST not enroll any DPC application as the Device Owner App any more.
             </li>
@@ -2303,7 +2301,7 @@
         3.9.1.2 Managed profile provisioning
       </h4>
       <p>
-        If a device implementation declares the android.software.managed_users, it MUST be possible to enroll a Device Policy Controller (DPC) application as the <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp%28java.lang.String%29">owner of a new Managed Profile</a> .
+        If a device implementation declares the android.software.managed_users, it MUST be possible to enroll a Device Policy Controller (DPC) application as the <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)">owner of a new Managed Profile</a> .
       </p>
       <p>
         The managed profile provisioning process (the flow initiated by <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">android.app.action.PROVISION_MANAGED_PROFILE</a> ) user experience MUST align with the AOSP implementation.
@@ -2314,7 +2312,7 @@
       <ul>
         <li>A consistent icon or other user affordance (for example the upstream AOSP info icon) to represent when a particular setting is restricted by a Device Admin.
         </li>
-        <li>A short explanation message, as provided by the Device Admin via the [ <code>setShortSupportMessage</code> ](https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setShortSupportMessage(android.content.ComponentName, java.lang.CharSequence).
+        <li>A short explanation message, as provided by the Device Admin via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setShortSupportMessage%28android.content.ComponentName,%20java.lang.CharSequence%29"><code>setShortSupportMessage</code></a> .
         </li>
         <li>The DPC application’s icon.
         </li>
@@ -2373,7 +2371,7 @@
             </li>
             <li>The lock screen credentials of the managed profile MUST use the same credential storage and management mechanisms as the parent profile, as documented on the <a href="http://source.android.com/security/authentication/index.html">Android Open Source Project Site</a>
             </li>
-            <li>The DPC <a href="https://developer.android.com/guide/topics/admin/device-admin.html#pwd">password policies</a> MUST apply to only the managed profile's lock screen credentials unless called upon the <code>DevicePolicyManager</code> instance returned by <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#getParentProfileInstance(android.content.ComponentName)">getParentProfileInstance</a> ..
+            <li>The DPC <a href="https://developer.android.com/guide/topics/admin/device-admin.html#pwd">password policies</a> MUST apply to only the managed profile's lock screen credentials unless called upon the <code>DevicePolicyManager</code> instance returned by <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#getParentProfileInstance%28android.content.ComponentName%29">getParentProfileInstance</a> .
             </li>
           </ul>
         </li>
@@ -3217,7 +3215,7 @@
         5.2.2. H-264
       </h3>
       <p>
-        Android device implementations with H.264 codec support&amp;emdash;
+        Android device implementations with H.264 codec support:
       </p>
       <ul>
         <li>MUST support Baseline Profile Level 3.<br />
@@ -3623,7 +3621,7 @@
             4 Mbps
           </td>
           <td>
-            10 Mbps
+            5 Mbps
           </td>
           <td>
             20 Mbps
@@ -4359,7 +4357,7 @@
         </li>
         <li>
           <p>
-            The device MUST exhibit amplitude levels in the high frequency range: specifically from ±30 dB from 4000 Hz to 22 KHz compared to the mid-frequency range.
+            The device MUST exhibit amplitude levels in the high frequency range: specifically from ±30 dB from 7000 Hz to 22 KHz compared to the mid-frequency range.
           </p>
         </li>
         <li>
@@ -4428,7 +4426,7 @@
           </ul>
         </li>
         <li>
-          <a href="http://developer.android.com/tools/help/monkey.html"><strong>Monkey</strong></a> . Device implementations MUST include the Monkey framework, and make it available for applications to use.
+          <a href="http://developer.android.com/tools/help/monkey.html"><strong>Monkey</strong></a> Device implementations MUST include the Monkey framework, and make it available for applications to use.
         </li>
         <li>
           <a href="http://developer.android.com/tools/help/systrace.html"><strong>SysTrace</strong></a>
@@ -4822,7 +4820,7 @@
         </li>
       </ul>
       <p>
-        Android includes support for a variety of touchscreens, touch pads, and fake touch input devices. <a href="http://source.android.com/devices/tech/input/touch-devices.html">Touchscreen based device implementations</a> are associated with a display such that the user has the impression of directly manipulating items on screen. Since the user is directly touching the screen, the system does not require any additional affordances to indicate the objects being manipulated. In contrast, a fake touch interface provides a user input system that approximates a subset of touchscreen capabilities. For example, a mouse or remote control that drives an on-screen cursor approximates touch, but requires the user to first point or focus then click. Numerous input devices like the mouse, trackpad, gyro-based air mouse, gyro-pointer, joystick, and multi-touch trackpad can support fake touch interactions. Android includes the feature constant android.hardware.faketouch, which corresponds to a high-fidelity non-touch (pointer-based) input device such as a mouse or trackpad that can adequately emulate touch-based input (including basic gesture support), and indicates that the device supports an emulated subset of touchscreen functionality. Device implementations that declare the fake touch feature MUST meet the fake touch requirements in <a href="#7_2_5_fake_touch_input">section 7.2.5</a> .
+        Android includes support for a variety of touchscreens, touch pads, and fake touch input devices. <a href="http://source.android.com/devices/tech/input/touch-devices.html">Touchscreen-based device implementations</a> are associated with a display such that the user has the impression of directly manipulating items on screen. Since the user is directly touching the screen, the system does not require any additional affordances to indicate the objects being manipulated. In contrast, a fake touch interface provides a user input system that approximates a subset of touchscreen capabilities. For example, a mouse or remote control that drives an on-screen cursor approximates touch, but requires the user to first point or focus then click. Numerous input devices like the mouse, trackpad, gyro-based air mouse, gyro-pointer, joystick, and multi-touch trackpad can support fake touch interactions. Android includes the feature constant android.hardware.faketouch, which corresponds to a high-fidelity non-touch (pointer-based) input device such as a mouse or trackpad that can adequately emulate touch-based input (including basic gesture support), and indicates that the device supports an emulated subset of touchscreen functionality. Device implementations that declare the fake touch feature MUST meet the fake touch requirements in <a href="#7_2_5_fake_touch_input">section 7.2.5</a> .
       </p>
       <p>
         Device implementations MUST report the correct feature corresponding to the type of input used. Device implementations that include a touchscreen (single-touch or better) MUST report the platform feature constant android.hardware.touchscreen. Device implementations that report the platform feature constant android.hardware.touchscreen MUST also report the platform feature constant android.hardware.faketouch. Device implementations that do not include a touchscreen (and rely on a pointer device only) MUST NOT report any touchscreen feature, and MUST report only android.hardware.faketouch if they meet the fake touch requirements in <a href="#7_2_5_fake_touch_input">section 7.2.5</a> .
@@ -5372,7 +5370,7 @@
             </li>
             <li>SHOULD have a best-fit line non-linearity of ≤ 0.2%.
             </li>
-            <li>SHOULD have a noise density of ≤ 0.07 °/s/√Hz.
+            <li>SHOULD have a noise density of ≤ 0.007 °/s/√Hz.
             </li>
           </ul>
         </li>
@@ -5512,7 +5510,7 @@
         </li>
         <li>MUST have all identifiable fingerprint data encrypted and cryptographically authenticated such that they cannot be acquired, read or altered outside of the Trusted Execution Environment (TEE) as documented in the <a href="https://source.android.com/devices/tech/security/authentication/fingerprint-hal.html">implementation guidelines</a> on the Android Open Source Project site.
         </li>
-        <li>MUST prevent adding a fingerprint without first establishing a chain of trust by having the user confirm existing or add a new device credential (PIN/pattern/password) using the TEE as implemented in the Android Open Source project.
+        <li>MUST prevent adding a fingerprint without first establishing a chain of trust by having the user confirm existing or add a new device credential (PIN/pattern/password) that's secured by TEE; the Android Open Source Project implementation provides the mechanism in the framework to do so.
         </li>
         <li>MUST NOT enable 3rd-party applications to distinguish between individual fingerprints.
         </li>
@@ -5936,7 +5934,7 @@
           <ul>
             <li>If the device implementation is capable of being rotated by user (such as automatically via an accelerometer or manually via user input), the camera preview MUST be mirrored horizontally relative to the device’s current orientation.
             </li>
-            <li>If the current application has explicitly requested that the Camera display be rotated via a call to the <a href="http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation%28int%29">android.hardware.Camera.setDisplayOrientation()</a> method, the camera preview MUST be mirrored horizontally relative to the orientation specified by the application.
+            <li>If the current application has explicitly requested that the Camera display be rotated via a call to the <a href="http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation(int)">android.hardware.Camera.setDisplayOrientation()</a> method, the camera preview MUST be mirrored horizontally relative to the orientation specified by the application.
             </li>
             <li>Otherwise, the preview MUST be mirrored along the device’s default horizontal axis.
             </li>
@@ -6385,7 +6383,7 @@
         </li>
         <li>Device implementations MUST declare android.software.vr.mode feature.
         </li>
-        <li>Device implementations MUST provide an exclusive core to the foreground application and MUST support the Process.getExclusiveCores API to return the numbers of the cpu cores that are exclusive to the top foreground application. This core MUST not allow any other userspace processes to run on it (except device drivers used by the application), but MAY allow some kernel processes to run as necessary.
+        <li>Device implementations MAY provide an exclusive core to the foreground application and MAY support the <code>Process.getExclusiveCores</code> API to return the numbers of the CPU cores that are exclusive to the top foreground application. If exclusive core is supported, then the core MUST not allow any other userspace processes to run on it (except device drivers used by the application), but MAY allow some kernel processes to run as necessary.
         </li>
         <li>Device implementations MUST support sustained performance mode.
         </li>
@@ -6674,7 +6672,7 @@
         If the device implements functionality in the system that captures the contents displayed on the screen and/or records the audio stream played on the device, it MUST continuously notify the user whenever this functionality is enabled and actively capturing/recording.
       </p>
       <p>
-        If a device implementation has a mechanism that routes network data traffic through a proxy server or VPN gateway by default (for example, preloading a VPN service with android.permission.CONTROL_VPN granted), the device implementation MUST ask for the user's consent before enabling that mechanism, unless that VPN is enabled by the Device Policy Controller via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setAlwaysOnVpnPackage%28android.content.ComponentName,%20java.lang.String,%20boolean%29"><code>DevicePolicyManager.setAlwaysOnVpnPackage()</code></a> , in which case the user does not need to provide a separate consent, but MUST only be notified.
+        If a device implementation has a mechanism that routes network data traffic through a proxy server or VPN gateway by default (for example, preloading a VPN service with android.permission.CONTROL_VPN granted), the device implementation MUST ask for the user's consent before enabling that mechanism, unless that VPN is enabled by the Device Policy Controller via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setAlwaysOnVpnPackage(android.content.ComponentName,%20java.lang.String,%20boolean)"><code>DevicePolicyManager.setAlwaysOnVpnPackage()</code></a> , in which case the user does not need to provide a separate consent, but MUST only be notified.
       </p>
       <p>
         Device implementations MUST ship with an empty user-added Certificate Authority (CA) store, and MUST preinstall the same root certificates for the system-trusted CA store as <a href="https://source.android.com/security/overview/app-security.html#certificate-authorities">provided</a> in the upstream Android Open Source Project.
@@ -6848,13 +6846,13 @@
         </li>
         <li>If the authentication method can not be treated as a secure lock screen, it:
           <ul>
-            <li>MUST return <code>false</code> for both the <a href="http://developer.android.com/reference/android/app/KeyguardManager.html#isKeyguardSecure()"><code>KeyguardManager.isKeyguardSecure()</code></a> and the <a href="https://developer.android.com/reference/android/app/KeyguardManager.html#isDeviceSecure%28%29"><code>KeyguardManager.isDeviceSecure()</code></a> methods.
+            <li>MUST return <code>false</code> for both the <a href="http://developer.android.com/reference/android/app/KeyguardManager.html#isKeyguardSecure%28%29"><code>KeyguardManager.isKeyguardSecure()</code></a> and the <a href="https://developer.android.com/reference/android/app/KeyguardManager.html#isDeviceSecure%28%29"><code>KeyguardManager.isDeviceSecure()</code></a> methods.
             </li>
             <li>MUST be disabled when the Device Policy Controller (DPC) application has set the password quality policy via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordQuality%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setPasswordQuality()</code></a> method with a more restrictive quality constant than <code>PASSWORD_QUALITY_UNSPECIFIED</code> .
             </li>
             <li>MUST NOT reset the password expiration timers set by <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordExpirationTimeout%28android.content.ComponentName,%20long%29"><code>DevicePolicyManager.setPasswordExpirationTimeout()</code></a> .
             </li>
-            <li>MUST NOT authenticate access to keystores if the application has called <a href="https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html#setUserAuthenticationRequired%28boolean%29"><code>KeyGenParameterSpec.Builder.setUserAuthenticationRequired(true)</code></a> .
+            <li>MUST NOT authenticate access to keystores if the application has called <a href="https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html#setUserAuthenticationRequired%28boolean%29"><code>KeyGenParameterSpec.Builder.setUserAuthenticationRequired(true)</code></a> ).
             </li>
           </ul>
         </li>
