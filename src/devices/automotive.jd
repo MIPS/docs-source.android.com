@@ -57,8 +57,8 @@ network service:</p>
 automotive architecture</p>
 
 <ul>
-<li><strong>Car API</strong>. Contains the APIs such as CarHvacManager,
-CarSensorManager, and CarCameraManager. For details on all supported APIs,
+<li><strong>Car API</strong>. Contains the APIs such as CarHvacManager
+and CarSensorManager. For details on all supported APIs,
 refer to <code>/platform/packages/services/Car/car-lib</code>.</li>
 <li><strong>CarService</strong>. Located at
 <code>/platform/packages/services/Car/</code>.</li>
