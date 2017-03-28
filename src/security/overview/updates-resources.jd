@@ -282,6 +282,8 @@ sites. Good places to start:<br>
 <h3 id=reports>Reports</h3>
 <p>Sometimes the Android Security team publishes reports or whitepapers. Here are some of the most recent.</p>
 <ul>
+  <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2016_Report_Final.pdf">
+      Android Security 2016 Year In Review</a></li>
   <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2015_Report_Final.pdf">
       Android Security 2015 Year In Review</a></li>
   <li><a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2014_Report_Final.pdf">
