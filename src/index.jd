@@ -44,6 +44,11 @@ requirements.</p>
   <div class="col-8">
   <h3>What's New</h3>
 
+<h4>Android Security 2016 Year in Review</h4>
+<p>The Android Security team has published its <strong><a
+href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2016_Report_Final.pdf">2016
+Year In Review</a></strong>.</p>
+
 <h4>March Android Security Bulletin</h4>
 <p>The <strong><a href="{@docRoot}security/bulletin/2017-03-01.html">March
 2017 Android Security Bulletin</a></strong> has been published along with links
@@ -85,14 +90,6 @@ href="{@docRoot}compatibility/cdd.html">Android Compatibility Definition
 Document</a></strong> (CDD) has been published. See its <strong><a
 href="https://android.googlesource.com/platform/compatibility/cdd/+log/nougat-mr1-dev/?pretty=full&no-merges">change
 log</a></strong> for a summary of updates.</p>
-
-<h4>Diagnosing Native Crashes</h4>
-<p><strong><a
-href="{@docRoot}devices/tech/debug/native-crash.html">Native crashes</a></strong>
-are now described in detail, fully explaining the <strong><a
-href="{@docRoot}devices/tech/debug/native-crash.html#crashtypes">types of
-crashes</a></strong> expected and including the clues for finding them in
-<code>debuggerd</code> output.</p>
 
 </div>
 
