@@ -1,29 +1,27 @@
-page.title=Implementing Vulkan
-@jd:body
+<html devsite>
+  <head>
+    <title>Implementing Vulkan</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
 
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
 
 
 <p>Vulkan is a low-overhead, cross-platform API for high-performance 3D
@@ -34,7 +32,7 @@ Binary Intermediate</a> language.</p>
 
 <p class="note"><strong>Note:</strong> This section describes Vulkan
 implementation; for details on Vulkan architecture, advantages, API, and other
-resources, see <a href="{@docRoot}devices/graphics/arch-vulkan.html">Vulkan
+resources, see <a href="/devices/graphics/arch-vulkan.html">Vulkan
 Architecture</a>.</p>
 
 <p>To implement Vulkan, a device:</p>
@@ -78,10 +76,9 @@ must still call into trampoline code.</p>
 
 <h2 id=driver_emun>Driver enumeration and loading</h2>
 <p>Android expects the GPUs available to the system to be known when the system
-image is built. The loader uses the existing HAL mechanism (see
-<code><a href="https://android.googlesource.com/platform/hardware/libhardware/+/marshmallow-release/include/hardware/hardware.h">hardware.h</code></a>) for
-discovering and loading the driver. Preferred paths for 32-bit and 64-bit Vulkan
-drivers are:</p>
+image is built. The loader uses the existing HAL mechanism (see <code><a href="https://android.googlesource.com/platform/hardware/libhardware/+/master/include/hardware/hardware.h">hardware.h</code></a>)
+for discovering and loading the driver. Preferred paths for 32-bit and 64-bit
+Vulkan drivers are:</p>
 
 <p>
 <pre>
@@ -92,8 +89,7 @@ drivers are:</p>
 
 <p>Where &lt;<code>ro.product.platform</code>&gt; is replaced by the value of
 the system property of that name. For details and supported alternative
-locations, refer to
-<code><a href="https://android.googlesource.com/platform/hardware/libhardware/+/marshmallow-release/hardware.c">libhardware/hardware.c</code></a>.</p>
+locations, refer to <code><a href="https://android.googlesource.com/platform/hardware/libhardware/+/master/hardware.c">libhardware/hardware.c</code></a>.</p>
 
 <p>In Android 7.0, the Vulkan <code>hw_module_t</code> derivative is trivial;
 only one driver is supported and the constant string
@@ -305,5 +301,8 @@ have been done asynchronously as part of transitioning the image to
 
 <h2 id=validation>Validation</h2>
 <p>OEMs can test their Vulkan implementation using CTS, which includes
-<a href="{@docRoot}devices/graphics/cts-integration.html">drawElements
+<a href="/devices/graphics/cts-integration.html">drawElements
 Quality Program (dEQP)</a> tests that exercise the Vulkan Runtime.</p>
+
+  </body>
+</html>

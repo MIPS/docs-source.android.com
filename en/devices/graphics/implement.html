@@ -1,29 +1,27 @@
-page.title=Implementing graphics
-@jd:body
+<html devsite>
+  <head>
+    <title>Implementing graphics</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2014 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
 
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
 
 
 <p>To implement the Android graphics HAL, review the following requirements,
@@ -109,14 +107,14 @@ protected videos will disappear from the display if Hardware Composer switches
 to OpenGL ES composition).</p>
 
 <p>For details on protected content, see
-<a href="{@docRoot}devices/drm.html">DRM</a>.</p>
+<a href="/devices/drm.html">DRM</a>.</p>
 
 <h3 id=hardware_composer_hal>Hardware Composer HAL</h3>
 
 <p>The Hardware Composer HAL (HWC) is used by SurfaceFlinger to composite
 surfaces to the screen. It abstracts objects such as overlays and 2D blitters
 and helps offload some work that would normally be done with OpenGL. For details
-on the HWC, see <a href="{@docRoot}devices/graphics/implement-hwc.html">Hardware
+on the HWC, see <a href="/devices/graphics/implement-hwc.html">Hardware
 Composer HAL</a>.</p>
 
 <h3 id=vsync>VSYNC</h3>
@@ -125,7 +123,7 @@ Composer HAL</a>.</p>
 Applications always start drawing on a VSYNC boundary, and SurfaceFlinger always
 composites on a VSYNC boundary. This eliminates stutters and improves visual
 performance of graphics. For details on VSYNC, see
-<a href="{@docRoot}devices/graphics/implement-vsync.html">Implementing
+<a href="/devices/graphics/implement-vsync.html">Implementing
 VSYNC</a>.</p>
 
 <h3 id=vulkan>Vulkan</h3>
@@ -135,7 +133,7 @@ Like OpenGL ES, Vulkan provides tools for creating high-quality, real-time
 graphics in applications. Vulkan advantages include reductions in CPU overhead
 and support for the <a href="https://www.khronos.org/spir">SPIR-V Binary
 Intermediate</a> language. For details on Vulkan, see
-<a href="{@docRoot}devices/graphics/implement-vulkan.html">Implementing
+<a href="/devices/graphics/implement-vulkan.html">Implementing
 Vulkan</a>.</p>
 
 <h3 id=virtual_displays>Virtual displays</h3>
@@ -145,7 +143,7 @@ The virtual display composition is similar to the physical display: Input
 layers are described in prepare(), SurfaceFlinger conducts GPU composition, and
 layers and GPU framebuffer are provided to Hardware Composer in set(). For
 details on virtual displays, see
-<a href="{@docRoot}devices/graphics/implement-vdisplays.html">Implementing
+<a href="/devices/graphics/implement-vdisplays.html">Implementing
 Virtual Displays</a>.</p>
 
 <h2 id=testing>Testing</h2>
@@ -174,3 +172,6 @@ scenarios, filling in the window with GL then measuring the compositing.</p>
 <p class="note"><strong>Note:</strong> Flatland uses the synchronization
 framework to measure time, so your implementation must support the
 synchronization framework.</p>
+
+  </body>
+</html>

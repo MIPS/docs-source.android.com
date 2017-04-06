@@ -1,28 +1,27 @@
-page.title=Codenames, Tags, and Build Numbers
-@jd:body
+<html devsite>
+  <head>
+    <title>Codenames, Tags, and Build Numbers</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2014 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>At a high level, Android development happens around families of
 releases, which use code names ordered alphabetically after tasty
@@ -181,9 +180,12 @@ build re-use the same date code as that existing build.</p>
 
 <h2 id="source-code-tags-and-builds">Source Code Tags and Builds</h2>
 <p>Starting with Donut, the exact list of tags and builds is in the
-following table. Factory images and binaries for Nexus devices can be downloaded from:</p>
-<p><a href="https://developers.google.com/android/nexus/images">https://developers.google.com/android/nexus/images</a></p>
-<p><a href="https://developers.google.com/android/nexus/drivers">https://developers.google.com/android/nexus/drivers</a></p>
+following table. Factory images, binaries, and full OTA images for
+Nexus and Pixel devices can be downloaded from the Android Developer
+site:</p>
+<p><a href="https://developers.google.com/android/images">Images</a></p>
+<p><a href="https://developers.google.com/android/drivers">Drivers</a></p>
+<p><a href="https://developers.google.com/android/ota">OTA</a></p>
 <table>
   <thead>
     <tr>
@@ -194,6 +196,60 @@ following table. Factory images and binaries for Nexus devices can be downloaded
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>N2G47J</td>
+      <td>android-7.1.2_r5</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
+    <tr>
+      <td>N2G47H</td>
+      <td>android-7.1.2_r4</td>
+      <td>Nougat</td>
+      <td>Nexus 6P, Nexus Player</td>
+    </tr>
+    <tr>
+      <td>N2G47F</td>
+      <td>android-7.1.2_r3</td>
+      <td>Nougat</td>
+      <td>Nexus 5X</td>
+    </tr>
+    <tr>
+      <td>N2G47E</td>
+      <td>android-7.1.2_r2</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
+    <tr>
+      <td>N2G47D</td>
+      <td>android-7.1.2_r1</td>
+      <td>Nougat</td>
+      <td>Pixel C</td>
+    </tr>
+    <tr>
+      <td>N6F26Y</td>
+      <td>android-7.1.1_r38</td>
+      <td>Nougat</td>
+      <td>Nexus 6</td>
+    </tr>
+    <tr>
+      <td>NOF27D</td>
+      <td>android-7.1.1_r35</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
+    <tr>
+      <td>N4F26X</td>
+      <td>android-7.1.1_r33</td>
+      <td>Nougat</td>
+      <td>Nexus 9 (volantis/volantisg)</td>
+    </tr>
+    <tr>
+      <td>N4F26U</td>
+      <td>android-7.1.1_r31</td>
+      <td>Nougat</td>
+      <td>Nexus 5X, Nexus 6P</td>
+    </tr>
     <tr>
       <td>N6F26U</td>
       <td>android-7.1.1_r28</td>
@@ -380,6 +436,18 @@ following table. Factory images and binaries for Nexus devices can be downloaded
       <td>Nougat</td>
       <td>Pixel XL, Pixel</td>
     </tr>
+    <tr>
+      <td>NBD92G</td>
+      <td>android-7.0.0_r33</td>
+      <td>Nougat</td>
+      <td>Nexus 6</td>
+    <tr>
+    <tr>
+      <td>NBD92F</td>
+      <td>android-7.0.0_r32</td>
+      <td>Nougat</td>
+      <td>Nexus 6</td>
+    <tr>
     <tr>
       <td>NBD92E</td>
       <td>android-7.0.0_r31</td>
@@ -1767,3 +1835,6 @@ $ repo sync
 $ repo forall -c git checkout android-3.0_r1.1
 </code></pre>
 
+
+  </body>
+</html>

@@ -1,28 +1,27 @@
-page.title=Reading Bug Reports
-@jd:body
+<html devsite>
+  <head>
+    <title>Reading Bug Reports</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>Bugs are a reality in any type of development&#8212;and bug reports are
 critical to identifying and solving problems. All versions of Android support
@@ -44,14 +43,8 @@ information. The <strong>system</strong> part is reserved for the framework and
 has a longer history than <strong>main</strong> which contains everything else.
 Each line starts with <code>timestamp PID TID log-level</code>.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>------ SYSTEM LOG (logcat -v threadtime -d *:v) ------
 --------- beginning of system
 <i>Blah</i>
@@ -62,8 +55,7 @@ Each line starts with <code>timestamp PID TID log-level</code>.</p>
 <i>Blah </i>
 <i>Blah</i>
 <i>Blah</i></pre></p>
-  </div>
-</div>
+  </section>
 
 <h3 id="event-log">Viewing the event log</h3>
 <p>This log contains string representations of binary-formatted log messages. It
@@ -81,21 +73,14 @@ When viewing event logs, you can search this section for specific process ID
 <li>E: error</li>
 </ul>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>------ EVENT LOG (logcat -b events -v threadtime -d *:v) ------
 09-28 13:47:34.179   785  5113 I am_proc_bound: [0,23054,com.google.android.gms.unstable]
 09-28 13:47:34.777   785  1975 I am_proc_start: [0,23134,10032,com.android.chrome,broadcast,com.android.chrome/org.chromium.chrome.browser.precache.PrecacheServiceLauncher]
 09-28 13:47:34.806   785  2764 I am_proc_bound: [0,23134,com.android.chrome]
 ...</pre></p>
-  </div>
-</div>
+  </section>
 <p>&nbsp;</p>
 <p>For other useful event log tags, refer to
 <a href="https://android.googlesource.com/platform/frameworks/base/+/master/services/core/java/com/android/server/EventLogTags.logtags">/services/core/java/com/android/server/EventLogTags.logtags</a>.</p>
@@ -111,31 +96,20 @@ blocked or busy main thread, the system kills the process and dumps the stack to
 <code>/data/anr</code>. To discover the culprit behind an ANR, grep for
 <code>am_anr</code> in the binary event log.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>grep "am_anr" bugreport-2015-10-01-18-13-48.txt
 10-01 18:12:49.599  4600  4614 I am_anr  : [0,29761,com.google.android.youtube,953695941,executing service com.google.android.youtube/com.google.android.apps.youtube.app.offline.transfer.OfflineTransferService]
 10-01 18:14:10.211  4600  4614 I am_anr  : [0,30363,com.google.android.apps.plus,953728580,executing service com.google.android.apps.plus/com.google.android.apps.photos.service.PhotosService]</pre></p>
-  </div>
-</div>
+  </section>
+
 <p></p>
 <p>You can also grep for <code>ANR in</code> in the <code>logcat</code> log,
 which contains more information about what was using CPU at the time of the ANR.
 </p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>grep "ANR in" bugreport-2015-10-01-18-13-48.txt
 10-01 18:13:11.984  4600  4614 E ActivityManager: ANR in com.google.android.youtube
 10-01 18:14:31.720  4600  4614 E ActivityManager: ANR in com.google.android.apps.plus
@@ -151,8 +125,7 @@ which contains more information about what was using CPU at the time of the ANR.
 ...
 10-01 18:14:31.720  4600  4614 E ActivityManager:   0.1% 27248/irq/503-synapti: 0%
 10-01 18:14:31.721  4600  4614 I ActivityManager: Killing 30363:com.google.android.apps.plus/u0a206 (adj 0): bg anr</pre></p>
-  </div>
-</div>
+  </section>
 
 <h3 id="find-stack-traces">Finding stack traces</h3>
 <p>You can often find stack traces that correspond to an ANR. Make sure the
@@ -169,14 +142,8 @@ time&#8212;but not quite long enough to ANR&#8212;before becoming unstuck.)
 correct section.</li>
 </ul>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>------ VM TRACES AT LAST ANR (/data/anr/traces.txt: 2015-10-01 18:14:41) ------
 
 ----- pid 30363 at 2015-10-01 18:14:11 -----
@@ -267,8 +234,7 @@ DALVIK THREADS (12):
   ...
 <i>  Stacks for other threads in this process follow</i>
   ...</pre></p>
-  </div>
-</div>
+  </section>
 
 <h3 id="deadlocks">Finding deadlocks</h3>
 <p>Deadlocks often first appear as ANRs because threads are getting stuck. If
@@ -289,14 +255,8 @@ device return to the Google boot logo.</li>
 waiting on something held by thread B, which in turn is waiting on something
 held by thread A.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>"Binder_B" prio=5 tid=73 Blocked
   | group="main" sCount=1 dsCount=0 obj=0x13faa0a0 self=0x95e24800
   | sysTid=2016 nice=0 cgrp=default sched=0/0 handle=0x8b68d930
@@ -348,8 +308,7 @@ held by thread A.</p>
   at android.os.Looper.loop(Looper.java:148)
   at android.os.HandlerThread.run(HandlerThread.java:61)
   at com.android.server.ServiceThread.run(ServiceThread.java:46)</pre></p>
-  </div>
-</div>
+  </section>
 
 
 <h2 id="activities">Activities</h2>
@@ -367,41 +326,27 @@ also aid troubleshooting.</p>
 <p>To view a history of focused activities, search for
 <code>am_focused_activity</code>.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>grep "am_focused_activity" bugreport-2015-10-01-18-13-48.txt
 10-01 18:10:41.409  4600 14112 I am_focused_activity: [0,com.google.android.GoogleCamera/com.android.camera.CameraActivity]
 10-01 18:11:17.313  4600  5687 I am_focused_activity: [0,com.google.android.googlequicksearchbox/com.google.android.launcher.GEL]
 10-01 18:11:52.747  4600 14113 I am_focused_activity: [0,com.google.android.GoogleCamera/com.android.camera.CameraActivity]
 10-01 18:14:07.762  4600  5687 I am_focused_activity: [0,com.google.android.googlequicksearchbox/com.google.android.launcher.GEL]</pre></p>
-  </div>
-</div>
+  </section>
 
 <h3 id="history-process-starts">Viewing process starts</h3>
 <p>To view a history of process starts, search for <code>Start proc</code>.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>grep "Start proc" bugreport-2015-10-01-18-13-48.txt
 10-01 18:09:15.309  4600  4612 I ActivityManager: Start proc 24533:com.metago.astro/u0a240 for broadcast com.metago.astro/com.inmobi.commons.analytics.androidsdk.IMAdTrackerReceiver
 10-01 18:09:15.687  4600 14112 I ActivityManager: Start proc 24548:com.google.android.apps.fitness/u0a173 for service com.google.android.apps.fitness/.api.services.ActivityUpsamplingService
 10-01 18:09:15.777  4600  6604 I ActivityManager: Start proc 24563:cloudtv.hdwidgets/u0a145 for broadcast cloudtv.hdwidgets/cloudtv.switches.SwitchSystemUpdateReceiver
 10-01 18:09:20.574  4600  6604 I ActivityManager: Start proc 24617:com.wageworks.ezreceipts/u0a111 for broadcast com.wageworks.ezreceipts/.ui.managers.IntentReceiver
 ...</pre></p>
-  </div>
-</div>
+  </section>
 
 <h3 id="device-thrashing">Is the device thrashing?</h3>
 <p>To determine if the device is
@@ -409,14 +354,8 @@ also aid troubleshooting.</p>
 check for an abnormal increase in activity around <code>am_proc_died</code> and
 <code>am_proc_start</code> in a short amount of time.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>grep -e "am_proc_died" -e "am_proc_start" bugreport-2015-10-01-18-13-48.txt
 10-01 18:07:06.494  4600  9696 I am_proc_died: [0,20074,com.android.musicfx]
 10-01 18:07:06.555  4600  6606 I am_proc_died: [0,31166,com.concur.breeze]
@@ -428,8 +367,7 @@ check for an abnormal increase in activity around <code>am_proc_died</code> and
 10-01 18:07:15.267  4600  6605 I am_proc_start: [0,20539,10173,com.google.android.apps.fitness,service,com.google.android.apps.fitness/.api.services.ActivityUpsamplingService]
 10-01 18:07:15.985  4600  4612 I am_proc_start: [0,20568,10022,com.android.musicfx,broadcast,com.android.musicfx/.ControlPanelReceiver]
 10-01 18:07:16.315  4600  7512 I am_proc_died: [0,20096,com.google.android.GoogleCamera]</pre></p>
-  </div>
-</div>
+  </section>
 
 <h2 id="memory">Memory</h2>
 <p>Because Android devices often have constrained physical memory, managing
@@ -451,14 +389,8 @@ launcher reload its content.</p>
 <p>The <code>am_low_memory</code> entry in the binary event log indicates the
 last cached process has died. After this, the system starts killing services.
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>grep "am_low_memory" bugreport-2015-10-01-18-13-48.txt
 10-01 18:11:02.219  4600  7513 I am_low_memory: 41
 10-01 18:12:18.526  4600 14112 I am_low_memory: 39
@@ -467,8 +399,7 @@ last cached process has died. After this, the system starts killing services.
 10-01 18:12:34.811  4600 20319 I am_low_memory: 43
 10-01 18:12:37.945  4600  6521 I am_low_memory: 43
 10-01 18:12:47.804  4600 14110 I am_low_memory: 43</pre></p>
-  </div>
-</div>
+  </section>
 
 <h4 id="thrashing-indicators">Viewing thrashing indicators</h4>
 <p>Other indicators of system thrashing (paging, direct reclaim, etc.) include
@@ -476,14 +407,8 @@ last cached process has died. After this, the system starts killing services.
 cycles. (Keep in mind the bugreport being gathered can influence thrashing
 indicators.)</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>------ CPU INFO (top -n 1 -d 1 -m 30 -t) ------
 
 User 15%, System 54%, IOW 28%, IRQ 0%
@@ -502,20 +427,13 @@ User 82 + Nice 2 + Sys 287 + Idle 1 + IOW 152 + IRQ 0 + SIRQ 5 = 529
 19399 19399  2   1% S      0K      0K  fg root     kworker/2:2
  1963  1978  1   0% S 1819100K 125136K  fg system   android.fg      system_server
  1963  1981  3   0% S 1819100K 125136K  fg system   android.display system_server</pre></p>
-  </div>
-</div>
+  </section>
 <p></p>
 
 <p>ANR logs can provide a similar memory snapshot.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>10-03 17:19:59.959  1963  1976 E ActivityManager: ANR in com.google.android.apps.magazines
 10-03 17:19:59.959  1963  1976 E ActivityManager: PID: 18819
 10-03 17:19:59.959  1963  1976 E ActivityManager: Reason: Broadcast of Intent { act=android.net.conn.CONNECTIVITY_CHANGE flg=0x4000010 cmp=com.google.android.apps.magazines/com.google.apps.dots.android.newsstand.appwidget.NewsWidgetProvider (has extras) }
@@ -546,8 +464,7 @@ User 82 + Nice 2 + Sys 287 + Idle 1 + IOW 152 + IRQ 0 + SIRQ 5 = 529
 10-03 17:19:59.959  1963  1976 E ActivityManager:   0.9% 1460/sensors.qcom: 0.5% user + 0.4% kernel / faults: 262 minor 5 major
 10-03 17:19:59.959  1963  1976 E ActivityManager:   0.8% 3650/mpdecision: 0% user + 0.8% kernel / faults: 160 minor 1 major
 10-03 17:19:59.959  1963  1976 E ActivityManager:   0.1% 3132/com.redbend.vdmc: 0% user + 0% kernel / faults: 1746 minor 5 major</pre></p>
-  </div>
-</div>
+  </section>
 
 <h3 id="memory-snapshot">Getting a memory snapshot</h3>
 <p>The memory snapshot is a dumpstate that lists running Java and native
@@ -563,14 +480,8 @@ shape before the snapshot.</p>
 <a href="#why-is-process-running">Why is a process running?</a></li>
 </ul>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>Total PSS by OOM adjustment:
     86752 kB: Native
                22645 kB: surfaceflinger (pid 197)
@@ -620,8 +531,7 @@ shape before the snapshot.</p>
                22563 kB: com.google.android.apps.magazines (pid 13844)
                ...
                 4298 kB: com.google.android.apps.enterprise.dmagent (pid 13826)</pre></p>
-  </div>
-</div>
+  </section>
 
 <h2 id="broadcasts">Broadcasts</h2>
 <p>Applications generate broadcasts to send events within the current
@@ -637,14 +547,8 @@ reverse chronological order.</p>
 <p>The <strong>summary</strong> section is an overview of the last 300
 foreground broadcasts and the last 300 background broadcasts.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre> Historical broadcasts summary [foreground]:
  #0: act=android.intent.action.SCREEN_ON flg=0x50000010
     +1ms dispatch +90ms finish
@@ -655,8 +559,7 @@ foreground broadcasts and the last 300 background broadcasts.</p>
  ...
  Historical broadcasts summary [background]:
  ...</pre></p>
-  </div>
-</div>
+  </section>
 <p></p>
 
 <p>The <strong>detail</strong> section contains complete information for the
@@ -670,14 +573,8 @@ ActivityManager starts the process for each <code>ResolveInfo</code> if it is
 not already running.</li>
 </ul>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>Historical broadcasts [foreground]:
  ...
  Historical broadcasts [background]:
@@ -730,40 +627,26 @@ not already running.</li>
         packageName=com.google.android.apps.plus
         enabled=true exported=true processName=com.google.android.apps.plus
         ...</pre></p>
-  </div>
-</div>
+  </section>
 
 <h3 id="active-broadcasts">Viewing active broadcasts</h3>
 <p>Active broadcasts are those that have yet to be sent. A large number in the
 queue means the system can't dispatch the broadcasts fast enough to keep up.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre> Active ordered broadcasts [background]:
  Active Ordered Broadcast background #133: <i>// size of queue</i>
  ...</pre></p>
-  </div>
-</div>
+  </section>
 
 <h3 id="broadcast-listeners">Viewing broadcast listeners</h3>
 <p>To view a list of receivers listening for a broadcast, check the Receiver
 Resolver Table in the <code>dumpsys activity broadcasts</code>. The following
 example displays all receivers listening for <code>USER_PRESENT</code>.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>-------------------------------------------------------------------------------
 ACTIVITY MANAGER BROADCAST STATE (dumpsys activity broadcasts)
 ..
@@ -800,8 +683,7 @@ ACTIVITY MANAGER BROADCAST STATE (dumpsys activity broadcasts)
           BroadcastFilter{68f794e u0 ReceiverList{4cb1c49 947 com.google.android.googlequicksearchbox:search/10029/u0 remote:251d250}}
       ..
     MIME Typed Actions:</pre></p>
-  </div>
-</div>
+  </section>
 
 <h2 id="monitor contention">Monitor contention</h2>
 <p>Monitor contention logging can sometimes indicate actual monitor contention,
@@ -817,20 +699,13 @@ You might see long monitor events logged by ART in system or event log.</p>
 <h2 id="background-compilation">Background compilation</h2>
 <p>Compilation can be expensive and load the device.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>09-14 06:27:05.670  2508  2587 E ActivityManager: CPU usage from 0ms to 5857ms later:
 09-14 06:27:05.670  2508  2587 E ActivityManager:   84% 5708/dex2oat: 81% user + 2.3% kernel / faults: 3731 minor 1 major
 09-14 06:27:05.670  2508  2587 E ActivityManager:   73% 2508/system_server: 21% user + 51% kernel / faults: 10019 minor 28 major
 09-14 06:27:05.670  2508  2587 E ActivityManager:   1% 3935/com.android.phone: 0.3% user + 0.6% kernel / faults: 2684 minor 2 major</pre></p>
-  </div>
-</div>
+  </section>
 <p></p>
 
 <p>Compilation might occur in the background when Google Play store updates are
@@ -838,40 +713,26 @@ downloading. In this case, messages from the Google Play store app
 (<code>finsky</code>) and <code>installd</code> appear prior to
 <code>dex2oat</code> messages.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>10-07 08:42:33.725 11051 11051 D Finsky  : [1] InstallerTask.advanceState: Prepare to patch com.garmin.android.apps.virb (com.garmin.android.apps.virb) from content://downloads/my_downloads/3602 format 2
 10-07 08:42:33.752   495   495 I installd: free_cache(48637657) avail 15111192576
 …
 10-07 08:42:39.998  2497  2567 I PackageManager.DexOptimizer: Running dexopt (dex2oat) on: /data/app/vmdl436577137.tmp/base.apk pkg=com.garmin.android.apps.virb isa=arm vmSafeMode=false debuggable=false oatDir = /data/app/vmdl436577137.tmp/oat bootComplete=true
 …</pre></p>
-  </div>
-</div>
+  </section>
 <p></p>
 
 <p>Compilation might also occur in the background when an application is loading
 a dex file that has not yet been compiled. In this case, you won't see
 <code>finsky</code> or <code>installd</code> logging.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>09-14 07:29:20.433 15736 15736 I dex2oat : /system/bin/dex2oat -j4 --dex-file=/data/user/0/com.facebook.katana/app_secondary_program_dex/program-72cef82b591768306676e10161c886b58b34315a308602be.dex.jar --oat-file=/data/user/0/com.facebook.katana/app_secondary_program_dex_opt/program-72cef82b591768306676e10161c886b58b34315a308602be.dex.dex
 ...
 09-14 07:29:25.102 15736 15736 I dex2oat : dex2oat took 4.669s (threads: 4) arena alloc=7MB java alloc=3MB native alloc=29MB free=4MB</pre></p>
-  </div>
-</div>
+  </section>
 
 <h2 id="narrative">Narrative</h2>
 <p>Establishing the narrative of a problem (how it started, what happened, how
@@ -923,14 +784,8 @@ the act of taking the bugreport loads the system substantially.</p>
 <p>The event log contains screen power status, where 0 is screen off, 1 is
 screen on, and 2 is for keyguard done.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>grep screen_toggled bugreport-2015-10-18-16-52-22.txt
 10-18 15:05:04.383   992   992 I screen_toggled: 1
 10-18 15:05:07.010   992   992 I screen_toggled: 0
@@ -938,8 +793,8 @@ screen on, and 2 is for keyguard done.</p>
 10-18 15:23:25.684   992   992 I screen_toggled: 0
 10-18 15:36:31.623   992   992 I screen_toggled: 1
 10-18 15:36:37.660  3283  3283 I screen_toggled: 2</pre></p>
-  </div>
-</div>
+  </section>
+
 <p></p>
 <p>Bug reports also contain statistics about wake locks, a mechanism used by
 application developers to indicate their application needs to have the device
@@ -963,14 +818,8 @@ files.</p>
 <p>The DUMP OF SERVICE package contains application versions (and other useful
 info).</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>...
 Packages:
 ...
@@ -1019,8 +868,7 @@ Packages:
        com.google.android.gms.mdm.receivers.GmsRegisteredReceiver
        ...
        com.google.android.gms.subscribedfeeds.SyncService</pre></p>
-  </div>
-</div>
+  </section>
 
 <h2 id="processes">Processes</h2>
 <p>Bug reports contain a huge amount of data for processes, including start and
@@ -1037,14 +885,8 @@ last three or 24 hours, then search for <code>Summary:</code> to view the list
 of processes, how long those processes have run at various priorities, and their
 RAM usage formatted as min-average-max PSS/min-average-max USS.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>-------------------------------------------------------------------------------
 DUMP OF SERVICE processinfo:
 -------------------------------------------------------------------------------
@@ -1083,8 +925,7 @@ Summary:
 ...
           Start time: 2015-10-20 06:49:24
   Total elapsed time: +2h46m59s736ms (partial) libart.so</pre></p>
-  </div>
-</div>
+  </section>
 
 <h3 id="why-is-process-running">Why is a process running?</h3>
 <p>The <code>dumpsys activity processes</code> section lists all currently
@@ -1097,14 +938,8 @@ the bolded entries indicate the <code>gms.persistent</code> process is running
 at <code>vis</code> (visible) priority because the system process is bound to
 its <code>NetworkLocationService</code>.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show example</span>
-    <span class="toggle-content-text" style="display:none;">Hide example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show example</h4>
     <p><pre>-------------------------------------------------------------------------------
 ACTIVITY MANAGER RUNNING PROCESSES (dumpsys activity processes)
 ...
@@ -1151,8 +986,7 @@ Process LRU list (sorted by oom_adj, 34 total, non-act at 14, non-svc at 14):
     Proc #17: cch+4 B/ /CE trm: 0 1141:com.google.android.apps.plus/u0a74 (cch-empty)
     Proc #12: cch+5 B/ /CA trm: 0 22299:com.google.android.apps.dogfood/u0a105 (cch-act)
     Proc #21: cch+6 B/ /CE trm: 0 995:com.google.android.partnersetup/u0a18 (cch-empty)></pre></p>
-  </div>
-</div>
+  </section>
 
 <h2 id=scans>Scans</h2>
 <p>Use the following steps to identify applications performing excessive
@@ -1177,5 +1011,8 @@ application:
 <p class=note><strong>Note</strong>: For devices running Android 7.0, the
 system collects data for BLE scans and associates these activities
 with the initiating application. For details, see
-<a href="{@docRoot}devices/tech/power/values.html#le-bt-scans">Low Energy (LE)
+<a href="/devices/tech/power/values.html#le-bt-scans">Low Energy (LE)
 and Bluetooth scans</a>.</p>
+
+  </body>
+</html>

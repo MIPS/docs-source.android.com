@@ -1,28 +1,27 @@
-lpage.title=Camera Version Support
-@jd:body
+<html devsite>
+  <head>
+    <title>Camera Version Support</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>This page details version differences in Camera HALs, APIs, and associated
 Android Compatibility Test Suite (CTS) tests. It also covers several
@@ -164,7 +163,7 @@ process. When using API1 on:</p>
 processes, <strong>no vendor update</strong> is necessary.
 <p><img src="images/ape_camera_n_api1_hal3.png" alt="Android 7.0 camera and media
 stack in API1 on HAL3" id="figure1" /></p>
-<p class="img-caption"><strong>Figure 1.</strong>Android 7.0 camera and media
+<p class="img-caption"><strong>Figure 1. </strong>Android 7.0 camera and media
 stack in API1 on HAL3.</p>
 </li>
 <li>HAL1, which supports passing metadata in video buffers, <strong>vendors must
@@ -173,7 +172,7 @@ update the HAL to use kMetadataBufferTypeNativeHandleSource</strong>.
 7.0.)
 <p><img src="images/ape_camera_n_api1_hal1.png" alt="Android 7.0 camera and media
 stack in API1 on HAL1" id="figure1" /></p>
-<p class="img-caption"><strong>Figure 2.</strong>Android 7.0 camera and media
+<p class="img-caption"><strong>Figure 2. </strong>Android 7.0 camera and media
 stack in API1 on HAL1.</p>
 </li>
 </ul>
@@ -189,7 +188,7 @@ update</strong> is necessary.</li>
 necessary:
 <p><img src="images/ape_camera_n_api2_hal3.png" alt="Android 7.0 camera and
 media stack in API2 on HAL2" id="figure1" /></p>
-<p class="img-caption"><strong>Figure 3.</strong>Android 7.0 camera and media
+<p class="img-caption"><strong>Figure 3. </strong>Android 7.0 camera and media
 stack in API2 on HAL3.</p>
 </li>
 </ul>
@@ -238,7 +237,7 @@ if you have not made the updates indicated above.</p>
 
 <h2 id="version-history">Camera HAL version history</h2>
 <p>For a list of tests available for evaluating the Android Camera HAL, see the
-<a href="{@docRoot}compatibility/cts/camera-hal.html">Camera HAL Testing
+<a href="/compatibility/cts/camera-hal.html">Camera HAL Testing
 Checklist</a>.</p>
 
 <h3 id="34">3.4</h3>
@@ -432,3 +431,6 @@ module support only version 1 of the camera device HAL. The
 fields of <code>camera_info</code> are not valid. Only the
 <code>android.hardware.Camera</code> API can be supported by this module and its
 devices.</p>
+
+  </body>
+</html>

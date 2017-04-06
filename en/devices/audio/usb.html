@@ -1,28 +1,27 @@
-page.title=USB Digital Audio
-@jd:body
+<html devsite>
+  <head>
+    <title>USB Digital Audio</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2014 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>
 This article reviews Android support for USB digital audio and related
@@ -555,7 +554,7 @@ In order to support USB digital audio, device OEMs and SoC vendors should:
 <li>enable generic USB host support at the framework level
 via the <code>android.hardware.usb.host.xml</code> feature flag</li>
 <li>enable all kernel features needed: USB host mode, USB audio, isochronous transfer mode;
-see <a href="{@docRoot}devices/tech/kernel.html">Android Kernel Configuration</a></li>
+see <a href="/devices/tech/kernel.html">Android Kernel Configuration</a></li>
 <li>keep up-to-date with recent kernel releases and patches;
 despite the noble goal of class compliance, there are extant audio peripherals
 with <a href="http://en.wiktionary.org/wiki/quirk">quirks</a>,
@@ -630,3 +629,6 @@ this is abstracted away by the ALSA implementation.
 So the USB audio HAL and tinyalsa do not need to concern
 themselves with this part of USB protocol.
 </p>
+
+  </body>
+</html>

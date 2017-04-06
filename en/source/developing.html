@@ -1,28 +1,27 @@
-page.title=Developing
-@jd:body
+<html devsite>
+  <head>
+    <title>Developing</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2013 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>To work with the Android code, you will need to use both Git and Repo.  In most situations, you can use Git instead of Repo, or mix Repo and Git commands to form complex commands. Using Repo for basic across-network operations will make your work much simpler, however.</p>
 <p><strong>Git</strong> is an open source version-control system designed to handle very large projects that are distributed over multiple repositories. In the context of Android, we use Git for local operations such as local branching, commits, diffs, and edits.  One of the challenges in setting up the Android project was figuring out how to best support the outside community--from the hobbyist community to large OEMs building mass-market consumer devices. We wanted components to be replaceable, and we wanted interesting components to be able to grow a life of their own outside of Android. We first chose a distributed revision control system, then further narrowed it down to Git.</p>
@@ -40,8 +39,8 @@ working directory.</p>
 <p><strong>Android Studio</strong> is the official integrated development environment (IDE) for Android application development. See the <a href="http://developer.android.com/tools/studio/index.html">Android Studio Overview</a> for details.
 
 <h2 id="basic-workflow">Basic Workflow</h2>
-<div class="figure" style="width:200px">
-  <img src="{@docRoot}images/submit-patches-0.png" alt="basic workflow diagram" height="153px" />
+<div class="attempt-right" style="width:200px">
+  <img src="/images/submit-patches-0.png" alt="basic workflow diagram" height="153px" />
   <p class="img-caption">
     <strong>Figure 1.</strong> Basic Android workflow
   </p>
@@ -67,8 +66,8 @@ working directory.</p>
 </ol>
 <h2 id="task-reference">Task reference</h2>
 <p>The task list below shows a summary of how to do common Repo and Git tasks.
-For information about using repo to download source, see <a href="{@docRoot}source/downloading.html">Downloading the Source</a> and
-<a href="{@docRoot}source/using-repo.html">Using Repo</a>.</p>
+For information about using repo to download source, see <a href="/source/downloading.html">Downloading the Source</a> and
+<a href="/source/using-repo.html">Using Repo</a>.</p>
 <h2 id="synchronizing-your-client">Synchronizing your client</h2>
 <p>To synchronize the files for all available projects: </p>
 <pre><code>$ repo sync
@@ -163,7 +162,10 @@ $ git rebase --continue
 </code></pre>
 <p>Deleting a client will <em>permanently delete</em> any changes you have not yet uploaded for review.</p>
 <h2 id="git-and-repo-cheatsheet">Git and Repo cheatsheet</h2>
-<img src="{@docRoot}images/git-repo-1.png" alt="list of basic git and repo commands" id="figure2" />
+<img src="/images/git-repo-1.png" alt="list of basic git and repo commands" id="figure2" />
 <p class="img-caption">
   <strong>Figure 2.</strong> Basic git and repo commands
 </p>
+
+  </body>
+</html>

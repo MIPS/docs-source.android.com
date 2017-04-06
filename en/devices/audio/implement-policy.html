@@ -1,28 +1,27 @@
-page.title=Configuring Audio Policies
-@jd:body
+<html devsite>
+  <head>
+    <title>Configuring Audio Policies</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>Android 7.0 introduces a new audio policy configuration file format (XML) for
 describing your audio topology.</p>
@@ -77,16 +76,9 @@ shows many of these features in use.</p>
 XML file format, view the example below.</p>
 
 <p>
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show audio policy example</span>
-    <span class="toggle-content-text" style="display:none;">Hide audio policy
-    example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
-<pre class="prettyprint">
+  <section class="expandable">
+    <h4 class="showalways">Show audio policy example</h4>
+<pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;audioPolicyConfiguration version=&quot;1.0&quot; xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&gt;
     &lt;globalConfiguration speaker_drc_enabled=&quot;true&quot;/&gt;
@@ -146,7 +138,7 @@ XML file format, view the example below.</p>
     &lt;xi:include href=&quot;audio_policy_volumes.xml&quot;/&gt;
     &lt;xi:include href=&quot;default_volume_tables.xml&quot;/&gt;
 &lt;/audioPolicyConfiguration&gt;
-</pre></div></div>
+</pre></section>
 </p>
 
 <p>The top level structure contains modules that correspond to each audio HAL
@@ -166,15 +158,8 @@ form a UI index to a volume in dB. A separate include file provides default
 curves, but each curve for a given use case and device category can be
 overwritten.</p>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show volume table example</span>
-    <span class="toggle-content-text" style="display:none;">Hide volume table
-    example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show volume table example</h4>
 <p><pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;volumes&gt;
@@ -193,17 +178,10 @@ overwritten.</p>
         &lt;point&gt;100,0&lt;/point&gt;
     &lt;/reference&gt;
 &lt;/volumes&gt;
-</pre></p></div></div>
+</pre></p></section>
 
-<div class="toggle-content closed">
-  <p><a href="#" onclick="return toggleContent(this)">
-    <img src="{@docRoot}assets/images/triangle-closed.png" class="toggle-content-img" />
-    <strong><span class="toggle-content-text">Show volumes example</span>
-    <span class="toggle-content-text" style="display:none;">Hide volumes
-    example</span></strong>
-  </a></p>
-
-  <div class="toggle-content-toggleme">
+  <section class="expandable">
+    <h4 class="showalways">Show volumes example</h4>
 <p><pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;volumes&gt;
@@ -277,7 +255,7 @@ overwritten.</p>
     &lt;volume stream=&quot;AUDIO_STREAM_PATCH&quot; deviceCategory=&quot;DEVICE_CATEGORY_EARPIECE&quot; ref=&quot;FULL_SCALE_VOLUME_CURVE&quot;/&gt;
     &lt;volume stream=&quot;AUDIO_STREAM_PATCH&quot; deviceCategory=&quot;DEVICE_CATEGORY_EXT_MEDIA&quot; ref=&quot;FULL_SCALE_VOLUME_CURVE&quot;/&gt;
 &lt;/volumes&gt;
-</pre></p></div></div>
+</pre></p></section>
 
 <h2 id=file_inclusions>File inclusions</h2>
 <p>The XML Inclusions (XInclude) method can be used to include audio policy
@@ -442,5 +420,8 @@ support multichannel audio.</p>
 
 <p>Ensure the audio codecs your hardware and drivers support are properly
 declared for your product. For details, see
-<a href="{@docRoot}devices/media/index.html#expose">Exposing Codecs to the
+<a href="/devices/media/index.html#expose">Exposing Codecs to the
 Framework</a>.</p>
+
+  </body>
+</html>

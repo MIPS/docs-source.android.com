@@ -1,17 +1,27 @@
-page.title=Android のセキュリティに関する公開情報 - 2016 年 12 月
-@jd:body
-<!--
-    Copyright 2016 The Android Open Source Project
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-        http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+<html devsite>
+  <head>
+    <title>Android のセキュリティに関する公開情報 - 2016 年 12 月</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
+
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
+
+
 
 <p><em>2016 年 12 月 5 日公開 | 2016 年 12 月 7 日更新</em></p>
 <p>
@@ -24,7 +34,7 @@ Android のセキュリティに関する公開情報には、Android 搭載端�
 このうち最も重大な問題は、カーネル内で任意のコードが実行されるおそれがある端末固有のコードのセキュリティ上の重大な脆弱性です。ローカルでの永久的な端末の侵害につながるおそれがあり、端末を修復するにはオペレーティング システムの再適用が必要になる可能性があります。
 </p>
 <p>
-この新たに報告された問題によって実際のユーザー端末が不正使用された報告はありません。<a href="{@docRoot}security/enhancements/index.html">Android セキュリティ プラットフォームの保護</a>や <a href="https://developer.android.com/training/safetynet/index.html">SafetyNet</a> のようなサービスの保護について詳しくは、<a href="#mitigations">Android と Google サービスでのリスク軽減策</a>をご覧ください。こうした保護により、Android プラットフォームのセキュリティが改善されます。
+この新たに報告された問題によって実際のユーザー端末が不正使用された報告はありません。<a href="/security/enhancements/index.html">Android セキュリティ プラットフォームの保護</a>や <a href="https://developer.android.com/training/safetynet/index.html">SafetyNet</a> のようなサービスの保護について詳しくは、<a href="#mitigations">Android と Google サービスでのリスク軽減策</a>をご覧ください。こうした保護により、Android プラットフォームのセキュリティが改善されます。
 </p>
 <p>
 すべてのユーザーに対し、ご利用の端末で上記の更新を行うことをおすすめします。
@@ -41,7 +51,7 @@ Android のセキュリティに関する公開情報には、Android 搭載端�
 </ul>
 <h2 id="security-vulnerability-summary">セキュリティの脆弱性の概要</h2>
 <p>
-下記の表に、セキュリティの脆弱性、その共通脆弱性識別子（CVE）、重大度の判定、Google 端末への影響があるかどうかの一覧を示します。<a href="{@docRoot}security/overview/updates-resources.html#severity">重大度の評価</a>は、攻撃を受けた端末でその脆弱性が悪用された場合の影響に基づくもので、プラットフォームやサービスでのリスク軽減策が、開発目的や不正に回避されたために無効にされた場合を前提としています。
+下記の表に、セキュリティの脆弱性、その共通脆弱性識別子（CVE）、重大度の判定、Google 端末への影響があるかどうかの一覧を示します。<a href="/security/overview/updates-resources.html#severity">重大度の評価</a>は、攻撃を受けた端末でその脆弱性が悪用された場合の影響に基づくもので、プラットフォームやサービスでのリスク軽減策が、開発目的や不正に回避されたために無効にされた場合を前提としています。
 </p>
 <h3 id="2016-12-01-summary">セキュリティ パッチ レベル 2016-12-01 の脆弱性の概要</h3>
 <p>
@@ -323,7 +333,7 @@ Android のセキュリティに関する公開情報には、Android 搭載端�
 </p>
 <h2 id="mitigations">Android と Google サービスでのリスク軽減策</h2>
 <p>
-ここでは、<a href="{@docRoot}security/enhancements/index.html">Android セキュリティ プラットフォームの保護</a>と SafetyNet のようなサービスの保護によるリスクの軽減について概説します。こうした機能は、Android でセキュリティの脆弱性が悪用される可能性を減らします。
+ここでは、<a href="/security/enhancements/index.html">Android セキュリティ プラットフォームの保護</a>と SafetyNet のようなサービスの保護によるリスクの軽減について概説します。こうした機能は、Android でセキュリティの脆弱性が悪用される可能性を減らします。
 </p>
 <ul>
 <li>Android プラットフォームの最新版での機能強化により、Android 上の多くの問題について悪用が困難になります。Google では、すべてのユーザーに対し、できる限り最新版の Android に更新することをおすすめしています。</li>
@@ -1968,3 +1978,6 @@ QC-CR#987010</a></td>
   <li>2016 年 12 月 5 日: 情報公開</li>
   <li>2016 年 12 月 7 日: 情報公開を改訂して AOSP のリンクを追加、CVE-2016-6915、CVE-2016-6916、CVE-2016-6917 の帰属を更新</li>
 </ul>
+
+  </body>
+</html>
