@@ -1,28 +1,27 @@
-page.title=Gatekeeper
-@jd:body
+<html devsite>
+  <head>
+    <title>Gatekeeper</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <h2 id=overview>Overview</h2>
 
@@ -35,7 +34,7 @@ attempts.</p>
 
 <p>When users verify their passwords, Gatekeeper uses the TEE-derived shared
 secret to sign an authentication attestation to
-send to the <a href="{@docRoot}security/keystore/index.html">hardware-backed Keystore</a>. That is, a
+send to the <a href="/security/keystore/index.html">hardware-backed Keystore</a>. That is, a
 Gatekeeper attestation notifies Keystore that authentication-bound keys (for
 example, keys that apps have created) can be released for use by apps.</p>
 
@@ -107,7 +106,7 @@ at every device boot.</p>
 
 <h2 id=trusty_and_other_implementations>Trusty and other implementations</h2>
 
-<p>The <a href="{@docRoot}security/trusty/index.html">Trusty</a> operating system is
+<p>The <a href="/security/trusty/index.html">Trusty</a> operating system is
 Google's open source trusted OS for TEE
 environments. Trusty contains an approved implementation of GateKeeper. However,
 <strong>any TEE OS</strong> can be used for the implementation of Gatekeeper.
@@ -194,3 +193,6 @@ use RPMB directly.</p>
 
 
 
+
+  </body>
+</html>

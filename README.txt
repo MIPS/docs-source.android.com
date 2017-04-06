@@ -1,15 +1,11 @@
 # HOW TO UPDATE SOURCE.ANDROID.COM #
 
 The source.android.com site contains tutorials, references, and other
-information related to the Android Open Source Project (AOSP). The rendered
-output of this site is static HTML, although the source contents are stored
-in Javadoc. Conduct your edits in the Javadoc (.jd files).
+information related to the Android Open Source Project (AOSP). To report an
+issue with the documentation on source.android.com, please file a bug at:
+https://issuetracker.google.com/issues/new?component=191476
 
-Note that the currently viewable docs at http://source.android.com/
-are not necessarily exactly in sync with the doc sources you can download from
-AOSP. If you want to make a contribution to the doc sources, please check in at
-android-contrib@ group. That way, we can make sure the affected docs are stable
-before you upload your CL.
+To make updates to the source files themselves, follow the instructions below.
 
 ### File Location ###
 
@@ -17,67 +13,38 @@ The source.android.com source files are stored in the platform/docs/source.andro
 Android project:
 https://android.googlesource.com/platform/docs/source.android.com/
 
-The files to be edited are located in: <root>/docs/source.android.com/src
-
-Every .jd file under src/ is an individual page in Javadoc format. This format
-closely resembles HTML with different headers.
+The files to be edited are located in: <projroot>/docs/source.android.com/<language-code>/
 
 Subdirectories exist for the tabs of source.android.com with their structure
-roughly (but not identically) mirroring navigation of the site.
-
-In addition, each tab and subdirectory contains a *_toc.cs file (such as
-devices_toc.cs) that defines the navigation for that section of the site. When
-pages are added or removed, the corresponding *_toc.cs file must be updated to
-match.
-
-### Dependencies ###
-
- - Vi, Emacs or another plain-text editor
- - Python
- - App Engine - https://developers.google.com/appengine/
- - An app.yaml configuration file placed in the root of the
-   out/target/common/docs/online-sac directory with these contents:
-   -----
-   application: NAMEOFYOURAPP
-   version: 1
-   runtime: python
-   api_version: 1
-
-   handlers:
-   - url: /
-     static_dir: /
-   -----
+roughly (but not identically) mirroring navigation of the site. For exceptions,
+the contents of the Porting tab can be found in the devices/ subdirectory,
+while the contents of the Tuning tab reside in the devices/tech subdirectory.
+(This is temporary while navigational changes are underway.)
 
 ## Edit Instructions ##
 
-1. Initialize the repository and download the Android source per:
-http://source.android.com/source/downloading.html
+1. Initialize and sync the repository and download the Android source per:
+https://source.android.com/source/downloading.html
 
-2. Start a temporary branch for your changes, such as:
+2. Navigate to the docs/source.android.com project.
+
+3. Start a temporary branch for your changes with a command resembling:
+$ repo start <topic-branch-name> .
+
+See the Repo command reference for more details:
 http://source.android.com/source/using-repo.html#start
 
-3. Edit the Javadoc file(s) and save your changes.
+4. Add or edit the file(s) and save your changes:
+$ git add <file>
+$ git commit
+$ repo upload .
 
-4. If a page was added or removed, update the corresponding _toc.cs file to
-reflect the change.
+5. Iteratively improve the change and amend the commit:
+$ git commit -a --amend
+$ repo upload .
 
-5. Run the following make command from the root of the project parent directory:
+6. Once satisfied, include the changelist in a bug filed at:
+https://issuetracker.google.com/issues/new?component=191476
 
-    make online-sac-docs
-
-This generates the output in:
-<root>/out/target/common/docs/online-sac
-
-6. Start App Engine and point it at the output directory, like so:
-
-    python /bin/google_appengine/dev_appserver.py \ 
-    /master/out/target/common/docs/online-sac \
-    --address 0.0.0.0 --port 8080 &
-
-7. Review your changes at localhost:8080/index.html
-
-8. Once satisfied, submit the changes as described at:
-http://source.android.com/source/submit-patches.html
-
-Your change will be routed to the source.android.com team for inclusion.
-
+Your change will be routed to the source.android.com team for evaluation and
+inclusion.

@@ -1,29 +1,27 @@
-page.title=Device-Specific Code
-@jd:body
+<html devsite>
+  <head>
+    <title>Device-Specific Code</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
 
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
 
 <p>The recovery system includes several hooks for inserting device-specific
 code so that OTA updates can also update parts of the device other than the
@@ -32,7 +30,7 @@ Android system (e.g., the baseband or radio processor).</p>
 produced by the <b>yoyodyne</b> vendor.</p>
 
 <h2>Partition map</h2>
-<p>As of Android 2.3, the platform supports eMMC flash devices and the ext4
+<p>As of Android 2.3, the platform supports eMMc flash devices and the ext4
 filesystem that runs on those devices. It also supports Memory Technology Device
 (MTD) flash devices and the yaffs2 filesystem from older releases.</p>
 <p>The partition map file is specified by TARGET_RECOVERY_FSTAB; this file is
@@ -67,10 +65,10 @@ recovery. MTD is not actually mounted, but the mount point is used as a key to
 locate the partition. "device" must be the name of the MTD partition in
 <code>/proc/mtd</code>.</dd>
 <dt>ext4</dt>
-<dd>An ext4 filesystem atop an eMMC flash device. "device" must be the path of
+<dd>An ext4 filesystem atop an eMMc flash device. "device" must be the path of
 the block device.</dd>
 <dt>emmc</dt>
-<dd>A raw eMMC block device, used for bootable partitions such as boot and
+<dd>A raw eMMc block device, used for bootable partitions such as boot and
 recovery. Similar to the mtd type, eMMc is never actually mounted, but the
 mount point string is used to locate the device in the table.</dd>
 <dt>vfat</dt>
@@ -316,7 +314,7 @@ below). Otherwise it can be one of the following predefined constants:</p>
 <li><b>kNoAction</b>. Do nothing with this keypress</li>
 </ul>
 
-<p>As implied by the the visible argument, <code>HandleMenuKey()</code> is
+<p>As implied by the visible argument, <code>HandleMenuKey()</code> is
 called even if the menu is not visible. Unlike <code>CheckKey()</code>, it is
 <i>not</i> called while recovery is doing something such as wiping data or
 installing a package—it's called only when recovery is idle and waiting for
@@ -457,13 +455,13 @@ installation progress bar, and boots back into the new system without input
 from the user. In the event of a system update problem, the only user action
 that can be taken is to call customer care.</p>
 <p>An image-only interface obviates the need for localization. However, as of
-Android 5.x the update can display a string of text (e.g. "Installing system
+Android 5.0 the update can display a string of text (e.g. "Installing system
 update...") along with the image. For details, see <a href="#recovery-text">
 Localized recovery text</a>.</p>
 
-<h3 id="recovery-5.x">Android 5.x</h3>
-<p>The Android 5.x recovery UI uses two main images: the <b>error</b> image
-and the <b>installing</b> animation.</p>
+<h3 id="recovery-5.x">Android 5.0 and later</h3>
+<p>The Android 5.0 and later recovery UI uses two main images: the <strong>error</strong> image
+and the <strong>installing</strong> animation.</p>
 
 <table>
 <tbody>
@@ -1113,3 +1111,5 @@ procedure. The RecoveryUI implementation's <code>CheckKey()</code> method
 will continue to be called for keypresses, so you can provide a key sequence
 that reboots the device and works in adb sideload mode.</li>
 </ul>
+  </body>
+</html>

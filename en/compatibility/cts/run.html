@@ -1,32 +1,31 @@
-page.title=Running CTS tests
-@jd:body
+<html devsite>
+  <head>
+    <title>Running CTS tests</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <h2 id=cts_tradefed>Getting started with CTS tradefed</h2>
 <p>See the <a
-href="{@docRoot}devices/tech/test_infra/tradefed/index.html">Trade Federation
+href="/devices/tech/test_infra/tradefed/index.html">Trade Federation
 Overview</a> for an explanation of the Trade Federation (tradefed or TF for
 short) continuous test framework.</p>
 
@@ -271,11 +270,15 @@ various uses.</p>
       <td>Run the specified test plan.</td>
     </tr>
     <tr>
-      <td><code>-- module/-m &lt;test_module_name&gt;  [--module/-m &lt;test_module2&gt;...]</code></td>
+      <td><code>--module/-m &lt;test_module_name&gt;  [--module/-m &lt;test_module2&gt;...]</code></td>
       <td>Run the specified test module or modules. For example, <code>run cts --module CtsGestureTestCases</code>
           executes the gesture test module (this can be shortened to <code>run cts -m Gesture</code>).</br>
           <code>run cts -m Gesture --test android.gesture.cts.GestureTest#testGetStrokes</code> runs the specific
           package, class, or test.</td>
+    </tr>
+    <tr>
+      <td><code>--subplan  &lt;subplan_name&gt;</code></td>
+      <td>Run the specified subplan.</td>
     </tr>
     <tr>
       <td><code>-- module/-m &lt;test_module_name&gt; -- test &lt;test_name&gt; </code></td>
@@ -341,6 +344,10 @@ various uses.</p>
       <td>List all available test plans (configs) in the repository.</td>
     </tr>
     <tr>
+      <td><code>list subplans</code></td>
+      <td>List all available subplans in the repository.</td>
+    </tr>
+    <tr>
       <td><code>list invocations</code></td>
       <td>List 'run' commands currently being executed on devices.</td>
     </tr>
@@ -370,5 +377,26 @@ various uses.</p>
       <td><code>dump logs</code></td>
       <td>Dump the tradefed logs for all running invocations.</td>
     </tr>
+    <tr>
+      <th>Add</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><code>add subplan --name/-n &lt;subplan_name&gt;<br>
+        --result-type<br>
+        [pass | fail | timeout | notExecuted]<br>
+        [--session/-s &lt;session_id&gt;]</code></td>
+      <td>Create a subplan derived from previous session; this option generates
+        a subplan that can be used to run a subset of tests.<br><br> The only
+        required option is <code>--session</code>. Others are optional but, when
+        included, must be followed by a value.  The
+        <code>--result-type</code> option is repeatable; for example
+        <code>add subplan --session 0 --result-type passed --result-type
+        failed</code> is valid.</td>
+
+    </tr>
   </tbody>
 </table>
+
+  </body>
+</html>

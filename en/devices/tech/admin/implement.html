@@ -1,42 +1,41 @@
-page.title=Implementing Device Administration
-@jd:body
+<html devsite>
+  <head>
+    <title>Implementing Device Administration</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>This section describes how to enable and validate device administration
 features required to prepare devices for managed profiles. It also covers device
 owner user cases that are essential in a corporate environment.</p>
 
-<p>In addition to Android Open Source Project (AOSP) code, a device requires the
-following components to function with managed profiles.</p>
+<p>In addition to AOSP code, a device requires the following components to function with managed
+profiles.</p>
 
 <h2 id=requirements>General requirements</h2>
 <p>Devices intending to support device administration must meet the following
 general requirements.</p>
 
 <h3 id=HAL_values>Thermal HAL values</h3>
-<p>Android 7.0 includes support for HardwarePropertiesManager API, a new device
+<p>Android 7.0 and later includes support for HardwarePropertiesManager API, a device
 monitoring and health reporting API that enables applications to query the state
 of device hardware. This API is exposed via
 <code>android.os.HardwarePropertiesManager</code> and makes calls through
@@ -188,3 +187,6 @@ activity:</p>
        ...
    }
 </pre>
+
+  </body>
+</html>

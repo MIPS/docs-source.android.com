@@ -1,17 +1,27 @@
-page.title=Android 安全公告 - 2016 年 11 月
-@jd:body
-<!--
-    Copyright 2016 The Android Open Source Project
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-        http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+<html devsite>
+  <head>
+    <title>Android 安全公告 - 2016 年 11 月</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
+
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
+
+
 
 <p><em>发布时间：2016 年 11 月 7 日 | 更新时间：2016 年 11 月 8 日</em></p>
 <p>
@@ -22,7 +32,7 @@ Android 安全公告详细介绍了会影响 Android 设备的安全漏洞。除
 <p>
 这些问题中危险性最高的是一个严重程度为“严重”的安全漏洞，它可能会导致在处理媒体文件的过程中，可通过电子邮件、网页和彩信等多种方式在受影响的设备上执行远程代码。</p>
 <p>
-我们尚未收到用户因这些新报告的问题而遭到主动攻击或这些问题遭到滥用的报告。请参阅 <a href="#mitigations">Android 和 Google 服务缓解措施</a>部分，详细了解 <a href="{@docRoot}security/enhancements/index.html">Android 安全平台防护</a>和服务防护功能（如 <a href="https://developer.android.com/training/safetynet/index.html">SafetyNet</a>）；这些功能可提高 Android 平台的安全性。</p>
+我们尚未收到用户因这些新报告的问题而遭到主动攻击或这些问题遭到滥用的报告。请参阅 <a href="#mitigations">Android 和 Google 服务缓解措施</a>部分，详细了解 <a href="/security/enhancements/index.html">Android 安全平台防护</a>和服务防护功能（如 <a href="https://developer.android.com/training/safetynet/index.html">SafetyNet</a>）；这些功能可提高 Android 平台的安全性。</p>
 <p>
 我们建议所有用户都在自己的设备上接受这些更新。</p>
 <h2 id="announcements">公告</h2>
@@ -46,7 +56,7 @@ Android 安全公告详细介绍了会影响 Android 设备的安全漏洞。除
 
 <h2 id="security-vulnerability-summary">安全漏洞摘要</h2>
 <p>
-下表列出了安全漏洞、对应的 CVE（通用漏洞和风险识别码）、评估得出的严重程度以及是否会影响 Google 设备。<a href="{@docRoot}security/overview/updates-resources.html#severity">严重程度评估</a>的依据是漏洞被利用后可能会对受影响设备造成的影响大小（假设相关平台和服务缓解措施被成功规避或出于开发目的而被停用）。</p>
+下表列出了安全漏洞、对应的 CVE（通用漏洞和风险识别码）、评估得出的严重程度以及是否会影响 Google 设备。<a href="/security/overview/updates-resources.html#severity">严重程度评估</a>的依据是漏洞被利用后可能会对受影响设备造成的影响大小（假设相关平台和服务缓解措施被成功规避或出于开发目的而被停用）。</p>
 <h3 id="2016-11-01-summary">2016-11-01 安全补丁程序级别 - 漏洞摘要</h3>
 <p>
 2016-11-01（或之后）的安全补丁程序级别都必须解决以下问题。</p>
@@ -387,7 +397,7 @@ Android 安全公告详细介绍了会影响 Android 设备的安全漏洞。除
 
 <h2 id="mitigations">Android 和 Google 服务缓解措施</h2>
 <p>
-本部分总结了 <a href="{@docRoot}security/enhancements/index.html">Android 安全平台</a>和服务防护功能（如 SafetyNet）提供的缓解措施。这些功能可降低 Android 上的安全漏洞被成功利用的可能性。</p>
+本部分总结了 <a href="/security/enhancements/index.html">Android 安全平台</a>和服务防护功能（如 SafetyNet）提供的缓解措施。这些功能可降低 Android 上的安全漏洞被成功利用的可能性。</p>
 <ul>
   <li>新版 Android 平台中的增强功能让攻击者更加难以利用 Android 上存在的许多问题。我们建议所有用户都尽可能更新到最新版 Android。</li>
   <li>Android 安全团队会积极利用<a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2015_Report_Final.pdf">“验证应用”和 SafetyNet</a> 来监控滥用行为，这些功能会在发现<a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_PHA_classifications.pdf">可能有害的应用</a>时向用户发出警告。在预装有 <a href="http://www.android.com/gms">Google 移动服务</a>的设备上，“验证应用”在默认情况下处于启用状态。对于安装来自 Google Play 以外的应用的用户来说，这项功能尤为重要。虽然 Google Play 中禁止提供设备 Root 应用，但用户可能会尝试安装 Root 应用，而“验证应用”会在检测到这类应用（无论应用来自何处）时向用户发出警告。另外，“验证应用”会尝试识别并阻止用户安装会利用提权漏洞的已知恶意应用。如果用户已安装此类应用，那么“验证应用”将会通知用户并尝试移除所检测到的应用。</li>
@@ -2152,3 +2162,6 @@ Qualcomm 组件（包括 GPU 驱动程序、电源驱动程序、SMSM 点对点�
   <li>2016 年 11 月 7 日：发布了本公告。</li>
   <li>11 月 8 日：修订了本公告，添加了 AOSP 链接，并更新了 CVE-2016-6709 的说明。</li>
 </ul>
+
+  </body>
+</html>

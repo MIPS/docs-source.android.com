@@ -1,17 +1,27 @@
-page.title=Android 安全公告 - 2016 年 9 月
-@jd:body
-<!--
-    Copyright 2016 The Android Open Source Project
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-        http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+<html devsite>
+  <head>
+    <title>Android 安全公告 - 2016 年 9 月</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
+
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
+
+
 <p><em>发布时间：2016 年 9 月 6 日 | 更新时间：2016 年 9 月 12 日</em>
 </p>
 
@@ -28,7 +38,7 @@ Android 安全公告详细介绍了会影响 Android 设备的安全漏洞。除
 </p>
 
 <p>
-我们尚未收到用户因这些新报告的问题而遭到主动攻击或这些问题遭到滥用的报告。请参阅 <a href="#mitigations">Android 和 Google 服务缓解措施</a>部分，详细了解 <a href="{@docRoot}security/enhancements/index.html">Android 安全平台防护</a>和服务防护功能（如 SafetyNet）；这些功能可提高 Android 平台的安全性。
+我们尚未收到用户因这些新报告的问题而遭到主动攻击或这些问题遭到滥用的报告。请参阅 <a href="#mitigations">Android 和 Google 服务缓解措施</a>部分，详细了解 <a href="/security/enhancements/index.html">Android 安全平台防护</a>和服务防护功能（如 SafetyNet）；这些功能可提高 Android 平台的安全性。
 </p>
 
 <p>
@@ -48,7 +58,7 @@ Android 安全公告详细介绍了会影响 Android 设备的安全漏洞。除
 </ul>
 <h2>安全漏洞摘要</h2>
 <p>
-下表列出了安全漏洞、对应的 CVE（常见漏洞和风险识别码）、评估得出的严重程度以及是否会影响 Nexus 设备。<a href="{@docRoot}security/overview/updates-resources.html#severity">严重程度评估</a>的依据是漏洞被利用后可能会对受影响设备造成的影响大小（假设相关平台和服务缓解措施被成功规避或出于开发目的而被停用）。
+下表列出了安全漏洞、对应的 CVE（常见漏洞和风险识别码）、评估得出的严重程度以及是否会影响 Nexus 设备。<a href="/security/overview/updates-resources.html#severity">严重程度评估</a>的依据是漏洞被利用后可能会对受影响设备造成的影响大小（假设相关平台和服务缓解措施被成功规避或出于开发目的而被停用）。
 </p>
 
 <h3 id="2016-09-01-summary">2016-09-01 安全补丁程序级别 - 漏洞摘要</h3>
@@ -390,7 +400,7 @@ Android 安全公告详细介绍了会影响 Android 设备的安全漏洞。除
 </table>
 <h2 id="mitigations">Android 和 Google 服务缓解措施</h2>
 <p>
-本部分总结了 <a href="{@docRoot}security/enhancements/index.html">Android 安全平台</a>和服务防护功能（如 SafetyNet）提供的缓解措施。这些功能可降低 Android 上的安全漏洞被成功利用的可能性。
+本部分总结了 <a href="/security/enhancements/index.html">Android 安全平台</a>和服务防护功能（如 SafetyNet）提供的缓解措施。这些功能可降低 Android 上的安全漏洞被成功利用的可能性。
 </p>
 <ul>
 <li>新版 Android 平台中的增强功能让攻击者更加难以利用 Android 上存在的许多问题。我们建议所有用户都尽可能更新到最新版 Android。</li>
@@ -1966,3 +1976,6 @@ Qualcomm 网络组件中的提权漏洞可让本地恶意应用通过内核执�
   <li>2016 年 9 月 7 日：修订了本公告，添加了 AOSP 链接。</li>
   <li>2016 年 9 月 12 日：修订了本公告，更新了 CVE-2016-3861 的致谢信息并移除了 CVE-2016-3877 的相关信息。</li>
 </ul>
+
+  </body>
+</html>

@@ -1,38 +1,37 @@
-page.title=Understanding 64-bit Builds
-@jd:body
+<html devsite>
+  <head>
+    <title>Understanding 64-bit Builds</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <h2 id=overview>Overview</h2>
 
-<p>From the build system’s perspective, the most prominent change is that now it
+<p>From the build system’s perspective, the most notable change is that now it
 supports building binaries for two target CPU architectures (64-bit and 32-bit)
 in the same build. That’s also known as <em>Multilib build</em>.</p>
 
 <p>For native static libraries and shared libraries, the build system sets up
 rules to build binaries for both architectures. The product configuration
-(PRODUCT_PACKAGES), together with the dependency graph, determines which
+(<code>PRODUCT_PACKAGES</code>), together with the dependency graph, determines which
 binaries are built and installed to the system image.</p>
 
 <p>For executables and apps, the build system builds only the 64-bit version by
@@ -97,8 +96,8 @@ for 32-bit and/or 64-bit and override the global
   <li>“first”: build for only the first arch (32-bit in 32-bit devices and 64-bit
 in 64-bit devices).</li>
   <li>“”: the default; the build system decides what arch to build based on the
-module class and other LOCAL_ variables, such as LOCAL_MODULE_TARGET_ARCH,
-LOCAL_32_BIT_ONLY, etc.</li>
+module class and other <code>LOCAL_</code> variables, such as <code>LOCAL_MODULE_TARGET_ARCH</code>,
+<code>LOCAL_32_BIT_ONLY</code>, etc.</li>
 </ul>
 
 <p>In a Multilib build, conditionals like <code>ifeq $(TARGET_ARCH)</code> don’t work any
@@ -108,27 +107,27 @@ more. </p>
 variables can help you:</p>
 
 <ul>
-  <li>LOCAL_MODULE_TARGET_ARCH<br>It can be set to a list of archs, something
+  <li><code>LOCAL_MODULE_TARGET_ARCH</code><br>It can be set to a list of archs, something
 like “arm x86 arm64”. Only if the arch being built is among that list will the
 current module be included by the build system.</li>
 
-  <li>LOCAL_MODULE_UNSUPPORTED_TARGET_ARCH<br>The opposite of
-LOCAL_MODULE_TARGET_ARCH. Only if the arch being built is not among the list,
+  <li><code>LOCAL_MODULE_UNSUPPORTED_TARGET_ARCH</code><br>The opposite of
+<code>LOCAL_MODULE_TARGET_ARCH</code>. Only if the arch being built is not among the list,
 the current module will be included.</li>
 </ul>
 
 <p>There are minor variants of the above two variables:</p>
 
 <ul>
-  <li>LOCAL_MODULE_TARGET_ARCH_WARN</li>
-  <li>LOCAL_MODULE_UNSUPPORTED_TARGET_ARCH_WARN</li>
+  <li><code>LOCAL_MODULE_TARGET_ARCH_WARN</code></li>
+  <li><code>LOCAL_MODULE_UNSUPPORTED_TARGET_ARCH_WARN</code></li>
 </ul>
 
 <p>The build system will give warning if the current module is skipped due to
 archs limited by them.</p>
 
-<p>To set up arch-specific build flags, use the arch-specific LOCAL_ variables. An
-arch-specific LOCAL_ variable is a normal LOCAL_ variable with an arch suffix,
+<p>To set up arch-specific build flags, use the arch-specific <code>LOCAL_</code> variables. An
+arch-specific <code>LOCAL_</code> variable is a normal <code>LOCAL_</code> variable with an arch suffix,
 for example:</p>
 
 <ul>
@@ -141,8 +140,8 @@ for example:</p>
 that arch.</p>
 
 <p>Sometimes it’s more convenient to set up flags based on whether the binary is
-currently being built for 32-bit or 64-bit. In that case you can use the LOCAL_
-variable with a _32 or _64 suffix, for example:</p>
+currently being built for 32-bit or 64-bit. In that case you can use the <code>LOCAL_</code>
+variable with a <code>_32</code> or <code>_64</code> suffix, for example:</p>
 
 <ul>
   <li> <code>LOCAL_SRC_FILES_32, LOCAL_SRC_FILES_64,</code>
@@ -150,17 +149,17 @@ variable with a _32 or _64 suffix, for example:</p>
   <li> <code>LOCAL_LDFLAGS_32, LOCAL_LDFLAGS_64,</code>
 </ul>
 
-<p>Note that not all of the LOCAL_ variables support the arch-specific variants.
+<p>Note that not all of the <code>LOCAL_</code> variables support the arch-specific variants.
 For an up-to-date list of such variables, refer to <code>build/core/clear_vars.mk</code>.</p>
 
 <h2 id=install_path>Install path</h2>
 
 
-<p>In the past, you could use LOCAL_MODULE_PATH to install a library to a
+<p>In the past, you could use <code>LOCAL_MODULE_PATH</code> to install a library to a
 location other than the default one. For example, <code>LOCAL_MODULE_PATH :=
 $(TARGET_OUT_SHARED_LIBRARIES)/hw</code>.</p>
 
-<p>In Multilib build, use LOCAL_MODULE_RELATIVE_PATH instead:</p>
+<p>In Multilib build, use <code>LOCAL_MODULE_RELATIVE_PATH</code> instead:</p>
 
 <pre class=prettyprint>
 LOCAL_MODULE_RELATIVE_PATH := hw
@@ -223,3 +222,6 @@ odex only for the primary 64-bit arch. If an app will be launched in both
 both 32-bit and 64-bit odex files are generated. That flag also tells the build
 system to include both 32-bit and 64-bit JNI libraries, if the app has any.</p>
 
+
+  </body>
+</html>

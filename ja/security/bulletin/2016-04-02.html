@@ -1,27 +1,27 @@
-page.title=Nexus のセキュリティに関する公開情報 - 2016 年 4 月
-@jd:body
+<html devsite>
+  <head>
+    <title>Nexus のセキュリティに関する公開情報 - 2016 年 4 月</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <ol id="auto-toc">
-   </ol>
-  </div>
-</div>
+
 
 
 
@@ -41,19 +41,19 @@ Nexus ファームウェア イメージも <a href="https://developers.google.c
 攻撃対象の端末でメディア ファイルを処理する際にリモートでのコード実行が
 可能になるおそれのある重大なセキュリティの脆弱性です。</p>
 <p>
-2016 年 3 月 18 日の <a href="{@docRoot}security/advisory/2016-03-18.html">Android セキュリティ アドバイザリ</a>では、
+2016 年 3 月 18 日の <a href="/security/advisory/2016-03-18.html">Android セキュリティ アドバイザリ</a>では、
 <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a> を利用して
 ルート権限を取得するアプリについて取り上げました。<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a> は
 このアップデートで解決されています。
 新たに見つかった他の問題が実際にユーザーの端末で利用または悪用されたという
-報告はありません。<a href="{@docRoot}security/enhancements/index.html">Android セキュリティ プラットフォームの保護</a>や
+報告はありません。<a href="/security/enhancements/index.html">Android セキュリティ プラットフォームの保護</a>や
 SafetyNet のようなサービスの
 保護（Android プラットフォームのセキュリティを向上させるもの）について詳しくは、
 下記の<a href="#mitigations">リスクの軽減</a>をご覧ください。</p>
 <h2 id="security_vulnerability_summary">セキュリティの脆弱性の概要</h2>
 <p>下記の表に、セキュリティの脆弱性、共通脆弱性識別子（CVE）、
 およびその重大度の評価の一覧を示します。
-<a href="{@docRoot}security/overview/updates-resources.html#severity">重大度の評価</a>は、
+<a href="/security/overview/updates-resources.html#severity">重大度の評価</a>は、
 攻撃対象の端末でその脆弱性が悪用された場合の影響に基づくもので、
 プラットフォームやサービスでのリスク軽減策が開発目的または不正な回避により
 無効となっていることを前提としています。</p>
@@ -222,7 +222,7 @@ SafetyNet のようなサービスの
 </tr>
 </table>
 <h2 id="mitigations">リスクの軽減</h2>
-<p>ここでは、<a href="{@docRoot}security/enhancements/index.html">Android セキュリティ プラットフォームの保護</a>と SafetyNet のようなサービスの保護によるリスクの軽減について概説します。こうした機能は、Android でセキュリティの脆弱性が悪用される可能性を減らします。</p>
+<p>ここでは、<a href="/security/enhancements/index.html">Android セキュリティ プラットフォームの保護</a>と SafetyNet のようなサービスの保護によるリスクの軽減について概説します。こうした機能は、Android でセキュリティの脆弱性が悪用される可能性を減らします。</p>
 <ul>
 <li> Android プラットフォームの最新版での機能強化により、Android 上の多くの問題の悪用が困難になります。Google では、すべてのユーザーに対し、できる限り
 最新バージョンの Android に更新することをおすすめしています。
@@ -481,7 +481,7 @@ Chiachih Wu
 カーネル内で勝手なコードの実行が可能になるおそれがあります。この問題は、
 ローカルでの端末の永続的な侵害につながるおそれがあり、
 オペレーティング システムの再消去による修復が必要となる可能性があるため、
-重大と見なされています。この問題についての説明は、<a href="{@docRoot}security/advisory/2016-03-18.html">2016 年 3 月 18 日の Android セキュリティ アドバイザリ</a>をご覧ください。</p>
+重大と見なされています。この問題についての説明は、<a href="/security/advisory/2016-03-18.html">2016 年 3 月 18 日の Android セキュリティ アドバイザリ</a>をご覧ください。</p>
 <table>
 <tr>
 <th>CVE</th>
@@ -1158,10 +1158,10 @@ Debuggerd コンポーネントでの権限昇格の脆弱性</h3>
 <p><strong>2. このセキュリティ パッチ レベルが 2016 年 4 月 2 日であるのはなぜですか？</strong></p>
 <p>通常、月例のセキュリティ アップデートのセキュリティ パッチ レベルは、毎月 1 日に
 設定されます。4 月の場合、2016 年 4 月 1 日のセキュリティ パッチ レベルは、
-この公開情報に記載された問題のうち CVE-2015-1805（<a href="{@docRoot}security/advisory/2016-03-18.html">2016 年 3 月 18 日の Android セキュリティ アドバイザリ</a>で
+この公開情報に記載された問題のうち CVE-2015-1805（<a href="/security/advisory/2016-03-18.html">2016 年 3 月 18 日の Android セキュリティ アドバイザリ</a>で
 説明）を除くすべての問題が対処済みである
 ことを示します。2016 年 4 月 2 日のセキュリティ パッチ レベルは、この公開情報に記載された
-問題が CVE-2015-1805（<a href="{@docRoot}security/advisory/2016-03-18.html">2016 年 3 月 18 日の Android セキュリティ アドバイザリ</a>で
+問題が CVE-2015-1805（<a href="/security/advisory/2016-03-18.html">2016 年 3 月 18 日の Android セキュリティ アドバイザリ</a>で
 説明）も含めてすべて対処済みである
 ことを示します。</p>
 <h2 id="revisions">改訂</h2>
@@ -1169,3 +1169,6 @@ Debuggerd コンポーネントでの権限昇格の脆弱性</h3>
 <li> 2016 年 4 月 4 日: 情報公開
   </li><li> 2016 年 4 月 6 日: 公開情報を改訂し AOSP リンクを追加
 </li></ul>
+
+  </body>
+</html>
