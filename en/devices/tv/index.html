@@ -1,28 +1,27 @@
-page.title=TV Input Framework
-@jd:body
+<html devsite>
+  <head>
+    <title>TV Input Framework</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_tv.png" alt="Android TV HAL icon"/>
 
@@ -251,7 +250,7 @@ the TV while the manufacturer-provided HDMI TV Input renders the video.</p>
 specific TV Input for picture in picture (PIP) display. Those button presses
 are interpreted by the hardware driver supplied by the device manufacturer,
 converting hardware scancodes to Android keycodes and passing them to the
-standard Android <a href="{@docRoot}devices/input/overview.html">input pipeline</a> <code>InputReader</code> and <code>InputDispatcher</code> functions as <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvents</a>. These in turn trigger events on the TV App if it is in focus. </p>
+standard Android <a href="/devices/input/overview.html">input pipeline</a> <code>InputReader</code> and <code>InputDispatcher</code> functions as <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvents</a>. These in turn trigger events on the TV App if it is in focus. </p>
 
 <p>Only system TV Inputs are eligible to receive <code>InputEvents</code>, and only if they have the <code>RECEIVE_INPUT_EVENT</code> system permission. The TV Input is responsible to determine which InputEvents
 to consume and should allow the TV App to handle the keys it does not need to
@@ -302,7 +301,7 @@ App (Live TV) is provided alongside the Android platform, which
 can be used as-is, customized, extended, or replaced by device manufacturers.
 The <a href="https://android.googlesource.com/platform/packages/apps/TV/">source code</a>
 is available in the Android Open Source Project, and you can get started with
-it in the <a href="{@docRoot}devices/tv/reference-tv-app.html">Reference TV app</a> article.</p>
+it in the <a href="/devices/tv/reference-tv-app.html">Reference TV app</a> article.</p>
 
 <p>Device manufacturers may extend their TV Apps to implement device
 manufacturer or country-specific features, however this is not in the scope of
@@ -521,7 +520,7 @@ Recording</a> article.
 
 
 <ul>
-  <li> The <a href="{@docRoot}compatibility/android-cdd.pdf">Android CDD</a>
+  <li> The <a href="/compatibility/android-cdd.pdf">Android CDD</a>
        and documented developer APIs are the definitive references.
   <li> CTS Verifier exercises the APIs as part of the compatibility testing program.
 Running this against Live TV may be a useful way to see the EPG,
@@ -677,3 +676,6 @@ activates broadcast apps.
 <p>For voice search/recommendation, the broadcast app may support In-app search
 for voice search.</p>
 
+
+  </body>
+</html>

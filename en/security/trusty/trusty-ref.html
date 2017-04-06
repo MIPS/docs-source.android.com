@@ -1,28 +1,27 @@
-page.title=Trusty API Reference
-@jd:body
+<html devsite>
+  <head>
+    <title>Trusty API Reference</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>The <a href="index.html">Trusty</a> API generally describes the
 Trusty inter-process communication (IPC)
@@ -76,7 +75,7 @@ indication that a handle is invalid or unset.</p>
 
 <p>Associates the caller-provided private data with a specified handle.</p>
 
-<pre>
+<pre class="prettyprint">
 long set_cookie(uint32_t handle, void *cookie)
 </pre>
 
@@ -97,7 +96,7 @@ or <code>wait_any()</code> calls.</p>
 
 <p>Waits for an event to occur on a given handle for specified period of time.</p>
 
-<pre>
+<pre class="prettyprint">
 long wait(uint32_t handle_id, uevent_t *event, unsigned long timeout_msecs)
 </pre>
 
@@ -118,7 +117,7 @@ event has occurred; <code>&lt; 0</code> for other errors</p>
 <p>Waits for any event to occur on any handle in the application handle table for
 the specified period of time.</p>
 
-<pre>
+<pre class="prettyprint">
 long wait_any(uevent_t *event, unsigned long timeout_msecs);
 </pre>
 
@@ -137,7 +136,7 @@ and <code>wait_any()</code> calls
 fill a specified <code>uevent_t</code> structure with information about
 the event that occurred.</p>
 
-<pre>
+<pre class="prettyprint">
 typedef struct uevent {
     uint32_t handle; /* handle this event is related to */
     uint32_t event;  /* combination of IPC_HANDLE_POLL_XXX flags */
@@ -147,7 +146,7 @@ typedef struct uevent {
 
 <p>The <code>event</code> field contains a combination of the following values:</p>
 
-<pre>
+<pre class="prettyprint">
 enum {
   IPC_HANDLE_POLL_NONE    = 0x0,
   IPC_HANDLE_POLL_READY   = 0x1,
@@ -201,7 +200,7 @@ handle it.</p>
 <p>Destroys the resource associated with the specified handle and removes it from
 the handle table.</p>
 
-<pre>
+<pre class="prettyprint">
 long close(uint32_t handle_id);
 </pre>
 
@@ -220,7 +219,7 @@ its service end-points. Each port is represented by a handle.</p>
 
 <p>Creates a named service port.</p>
 
-<pre>
+<pre class="prettyprint">
 long port_create (const char *path, uint num_recv_bufs, size_t recv_buf_size,
 uint32_t flags)
 </pre>
@@ -268,7 +267,7 @@ another handle) that can then be polled for incoming messages.</p>
 
 <p>Accepts an incoming connection and gets a handle to a channel.</p>
 
-<pre>
+<pre class="prettyprint">
 long accept(uint32_t handle_id, uuid_t *peer_uuid);
 </pre>
 
@@ -291,7 +290,7 @@ exchange messages with the client (or an error code otherwise)</p>
 
 <p>Initiates a connection to a port specified by name.</p>
 
-<pre>
+<pre class="prettyprint">
 long connect(const char *path, uint flags);
 </pre>
 
@@ -311,7 +310,7 @@ server otherwise accepts a connection.</p>
 <p>This behavior can be altered by specifying a combination of two values,
 described below:</p>
 
-<pre>
+<pre class="prettyprint">
 enum {
 IPC_CONNECT_WAIT_FOR_PORT = 0x1,
 IPC_CONNECT_ASYNC = 0x2,
@@ -345,7 +344,7 @@ described above.</p>
 structure, leaving it to the server and client to agree on the semantics of the
 actual contents:</p>
 
-<pre>
+<pre class="prettyprint">
 /*
  *  IPC message
  */
@@ -375,7 +374,7 @@ by the <code>iov</code> array is completely arbitrary.</p>
 
 <p>Sends a message over a specified channel.</p>
 
-<pre>
+<pre class="prettyprint">
 long send_msg(uint32_t handle, ipc_msg_t *msg);
 </pre>
 
@@ -402,7 +401,7 @@ returned by the <code>wait()</code> or <code>wait_any()</code> call.</p>
 
 <p>of a specified channel.</p>
 
-<pre>
+<pre class="prettyprint">
 long get_msg(uint32_t handle, ipc_msg_info_t *msg_info);
 </pre>
 
@@ -410,7 +409,7 @@ long get_msg(uint32_t handle, ipc_msg_info_t *msg_info);
 
 <p>[out] <code>msg_info</code>: Message information structure described as follows:</p>
 
-<pre>
+<pre class="prettyprint">
 typedef struct ipc_msg_info {
         size_t    len;  /* total message length */
         uint32_t  id;   /* message id */
@@ -429,7 +428,7 @@ particular channel.</p>
 <p>Reads the content of the message with the specified ID starting from the
 specified offset.</p>
 
-<pre>
+<pre class="prettyprint">
 long read_msg(uint32_t handle, uint32_t msg_id, uint32_t offset, ipc_msg_t
 *msg);
 </pre>
@@ -455,7 +454,7 @@ sequential) offset as needed.</p>
 
 <p>Retires a message with a specified ID.</p>
 
-<pre>
+<pre class="prettyprint">
 long put_msg(uint32_t handle, uint32_t msg_id);
 </pre>
 
@@ -507,7 +506,7 @@ conflicts and is not generally recommended.</p>
 
 <p>Attempts to read up to <code>count</code> bytes of data from a specified file descriptor.</p>
 
-<pre>
+<pre class="prettyprint">
 long read(uint32_t fd, void *buf, uint32_t count);
 </pre>
 
@@ -523,7 +522,7 @@ long read(uint32_t fd, void *buf, uint32_t count);
 
 <p>Writes up to <code>count</code> bytes of data to specified file descriptor.</p>
 
-<pre>
+<pre class="prettyprint">
 long write(uint32_t fd, void *buf, uint32_t count);
 </pre>
 
@@ -539,7 +538,7 @@ long write(uint32_t fd, void *buf, uint32_t count);
 
 <p>Invokes a specified <code>ioctl</code> command for a given file descriptor.</p>
 
-<pre>
+<pre class="prettyprint">
 long ioctl(uint32_t fd, uint32_t cmd, void *args);
 </pre>
 
@@ -557,7 +556,7 @@ long ioctl(uint32_t fd, uint32_t cmd, void *args);
 
 <p>Returns the current system time (in nanoseconds).</p>
 
-<pre>
+<pre class="prettyprint">
 long gettime(uint32_t clock_id, uint32_t flags, uint64_t *time);
 </pre>
 
@@ -574,7 +573,7 @@ long gettime(uint32_t clock_id, uint32_t flags, uint64_t *time);
 <p>Suspends execution of the calling application for a specified period of time
 and resumes it after that period.</p>
 
-<pre>
+<pre class="prettyprint">
 long nanosleep(uint32_t clock_id, uint32_t flags, uint64_t sleep_time)
 </pre>
 
@@ -593,7 +592,7 @@ creates an "echo" service that handles multiple incoming connections and
 reflects back to the caller all messages it receives from clients originated
 from the secure or non-secure side.</p>
 
-<pre>
+<pre class="prettyprint">
 #include &lt;assert.h>
 #include &lt;err.h>
 #include &lt;stddef.h>
@@ -777,7 +776,7 @@ implement a client of an "echo" service (shown in the code above). The <code>syn
 method shows an implementation of a synchronous connect with a timeout on top
 of an asynchronous <code>connect()</code> call.</p>
 
-<pre>
+<pre class="prettyprint">
 /*
  *  Local wrapper on top of an async connect that provides a
  *  synchronous connect with timeout.
@@ -811,7 +810,7 @@ int sync_connect(const char *path, uint timeout)
 to the "echo" service and handles
 replies.</p>
 
-<pre>
+<pre class="prettyprint">
 static int run_echo_test(void)
 {
   int rc;
@@ -935,7 +934,7 @@ obtain a file descriptor and invokes a <code>TIPC_IOC_CONNECT ioctl()</code>
 call with the <code>argp</code> parameter pointing to a string containing a
 service name to which to connect.</p>
 
-<pre>
+<pre class="prettyprint">
 #define TIPC_IOC_MAGIC  'r'
 #define TIPC_IOC_CONNECT  _IOW(TIPC_IOC_MAGIC, 0x80, char *)
 </pre>
@@ -973,7 +972,7 @@ space application <code>read()</code> call.</p>
 <p>Opens a specified <code>tipc</code> device node and initiates a
 connection to a specified Trusty service.</p>
 
-<pre>
+<pre class="prettyprint">
 int tipc_connect(const char *dev_name, const char *srv_name);
 </pre>
 
@@ -987,7 +986,7 @@ int tipc_connect(const char *dev_name, const char *srv_name);
 
 <p>Closes the connection to the Trusty service specified by a file descriptor.</p>
 
-<pre>
+<pre class="prettyprint">
 int tipc_close(int fd);
 </pre>
 
@@ -1047,7 +1046,7 @@ it is no longer needed.</p>
 <p>Creates and configures an instance of a Trusty IPC channel for a particular
 trusty-ipc device.</p>
 
-<pre>
+<pre class="prettyprint">
 struct tipc_chan *tipc_create_channel(struct device *dev,
                           const struct tipc_chan_ops *ops,
                               void *cb_arg);
@@ -1109,7 +1108,7 @@ can be a new buffer obtained by the <code>tipc_chan_get_rxbuf()</code> call)
 
 <p>Initiates a connection to the specified Trusty IPC service.</p>
 
-<pre>
+<pre class="prettyprint">
 int tipc_chan_connect(struct tipc_chan *chan, const char *port);
 </pre>
 
@@ -1129,7 +1128,7 @@ service name to which to connect</p>
 <p>Terminates a connection to the Trusty IPC service previously initiated
 by a <code>tipc_chan_connect()</code> call.</p>
 
-<pre>
+<pre class="prettyprint">
 int tipc_chan_shutdown(struct tipc_chan *chan);
 </pre>
 
@@ -1140,7 +1139,7 @@ a <code>tipc_create_chan()</code> call</p>
 
 <p>Destroys a specified Trusty IPC channel.</p>
 
-<pre>
+<pre class="prettyprint">
 void tipc_chan_destroy(struct tipc_chan *chan);
 </pre>
 
@@ -1153,7 +1152,7 @@ void tipc_chan_destroy(struct tipc_chan *chan);
 channel. If the buffer is not immediately available the caller may be blocked
 for the specified timeout (in milliseconds).</p>
 
-<pre>
+<pre class="prettyprint">
 struct tipc_msg_buf *
 tipc_chan_get_txbuf_timeout(struct tipc_chan *chan, long timeout);
 </pre>
@@ -1171,7 +1170,7 @@ tipc_chan_get_txbuf_timeout(struct tipc_chan *chan, long timeout);
 <p>Queues a message to be sent over the specified
 Trusty IPC channels.</p>
 
-<pre>
+<pre class="prettyprint">
 int tipc_chan_queue_msg(struct tipc_chan *chan, struct tipc_msg_buf *mb);
 </pre>
 
@@ -1187,7 +1186,7 @@ int tipc_chan_queue_msg(struct tipc_chan *chan, struct tipc_msg_buf *mb);
 <p>Releases the specified <code>Tx</code> message buffer
 previously obtained by a <code>tipc_chan_get_txbuf_timeout()</code> call.</p>
 
-<pre>
+<pre class="prettyprint">
 void tipc_chan_put_txbuf(struct tipc_chan *chan,
                          struct tipc_msg_buf *mb);
 </pre>
@@ -1204,7 +1203,7 @@ this message buffer belongs</p>
 <p>Obtains a new message buffer that can be used to receive messages over the
 specified channel.</p>
 
-<pre>
+<pre class="prettyprint">
 struct tipc_msg_buf *tipc_chan_get_rxbuf(struct tipc_chan *chan);
 </pre>
 
@@ -1217,7 +1216,7 @@ struct tipc_msg_buf *tipc_chan_get_rxbuf(struct tipc_chan *chan);
 <p>Releases a specified message buffer previously obtained by a
 <code>tipc_chan_get_rxbuf()</code> call.</p>
 
-<pre>
+<pre class="prettyprint">
 void tipc_chan_put_rxbuf(struct tipc_chan *chan,
                          struct tipc_msg_buf *mb);
 </pre>
@@ -1227,3 +1226,6 @@ void tipc_chan_put_rxbuf(struct tipc_chan *chan,
 <p>[in] <code>mb</code>: Pointer to a message buffer to release</p>
 
 <p>[retval]: None</p>
+
+  </body>
+</html>

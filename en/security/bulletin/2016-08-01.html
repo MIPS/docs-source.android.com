@@ -1,21 +1,27 @@
-page.title=Android Security Bulletin—August 2016
-@jd:body
+<html devsite>
+  <head>
+    <title>Android Security Bulletin—August 2016</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+
 <p><em>Published August 01, 2016 | Updated October 21, 2016</em></p>
 <p>
 The Android Security Bulletin contains details of security vulnerabilities
@@ -37,14 +43,18 @@ bulletin also includes links to patches outside of AOSP.
 <p>
 The most severe of these issues is a Critical security vulnerability that could
 enable remote code execution on an affected device through multiple methods such
-as email, web browsing, and MMS when processing media files.
+as email, web browsing, and MMS when processing media files. The
+<a href="/security/overview/updates-resources.html#severity">severity
+assessment</a> is based on the effect that exploiting the vulnerability would
+possibly have on an affected device, assuming the platform and service
+mitigations are disabled for development purposes or if successfully bypassed.
 </p>
 <p>
 We have had no reports of active customer exploitation or abuse of these newly
 reported issues. Refer to the
 <a href="#mitigations">Android and Google service mitigations</a>
 section for details on the
-<a href="{@docRoot}security/enhancements/index.html">Android
+<a href="/security/enhancements/index.html">Android
 security platform protections</a> and service protections such as SafetyNet,
 which improve the security of the Android platform.
 </p>
@@ -71,322 +81,10 @@ and 2016-08-05 (and all previous security patch level strings) are addressed.</l
 <li>Supported Nexus devices will receive a single OTA update with the August 05,
 2016 security patch level.</li>
 </ul>
-
-<h2 id="security-vulnerability-summary">Security vulnerability summary</h2>
-<p>
-The tables below contain a list of security vulnerabilities, the Common
-Vulnerability and Exposures ID (CVE), the assessed severity, and whether or not
-Nexus devices are affected. The <a
-href="{@docRoot}security/overview/updates-resources.html#severity">severity
-assessment</a> is based on the effect that exploiting the vulnerability would
-possibly have on an affected device, assuming the platform and service
-mitigations are disabled for development purposes or are successfully bypassed.
-</p>
-
-<h3 id="2016-08-01-security-patch-level-vulnerability-summary">2016-08-01
-security patch level—Vulnerability summary</h3>
-<p>
-Security patch levels of 2016-08-01 or later must address the following issues.
-</p>
-<table>
-  <col width="55%">
-  <col width="20%">
-  <col width="13%">
-  <col width="12%">
-  <tr>
-   <th>Issue</th>
-   <th>CVE</th>
-   <th>Severity</th>
-   <th>Affects Nexus?</th>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Mediaserver</td>
-   <td>CVE-2016-3819, CVE-2016-3820, CVE-2016-3821</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in libjhead</td>
-   <td>CVE-2016-3822</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Mediaserver</td>
-   <td>CVE-2016-3823, CVE-2016-3824, CVE-2016-3825, CVE-2016-3826</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in Mediaserver</td>
-   <td>CVE-2016-3827, CVE-2016-3828, CVE-2016-3829, CVE-2016-3830</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in system clock</td>
-   <td>CVE-2016-3831</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in framework APIs</td>
-   <td>CVE-2016-3832</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Shell</td>
-   <td>CVE-2016-3833</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in OpenSSL</td>
-   <td>CVE-2016-2842</td>
-   <td>Moderate</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in camera APIs</td>
-   <td>CVE-2016-3834</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Mediaserver</td>
-   <td>CVE-2016-3835</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in SurfaceFlinger</td>
-   <td>CVE-2016-3836</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Wi-Fi</td>
-   <td>CVE-2016-3837</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in system UI</td>
-   <td>CVE-2016-3838</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in Bluetooth</td>
-   <td>CVE-2016-3839</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-</table>
-<p>* Supported Nexus devices that have installed all available updates are not
- affected by this vulnerability.</p>
-
-<h3 id="2016-08-05-security-patch-level-vulnerability-summary">2016-08-05
-security patch level—Vulnerability summary</h3>
-<p>
-Security patch levels of 2016-08-05 or later must address all of the 2016-08-01
-issues as well as the following issues.
-</p>
-<table>
-  <col width="55%">
-  <col width="20%">
-  <col width="13%">
-  <col width="12%">
-  <tr>
-   <th>Issue</th>
-   <th>CVE</th>
-   <th>Severity</th>
-   <th>Affects Nexus?</th>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Qualcomm Qualcomm Wi-Fi driver</td>
-   <td>CVE-2014-9902</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Conscrypt</td>
-   <td>CVE-2016-3840</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm components</td>
-   <td>CVE-2014-9863, CVE-2014-9864, CVE-2014-9865, CVE-2014-9866,
-       CVE-2014-9867, CVE-2014-9868, CVE-2014-9869, CVE-2014-9870,
-       CVE-2014-9871, CVE-2014-9872, CVE-2014-9873, CVE-2014-9874,
-       CVE-2014-9875, CVE-2014-9876, CVE-2014-9877, CVE-2014-9878,
-       CVE-2014-9879, CVE-2014-9880, CVE-2014-9881, CVE-2014-9882,
-       CVE-2014-9883, CVE-2014-9884, CVE-2014-9885, CVE-2014-9886,
-       CVE-2014-9887, CVE-2014-9888, CVE-2014-9889, CVE-2014-9890,
-       CVE-2014-9891, CVE-2015-8937, CVE-2015-8938, CVE-2015-8939,
-       CVE-2015-8940, CVE-2015-8941, CVE-2015-8942, CVE-2015-8943</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel networking component</td>
-   <td>CVE-2015-2686, CVE-2016-3841</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm GPU driver</td>
-   <td>CVE-2016-2504, CVE-2016-3842</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm performance component</td>
-   <td>CVE-2016-3843</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel</td>
-   <td>CVE-2016-3857</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel memory system</td>
-   <td>CVE-2015-1593, CVE-2016-3672</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel sound component</td>
-   <td>CVE-2016-2544, CVE-2016-2546, CVE-2014-9904</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel file system</td>
-   <td>CVE-2012-6701</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Mediaserver</td>
-   <td>CVE-2016-3844</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel video driver</td>
-   <td>CVE-2016-3845</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Serial Peripheral Interface
-driver</td>
-   <td>CVE-2016-3846</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in NVIDIA media driver</td>
-   <td>CVE-2016-3847, CVE-2016-3848</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in ION driver</td>
-   <td>CVE-2016-3849</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm bootloader</td>
-   <td>CVE-2016-3850</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel performance subsystem</td>
-   <td>CVE-2016-3843</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in LG Electronics bootloader</td>
-   <td>CVE-2016-3851</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm components</td>
-   <td>CVE-2014-9892, CVE-2014-9893 CVE-2014-9894, CVE-2014-9895 CVE-2014-9896,
-       CVE-2014-9897 CVE-2014-9898, CVE-2014-9899 CVE-2014-9900, CVE-2015-8944</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in kernel scheduler</td>
-   <td>CVE-2014-9903</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in MediaTek Wi-Fi driver</td>
-   <td>CVE-2016-3852</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in USB driver</td>
-   <td>CVE-2016-4482</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in Qualcomm components</td>
-   <td>CVE-2014-9901</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Google Play services</td>
-   <td>CVE-2016-3853</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Framework APIs</td>
-   <td>CVE-2016-2497</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in kernel networking component</td>
-   <td>CVE-2016-4486</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in kernel sound component</td>
-   <td>CVE-2016-4569, CVE-2016-4578</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Vulnerabilities in Qualcomm components</td>
-   <td>CVE-2016-3854, CVE-2016-3855, CVE-2016-2060</td>
-   <td>High</td>
-   <td>No</td>
-  </tr>
-</table>
 <h2 id="mitigations">Android and Google service mitigations</h2>
 <p>
 This is a summary of the mitigations provided by the <a
-href="{@docRoot}security/enhancements/index.html">Android
+href="/security/enhancements/index.html">Android
 security platform</a> and service protections such as SafetyNet. These
 capabilities reduce the likelihood that security vulnerabilities could be
 successfully exploited on Android.
@@ -482,13 +180,11 @@ mitigate a class of vulnerabilities such as CVE-2016-3843. This mitigation is
 based on work by Brad Spengler of Grsecurity.
 </p>
 <h2
-id="2016-08-01-security-patch-level-security-vulnerability-details">
+id="2016-08-01-details">
 2016-08-01 security patch level—Security vulnerability details</h2>
 <p>
 In the sections below, we provide details for each of the security
-vulnerabilities listed in the <a
-href="#2016-08-01-security-patch-level-vulnerability-summary">2016-08-01
-security patch level—Vulnerability summary</a> above. There is a description of
+vulnerabilities that apply to the 2016-08-01 patch level. There is a description of
 the issue, a severity rationale, and a table with the CVE, associated
 references, severity, updated Nexus devices, updated AOSP versions (where
 applicable), and date reported. When available, we will link the public change
@@ -1051,13 +747,11 @@ Moderate due to the possibility of a denial of service on a critical function.
    <td>Google internal</td>
   </tr>
 </table>
-<h2 id="2016-08-05-security-patch-level-vulnerability-details">
+<h2 id="2016-08-05-details">
 2016-08-05 security patch level—Vulnerability details</h2>
 <p>
 In the sections below, we provide details for each of the security
-vulnerabilities listed in the <a
-href="#2016-08-05-security-patch-level-vulnerability-summary">2016-08- 05
-security patch level—Vulnerability summary</a> above. There is a description of
+vulnerabilities that apply to the 2016-08-05 patch level. There is a description of
 the issue, a severity rationale, and a table with the CVE, associated
 references, severity, updated Nexus devices, updated AOSP versions (where
 applicable), and date reported. When available, we will link the public change
@@ -2702,10 +2396,8 @@ August 5, 2016 security patch level.
 issue?</strong>
 </p>
 <p>
-In the <a
-href="#2016-08-01-security-patch-level-security-vulnerability-details">2016-08-01</a>
-and <a
-href="#2016-08-05-security-patch-level-vulnerability-details">2016-08-05</a>
+In the <a href="#2016-08-01-details">2016-08-01</a>
+and <a href="#2016-08-05-details">2016-08-05</a>
 security vulnerability details sections, each table has an Updated Nexus devices
 column that covers the range of affected Nexus devices updated for each issue.
 This column has a few options:
@@ -2763,3 +2455,6 @@ belongs. These prefixes map as follows:
       reference URL.</li>
   <li>October 21, 2016: Corrected typo in CVE-2016-4486.</li>
 </ul>
+
+  </body>
+</html>

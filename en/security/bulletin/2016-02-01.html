@@ -1,28 +1,27 @@
-page.title=Nexus Security Bulletin - February 2016
-@jd:body
+<html devsite>
+  <head>
+    <title>Nexus Security Bulletin - February 2016</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-   </ol>
-  </div>
-</div>
+
 
 <p><em>Published February 01, 2016 | Updated March 7, 2016</em></p>
 
@@ -44,90 +43,25 @@ enable remote code execution on an affected device through multiple methods
 such as email, web browsing, and MMS when processing media files. The Remote Code
 Execution Vulnerability in Broadcom’s Wi-Fi driver is also Critical severity as
 it could allow remote code execution on an affected device while connected to
-the same network as the attacker.</p>
+the same network as the attacker. The
+<a href="/security/overview/updates-resources.html#severity">severity
+assessment</a> is based on the effect that exploiting the vulnerability would
+possibly have on an affected device, assuming the platform and service
+mitigations are disabled for development purposes or if successfully bypassed.</p>
 
 <p>We have had no reports of active customer exploitation of these newly reported
 issues. Refer to the <a href="#mitigations">Mitigations</a> section for details on the
-<a href="{@docRoot}security/enhancements/index.html">Android security platform protections</a>
+<a href="/security/enhancements/index.html">Android security platform protections</a>
 and service protections such as SafetyNet, which improve the security of the
 Android platform. We encourage all customers to accept these updates to their
 devices.</p>
 
-<h2 id=security_vulnerability_summary>Security Vulnerability Summary</h2>
-
-
-<p>The table below contains a list of security vulnerabilities, the Common
-Vulnerability and Exposures ID (CVE), and their assessed severity. The
-<a href="{@docRoot}security/overview/updates-resources.html#severity">severity assessment</a>
-is based on the effect that exploiting the vulnerability would possibly have
-on an affected device, assuming the platform and service mitigations are
-disabled for development purposes or if successfully bypassed.</p>
-<table>
- <tr>
-    <th>Issue</th>
-    <th>CVE</th>
-    <th>Severity</th>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerability in Broadcom Wi-Fi Driver</td>
-    <td>CVE-2016-0801<br />
-        CVE-2016-0802</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerability in Mediaserver</td>
-    <td>CVE-2016-0803<br />
-        CVE-2016-0804</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Qualcomm Performance Module</td>
-    <td>CVE-2016-0805</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Qualcomm Wi-Fi Driver</td>
-    <td>CVE-2016-0806</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in the Debugger Daemon</td>
-    <td>CVE-2016-0807</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Denial of Service Vulnerability in Minikin</td>
-    <td>CVE-2016-0808</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Wi-Fi</td>
-    <td>CVE-2016-0809</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Mediaserver</td>
-    <td>CVE-2016-0810</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Information Disclosure Vulnerability in libmediaplayerservice</td>
-    <td>CVE-2016-0811</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Setup Wizard</td>
-    <td>CVE-2016-0812<br />
-        CVE-2016-0813</td>
-    <td>Moderate</td>
- </tr>
-</table>
-
-
 <h3 id=mitigations>Mitigations</h3>
 
 
-<p>This is a summary of the mitigations provided by the <a href="https://source.android.com/security/enhancements/index.html">Android security platform</a> and service protections such as SafetyNet. These capabilities reduce the
+<p>This is a summary of the mitigations provided by the
+<a href="/security/enhancements/index.html">Android security platform</a> and
+service protections such as SafetyNet. These capabilities reduce the
 likelihood that security vulnerabilities could be successfully exploited on
 Android.</p>
 
@@ -176,8 +110,8 @@ pass media to processes such as mediaserver.
 
 
 <p>In the sections below, we provide details for each of the security
-vulnerabilities listed in the <a href="#security_vulnerability_summary">Security Vulnerability Summary</a>
-above. There is a description of the issue, a severity rationale, and a table
+vulnerabilities that apply to the 2016-02-01 patch level.
+There is a description of the issue, a severity rationale, and a table
 with the CVE, associated bug, severity, affected versions, and date reported.
 When available, we will link the AOSP commit that addressed the issue to the
 bug ID. When multiple changes relate to a single bug, additional AOSP
@@ -493,3 +427,6 @@ manufacturers that include these updates should set the patch string level to:
   <li> February 01, 2016: Bulletin published.
   <li> February 02, 2016:  Bulletin revised to include AOSP links.
   <li> March 07, 2016: Bulletin revised to include additional AOSP links.
+
+  </body>
+</html>

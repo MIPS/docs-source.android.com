@@ -1,29 +1,27 @@
-page.title=OTA Package Tools
-@jd:body
+<html devsite>
+  <head>
+    <title>OTA Package Tools</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
 
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
 
 <p>The <a href="https://android.googlesource.com/platform/build/+/master/tools/
 releasetools/ota_from_target_files">ota_from_target_files</a> tool provided in
@@ -64,7 +62,7 @@ done.
 
 <p>The ota_update.zip is now ready to be sent to test devices (everything is
 signed with the test key). For user devices, generate and use your own private
-keys as detailed in <a href="{@docRoot}devices/tech/ota/sign_builds
+keys as detailed in <a href="/devices/tech/ota/sign_builds
 .html">Signing builds for release</a>.
 
 <h2 id="incremental-updates">Incremental updates</h2>
@@ -98,7 +96,7 @@ done.
 update package is much smaller than the corresponding full update (about 1 MB
 instead of 60 MB).</p>
 <p class="note"><strong>Note:</strong> To generate a
-<a href="{@docRoot}devices/tech/ota/block.html">block-based OTA</a>
+<a href="/devices/tech/ota/block.html">block-based OTA</a>
 for subsequent updates, pass the <code>--block</code> option to
 <code>ota_from_target_files</code>.</p>
 <p>Distribute an incremental package only to devices running exactly the same
@@ -129,5 +127,6 @@ binary. The OTA package construction tools use the updater program (source in
 language that can do many installation tasks. You can substitute any other
 binary running on the device.</p>
 <p>For details on the updater binary, edify syntax, and builtin functions, see
-<a href="{@docRoot}devices/tech/ota/inside_packages.html">Inside OTA Packages
-</a>.
+<a href="/devices/tech/ota/inside_packages.html">Inside OTA Packages</a>.
+  </body>
+</html>

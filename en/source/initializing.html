@@ -1,28 +1,27 @@
-page.title=Establishing a Build Environment
-@jd:body
+<html devsite>
+  <head>
+    <title>Establishing a Build Environment</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>This section describes how to set up your local work environment to build
 the Android source files. You will need to use Linux or Mac OS. Building under
@@ -193,11 +192,11 @@ system needs to be configured to allow such access.</p>
 <code>/etc/udev/rules.d/51-android.rules</code> (as the root user).</p>
 
 <p>To do this, run the following command to download the <a
-href="51-android.rules">51-android.rules</a> file attached to this site, modify
+href="51-android.txt">51-android.txt</a> file attached to this site, modify
 it to include your username, and place it in the correct location:</p>
 
 <pre>
-$ wget -S -O - http://source.android.com/source/51-android.rules | sed "s/&lt;username&gt;/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
+$ wget -S -O - http://source.android.com/source/51-android.txt | sed "s/&lt;username&gt;/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
 </pre>
 
 <p>Those new rules take effect the next time a device is plugged in.
@@ -473,3 +472,6 @@ $ watch -n1 -d prebuilts/misc/linux-x86/ccache/ccache -s
 
 <p>Your build environment is good to go! Proceed to <a
 href="downloading.html">downloading the source</a>.</p>
+
+  </body>
+</html>

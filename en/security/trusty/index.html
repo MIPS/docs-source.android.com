@@ -1,28 +1,27 @@
-page.title=Trusty TEE
-@jd:body
+<html devsite>
+  <head>
+    <title>Trusty TEE</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>Trusty is a set of software components supporting a Trusted Execution
 Environment (TEE) on mobile devices.</p>
@@ -62,7 +61,7 @@ running on the main processor delegates any operations that require use of
 secret data to the TEE processor.</p>
 
 <p>The most widely known example of this in the Android ecosystem
-is the <a href="{@docRoot}devices/drm.html">DRM framework</a> for
+is the <a href="/devices/drm.html">DRM framework</a> for
 protected content. Software running on the TEE processor can access
 device-specific keys required to decrypt protected content. The main processor
 sees only the encrypted content, providing a high level of security and
@@ -155,3 +154,6 @@ $ make -j24 generic-arm64
 </pre>
 
 <p>You may select another supported build target from: <code>device/*/*/project/*</code></p>
+
+  </body>
+</html>

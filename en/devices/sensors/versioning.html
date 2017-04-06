@@ -1,28 +1,27 @@
-page.title=HAL version deprecation
-@jd:body
+<html devsite>
+  <head>
+    <title>HAL version deprecation</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2014 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>In the L release of Android, we are halting support for some sensor HAL
 versions. The only supported versions are <code>SENSORS_DEVICE_API_VERSION_1_0
@@ -72,7 +71,7 @@ your_poll_device.common.version = SENSORS_DEVICE_API_VERSION_1_3
 <h2>Add the new fields to the definition of your sensors</h2>
 
 <p>When defining each sensor, in addition to the usual <a
-href="{@docRoot}devices/sensors/hal-interface.html#sensor_t">sensor_t</a>
+href="/devices/sensors/hal-interface.html#sensor_t">sensor_t</a>
 fields:</p>
 
 <pre class=prettyprint>
@@ -108,7 +107,7 @@ SENSOR_FLAG_CONTINUOUS_MODE,
 <p><em>stringType</em>: Set to 0 for all official android sensors (those that are defined in
 sensors.h), as this value will be overwritten by the framework. For
 non-official sensors, see <a
-href="{@docRoot}devices/sensors/hal-interface.html#sensor_t">sensor_t</a> for
+href="/devices/sensors/hal-interface.html#sensor_t">sensor_t</a> for
 details on how to set it.</p>
 
 <p><em>requiredPermission</em>: This is the permission that applications will be required to have to get
@@ -144,23 +143,23 @@ a wake up sensor.</p>
 to:</p>
 
 <p><code>SENSOR_FLAG_WAKE_UP | SENSOR_FLAG_ONE_SHOT_MODE</code> for <a
-href="{@docRoot}devices/sensors/report-modes.html#one-shot">one-shot</a>
+href="/devices/sensors/report-modes.html#one-shot">one-shot</a>
 sensors</p>
 
 <p><code>SENSOR_FLAG_CONTINUOUS_MODE</code> for <a
-href="{@docRoot}devices/sensors/report-modes.html#continuous">continuous</a>
+href="/devices/sensors/report-modes.html#continuous">continuous</a>
 sensors <code>SENSOR_FLAG_ON_CHANGE_MODE</code> for <a
-href="{@docRoot}devices/sensors/report-modes.html#on-change">on-change</a>
+href="/devices/sensors/report-modes.html#on-change">on-change</a>
 sensors except <a href="#proximity">proximity</a>
 <code>SENSOR_FLAG_SPECIAL_REPORTING_MODE</code> for sensors with <a
-href="{@docRoot}devices/sensors/report-modes.html#special">special</a>
+href="/devices/sensors/report-modes.html#special">special</a>
 reporting mode except for the <a
-href="{@docRoot}devices/sensors/sensor-types.html#tilt_detector">tilt
+href="/devices/sensors/sensor-types.html#tilt_detector">tilt
 detector</a>.</p>
 
 <p><code>SENSOR_FLAG_WAKE_UP | SENSOR_FLAG_ON_CHANGE_MODE</code> for the <a
-href="{@docRoot}devices/sensors/sensor-types.html#proximity">proximity</a> sensor and the Android official <a
-href="{@docRoot}devices/sensors/sensor-types.html#tilt_detector">tilt detector</a> sensor.</p>
+href="/devices/sensors/sensor-types.html#proximity">proximity</a> sensor and the Android official <a
+href="/devices/sensors/sensor-types.html#tilt_detector">tilt detector</a> sensor.</p>
 
 <h2>Notes when upgrading from 1_1 or 1_2</h2>
 <ul>
@@ -181,3 +180,6 @@ both deprecated, and will never be passed to the <code>batch</code> function.
   <li> The batch timeout argument is now referred to as the
 <code>max_report_latency</code> argument.
 </ul>
+
+  </body>
+</html>

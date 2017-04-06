@@ -1,28 +1,27 @@
-page.title=Sensor stack
-@jd:body
+<html devsite>
+  <head>
+    <title>Sensor stack</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>The figure below represents the Android sensor stack. Each component
   communicates only with the components directly above and below it, though some
@@ -128,7 +127,7 @@ page.title=Sensor stack
 <p>The interface is defined by Android and AOSP contributors, and the
   implementation is provided by the manufacturer of the device.</p>
 <p>The sensor HAL interface is located in <code>hardware/libhardware/include/hardware</code>.
-  See <a href="{@docRoot}devices/halref/sensors_8h.html">sensors.h</a> for additional details.</p>
+  See <a href="/devices/halref/sensors_8h.html">sensors.h</a> for additional details.</p>
 <h3 id="release_cycle">Release cycle</h3>
 <p>The HAL implementation specifies what version of the HAL interface it
   implements by setting <code>your_poll_device.common.version</code>. The existing HAL
@@ -180,3 +179,6 @@ href="batching.html">Batching</a> for more information.</p>
   rotation vector has implications on the required accuracy for the physical
   gyroscope. It is up to the device manufacturer to derive the requirements for
   physical sensors.</p>
+
+  </body>
+</html>
