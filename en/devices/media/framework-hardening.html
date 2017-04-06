@@ -1,28 +1,27 @@
-page.title=Media Framework Hardening
-@jd:body
+<html devsite>
+  <head>
+    <title>Media Framework Hardening</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>To improve device security, Android 7.0 breaks up the monolithic
 <code>mediaserver</code> process into multiple processes with permissions and
@@ -121,14 +120,14 @@ yet.</p>
 <p>The AudioServer process hosts audio related components such as audio input
 and output, the policymanager service that determines audio routing, and FM
 radio service. For details on Audio changes and implementation guidance, see
-<a href="{@docRoot}devices/audio/implement.html">Implementing Audio</a>.</p>
+<a href="/devices/audio/implement.html">Implementing Audio</a>.</p>
 
 <h3 id=cameraserver_changes>CameraServer changes</h3>
 <p>The CameraServer controls the camera and is used when recording video to
 obtain video frames from the camera and then pass them to
 <code>mediaserver</code> for further handling. For details on changes and
 implementation guidance for CameraServer changes, refer to
-<a href="{@docRoot}devices/camera/versioning.html#hardening">Camera Framework
+<a href="/devices/camera/versioning.html#hardening">Camera Framework
 Hardening</a>.</p>
 
 <h3 id=extractor_service_changes>ExtractorService changes</h3>
@@ -211,3 +210,6 @@ includes a new OMX extension
 (<code>OMX.google.android.index.allocateNativeHandle</code>) to query for this
 support and an <code>OMX_SetParameter</code> call that notifies the OMX
 implementation it should use native handles.</p>
+
+  </body>
+</html>

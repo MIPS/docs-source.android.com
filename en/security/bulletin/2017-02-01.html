@@ -1,21 +1,27 @@
-page.title=Android Security Bulletin—February 2017
-@jd:body
+<html devsite>
+  <head>
+    <title>Android Security Bulletin—February 2017</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+
 <p><em>Published February 06, 2017 | Updated February 8, 2017</em></p>
 <p>
 The Android Security Bulletin contains details of security vulnerabilities
@@ -38,14 +44,18 @@ This bulletin also includes links to patches outside of AOSP.
 <p>
 The most severe of these issues is a Critical security vulnerability that could
 enable remote code execution on an affected device through multiple methods such
-as email, web browsing, and MMS when processing media files.
+as email, web browsing, and MMS when processing media files. The
+<a href="/security/overview/updates-resources.html#severity">severity
+assessment</a> is based on the effect that exploiting the vulnerability would
+possibly have on an affected device, assuming the platform and service
+mitigations are disabled for development purposes or if successfully bypassed.
 </p>
 <p>
 We have had no reports of active customer exploitation or abuse of these newly
 reported issues. Refer to the <a
 href="#mitigations">Android and Google service
 mitigations</a> section for details on the <a
-href="{@docRoot}security/enhancements/index.html">Android
+href="/security/enhancements/index.html">Android
 security platform protections</a> and service protections such as <a
 href="https://developer.android.com/training/safetynet/index.html">SafetyNet</a>,
 which improve the security of the Android platform.
@@ -72,269 +82,10 @@ additional information:
 <li>Supported Google devices will receive a single OTA update with the February
 05, 2017 security patch level.</li>
 </ul>
-<h2 id="security-vulnerability-summary">Security vulnerability summary</h2>
-<p>
-The tables below contains a list of security vulnerabilities, the Common
-Vulnerability and Exposures ID (CVE), the assessed severity, and whether or not
-Google devices are affected. The <a
-href="{@docRoot}security/overview/updates-resources.html#severity">severity
-assessment</a> is based on the effect that exploiting the vulnerability would
-possibly have on an affected device, assuming the platform and service
-mitigations are disabled for development purposes or if successfully bypassed.
-</p>
-<h3 id="2017-02-01-summary">2017-02-01 security patch level—Vulnerability summary</h3>
-<p>
-Security patch levels of 2017-02-01 or later must address the following issues.
-</p>
-<table>
-  <col width="55%">
-  <col width="20%">
-  <col width="13%">
-  <col width="12%">
-  <tr>
-   <th>Issue</th>
-   <th>CVE</th>
-   <th>Severity</th>
-   <th>Affects Google devices?</th>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Surfaceflinger</td>
-   <td>CVE-2017-0405</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Mediaserver</td>
-   <td>CVE-2017-0406, CVE-2017-0407</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in libgdx</td>
-   <td>CVE-2017-0408</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in libstagefright</td>
-   <td>CVE-2017-0409</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Java.Net</td>
-   <td>CVE-2016-5552</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Framework APIs</td>
-   <td>CVE-2017-0410, CVE-2017-0411, CVE-2017-0412</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Mediaserver</td>
-   <td>CVE-2017-0415</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Audioserver</td>
-   <td>CVE-2017-0416, CVE-2017-0417, CVE-2017-0418, CVE-2017-0419</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in AOSP Mail</td>
-   <td>CVE-2017-0420</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in AOSP Messaging</td>
-   <td>CVE-2017-0413, CVE-2017-0414</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Framework APIs</td>
-   <td>CVE-2017-0421</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in Bionic DNS</td>
-   <td>CVE-2017-0422</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Bluetooth</td>
-   <td>CVE-2017-0423</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in AOSP Messaging</td>
-   <td>CVE-2017-0424</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Audioserver</td>
-   <td>CVE-2017-0425</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Filesystem</td>
-   <td>CVE-2017-0426</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-</table>
-<h3 id="2017-02-05-summary">2017-02-05
-security patch level—Vulnerability summary</h3>
-<p>Security patch levels of 2017-02-05 or later must address all of the
-2017-02-01 issues, as well as the following issues.</p>
-<table>
-  <col width="55%">
-  <col width="20%">
-  <col width="13%">
-  <col width="12%">
-  <tr>
-   <th>Issue</th>
-   <th>CVE</th>
-   <th>Severity</th>
-   <th>Affects Google devices?</th>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Qualcomm crypto driver</td>
-   <td>CVE-2016-8418</td>
-   <td>Critical</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel file system</td>
-   <td>CVE-2017-0427</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in NVIDIA GPU driver</td>
-   <td>CVE-2017-0428, CVE-2017-0429</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel networking subsystem</td>
-   <td>CVE-2014-9914</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Broadcom Wi-Fi driver</td>
-   <td>CVE-2017-0430</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Vulnerabilities in Qualcomm components</td>
-   <td>CVE-2017-0431</td>
-   <td>Critical</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in MediaTek driver</td>
-   <td>CVE-2017-0432</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Synaptics touchscreen driver</td>
-   <td>CVE-2017-0433, CVE-2017-0434</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm Secure Execution
-Environment Communicator driver</td>
-   <td>CVE-2016-8480</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm sound driver</td>
-   <td>CVE-2016-8481, CVE-2017-0435, CVE-2017-0436</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm Wi-Fi driver</td>
-   <td>CVE-2017-0437, CVE-2017-0438, CVE-2017-0439, CVE-2016-8419,
-CVE-2016-8420, CVE-2016-8421, CVE-2017-0440, CVE-2017-0441, CVE-2017-0442,
-CVE-2017-0443, CVE-2016-8476</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Realtek sound driver</td>
-   <td>CVE-2017-0444</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in HTC touchscreen driver</td>
-   <td>CVE-2017-0445, CVE-2017-0446, CVE-2017-0447</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in NVIDIA video driver</td>
-   <td>CVE-2017-0448</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Broadcom Wi-Fi driver</td>
-   <td>CVE-2017-0449</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Audioserver</td>
-   <td>CVE-2017-0450</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel file system</td>
-   <td>CVE-2016-10044</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm Secure Execution
-Environment Communicator</td>
-   <td>CVE-2016-8414</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm sound driver</td>
-   <td>CVE-2017-0451</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-</table>
-
-<p>* Supported Google devices on Android 7.0 or later that have installed all
-available updates are not affected by this vulnerability.</p>
 
 <h2 id="mitigations">Android and Google service mitigations</h2>
 <p>This is a summary of the mitigations provided by the <a
-href="{@docRoot}security/enhancements/index.html">Android
+href="/security/enhancements/index.html">Android
 security platform</a> and service protections, such as SafetyNet. These
 capabilities reduce the likelihood that security vulnerabilities could be
 successfully exploited on Android.</p>
@@ -454,10 +205,8 @@ bulletin:
 details</h2>
 <p>
 In the sections below, we provide details for each of the security
-vulnerabilities listed in the
-<a href="#2017-02-01-summary">2017-02-01
-security patch level—Vulnerability summary</a> above. There is a description of
-the issue, a severity rationale, and a table with the CVE, associated
+vulnerabilities that apply to the 2017-02-01 patch level. There is a description
+of the issue, a severity rationale, and a table with the CVE, associated
 references, severity, updated Google devices, updated AOSP versions (where
 applicable), and date reported. When available, we will link the public change
 that addressed the issue to the bug ID, like the AOSP change list. When multiple
@@ -1116,9 +865,8 @@ without permission.
 details</h2>
 <p>
 In the sections below, we provide details for each of the security
-vulnerabilities listed in the
-<a href="#2017-02-05-summary">2017-02-05
-security patch level—Vulnerability summary</a> above. There is a description of
+vulnerabilities that apply to the 2017-02-05 patch level. 
+There is a description of
 the issue, a severity rationale, and a table with the CVE, associated
 references, severity, updated Google devices, updated AOSP versions (where
 applicable), and date reported. When available, we will link the public change
@@ -2086,3 +1834,6 @@ belongs. These prefixes map as follows:</p>
   <li>February 06, 2017: Bulletin published.</li>
   <li>February 08, 2017: Bulletin revised to include AOSP links.</li>
 </ul>
+
+  </body>
+</html>

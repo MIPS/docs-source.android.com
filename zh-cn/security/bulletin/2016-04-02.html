@@ -1,27 +1,27 @@
-page.title=Nexus 安全公告 - 2016 年 4 月
-@jd:body
+<html devsite>
+  <head>
+    <title>Nexus 安全公告 - 2016 年 4 月</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <ol id="auto-toc">
-   </ol>
-  </div>
-</div>
+
 
 
 
@@ -29,9 +29,9 @@ page.title=Nexus 安全公告 - 2016 年 4 月
 <p>在每月发布 Android 安全公告的同时，我们都会通过无线 (OTA) 更新的方式发布针对 Nexus 设备的安全更新。我们还会在 <a href="https://developers.google.com/android/nexus/images">Google Developers 网站</a>上发布 Nexus 固件映像。安全补丁程序级别为 2016 年 4 月 2 日（或之后的日期）的系统都已解决本文所列的安全问题（请参阅 <a href="https://support.google.com/nexus/answer/4457705">Nexus 文档</a>中提供的相关说明，了解如何检查安全补丁程序级别）。</p>
 <p>我们的合作伙伴在 2016 年 3 月 16 日（或之前）就已收到本公告中说明的这些问题的相关通知。我们已在 Android 开放源代码项目 (AOSP) 代码库中发布了针对相关问题的源代码补丁程序（如果适用）。</p>
 <p>这些问题中危险性最高的是一个严重程度为“严重”的安全漏洞，它可能会导致在处理媒体文件的过程中，可通过电子邮件、网页和彩信等多种方式在受影响的设备上执行远程代码。</p>
-<p><a href="{@docRoot}security/advisory/2016-03-18.html">Android 安全公告 - 2016 年 3 月 18 日</a>之前讨论过 Root 应用利用 <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a> 的问题。<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a> 已在本次更新中得以解决。我们尚未收到用户因其他新报告的问题而遭到主动攻击或这些问题遭到滥用的报告。请参阅<a href="#mitigations">缓解措施</a>部分，详细了解 <a href="{@docRoot}security/enhancements/index.html">Android 安全平台防护</a>和服务防护功能（如 SafetyNet）；这些功能可提高 Android 平台的安全性。</p>
+<p><a href="/security/advisory/2016-03-18.html">Android 安全公告 - 2016 年 3 月 18 日</a>之前讨论过 Root 应用利用 <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a> 的问题。<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a> 已在本次更新中得以解决。我们尚未收到用户因其他新报告的问题而遭到主动攻击或这些问题遭到滥用的报告。请参阅<a href="#mitigations">缓解措施</a>部分，详细了解 <a href="/security/enhancements/index.html">Android 安全平台防护</a>和服务防护功能（如 SafetyNet）；这些功能可提高 Android 平台的安全性。</p>
 <h2 id="security_vulnerability_summary">安全漏洞摘要</h2>
-<p>下表列出了安全漏洞、对应的 CVE（常见漏洞和风险识别码）以及评估得出的严重程度。<a href="{@docRoot}security/overview/updates-resources.html#severity">严重程度评估</a>的依据是漏洞被利用后可能会对受影响设备造成的影响大小（假设相关平台和服务缓解措施被成功规避或出于开发目的而被停用）。</p>
+<p>下表列出了安全漏洞、对应的 CVE（常见漏洞和风险识别码）以及评估得出的严重程度。<a href="/security/overview/updates-resources.html#severity">严重程度评估</a>的依据是漏洞被利用后可能会对受影响设备造成的影响大小（假设相关平台和服务缓解措施被成功规避或出于开发目的而被停用）。</p>
 <table>
 <tr>
 <th>问题</th>
@@ -185,7 +185,7 @@ page.title=Nexus 安全公告 - 2016 年 4 月
 </tr>
 </table>
 <h2 id="mitigations">缓解措施</h2>
-<p>本部分概括总结了 <a href="{@docRoot}security/enhancements/index.html">Android 安全平台</a>和服务防护功能（如 SafetyNet）提供的缓解措施。这些功能可降低 Android 上的安全漏洞被成功利用的可能性。</p>
+<p>本部分概括总结了 <a href="/security/enhancements/index.html">Android 安全平台</a>和服务防护功能（如 SafetyNet）提供的缓解措施。这些功能可降低 Android 上的安全漏洞被成功利用的可能性。</p>
 <ul>
 <li>新版 Android 平台中的增强功能让攻击者更加难以利用 Android 上存在的许多问题。我们建议所有用户都尽可能更新到最新版 Android。
   </li><li>Android 安全团队会积极利用“验证应用”和 SafetyNet 来监控滥用行为，这些功能会在用户即将安装可能有害的应用时发出警告。Google Play 中禁止提供设备 Root 权限获取工具。为了保护从 Google Play 之外的来源安装应用的用户，“验证应用”在默认情况下将处于启用状态，并在发现已知的 Root 应用时警告用户。“验证应用”会尝试识别并阻止用户安装会利用提权漏洞的已知恶意应用。如果用户已安装此类应用，那么“验证应用”将会通知用户并尝试移除所有此类应用。
@@ -334,7 +334,7 @@ page.title=Nexus 安全公告 - 2016 年 4 月
 </tr>
 </table>
 <h3 id="elevation_of_privilege_vulnerability_in_kernel">内核中的提权漏洞</h3>
-<p>内核中的提权漏洞可让本地恶意应用通过内核执行任意代码。由于该漏洞有可能会造成本地设备永久损坏，而您可能需要通过重写操作系统来修复设备，因此我们将其严重程度评为“严重”。<a href="{@docRoot}security/advisory/2016-03-18.html">Android 安全公告 - 2016 年 3 月 18 日</a>对此问题进行了描述。</p>
+<p>内核中的提权漏洞可让本地恶意应用通过内核执行任意代码。由于该漏洞有可能会造成本地设备永久损坏，而您可能需要通过重写操作系统来修复设备，因此我们将其严重程度评为“严重”。<a href="/security/advisory/2016-03-18.html">Android 安全公告 - 2016 年 3 月 18 日</a>对此问题进行了描述。</p>
 <table>
 <tr>
 <th>CVE</th>
@@ -825,9 +825,12 @@ page.title=Nexus 安全公告 - 2016 年 4 月
 <p>2016 年 4 月 2 日（或之后的日期）的安全补丁程序级别均已解决本文所列的这些问题（请参阅 <a href="https://support.google.com/nexus/answer/4457705">Nexus 文档</a>中提供的相关说明，了解如何检查安全补丁程序级别）。提供这些更新的设备制造商应将补丁程序字符串级别设为 [ro.build.version.security_patch]:[2016-04-02]</p>
 <p><strong>2. 为什么此安全补丁程序级别是 2016 年 4 月 2 日？
 </strong></p>
-<p>通常情况下，每月安全更新的安全补丁程序级别会设置为当月的第一天。以 4 月为例，2016 年 4 月 1 日的安全补丁程序级别表示，本公告中所列问题均已得到解决（CVE-2015-1805 除外，如 <a href="{@docRoot}security/advisory/2016-03-18.html">Android 安全公告 - 2016 年 3 月 18 日</a>中所述）。2016 年 4 月 2 日的安全补丁程序级别表示，本公告中所列问题均已得到解决（包括 CVE-2015-1805，如 <a href="{@docRoot}security/advisory/2016-03-18.html">Android 安全公告 - 2016 年 3 月 18 日</a>中所述）。</p>
+<p>通常情况下，每月安全更新的安全补丁程序级别会设置为当月的第一天。以 4 月为例，2016 年 4 月 1 日的安全补丁程序级别表示，本公告中所列问题均已得到解决（CVE-2015-1805 除外，如 <a href="/security/advisory/2016-03-18.html">Android 安全公告 - 2016 年 3 月 18 日</a>中所述）。2016 年 4 月 2 日的安全补丁程序级别表示，本公告中所列问题均已得到解决（包括 CVE-2015-1805，如 <a href="/security/advisory/2016-03-18.html">Android 安全公告 - 2016 年 3 月 18 日</a>中所述）。</p>
 <h2 id="revisions">修订版本</h2>
 <ul>
 <li>2016 年 4 月 4 日：发布了本公告。
   </li><li>2016 年 4 月 6 日：修订了本公告，添加了 AOSP 链接。
 </li></ul>
+
+  </body>
+</html>

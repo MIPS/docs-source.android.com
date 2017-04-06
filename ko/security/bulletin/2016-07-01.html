@@ -1,17 +1,27 @@
-page.title=Android 보안 게시판 - 2016년 7월
-@jd:body
-<!--
-    Copyright 2016 The Android Open Source Project
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-        http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+<html devsite>
+  <head>
+    <title>Android 보안 게시판 - 2016년 7월</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
+
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
+
+
 
 <p><em>2016년 7월 6일에 게시됨 | 2016년 7월 14일에 업데이트됨</em></p>
 <p>Android 보안 게시판은 Android 기기에 영향을 미치는 보안 취약성
@@ -32,7 +42,7 @@ Nexus 펌웨어 이미지도 <a href="https://developers.google.com/android/nexu
 원격으로 코드를 실행할 수 있게 하는 심각한 보안 취약성입니다.</p>
 <p>실제 고객이 새로 보고된 이러한 문제로 인해 악용당했다는 신고는
 접수되지 않았습니다. SafetyNet과 같이 Android 플랫폼의 보안을 개선하는
-<a href="{@docRoot}security/enhancements/index.html">Android 보안 플랫폼 보호</a> 및
+<a href="/security/enhancements/index.html">Android 보안 플랫폼 보호</a> 및
 서비스 보호 기능 관련 세부정보를 보려면
 <a href="완화">Android 및 Google 서비스 완화</a> 섹션을 참조하세요.</p>
 <p>모든 고객은 기기에서 이 업데이트를 수락하는 것이 좋습니다.</p>
@@ -58,7 +68,7 @@ Nexus 펌웨어 이미지도 <a href="https://developers.google.com/android/nexu
 <h2 id="security_vulnerability_summary">보안 취약성 요약</h2>
 <p>아래 표에는 보안 취약성 목록, 일반적인 취약성 및 노출 ID(CVE),
 평가된 심각도 및 Nexus 기기가 영향을 받는지 여부가
-포함되어 있습니다. <a href="{@docRoot}security/overview/updates-resources.html#severity">심각도 평가</a>는
+포함되어 있습니다. <a href="/security/overview/updates-resources.html#severity">심각도 평가</a>는
 개발 목적으로 플랫폼 및 서비스 완화를 사용할 수 없거나
 우회에 성공한 경우 취약성 악용으로 인해 대상 기기가 받는 영향을
 기준으로 내려집니다.</p>
@@ -464,7 +474,7 @@ Nexus 펌웨어 이미지도 <a href="https://developers.google.com/android/nexu
 </table>
 
 <h2 id="mitigations">Android 및 Google 서비스 완화</h2>
-<p>다음은 SafetyNet과 같은 <a href="{@docRoot}security/enhancements/index.html">Android 보안 플랫폼</a> 및
+<p>다음은 SafetyNet과 같은 <a href="/security/enhancements/index.html">Android 보안 플랫폼</a> 및
 서비스 보호 기능에서 제공하는 완화에 대한 요약입니다.
 이러한 기능을 통해 Android에서 보안 취약성이 악용될 가능성을
 줄입니다.</p>
@@ -472,9 +482,9 @@ Nexus 펌웨어 이미지도 <a href="https://developers.google.com/android/nexu
   <li>Android 플랫폼 최신 버전의 향상된 기능으로 Android의 여러 문제를
   악용하기 더욱 어려워졌습니다. 가능하다면 모든 사용자는 최신 버전의 Android로
   업데이트하는 것이 좋습니다.</li>
-  <li>Android 보안팀에서는 <a href="{@docRoot}security/reports/Google_Android_Security_PHA_classifications.pdf">유해할 수 있는 애플리케이션</a>이
+  <li>Android 보안팀에서는 <a href="/security/reports/Google_Android_Security_PHA_classifications.pdf">유해할 수 있는 애플리케이션</a>이
   
-  설치될 때 경고를 보내는 <a href="{@docRoot}security/reports/Google_Android_Security_2015_Report_Final.pdf">앱 인증 및 SafetyNet</a>을 사용하여
+  설치될 때 경고를 보내는 <a href="/security/reports/Google_Android_Security_2015_Report_Final.pdf">앱 인증 및 SafetyNet</a>을 사용하여
   
   악용사례를 적극적으로 모니터링합니다. 앱 인증은 <a href="http://www.android.com/gms">Google 모바일 서비스</a>가 적용된
   기기에서 기본적으로 사용 설정되어 있으며
@@ -2900,3 +2910,6 @@ Qualcomm 부트로더의 서비스 거부(DoS) 취약성</h3>
   <li>2016년 7월 11일: CVE-2016-3750의 속성이 업데이트됨</li>
   <li>2016년 7월 14일: CVE-2016-2503의 속성이 업데이트됨</li>
 </ul>
+
+  </body>
+</html>

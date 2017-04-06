@@ -1,21 +1,27 @@
-page.title=Android のセキュリティに関する公開情報 - 2017 年 1 月
-@jd:body
+<html devsite>
+  <head>
+    <title>Android のセキュリティに関する公開情報 - 2017 年 1 月</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+
 <p><em>2017 年 1 月 3 日公開 | 2017 年 1 月 5 日更新</em></p>
 
 <p>Android のセキュリティに関する公開情報には、Android 搭載端末に影響を与えるセキュリティの脆弱性の詳細を掲載しています。情報の公開に伴い、Google 端末に対するセキュリティ アップデートを無線（OTA）アップデートで配信しました。Google 端末のファームウェア イメージも <a href="https://developers.google.com/android/nexus/images">Google デベロッパー サイト</a>でリリースしています。2017 年 1 月 5 日以降のセキュリティ パッチ レベルでは、下記のすべての問題に対処しています。端末のセキュリティ パッチ レベルを確認する方法については、<a href="https://support.google.com/pixelphone/answer/4457705#pixel_phones&amp;nexus_devices">Pixel と Nexus のアップデート スケジュール</a>をご覧ください。</p>
@@ -24,7 +30,7 @@ page.title=Android のセキュリティに関する公開情報 - 2017 年 1 �
 
 <p>下記の問題のうち最も重大度の高いものは、多様な方法（メール、ウェブの閲覧、MMS など）により、攻撃対象の端末でメディア ファイルを処理する際にリモートでのコード実行が可能になるおそれのある重大なセキュリティの脆弱性です。</p>
 
-<p>この新たに報告された問題によって実際のユーザー端末が不正使用された報告はありません。<a href="#mitigations">Android セキュリティ プラットフォームの保護</a>や <a href="{@docRoot}security/enhancements/index.html">SafetyNet</a> のようなサービスの保護について詳しくは、<a href="https://developer.android.com/training/safetynet/index.html">Android と Google サービスでのリスク軽減策</a>をご覧ください。こうした保護により、Android プラットフォームのセキュリティが改善されます。</p>
+<p>この新たに報告された問題によって実際のユーザー端末が不正使用された報告はありません。<a href="#mitigations">Android セキュリティ プラットフォームの保護</a>や <a href="/security/enhancements/index.html">SafetyNet</a> のようなサービスの保護について詳しくは、<a href="https://developer.android.com/training/safetynet/index.html">Android と Google サービスでのリスク軽減策</a>をご覧ください。こうした保護により、Android プラットフォームのセキュリティが改善されます。</p>
 
 <p>ご利用の端末で上記の更新を行うことをすべてのユーザーにおすすめします。</p>
 
@@ -38,7 +44,7 @@ page.title=Android のセキュリティに関する公開情報 - 2017 年 1 �
   <li>サポート対象の Google 端末には、2017 年 1 月 5 日のセキュリティ パッチ レベルのアップデート 1 件が OTA で配信されます。</li>
 </ul>
 <h2 id="security-vulnerability-summary">セキュリティの脆弱性の概要</h2>
-<p>下記の表に、セキュリティの脆弱性、その共通脆弱性識別子（CVE）、重大度の判定、Google 端末への影響があるかどうかの一覧を示します。<a href="{@docRoot}security/overview/updates-resources.html#severity">重大度の判定</a>は、攻撃を受けた端末でその脆弱性が悪用された場合の影響に基づくもので、プラットフォームやサービスでのリスク軽減策が開発目的で無効にされるか不正に回避された場合を前提としています。</p>
+<p>下記の表に、セキュリティの脆弱性、その共通脆弱性識別子（CVE）、重大度の判定、Google 端末への影響があるかどうかの一覧を示します。<a href="/security/overview/updates-resources.html#severity">重大度の判定</a>は、攻撃を受けた端末でその脆弱性が悪用された場合の影響に基づくもので、プラットフォームやサービスでのリスク軽減策が開発目的で無効にされるか不正に回避された場合を前提としています。</p>
 
 <h3 id="2017-01-01-summary">セキュリティ パッチ レベル 2017-01-01 の脆弱性の概要</h3>
 <p>セキュリティ パッチ レベル 2017-01-01 以降では、下記の問題に対処する必要があります。</p>
@@ -368,7 +374,7 @@ page.title=Android のセキュリティに関する公開情報 - 2017 年 1 �
 <p>* Android 7.0 以降が搭載されたサポート対象の Google 端末において、適用できるすべてのアップデートがインストールされている場合は、この脆弱性が悪用されることはありません。</p>
 
 <h2 id="mitigations">Android と Google サービスでのリスク軽減策</h2>
-<p>ここでは、<a href="{@docRoot}security/enhancements/index.html">Android セキュリティ プラットフォームの保護</a>と SafetyNet のようなサービスの保護によるリスクの軽減について概説します。こうした機能は、Android でセキュリティの脆弱性が悪用される可能性を減らします。</p>
+<p>ここでは、<a href="/security/enhancements/index.html">Android セキュリティ プラットフォームの保護</a>と SafetyNet のようなサービスの保護によるリスクの軽減について概説します。こうした機能は、Android でセキュリティの脆弱性が悪用される可能性を減らします。</p>
 <ul>
   <li>Android プラットフォームの最新版での機能強化により、Android にある多くの問題の悪用が困難になります。Google では、すべてのユーザーに対し、できる限り最新バージョンの Android に更新することをおすすめしています。</li>
   <li>Android セキュリティ チームは、<a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2015_Report_Final.pdf">「アプリの確認」や SafetyNet </a>によって脆弱性の悪用を積極的に監視しており、<a href="http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_PHA_classifications.pdf">有害なおそれのあるアプリ</a>についてユーザーに警告しています。「アプリの確認」は、<a href="http://www.android.com/gms">Google モバイル サービス</a>を搭載した端末ではデフォルトで有効になっており、Google Play 以外からアプリをインストールするユーザーにとっては特に重要です。端末のルート権限を取得するツールは Google Play では禁止されていますが、「アプリの確認」では、ユーザーが検出されたルート権限取得アプリをインストールしようとすると、アプリの入手元に関係なく、ユーザーに警告します。また、「アプリの確認」では、悪意のある既知のアプリで権限昇格の脆弱性が悪用されないように、そのようなアプリのインストールを見つけて阻止します。こうしたアプリが既にインストールされている場合は、ユーザーに通知して、検出されたアプリの削除を試みます。</li>
@@ -2386,3 +2392,6 @@ Broadcom Wi-Fi ドライバに権限昇格の脆弱性があるため、悪意�
  <li>2017 年 1 月 4 日: 公開情報を改訂し AOSP リンクを追加</li>
  <li>2017 年 1 月 5 日: AOSP のバージョン番号を 7.1 から 7.1.1 に明記</li>
 </ul>
+
+  </body>
+</html>

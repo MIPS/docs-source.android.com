@@ -1,28 +1,27 @@
-page.title=Sensor types
-@jd:body
+<html devsite>
+  <head>
+    <title>Sensor types</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2014 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>This section describes sensor axes, base sensors, and composite sensors
 (activity, attitude, uncalibrated, and interaction).</p>
@@ -35,7 +34,7 @@ is static relative to the device.
 <p>The Sensor API is relative only to the natural orientation of the screen
 (axes are not swapped when the device's screen orientation changes.</p>
 
-<img src="http://developer.android.com/images/axis_device.png" alt="Coordinate
+<img src="https://developer.android.com/images/axis_device.png" alt="Coordinate
 system of sensor API for mobile devices"/>
 <p class="img-caption"><strong>Figure 1.</strong> Coordinate system (relative to
 a mobile device) used by the Sensor API.</p>
@@ -143,8 +142,8 @@ calibrating.
   deactivated, so as to avoid causing jumps in values during streaming.</p>
 <p>The accelerometer also reports how accurate it expects its readings to be
   through <code>sensors_event_t.acceleration.status</code>. See the <a
-  href="http://developer.android.com/reference/android/hardware/SensorManager.html">SensorManager</a>’s
-  <a href="http://developer.android.com/reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_HIGH"><code>SENSOR_STATUS_*  </code></a> constants for more information on possible values for this field.</p>
+  href="https://developer.android.com/reference/android/hardware/SensorManager.html">SensorManager</a>’s
+  <a href="https://developer.android.com/reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_HIGH"><code>SENSOR_STATUS_*  </code></a> constants for more information on possible values for this field.</p>
 <h3 id="ambient_temperature">Ambient temperature</h3>
 <p>Reporting-mode: <em><a href="report-modes.html#on-change">On-change</a></em></p>
 <p><code>getDefaultSensor(SENSOR_TYPE_AMBIENT_TEMPERATURE)</code> <em>returns a non-wake-up sensor</em></p>
@@ -159,8 +158,8 @@ calibrating.
   <code>sensors_event_t.magnetic</code> and all values are in micro-Tesla (uT).</p>
 <p>The magnetometer also reports how accurate it expects its readings to be
   through <code>sensors_event_t.magnetic.status</code>. See the <a
-href="http://developer.android.com/reference/android/hardware/SensorManager.html">SensorManager</a>’s
-<a href="http://developer.android.com/reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_HIGH"><code>SENSOR_STATUS_*</code></a> constants for more information on possible values for this field.</p>
+href="https://developer.android.com/reference/android/hardware/SensorManager.html">SensorManager</a>’s
+<a href="https://developer.android.com/reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_HIGH"><code>SENSOR_STATUS_*</code></a> constants for more information on possible values for this field.</p>
 <p>The readings are calibrated using:</p>
 <ul>
   <li> temperature compensation </li>
@@ -188,9 +187,9 @@ href="http://developer.android.com/reference/android/hardware/SensorManager.html
 </ul>
 <p>The gyroscope also reports how accurate it expects its readings to be through
   <code>sensors_event_t.gyro.status</code>. See the <a
-  href="http://developer.android.com/reference/android/hardware/SensorManager.html">SensorManager</a>’s
+  href="https://developer.android.com/reference/android/hardware/SensorManager.html">SensorManager</a>’s
   <a
-href="http://developer.android.com/reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_HIGH"><code>SENSOR_STATUS_*</code></a> constants for more information on possible values for this field.</p>
+href="https://developer.android.com/reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_HIGH"><code>SENSOR_STATUS_*</code></a> constants for more information on possible values for this field.</p>
 <p>The gyroscope cannot be emulated based on magnetometers and accelerometers, as
   this would cause it to have reduced local consistency and responsiveness. It
   must be based on a usual gyroscope chip.</p>
@@ -202,8 +201,8 @@ href="http://developer.android.com/reference/android/hardware/SensorManager.html
 <p>The current heart rate in beats per minute (BPM) is reported in
   <code>sensors_event_t.heart_rate.bpm</code> and the status of the sensor is reported in
   <code>sensors_event_t.heart_rate.status</code>. See the <a
-  href="http://developer.android.com/reference/android/hardware/SensorManager.html">SensorManager</a>’s
-  <a href="http://developer.android.com/reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_HIGH"><code>SENSOR_STATUS_*</code></a> constants for more information on possible values for this field. In
+  href="https://developer.android.com/reference/android/hardware/SensorManager.html">SensorManager</a>’s
+  <a href="https://developer.android.com/reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_HIGH"><code>SENSOR_STATUS_*</code></a> constants for more information on possible values for this field. In
   particular, upon the first activation, unless the device is known to not be on
   the body, the status field of the first event must be set to
   <code>SENSOR_STATUS_UNRELIABLE</code>. Because this sensor is on-change,
@@ -644,7 +643,7 @@ the time. This sensor must use a gyroscope as the main orientation change input.
 <p>Please note, for historical reasons the roll angle is positive in the clockwise
   direction. (Mathematically speaking, it should be positive in the
   counter-clockwise direction):</p>
-<div class="figure" style="width:264px">
+<div class="attempt-right" style="width:264px">
   <img src="images/axis_positive_roll.png" alt="Depiction of orientation
    relative to a device" height="253" />
   <p class="img-caption">
@@ -654,7 +653,7 @@ the time. This sensor must use a gyroscope as the main orientation change input.
 <p>This definition is different from yaw, pitch and roll used in aviation where
   the X axis is along the long side of the plane (tail to nose).</p>
 <p>The orientation sensor also reports how accurate it expects its readings to be
-  through sensors_event_t.orientation.status. See the <a href="http://developer.android.com/reference/android/hardware/SensorManager.html">SensorManager</a>’s <a href="http://developer.android.com/reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_HIGH">SENSOR_STATUS_</a>* constants for more information on possible values for this field.</p>
+  through sensors_event_t.orientation.status. See the <a href="https://developer.android.com/reference/android/hardware/SensorManager.html">SensorManager</a>’s <a href="https://developer.android.com/reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_HIGH">SENSOR_STATUS_</a>* constants for more information on possible values for this field.</p>
 <h2 id="uncalibrated_sensors">Uncalibrated sensors</h2>
 <p>Uncalibrated sensors provide more raw results and may include some bias but
   also contain fewer &quot;jumps&quot; from corrections applied through calibration. Some
@@ -769,3 +768,6 @@ the time. This sensor must use a gyroscope as the main orientation change input.
   and can be chosen by the manufacturer of the device.</p>
 <p>This sensor must be low power, as it is likely to be activated 24/7.
   Each sensor event reports 1 in <code>sensors_event_t.data[0]</code>.</p>
+
+  </body>
+</html>

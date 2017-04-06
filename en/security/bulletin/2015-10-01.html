@@ -1,28 +1,27 @@
-page.title=Nexus Security Bulletin - October 2015
-@jd:body
+<html devsite>
+  <head>
+    <title>Nexus Security Bulletin - October 2015</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-   </ol>
-  </div>
-</div>
+
 
 <p><em>Published October 05, 2015 | Updated April 28, 2016</em></p>
 
@@ -37,119 +36,22 @@ Source Project (AOSP) repository.</p>
 
 <p>The most severe of these issues is a Critical security vulnerability that could
 enable remote code execution on an affected device through multiple methods
-such as email, web browsing, and MMS when processing media files.</p>
+such as email, web browsing, and MMS when processing media files. The
+<a href="/security/overview/updates-resources.html#severity">severity
+assessment</a> is based on the effect that exploiting the vulnerability would
+possibly have on an affected device, assuming the platform and service
+mitigations are disabled for development purposes or if successfully bypassed.</p>
 
 <p>We have had no reports of active customer exploitation of these newly reported
-issues. Refer to the <a href="#mitigations">Mitigations</a> section for details on the <a href="{@docRoot}security/enhancements/index.html">Android security platform protections</a> and service protections such as SafetyNet, which improve the security of the
+issues. Refer to the <a href="#mitigations">Mitigations</a> section for details on the <a href="/security/enhancements/index.html">Android security platform protections</a> and service protections such as SafetyNet, which improve the security of the
 Android platform. We encourage all customers to accept these updates to their
 devices. </p>
-
-<h2 id=security_vulnerability_summary>Security Vulnerability Summary</h2>
-
-
-<p>The table below contains a list of security vulnerabilities, the Common
-Vulnerability and Exposures ID (CVE), and their assessed severity. The <a href="{@docRoot}security/overview/updates-resources.html#severity">severity assessment</a> is based on the effect that exploiting the vulnerability would have on an
-affected device, assuming the platform and service mitigations are disabled for
-development purposes or if successfully bypassed. </p>
-<table>
- <tr>
-    <th>Issue</th>
-    <th>CVE</th>
-    <th>Severity</th>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerabilities in libstagefright </td>
-    <td>CVE-2015-3873<br />
-        CVE-2015-3872<br />
-        CVE-2015-3871<br />
-        CVE-2015-3868<br />
-        CVE-2015-3867<br />
-        CVE-2015-3869<br />
-        CVE-2015-3870<br />
-        CVE-2015-3823<br />
-        CVE-2015-6598<br />
-        CVE-2015-6599<br />
-        CVE-2015-6600<br />
-        CVE-2015-6603<br />
-        CVE-2015-6601<br />
-        CVE-2015-3876<br />
-        CVE-2015-6604</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerabilities in Sonivox</td>
-    <td>CVE-2015-3874</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerabilities in libutils</td>
-    <td>CVE-2015-3875<br />
-        CVE-2015-6602</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerability in Skia</td>
-    <td>CVE-2015-3877</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerability in libFLAC</td>
-    <td>CVE-2014-9028</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in KeyStore</td>
-    <td>CVE-2015-3863</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Media Player Framework</td>
-    <td>CVE-2015-3879</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Android Runtime</td>
-    <td>CVE-2015-3865</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerabilities in Mediaserver </td>
-    <td>CVE-2015-6596</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Secure Element Evaluation Kit</td>
-    <td>CVE-2015-6606</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Media Projection</td>
-    <td>CVE-2015-3878</td>
-    <td>Moderate</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Bluetooth</td>
-    <td> CVE-2015-3847</td>
-    <td>Moderate</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerabilities in SQLite</td>
-    <td>CVE-2015-6607</td>
-    <td>Moderate</td>
- </tr>
- <tr>
-    <td>Denial of Service Vulnerabilities in Mediaserver</td>
-    <td>CVE-2015-6605<br />
-        CVE-2015-3862</td>
-    <td>Low</td>
- </tr>
-</table>
 
 
 <h2 id=mitigations>Mitigations</h2>
 
 
-<p>This is a summary of the mitigations provided by the <a href="{@docRoot}security/enhancements/index.html">Android security platform</a> and service protections such as SafetyNet. These capabilities reduce the
+<p>This is a summary of the mitigations provided by the <a href="/security/enhancements/index.html">Android security platform</a> and service protections such as SafetyNet. These capabilities reduce the
 likelihood that security vulnerabilities can be successfully exploited on
 Android. </p>
 
@@ -203,7 +105,8 @@ for reporting several issues fixed in this bulletin.</p>
 
 
 <p>In the sections below, we provide details for each of the security
-vulnerabilities listed in the <a href="#security_vulnerability_summary">Security Vulnerability Summary</a> above. There is a description of the issue, a severity rationale, and a table
+vulnerabilities that apply to the 2015-10-01 patch level.
+There is a description of the issue, a severity rationale, and a table
 with the CVE, associated bug, severity, affected versions, and date reported.
 Where available, we’ve linked the AOSP change that addressed the issue to the
 bug ID.  When multiple changes relate to a single bug, additional AOSP
@@ -799,3 +702,6 @@ CVE-2015-3865, CVE-2015-3862.
   <li> January 22, 2016: Updated acknowledgements for CVE-2015-6606.
   <li> April 28, 2016: Added CVE-2015-6603 and corrected typo with CVE-2014-9028.
 </ul>
+
+  </body>
+</html>
