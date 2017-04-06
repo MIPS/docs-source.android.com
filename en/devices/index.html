@@ -1,28 +1,27 @@
-page.title=Android Interfaces and Architecture
-@jd:body
+<html devsite>
+  <head>
+    <title>Android Interfaces and Architecture</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>
 Android gives you the freedom to implement your own device specifications and
@@ -37,7 +36,7 @@ To ensure devices maintain a high level of quality and offer a consistent user
 experience, each device must pass tests in the compatibility test suite (CTS).
 The CTS verifies devices meet a quality standard that ensures apps run reliably
 and users have a good experience. For details on the CTS, see
-<a href="{@docRoot}compatibility/index.html">Compatibility</a>.
+<a href="/compatibility/index.html">Compatibility</a>.
 </p>
 
 <p>
@@ -51,7 +50,7 @@ code in the Android Open Source Project (AOSP) source tree.
 
 <p class="img-caption"><strong>Figure 1.</strong> Android System Architecture</p>
 
-<h2 id="Application framework">Application framework</h2>
+<h2 id="Application-framework">Application framework</h2>
 <p>
 The application framework is used most often by application developers. As a
 hardware developer, you should be aware of developer APIs as many map directly
@@ -59,7 +58,7 @@ to the underlying HAL interfaces and can provide helpful information about
 implementing drivers.
 </p>
 
-<h2 id="Binder IPC">Binder IPC</h2>
+<h2 id="Binder-IPC">Binder IPC</h2>
 <p>
 The Binder Inter-Process Communication (IPC) mechanism allows the application
 framework to cross process boundaries and call into the Android system services
@@ -68,7 +67,7 @@ services. At the application framework level, this communication is hidden from
 the developer and things appear to "just work."
 </p>
 
-<h2 id="System services">System services</h2>
+<h2 id="System-services">System services</h2>
 <p>
 Functionality exposed by application framework APIs communicates with system
 services to access the underlying hardware. Services are modular, focused
@@ -78,7 +77,7 @@ Window Manager and Notification Manager) and <em>media</em> (services involved
 in playing and recording media).
 </p>
 
-<h2 id="Hardware Abstraction Layer">Hardware abstraction layer (HAL)</h2>
+<h2 id="Hardware-Abstraction-Layer">Hardware abstraction layer (HAL)</h2>
 <p>
 The hardware abstraction layer (HAL) defines a standard interface for hardware
 vendors to implement and allows Android to be agnostic about lower-level driver
@@ -178,7 +177,7 @@ typedef struct audio_hw_device audio_hw_device_t;
 
 <p>
   In addition to these standard properties, each hardware-specific HAL interface can define more of its
-  own features and requirements. See the <a href="{@docRoot}devices/halref/index.html">HAL reference documentation</a>
+  own features and requirements. See the <a href="/reference/hal/">HAL reference documentation</a>
   as well as the individual instructions for each HAL for more information on how to implement a specific interface.
 </p>
 
@@ -191,7 +190,7 @@ typedef struct audio_hw_device audio_hw_device_t;
 
   <p>For more information about setting up the build for each HAL, see its respective documentation.</p>
 
-<h2 id="Linux kernel">Linux kernel</h2>
+<h2 id="Linux-kernel">Linux kernel</h2>
 <p>
 Developing your device drivers is similar to developing a typical Linux device
 driver. Android uses a version of the Linux kernel with a few special additions
@@ -203,5 +202,8 @@ and do not affect driver development.
 <p>
 You can use any version of the kernel as long as it supports the required
 features (such as the binder driver). However, we recommend using the latest
-version of the Android kernel. For details on the latest Android kernel, see <a href="{@docRoot}source/building-kernels.html" >Building Kernels</a>.
+version of the Android kernel. For details on the latest Android kernel, see <a href="/source/building-kernels.html" >Building Kernels</a>.
 </p>
+
+  </body>
+</html>

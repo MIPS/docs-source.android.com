@@ -1,28 +1,27 @@
-page.title=SurfaceFlinger and Hardware Composer
-@jd:body
+<html devsite>
+  <head>
+    <title>SurfaceFlinger and Hardware Composer</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2014 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>Having buffers of graphical data is wonderful, but life is even better when
 you get to see them on your device's screen. That's where SurfaceFlinger and the
@@ -166,7 +165,7 @@ make it more challenging, we're trying to record 60fps video at full resolution.
 The key to making this work efficiently is BufferQueue.</p>
 
 <p>The MediaCodec class allows an app to provide data as raw bytes in buffers,
-or through a <a href="{@docRoot}devices/graphics/arch-sh.html">Surface</a>. When
+or through a <a href="/devices/graphics/arch-sh.html">Surface</a>. When
 screenrecord requests access to a video encoder, mediaserver creates a
 BufferQueue, connects itself to the consumer side, then passes the producer
 side back to screenrecord as a Surface.</p>
@@ -201,3 +200,6 @@ way down)</a>. To see this in action, enable
 settings, select <strong>Simulate secondary displays</strong>, and enable a
 window. For bonus points, use screenrecord to capture the act of enabling the
 display then play it back frame-by-frame.</p>
+
+  </body>
+</html>

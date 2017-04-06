@@ -1,35 +1,33 @@
-page.title=Supporting Multi-Window
-@jd:body
+<html devsite>
+  <head>
+    <title>Supporting Multi-Window</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>
-In Android 7.0, users can have multiple apps simultaneously displayed on their
+In Android 7.0 and later, users can have multiple apps simultaneously displayed on their
 device screen with the new platform feature, multi-window. In addition to the
-default implementation of multi-window, Android 7.0 supports a few varieties
-of multi-window: split-screen, free-form, and picture-in-picture.
-</p>
+default implementation of multi-window, Android also supports a few varieties
+of multi-window:</p>
 
 <ul>
 <li><strong>Split-screen</strong> is the base implementation of multi-window and
@@ -48,7 +46,7 @@ config file on their devices to enable or disable multi-window support.
 
 <h2 id="implementation">Implementation</h2>
 <p>
-Multi-window support is enabled by default in Android 7.0. To disable it, set
+Multi-window support is enabled by default in Android 7.0 and later. To disable it, set
 the <code>config_supportsMultiWindow</code> flag to false in the <a
 href="https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml">config.xml</a>
 file.
@@ -122,3 +120,6 @@ tests</a> and follow the <a
 href="https://developer.android.com/guide/topics/ui/multi-window.html#testing">testing
 instructions for multi-window</a>.
 </p>
+
+  </body>
+</html>

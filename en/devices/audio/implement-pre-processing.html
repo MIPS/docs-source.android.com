@@ -1,28 +1,27 @@
-page.title=Configuring Pre-Processing Effects
-@jd:body
+<html devsite>
+  <head>
+    <title>Configuring Pre-Processing Effects</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>The Android platform provides audio effects on supported devices in the
 <a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">audiofx</a>
@@ -75,7 +74,7 @@ duration of the session.</p>
 pre-processing effect. It should not be turned on by default when recording from
 this audio source, and you should not enable it in your own audio_effects.conf
 file. Turning on the effect by default will cause the device to fail the
-<a href="{@docRoot}compatibility/index.html"> compatibility requirement</a>
+<a href="/compatibility/index.html"> compatibility requirement</a>
 regardless of whether this was on by default due to configuration file , or the
 audio HAL implementation's default behavior.</p>
 
@@ -108,7 +107,7 @@ gain or audio processing with the exception of voice recognition
 <li>Level tracks linearly from -18dB to +12dB relative to 90dB SPL</li>
 <li>THD &lt; 1% (90dB SPL in 100 to 4000Hz range)</li>
 <li>Near-ultrasound requirements (for testing, see
-<a href="{@docRoot}compatibility/cts/near-ultrasound.html">Near Ultrasound
+<a href="/compatibility/cts/near-ultrasound.html">Near Ultrasound
 Tests</a>):
 <ul>
 <li>Support for SUPPORT_PROPERTY_MIC_NEAR_ULTRASOUND as defined in section 7.8.3
@@ -152,3 +151,6 @@ Suppression audio effect</a></li>
 
 <li><code>device/samsung/manta/audio_effects.conf</code> file for the Nexus 10</li>
 </ul>
+
+  </body>
+</html>

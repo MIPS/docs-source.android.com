@@ -1,28 +1,27 @@
-page.title=Data Saver mode
-@jd:body
+<html devsite>
+  <head>
+    <title>Data Saver mode</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>
 Mobile data use is costly and even more so where data plan costs are not
@@ -85,9 +84,9 @@ These screenshots show the Data Saver mode in use.
 
 <h3 id="apps">Apps</h3>
 
-<strong>Important</strong>: Device implementers should not whitelist apps.
-Even if they do, users may remove them. Including other apps forces users to
-decide on which to apply Data Saver.  </p>
+<p class="caution"><strong>Important</strong>: Device implementers should not whitelist apps.
+Even if they do, users may remove them. Including other apps forces users to decide on which to
+apply Data Saver.</p>
 
 <p>
 All app developers must act to implement Data Saver, including OEMs and
@@ -145,3 +144,6 @@ first running this command to see all available options:<br>
 For example, this command returns the UIDs of the whitelisted apps:<br>
 <code>$ adb shell cmd netpolicy list restrict-background-whitelist</code>
 </p>
+
+  </body>
+</html>

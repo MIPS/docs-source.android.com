@@ -1,17 +1,27 @@
-page.title=Android 安全性公告 — 2016 年 8 月
-@jd:body
-<!--
-    Copyright 2016 The Android Open Source Project
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-        http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+<html devsite>
+  <head>
+    <title>Android 安全性公告 — 2016 年 8 月</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
+
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
+
+
 
 <p><em>發佈日期：2016 年 8 月 1 日 | 更新日期：2016 年 8 月 2 日</em></p>
 <p>Android 安全性公告包含會對 Android 裝置造成影響的安全性漏洞，並說明各項相關細節。在這篇公告發佈的同時，Google 已透過 OTA 更新機制發佈了 Nexus 裝置的安全性更新。此外，Nexus 韌體映像檔也已經發佈到 <a href="https://developers.google.com/android/nexus/images">Google 開發人員網站</a>上。2016 年 8 月 5 日之後的安全修補等級已解決了這些問題。要瞭解如何查看安全修補等級，請參閱<a href="https://support.google.com/nexus/answer/4457705#nexus_devices">說明文件</a>。
@@ -20,7 +30,7 @@ page.title=Android 安全性公告 — 2016 年 8 月
 </p>
 <p>在這些問題中，最嚴重的就是「最高」等級的安全性漏洞。當系統執行媒體檔案時，遠端程式碼可利用這類漏洞，透過電子郵件、網頁瀏覽活動和多媒體訊息等方法，自動在受影響的裝置上執行。
 </p>
-<p>針對這些新發現的漏洞，我們目前尚未收到任何客戶回報相關的漏洞濫用案例。如果您想進一步瞭解 <a href="{@docRoot}security/enhancements/index.html">Android 安全性平台防護措施</a>和服務防護措施 (例如 SafetyNet) 如何加強 Android 平台的安全性，請參閱 <a href="#mitigations">Android 和 Google 服務因應措施</a>一節。
+<p>針對這些新發現的漏洞，我們目前尚未收到任何客戶回報相關的漏洞濫用案例。如果您想進一步瞭解 <a href="/security/enhancements/index.html">Android 安全性平台防護措施</a>和服務防護措施 (例如 SafetyNet) 如何加強 Android 平台的安全性，請參閱 <a href="#mitigations">Android 和 Google 服務因應措施</a>一節。
 </p>
 <p>我們建議所有客戶接受這些裝置更新。
 </p>
@@ -36,7 +46,7 @@ page.title=Android 安全性公告 — 2016 年 8 月
 </ul>
 
 <h2 id="security-vulnerability-summary">安全性漏洞摘要</h2>
-<p>下表列出各項安全性漏洞、常見弱點與漏洞 ID (CVE)、評定的嚴重程度及 Nexus 裝置是否會受到影響。<a href="{@docRoot}security/overview/updates-resources.html#severity">嚴重程度評定標準</a>是假設平台與服務的因應防護措施基於開發作業的需求而被停用，或是遭到有心人士破解，然後推算當有人惡意運用漏洞時，裝置會受到多大的影響，據此評定漏洞的嚴重程度。
+<p>下表列出各項安全性漏洞、常見弱點與漏洞 ID (CVE)、評定的嚴重程度及 Nexus 裝置是否會受到影響。<a href="/security/overview/updates-resources.html#severity">嚴重程度評定標準</a>是假設平台與服務的因應防護措施基於開發作業的需求而被停用，或是遭到有心人士破解，然後推算當有人惡意運用漏洞時，裝置會受到多大的影響，據此評定漏洞的嚴重程度。
 </p>
 
 <h3 id="2016-08-01-security-patch-level-vulnerability-summary">2016-08-01 安全修補等級 — 資安漏洞摘要</h3>
@@ -325,7 +335,7 @@ page.title=Android 安全性公告 — 2016 年 8 月
   </tr>
 </table>
 <h2 id="mitigations">Android 和 Google 服務因應措施</h2>
-<p>本節概要說明 <a href="{@docRoot}security/enhancements/index.html">Android 安全性平台</a>和 SafetyNet 等服務防護方案所提供的因應措施。這些措施可有效防範有心人士在 Android 系統上惡意運用安全性漏洞來達到特定目的。
+<p>本節概要說明 <a href="/security/enhancements/index.html">Android 安全性平台</a>和 SafetyNet 等服務防護方案所提供的因應措施。這些措施可有效防範有心人士在 Android 系統上惡意運用安全性漏洞來達到特定目的。
 </p>
 <ul>
 <li>Android 平台持續推出新的版本來強化安全性，因此有心人士越來越難在 Android 系統上找出漏洞加以利用。我們建議所有使用者盡可能更新至最新版的 Android。</li>
@@ -2306,3 +2316,6 @@ QC-CR#548711</a></p></td>
   <li>2016 年 8 月 1 日：發佈公告。</li>
   <li>2016 年 8 月 2 日：修訂公告，加入 AOSP 連結。</li>
 </ul>
+
+  </body>
+</html>

@@ -1,28 +1,27 @@
-page.title=Audio Latency Measurements
-@jd:body
+<html devsite>
+  <head>
+    <title>Audio Latency Measurements</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>
 This article gives round-trip audio latency measurements for select devices and
@@ -125,7 +124,7 @@ and
 
 <p>
 The measurements shown are specific to a
-<a href="{@docRoot}source/build-numbers.html">build number</a>.
+<a href="/source/build-numbers.html">build number</a>.
 Devices are listed in approximate order of initial release and within device by platform version.
 The test application uses the Android native audio API based on OpenSL ES.
 </p>
@@ -426,49 +425,9 @@ The test application uses the Android native audio API based on OpenSL ES.
 <p></p>
 <p></p>
 
-<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar']}]}"></script>
-    <script type="text/javascript">
-
-
-google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-        ['Device', '2.3', '4.0', '4.1', '4.2', '4.3', '4.4', '5.0', '5.1', '6.0'],
-        ['Nexus One', 345, null, null, null, null, null, null, null, null,],
-        ['Nexus S', 260, 260, 210, null, null, null, null, null, null,],
-        ['Galaxy Nexus', null, 270, null, null, 130, null, null, null, null,],
-        ['Nexus 4', null, null, null, 195, null, null, null, 58, null,],
-        ['Nexus 10', null, null, null, null, null, null, 36, 35, null,],
-        ['Nexus 7 2013', null, null, null, null, 149, 85, 64, 55, 55,],
-        ['Nexus 5', null, null, null, null, null, 95, 47, 42, 38,],
-        ['Nexus 9', null, null, null, null, null, null, 38, 32, 15,],
-        ['Nexus 6', null, null, null, null, null, null, 65, 42, 33,],
-        ['Nexus 5X', null, null, null, null, null, null, null, null, 18,],
-        ['Nexus 6P', null, null, null, null, null, null, null, null, 18,]
-      ]);
-
-        var options = {
-          chart: {
-            title: 'Round Trip Audio Latency',
-            subtitle: 'Over headset, using native APIs',
-          },
-          bars: 'horizontal', // Required for Material Bar Charts.
-          bar: {groupWidth: '100%'},
-          hAxis: {
-            title: 'Milliseconds'
-          },
-          height: 800,
-          width: 600
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('chart_div'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-
-      }
-</script>
-
-    <div id="chart_div"></div>
     <p></p>
+    <img src="/devices/audio/images/round-trip-latencies.png" />
     <p class="img-caption">
 <strong>Figure 3.</strong> Round trip latencies.</p>
+  </body>
+</html>

@@ -1,31 +1,30 @@
-page.title=Runtime Permissions
-@jd:body
+<html devsite>
+  <head>
+    <title>Runtime Permissions</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
 
-<p>The Android 6.0 application permission model is designed to make permissions
-more understandable, useful, and secure for users. The model moves Android
+
+<p>The Android application permission model in Android 6.0 and later is designed to make
+permissions more understandable, useful, and secure for users. The model moved Android
 applications that require dangerous permissions (see
 <a href="#affected-permissions">Affected permissions</a>) from an
 <em>install</em> time permission model to <em>runtime</em> permission model:</p>
@@ -53,7 +52,7 @@ hazards of granting or denying permissions.</p>
 
 <h2 id="affected-permissions">Affected permissions</h2>
 
-<p>Android 6.0 requires only dangerous permissions to use a runtime permissions
+<p>Android 6.0 and later requires dangerous permissions to use a runtime permissions
 model. Dangerous permissions are higher-risk permissions (such as
 <code>READ_CALENDAR</code>) that grant requesting applications access to private
 user data or control over the device that can negatively impact the user. To
@@ -62,7 +61,7 @@ view a list of dangerous permissions, run the command:</p>
 adb shell pm list permissions -g -d
 </pre>
 
-<p>Android 6.0 does not change the behavior of normal permissions (all
+<p>Android 6.0 and later does not change the behavior of normal permissions (all
 non-dangerous permissions including normal, system, and signature permissions).
 Normal permissions are lower-risk permissions (such as
 <code>SET_WALLPAPER</code>) that grant requesting applications access to
@@ -81,7 +80,7 @@ pre-installed apps and apps delivered to the device as part of the setup
 process. Application software requirements include:</p>
 <ul>
 <li>Runtime permission model must be consistent across all devices running
-Android 6.0. Enforced by Android Compatibility Test Suite (CTS) tests.</li>
+Android 6.0 and later. Enforced by Android Compatibility Test Suite (CTS) tests.</li>
 <li>Apps must prompt users to grant application permissions at runtime. For
 details, see <a href="#updating-apps">Updating applications</a>. Limited
 exceptions may be granted to default applications and handlers that provide
@@ -101,11 +100,11 @@ see <a href="#headless-apps">Headless applications</a>.</li>
 <h2 id="permissions-migration">Permissions migration</h2>
 
 <p>Permissions granted to applications on Android 5.x remain granted after
-updating to Android 6.0, but users can revoke those permissions at any time.</p>
+updating to Android 6.0 or later, but users can revoke those permissions at any time.</p>
 
 <h2 id="integration">Integration</h2>
 
-<p>When integrating the Android 6.0 application runtime permissions model, you
+<p>When integrating the application runtime permissions model for Android 6.0 and later, you
 must update pre-installed applications to work with the new model. You can also
 define exceptions for apps that are the default handlers/providers for core
 functionality, define custom permissions, and customize the theme used in the
@@ -122,8 +121,8 @@ guidelines</a>. Specifically, you must ensure that pre-installed applications
 are modified to avoid crashes and other issues when users revoke permissions.</p>
 
 <h4 id="preloaded-apps">Pre-loaded applications</h4>
-<p>Pre-loaded apps that use dangerous permissions must target API level 23 and
-maintain the Android 6.0 AOSP permission model (i.e. the UI flow during an app
+<p>Pre-loaded apps that use dangerous permissions must target API level 23 or higher and
+maintain the Android 6.0 and later AOSP permission model (i.e. the UI flow during an app
 installation should not deviate from the AOSP implementation of
 PackageInstaller, users can even revoke the dangerous permissions of
 pre-installed apps, etc.).</p>
@@ -134,7 +133,7 @@ permissions.</p>
 <ul>
 <li>In Android 5.1 and earlier releases, headless applications can request
 permissions when installed or pre-installed without the use of an activity.</li>
-<li>In Android 6.0, headless applications must use one of the following methods
+<li>In Android 6.0 and later, headless applications must use one of the following methods
 to request permissions:<ul>
 <li>Add an activity to request permissions (preferred method).</li>
 <li>Share a UID with another application that has the necessary permissions. Use
@@ -160,23 +159,17 @@ strings to AOSP.</p>
 providers for core OS functionality using the
 <code>DefaultPermissionGrantPolicy.java</code> in PackageManager. Examples:</p>
 
-<code>
-<p>ACTION_CALL (Dialer) Default</p>
-<ul>
-<li>Phone, Contacts, SMS, Microphone</li>
-</ul>
-<p>SMS_DELIVER_ACTION (SMS/MMS) Default</p>
-<ul>
-<li>Phone, Contacts, SMS</li>
-</ul>
-</code>
+<p><code>ACTION_CALL (Dialer) Default</code><br>
+<code>Phone, Contacts, SMS, Microphone</code></p>
+<p><code>SMS_DELIVER_ACTION (SMS/MMS) Default</code><br>
+<code>Phone, Contacts, SMS</code></p>
 
 <h3 id="defining-custom-perms">Defining custom permissions</h3>
 <p>You can define custom permissions and groups as <em>normal</em> or
 <em>dangerous</em> and add OEM/Carrier-specific permissions to existing
 permissions groups, just as you could in Android 5.x and earlier releases.</p>
 
-<p>In Android 6.0, if you add a new dangerous permission, it must be handled in
+<p>In Android 6.0 and later, if you add a new dangerous permission, it must be handled in
 the same way as other dangerous permissions (requested during app runtime and
 revocable by users). Specifically:</p>
 
@@ -189,6 +182,9 @@ but you cannot add new permissions groups in the platform manifest.</li>
 </ul>
 
 <h2 id="testing-perms">Testing permissions</h2>
-<p>Android 6.0 includes Compatibility Test Suite (CTS) tests that verify
+<p>Android includes Compatibility Test Suite (CTS) tests that verify
 individual permissions are mapped to the correct Groups. Passing these tests is
-a requirement for Android 6.0 CTS compatibility.</p>
+a requirement for Android 6.0 and later CTS compatibility.</p>
+
+  </body>
+</html>

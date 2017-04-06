@@ -1,28 +1,27 @@
-page.title=EGLSurfaces and OpenGL ES
-@jd:body
+<html devsite>
+  <head>
+    <title>EGLSurfaces and OpenGL ES</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2014 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>OpenGL ES defines an API for rendering graphics.  It does not define a windowing
 system.  To allow GLES to work on a variety of platforms, it is designed to be
@@ -75,7 +74,7 @@ place to draw.</p>
 
 <p>The public Surface class is implemented in the Java programming language.  The
 equivalent in C/C++ is the ANativeWindow class, semi-exposed by the <a
-href="https://developer.android.com/tools/sdk/ndk/index.html">Android NDK</a>.  You
+href="https://developer.android.com/ndk/index.html">Android NDK</a>.  You
 can get the ANativeWindow from a Surface with the <code>ANativeWindow_fromSurface()</code>
 call.  Just like its Java-language cousin, you can lock it, render in software,
 and unlock-and-post.</p>
@@ -86,3 +85,6 @@ a synonym for ANativeWindow, so you can freely cast one to the other.</p>
 
 <p>The fact that the basic "native window" type just wraps the producer side of a
 BufferQueue should not come as a surprise.</p>
+
+  </body>
+</html>
