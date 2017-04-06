@@ -1,29 +1,27 @@
-page.title=Implementing the Hardware Composer HAL
-@jd:body
+<html devsite>
+  <head>
+    <title>Implementing the Hardware Composer HAL</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
 
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
 
 
 <p>The Hardware Composer HAL (HWC) is used by SurfaceFlinger to composite
@@ -153,7 +151,7 @@ returned when the enumerated value <code>HWC2_FUNCTION_CREATE_LAYER</code> is
 passed into <code>getFunction</code>.</p>
 <p>For detailed documentation on functions (including functions required for
 every HWC2 implementation), refer to the
-<a href="{@docRoot}devices/halref/hwcomposer2_8h.html">HWC2 header</a>.</p>
+<a href="https://android.googlesource.com/platform/hardware/libhardware/+/master/include/hardware/hwcomposer2.h">HWC2 header</a>.</p>
 
 <h3 id="layer_display_handles">Layer and display handles</h3>
 <p>Layers and displays are manipulated by opaque handles.</p>
@@ -317,4 +315,7 @@ for frame N has now replaced the previous content." This is non-speculative,
 since this fence should signal shortly after <code>presentDisplay</code> is
 called as soon as the hardware presents this frame's content.</p>
 <p>For implementation details, refer to the
-<a href="{@docRoot}devices/halref/hwcomposer2_8h.html">HWC2 header</a>.</p>
+<a href="https://android.googlesource.com/platform/hardware/libhardware/+/master/include/hardware/hwcomposer2.h">HWC2 header</a>.</p>
+
+  </body>
+</html>

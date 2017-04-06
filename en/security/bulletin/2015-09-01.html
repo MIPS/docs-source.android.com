@@ -1,28 +1,27 @@
-page.title=Nexus Security Bulletin - September 2015
-@jd:body
+<html devsite>
+  <head>
+    <title>Nexus Security Bulletin - September 2015</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-   </ol>
-  </div>
-</div>
+
 
 <p><em>Published September 9, 2015</em></p>
 
@@ -39,75 +38,23 @@ these issues on August 13, 2015 or earlier.</p>
 
 <p>We have not detected customer exploitation of the newly reported issues. The
 exception is the existing issue (CVE-2015-3636). Refer to the <a href="#mitigations">Mitigations</a> section for details on the
-<a href="{@docRoot}security/enhancements/index.html">Android security platform protections,</a> and service protections such as SafetyNet, which reduce the likelihood that
+<a href="/security/enhancements/index.html">Android security platform protections,</a> and service protections such as SafetyNet, which reduce the likelihood that
 security vulnerabilities can be successfully exploited on Android.</p>
 
 <p>Please note that both Critical security updates (CVE-2015-3864 and
 CVE-2015-3686) address already disclosed vulnerabilities. There are no newly
-disclosed Critical security vulnerabilities in this update. We encourage all
-customers to accept these updates to their devices.</p>
+disclosed Critical security vulnerabilities in this update. The
+<a href="/security/overview/updates-resources.html#severity">severity
+assessment</a> is based on the effect that exploiting the vulnerability would
+possibly have on an affected device, assuming the platform and service
+mitigations are disabled for development purposes or if successfully bypassed.</p>
 
-<h2 id=security_vulnerability_summary>Security vulnerability summary</h2>
-
-
-<p>The table below contains a list of security vulnerabilities, the Common
-Vulnerability and Exposures ID (CVE), and their assessed severity. The <a href="{@docRoot}security/overview/updates-resources.html#severity">severity assessment</a> is based on the effect that exploiting the vulnerability would have on an
-affected device, assuming the platform and service mitigations are disabled for
-development purposes or if successfully bypassed.</p>
-<table>
- <tr>
-    <th>Issue</th>
-    <th>CVE</th>
-    <th>Severity</th>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerability in Mediaserver</td>
-    <td>CVE-2015-3864 </td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Kernel</td>
-    <td>CVE-2015-3636</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Binder</td>
-    <td>CVE-2015-3845<br />
-        CVE-2015-1528</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Keystore </td>
-    <td>CVE-2015-3863</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Region</td>
-    <td>CVE-2015-3849</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege vulnerability in SMS enables notification bypass.</td>
-    <td>CVE-2015-3858</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Lockscreen</td>
-    <td>CVE-2015-3860</td>
-    <td>Moderate</td>
- </tr>
- <tr>
-    <td>Denial of Service Vulnerability in Mediaserver </td>
-    <td>CVE-2015-3861</td>
-    <td>Low</td>
- </tr>
-</table>
-
+<p>We encourage all customers to accept these updates to their devices.</p>
 
 <h2 id=mitigations>Mitigations</h2>
 
 
-<p>This is a summary of the mitigations provided by the <a href="{@docRoot}security/enhancements">Android security platform</a> and service protections such as SafetyNet. These capabilities reduce the
+<p>This is a summary of the mitigations provided by the <a href="/security/enhancements">Android security platform</a> and service protections such as SafetyNet. These capabilities reduce the
 likelihood that security vulnerabilities can be successfully exploited on
 Android.</p>
 
@@ -147,7 +94,7 @@ pass media to processes such as mediaserver.
 
 
 <p>In the sections below, we provide details for each of the security
-vulnerabilities listed in the <a href="#security_vulnerability_summary">Security Vulnerability Summary</a> above. There is a description of the issue, a severity rationale, and a table
+vulnerabilities in this bulletin. There is a description of the issue, a severity rationale, and a table
 with the CVE, associated bug, severity, affected versions, and date reported.
 Where available, we’ve linked the AOSP change that addressed the issue to the
 bug ID. When multiple changes relate to a single bug, additional AOSP
@@ -383,3 +330,6 @@ the device remains usable.</p>
 </table>
 
 
+
+  </body>
+</html>

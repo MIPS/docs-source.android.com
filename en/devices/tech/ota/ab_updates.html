@@ -1,32 +1,31 @@
-page.title=A/B System Updates
-@jd:body
+<html devsite>
+  <head>
+    <title>A/B (Seamless) System Updates</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-     Copyright 2016 The Android Open Source Project
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-     http://www.apache.org/licenses/LICENSE-2.0
+          http://www.apache.org/licenses/LICENSE-2.0
 
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>
-  A/B system updates ensure a workable booting system remains on the disk during
-  an <a href="{@docRoot}devices/tech/ota/index.html"
+  A/B system updates, also known as seamless updates, ensure a workable booting
+  system remains on the disk during an <a href="/devices/tech/ota/index.html"
   >over-the-air (OTA) update</a>. This reduces the likelihood of an inactive
   device afterward, which means less device replacements and device reflashes at
   repair/warranty centers.
@@ -52,7 +51,7 @@ page.title=A/B System Updates
 </ul>
 
 <p>
-  The existing <a href="{@docRoot}security/verifiedboot/dm-verity.html"
+  The existing <a href="/security/verifiedboot/dm-verity.html"
   >dm-verity</a> feature guarantees the device will boot an uncorrupted image. If
   a device doesn't boot, because of a bad OTA or dm-verity issue, the device can
   reboot into an old image.
@@ -177,7 +176,7 @@ page.title=A/B System Updates
 <p>
   The post-install step is described in detail below. Note that the
   <code>update_engine</code> daemon is limited by the
-  <a href="{@docRoot}security/selinux/">SELinux</a> policies and features in the
+  <a href="/security/selinux/">SELinux</a> policies and features in the
   <em>current</em> slot; those policies and features can't be updated until the
   system boots into a new version. To achieve a robustness goal, the update
   process should not:
@@ -431,7 +430,7 @@ page.title=A/B System Updates
 <p>
   The <code>&lt;public-key-id&gt;</code> value is the ID of the public key used
   to verify the verity table signature (see
-  <a href="{@docRoot}security/verifiedboot/dm-verity.html">dm-verity</a>).
+  <a href="/security/verifiedboot/dm-verity.html">dm-verity</a>).
 </p>
 
 <h4>
@@ -537,8 +536,8 @@ Android: 7e4333f9bba00adfe0ede979e28ed1920492b40f: X509.RSA 0492b40f []
     partition.
   </li>
   <li>
-    All partitions that are A/B-ed should be named as follows (assuming the
-    suffix chosen is <code>_a</code> and <code>_b</code>): <code>boot_a</code>,
+    All partitions that are A/B-ed should be named as follows (slots are always
+    named <code>a</code>, <code>b</code>, etc.): <code>boot_a</code>,
     <code>boot_b</code>, <code>system_a</code>, <code>system_b</code>,
     <code>vendor_a</code>, <code>vendor_b</code>.
   </li>
@@ -576,8 +575,8 @@ wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
 <h4>Commands</h4>
 <ul>
   <li>
-    <code>set_active &lt;slot-suffix&gt;</code> —Sets the current active slot to
-    the given suffix. This must also clear the unbootable flag for that slot, and
+    <code>set_active &lt;slot&gt;</code> —Sets the current active slot to
+    the given slot. This must also clear the unbootable flag for that slot, and
     reset the retry count to default values.
   </li>
 </ul>
@@ -585,7 +584,7 @@ wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
 <h4>Variables</h4>
 <ul>
   <li>
-    <code>has-slot:&lt;partition-base-name-without-any-suffix&gt;</code>
+    <code>has-slot:&lt;partition-base-name-without-suffix&gt;</code>
       —Returns “yes” if the given partition supports slots, “no” otherwise.
   </li>
   <li>
@@ -593,8 +592,9 @@ wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
     next.
   </li>
   <li>
-    <code>slot-suffixes</code> —Returns a comma-separated list of slot suffixes
-    supported by the device.
+    <code>slot-count</code> —Returns an integer representing the number of
+    available slots. Currently, two slots are supported so this value is
+    <code>2</code>.
   </li>
   <li>
     <code>slot-successful:&lt;slot-suffix&gt;</code> —Returns "yes" if the given
@@ -617,7 +617,7 @@ wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
 <h3 id="ota-package-generation">OTA package generation</h3>
 
 <p>
-  The <a href="{@docRoot}devices/tech/ota/tools.html">OTA package tools</a>
+  The <a href="/devices/tech/ota/tools.html">OTA package tools</a>
   follow the same commands as the commands for non-A/B devices. The
   <code>target_files.zip</code> file must be generated by defining the build
   variables for the A/B target. The OTA package tools automatically identify and
@@ -643,7 +643,7 @@ wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
 
 <h2 id="configuration">Configuration</h2>
 
-<h3 id="partitions">Partitions</h3>
+<h3 id="config-partitions">Partitions</h3>
 
 <p>
   The Update Engine can update any pair of A/B partitions defined in the same
@@ -652,15 +652,13 @@ wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
 
 <p>
   A pair of partitions has a common prefix (such as <code>system</code> or
-  <code>boot</code>) and per-slot suffix (such as <code>_a</code> or
-  <code>-a</code>) as defined by the <code>boot_control</code> HAL in the
-  function <code>getSuffix()</code>. The list of partitions for which the
-  payload generator defines an update is configured by the
-  <code>AB_OTA_PARTITIONS</code> make variable. For example, if a pair of
-  partitions <code>bootloader_a</code> and <code>booloader_b</code> are
-  included (assuming <code>_a</code> and <code>_b</code> are the slot suffixes),
-  these partitions can be updated by specifying the following on the product or
-  board configuration:
+  <code>boot</code>) and per-slot suffix (such as <code>_a</code>). The list of
+  partitions for which the payload generator defines an update is configured by
+  the <code>AB_OTA_PARTITIONS</code> make variable. For example, if a pair of
+  partitions <code>bootloader_a</code> and <code>booloader_b</code> are included
+  (<code>_a</code> and <code>_b</code> are the slot suffixes), these partitions
+  can be updated by specifying the following on the product or board
+  configuration:
 </p>
 
 <pre>AB_OTA_PARTITIONS := \
@@ -726,6 +724,9 @@ additions to the product's device configuration (in the product's device.mk):</p
   </li>
 </ol>
 
-<p>See <a href="{@docRoot}devices/tech/dalvik/configure.html#other_odex">First
+<p>See <a href="/devices/tech/dalvik/configure.html#other_odex">First
 boot installation of DEX_PREOPT files</a> to install the preopted files in the
 unused second system partition.</p>
+
+  </body>
+</html>

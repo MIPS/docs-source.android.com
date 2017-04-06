@@ -1,21 +1,27 @@
-page.title=Android Security Bulletin—March 2017
-@jd:body
+<html devsite>
+  <head>
+    <title>Android Security Bulletin—March 2017</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+
 <p><em>Published March 06, 2017 | Updated March 07, 2017</em></p>
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -33,12 +39,16 @@ Android Open Source Project (AOSP) repository and linked from this bulletin.
 This bulletin also includes links to patches outside of AOSP.</p>
 <p>The most severe of these issues is a Critical security vulnerability that could
 enable remote code execution on an affected device through multiple methods such
-as email, web browsing, and MMS when processing media files.</p>
+as email, web browsing, and MMS when processing media files. The
+<a href="/security/overview/updates-resources.html#severity">severity
+assessment</a> is based on the effect that exploiting the vulnerability would
+possibly have on an affected device, assuming the platform and service
+mitigations are disabled for development purposes or if successfully bypassed.</p>
 <p>We have had no reports of active customer exploitation or abuse of these newly
 reported issues. Refer to the <a
 href="#mitigations">Android and Google service
 mitigations</a> section for details on the <a
-href="{@docRoot}security/enhancements/index.html">Android
+href="/security/enhancements/index.html">Android
 security platform protections</a> and service protections such as <a
 href="https://developer.android.com/training/safetynet/index.html">SafetyNet</a>,
 which improve the security of the Android platform.</p>
@@ -62,406 +72,10 @@ and 2017-03-05 (and all previous security patch level strings) are addressed.</l
 <li>Supported Google devices will receive a single OTA update with the March
 05, 2017 security patch level.</li>
 </ul>
-<h2 id="security-vulnerability-summary">Security vulnerability summary</h2>
-<p>The tables below contains a list of security vulnerabilities, the Common
-Vulnerability and Exposures ID (CVE), the assessed severity, and whether or not
-Google devices are affected. The <a
-href="{@docRoot}security/overview/updates-resources.html#severity">severity
-assessment</a> is based on the effect that exploiting the vulnerability would
-possibly have on an affected device, assuming the platform and service
-mitigations are disabled for development purposes or if successfully bypassed.</p>
-<h3 id="2017-03-01-summary">2017-03-01
-security patch level—Vulnerability summary</h3>
-<p>Security patch levels of 2017-03-01 or later must address the following issues.</p>
-<table>
-  <col width="55%">
-  <col width="20%">
-  <col width="13%">
-  <col width="12%">
-  <tr>
-   <th>Issue</th>
-   <th>CVE</th>
-   <th>Severity</th>
-   <th>Affects Google devices?</th>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in OpenSSL & BoringSSL</td>
-   <td>CVE-2016-2182</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Mediaserver</td>
-   <td>CVE-2017-0466, CVE-2017-0467, CVE-2017-0468, CVE-2017-0469,
-CVE-2017-0470, CVE-2017-0471, CVE-2017-0472, CVE-2017-0473, CVE-2017-0474</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in recovery verifier</td>
-   <td>CVE-2017-0475</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in AOSP Messaging</td>
-   <td>CVE-2017-0476</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in libgdx</td>
-   <td>CVE-2017-0477</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Framesequence library</td>
-   <td>CVE-2017-0478</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in NFC</td>
-   <td>CVE-2017-0481</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Audioserver</td>
-   <td>CVE-2017-0479, CVE-2017-0480</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in Mediaserver</td>
-   <td>CVE-2017-0482, CVE-2017-0483, CVE-2017-0484, CVE-2017-0485,
-CVE-2017-0486, CVE-2017-0487, CVE-2017-0488</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Location Manager</td>
-   <td>CVE-2017-0489</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Wi-Fi</td>
-   <td>CVE-2017-0490</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Package Manager</td>
-   <td>CVE-2017-0491</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in System UI</td>
-   <td>CVE-2017-0492</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in AOSP Messaging</td>
-   <td>CVE-2017-0494</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Mediaserver</td>
-   <td>CVE-2017-0495</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in Setup Wizard</td>
-   <td>CVE-2017-0496</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in Mediaserver</td>
-   <td>CVE-2017-0497</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in Setup Wizard</td>
-   <td>CVE-2017-0498</td>
-   <td>Moderate</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in Audioserver</td>
-   <td>CVE-2017-0499</td>
-   <td>Low</td>
-   <td>Yes</td>
-  </tr>
-</table>
-<p>* Supported Google devices on Android 7.0 or later that have installed all
-available updates are not affected by this vulnerability.</p>
-<h3 id="2017-03-05-summary">2017-03-05
-security patch level—Vulnerability summary</h3>
-<p>Security patch levels of 2017-03-05 or later must address all of the 2017-03-01
-issues, as well as the following issues.</p>
-<table>
-  <col width="55%">
-  <col width="20%">
-  <col width="13%">
-  <col width="12%">
-  <tr>
-   <th>Issue</th>
-   <th>CVE</th>
-   <th>Severity</th>
-   <th>Affects Google devices?</th>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in MediaTek components</td>
-   <td>CVE-2017-0500, CVE-2017-0501, CVE-2017-0502, CVE-2017-0503,
-CVE-2017-0504, CVE-2017-0505, CVE-2017-0506</td>
-   <td>Critical</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in NVIDIA GPU driver</td>
-   <td>CVE-2017-0337, CVE-2017-0338, CVE-2017-0333, CVE-2017-0306, CVE-2017-0335</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel ION subsystem</td>
-   <td>CVE-2017-0507, CVE-2017-0508</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Broadcom Wi-Fi driver</td>
-   <td>CVE-2017-0509</td>
-   <td>Critical</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel FIQ debugger</td>
-   <td>CVE-2017-0510</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm GPU driver</td>
-   <td>CVE-2016-8479</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel networking subsystem</td>
-   <td>CVE-2016-9806, CVE-2016-10200</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Vulnerabilities in Qualcomm components</td>
-   <td>CVE-2016-8484, CVE-2016-8485, CVE-2016-8486, CVE-2016-8487, CVE-2016-8488</td>
-   <td>Critical</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel networking subsystem</td>
-   <td>CVE-2016-8655, CVE-2016-9793</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm input hardware driver</td>
-   <td>CVE-2017-0516</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in MediaTek Hardware Sensor Driver</td>
-   <td>CVE-2017-0517</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm ADSPRPC driver</td>
-   <td>CVE-2017-0457</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm fingerprint sensor
-driver</td>
-   <td>CVE-2017-0518, CVE-2017-0519</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm crypto engine driver</td>
-   <td>CVE-2017-0520</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm camera driver</td>
-   <td>CVE-2017-0458, CVE-2017-0521</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in MediaTek APK</td>
-   <td>CVE-2017-0522</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm Wi-Fi driver</td>
-   <td>CVE-2017-0464, CVE-2017-0453, CVE-2017-0523</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Synaptics touchscreen driver</td>
-   <td>CVE-2017-0524</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm IPA driver</td>
-   <td>CVE-2017-0456, CVE-2017-0525</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in HTC Sensor Hub Driver</td>
-   <td>CVE-2017-0526, CVE-2017-0527</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in NVIDIA GPU driver</td>
-   <td>CVE-2017-0307</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm networking driver</td>
-   <td>CVE-2017-0463, CVE-2017-0460</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel security subsystem</td>
-   <td>CVE-2017-0528</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm SPCom driver</td>
-   <td>CVE-2016-5856, CVE-2016-5857</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in kernel networking subsystem</td>
-   <td>CVE-2014-8709</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in MediaTek driver</td>
-   <td>CVE-2017-0529</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm bootloader</td>
-   <td>CVE-2017-0455</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm power driver</td>
-   <td>CVE-2016-8483</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in NVIDIA GPU driver</td>
-   <td>CVE-2017-0334, CVE-2017-0336</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in kernel cryptographic subsystem</td>
-   <td>CVE-2016-8650</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm camera driver (device
-specific)</td>
-   <td>CVE-2016-8417</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm Wi-Fi driver</td>
-   <td>CVE-2017-0461, CVE-2017-0459, CVE-2017-0531</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in MediaTek video codec driver</td>
-   <td>CVE-2017-0532</td>
-   <td>Moderate</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm video driver</td>
-   <td>CVE-2017-0533, CVE-2017-0534, CVE-2016-8416, CVE-2016-8478</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm camera driver</td>
-   <td>CVE-2016-8413, CVE-2016-8477</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in HTC sound codec driver</td>
-   <td>CVE-2017-0535</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Synaptics touchscreen driver</td>
-   <td>CVE-2017-0536</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in kernel USB gadget driver</td>
-   <td>CVE-2017-0537</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm camera driver</td>
-   <td>CVE-2017-0452</td>
-   <td>Low</td>
-   <td>Yes</td>
-  </tr>
-</table>
-<p>* Supported Google devices on Android 7.0 or later that have installed all
-available updates are not affected by this vulnerability.</p>
 <h2 id="mitigations">Android and Google service
 mitigations</h2>
 <p>This is a summary of the mitigations provided by the <a
-href="{@docRoot}security/enhancements/index.html">Android
+href="/security/enhancements/index.html">Android
 security platform</a> and service protections, such as SafetyNet. These
 capabilities reduce the likelihood that security vulnerabilities could be
 successfully exploited on Android.</p>
@@ -565,8 +179,8 @@ href="http://c0reteam.org">C0RE Team</a>: CVE-2017-0333
 href="http://blog.trendmicro.com/trendlabs-security-intelligence/category/mobile">Mobile
 Threat Response Team</a>, <a href="http://www.trendmicro.com">Trend Micro</a>:
 CVE-2017-0466, CVE-2017-0467, CVE-2017-0468, CVE-2017-0469, CVE-2017-0470,
-CVE-2017-0471, CVE-2017-0472, CVE-2017-0473, CVE-2017-0482, CVE-2017-0485,
-CVE-2017-0486, CVE-2017-0487, CVE-2017-0494, CVE-2017-0495
+CVE-2017-0471, CVE-2017-0472, CVE-2017-0473, CVE-2017-0482, CVE-2017-0484,
+CVE-2017-0485, CVE-2017-0486, CVE-2017-0487, CVE-2017-0494, CVE-2017-0495
 <li>Wish Wu (吴潍浠 此彼) (<a href="https://twitter.com/wish_wu">@wish_wu</a>) of
 Ant-financial Light-Year Security Lab (蚂蚁金服巴斯光年安全实验室): CVE-2017-0477
 <li>Yu Pan of Vulpecker Team, Qihoo 360 Technology Co. Ltd: CVE-2017-0517,
@@ -577,15 +191,17 @@ of <a href="http://c0reteam.org">C0RE Team</a>: CVE-2017-0526, CVE-2017-0527
 href="mailto:vancouverdou@gmail.com">Wenke Dou</a>, <a
 href="mailto:shaodacheng2016@gmail.com">Dacheng Shao</a>, Mingjian Zhou (<a
 href="https://twitter.com/Mingjian_Zhou">@Mingjian_Zhou</a>), and Xuxian Jiang
-of <a href="http://c0reteam.org">C0RE Team</a>: CVE-2017-0483</li></ul>
+of <a href="http://c0reteam.org">C0RE Team</a>: CVE-2017-0483</li>
+<li>Zinuo Han (<a href="https://weibo.com/ele7enxxh">weibo.com/ele7enxxh</a>)
+of Chengdu Security Response Center, Qihoo 360 Technology Co. Ltd.:
+CVE-2017-0475, CVE-2017-0497
+</ul>
 
 <h2 id="2017-03-01-details">2017-03-01 security patch level—Vulnerability
 details</h2>
 <p>In the sections below, we provide details for each of the security
-vulnerabilities listed in the 
-<a href="#2017-03-01-summary">2017-03-01
-security patch level—Vulnerability summary</a> above. There is a description of
-the issue, a severity rationale, and a table with the CVE, associated
+vulnerabilities that apply to the 2017-03-01 patch level. There is a description
+of the issue, a severity rationale, and a table with the CVE, associated
 references, severity, updated Google devices, updated AOSP versions (where
 applicable), and date reported. When available, we will link the public change
 that addressed the issue to the bug ID, like the AOSP change list. When multiple
@@ -1393,10 +1009,8 @@ the possibility of a temporary denial of service.</p>
 <h2 id="2017-03-05-details">2017-03-05 security patch level—Vulnerability
 details</h2>
 <p>In the sections below, we provide details for each of the security
-vulnerabilities listed in the 
-<a href="#2017-03-05-summary">2017-03-05
-security patch level—Vulnerability summary</a> above. There is a description of
-the issue, a severity rationale, and a table with the CVE, associated
+vulnerabilities that apply to the 2017-03-05 patch level. There is a description
+of the issue, a severity rationale, and a table with the CVE, associated
 references, severity, updated Google devices, updated AOSP versions (where
 applicable), and date reported. When available, we will link the public change
 that addressed the issue to the bug ID, like the AOSP change list. When multiple
@@ -3135,3 +2749,6 @@ belongs. These prefixes map as follows:</p>
   <li>March 07, 2017: Bulletin revised to include AOSP links.</li>
 </ul>
 
+
+  </body>
+</html>

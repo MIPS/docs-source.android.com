@@ -1,28 +1,27 @@
-page.title=Authentication
-@jd:body
+<html devsite>
+  <head>
+    <title>Authentication</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <h2 id=overview>Overview</h2>
 
@@ -43,7 +42,7 @@ authentication). These components communicate their authentication
 state with the keystore service via an authenticated channel.</p>
 
 <ul>
-  <li><strong>The <a href="{@docRoot}security/keystore/index.html">hardware-backed Keystore</a>.</strong>
+  <li><strong>The <a href="/security/keystore/index.html">hardware-backed Keystore</a>.</strong>
   Cryptographic services, including hardware-backed cryptography for key storage,
   which might include a Trusted Execution Environment (TEE).</li>
   <li><strong><a href="gatekeeper.html">Gatekeeper</a>.</strong> Components for PIN, pattern, and password authentication.</li>
@@ -237,7 +236,7 @@ internal inter-process communication (IPC) mechanism,
 and the TEE needs to transfer the data through the untrusted OS, the transfer
 must be done via a secure key exchange protocol.</p>
 
-<p>The <a href="{@docRoot}security/trusty/index.html">Trusty</a> operating system,
+<p>The <a href="/security/trusty/index.html">Trusty</a> operating system,
 which runs next to Android, is an example of a
 TEE, but other TEEs can be used instead. Trusty uses an internal IPC system to
 communicate directly between Keymaster and Fingerprint or Gatekeeper. The HMAC
@@ -249,3 +248,6 @@ are lacking in IPC infrastructure. This also
 permits the keystore service to quickly deny requests that are bound to fail as it has
 knowledge of the authentication table in the system, saving a potentially
 costly IPC into the TEE.</p>
+
+  </body>
+</html>

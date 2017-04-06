@@ -1,6 +1,10 @@
-page.title=Android Security Bulletin—April 2017
-@jd:body
-
+<html devsite>
+  <head>
+    <title>Android Security Bulletin—April 2017</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
   <!--
       Copyright 2017 The Android Open Source Project
 
@@ -16,7 +20,7 @@ page.title=Android Security Bulletin—April 2017
       See the License for the specific language governing permissions and
       limitations under the License.
   -->
-<p><em>Published April 03, 2017</em></p>
+<p><em>Published April 03, 2017 | Updated April 05, 2017</em></p>
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
 update to Nexus devices through an over-the-air (OTA) update. The Google device
@@ -28,12 +32,16 @@ href="https://support.google.com/pixelphone/answer/4457705#pixel_phones&nexus_de
 and Nexus update schedule</a> to learn how to check a device's security patch
 level.</p>
 <p>Partners were notified of the issues described in the bulletin on March 06, 2017
-or earlier. Source code patches for these issues will be released to the Android
-Open Source Project (AOSP) repository in the next 48 hours. We will revise this
-bulletin with the AOSP links when they are available.</p>
+or earlier. Source code patches for these issues have been released to the Android
+Open Source Project (AOSP) repository and linked from this bulletin. This bulletin
+also includes links to patches outside of AOSP.</p>
 <p>The most severe of these issues is a Critical security vulnerability that could
 enable remote code execution on an affected device through multiple methods such
-as email, web browsing, and MMS when processing media files.</p>
+as email, web browsing, and MMS when processing media files. The
+<a href="/security/overview/updates-resources.html#severity">severity
+assessment</a> is based on the effect that exploiting the vulnerability would
+possibly have on an affected device, assuming the platform and service
+mitigations are disabled for development purposes or if successfully bypassed.</p>
 <p>We have had no reports of active customer exploitation or abuse of these newly
 reported issues. Refer to the <a href="#mitigations">Android and Google service
 mitigations</a> section for details on the <a
@@ -62,417 +70,6 @@ additional information:
 <li>Supported Google devices will receive a single OTA update with the April 05,
 2017 security patch level.</li>
 </ul>
-
-<h2 id="security-vulnerability-summary">Security Vulnerability Summary</h2>
-<p>The tables below contains a list of security vulnerabilities, the Common
-Vulnerability and Exposures ID (CVE), the assessed severity, and whether or not
-Google devices are affected. The
-<a href="/security/overview/updates-resources.html#severity">severity
-assessment</a> is based on the effect that exploiting the vulnerability would
-possibly have on an affected device, assuming the platform and service
-mitigations are disabled for development purposes or if successfully bypassed.</p>
-
-<h3 id="2017-04-01-summary">2017-04-01 security patch level—Vulnerability summary</h3>
-<p>Security patch levels of 2017-04-01 or later must address the following issues.</p>
-<table>
-  <col width="55%">
-  <col width="20%">
-  <col width="13%">
-  <col width="12%">
-  <tr>
-   <th>Issue</th>
-   <th>CVE</th>
-   <th>Severity</th>
-   <th>Affects Google devices?</th>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Mediaserver</td>
-   <td>CVE-2017-0538, CVE-2017-0539, CVE-2017-0540, CVE-2017-0541,
-CVE-2017-0542, CVE-2017-0543</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in CameraBase</td>
-   <td>CVE-2017-0544</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Audioserver</td>
-   <td>CVE-2017-0545</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in SurfaceFlinger</td>
-   <td>CVE-2017-0546</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Mediaserver</td>
-   <td>CVE-2017-0547</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in libskia</td>
-   <td>CVE-2017-0548</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in Mediaserver</td>
-   <td>CVE-2017-0549, CVE-2017-0550, CVE-2017-0551, CVE-2017-0552</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in libnl</td>
-   <td>CVE-2017-0553</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Telephony</td>
-   <td>CVE-2017-0554</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Mediaserver</td>
-   <td>CVE-2017-0555, CVE-2017-0556, CVE-2017-0557, CVE-2017-0558</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in libskia</td>
-   <td>CVE-2017-0559</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Factory Reset</td>
-   <td>CVE-2017-0560</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-</table>
-
-<h3 id="2017-04-05-summary">2017-04-05 security patch level—Vulnerability summary</h3>
-<p>Security patch levels of 2017-04-05 or later must address all of the 2017-04-01
-issues, as well as the following issues.</p>
-<table>
-  <col width="55%">
-  <col width="20%">
-  <col width="13%">
-  <col width="12%">
-  <tr>
-   <th>Issue</th>
-   <th>CVE</th>
-   <th>Severity</th>
-   <th>Affects Google devices?</th>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Broadcom Wi-Fi firmware</td>
-   <td>CVE-2017-0561</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Qualcomm crypto engine driver</td>
-   <td>CVE-2016-10230</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in kernel networking subsystem</td>
-   <td>CVE-2016-10229</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in MediaTek touchscreen driver</td>
-   <td>CVE-2017-0562</td>
-   <td>Critical</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in HTC touchscreen driver</td>
-   <td>CVE-2017-0563</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel ION subsystem</td>
-   <td>CVE-2017-0564</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Vulnerabilities in Qualcomm components</td>
-   <td>CVE-2016-10237, CVE-2016-10238, CVE-2016-10239</td>
-   <td>Critical</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in v8</td>
-   <td>CVE-2016-5129</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Remote code execution vulnerability in Freetype</td>
-   <td>CVE-2016-10244</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel sound subsystem</td>
-   <td>CVE-2014-4656</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in NVIDIA crypto driver</td>
-   <td>CVE-2017-0339, CVE-2017-0332, CVE-2017-0327</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in MediaTek thermal driver</td>
-   <td>CVE-2017-0565</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in MediaTek camera driver</td>
-   <td>CVE-2017-0566</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Broadcom Wi-Fi driver</td>
-   <td>CVE-2017-0567, CVE-2017-0568, CVE-2017-0569, CVE-2017-0570,
-CVE-2017-0571, CVE-2017-0572, CVE-2017-0573, CVE-2017-0574</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm Wi-Fi driver</td>
-   <td>CVE-2017-0575</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in NVIDIA I2C HID driver</td>
-   <td>CVE-2017-0325</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm audio driver</td>
-   <td>CVE-2017-0454</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm crypto engine driver</td>
-   <td>CVE-2017-0576</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in HTC touchscreen driver</td>
-   <td>CVE-2017-0577</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in DTS sound driver</td>
-   <td>CVE-2017-0578</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm sound codec driver</td>
-   <td>CVE-2016-10231</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm video driver</td>
-   <td>CVE-2017-0579, CVE-2016-10232, CVE-2016-10233</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in NVIDIA boot and power management
-processor driver</td>
-   <td>CVE-2017-0329</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Synaptics touchscreen driver</td>
-   <td>CVE-2017-0580, CVE-2017-0581</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm Seemp driver</td>
-   <td>CVE-2017-0462</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm Kyro L2 driver</td>
-   <td>CVE-2017-6423</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel file system</td>
-   <td>CVE-2014-9922</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in kernel memory subsystem</td>
-   <td>CVE-2014-0206</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in kernel networking subsystem</td>
-   <td>CVE-2014-3145</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm TrustZone</td>
-   <td>CVE-2016-5349</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm IPA driver</td>
-   <td>CVE-2016-10234</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in kernel networking subsystem</td>
-   <td>CVE-2014-2706</td>
-   <td>High</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Denial of service vulnerability in Qualcomm Wi-Fi driver</td>
-   <td>CVE-2016-10235</td>
-   <td>High</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in kernel file system</td>
-   <td>CVE-2016-7097</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm Wi-Fi driver</td>
-   <td>CVE-2017-6424</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Broadcom Wi-Fi driver</td>
-   <td>CVE-2016-8465</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in HTC OEM fastboot command</td>
-   <td>CVE-2017-0582</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Elevation of privilege vulnerability in Qualcomm CP access driver</td>
-   <td>CVE-2017-0583</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in kernel media driver</td>
-   <td>CVE-2014-1739</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm Wi-Fi driver</td>
-   <td>CVE-2017-0584</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Broadcom Wi-Fi driver</td>
-   <td>CVE-2017-0585</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm Avtimer driver</td>
-   <td>CVE-2016-5346</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm video driver</td>
-   <td>CVE-2017-6425</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm USB driver</td>
-   <td>CVE-2016-10236</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm sound driver</td>
-   <td>CVE-2017-0586</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in Qualcomm SPMI driver</td>
-   <td>CVE-2017-6426</td>
-   <td>Moderate</td>
-   <td>Yes</td>
-  </tr>
-  <tr>
-   <td>Information disclosure vulnerability in NVIDIA crypto driver</td>
-   <td>CVE-2017-0328, CVE-2017-0330</td>
-   <td>Moderate</td>
-   <td>No*</td>
-  </tr>
-  <tr>
-   <td>Vulnerabilities in Qualcomm components**</td>
-   <td>CVE-2014-9931, CVE-2014-9932, CVE-2014-9933, CVE-2014-9934,
-CVE-2014-9935, CVE-2014-9936, CVE-2014-9937, CVE-2015-8995, CVE-2015-8996,
-CVE-2015-8997, CVE-2015-8998, CVE-2015-8999, CVE-2015-9000, CVE-2015-9001,
-CVE-2015-9002, CVE-2015-9003, CVE-2016-8489</td>
-   <td>Critical</td>
-   <td>No*</td>
-  </tr>
-</table>
-<p>* Supported Google devices on Android 7.0 or later that have installed all
-available updates are not affected by this vulnerability.</p>
-<p>** These vulnerabilities affecting Qualcomm components were released by
-Qualcomm to their partners as part of Qualcomm AMSS security bulletins
-between 2014–2016.</p>
 
 <h2 id="mitigations">Android and Google Service Mitigations</h2>
 <p>This is a summary of the mitigations provided by the <a
@@ -540,6 +137,8 @@ successfully exploited on Android.</p>
   (百度安全实验室): CVE-2016-10236</li>
   <li>Qidan He (何淇丹 - <a href="https://twitter.com/flanker_hqd">@flanker_hqd</a>)
   of KeenLab, Tencent: CVE-2017-0544, CVE-2016-10231, CVE-2017-0325</li>
+  <li>Roee Hay (<a href="https://twitter.com/roeehay">@roeehay</a>) of Aleph
+  Research, HCL Technologies: CVE-2017-0582, CVE-2017-0563</li>
   <li><a href="mailto:sbauer@plzdonthack.me">Scott Bauer</a> (<a
   href="https://twitter.com/ScottyBauer1">@ScottyBauer1</a>): CVE-2017-0562,
   CVE-2017-0339</li>
@@ -568,10 +167,8 @@ successfully exploited on Android.</p>
 <h2 id="2017-04-01-details">2017-04-01 security patch level—Vulnerability
 details</h2>
 <p>In the sections below, we provide details for each of the security
-vulnerabilities listed in the 
-<a href="#2017-04-01-summary">2017-04-01
-security patch level—Vulnerability summary</a> above. There is a description of
-the issue, a severity rationale, and a table with the CVE, associated
+vulnerabilities that apply to the 2017-04-01 patch level.There is a description
+of the issue, a severity rationale, and a table with the CVE, associated
 references, severity, updated Google devices, updated AOSP versions (where
 applicable), and date reported. When available, we will link the public change
 that addressed the issue to the bug ID, like the AOSP change list. When multiple
@@ -603,7 +200,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0538</td>
-    <td>A-33641588</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/494561291a503840f385fbcd11d9bc5f4dc502b8">A-33641588</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -611,7 +208,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0539</td>
-    <td>A-33864300</td>
+    <td><a href="https://android.googlesource.com/platform/external/libhevc/+/1ab5ce7e42feccd49e49752e6f58f9097ac5d254">A-33864300</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -619,7 +216,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0540</td>
-    <td>A-33966031</td>
+    <td><a href="https://android.googlesource.com/platform/external/libhevc/+/01ca88bb6c5bdd44e071f8effebe12f1d7da9853">A-33966031</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -627,7 +224,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0541</td>
-    <td>A-34031018</td>
+    <td><a href="https://android.googlesource.com/platform/external/sonivox/+/56d153259cc3e16a6a0014199a2317dde333c978">A-34031018</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -635,7 +232,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0542</td>
-    <td>A-33934721</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/33ef7de9ddc8ea7eb9cbc440d1cf89957a0c267b">A-33934721</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -643,7 +240,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0543</td>
-    <td>A-34097866</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/f634481e940421020e52f511c1fb34aac1db4b2f">A-34097866</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -675,7 +272,7 @@ because it is a local arbitrary code execution in a privileged process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0544</td>
-    <td>A-31992879</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/4b49489c12e6862e9a320ebcb53872e809ed20ec">A-31992879</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -709,7 +306,7 @@ to a third-party application.</p>
   </tr>
   <tr>
     <td>CVE-2017-0545</td>
-    <td>A-32591350</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/e5a54485e08400a976092cd5b1c6d909d0e1a4ab">A-32591350</a></td>
     <td>High</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -743,7 +340,7 @@ to a third-party application.</p>
   </tr>
   <tr>
     <td>CVE-2017-0546</td>
-    <td>A-32628763</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/native/+/45b202513ba7440beaefbf9928f73fb6683dcfbd">A-32628763</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -776,7 +373,7 @@ protections that isolate application data from other applications.</p>
   </tr>
   <tr>
     <td>CVE-2017-0547</td>
-    <td>A-33861560</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/9667e3eff2d34c3797c3b529370de47b2c1f1bf6">A-33861560</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -807,7 +404,7 @@ rated as High severity due to the possibility of remote denial of service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0548</td>
-    <td>A-33251605</td>
+    <td><a href="https://android.googlesource.com/platform/external/skia/+/318e3505ac2436c62ec19fd27ebe9f8e7d174544">A-33251605</a></td>
     <td>High</td>
     <td>All</td>
     <td>7.0, 7.1.1</td>
@@ -839,7 +436,7 @@ service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0549</td>
-    <td>A-33818508</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/37345554fea84afd446d6d8fbb87feea5a0dde3f">A-33818508</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -847,7 +444,7 @@ service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0550</td>
-    <td>A-33933140</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/7950bf47b6944546a0aff11a7184947de9591b51">A-33933140</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -855,7 +452,8 @@ service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0551</td>
-    <td>A-34097231</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/8b5fd8f24eba5dd19ab2f80ea11a9125aa882ae2">A-34097231</a>
+    [<a href="https://android.googlesource.com/platform/external/libavc/+/494561291a503840f385fbcd11d9bc5f4dc502b8">2</a>]</td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -863,7 +461,7 @@ service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0552</td>
-    <td>A-34097915</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/9a00f562a612d56e7b2b989d168647db900ba6cf">A-34097915</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -895,7 +493,7 @@ privileged process and is mitigated by current platform configurations.</p>
   </tr>
   <tr>
     <td>CVE-2017-0553</td>
-    <td>A-32342065</td>
+    <td><a href="https://android.googlesource.com/platform/external/libnl/+/f83d9c1c67b6be69a96995e384f50b572b667df0">A-32342065</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -929,7 +527,8 @@ application.</p>
   </tr>
   <tr>
     <td>CVE-2017-0554</td>
-    <td>A-33815946</td>
+    <td><a href="https://android.googlesource.com/platform/packages/services/Telephony/+/aeb795ef2290af1a0e4b14909363bc574e6b3ee7">A-33815946</a>
+    [<a href="https://android.googlesource.com/platform/frameworks/base/+/3294256ba5b9e2ba2d8619d617e3d900e5386564">2</a>]</td>
     <td>Moderate</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -962,7 +561,7 @@ permission.</p>
   </tr>
   <tr>
     <td>CVE-2017-0555</td>
-    <td>A-33551775</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/0b23c81c3dd9ec38f7e6806a3955fed1925541a0">A-33551775</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -970,7 +569,7 @@ permission.</p>
   </tr>
   <tr>
     <td>CVE-2017-0556</td>
-    <td>A-34093952</td>
+    <td><a href="https://android.googlesource.com/platform/external/libmpeg2/+/f301cff2c1ddd880d9a2c77b22602a137519867b">A-34093952</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -978,7 +577,7 @@ permission.</p>
   </tr>
   <tr>
     <td>CVE-2017-0557</td>
-    <td>A-34093073</td>
+    <td><a href="https://android.googlesource.com/platform/external/libmpeg2/+/227c1f829127405e21dab1664393050c652ef71e">A-34093073</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -986,7 +585,7 @@ permission.</p>
   </tr>
   <tr>
     <td>CVE-2017-0558</td>
-    <td>A-34056274</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/50358a80b1724f6cf1bcdf003e1abf9cc141b122">A-34056274</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1018,7 +617,7 @@ permission.</p>
   </tr>
   <tr>
     <td>CVE-2017-0559</td>
-    <td>A-33897722</td>
+    <td><a href="https://android.googlesource.com/platform/external/skia/+/16882f721279a82a1c860ac689ce570b16fe26a0">A-33897722</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1051,7 +650,7 @@ protection.</p>
   </tr>
   <tr>
     <td>CVE-2017-0560</td>
-    <td>A-30681079</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/efdec8f5688ce6b0a287eddb6d5dad93ffa0e1ee">A-30681079</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -1062,10 +661,8 @@ protection.</p>
 <h2 id="2017-04-05-details">2017-04-05 security patch level—Vulnerability
 details</h2>
 <p>In the sections below, we provide details for each of the security
-vulnerabilities listed in the 
-<a href="#2017-04-05-summary">2017-04-05
-security patch level—Vulnerability summary</a> above. There is a description of
-the issue, a severity rationale, and a table with the CVE, associated
+vulnerabilities that apply to the 2017-04-05 patch level. There is a description
+of the issue, a severity rationale, and a table with the CVE, associated
 references, severity, updated Google devices, updated AOSP versions (where
 applicable), and date reported. When available, we will link the public change
 that addressed the issue to the bug ID, like the AOSP change list. When multiple
@@ -1362,12 +959,13 @@ is rated as High due to the possibility of remote code execution in websites. </
     <td>CVE-2016-5129</td>
     <td>A-29178923</td>
     <td>High</td>
-    <td>All</td>
+    <td>None*</td>
     <td>6.0, 6.0.1, 7.0</td>
     <td>Jul 20, 2016</td>
   </tr>
 </table>
-
+<p>* Supported Google devices on Android 7.0 or later that have installed all
+available updates are not affected by this vulnerability.</p>
 
 <h3 id="rce-in-freetype">Remote code execution vulnerability in Freetype</h3>
 <p>A remote code execution vulnerability in Freetype could enable a local
@@ -1394,12 +992,13 @@ possibility of remote code execution in an application that uses this library.</
     <td>CVE-2016-10244</td>
     <td>A-31470908</td>
     <td>High</td>
-    <td>All</td>
+    <td>None*</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
     <td>Sep 13, 2016</td>
   </tr>
 </table>
-
+<p>* Supported Google devices on Android 7.0 or later that have installed all
+available updates are not affected by this vulnerability.</p>
 
 <h3 id="eop-in-kernel-sound-subsystem">Elevation of privilege vulnerability in
 kernel sound subsystem</h3>
@@ -3033,8 +2632,8 @@ in a single update.</p>
 <p><strong>3. How do I determine which Google devices are affected by each
 issue?</strong></p>
 <p>In the <a
-href="#2017-04-01-security-patch-level—vulnerability-details">2017-04-01</a> and
-<a href="#2017-04-05-security-patch-level—vulnerability-details">2017-04-05</a>
+href="#2017-04-01-details">2017-04-01</a> and
+<a href="#2017-04-05-details">2017-04-05</a>
 security vulnerability details sections, each table has an <em>Updated Google
 devices</em> column that covers the range of affected Google devices updated for
 each issue. This column has a few options:</p>
@@ -3086,5 +2685,8 @@ belongs. These prefixes map as follows:</p>
 <h2 id="revisions">Revisions</h2>
 <ul>
   <li>April 03, 2017: Bulletin published.</li>
+  <li>April 05, 2017: Bulletin revised to include AOSP links.</li>
 </ul>
 
+</body>
+</html>

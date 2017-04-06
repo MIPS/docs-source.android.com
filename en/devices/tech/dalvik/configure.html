@@ -1,37 +1,32 @@
-page.title=Configuring ART
-@jd:body
+<html devsite>
+  <head>
+    <title>Configuring ART</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2014 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
 
-<div id="qv-wrapper">
-<div id="qv">
-  <h2 id="Contents">In this document</h2>
-  <ol id="auto-toc">
-  </ol>
-</div>
-</div>
 
-<h2 id=introduction>Introduction</h2>
-
-<p>This document is intended to discuss how to configure ART and its compilation
-options. Topics addressed here include configuration of pre-compilation of the
-system image, dex2oat compilation options at first boot (and post-OTA), and how
-to trade off system partition space, data partition space, and performance.</p>
+<p>This page discusses how to configure ART and its compilation options. Topics addressed here
+include configuration of pre-compilation of the system image, dex2oat compilation options at
+first boot (and post-OTA), and how to trade off system partition space, data partition space,
+and performance.</p>
 
 <p>See <a href="http://source.android.com/devices/tech/dalvik/index.html">ART
 and Dalvik</a>, the <a
@@ -197,7 +192,7 @@ product's device.mk file.</p>
 <h2 id=other_odex>First boot installation of DEX_PREOPT files</h2>
 
 <p>Starting in Android 7.0, devices may use two system partitions to enable
-<a href="{@docRoot}devices/tech/ota/ab_updates.html">A/B system updates</a>.
+<a href="/devices/tech/ota/ab_updates.html">A/B system updates</a>.
 To allow use of DEX_PREOPT while keeping the size of system partitions down and allowing
 performant first boot, the preopted files can be installed in the unused second system
 partition. They are then copied to the data partition on first boot.</p>
@@ -213,7 +208,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 <p>And in device's BoardConfig.mk:</p>
 <pre><code>BOARD_USES_SYSTEM_OTHER_ODEX := true</code></pre>
 
-<p>See <a href="{@docRoot}devices/tech/ota/ab_updates.html#compilation">App
+<p>See <a href="/devices/tech/ota/ab_updates.html#compilation">App
 compilation in background</a> to optionally include the compilation script and
 binaries in the system image.</p>
 
@@ -471,3 +466,6 @@ done by specifying <code>LOCAL_DEX_PREOPT</code> (for all products) or with
 <p>Android.mk (of blacklisted apps):</p>
 
 <pre><code>LOCAL_DEX_PREOPT := false</code></pre>
+
+  </body>
+</html>

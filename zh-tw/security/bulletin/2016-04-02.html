@@ -1,27 +1,27 @@
-page.title=Nexus 安全性公告 - 2016 年 4 月
-@jd:body
+<html devsite>
+  <head>
+    <title>Nexus 安全性公告 - 2016 年 4 月</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <ol id="auto-toc">
-   </ol>
-  </div>
-</div>
+
 
 
 
@@ -31,12 +31,12 @@ page.title=Nexus 安全性公告 - 2016 年 4 月
 2016 年 4 月 2 日之後的安全修補等級已解決了這些問題 (請參閱 <a href="https://support.google.com/nexus/answer/4457705">Nexus 說明文件</a>，瞭解如何查看安全修補等級)。</p>
 <p>合作夥伴是在 2016 年 3 月 16 日或之前收到有關公告中所述問題的相關通知。在適用情況下，這些問題的所對應的原始碼修補程式已經發佈到 Android 開放原始碼計劃 (AOSP) 存放區。</p>
 <p>在這些問題中，最嚴重的就是「最高」等級的安全性漏洞。當系統執行媒體檔案時，遠端程式碼可利用這類漏洞，透過電子郵件、網頁瀏覽活動和多媒體訊息等方法，自動在受影響的裝置上執行。</p>
-<p><a href="{@docRoot}security/advisory/2016-03-18.html">
-Android 安全性公告 2016-03-18</a> 先前曾探討破解程式 (用於取得 Root 權限的應用程式) 利用 <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a> 漏洞而造成安全性問題，而本次更新已解決 <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a> 的安全性漏洞。針對各方新回報的其他漏洞，我們並未收到任何客戶濫用檢舉。如果您想進一步瞭解 <a href="{@docRoot}security/enhancements/index.html">Android 安全性平台防護措施</a>和服務防護措施 (例如 SafetyNet) 如何加強 Android 平台的安全性，請參閱<a href="#mitigations">因應措施</a>一節。</p>
+<p><a href="/security/advisory/2016-03-18.html">
+Android 安全性公告 2016-03-18</a> 先前曾探討破解程式 (用於取得 Root 權限的應用程式) 利用 <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a> 漏洞而造成安全性問題，而本次更新已解決 <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a> 的安全性漏洞。針對各方新回報的其他漏洞，我們並未收到任何客戶濫用檢舉。如果您想進一步瞭解 <a href="/security/enhancements/index.html">Android 安全性平台防護措施</a>和服務防護措施 (例如 SafetyNet) 如何加強 Android 平台的安全性，請參閱<a href="#mitigations">因應措施</a>一節。</p>
 <h2 id="security_vulnerability_summary">安全性漏洞摘要</h2>
 <p>下表列出各項安全性漏洞、常見弱點與漏洞編號 (CVE) 及評定的嚴重程度。
 
-<a href="{@docRoot}security/overview/updates-resources.html#severity">嚴重程度評定標準</a>是假設平台與服務的因應防護措施基於開發作業的需求而被停用，或是遭到有心人士破解，然後推算當有人惡意運用漏洞時，裝置會受到多大的影響，據此評定漏洞的嚴重程度。</p>
+<a href="/security/overview/updates-resources.html#severity">嚴重程度評定標準</a>是假設平台與服務的因應防護措施基於開發作業的需求而被停用，或是遭到有心人士破解，然後推算當有人惡意運用漏洞時，裝置會受到多大的影響，據此評定漏洞的嚴重程度。</p>
 <table>
 <tr>
 <th>問題</th>
@@ -202,7 +202,7 @@ Android 安全性公告 2016-03-18</a> 先前曾探討破解程式 (用於取得
 </tr>
 </table>
 <h2 id="mitigations">因應措施</h2>
-<p>本節概要說明 <a href="{@docRoot}security/enhancements/index.html">Android 安全性平台</a>和 SafetyNet 等服務防護方案所提供的各項因應措施。這些措施能有效防範有心人士在 Android 系統上惡意運用安全性漏洞來達到他們的目的。</p>
+<p>本節概要說明 <a href="/security/enhancements/index.html">Android 安全性平台</a>和 SafetyNet 等服務防護方案所提供的各項因應措施。這些措施能有效防範有心人士在 Android 系統上惡意運用安全性漏洞來達到他們的目的。</p>
 <ul>
 <li>Android 平台持續推出新的版本來強化安全性，因此有心人士越來越難在 Android 系統上找出漏洞加以利用。我們建議所有使用者盡可能更新至最新版的 Android。
   </li><li>Android 安全性小組採用「驗證應用程式」和 SafetyNet 主動監控濫用情形；這些功能如果偵測出應用程式可能有害，將在安裝作業前警告使用者。Google Play 禁止發佈任何可用於獲取裝置 Root 權限的工具。為了保護不是在 Google Play 安裝應用程式的使用者，「驗證應用程式」在預設狀態下會自動啟用並向使用者發出警告，提醒他們留意目前已知的破解程式 (用於取得 Root 權限的應用程式)。「驗證應用程式」會設法找出已知會利用權限升級漏洞的惡意應用程式，並封鎖這類應用程式的安裝作業。如果使用者已安裝這類應用程式，「驗證應用程式」會通知使用者並嘗試移除該應用程式。
@@ -414,7 +414,7 @@ Chiachih Wu (<a href="https://twitter.com/chiachih_wu">@chiachih_wu</a>)
 </tr>
 </table>
 <h3 id="elevation_of_privilege_vulnerability_in_kernel">核心中的權限升級漏洞</h3>
-<p>核心中的權限升級漏洞可能會讓本機惡意應用程式在核心中執行任何程式碼。由於這個問題可能會導致本機裝置受到永久性破壞，而只能以還原 (Re-flash) 作業系統的方式修復，因此嚴重程度被評定為「最高」。您可以參考 <a href="{@docRoot}security/advisory/2016-03-18.html">Android 安全性公告 2016-03-18</a>，進一步瞭解這項問題。</p>
+<p>核心中的權限升級漏洞可能會讓本機惡意應用程式在核心中執行任何程式碼。由於這個問題可能會導致本機裝置受到永久性破壞，而只能以還原 (Re-flash) 作業系統的方式修復，因此嚴重程度被評定為「最高」。您可以參考 <a href="/security/advisory/2016-03-18.html">Android 安全性公告 2016-03-18</a>，進一步瞭解這項問題。</p>
 <table>
 <tr>
 <th>CVE</th>
@@ -967,10 +967,13 @@ Debuggerd 元件中的權限升級漏洞</h3>
 [ro.build.version.security_patch]:[2016-04-02]</p>
 <p><strong>2. 為什麼這一版安全修補等級的日期是 2016 年 4 月 2 日？</strong></p>
 <p>在正常情況下，每月安全性更新的安全修補等級會設定為當月的第 1 天。在四月份，2016 年 4 月 1 日的安全修補等級表示該公告所列問題均已獲得解決 
-(如 <a href="{@docRoot}security/advisory/2016-03-18.html">Android 安全性公告 2016-03-18</a> 中所述)，但 CVE-2015-1805 除外。2016 年 4 月 2 日的安全修補等級則表示該公告所列問題均已獲得解決 
-(如 <a href="{@docRoot}security/advisory/2016-03-18.html">Android 安全性公告 2016-03-18</a> 中所述)，包括 CVE-2015-1805。</p>
+(如 <a href="/security/advisory/2016-03-18.html">Android 安全性公告 2016-03-18</a> 中所述)，但 CVE-2015-1805 除外。2016 年 4 月 2 日的安全修補等級則表示該公告所列問題均已獲得解決 
+(如 <a href="/security/advisory/2016-03-18.html">Android 安全性公告 2016-03-18</a> 中所述)，包括 CVE-2015-1805。</p>
 <h2 id="revisions">修訂版本</h2>
 <ul>
 <li>2016 年 4 月 4 日：發佈公告。
   </li><li>2016 年 4 月 6 日：修訂公告，加入 AOSP 連結。
 </li></ul>
+
+  </body>
+</html>

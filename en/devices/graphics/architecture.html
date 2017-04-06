@@ -1,28 +1,27 @@
-page.title=Graphics architecture
-@jd:body
+<html devsite>
+  <head>
+    <title>Graphics architecture</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2014 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 
 <p><em>What every developer should know about Surface, SurfaceHolder,
@@ -53,14 +52,14 @@ topic that sounds interesting.</p>
 <h2 id=low_level>Low-level components</h2>
 
 <ul>
-<li><a href="{@docRoot}devices/graphics/arch-bq-gralloc.html">BufferQueue and
+<li><a href="/devices/graphics/arch-bq-gralloc.html">BufferQueue and
 gralloc</a>. BufferQueue connects something that generates buffers of graphical
 data (the <em>producer</em>) to something that accepts the data for display or
 further processing (the <em>consumer</em>). Buffer allocations are performed
 through the <em>gralloc</em> memory allocator implemented through a
 vendor-specific HAL interface.</li>
 
-<li><a href="{@docRoot}devices/graphics/arch-sf-hwc.html">SurfaceFlinger,
+<li><a href="/devices/graphics/arch-sf-hwc.html">SurfaceFlinger,
 Hardware Composer, and virtual displays</a>. SurfaceFlinger accepts buffers of
 data from multiple sources, composites them, and sends them to the display. The
 Hardware Composer HAL (HWC) determines the most efficient way to composite
@@ -68,7 +67,7 @@ buffers with the available hardware, and virtual displays make composited output
 available within the system (recording the screen or sending the screen over a
 network).</li>
 
-<li><a href="{@docRoot}devices/graphics/arch-sh.html">Surface, Canvas, and
+<li><a href="/devices/graphics/arch-sh.html">Surface, Canvas, and
 SurfaceHolder</a>. A Surface produces a buffer queue that is often consumed by
 SurfaceFlinger. When rendering onto a Surface, the result ends up in a buffer
 that gets shipped to the consumer. Canvas APIs provide a software implementation
@@ -77,7 +76,7 @@ that gets shipped to the consumer. Canvas APIs provide a software implementation
 a SurfaceHolder, whose APIs enable getting and setting Surface parameters such
 as size and format.</li>
 
-<li><a href="{@docRoot}devices/graphics/arch-egl-opengl.html">EGLSurface and
+<li><a href="/devices/graphics/arch-egl-opengl.html">EGLSurface and
 OpenGL ES</a>. OpenGL ES (GLES) defines a graphics-rendering API designed to be
 combined with EGL, a library that knows how to create and access windows through
 the operating system (to draw textured polygons, use GLES calls; to put
@@ -85,7 +84,7 @@ rendering on the screen, use EGL calls). This page also covers ANativeWindow,
 the C/C++ equivalent of the Java Surface class used to create an EGL window
 surface from native code.</li>
 
-<li><a href="{@docRoot}devices/graphics/arch-vulkan.html">Vulkan</a>. Vulkan is
+<li><a href="/devices/graphics/arch-vulkan.html">Vulkan</a>. Vulkan is
 a low-overhead, cross-platform API for high-performance 3D graphics. Like OpenGL
 ES, Vulkan provides tools for creating high-quality, real-time graphics in
 applications. Vulkan advantages include reductions in CPU overhead and support
@@ -97,7 +96,7 @@ language.</li>
 <h2 id=high_level>High-level components</h2>
 
 <ul>
-<li><a href="{@docRoot}devices/graphics/arch-sv-glsv.html">SurfaceView and
+<li><a href="/devices/graphics/arch-sv-glsv.html">SurfaceView and
 GLSurfaceView</a>. SurfaceView combines a Surface and a View. SurfaceView's View
 components are composited by SurfaceFlinger (and not the app), enabling
 rendering from a separate thread/process and isolation from app UI rendering.
@@ -105,7 +104,7 @@ GLSurfaceView provides helper classes to manage EGL contexts, inter-thread
 communication, and interaction with the Activity lifecycle (but is not required
 to use GLES).</li>
 
-<li><a href="{@docRoot}devices/graphics/arch-st.html">SurfaceTexture</a>.
+<li><a href="/devices/graphics/arch-st.html">SurfaceTexture</a>.
 SurfaceTexture combines a Surface and GLES texture to create a BufferQueue for
 which your app is the consumer. When a producer queues a new buffer, it notifies
 your app, which in turn releases the previously-held buffer, acquires the new
@@ -113,7 +112,7 @@ buffer from the queue, and makes EGL calls to make the buffer available to GLES
 as an external texture. Android 7.0 adds support for secure texture video
 playback enabling GPU post-processing of protected video content.</li>
 
-<li><a href="{@docRoot}devices/graphics/arch-tv.html">TextureView</a>.
+<li><a href="/devices/graphics/arch-tv.html">TextureView</a>.
 TextureView combines a View with a SurfaceTexture. TextureView wraps a
 SurfaceTexture and takes responsibility for responding to callbacks and
 acquiring new buffers. When drawing, TextureView uses the contents of the most
@@ -121,3 +120,6 @@ recently received buffer as its data source, rendering wherever and however the
 View state indicates it should. View composition is always performed with GLES,
 meaning updates to contents may cause other View elements to redraw as well.</li>
 </ul>
+
+  </body>
+</html>

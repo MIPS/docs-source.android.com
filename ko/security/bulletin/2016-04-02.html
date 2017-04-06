@@ -1,27 +1,27 @@
-page.title=Nexus 보안 게시판 - 2016년 4월
-@jd:body
+<html devsite>
+  <head>
+    <title>Nexus 보안 게시판 - 2016년 4월</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <ol id="auto-toc">
-   </ol>
-  </div>
-</div>
+
 
 
 
@@ -39,18 +39,18 @@ Android 오픈소스 프로젝트(AOSP) 저장소에 배포되었습니다.</p>
 <p>이 중 가장 심각한 문제는 미디어 파일을 처리할 때
 이메일과 웹 탐색, MMS 등 여러 방법을 통해 대상 기기에서
 원격으로 코드를 실행할 수 있게 하는 심각한 보안 취약성입니다.</p>
-<p><a href="{@docRoot}security/advisory/2016-03-18.html">
+<p><a href="/security/advisory/2016-03-18.html">
 이전에 Android 보안 권고 2016-03-18</a>에서 루팅 애플리케이션의
 <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a> 악용을 논의했었습니다. 이번 업데이트에서 <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a>
 가 해결되었습니다.
 실제 고객이 새로 보고된 이러한 문제로 인해 악용당했다는 신고는
 접수되지 않았습니다. SafetyNet과 같이 Android 플랫폼의 보안을
-개선하는 <a href="{@docRoot}security/enhancements/index.html">
+개선하는 <a href="/security/enhancements/index.html">
 Android 보안 플랫폼 보호</a> 및 서비스 보호 기능
 세부정보를 보려면 <a href="#mitigations">완화</a> 섹션을 참조하세요.</p>
 <h2 id="security_vulnerability_summary">보안 취약성 요약</h2>
 <p>아래 표에는 보안 취약성 목록, 일반적인 취약성 및 노출 ID(CVE),
-평가된 심각도가 포함되어 있습니다. <a href="{@docRoot}security/overview/updates-resources.html#severity">
+평가된 심각도가 포함되어 있습니다. <a href="/security/overview/updates-resources.html#severity">
 심각도 평가</a>는 개발 목적으로 플랫폼 및 서비스 완화를 사용할 수 없거나
 우회에 성공한 경우 취약성 악용으로 인해 대상 기기가 받는 영향을
 기준으로 내려집니다.</p>
@@ -219,7 +219,7 @@ Android 보안 플랫폼 보호</a> 및 서비스 보호 기능
 </tr>
 </table>
 <h2 id="mitigations">완화</h2>
-<p>다음은 SafetyNet과 같은 <a href="{@docRoot}security/enhancements/index.html">Android 보안 플랫폼</a> 및 서비스 보호 기능에서 제공하는 완화에 대한 요약입니다.
+<p>다음은 SafetyNet과 같은 <a href="/security/enhancements/index.html">Android 보안 플랫폼</a> 및 서비스 보호 기능에서 제공하는 완화에 대한 요약입니다.
 이러한 기능을 통해 Android에서 보안 취약성이 악용될 가능성을
 줄입니다.</p>
 <ul>
@@ -478,7 +478,7 @@ libstagefright의 취약성을 통해 공격자가 메모리 손상을 일으키
 커널 내에서 임의의 코드를 실행할 수 있습니다. 이 문제는
 영구적인 로컬 기기 손상의 가능성으로 인해 심각도 심각으로 평가되며
 기기는 운영체제를 최신 버전으로 업데이트하여
-수리해야 할 수 있습니다. 이 문제는 <a href="{@docRoot}security/advisory/2016-03-18.html">Android 보안 권고 2016-03-18</a>에 설명되어 있습니다.</p>
+수리해야 할 수 있습니다. 이 문제는 <a href="/security/advisory/2016-03-18.html">Android 보안 권고 2016-03-18</a>에 설명되어 있습니다.</p>
 <table>
 <tr>
 <th>CVE</th>
@@ -1148,10 +1148,10 @@ Debuggered 구성요소의 권한 승격 취약성</h3>
 [ro.build.version.security_patch]:[2016-04-02]</p>
 <p><strong>2. 이 보안 패치 수준이 2016년 4월 2일인 이유가 무엇인가요?</strong></p>
 <p>월간 보안 업데이트의 보안 패치 수준은 일반적으로 매월 1일로 설정됩니다. 4월의 경우 2016년 4월 1일 보안 패치 수준에서
-<a href="{@docRoot}security/advisory/2016-03-18.html">Android 보안 권고 2016-03-18</a>
+<a href="/security/advisory/2016-03-18.html">Android 보안 권고 2016-03-18</a>
 에 설명된 것과 같이 CVE-2015-1805를 제외한 이 게시판에 설명된 모든 문제가 
 해결되었음을 알려줍니다. 2016년 4월 2일 보안 패치 수준에서는
-<a href="{@docRoot}security/advisory/2016-03-18.html">Android 보안 권고 2016-03-18</a>에 설명된 것과 같이
+<a href="/security/advisory/2016-03-18.html">Android 보안 권고 2016-03-18</a>에 설명된 것과 같이
 CVE-2015-1805를 포함한 이 게시판에 설명된 모든 문제가
 해결되었다고 알려줍니다.</p>
 <h2 id="revisions">버전</h2>
@@ -1159,3 +1159,6 @@ CVE-2015-1805를 포함한 이 게시판에 설명된 모든 문제가
 <li> 2016년 4월 4일: 게시판이 게시됨
   </li><li> 2016년 4월 6일: 게시판이 수정되어 AOSP 링크 포함됨
 </li></ul>
+
+  </body>
+</html>

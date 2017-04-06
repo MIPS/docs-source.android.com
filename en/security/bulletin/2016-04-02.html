@@ -1,21 +1,27 @@
-page.title=Nexus Security Bulletin—April 2016
-@jd:body
+<html devsite>
+  <head>
+    <title>Nexus Security Bulletin—April 2016</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2016 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+
 
 <p><em>Published April 04, 2016 | Updated December 19, 2016</em></p>
 
@@ -34,193 +40,29 @@ released to the Android Open Source Project (AOSP) repository.</p>
 
 <p>The most severe of these issues is a Critical security vulnerability that could
 enable remote code execution on an affected device through multiple methods
-such as email, web browsing, and MMS when processing media files.</p>
+such as email, web browsing, and MMS when processing media files. The
+<a href="/security/overview/updates-resources.html#severity">severity
+assessment</a> is based on the effect that exploiting the vulnerability would
+possibly have on an affected device, assuming the platform and service
+mitigations are disabled for development purposes or if successfully bypassed.</p>
 
-<p><a href="{@docRoot}security/advisory/2016-03-18.html">
+<p><a href="/security/advisory/2016-03-18.html">
 Android Security Advisory 2016-03-18</a> previously discussed use of
 <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a>
 by a rooting application. <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a>
 is resolved in this update.
 There have been no reports of active customer exploitation or abuse of the other
 newly reported issues. Refer to the <a href="#mitigations">Mitigations</a> section
-for further details on the <a href="{@docRoot}security/enhancements/index.html">
+for further details on the <a href="/security/enhancements/index.html">
 Android security platform protections</a> and service protections such as SafetyNet,
 which improve the security of the Android platform.</p>
-
-<h2 id=security_vulnerability_summary>Security Vulnerability Summary</h2>
-
-
-<p>The table below contains a list of security vulnerabilities, the Common
-Vulnerability and Exposures ID (CVE), and their assessed severity. The
-<a href="{@docRoot}security/overview/updates-resources.html#severity">
-severity assessment</a> is based on the effect that exploiting the vulnerability would possibly have
-on an affected device, assuming the platform and service mitigations are
-disabled for development purposes or if successfully bypassed.</p>
-<table>
- <tr>
-    <th>Issue</th>
-    <th>CVE</th>
-    <th>Severity</th>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerability in DHCPCD</td>
-    <td>CVE-2016-1503<br />
-    CVE-2014-6060</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerability in Media Codec</td>
-    <td>CVE-2016-0834</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerability in Mediaserver</td>
-    <td>CVE-2016-0835<br />
-    CVE-2016-0836<br />
-    CVE-2016-0837<br />
-    CVE-2016-0838<br />
-    CVE-2016-0839<br />
-    CVE-2016-0840<br />
-    CVE-2016-0841</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Remote Code Execution Vulnerability in libstagefright</td>
-    <td>CVE-2016-0842</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Kernel</td>
-    <td>CVE-2015-1805</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Qualcomm<br />
- Performance Module</td>
-    <td>CVE-2016-0843</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Qualcomm RF Component</td>
-    <td>CVE-2016-0844</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Kernel</td>
-    <td>CVE-2014-9322</td>
-    <td>Critical</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in IMemory Native Interface</td>
-    <td>CVE-2016-0846</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Telecom Component</td>
-    <td>CVE-2016-0847</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Download Manager</td>
-    <td>CVE-2016-0848</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Recovery Procedure</td>
-    <td>CVE-2016-0849</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Bluetooth</td>
-    <td>CVE-2016-0850</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Texas Instruments Haptic Driver</td>
-    <td>CVE-2016-2409</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in a Video Kernel Driver</td>
-    <td>CVE-2016-2410</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Qualcomm<br />
-Power Management Component</td>
-    <td>CVE-2016-2411</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in System_server</td>
-    <td>CVE-2016-2412</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Mediaserver</td>
-    <td>CVE-2016-2413</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Denial of Service Vulnerability in Minikin</td>
-    <td>CVE-2016-2414</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Information Disclosure Vulnerability in Exchange ActiveSync</td>
-    <td>CVE-2016-2415</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Information Disclosure Vulnerability in Mediaserver</td>
-    <td>CVE-2016-2416<br />
-    CVE-2016-2417<br />
-    CVE-2016-2418<br />
-    CVE-2016-2419</td>
-    <td>High</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Debuggerd Component</td>
-    <td>CVE-2016-2420</td>
-    <td>Moderate</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Setup Wizard</td>
-    <td>CVE-2016-2421</td>
-    <td>Moderate</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Wi-Fi</td>
-    <td>CVE-2016-2422</td>
-    <td>Moderate</td>
- </tr>
- <tr>
-    <td>Elevation of Privilege Vulnerability in Telephony</td>
-    <td>CVE-2016-2423</td>
-    <td>Moderate</td>
- </tr>
- <tr>
-    <td>Denial of Service Vulnerability in SyncStorageEngine</td>
-    <td>CVE-2016-2424</td>
-    <td>Moderate</td>
- </tr>
- <tr>
-    <td>Information Disclosure Vulnerability in AOSP Mail</td>
-    <td>CVE-2016-2425</td>
-    <td>Moderate</td>
- </tr>
- <tr>
-    <td>Information Disclosure Vulnerability in Framework</td>
-    <td>CVE-2016-2426</td>
-    <td>Moderate</td>
- </tr>
-</table>
-
 
 <h2 id=mitigations>Mitigations</h2>
 
 
-<p>This is a summary of the mitigations provided by the <a href="{@docRoot}security/enhancements/index.html">Android security platform</a> and service protections such as SafetyNet. These capabilities reduce the
+<p>This is a summary of the mitigations provided by the
+<a href="/security/enhancements/index.html">Android security platform</a> and service
+protections such as SafetyNet. These capabilities reduce the
 likelihood that security vulnerabilities could be successfully exploited on
 Android.</p>
 
@@ -303,8 +145,8 @@ for their contribution to CVE-2015-1805.</p>
 
 
 <p>The sections below contain details for each of the security vulnerabilities
-listed in the <a href="#security_vulnerability_summary">Security Vulnerability Summary</a>
-above. There is a description of the issue, a severity rationale, and a table
+that apply to the 2016-04-02 patch level.
+There is a description of the issue, a severity rationale, and a table
 with the CVE, associated bug, severity, affected versions, and date reported.
 When available, we will link the AOSP commit that addressed the issue to the
 bug ID. When multiple changes relate to a single bug, additional AOSP references
@@ -517,7 +359,7 @@ that third-party apps could not normally access.</p>
 malicious application to execute arbitrary code within the kernel. This issue
 is rated as Critical severity due to the possibility of a local permanent
 device compromise, and the device would possibly need to be repaired by
-re-flashing the operating system. This issue was described in <a href="{@docRoot}security/advisory/2016-03-18.html">Android Security Advisory 2016-03-18</a>.</p>
+re-flashing the operating system. This issue was described in <a href="/security/advisory/2016-03-18.html">Android Security Advisory 2016-03-18</a>.</p>
 
 <table>
  <tr>
@@ -1271,10 +1113,10 @@ manufacturers that include these updates should set the patch string level to:
 <p>The Security Patch Level for the monthly security update is normally set to the
 first of the month. For April, a Security Patch Level of April 1, 2016
 indicates that all issues described in this bulletin with the exception of CVE-2015-1805, as described in
-<a href="{@docRoot}security/advisory/2016-03-18.html">Android Security Advisory 2016-03-18</a>
+<a href="/security/advisory/2016-03-18.html">Android Security Advisory 2016-03-18</a>
 have been addressed. A Security Patch Level of April 2, 2016 indicates that
 all issues described in this bulletin including CVE-2015-1805, as described in
-<a href="{@docRoot}security/advisory/2016-03-18.html">Android Security Advisory 2016-03-18</a>
+<a href="/security/advisory/2016-03-18.html">Android Security Advisory 2016-03-18</a>
 have been addressed.</p>
 
 <h2 id=revisions>Revisions</h2>
@@ -1288,3 +1130,6 @@ have been addressed.</p>
   <li> August 01, 2016: Updated description of CVE-2016-2427
   <li> December 19, 2016: Updated to remove CVE-2016-2427, which was reverted.
 </ul>
+
+  </body>
+</html>

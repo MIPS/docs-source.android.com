@@ -1,32 +1,31 @@
-page.title=Customizing SELinux
-@jd:body
+<html devsite>
+  <head>
+    <title>Customizing SELinux</title>
+    <meta name="project_path" value="/_project.yaml" />
+    <meta name="book_path" value="/_book.yaml" />
+  </head>
+  <body>
+  <!--
+      Copyright 2017 The Android Open Source Project
 
-<!--
-    Copyright 2015 The Android Open Source Project
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
 
-        http://www.apache.org/licenses/LICENSE-2.0
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
+
 
 <p>Once you've integrated this base level of functionality and thoroughly analyzed
 the results, you may add your own policy settings to cover your customizations
-to the Android operating system. Of course, these policies must still meet the <a href="{@docRoot}compatibility/index.html">Android Compatibility program</a> requirements and not remove the default SELinux settings.</p>
+to the Android operating system. Of course, these policies must still meet the <a href="/compatibility/index.html">Android Compatibility program</a> requirements and not remove the default SELinux settings.</p>
 
 <p>Manufacturers should not remove existing security settings. Otherwise, they
 risk breaking the Android SELinux implementation and the applications it
@@ -54,7 +53,7 @@ modification to continue functioning on SELinux-enabled devices.</p>
   <li>Add backdoors
 </ul>
 
-<p>See the <em>Kernel Security Features</em> section of the <a href="{@docRoot}compatibility/android-cdd.pdf">Android Compatibility Definition document</a> for specific requirements.</p>
+<p>See the <em>Kernel Security Features</em> section of the <a href="/compatibility/android-cdd.pdf">Android Compatibility Definition document</a> for specific requirements.</p>
 
 <p>SELinux uses a whitelist approach, meaning all access must be explicitly
 allowed in policy in order to be granted. Since Android's default SELinux
@@ -93,7 +92,7 @@ the OEM, before turning on enforcing mode.</p>
 <p>To prevent unnecessary issues, it is better to be overbroad and over-compatible
 than too restrictive and incompatible, which results in broken device
 functions. Conversely, if a manufacturer's changes will benefit others, it
-should supply the modifications to the default SELinux policy as a <a href="{@docRoot}source/submit-patches.html">patch</a>. If the patch is applied to the default security policy, the manufacturer will no longer need to make this change with each new Android release.</p>
+should supply the modifications to the default SELinux policy as a <a href="/source/submit-patches.html">patch</a>. If the patch is applied to the default security policy, the manufacturer will no longer need to make this change with each new Android release.</p>
 
 <h2 id=example_policy_statements>Example policy statements</h2>
 
@@ -275,7 +274,7 @@ audit_control setfcap</pre>
 <h2 id=neverallow>neverallow rules</h2>
 
 <p>SELinux <code>neverallow</code> rules prohibit behavior that should never occur.
-With <a href="{@docRoot}compatibility/index.html">compatibility</a> testing,
+With <a href="/compatibility/index.html">compatibility</a> testing,
 SELinux <code>neverallow</code> rules are now enforced across partner devices.</p>
 
 <p>The following guidelines are intended to help manufacturers avoid errors
@@ -298,3 +297,6 @@ which allows security guarantees thanks to mechanisms such as verified boot.
 Often, the best solution when encountering a problem with this
 <code>neverallow</code> rule is to move the offending code to the
 <code>/system</code> partition.</p>
+
+  </body>
+</html>
