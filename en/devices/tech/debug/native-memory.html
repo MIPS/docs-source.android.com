@@ -31,6 +31,18 @@ href="https://android.googlesource.com/platform/bionic/+/master/libc/malloc_debu
 Memory Tracking using libc Callbacks</a> for a thorough description of the
 debugging options available for native memory issues.</p>
 
+<h2 id="malloc-stats">Malloc statistics</h2>
+
+<p>
+  Android supports the <a href="http://man7.org/linux/man-pages/man3/mallinfo.3.html"
+  ><code>mallinfo(3)</code></a>and <a href="http://man7.org/linux/man-pages/man3/malloc_info.3.html"
+  ><code>malloc_info(3)</code></a> extensions to <code>&lt;malloc.h&gt;</code></a>.
+  The <code>malloc_info</code> function is available in Android 6.0 and later and
+  its XML schema is documented in Bionic's
+  <a href="https://android.googlesource.com/platform/bionic/+/master/libc/include/malloc.h"
+  ><code>&lt;malloc.h&gt;</code></a>.
+</p>
+
 <h2 id="ddms">Dalvik Debug Monitor Server</h2>
 
 <p>You can also use the <a
