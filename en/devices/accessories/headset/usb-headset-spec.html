@@ -48,25 +48,25 @@ are encouraged to add features while keeping these requirements in mind.
    <th>Description</th>
   </tr>
   <tr>
-   <td>Function A</td>
+   <td>A</td>
    <td>Required</td>
-   <td>Play/pause (short press), launch voice assistance (long press), next (double
+   <td>Play/pause (short press), launch voice command (long press), next (double
        press)</td>
   </tr>
   <tr>
-   <td>Function B</td>
+   <td>B</td>
    <td>Optional</td>
    <td>Vol+</td>
   </tr>
   <tr>
-   <td>Function C</td>
+   <td>C</td>
    <td>Optional</td>
    <td>Vol-</td>
   </tr>
   <tr>
-   <td>Function D</td>
+   <td>D</td>
    <td>Optional</td>
-   <td>Launch voice assistance</td>
+   <td>Launch voice command</td>
   </tr>
 </table>
 <p>
@@ -105,7 +105,7 @@ mappings.
    <th>Behavior</th>
   </tr>
   <tr>
-   <td rowspan="6">Function A</td>
+   <td rowspan="6">A</td>
    <td rowspan="6"><strong>HID usage page</strong>: 0x0C<br>
        <strong>HID usage</strong>: 0x0CD<br>
        <strong>Kernel key</strong>: <code>KEY_PLAYPAUSE</code><br>
@@ -116,7 +116,7 @@ mappings.
   </tr>
   <tr>
    <td><strong>Input</strong>: Long press<br>
-       <strong>Output</strong>: Launch voice assistance<br>
+       <strong>Output</strong>: Launch voice command<br>
        <strong>Sends</strong>:
        <code>android.intent.action.VOICE_SEARCH_HANDS_FREE</code></td>
   </tr>
@@ -139,7 +139,7 @@ mappings.
        <strong>Output</strong>: Mute or unmute microphone</td>
   </tr>
   <tr>
-   <td>Function B</td>
+   <td>B</td>
    <td><strong>HID usage page</strong>: 0x0C<br>
        <strong>HID usage</strong>: 0x0E9<br>
        <strong>Kernel key</strong>: <code>KEY_VOLUMEUP</code><br>
@@ -149,7 +149,7 @@ mappings.
        <strong>Output</strong>: Increases the system or headset volume</td>
   </tr>
   <tr>
-   <td>Function C</td>
+   <td>C</td>
    <td><strong>HID usage page</strong>: 0x0C<br>
        <strong>HID usage</strong>: 0x0EA<br>
        <strong>Kernel key</strong>: <code>KEY_VOLUMEDOWN</code><br>
@@ -159,14 +159,14 @@ mappings.
        <strong>Output</strong>: Decreases the system or headset volume</td>
   </tr>
   <tr>
-   <td>Function D</td>
+   <td>D</td>
    <td><strong>HID usage page</strong>: 0x0C<br>
        <strong>HID usage</strong>: 0x0CF<br>
        <strong>Kernel key</strong>: <code>KEY_VOICECOMMAND</code><br>
        <strong>Android key</strong>: <code>KEYCODE_VOICE_ASSIST</code></td>
    <td>All. Can be triggered in any instance.</td>
    <td><strong>Input</strong>: Short or long press<br>
-       <strong>Output</strong>: Launch voice assistance</td>
+       <strong>Output</strong>: Launch voice command</td>
   </tr>
 </table>
 
