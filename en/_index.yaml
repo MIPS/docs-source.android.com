@@ -55,6 +55,14 @@ landing_page:
       image_path: /images/android_stack.png
   - heading: News
     items:
+    - heading: April Android Security Bulletin
+      description: >
+        The April 2017 Android Security Bulletin has been published along with
+        links to associated fixes and new build numbers to support the April
+        Android security release.
+      buttons:
+      - label: April 6th, 2017
+        path: /security/bulletin/2017-04-01
     - heading: Complete Site Redesign
       description: >
         This site has been overhauled to make it easier for you to navigate,
@@ -71,14 +79,6 @@ landing_page:
       buttons:
       - label: March 21st, 2017
         path: http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2016_Report_Final.pdf
-    - heading: March Android Security Bulletin
-      description: >
-        The March 2017 Android Security Bulletin has been published along with
-        links to associated fixes and new build numbers to support the March
-        Android security release.
-      buttons:
-      - label: March 7th, 2017
-        path: /security/bulletin/2017-03-01
   - classname: devsite-landing-row-100 tf-row-centered
     items:
     - buttons:
