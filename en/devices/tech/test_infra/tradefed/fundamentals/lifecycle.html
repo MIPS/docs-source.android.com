@@ -26,17 +26,17 @@
 <p>The lifecycle of a test executed using TradeFederation is composed of four separate stages, designed
 around formally defined interfaces.</p>
 <ul>
-<li><a href="/reference/com/android/tradefed/build/IBuildProvider.html"
+<li><a href="/reference/tradefed/com/android/tradefed/build/IBuildProvider.html"
   >Build Provider</a>: Provides a build to test, downloading appropriate files if necessary.</li>
-<li><a href="/reference/com/android/tradefed/targetprep/ITargetPreparer.html"
+<li><a href="/reference/tradefed/com/android/tradefed/targetprep/ITargetPreparer.html"
   >Target Preparer</a>: Prepares the test environment, possibly including software installation and
   device configuration.</li>
-<li><a href="/reference/com/android/tradefed/testtype/IRemoteTest.html"
+<li><a href="/reference/tradefed/com/android/tradefed/testtype/IRemoteTest.html"
   >Test</a>: Executes test(s) and gathers test results.  This may be any JUnit Test, although our
-  <a href="/reference/com/android/tradefed/testtype/IRemoteTest.html"
+  <a href="/reference/tradefed/com/android/tradefed/testtype/IRemoteTest.html"
   >IRemoteTest</a> interface is specifically designed to work well in the Trade Federation
   environment.</li>
-<li><a href="/reference/com/android/tradefed/result/ITestInvocationListener.html"
+<li><a href="/reference/tradefed/com/android/tradefed/result/ITestInvocationListener.html"
   >Test Invocation Listener</a>: Listens for test results, usually for the purpose of forwarding the
   test results to a repository or displaying them to the Test Runner.</li>
 </ul>
@@ -59,9 +59,9 @@ In short, an Invocation encompasses a complete TF test execution, across its ent
 
 <h3>Additional Components of a Configuration</h3>
 <ul>
-<li><a href="/reference/com/android/tradefed/device/IDeviceRecovery.html"
+<li><a href="/reference/tradefed/com/android/tradefed/device/IDeviceRecovery.html"
   >Device Recovery</a>: mechanism to recover device communication if lost.</li>
-<li><a href="/reference/com/android/tradefed/log/package-summary.html">Logger</a>: collects tradefed logging data.</li>
+<li><a href="/reference/tradefed/com/android/tradefed/log/package-summary.html">Logger</a>: collects tradefed logging data.</li>
 </ul>
 
 
