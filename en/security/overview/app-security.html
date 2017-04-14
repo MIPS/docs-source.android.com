@@ -33,33 +33,40 @@
 <p>The main Android application building blocks are:</p>
 <ul>
   <li>
-    <p><strong>AndroidManifest.xml</strong>: The <a href="https://developer.android.com/guide/topics/manifest/manifes
-t-intro.html">AndroidManifest.xml</a> file is the control file that tells the system what to do with
+    <p><strong>AndroidManifest.xml</strong>: The <a
+      href="https://developer.android.com/guide/topics/manifest/manifest-intro.html">AndroidManifest.xml</a>
+      file is the control file that tells the system what to do with
       all the top-level components (specifically activities, services, broadcast
       receivers, and content providers described below) in an application. This also
       specifies which permissions are required.</p>
   </li>
   <li>
-    <p><strong>Activities</strong>: An <a href="https://developer.android.com/guide/topics/fundamentals/activities.htm
-l">Activity</a> is, generally, the code for a single, user-focused task.  It usually
+    <p><strong>Activities</strong>: An <a
+      href="https://developer.android.com/guide/topics/fundamentals/activities.html">Activity</a>
+      is, generally, the code for a single, user-focused task.  It usually
       includes displaying a UI to the user, but it does not have to -- some
       Activities never display UIs.  Typically, one of the application's Activities
       is the entry point to an application.</p>
   </li>
   <li>
-    <p><strong>Services</strong>: A <a href="https://developer.android.com/guide/topics/fundamentals/services.html">Service</a> is a body of code that runs in the background. It can run in its own process,
-      or in the context of another application's process. Other components "bind" to
+    <p><strong>Services</strong>: A <a
+      href="https://developer.android.com/guide/topics/fundamentals/services.html">Service</a>
+      is a body of code that runs in the background. It can run in its own
+      process, or in the context of another application's process. Other components "bind" to
       a Service and invoke methods on it via remote procedure calls. An example of a
       Service is a media player: even when the user quits the media-selection UI, the
       user probably still intends for music to keep playing. A Service keeps the
       music going even when the UI has completed.</p>
   </li>
   <li>
-    <p><strong>Broadcast Receiver</strong>: A <a href="https://developer.android.com/reference/android/content/Broad
-castReceiver.html">BroadcastReceiver</a> is an object that is instantiated when an IPC mechanism
-      known as an <a href="https://developer.android.com/reference/android/content/Intent.html">Intent</a> is issued by the operating system or another application.  An application may
-      register a receiver for the low battery message, for example, and change its
-      behavior based on that information.</p>
+    <p><strong>Broadcast Receiver</strong>: A <a
+      href="https://developer.android.com/reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a>
+      is an object that is instantiated when an IPC mechanism
+      known as an <a
+        href="https://developer.android.com/reference/android/content/Intent.html">Intent</a>
+      is issued by the operating system or another application.  An application
+      may register a receiver for the low battery message, for example, and
+      change its behavior based on that information.</p>
   </li>
 </ul>
 <h2 id="the-android-permission-model-accessing-protected-apis">The Android Permission Model: Accessing Protected APIs</h2>
