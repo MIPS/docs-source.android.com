@@ -25,12 +25,18 @@ toc:
       path: /compatibility/cts/verifier
     - title: Audio Framework
       path: /compatibility/cts/audio-framework
-    - title: Camera HAL Testing
-      path: /compatibility/cts/camera-hal
     - title: Near Ultrasound Tests
       path: /compatibility/cts/near-ultrasound
     - title: Rotation Vector Crosscheck
       path: /compatibility/cts/rotation-vector
+  - title: Camera Testing
+    section:
+    - title: Camera HAL Testing
+      path: /compatibility/cts/camera-hal
+    - title: Camera ITS-in-a-Box
+      path: /compatibility/cts/camera-its-box
+    - title: Camera ITS-in-a-Box Assembly
+      path: /compatibility/cts/camera-its-box-assembly
   - title: Interpret Results
     path: /compatibility/cts/interpret
   - title: Develop CTS
