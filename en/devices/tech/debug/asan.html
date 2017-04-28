@@ -54,16 +54,17 @@ AddressSanitizer at once. Otherwise, you are limited to using
 <h2 id=building_with_clang>Building with Clang</h2>
 
 <p>As a first step to building an ASan-instrumented binary, make sure that your
-code builds with Clang. This is done by adding <code>LOCAL_CLANG:=true</code>
+code builds with Clang. This is done by default on the master branch, so there should be nothing
+you need to do. If you believe that the module you'd like to test is being built with GCC,
+you can switch to Clang by adding <code>LOCAL_CLANG:=true</code>
 to the build rules. Clang may find bugs in your code that GCC missed.</p>
 
 <h2 id=building_executables_with_addresssanitizer>Building executables with AddressSanitizer</h2>
 
 <p>Add <code>LOCAL_SANITIZE:=address</code> to the build rule of the
-executable. This requires: <code>LOCAL_CLANG:=true</code></p>
+executable.</p>
 
 <pre>
-LOCAL_CLANG:=true
 LOCAL_SANITIZE:=address
 </pre>
 
@@ -85,7 +86,6 @@ recommended way to do this is to add the following to <code>Android.mk</code>
 for the module in question:</p>
 
 <pre>
-LOCAL_CLANG:=true
 LOCAL_SANITIZE:=address
 LOCAL_MODULE_RELATIVE_PATH := asan
 </pre>
@@ -161,7 +161,7 @@ this case is <code>/system/bin/app_process(<em>32|64</code></em>). This will
 enable ASan in all apps on the device at the same time, which is a
 bit stressful, but nothing that a 2GB RAM device cannot handle.</p>
 
-<p>Add the usual <code>LOCAL_CLANG:=true, LOCAL_SANITIZE:=address</code> to
+<p>Add the usual <code>LOCAL_SANITIZE:=address</code> to
 the app_process build rule in <code>frameworks/base/cmds/app_process</code>. Ignore
 the <code>app_process__asan</code> target in the same file for now (if it is
 still there at the time you read
@@ -213,7 +213,7 @@ AddressSanitizer at once.</p>
 
 <pre>
 $ make -j42
-$ make USE_CLANG_PLATFORM_BUILD:=true SANITIZE_TARGET=address -j42
+$ SANITIZE_TARGET=address make -j42
 </pre>
 
 <p>In this mode, <code>userdata.img</code> contains extra libraries and must be
@@ -223,15 +223,14 @@ flashed to the device as well. Use the following command line:</p>
 $ fastboot flash userdata && fastboot flashall
 </pre>
 
-<p>At the moment of this writing, hammerhead-userdebug and shamu-userdebug boot to
-the UI in this mode.</p>
+<p>At the moment of this writing, modern Nexus and Pixel devices boot to the UI in this mode.</p>
 
 <p>This works by building two sets of shared libraries: normal in
 <code>/system/lib</code> (the first make invocation), ASan-instrumented in
-<code>/data/lib</code> (the second make invocation). Executables from the
+<code>/data/asan/lib</code> (the second make invocation). Executables from the
 second build overwrite the ones from the first build. ASan-instrumented
 executables get a different library search path that includes
-<code>/data/lib</code> before <code>/system/lib</code> through the use of
+<code>/data/asan/lib</code> before <code>/system/lib</code> through the use of
 "/system/bin/linker_asan" in PT_INTERP.</p>
 
 <p>The build system clobbers intermediate object directories when the
@@ -243,7 +242,7 @@ targets while preserving installed binaries under <code>/system/lib</code>.</p>
 <ul>
   <li>Statically linked executables.
   <li><code>LOCAL_CLANG:=false</code> targets
-  <li><code>LOCAL_SANITIZE:=undefined</code>; will not be ASan'd for <code>SANITIZE_TARGET=address</code>
+  <li><code>LOCAL_SANITIZE:=false</code> will not be ASan'd for <code>SANITIZE_TARGET=address</code>
 </ul>
 
 <p>Executables like these are skipped in the SANITIZE_TARGET build, and the
