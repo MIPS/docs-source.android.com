@@ -55,6 +55,14 @@ landing_page:
       image_path: /images/android_stack.png
   - heading: News
     items:
+    - heading: Camera Image Test Suite (ITS) Test Automation
+      description: >
+        The Android Compatibility Test Suite (CTS) now supports ITS test
+        automation via Camera ITS-in-a-box, an assembly for testing
+        multiple devices at once with minimal intervention.
+      buttons:
+      - label: April 20th, 2017
+        path: /compatibility/cts/camera-its-box
     - heading: April Android Security Bulletin
       description: >
         The April 2017 Android Security Bulletin has been published along with
@@ -78,7 +86,7 @@ landing_page:
         users safe.
       buttons:
       - label: March 21st, 2017
-        path: http://static.googleusercontent.com/media/source.android.com/en//security/reports/Google_Android_Security_2016_Report_Final.pdf
+        path: /security/reports/Google_Android_Security_2016_Report_Final.pdf
   - classname: devsite-landing-row-100 tf-row-centered
     items:
     - buttons:

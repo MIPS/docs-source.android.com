@@ -56,6 +56,9 @@ automated source code review. Best practices:</p>
 application code using the Android SDK and correct any identified issues.</li>
 <li>Native code should be analyzed using an automated tool that can detect
 memory management issues such as buffer overflows and off-by-one errors.</li>
+<li>The Android build system has support for many of the LLVM sanitizers,
+such as AddressSanitizer and UndefinedBehaviorSanitizer which can be used
+for this purpose.</li>
 </ul>
 
 <h3 id="auto-test">Using automated testing</h3>
