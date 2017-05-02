@@ -15,6 +15,10 @@ landing_page:
         .devsite-feedback-button {
           display: none;
         }
+        /* blank bg color for landing images in first row */
+        .devsite-landing-row:first-of-type .devsite-landing-row-item-image {
+          background: none;
+        }
         </style>
       buttons:
       - label: Update now
@@ -55,11 +59,19 @@ landing_page:
       image_path: /images/android_stack.png
   - heading: News
     items:
-    - heading: Camera Image Test Suite (ITS) Test Automation
+    - heading: Evaluating Performance in Detail
+      description: >
+        Detailed instructions now exist for understanding and examining the
+        performance of a device using <code>systrace</code>,
+        <code>ftrace</code> and other tools.
+      buttons:
+      - label: April 27th, 2017
+        path: /devices/tech/debug/eval_perf
+    - heading: Camera Image Test Suite (ITS) Test
       description: >
         The Android Compatibility Test Suite (CTS) now supports ITS test
         automation via Camera ITS-in-a-box, an assembly for testing
-        multiple devices at once with minimal intervention.
+        multiple devices at once.
       buttons:
       - label: April 20th, 2017
         path: /compatibility/cts/camera-its-box
@@ -71,22 +83,6 @@ landing_page:
       buttons:
       - label: April 6th, 2017
         path: /security/bulletin/2017-04-01
-    - heading: Complete Site Redesign
-      description: >
-        This site has been overhauled to make it easier for you to navigate,
-        search, and read its ever-growing set of information. Find new tabs,
-        footers, reference materials, and more.
-      buttons:
-      - label: April 2017
-        path: /source/site-updates
-    - heading: Security Year in Review
-      description: >
-        The Android Security team has published its 2016 Year In Review. This
-        comprehensive report describes the measures Android and Google take to keep
-        users safe.
-      buttons:
-      - label: March 21st, 2017
-        path: /security/reports/Google_Android_Security_2016_Report_Final.pdf
   - classname: devsite-landing-row-100 tf-row-centered
     items:
     - buttons:
