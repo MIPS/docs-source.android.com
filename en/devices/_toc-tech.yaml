@@ -85,6 +85,18 @@ toc:
     path: /devices/tech/debug/
   - title: Diagnosing Native Crashes
     path: /devices/tech/debug/native-crash
+  - title: Evaluating Performance
+    section:
+    - title: Overview
+      path: /devices/tech/debug/eval_perf
+    - title: Understanding systrace
+      path: /devices/tech/debug/systrace
+    - title: Using ftrace
+      path: /devices/tech/debug/ftrace
+    - title: Identifying Capacity Jank
+      path: /devices/tech/debug/jank_capacity
+    - title: Identifying Jitter Jank
+      path: /devices/tech/debug/jank_jitter
   - title: AddressSanitizer
     path: /devices/tech/debug/asan
   - title: Dumpsys
