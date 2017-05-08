@@ -1,6 +1,6 @@
 <html devsite>
   <head>
-    <title>Selecting Devices</title>
+    <title>Using Reference Boards</title>
     <meta name="project_path" value="/_project.yaml" />
     <meta name="book_path" value="/_book.yaml" />
   </head>
@@ -22,8 +22,6 @@
   -->
 
 
-
-
 <p>You can create builds for Nexus devices using Android Open Source Project
 (AOSP) builds and the relevant hardware-specific binaries. For available
 Android builds and targeted devices, see
@@ -41,14 +39,114 @@ upgrade efforts, reduce time-to-market for new Android devices, lower device
 costs by enabling ODM/OEMs to choose from a wider range of compatible
 components, and increase the speed of innovation among component suppliers.</p>
 
-<p>Google supports <a href="#620hikey">HiKey</a> and
-<a href="#960hikey">Hikey960</a> certified
+<p>Google supports <a href="#960hikey">HiKey960</a> and
+<a href="#620hikey">HiKey</a> certified
 <a href="https://www.96boards.org/products/ce/hikey/">96Boards</a> as Android
 reference boards. AOSP provides kernel source and board support for HiKey so
 developers can easily create and debug new and existing peripheral drivers, do
 kernel development, and perform other tasks with fewer OEM encumbrances.</p>
 
-<h2 id="620hikey">Hikey boards</h2>
+
+<h2 id="960hikey">HiKey960 boards</h2>
+
+<p>The HiKey960 board is available in a 3GB RAM configuration from LeMaker (via
+<a href="https://www.amazon.com/dp/B071RD3V34">Amazon.com</a>) and from
+<a href=" http://www.lenovator.com/product/132.html">Lenovator<a/>.</a></p>
+
+<img src="images/hikey960.png" alt="HiKey960 board image" />
+<p class="img-caption"><strong>Figure 2.</strong> HiKey960 board by Lenovator</p>
+
+<p>Additional resources:</p>
+<ul>
+<li>
+<a href="https://github.com/96boards/documentation/blob/master/ConsumerEdition/HiKey960/HardwareDocs/HiKey960_Schematics.pdf">HiKey960
+schematics</a></li>
+<li>
+<a href="http://www.96boards.org/documentation/ConsumerEdition/HiKey960/HardwareDocs/HardwareUserManual.md/">HiKey960
+user guide</a></li>
+<li>
+<a href="https://github.com/96boards/documentation/wiki/">96boards wiki</a></li>
+</ul>
+
+<p>Use the following commands to download, build, and run Android on the
+HiKey960 board.</p>
+
+<h3 id="960userspace">Compiling userspace</h3>
+<ol>
+<li>Download the Android source tree:
+<pre>$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master
+$ repo sync -j24</pre></li>
+<li>Download and extract binaries into the Android source tree:
+<pre>$ wget https://dl.google.com/dl/android/aosp/arm-hikey960-NOU-6eafa750.tgz
+$ tar xzf arm-hikey960-NOU-6eafa750.tgz
+$ ./extract-arm-hikey960.sh
+$ wget https://dl.google.com/dl/android/aosp/hisilicon-hikey960-NOU-5db76395.tgz
+$ tar xzf hisilicon-hikey960-NOU-5db76395.tgz
+$ ./extract-hisilicon-hikey960.sh</pre></li>
+<li>Build:
+<pre>$ . ./build/envsetup.sh
+$ lunch hikey960-userdebug
+$ make -j32</pre></li>
+</ol>
+
+<h3 id="960fastboot">Installing initial images</h3>
+<ol>
+<li>Select fastboot mode turning ON switch 1 and 3 (for details, refer to the
+HiKey960 user guide).</li>
+<li>Power the board.</li>
+<li>Flash initial images:
+<pre>$ cd device/linaro/hikey/installer/hikey960
+$ ./flash-all.sh</pre></li>
+<li>Turn OFF switch 3 and power cycle the board.</li>
+</ol>
+
+<h3 id="960images">Flashing images</h3>
+<ol>
+<li>Enter fastboot mode by turning ON switch 1 and 3.</li>
+<li>Flash images by running the following commands:
+<pre>$ fastboot flash boot out/target/product/hikey960/boot.img
+$ fastboot flash dts out/target/product/hikey960/dt.img
+$ fastboot flash system out/target/product/hikey960/system.img
+$ fastboot flash cache out/target/product/hikey960/cache.img
+$ fastboot flash userdata out/target/product/hikey960/userdata.img</pre>
+</li>
+<li>Turn OFF switch 3 and power cycle the board.</li>
+</ol>
+
+<h3 id="960kernel">Building the kernel</h3>
+<ol>
+<li>Run the following commands:
+<pre>$ git clone <a href="https://android.googlesource.com/kernel/hikey-linaro">https://android.googlesource.com/kernel/hikey-linaro</a>
+$ cd hikey-linaro
+$ git checkout -b android-hikey-linaro-4.4 origin/android-hikey-linaro-4.4
+$ make ARCH=arm64 hikey960_defconfig
+$ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- -j24</pre></li>
+<li>Update the kernel in the boot image.
+<ul>
+<li>Copy hi3660-hikey960.dtb
+(<code>arch/arm64/boot/dts/hisilicon/hi3660-hikey960.dtb</code>) to the
+hikey-kernel directory as file hi3660-hikey960.dtb.</li>
+<li>Copy the Image file <code>(arch/arm64/boot/Image.gz</code>) to the
+hikey-kernel directory as file Image.gz-hikey960.</li></ul>
+<li>Make the boot image:
+<pre>$ make bootimage -j24</pre></li>
+</ol>
+
+<h3 id="960serial">Setting serial number</h3>
+<p>To set random serial number, run:
+<pre>$ fastboot getvar nve:SN@<em>16-digit-number</em></pre>
+<p>Bootloader exports the generated serial number to kernel via
+<code>androidboot.serialno=</code>.
+
+<h3 id="960resolution">Setting monitor resolution</h3>
+<p>Edit the <code>device/linaro/hikey/hikey960/BoardConfig.mk</code> parameter
+<code>BOARD_KERNEL_CMDLINE</code> and configure the <code>video</code> setting.
+Example setting for a 24" monitor is <code>video=HDMI-A-1:1280x800@60</code>.
+For a
+<a href="https://www.arrow.com/en/products/96boards-display-7/linksprite-technologies-inc">LinkSprite
+7-inch Display Kit</a>, the setting is <code>video=HDMI-A-1:800x480@60</code>.</p>
+
+<h2 id="620hikey">HiKey boards</h2>
 
 <p>The HiKey board (also known as HiKey620) is available in
 <a href="http://www.lenovator.com/product/86.html">1GB RAM</a> and
@@ -61,10 +159,10 @@ from <a href="http://www.lenovator.com">Lenovator</a>:</p>
 <p>Additional resources:</p>
 <ul>
 <li>
-<a href="https://www.96boards.org/wp-content/uploads/2015/02/96Boards-Hikey-Rev-A1.pdf">HiKey
+<a href="https://github.com/96boards/documentation/blob/master/ConsumerEdition/HiKey960/HardwareDocs/HiKey960_Schematics.pdf">HiKey
 schematics</a></li>
 <li>
-<a href="https://www.96boards.org/wp-content/uploads/2015/02/HiKey_User_Guide_Rev0.2.pdf">HiKey
+<a href="http://www.96boards.org/documentation/ConsumerEdition/HiKey960/HardwareDocs/HardwareUserManual.md/">HiKey
 user guide</a></li>
 <li><a href="https://github.com/96boards/documentation/wiki/">96boards wiki</a></li>
 </ul>
@@ -144,106 +242,6 @@ Example setting for a 24" monitor: <code>video=HDMI-A-1:1280x800@60</code>.</p>
 details, refer to the
 <a href="https://www.96boards.org/wp-content/uploads/2015/02/HiKey_User_Guide_Rev0.2.pdf">HiKey
 user guide</a>.</p>
-
-
-<h2 id="960hikey">Hikey960 boards</h2>
-
-<p>The HiKey960 board is available in a 3GB RAM configuration from LeMaker (via
-<a href="https://www.amazon.com/dp/B071RD3V34">Amazon.com</a>) and from
-<a href=" http://www.lenovator.com/product/132.html">Lenovator<a/>.</a></p>
-
-<img src="images/hikey960.png" alt="HiKey960 board image" />
-<p class="img-caption"><strong>Figure 2.</strong> HiKey960 board by Lenovator</p>
-
-<p>Additional resources:</p>
-<ul>
-<li>
-<a href="https://github.com/96boards/documentation/blob/master/ConsumerEdition/HiKey960/HardwareDocs/HiKey960_Schematics.pdf">HiKey960
-schematics</a></li>
-<li>
-<a href="http://www.96boards.org/documentation/ConsumerEdition/HiKey960/HardwareDocs/HardwareUserManual.md/">HiKey960
-user guide</a></li>
-<li>
-<a href="https://github.com/96boards/documentation/wiki/">96boards wiki</a></li>
-</ul>
-
-<p>Use the following commands to download, build, and run Android on the
-HiKey960 board.</p>
-
-<h3 id="960userspace">Compiling userspace</h3>
-<ol>
-<li>Download the Android source tree:
-<pre>$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master
-$ repo sync -j24</pre></li>
-<li>Download and extract binaries into the Android source tree:
-<pre>$ wget https://dl.google.com/dl/android/aosp/arm-hikey960-NOU-6eafa750.tgz
-$ tar xzf arm-hikey960-NOU-6eafa750.tgz
-$ ./extract-arm-hikey960.sh
-$ wget https://dl.google.com/dl/android/aosp/hisilicon-hikey960-NOU-5db76395.tgz
-$ tar xzf hisilicon-hikey960-NOU-5db76395.tgz
-$ ./extract-hisilicon-hikey960.sh</pre></li>
-<li>Build:
-<pre>$ . ./build/envsetup.sh
-$ lunch hikey960-userdebug
-$ make -j32</pre></li>
-</ol>
-
-<h3 id="960fastboot">Installing initial images</h3>
-<ol>
-<li>Select fastboot mode turning ON switch 1 and 3 (for details, refer to the
-HiKey960 user guide).</li>
-<li>Power the board.</li>
-<li>Flash initial images:
-<pre>$ cd device/linaro/hikey/installer/hikey960
-$ ./flash-all.sh</pre></li>
-<li>Turn OFF switch 3 and power cycle the board.</li>
-</ol>
-
-<h3 id="960images">Flashing images</h3>
-<ol>
-<li>Enter fastboot mode by turning ON switch 1 and 3.</li>
-<li>Flash images by running the following commands:
-<pre>$ fastboot flash boot out/target/product/hikey/boot.img
-$ fastboot flash dts out/target/product/hikey960/dt.img
-$ fastboot flash system out/target/product/hikey960/system.img
-$ fastboot flash cache out/target/product/hikey960/cache.img
-$ fastboot flash userdata out/target/product/hikey960/userdata.img</pre>
-</li>
-<li>Turn OFF switch 3 and power cycle the board.</li>
-</ol>
-
-<h3 id="960kernel">Building the kernel</h3>
-<ol>
-<li>Run the following commands:
-<pre>$ git clone <a href="https://android.googlesource.com/kernel/hikey-linaro">https://android.googlesource.com/kernel/hikey-linaro</a>
-$ cd hikey-linaro
-$ git checkout -b android-hikey-linaro-4.4 origin/android-hikey-linaro-4.4
-$ make ARCH=arm64 hikey960_defconfig
-$ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- -j24</pre></li>
-<li>Update the kernel in the boot image.
-<ul>
-<li>Copy hi3660-hikey960.dtb
-(<code>arch/arm64/boot/dts/hisilicon/hi3660-hikey960.dtb</code>) to the
-hikey-kernel directory as file hi3660-hikey960.dtb.</li>
-<li>Copy the Image file <code>(arch/arm64/boot/Image.gz</code>) to the
-hikey-kernel directory as file Image.gz-hikey960.</li></ul>
-<li>Make the boot image:
-<pre>$ make bootimage -j24</pre></li>
-</ol>
-
-<h3 id="960serial">Setting serial number</h3>
-<p>To set random serial number, run:
-<pre>$ fastboot getvar nve:SN@<em>16-digit-number</em></pre>
-<p>Bootloader exports the generated serial number to kernel via
-<code>androidboot.serialno=</code>.
-
-<h3 id="960resolution">Setting monitor resolution</h3>
-<p>Edit the <code>device/linaro/hikey/hikey960/BoardConfig.mk</code> parameter
-<code>BOARD_KERNEL_CMDLINE</code> and configure the <code>video</code> setting.
-Example setting for a 24" monitor is <code>video=HDMI-A-1:1280x800@60</code>.
-For a
-<a href="https://www.arrow.com/en/products/96boards-display-7/linksprite-technologies-inc">LinkSprite
-7-inch Display Kit</a>, the setting is <code>video=HDMI-A-1:800x480@60</code>.</p>
 
   </body>
 </html>
