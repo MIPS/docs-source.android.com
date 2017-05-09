@@ -29,7 +29,7 @@ toc:
     path: /source/building
   - title: Compiling with Jack
     path: /source/jack
-  - title: Selecting Devices
+  - title: Using Reference Boards
     path: /source/devices
   - title: Running Builds
     path: /source/running
