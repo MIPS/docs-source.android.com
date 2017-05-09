@@ -105,6 +105,22 @@ field on the line begins with a ‘/' character, it is considered a <b>device2
 </b> entry; if the entry does not begin with a ‘/' character, it is considered
 an <b>options</b> field.</p>
 
+<h2 id="boot-animation">Boot animation</h2>
+
+<p>Device manufacturers have the ability to customize the animation shown when
+an Android device is booting. To do this, construct a .zip file organized and
+located according to the specifications in <a
+href="https://android.googlesource.com/platform/frameworks/base/+/master/cmds/bootanimation/FORMAT.md">bootanimation
+format</a>.</p>
+
+<p>For <a
+  href="https://developer.android.com/things/hardware/index.html">Android
+  Things</a> devices, you may upload the zipped file in the Android
+Things console to have the images included in the selected product.</p>
+
+<p class="note"><strong>Note:</strong> These images must meet Android <a
+href="/source/brands">brand guidelines</a>.</p>
+
 <h2 id="recovery-ui">Recovery UI</h2>
 <p>To support devices with different available hardware (physical buttons,
 LEDs, screens, etc.), you can customize the recovery interface to display
@@ -449,7 +465,7 @@ TARGET_RECOVERY_UI_LIB := librecovery_ui_tardis
 
 
 <h2 id="recovery-ui-images">Recovery UI images</h2>
-<p>The recovery user interface consists images. Ideally, users never interact
+<p>The recovery user interface consists of images. Ideally, users never interact
 with the UI: During a normal update, the phone boots into recovery, fills the
 installation progress bar, and boots back into the new system without input
 from the user. In the event of a system update problem, the only user action
