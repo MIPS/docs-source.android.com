@@ -22,7 +22,7 @@
   -->
   
 
-<p><em>Published May 01, 2017</em></p>
+<p><em>Published May 01, 2017 | Updated May 02, 2017</em></p>
 
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Alongside the bulletin, we have released a security
@@ -36,9 +36,9 @@ and Nexus update schedule</a> to learn how to check a device's security patch
 level.</p>
 
 <p>Partners were notified of the issues described in the bulletin on April 03, 2017
-or earlier. Source code patches for these issues will be released to the Android
-Open Source Project (AOSP) repository in the next 48 hours. We will revise this
-bulletin with the AOSP links when they are available.</p>
+or earlier. Source code patches for these issues have been released to the
+Android Open Source Project (AOSP) repository and linked from this bulletin.
+This bulletin also includes links to patches outside of AOSP.</p>
 
 <p>The most severe of these issues is a Critical security vulnerability that could
 enable remote code execution on an affected device through multiple methods such
@@ -143,6 +143,8 @@ Tesla's Product Security Team: CVE-2017-0331, CVE-2017-0606</li>
 href="https://twitter.com/jiych_guru">@jiych_guru</a>): CVE-2017-0603</li>
 <li>Peng Xiao, Chengming Yang, Ning You, Chao Yang, and Yang song of Alibaba
 Mobile Security Group: CVE-2016-10281, CVE-2016-10280</li>
+<li>Roee Hay (<a href="https://twitter.com/roeehay">@roeehay</a>) of <a
+href="https://alephsecurity.com/">Aleph Research</a>: CVE-2016-10277</li>
 <li><a href="mailto:sbauer@plzdonthack.me">Scott Bauer</a> (<a
 href="https://twitter.com/ScottyBauer1">@ScottyBauer1</a>): CVE-2016-10274</li>
 <li><a href="mailto:segfault5514@gmail.com">Tong Lin</a>, <a
@@ -204,7 +206,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0587</td>
-    <td>A-35219737</td>
+    <td><a href="https://android.googlesource.com/platform/external/libmpeg2/+/a86eb798d077b9b25c8f8c77e3c02c2f287c1ce7">A-35219737</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -212,7 +214,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0588</td>
-    <td>A-34618607</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/6f1d990ce0f116a205f467d9eb2082795e33872b">A-34618607</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -220,7 +222,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0589</td>
-    <td>A-34897036</td>
+    <td><a href="https://android.googlesource.com/platform/external/libhevc/+/bcfc7124f6ef9f1ec128fb2e90de774a5b33d199">A-34897036</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -228,7 +230,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0590</td>
-    <td>A-35039946</td>
+    <td><a href="https://android.googlesource.com/platform/external/libhevc/+/45c97f878bee15cd97262fe7f57ecea71990fed7">A-35039946</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -236,7 +238,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0591</td>
-    <td>A-34097672</td>
+    <td><a href="https://android.googlesource.com/platform/external/libavc/+/5c3fd5d93a268abb20ff22f26009535b40db3c7d">A-34097672</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -244,7 +246,7 @@ remote code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2017-0592</td>
-    <td>A-34970788</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/acc192347665943ca674acf117e4f74a88436922">A-34970788</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -278,7 +280,7 @@ protections that isolate application data from other applications.</p>
   </tr>
   <tr>
     <td>CVE-2017-0593</td>
-    <td>A-34114230</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/78efbc95412b8efa9a44d573f5767ae927927d48">A-34114230</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -313,7 +315,7 @@ to a third-party application.</p>
   </tr>
   <tr>
     <td>CVE-2017-0594</td>
-    <td>A-34617444</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/594bf934384920618d2b6ce0bcda1f60144cb3eb">A-34617444</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -321,7 +323,7 @@ to a third-party application.</p>
   </tr>
   <tr>
     <td>CVE-2017-0595</td>
-    <td>A-34705519</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/5443b57cc54f2e46b35246637be26a69e9f493e1">A-34705519</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -329,7 +331,7 @@ to a third-party application.</p>
   </tr>
   <tr>
     <td>CVE-2017-0596</td>
-    <td>A-34749392</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/5443b57cc54f2e46b35246637be26a69e9f493e1">A-34749392</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1</td>
@@ -364,7 +366,7 @@ to a third-party application.</p>
   </tr>
   <tr>
     <td>CVE-2017-0597</td>
-    <td>A-34749571</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/a9188f89179a7edd301abaf37d644adf5d647a04">A-34749571</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -399,7 +401,8 @@ access to.</p>
   </tr>
   <tr>
     <td>CVE-2017-0598</td>
-    <td>A-34128677</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/4e110ab20bb91e945a17c6e166e14e2da9608f08">A-34128677</a>
+    [<a href="https://android.googlesource.com/platform/frameworks/base/+/d42e1204d5dddb78ec9d20d125951b59a8344f40">2</a>]</td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -432,7 +435,7 @@ service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0599</td>
-    <td>A-34672748</td>
+    <td><a href="https://android.googlesource.com/platform/external/libhevc/+/a1424724a00d62ac5efa0e27953eed66850d662f">A-34672748</a></td>
     <td>High</td>
     <td>All</td>
     <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -440,7 +443,7 @@ service.</p>
   </tr>
   <tr>
     <td>CVE-2017-0600</td>
-    <td>A-35269635</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/961e5ac5788b52304e64b9a509781beaf5201fb0">A-35269635</a></td>
     <td>High</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -474,7 +477,7 @@ user interaction requirements. </p>
   </tr>
   <tr>
     <td>CVE-2017-0601</td>
-    <td>A-35258579</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/667d2cbe3eb1450f273a4f6595ccef35e1f0fe4b">A-35258579</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>7.0, 7.1.1, 7.1.2</td>
@@ -508,7 +511,8 @@ lock screen.</p>
   </tr>
   <tr>
     <td>CVE-2017-0493</td>
-    <td>A-32793550</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/base/+/e4cefbf4fce458489b5f1bebc79dfaf566bcc5d5">A-32793550</a>
+    [<a href="https://android.googlesource.com/platform/frameworks/base/+/f806d65e615b942c268a5f68d44bde9d55634972">2</a>]</td>
     <td>Moderate</td>
     <td>All</td>
     <td>7.0, 7.1.1</td>
@@ -541,7 +545,7 @@ to details specific to the vulnerability.</p>
   </tr>
   <tr>
     <td>CVE-2017-0602</td>
-    <td>A-34946955</td>
+    <td><a href="https://android.googlesource.com/platform/system/bt/+/a4875a49404c544134df37022ae587a4a3321647">A-34946955</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -574,7 +578,7 @@ Moderate due to details specific to the vulnerability.</p>
   </tr>
   <tr>
     <td>CVE-2016-7056</td>
-    <td>A-33752052</td>
+    <td><a href="https://android.googlesource.com/platform/external/boringssl/+/13179a8e75fee98740b5ce728752aa7294b3e32d">A-33752052</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -607,7 +611,7 @@ rated as Moderate because it requires an uncommon device configuration.</p>
   </tr>
   <tr>
     <td>CVE-2017-0603</td>
-    <td>A-35763994</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/36b04932bb93cc3269279282686b439a17a89920">A-35763994</a></td>
     <td>Moderate</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -640,7 +644,7 @@ issue is rated as Low due to details specific to the vulnerability.</p>
   </tr>
   <tr>
     <td>CVE-2017-0635</td>
-    <td>A-35467107</td>
+    <td><a href="https://android.googlesource.com/platform/frameworks/av/+/523f6b49c1a2289161f40cf9fe80b92e592e9441">A-35467107</a></td>
     <td>Low</td>
     <td>All</td>
     <td>7.0, 7.1.1, 7.1.2</td>
@@ -686,7 +690,7 @@ code execution within the context of the Mediaserver process.</p>
   </tr>
   <tr>
     <td>CVE-2015-7555</td>
-    <td>A-34697653</td>
+    <td><a href="https://android.googlesource.com/platform/external/giflib/+/dc07290edccc2c3fc4062da835306f809cea1fdc">A-34697653</a></td>
     <td>Critical</td>
     <td>All</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -1056,15 +1060,20 @@ remote code execution in an application that uses this library.</p>
   </tr>
   <tr>
     <td>CVE-2016-5131</td>
-    <td>A-32956747</td>
+    <td>A-32956747*</td>
     <td>High</td>
-    <td>None*</td>
+    <td>None**</td>
     <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0</td>
     <td>July 23, 2016</td>
   </tr>
 </table>
 
-<p>* Supported Google devices on Android 7.1.1 or later that have installed all
+<p>* The patch for this issue is not publicly available. The update is contained
+in the latest binary drivers for Nexus devices available from the <a
+href="https://developers.google.com/android/drivers">Google Developer
+site</a>.</p>
+
+<p>** Supported Google devices on Android 7.1.1 or later that have installed all
 available updates are not affected by this vulnerability.</p>
 
 
@@ -3073,6 +3082,7 @@ belongs. These prefixes map as follows:</p>
 <h2 id="revisions">Revisions</h2>
 <ul>
 <li>May 01, 2017: Bulletin published.</li>
+<li>May 02, 2017: Bulletin revised to include AOSP links.</li>
 </ul>
 </body>
 </html>
