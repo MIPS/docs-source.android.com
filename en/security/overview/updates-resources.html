@@ -23,8 +23,6 @@
 
 
 
-<h2 id=android_security_bug_lifecycle>Android security bug lifecycle</h2>
-
 <p>The Android security team is responsible for managing security vulnerabilities
 discovered in the Android platform and many of the core Android apps bundled
 with Android devices.</p>
@@ -38,7 +36,7 @@ upstream open source project maintainers, notifications from our device
 manufacturer partners, and publicly disclosed issues posted on blogs or social
 media.</p>
 
-<h2 id=report-issues>Reporting security issues</h2>
+<h2 id="report-issues">Reporting security issues</h2>
 
 <p>Any developer, Android user, or security researcher can notify the Android
 security team of potential security issues through the <a
@@ -51,134 +49,162 @@ plan to submit a patch or Compatibility Test Suite (CTS) test to resolve a
 security issue, please attach it to the bug report and wait for a response
 before uploading the code to AOSP.</p>
 
-<h2 id=triaging_bugs>Triaging bugs</h2>
+<h2 id="triaging_bugs">Triaging bugs</h2>
 
 <p>The first task in handling a security vulnerability is to identify the severity
 of the bug and which component of Android is affected. The severity determines
 how the issue is prioritized, and the component determines who fixes the bug,
 who is notified, and how the fix gets deployed to users.</p>
 
-<h3 id=process_types>Process types</h3>
+<h3 id="process_types">Process types</h3>
 <p>This table covers the definitions of process types. The process type can be
 defined by the type of application or process or the area in which it runs.
 This table is ordered from least to most privileged.</p>
 <table>
- <tr>
-    <th>Process type</th>
-    <th>Type definition</th>
- </tr>
- <tr>
-    <td>Constrained process</td>
-    <td>A process that runs in a highly limited SELinux domain.<br />
-           OR<br />
-           A process that is significantly more limited than a normal application.</td>
- </tr>
- <tr>
-    <td>Unprivileged process</td>
-    <td>A third-party application or process.<br />
-           OR<br />
-          An application or process that runs in the SELinux <code>untrusted_app</code> domain.</td>
- </tr>
- <tr>
-    <td>Privileged process</td>
-    <td>An application or process with capabilities that are restricted by SELinux
-        <code>untrusted_app</code> domain.<br />
-         OR<br />
-         An application or process with important privileges that a third-party
-         application cannot obtain.</td>
- </tr>
- <tr>
-    <td>Kernel</td>
-    <td>Functionality that is either part of the kernel or runs in the same CPU context
-        as the kernel (like device drivers).</td>
- </tr>
- <tr>
-    <td>Trusted Execution Environment (TEE)</td>
-    <td> A component that is designed to be protected from even a hostile kernel.</td>
- </tr>
+  <col width="30%">
+  <col width="70%">
+  <tr>
+   <th>Process type</th>
+   <th>Type definition</th>
+  </tr>
+  <tr>
+   <td>Constrained process</td>
+   <td>A process that runs in a highly limited SELinux domain.<br />
+   OR<br />
+   A process that is significantly more limited than a normal application.</td>
+  </tr>
+  <tr>
+   <td>Unprivileged process</td>
+   <td>A third-party application or process.<br />
+   OR<br />
+   An application or process that runs in the SELinux <code>untrusted_app</code>
+   domain.</td>
+  </tr>
+  <tr>
+   <td>Privileged process</td>
+   <td>An application or process with capabilities that are restricted by
+   SELinux <code>untrusted_app</code> domain.<br />
+   OR<br />
+   An application or process with important privileges that a third-party
+   application cannot obtain.</td>
+  </tr>
+  <tr>
+   <td>Trusted Computing Base (TCB)</td>
+   <td>Functionality that is part of the kernel, runs in the same CPU context as
+   the kernel (such as device drivers), has direct access to kernel memory (such as
+   hardware components on the device), or is one of a handful of user services
+   that is considered kernel equivalent: <code>init</code>, <code>ueventd</code>,
+   and <code>vold</code>.</td>
+  </tr>
+  <tr>
+   <td>Trusted Execution Environment (TEE)</td>
+   <td> A component that is designed to be protected from even a hostile kernel.</td>
+  </tr>
 </table>
 
 
-<h3 id=severity>Severity</h3>
+<h3 id="severity">Severity</h3>
 
 
 <p>The severity of a bug generally reflects the potential harm that could occur if
 a bug was successfully exploited. Use the following criteria to determine the
 severity:</p>
 <table>
- <tr>
-    <th>Rating</th>
-    <th>Consequence of successful exploitation</th>
- </tr>
- <tr>
-    <td><strong>Critical</strong></td>
-    <td>
-          <ul>
-             <li> Remote arbitrary code execution in a privileged process
-             <li> Permanent device compromise (device cannot be repaired without re-flashing the
-                  entire operating system)
-             <li> Unauthorized access to data secured by the TEE
-             <li> Remote permanent denial of service (device inoperability: completely permanent
-                  or requiring re-flashing the entire operating system)
-          </ul>
-    </td>
- </tr>
- <tr>
-     <td><strong>High</strong></td>
-     <td>
-          <ul>
-             <li> Remote arbitrary code execution in an unprivileged process
-             <li> Remote access to protected data (data normally accessible only to locally
-                  installed apps that request permission, or that is limited to a privileged
-                  process)
-             <li> Remote bypass of user interaction requirements (access to functionality that
-                  would normally require either user initiation or user permission)
-             <li> Local arbitrary code execution in a privileged process
-             <li> Local permanent denial of service (device inoperability: completely permanent
-                  or requiring re-flashing the entire operating system)
-             <li> A general bypass for a kernel level defense in depth or exploit mitigation
-                  technology
-             <li> Remote temporary device denial of service (remote hang or reboot)
-             <li> Local bypass of user interaction requirements for any developer or security
-                  settings modifications
-             <li> A general bypass for operating system protections that isolate application data
-                  from other applications
-             <li> Lockscreen bypass
-        </ul>
-    </td>
- </tr>
- <tr>
-     <td><strong>Moderate</strong></td>
-     <td>
-          <ul>
-             <li> Remote arbitrary code execution in a constrained process
-             <li> Local bypass of user interaction requirements (access to functionality that
-                  would normally require either user initiation or user permission)
-             <li> Local temporary denial of service (device requires a factory reset)
-             <li> A general bypass for a user level defense in depth or exploit mitigation
-                  technology in a privileged process
-             <li> Remote access to unprotected data (data normally accessible to any locally
-                  installed app)
-             <li> Bypass of Device Protection/ Factory Reset Protection
-        </ul>
-    </td>
- </tr>
- <tr>
-     <td><strong>Low</strong></td>
-     <td>
-          <ul>
-             <li> A general bypass for a user level defense in depth or exploit mitigation
-                  technology in an unprivileged process
-             <li> Local temporary denial of service (can be resolved by booting the device into
-                  Safe Mode and removing the problematic application, or by a factory reset if
-                  the device does not support Safe Mode)
-          </ul>
-     </td>
- </tr>
+  <tr>
+   <th>Rating</th>
+   <th>Consequence of successful exploitation</th>
+  </tr>
+  <tr>
+   <td><strong>Critical</strong></td>
+   <td>
+     <ul>
+       <li>Arbitrary code execution in the TEE</li>
+       <li>Remote arbitrary code execution in a privileged process or the TCB</li>
+       <li>Remote permanent denial of service (device inoperability: completely
+       permanent or requiring re-flashing the entire operating system)</li>
+       <li>Remote bypass of user interaction requirements on package installation or
+       equivalent behavior</li>
+       <li>Secure Boot bypass</li>
+     </ul>
+   </td>
+  </tr>
+  <tr>
+   <td><strong>High</strong></td>
+   <td>
+     <ul>
+      <li>Remote arbitrary code execution in an unprivileged process</li>
+      <li>Arbitrary local code execution in a privileged process or the TCB</li>
+      <li>Unauthorized access to data secured by the TEE</li>
+      <li>Remote access to protected data (data normally accessible only to locally
+      installed apps that request permission, or that is limited to a privileged
+      process)</li>
+      <li>Local permanent denial of service (device inoperability: completely
+      permanent or requiring re-flashing the entire operating system)</li>
+      <li>Remote temporary device denial of service (remote hang or reboot)</li>
+      <li>Remote bypass of user interaction requirements (access to functionality that
+      would normally require either user initiation or user permission)</li>
+      <li>Local bypass of user interaction requirements for any developer or security
+      settings modifications</li>
+      <li>A general bypass for operating system protections that isolate application
+      data from other applications</li>
+      <li>A general bypass for operating system protections that isolate users or
+      profiles from one another</li>
+      <li>Cryptographic Vulnerability in Standard TLS that allows for
+      man-in-the-middle attacks</li>
+      <li>Lockscreen bypass</li>
+     </ul>
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Moderate</strong></td>
+   <td>
+     <ul>
+      <li>Remote arbitrary code execution in a constrained process</li>
+      <li>Local arbitrary code execution in an unprivileged process</li>
+      <li>A general bypass for a defense in depth or exploit mitigation technology in
+      a privileged process, the TCB, or the TEE</li>
+      <li>Bypass of restrictions on a constrained process</li>
+      <li>Remote access to unprotected data (data normally accessible to any locally
+      installed app)</li>
+      <li>Local access to protected data (data normally accessible only to locally
+      installed apps that request permission, or that is limited to a privileged
+      process)</li>
+      <li>Local bypass of user interaction requirements (access to functionality that
+      would normally require either user initiation or user permission)</li>
+      <li>Local permanent denial of service (device requires a factory reset)</li>
+      <li>Cryptographic Vulnerability in standard crypto primitives that allows
+      leaking of plaintext (not primitives used in TLS)</li>
+      <li>Bypass of Device Protection/ Factory Reset Protection</li>
+      <li>Bypass of Carrier Restrictions</li>
+      <li>Targeted prevention of access to emergency services</li>
+     </ul>
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Low</strong></td>
+   <td>
+     <ul>
+      <li>Local arbitrary code execution in a constrained process</li>
+      <li>Cryptographic Vulnerability in non-standard usage</li>
+      <li>A general bypass for a user level defense in depth or exploit
+      mitigation technology in an unprivileged process</li>
+     </ul>
+   </td>
+  </tr>
+  <tr>
+   <td><strong>No Security Impact (NSI)</strong></td>
+   <td>
+     <ul>
+       <li>A vulnerability whose impact has been mitigated by one or more rating
+       modifiers or version-specific architecture changes such that the effective
+       severity is below Low, although the underlying code issue may remain</li>
+     </ul>
+   </td>
+  </tr>
 </table>
 
 
-<h4 id=local_vs_remote>Local vs. remote</h4>
+<h4 id="local_vs_remote">Local vs. remote</h4>
 
 <p>A remote attack vector indicates the bug could be exploited without installing
 an app or without physical access to the device. This includes bugs that could
@@ -196,26 +222,45 @@ physical access to the device, for example a bug in a lock screen or one that
 requires plugging in a USB cable. The Android security team also considers
 NFC-based attacks as local.</p>
 
-<h3 id=rating_modifiers>Rating modifiers</h3>
+<h3 id="rating_modifiers">Rating modifiers</h3>
 <p>While the severity of security vulnerabilities is often easy to identify,
-ratings may change based on circumstances.  </p>
+ratings may change based on circumstances.</p>
 <table>
- <tr>
-    <th>Reason</th>
-    <th>Effect</th>
- </tr>
- <tr>
-    <td>Requires running as a privileged process to execute the attack</td>
-    <td>-1 Severity</td>
- </tr>
- <tr>
-    <td>Vulnerability-specific details limit the impact of the issue </td>
-    <td>-1 Severity</td>
- </tr>
+  <tr>
+   <th>Reason</th>
+   <th>Effect</th>
+  </tr>
+  <tr>
+   <td>Requires running as a privileged process to execute the attack</td>
+   <td>-1 Severity</td>
+  </tr>
+  <tr>
+   <td>Vulnerability-specific details limit the impact of the issue</td>
+   <td>-1 Severity</td>
+  </tr>
+  <tr>
+   <td>Compiler or platform configurations mitigate a vulnerability in the
+   source code</td>
+   <td>Moderate Severity if the underlying vulnerability is Moderate or higher</td>
+  </tr>
+  <tr>
+   <td>Requires tamper-evident physical access</td>
+   <td>-2 Severity</td>
+  </tr>
+  <tr>
+   <td>If no SELinux domain can conduct the operation under the Google-provided
+   SEPolicy</td>
+   <td>No Security Impact</td>
+  </tr>
 </table>
 
+<p class="note">
+<strong>Note</strong>: A CVE may not be issued for issues assessed as Low or NSI.
+</p>
 
-<h3 id=affected_component>Affected component</h3>
+
+
+<h3 id="affected_component">Affected component</h3>
 
 <p>The development team responsible for fixing the bug depends on which component
 the bug is in. It could be a core component of the Android platform, a kernel
@@ -231,24 +276,23 @@ fixed in our internal repositories first.</p>
 or kernel will require an over-the-air (OTA) firmware update that each OEM will
 need to push. A bug in an app or library published in Google Play (e.g., Gmail,
 Google Play Services, WebView in Lollipop and later versions) can be sent to
-Android users as an update from Google Play. </p>
+Android users as an update from Google Play.</p>
 
-<h2 id=notifying_partners>Notifying partners</h2>
+<h2 id="notifying_partners">Notifying partners</h2>
 
-<p>When a moderate or higher severity security vulnerability in AOSP is fixed,
-we'll notify Android partners of issue details and provide patches for a minimum
-of the most recent three Android releases. The Android security team currently
-provides patches for Android versions 4.4 (KitKat), 5.0 (Lollipop), 5.1
-(Lollipop MR1), and 6.0 (Marshmallow). This list of backport-supported versions
-changes with each new Android release.</p>
+<p>When a security vulnerability in AOSP is fixed in an Android Security
+Bulletin, we'll notify Android partners of issue details and provide patches.
+The Android security team currently provides patches for Android versions 4.4
+(KitKat) and above. This list of backport-supported versions changes with each
+new Android release.</p>
 
-<h2 id=releasing_code_to_aosp>Releasing code to AOSP</h2>
+<h2 id="releasing_code_to_aosp">Releasing code to AOSP</h2>
 
 <p>If the security bug is in an AOSP component, the fix will be pushed out to AOSP
 after the OTA is released to users. Fixes for low-severity issues may be
 submitted directly to the AOSP master branch before a fix is available.</p>
 
-<h2 id=android_updates>Receiving Android updates</h2>
+<h2 id="android_updates">Receiving Android updates</h2>
 
 <p>Updates to the Android system are generally delivered to devices through
 OTA update packages. These updates may come from the OEM who
@@ -258,7 +302,7 @@ carrier technical acceptance (TA) testing procedure. Google also publishes <a
 href="https://developers.google.com/android/nexus/images">Nexus factory
 images</a> that can be side-loaded to devices.</p>
 
-<h2 id=updating_google_services>Updating Google services</h2>
+<h2 id="updating_google_services">Updating Google services</h2>
 
 <p>In addition to providing patches for security bugs, the Android security team
 also review security bugs to determine if there are other ways to protect
@@ -268,7 +312,7 @@ from outside of Google Play, devices with Google Play Services may also use the
 <a href="https://support.google.com/accounts/answer/2812853">Verify Apps</a>
 feature to warn users about applications that may be potentially harmful.</p>
 
-<h2 id=other_resources>Other resources</h2>
+<h2 id="other_resources">Other resources</h2>
 
 <p>Information for Android application developers: <a
 href="https://developer.android.com">https://developer.android.com</a></p>
@@ -278,7 +322,7 @@ sites. Good places to start:<br>
 <a href="/security/index.html">https://source.android.com/security/index.html</a><br>
 <a href="https://developer.android.com/training/articles/security-tips.html">https://developer.android.com/training/articles/security-tips.html</a></p>
 
-<h3 id=reports>Reports</h3>
+<h3 id="reports">Reports</h3>
 <p>Sometimes the Android Security team publishes reports or whitepapers. Here are some of the most recent.</p>
 <ul>
   <li><a href="/security/reports/Google_Android_Security_2016_Report_Final.pdf">
@@ -311,7 +355,5 @@ sites. Good places to start:<br>
   <li><a href="/security/reports/Android-Bootcamp-2016-Android-Attack-Team.pdf">
       Android attack team</a></li>
 </ul>
-
-
   </body>
 </html>
