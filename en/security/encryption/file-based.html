@@ -416,11 +416,10 @@ many <a href="https://android.googlesource.com/platform/cts/+/nougat-cts-release
 CTS encryption tests</a>.
 </p>
 <p>
-Once the kernel builds for your board, it should be tested by building an x86
-kernel that can be tested using QEMU. This will allow the implementation to be
-tested using
-<a hre="https://git.kernel.org/cgit/fs/ext2/xfstests-bld.git/plain/quick-start?h=META">
-xfstest</a>. Test the crypto support using:
+Once the kernel builds for your board, also build for x86 and run under QEMU in
+order to test with <a
+hre="https://git.kernel.org/cgit/fs/ext2/xfstests-bld.git/plain/quick-start?h=META">
+xfstest</a> by using:
 </p>
 <pre>
 $ kvm-xfstests -c encrypt -g auto
