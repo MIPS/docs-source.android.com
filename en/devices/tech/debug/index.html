@@ -92,6 +92,13 @@ just the thread that caught the signal) and a full memory map.</p>
 <p>For more information about diagnosing native crashes and tombstones, see
 <a href="/devices/tech/debug/native-crash.html">Diagnosing Native Crashes</a></p>
 
+<h3>Getting a stack trace/tombstone from a running process</h3>
+
+<p>You can also ask <code>debuggerd</code> to operate on a running process by invoking it from
+the command line. Given a PID it will dump a full tombstone to stdout, or you can use
+<code>-b</code> (short for <code>--backtrace</code>) to just get the stack for every thread in the
+given process.
+
 <h2 id=native>Native Debugging with GDB</h2>
 
 <h3 id=running>Debugging a running app</h3>
@@ -138,8 +145,11 @@ The error messages from <code>gdb</code> if you made the wrong choice are unhelp
 attach <code>gdb</code>, set the appropriate property:</p>
 
 <pre class="no-pretty-print">
-$ adb shell setprop debug.db.uid 999999                 # &lt;= M
-$ adb shell setprop debug.debuggerd.wait_for_gdb true   # &gt; M
+# Android 7.0 Nougat and later.
+$ adb shell setprop debug.debuggerd.wait_for_gdb true
+
+# Android 6.0 Marshmallow and earlier.
+$ adb shell setprop debug.db.uid 999999
 </pre>
 
 <p>At the end of the usual crash output, <code>debuggerd</code> will give you
