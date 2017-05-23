@@ -128,8 +128,8 @@ are used during the construction of your dm-verity mapping table.</p>
 <p>Build the dm-verity mapping table, which identifies the block device (or target)
 for the kernel and the location of the hash tree (which is the same value.) This
 mapping is used for <code>fstab</code> generation and booting. The table also identifies
-the size of the blocks and the hash_start, or the offset in hash size blocks
-(length of layer 0).</p>
+the size of the blocks and the hash_start, the start location of the hash tree
+(specifically, its block number from the beginning of the image).</p>
 
 <p>See <a href="https://code.google.com/p/cryptsetup/wiki/DMVerity">cryptsetup</a> for a
 detailed description of the verity target mapping table fields.</p>
