@@ -130,13 +130,21 @@ the build-time property: <code>ro.product.first_api_level</code>. The value of t
 property is the first API level the device was commercially launched with.</p>
 
 <p>OEMs can add <code>PRODUCT_PROPERTY_OVERRIDES</code> into their device.mk file to set
-this property, as shown in the following example: </p> 
+this property, as shown in the following example: </p>
 
 <pre>
 #ro.product.first_api_level indicates the first api level, device has been commercially launched on.
 PRODUCT_PROPERTY_OVERRIDES +=\
 ro.product.first_api_level=21
 </pre>
+
+<aside class="note">
+<b>Note:</b> The property ro.product.first_api_level should be unset (0) for the first build of a
+product, and set to the correct API level value for all subsequent builds. This
+way the property can correctly identify a new product, and we have lost no
+information about the first API level of the product (0 value implies
+ro.product.first_api_level = Build.VERSION.SDK_INT).
+</aside>
 
 <h3 id=cts-shim-apps>CTS Shim apps</h3>
 

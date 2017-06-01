@@ -33,12 +33,14 @@ issuing the command:getenforce</p>
 <p>This will print the global SELinux mode: either Enforcing or
 Permissive. Please note, this command shows only the global SELinux mode. To
 determine the SELinux mode for each domain, you must examine the corresponding
-files or run the latest version of <code>sepolicy-analyze</code> with the appropriate (-p) flag, present in /platform/system/sepolicy/tools/.</p>
+files or run the latest version of <code>sepolicy-analyze</code> with the
+appropriate (-p) flag, present in /platform/system/sepolicy/tools/.</p>
 
 <h2 id=reading_denials>Reading denials</h2>
 
-<p>Then check for errors. Errors are routed as event logs to dmesg and <code>logcat</code> and are viewable locally on the device. Manufacturers should examine the
-SELinux output to dmesg on these devices and refine settings prior to public
+<p>Then check for errors. Errors are routed as event logs to dmesg and
+<code>logcat</code> and are viewable locally on the device. Manufacturers
+should examine the SELinux output to dmesg on these devices and refine settings prior to public
 release in permissive mode and eventual switch to enforcing mode. SELinux log
 messages contain "avc:" and so may easily be found with <code>grep</code>. It is
 possible to capture the ongoing denial logs by running <code>cat /proc/kmsg</code>
@@ -74,7 +76,7 @@ run at the time the denial was generated. In this case, it’s a pretty good hin
 
 <pre>
 $ adb shell su root dmesg | grep 'avc: '
-&lt;5> type=1400 audit: avc:  denied  { read write } for  pid=177
+&lt;5&gt; type=1400 audit: avc:  denied  { read write } for  pid=177
 comm="rmt_storage" name="mem" dev="tmpfs" ino=6004 scontext=u:r:rmt:s0
 tcontext=u:object_r:kmem_device:s0 tclass=chr_file
 </pre>
@@ -83,17 +85,20 @@ tcontext=u:object_r:kmem_device:s0 tclass=chr_file
 <p>Here are the key elements from this denial:</p>
 
 <ul>
-  <li><em>Action</em> - the attempted action is highlighted in brackets, <code>read write</code> or <code>setenforce</code>. 
-  <li><em>Actor</em> - The <code>scontext</code> (source context) entry represents the actor, in this case the<code> rmt_storage</code> daemon.
-  <li><em>Object</em> - The <code>tcontext</code> (target context) entry represents the object being acted upon, in this case
-kmem.
-  <li><em>Result</em> - The <code>tclass</code> (target class) entry indicates the type of object being acted upon, in this
-case a <code>chr_file</code> (character device).
+  <li><em>Action</em> - the attempted action is highlighted in brackets,
+    <code>read write</code> or <code>setenforce</code>.
+  <li><em>Actor</em> - The <code>scontext</code> (source context) entry represents
+    the actor, in this case the<code> rmt_storage</code> daemon.
+  <li><em>Object</em> - The <code>tcontext</code> (target context) entry represents
+    the object being acted upon, in this case kmem.
+  <li><em>Result</em> - The <code>tclass</code> (target class) entry indicates the type
+    of object being acted upon, in this case a <code>chr_file</code> (character device).
 </ul>
 
 <h2 id=switching_to_permissive>Switching to permissive</h2>
 
-<p class="caution"><strong>Important:</strong> Permissive mode is not supported on production devices. CTS tests confirm
+<p class="caution"><strong>Important:</strong> Permissive mode is not supported
+on production devices. CTS tests confirm
 enforcing mode is enabled.</p>
 
 <p>To turn a device’s SELinux enforcement into globally permissive via ADB, as
@@ -112,8 +117,10 @@ androidboot.selinux=enforcing
 
 <h2 id=using_audit2allow>Using audit2allow</h2>
 
-<p>The <code>selinux/policycoreutils/audit2allow</code> tool takes <code>dmesg</code> denials and converts them into corresponding SELinux policy statements. As
-such, it can greatly speed SELinux development. <code>audit2allow</code> is shipped as part of the Android source tree and
+<p>The <code>selinux/policycoreutils/audit2allow</code> tool takes
+<code>dmesg</code> denials and converts them into corresponding SELinux policy
+statements. As such, it can greatly speed SELinux development.
+<code>audit2allow</code> is shipped as part of the Android source tree and
 is compiled automatically when you build Android from source.</p>
 
 <p>To use it, run:</p>
@@ -123,8 +130,9 @@ $ adb shell su root dmesg | audit2allow -p $OUT/root/sepolicy
 </pre>
 
 <p>Nevertheless, care must be taken to examine each potential addition for
-overreaching permissions. For example, feeding audit2allow the <code>rmt_storage</code> denial shown earlier results in the following suggested SELinux policy
-statement:</p>
+overreaching permissions. For example, feeding audit2allow the
+<code>rmt_storage</code> denial shown earlier results in the following
+suggested SELinux policy statement:</p>
 
 <pre>
 #============= shell ==============
@@ -134,10 +142,12 @@ allow rmt kmem_device:chr_file { read write };
 </pre>
 
 
-<p>This would grant <code>rmt</code> the ability to write kernel memory, a glaring security hole. Often the <code>audit2allow</code> statements are only a starting point, after which changes to the source
-domain, the label of the target and the incorporation of proper macros may be
-required to arrive at a good policy. Sometimes the denial being examined should
-not result in any policy changes at all, but rather the offending application
+<p>This would grant <code>rmt</code> the ability to write kernel memory, a
+glaring security hole. Often the <code>audit2allow</code> statements are only a
+starting point. After employing these statements, you may need to change the
+source domain and the label of the target, as well as incorporate proper
+macros, to arrive at a good policy. Sometimes the denial being examined should
+not result in any policy changes at all; rather the offending application
 should be changed.</p>
 
   </body>
