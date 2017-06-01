@@ -47,13 +47,17 @@ simplifying maintenance.</p>
   <tr>
     <td>Product</td>
     <td>myProduct, myProduct_eu, myProduct_eu_fr, j2, sdk</td>
-    <td><p>The product layer defines the feature specification of a shipping product such as the modules to build,
-    locales supported, and the configuration for various locales. In other words, this is the name of the
-    overall product. Product-specific variables are defined in product definition Makefiles. A product
-     can inherit from other product definitions,
-    which simplifies maintenance. A common method is to create a base product that contains features that apply
-    for all products, then creating product variants based on that base product. For example, you can have
-    two products that differ only by their radios (CDMA vs GSM) inherit from the same base product that does not define a radio.
+    <td>The product layer defines the feature specification of a shipping
+    product such as the modules to build, locales supported, and the
+    configuration for various locales. In other words, this is the name
+    of the overall product. Product-specific variables are defined in
+    product definition Makefiles. A product can inherit from other
+    product definitions, which simplifies maintenance. A common method
+    is to create a base product that contains features that apply for
+    all products, then creating product variants based on that base
+    product. For example, you can have two products that differ only by
+    their radios (CDMA vs GSM) inherit from the same base product that
+    does not define a radio.
 </td>
 
   </tr>
@@ -65,12 +69,14 @@ simplifying maintenance.</p>
     devices probably include QWERTY keyboards whereas devices sold in France
     probably include AZERTY keyboards. This layer also represents the bare
     schematics of a product. These include the peripherals on the board and their
-    configuration. The names used are merely codes for different board/device configurations.</td>
+    configuration. The names used are merely codes for different board/device
+    configurations.</td>
   </tr>
 <tr>
     <td>Arch</td>
     <td>arm, x86, mips, arm64, x86_64, mips64</td>
-    <td>The architecture layer describes the processor configuration and ABI (Application Binary Interface) running on the board. </td>
+    <td>The architecture layer describes the processor configuration and ABI
+    (Application Binary Interface) running on the board. </td>
   </tr>
 </table>
 
@@ -91,43 +97,48 @@ it is required by product configuration with <code>PRODUCT_PACKAGES</code>.
 <table border=1>
 <tr>
     <td>
-        <code>eng<code>
+        <code>eng</code>
     </td>
     <td>
         This is the default flavor.
-        <ul>
-        <li>Installs modules tagged with: <code>eng</code> and/or <code>debug</code>.
-        <li>Installs modules according to the product definition files, in addition to tagged modules.</li>
-        <li><code>ro.secure=0</code>
-        <li><code>ro.debuggable=1</code>
-        <li><code>ro.kernel.android.checkjni=1</code>
-        <li><code>adb</code> is enabled by default.
+<ul>
+<li>Installs modules tagged with: <code>eng</code> and/or <code>debug</code>.</li>
+<li>Installs modules according to the product definition files, in
+addition to tagged modules.</li>
+<li><code>ro.secure=0</code></li>
+<li><code>ro.debuggable=1</code></li>
+<li><code>ro.kernel.android.checkjni=1</code></li>
+<li><code>adb</code> is enabled by default.</li>
+</ul>
     </td>
 </tr>
 <tr>
     <td>
-        <code>user<code>
+        <code>user</code>
     </td>
     <td>
         This is the flavor intended to be the final release bits.
-        <ul>
-        <li>Installs modules tagged with <code>user</code>.</li>
-        <li>Installs modules according to the product definition files, in addition to tagged modules.</li>
-        <li><code>ro.secure=1</code> </li>
-        <li><code>ro.debuggable=0</code> </li>
-        <li><code>adb</code> is disabled by default.</li>
+<ul>
+<li>Installs modules tagged with <code>user</code>.</li>
+<li>Installs modules according to the product definition files, in
+addition to tagged modules.</li>
+<li><code>ro.secure=1</code> </li>
+<li><code>ro.debuggable=0</code> </li>
+<li><code>adb</code> is disabled by default.</li>
+</ul>
     </td>
 </tr>
 <tr>
     <td>
-        <code>userdebug<code>
+        <code>userdebug</code>
     </td>
     <td>
         The same as <code>user</code>, except:
-        <ul>
-        <li>Also installs modules tagged with <code>debug</code>.
-        <li><code>ro.debuggable=1</code>
-        <li><code>adb</code> is enabled by default.
+<ul>
+<li>Also installs modules tagged with <code>debug</code>.</li>
+<li><code>ro.debuggable=1</code></li>
+<li><code>adb</code> is enabled by default.</li>
+</ul>
     </td>
 </tr>
 </table>
@@ -180,7 +191,7 @@ product definition Makefile that declares product-specific information about
 the device such as the name and model. You can view the
 <code>device/moto/shamu</code> directory to see how all of this is setup.
 </p>
-<h3 id="makefiles">Write the Makefiles</h2>
+<h3 id="makefiles">Write the Makefiles</h3>
 <p>
   The following steps describe how to set up product Makefiles in a way similar
 to that of the Nexus 6 product line:

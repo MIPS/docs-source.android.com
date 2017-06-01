@@ -22,112 +22,85 @@
   -->
 
 
+<p><a href="http://en.wikipedia.org/wiki/Latency_%28engineering%29">Latency</a>
+is an important system performance metric. While many kinds of
+<a href="latency.html">audio latency</a> metrics exist, one useful and
+well-understood metric is
+<a href="latency_measure.html#measuringRoundTrip">round-trip latency</a>,
+defined as the time it takes for an audio signal to enter the input of a mobile
+device, be processed by an app running on the application processor, and exit
+the output.</p>
 
-<p>
-This article gives round-trip audio latency measurements for select devices and
-platform versions.
-</p>
+<img src="images/round_trip_on_device.png" alt="Round-trip audio latency on
+device" id="figure1" />
+<p class="img-caption"><strong>Figure 1.</strong> Round-trip audio latency on
+device: T<sub>output</sub> - T<sub>input</sub></p>
 
-<h2 id="definition">Definition</h2>
-
-<p>
-<a href="http://en.wikipedia.org/wiki/Latency_%28engineering%29">Latency</a>
-is an important system performance metric. There are many kinds
-of <a href="latency.html">audio latency</a>
-metrics.  One useful and well-understood metric is
-<a href="latency_measure.html#measuringRoundTrip">round-trip latency</a>.
-Round-trip latency is defined as the time it takes for
-an audio signal to enter the input of a mobile device, be processed
-by an app running on the application processor, and exit the output.
-</p>
-
-<img src="images/round_trip_on_device.png" alt="Round-trip audio latency on device" id="figure1" />
-<p class="img-caption">
-  <strong>Figure 1.</strong> Round-trip audio latency on device: T<sub>output</sub> - T<sub>input</sub>
-</p>
+<p>This page provides round-trip audio latency measurements for select
+Nexus/Pixel devices and Android platform versions.</p>
 
 <h2 id="why">Why we measure latency</h2>
 
-<p>
-We measure and report latency so Android
-app developers will have the data they need to make informed decisions about available
-latency on actual devices.  By sharing these numbers for select Nexus devices, we also hope to
-encourage the entire Android community to measure, publish, and reduce
-latency on <i>all</i> devices.
-Please join us in our commitment to reducing audio latency.
-</p>
+<p>Google measures and reports latency so Android application developers have
+the data they need to make informed decisions about available latency on actual
+devices. By sharing latency numbers for select Nexus and Pixel devices, we hope
+to encourage the entire Android community to measure, publish, and reduce
+latency on <em>all</em> Android devices. Please join us in our commitment to
+reducing audio latency!</p>
 
 <h2 id="app">Application impact on latency</h2>
 
-<p>
-There are two kinds of delays that a signal processing stage can add to latency:
-algorithmic delay and computational delay.
-Algorithmic delay is inherent and does not vary with the CPU.
-An example is the delay added by a
-<a href="http://en.wikipedia.org/wiki/Finite_impulse_response">finite impulse response</a>
-(FIR) filter.
-Computational delay is related to the number of CPU cycles required.
-For example, attenuation of a signal is usually done by a multiplication operation,
-and this multiplication will take a varying number of cycles depending on the CPU.
-</p>
+<p>Signal processing can add the following types of delay to latency:</p>
+<ul>
+<li><strong>Algorithmic</strong>. This delay is inherent and does not vary with
+the CPU. An example is the delay added by a
+<a href="http://en.wikipedia.org/wiki/Finite_impulse_response">finite impulse
+response</a> (FIR) filter.</li>
+<li><strong>Computational</strong>. This delay is related to the number of
+required CPU cycles. For example, attenuation of a signal is usually done by a
+multiplication operation that takes a varying number of cycles depending on the
+CPU.</li>
+</ul>
 
 <h2 id="how">How we measure</h2>
 
-<p>
-The measurements below were taken with the
-<a href="loopback.html">Dr. Rick O'Rang audio loopback dongle</a>
-and an
-<a href="latency_measure.html#larsenTest">audio feedback (Larsen effect) test</a>.
-</p>
+<p>We made the measurements listed on this page using the
+<a href="loopback.html">Dr. Rick O'Rang audio loopback dongle</a> and an
+<a href="latency_measure.html#larsenTest">audio feedback (Larsen effect)
+test</a>. Measurements assume the application signal processing adds zero
+algorithmic delay and near-zero computational delay.</p>
 
-<p>
-For our measurements, we assume the application signal processing
-adds zero algorithmic delay and near zero computational delay.
+<p>We measure round-trip latency via the headset connector for several reasons:
 </p>
-
-<p>
-We measure round-trip latency via the headset connector for several reasons:
-</p>
+<img src="images/round_trip_via_headset_connector.png" alt="Round-trip latency
+via headset connector" id="figure2" />
+<p class="img-caption"><strong>Figure 2.</strong> Round-trip latency via headset
+connector: T<sub>output</sub> - T<sub>input</sub></p>
 <ul>
-  <li>
-  There are important music applications, such as guitar and voice processing,
-  that use the headset connector.
-  </li>
-  <li>
-  Measuring round-trip latency of the on-device microphone and speaker can
-  be cumbersome, as it is difficult to keep a feedback loop in open air from entering
-  uncontrolled oscillation.
-  </li>
-  <li>
-  The on-device transducers are small and sacrifice frequency response
-  to achieve their small size.  To compensate, digital signal processing is
-  applied but increases algorithmic delay for the on-device path.
-  </li>
+<li>Important music applications (such as guitar and voice processing) use the
+headset connector.</li>
+<li>Measuring round-trip latency of the on-device microphone and speaker can be
+cumbersome, as it is difficult to keep a feedback loop in open air from entering
+uncontrolled oscillation.</li>
+<li>On-device transducers are small and sacrifice frequency response to achieve
+their small size. To compensate, digital signal processing is applied but
+increases algorithmic delay for the on-device path.</li>
 </ul>
 
-<p>
-There are cases where on-device microphone and speaker latencies
-<i>do</i>
-matter, but they are usually for one direction, not round-trip.
-Techniques for measuring unidirectional latency are described at
+<p>There are cases where on-device microphone and speaker latencies <em>do</em>
+matter, but they are usually for one direction, not round-trip. Techniques for
+measuring unidirectional latency are described at
 <a href="latency_measure.html#measuringOutput">Measuring Output Latency</a>
 and
-<a href="latency_measure.html#measuringInput">Measuring Input Latency</a>.
-</p>
-
-<img src="images/round_trip_via_headset_connector.png" alt="Round-trip latency via headset connector" id="figure2" />
-<p class="img-caption">
-  <strong>Figure 2.</strong> Round-trip latency via headset connector: T<sub>output</sub> - T<sub>input</sub>
-</p>
+<a href="latency_measure.html#measuringInput">Measuring Input Latency</a>.</p>
 
 <h2 id="measurements">Example measurements</h2>
 
-<p>
-The measurements shown are specific to a
-<a href="/source/build-numbers.html">build number</a>.
-Devices are listed in approximate order of initial release and within device by platform version.
-The test application uses the Android native audio API based on OpenSL ES.
-</p>
+<p>The measurements listed below are specific to a
+<a href="/source/build-numbers.html">build number</a>. Devices are listed in
+approximate order of initial release and by platform version; you can also
+<a href="#chart">view latencies in a chart</a>. The test application uses the
+Android native audio API based on OpenSL ES.</p>
 
 <table>
 <tr>
@@ -420,14 +393,31 @@ The test application uses the Android native audio API based on OpenSL ES.
   <td>18</td>
 </tr>
 
+<tr>
+  <td>Pixel</td>
+  <td>7.1.2</td>
+  <td>NHG47L</td>
+  <td>48000</td>
+  <td>192</td>
+  <td>4</td>
+  <td>18</td>
+</tr>
+
+<tr>
+  <td>Pixel XL</td>
+  <td>7.1.2</td>
+  <td>NHG47L</td>
+  <td>48000</td>
+  <td>192</td>
+  <td>4</td>
+  <td>18</td>
+</tr>
+
 </table>
 
-<p></p>
-<p></p>
+<a id=chart></a>
+<img src="/devices/audio/images/round-trip-latencies.png" />
+<p class="img-caption"><strong>Figure 3.</strong> Round trip latencies.</p>
 
-    <p></p>
-    <img src="/devices/audio/images/round-trip-latencies.png" />
-    <p class="img-caption">
-<strong>Figure 3.</strong> Round trip latencies.</p>
-  </body>
+</body>
 </html>
