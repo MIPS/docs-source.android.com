@@ -77,12 +77,9 @@ HiKey960 board.</p>
 <pre>$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master
 $ repo sync -j24</pre></li>
 <li>Download and extract binaries into the Android source tree:
-<pre>$ wget https://dl.google.com/dl/android/aosp/arm-hikey960-NOU-6eafa750.tgz
-$ tar xzf arm-hikey960-NOU-6eafa750.tgz
-$ ./extract-arm-hikey960.sh
-$ wget https://dl.google.com/dl/android/aosp/hisilicon-hikey960-NOU-5db76395.tgz
-$ tar xzf hisilicon-hikey960-NOU-5db76395.tgz
-$ ./extract-hisilicon-hikey960.sh</pre></li>
+<pre>$ wget https://dl.google.com/dl/android/aosp/arm-hikey960-NOU-7ad3cccc.tgz
+$ tar xzf arm-hikey960-NOU-7ad3cccc.tgz
+$ ./extract-arm-hikey960.sh</pre></li>
 <li>Build:
 <pre>$ . ./build/envsetup.sh
 $ lunch hikey960-userdebug
@@ -142,9 +139,7 @@ hikey-kernel directory as file Image.gz-hikey960.</li></ul>
 <p>Edit the <code>device/linaro/hikey/hikey960/BoardConfig.mk</code> parameter
 <code>BOARD_KERNEL_CMDLINE</code> and configure the <code>video</code> setting.
 Example setting for a 24" monitor is <code>video=HDMI-A-1:1280x800@60</code>.
-For a
-<a href="https://www.arrow.com/en/products/96boards-display-7/linksprite-technologies-inc">LinkSprite
-7-inch Display Kit</a>, the setting is <code>video=HDMI-A-1:800x480@60</code>.</p>
+</p>
 
 <h2 id="620hikey">HiKey boards</h2>
 
@@ -176,8 +171,8 @@ board.</p>
 <pre>$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master
 $ repo sync -j24</pre></li>
 <li>Download and extract HDMI binaries into the Android source tree:
-<pre>$ wget <a href="https://dl.google.com/dl/android/aosp/linaro-hikey-20160226-67c37b1a.tgz">https://dl.google.com/dl/android/aosp/linaro-hikey-20160226-67c37b1a.tgz</a>
-$ tar xzf linaro-hikey-20160226-67c37b1a.tgz
+<pre>$ wget <a href="https://dl.google.com/dl/android/aosp/linaro-hikey-20170523-4b9ebaff.tgz">https://dl.google.com/dl/android/aosp/linaro-hikey-20170523-4b9ebaff.tgz</a>
+$ tar xzf linaro-hikey-20170523-4b9ebaff.tgz
 $ ./extract-linaro-hikey.sh</pre></li>
 <li>Install mcopy utility:
 <pre>$ apt-get install mtools</pre></li>
