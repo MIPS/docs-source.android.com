@@ -40,7 +40,8 @@ landing_page:
       buttons:
       - label: Test devices
         path: /compatibility/
-  - classname: devsite-landing-row-large-headings devsite-landing-row-colored devsite-landing-row-grey devsite-landing-row-no-image-background tf-about-row devsite-landing-row-75
+  - classname: devsite-landing-row-large-headings devsite-landing-row-no-image-background tf-about-row devsite-landing-row-75
+    background: grey
     items:
     - heading: About the Android Open Source Project
       description: |

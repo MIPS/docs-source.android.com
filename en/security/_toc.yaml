@@ -37,6 +37,8 @@ toc:
     path: /security/advisory/
   - title: 2017 Bulletins
     section:
+    - title: June
+      path: /security/bulletin/2017-06-01
     - title: May
       path: /security/bulletin/2017-05-01
     - title: April
