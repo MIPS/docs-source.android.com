@@ -237,16 +237,6 @@ and can be used as a starting point for work on Intel x86_64 chipsets.</li>
 and can be used as a starting point for work on HiSilicon 620 chipsets.</li>
 </ul>
 
-<h2 id="downloading-a-prebuilt-gcc">Downloading a prebuilt gcc</h2>
-<p>Ensure the prebuilt toolchain is in your path:</p>
-<pre>$ export PATH=$(pwd)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin:$PATH</pre>
-<p>or</p>
-<pre>$ export PATH=$(pwd)/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6/bin:$PATH</pre>
-
-<p>On a Linux host, if you don't have an Android source tree, you can download
-the prebuilt toolchain from:
-<pre>$ git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6</pre>
-
 <h2 id="building">Building the kernel</h2>
 <p>When you know the last commit message for a kernel and have successfully
 downloaded the kernel source and prebuilt gcc, you are ready to build the

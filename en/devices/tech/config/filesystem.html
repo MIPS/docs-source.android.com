@@ -1,6 +1,6 @@
 <html devsite>
   <head>
-    <title>Configuring the File System</title>
+    <title>File DAC Configuration</title>
     <meta name="project_path" value="/_project.yaml" />
     <meta name="book_path" value="/_book.yaml" />
   </head>
@@ -22,56 +22,122 @@
   -->
 
 
+<p>Earlier versions of Android used a system configuration file that was
+not extensible, preventing device manufacturers from adding named binaries to
+specify Discretionary Access Controls (DAC) of ownership, access mode, or
+executable capabilities. This limitation occurred as a result of support for
+Linux kernels 3.14 and higher in which wake lock is enabled via the
+<code>CAP_SUSPEND_BLOCK</code> capability; partner-supplied GPS daemons were
+required to hold this wake lock (and thus have this capability set in the file
+system).</p>
 
-<h2 id=abstract>Abstract</h2>
+<p>As of Android 6.0, <code>fs_config</code> and associated structure definitions
+(<code>system/core/include/private/android_filesystem_config.h</code>) are now
+located in <code>system/core/libcutils/fs_config.c</code> where they can be
+updated or overridden by binary files installed in
+<code>/system/etc/fs_config_dirs</code> and
+<code>/system/etc/fs_config_files</code>. For clarity, Android uses separate
+matching and parsing rules for directories and files (which can use additional
+glob expressions) and handles directories and files in two different tables.
+Structure definitions in <code>system/core/libcutils/fs_config.c</code> not only
+allow runtime reading of directories and files, but the host may use the same
+files during build time to construct filesystem images as
+<code>${OUT}/system/etc/fs_config_dirs</code> and
+<code>${OUT}/system/etc/fs_config_files</code>.</p>
 
-<p>This document describes impending changes to the manner in which the Android
-file system is configured.</p>
+<h2 id=gen-files>Generating override files</h2>
 
-<p>The Android file system configuration file (<code>system/core/include/private/android_filesystem_config.h</code>) is not extensible in that device manufacturers have no means to add their own
-named binaries to the list to specify Discretionary Access Controls (DAC) of
-ownership, access mode, or executable capabilities. This limitation is shown
-with the introduction of support for Linux kernels 3.14 and higher where the
-wake lock is enabled via a capability <code>CAP_SUSPEND_BLOCK</code>; partner-supplied GPS daemons will need to hold this wake lock and thus have
-this capability set in the file system.</p>
+<p>You can generate the aligned binary files
+<code>/system/etc/fs_config_dirs</code> and
+<code>/system/etc/fs_config_files</code> using the
+<code>fs_config_generate</code> tool in <code>build/tools/fs_config</code>. The
+tool uses a <code>libcutils</code> library function
+(<code>fs_config_generate()</code>) to manage DAC requirements into a buffer
+and defines rules for an include file to institutionalize the DAC rules.</p>
 
-<p>Therefore, the Android M release is planned to move both the <code>fs_config</code> inline and the structure definitions in <code>system/core/include/private/android_filesystem_config.h</code> that it feeds on into <code>system/core/libcutils/fs_config.c</code> to be updated or overridden by binary files installed in <code>/system/etc/fs_config_dirs </code>and<code> /system/etc/fs_config_files</code>.</p>
+<p>To use, create an include file in
+<code>device/<em>vendor</em>/<em>device</em>/android_filesystem_config.h</code>
+that acts as the override. The file must use the
+<code>structure fs_path_config</code> format defined in
+<code>system/core/include/private/android_filesystem_config.h</code> with the
+following structure initializations for directory and file symbols:</p>
+<ul>
+<li>For directories, use <code>android<strong>_device</strong>_dirs[]</code>.</li>
+<li>For files, use <code>android<strong>_device</strong>_files[]</code>.</li>
+</ul>
 
-<h2 id=implementation>Implementation</h2>
+<p>When not using <code>android_device_dirs[]</code> and
+<code>android_device_files[]</code>, you can define
+<code>NO_ANDROID_FILESYSTEM_CONFIG_DEVICE_DIRS</code> and <code>NO_ANDROID_FILESYSTEM_CONFIG_DEVICE_FILES</code> (see the
+<a href="#example">example</a> below).</p>
 
-<p>Separate matching and parsing rules exist for directories and files. Files get
-the advantage of utilizing additional glob expressions. Files and Directories
-are handled separately by two different tables.</p>
+<p>You can also specify the
+override file using <code>TARGET_ANDROID_FILESYSTEM_CONFIG_H</code> in the board
+configuration, with an enforced basename of
+<code>android_filesystem_config.h</code>.
 
-<p>The Android M release will remove the <code>fs_config</code> inline and the structure definitions that it feeds on, and place the code and
-default definitions into <code>system/core/libcutils/fs_config.c</code>. The <code>fs_config.c</code> file is modified beyond the basic definition to allow runtime reading of <code>/system/etc/fs_config_dirs</code> and <code>/system/etc/fs_config_files</code> to garner override that the device manufacturer would wish to extend. The same
-files accessed during build time to construct filesystem images as <code>${OUT}/system/etc/fs_config_dirs</code> and <code>${OUT}/system/etc/fs_config_files</code> may be used on the host.</p>
+<h2 id=include-files>Including files</h2>
 
-<p><strong>Caution</strong>: This change is disruptive, as it removes some includes, structures and inline
-definitions; it also adds a need to refer to <code>libcutils</code> instead of running directly from <code>system/core/include/private/android_filesystem_config.h</code>. It also requires all device manufacturers to be informed that the location
-for adjustments for file system configuration has changed.</p>
+<p><code>PRODUCT_PACKAGES</code> must include <code>fs_config_dirs</code>
+and/or <code>fs_config_files</code> to install them to
+<code>/system/etc/fs_config_dirs</code> and
+<code>/system/etc/fs_config_files</code>, respectively.</p>
 
-<p>There is also a tool to generate the aligned binary files <code>/system/etc/fs_config_dirs</code> and <code>/system/etc/fs_config_files</code> content that is delivered on the target.</p>
+<p>The build system searches for custom <code>android_filesystem_config.h</code>
+in <code>$(TARGET_DEVICE_DIR)</code>, where <code>BoardConfig.mk</code> exists.
+If this file exists elsewhere, set board config variable
+<code>TARGET_ANDROID_FILESYSTEM_CONFIG_H</code> to point to that location.</p>
 
-<p>A new function in <code>libcutils</code> - <code>fs_config_generate()</code> - is used to manage the DAC requirements into a buffer. <code>build/tools/fs_config</code> in turn houses the new tool <code>fs_config_generate</code> that uses this library function and defines rules for an include file to
-institutionalize the DAC rules. It expects an include file in <code>device/<vendor>/<device>/android_filesystem_config.h</code> to act as the override in <code>structure fs_path_config</code> format as defined in <code>system/core/include/private/android_filesystem_config.h</code>, except defining the structure initialization for the symbols struct
-fs_path_config android<strong>_device</strong>_dirs[] and struct fs_path_config android<strong>_device</strong>_files[] for directories and files, respectively. See the example below.</p>
-
-<p>The override file may also be specified using <code>TARGET_ANDROID_FILESYSTEM_CONFIG_H </code>in the board configuration, with an enforced basename of <code>android_filesystem_config.h</code>. Finally, <code>PRODUCT_PACKAGES</code> must include <code>fs_config_dirs</code> and/or <code>fs_config_files</code> in order to install them to <code>/system/etc/fs_config_dirs</code> and <code>/system/etc/fs_config_files</code>, respectively.</p>
-
-<h3 id=instructions>Instructions</h3>
-
-<p>Follow these steps to configure the Android file system in the M release and
-later.</p>
+<h2 id=configuring>Configuring</h2>
+<p>To configure the file system in Android 6.0 and higher:</p>
 
 <ol>
-  <li> Create the <code>$(TARGET_DEVICE_DIR)/android_filesystem_config.h</code> file
-  <li> Add the <code>fs_config_dirs</code> and/or <code>fs_config_files</code> to <code>PRODUCT_PACKAGES </code>in the board configuration file (eg: <code>$(TARGET_DEVICE_DIR)/device.mk</code>)
+<li>Create the <code>$(TARGET_DEVICE_DIR)/android_filesystem_config.h</code>
+file.</li>
+<li>Add the <code>fs_config_dirs</code> and/or <code>fs_config_files</code> to
+<code>PRODUCT_PACKAGES </code>in the board configuration file (e.g.,
+<code>$(TARGET_DEVICE_DIR)/device.mk</code>).</li>
 </ol>
 
-<h3 id=example>Example</h3>
+<h2 id=migration-concerns>Migration concerns</h2>
+<p>Migrating system configurations from Android 5.0 and earlier can be
+disruptive. When planning such a migration, keep in mind that Android 6.0:</p>
+<ul>
+<li>Removes some includes, structures, and inline definitions.</li>
+<li>Requires a reference to <code>libcutils</code> instead of running directly
+from <code>system/core/include/private/android_filesystem_config.h</code>.
+Device manufacturer private executables that depend on
+<code>system/code/include/private_filesystem_config.h</code> for the file or
+directory structures or <code>fs_config</code> must add <code>libcutils</code>
+library dependencies.</li>
+<li>Requires device manufacturer private branch copies of the
+<code>system/core/include/private/android_filesystem_config.h</code> with extra
+content on existing targets to move to
+<code>device/<em>vendor</em>/<em>device</em>/android_filesystem_config.h</code>.
+</li>
+<li>As Android reserves the right to apply SELinux Mandatory Access Controls (MAC)
+to configuration files on the target system, implementations that include
+custom target executables using <code>fs_config()</code> must ensure access.</li>
+</ul>
 
-<p>In order to activate an override for the<code> system/bin/glgps</code> daemon to add wake lock support, one would do something like this within the <code>device/<vendor>/<device></code> directory (in patch format, relevant actions are highlighted for clarity):</p>
+<h2 id=example>Example</h2>
+
+<p>This example shows a patch for overriding the <code>system/bin/glgps</code>
+daemon to add wake lock support in the
+<code>device/<em>vendor</em>/<em>device</em></code> directory. Keep the
+following in mind:</p>
+
+<ul>
+<li>Each structure entry is the mode, uid, gid, capabilities, and the name.
+<code>system/core/include/private/android_filesystem_config.h</code> is included
+automatically to provide the manifest #defines (<code>AID_ROOT</code>,
+ <code>AID_SHELL</code>, <code>CAP_BLOCK_SUSPEND</code>).</li>
+<li>The <code>android_device_files[]</code> section includes an action to
+suppress access to <code>system/etc/fs_config_dirs</code> when unspecified,
+which serves as an additional DAC protection for lack of content for directory
+overrides. However, this is weak protection; if someone has control over
+<code>/system</code>, they can typically do anything they want.</li>
+</ul>
 
 <pre>
 diff --git a/android_filesystem_config.h b/android_filesystem_config.h
@@ -130,36 +196,12 @@ index 0c71d21..235c1a7 100644
 -    wpa_supplicant.conf
 +    wpa_supplicant.conf \
 +    fs_config_files
- 
+
  ifeq ($(TARGET_PREBUILT_KERNEL),)
  ifeq ($(USE_SVELTE_KERNEL), true)
 </pre>
 
-<h3 id=checklist>Checklist</h3>
 
-<ol>
-  <li> <code>NO_ANDROID_FILESYSTEM_CONFIG_DEVICE_DIRS</code> and <code>NO_ANDROID_FILESYSTEM_CONFIG_DEVICE_FILES</code> are available to be defined when android_device_dirs[] and
-android_device_files[] is not being filled out.
 
-  <li> Each structure entry is the mode, uid, gid, capabilities and the name. <code>system/core/include/private/android_filesystem_config.h</code> has been included already automatically to provide the manifest defines (<code>AID_ROOT</code>, <code>AID_SHELL</code>, <code>CAP_BLOCK_SUSPEND</code> in the above).
-
-  <li> The action above in the example android_device_files[] to suppress access to <code>system/etc/fs_config_dirs</code> when we have not specified it will act as an additional DAC protection for our
-lack of any content for the directory overrides. It is considered pedantic weak
-protection since if someone has control over<code> /system</code>, they can typically do anything they want.
-
-  <li> The build system searches for the custom <code>android_filesystem_config.h</code> in <code>$(TARGET_DEVICE_DIR)</code>, in which the BoardConfig.mk exists. You can also set board config variable <code>TARGET_ANDROID_FILESYSTEM_CONFIG_H</code> to point to the file, if it exists elsewhere.
-
-  <li> On the target system, we reserve the right to apply SELinux Mandatory Access
-Controls (MAC) to these configuration files. Please check if you have custom
-target executables that utilize fs_config() to make sure you permit access if
-not provided otherwise.
-</ol>
-
-<h3 id=architectural_concerns>Architectural Concerns</h3>
-
-<ul>
-  <li> Device manufacturer private branch copies of the <code>system/core/include/private/android_filesystem_config.h</code> with extra content on existing targets will have to move over to: <code>device/<vendor>/<device>/android_filesystem_config.h</code>
-  <li> Device manufacturer private executables that depend on <code>system/code/include/private_filesystem_config.h</code> for the file or directory structures or <code>fs_config</code> will have to add <code>libcutils</code> library dependencies.
-
-  </body>
+</body>
 </html>
