@@ -27,7 +27,7 @@ toc:
     path: /devices/tech/config/carrier
   - title: Connectivity Tests
     path: /devices/tech/config/connect_tests
-  - title: File System
+  - title: File DAC Configuration
     path: /devices/tech/config/filesystem
   - title: Kernel Configuration
     path: /devices/tech/config/kernel
@@ -107,6 +107,10 @@ toc:
     path: /devices/tech/debug/netstats
   - title: RAM Use
     path: /devices/tech/debug/procstats
+  - title: Strace
+    path: /devices/tech/debug/strace
+  - title: Valgrind
+    path: /devices/tech/debug/valgrind
 - title: Device Administration
   section:
   - title: Overview
