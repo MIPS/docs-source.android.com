@@ -32,8 +32,8 @@ landing_page:
       buttons:
       - label: 测试设备
         path: /compatibility/
-  - classname: devsite-landing-row-large-headings devsite-landing-row-colored devsite-landing-row-grey
-      devsite-landing-row-no-image-background tf-about-row devsite-landing-row-75
+  - classname: devsite-landing-row-large-headings devsite-landing-row-no-image-background tf-about-row devsite-landing-row-75
+    background: grey
     items:
     - heading: Android 开放源代码项目简介
       description: |
