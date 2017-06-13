@@ -70,96 +70,114 @@ For information about using repo to download source, see <a href="/source/downlo
 <a href="/source/using-repo.html">Using Repo</a>.</p>
 <h2 id="synchronizing-your-client">Synchronizing your client</h2>
 <p>To synchronize the files for all available projects: </p>
-<pre><code>$ repo sync
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo sync
+</pre>
 <p>To synchronize the files for selected projects:</p>
-<pre><code>$ repo sync PROJECT0 PROJECT1 PROJECT2 ...
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo sync <var>PROJECT0 PROJECT1 ... PROJECTN</var>
+</pre>
 <h2 id="creating-topic-branches">Creating topic branches</h2>
 <p>Start a topic branch in your local work environment whenever you begin a change, for example when you begin work on a bug or new feature. A topic branch is not a copy of the original files; it is a pointer to a particular commit. This makes creating local branches and switching among them a light-weight operation. By using branches, you can isolate one aspect of your work from the others. For an interesting article about using topic branches, see <a href="http://www.kernel.org/pub/software/scm/git/docs/howto/separating-topic-branches.txt">Separating topic branches</a>.</p>
 <p>To start a topic branch using Repo, navigate into the project to be modified and issue: </p>
-<pre><code>$ repo start BRANCH_NAME .
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo start <var>BRANCH_NAME</var> .
+</pre>
 <p>Please note, the period represents the project in the current working directory. To verify your new branch was created:</p>
-<pre><code>$ repo status .
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo status .
+</pre>
 <h2 id="using-topic-branches">Using topic branches</h2>
 <p>To assign the branch to a particular project:</p>
-<pre><code>$ repo start BRANCH_NAME PROJECT_NAME
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo start <var>BRANCH_NAME PROJECT_NAME</var>
+</pre>
 <p>See <a href="https://android.googlesource.com/">android.googlesource.com</a> for a list of all projects. Again, if you've already navigated into a particular project directory, you may simply pass a period to represent the current project.</p>
 
 <p>To switch to another branch that you have created in your local work environment:</p>
-<pre><code>$ git checkout BRANCH_NAME
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+git checkout <var>BRANCH_NAME</var>
+</pre>
 <p>To see a list of existing branches:</p>
-<pre><code>$ git branch
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+git branch
+</pre>
 <p>or </p>
-<pre><code>$ repo branches
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo branches
+</pre>
 <p>The name of the current branch will be preceded by an asterisk.</p>
 <p class="note"><strong>Note:</strong> A bug might be causing <code>repo sync</code> to reset the local topic branch.
 If <code>git branch</code> shows * (no branch) after you run <code>repo sync</code>, then run <code>git checkout</code> again.</p>
 <h2 id="staging-files">Staging files</h2>
 <p>By default, Git notices but does not track the changes you make in a project. In order to tell git to preserve your changes, you must mark them for inclusion in a commit. This is also called "staging". </p>
 <p>You can stage your changes by running</p>
-<pre><code>git add
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+git add
+</pre>
 <p>which accepts as arguments any files or directories within the project directory. Despite the name, <code>git add</code> does not simply add files to the git repository; it can also be used to stage file modifications and deletions.</p>
 <h2 id="viewing-client-status">Viewing client status</h2>
 <p>To list the state of your files:</p>
-<pre><code>$ repo status
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo status
+</pre>
 <p>To see uncommitted edits:</p>
-<pre><code>$ repo diff
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo diff
+</pre>
 <p>The <code>repo diff</code> command shows every local edit that you have made that would <em>not</em> go into the commit, if you were to commit right now. To see every edit that would go into the commit if you were to commit right now, you need a Git command, <code>git diff</code>. Before running it, be sure you are in the project directory:</p>
-<pre><code>$ cd ~/WORKING_DIRECTORY/PROJECT
-$ git diff --cached
-</code></pre>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">cd <var>~/WORKING_DIRECTORY/PROJECT</var></code>
+<code class="devsite-terminal">git diff --cached</code>
+</pre>
 <h2 id="committing-changes">Committing changes</h2>
 <p>A commit is the basic unit of revision control in git, consisting of a snapshot of directory structure and file contents for the entire project. Creating a commit in git is as simple as typing</p>
-<pre><code>git commit
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+git commit
+</pre>
 <p>You will be prompted for a commit message in your favorite editor; please provide a helpful message for any changes you submit to the AOSP. If you do not add a log message, the commit will be aborted. </p>
 <h2 id="uploading-changes-to-gerrit">Uploading changes to Gerrit</h2>
 <p>Before uploading, update to the latest revisions:</p>
-<pre><code>repo sync
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo sync
+</pre>
 <p>Next run</p>
-<pre><code>repo upload
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo upload
+</pre>
 <p>This will list the changes you have committed and prompt you to select which branches to upload to the review server. If there is only one branch, you will see a simple <code>y/n</code> prompt.</p>
 <h2 id="recovering-sync-conflicts">Recovering sync conflicts</h2>
 <p>If a <code>repo sync</code> shows sync conflicts:</p>
 <ul>
-<li>View the files that are unmerged (status code = U).</li>
-<li>Edit the conflict regions as necessary.</li>
-<li>
-<p>Change into the relevant project directory, run <code>git add</code> and <code>git commit</code> for the files in question, and then "rebase" the changes. For example:</p>
-<pre><code>$ git add .
-$ git commit
-$ git rebase --continue
-</code></pre>
-</li>
-<li>
-<p>When the rebase is complete start the entire sync again:</p>
-<pre><code>$ repo sync PROJECT0 PROJECT1 ... PROJECTN
-</code></pre>
-</li>
+  <li>View the files that are unmerged (status code = U).</li>
+  <li>Edit the conflict regions as necessary.</li>
+  <li><p>Change into the relevant project directory, run <code>git add</code> and <code>git commit</code> for the files in question, and then "rebase" the changes. For example:</p>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">git add .</code>
+<code class="devsite-terminal">git commit</code>
+<code class="devsite-terminal">git rebase --continue</code>
+</pre>
+  </li>
+  <li><p>When the rebase is complete start the entire sync again:</p>
+<pre class="devsite-terminal devsite-click-to-copy">repo sync <var>PROJECT0 PROJECT1 ... PROJECTN</var></pre>
+  </li>
 </ul>
+
 <h2 id="cleaning-up-your-client-files">Cleaning up your client files</h2>
 <p>To update your local working directory after changes are merged in Gerrit:</p>
-<pre><code>$ repo sync
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo sync
+</pre>
 <p>To safely remove stale topic branches: </p>
-<pre><code>$ repo prune
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+repo prune
+</pre>
+
 <h2 id="deleting-a-client">Deleting a client</h2>
 <p>Because all state information is stored in your client, you only need to delete the directory from your filesystem:</p>
-<pre><code>$ rm -rf WORKING_DIRECTORY
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+rm -rf <var>WORKING_DIRECTORY</var>
+</pre>
 <p>Deleting a client will <em>permanently delete</em> any changes you have not yet uploaded for review.</p>
 <h2 id="git-and-repo-cheatsheet">Git and Repo cheatsheet</h2>
 <img src="/images/git-repo-1.png" alt="list of basic git and repo commands" id="figure2" />

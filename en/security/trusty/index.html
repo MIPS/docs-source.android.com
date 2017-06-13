@@ -147,10 +147,10 @@ trusted by the user of the product on which the application runs.</p>
 <a href="https://android.googlesource.com/kernel/common/+/android-trusty-3.18">https://android.googlesource.com/kernel/common/+/android-trusty-3.18</a></p>
 
 <p>To make Trusty, run the following commands (assuming the Android toolchain is already in the path):</p>
-<pre>
-$ repo init -u https://android.googlesource.com/trusty/manifest
-$ repo sync
-$ make -j24 generic-arm64
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">repo init -u https://android.googlesource.com/trusty/manifest</code>
+<code class="devsite-terminal">repo sync</code>
+<code class="devsite-terminal">make -j24 generic-arm64</code>
 </pre>
 
 <p>You may select another supported build target from: <code>device/*/*/project/*</code></p>

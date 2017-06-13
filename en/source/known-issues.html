@@ -43,6 +43,7 @@ warning is printed early during the build:
 such file or directory</code></p>
 <p><strong>Cause</strong>: Some makefile references that path, which doesn't exist.</p>
 <p><strong>Fix</strong>: None. This is a harmless warning.</p>
+
 <h3 id="black-gingerbread-emulator">Black Gingerbread Emulator</h3>
 <p><strong>Symptom</strong>: The emulator built directly from the gingerbread branch
 doesn't start and stays stuck on a black screen.</p>
@@ -51,10 +52,12 @@ which doesn't have all the features necessary to run recent versions
 of gingerbread.</p>
 <p><strong>Fix</strong>: Use version R12 of the emulator, and a newer kernel that matches
 those tools. No need to do a clean build.</p>
-<pre><code>$ repo forall platform/external/qemu -c git checkout aosp/tools_r12
-$ make
-$ emulator -kernel prebuilt/android-arm/kernel/kernel-qemu-armv7
-</code></pre>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">repo forall platform/external/qemu -c git checkout aosp/tools_r12</code>
+<code class="devsite-terminal">make</code>
+<code class="devsite-terminal">emulator -kernel prebuilt/android-arm/kernel/kernel-qemu-armv7</code>
+</pre>
+
 <h3 id="emulator-built-on-macos-107-lion-doesnt-work">Emulator built on MacOS 10.7 Lion doesn't work.</h3>
 <p><strong>Symptom</strong>: The emulator (any version) built on MacOS 10.7 Lion
 and/or on XCode 4.x doesn't start.</p>
@@ -69,11 +72,12 @@ on emulator builds, the resulting build doesn't work.</p>
 <p><strong>Cause</strong>: All emulator builds now run Dex optimization at build
 time by default, which requires to follow all dependencies to
 re-optimize the applications each time the framework changes.</p>
-<p><strong>Fix</strong>: Locally disable Dex optimizations with
-<code>export WITH_DEXPREOPT=false</code>, delete the existing optimized
-versions with <code>make installclean</code> and run a full build to
-re-generate non-optimized versions. After that, partial builds
-will work.</p>
+<p><strong>Fix</strong>: Locally disable Dex optimizations by entering the following command:</p>
+<pre class="devsite-terminal devsite-click-to-copy">export WITH_DEXPREOPT=false</pre>
+<p>Delete the existing optimized version by entering the following command:</p>
+<pre class="devsite-terminal devsite-click-to-copy">make installclean</pre>
+<p>Run a full build to re-generate non-optimized versions. After that, partial builds will work.</p>
+
 <h3 id="permission-denied-during-builds">"Permission Denied" during builds.</h3>
 <p><strong>Symptom</strong>: All builds fail with "Permission Denied", possibly
 along with anti-virus warnings.</p>
@@ -83,6 +87,7 @@ viruses.</p>
 <p><strong>Fix</strong>: After verifying that there are no actual viruses
 involved, disable anti-virus on the Android tree. This has
 the added benefit of reducing build times.</p>
+
 <h3 id="build-errors-related-to-using-the-wrong-compiler">Build errors related to using the wrong compiler.</h3>
 <p><strong>Symptom</strong>: The build fails with various symptoms. One
 such symptom is <code>cc1: error: unrecognized command line option "-m32"</code></p>
@@ -93,6 +98,7 @@ the Android NDK or building the kernel) cause the default
 compiler to not be a host compiler.</p>
 <p><strong>Fix</strong>: Use a "clean" shell, in which no previous
 actions could have swapped the default compiler.</p>
+
 <h3 id="build-errors-caused-by-non-default-tool-settings">Build errors caused by non-default tool settings.</h3>
 <p><strong>Symptom</strong>: The build fails with various symptoms, possibly
 complaining about missing files or files that have the
@@ -104,6 +110,7 @@ confuse the build system. Variables known to cause such
 issues are <code>CDPATH</code> and <code>GREP_OPTIONS</code>.</p>
 <p><strong>Fix</strong>: Build Android in an environment that has as few
 customizations as possible.</p>
+
 <h3 id="build-error-with-40x-and-earlier-on-macos-107">Build error with 4.0.x and earlier on MacOS 10.7.</h3>
 <p><strong>Symptom</strong>: Building IceCreamSandwich 4.0.x (and older
 versions) fails on MacOS 10.7 with errors similar to this:
@@ -111,15 +118,18 @@ versions) fails on MacOS 10.7 with errors similar to this:
 <p><strong>Cause</strong>: 4.0.x is not compatible with MacOS 10.7.</p>
 <p><strong>Fix</strong>: Either downgrade to MacOS 10.6, or use the master
 branch, which can be built on MacOS 10.7.</p>
-<pre><code>$ repo init -b master
-$ repo sync
-</code></pre>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">repo init -b master</code>
+<code class="devsite-terminal">repo sync</code>
+</pre>
+
 <h3 id="build-error-on-macos-with-xcode-43">Build error on MacOS with XCode 4.3.</h3>
 <p><strong>Symptom</strong>: All builds fail when using XCode 4.3.</p>
 <p><strong>Cause</strong>: XCode 4.3 switched the default compiler from
 gcc to llvm, and llvm rejects code that used to be
 accepted by gcc.</p>
 <p><strong>Fix</strong>: Use XCode 4.2.</p>
+
 <h3 id="build-error-with-40x-and-earlier-on-ubuntu-1110">Build error with 4.0.x and earlier on Ubuntu 11.10.</h3>
 <p><strong>Symptom</strong>: Building IceCreamSandwich 4.0.x (and older
 versions) on Ubuntu 11.10 and newer fails with errors similar to this:
@@ -129,11 +139,12 @@ is defined by default, and Android also defines that symbol,
 which causes a conflict.</p>
 <p><strong>Fix</strong>: Either downgrade to Ubuntu 10.04, or use the master
 branch, which can be compiled on Ubuntu 11.10 and newer.</p>
-<pre><code>$ repo init -b master
-$ repo sync
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">repo init -b master</code>
+<code class="devsite-terminal">repo sync</code>
 </code></pre>
 
-<h2 id="source-sync">Source sync issues<h2>
+<h2 id="source-sync">Source sync issues</h2>
 
 <h3 id="difficulties-syncing-the-source-code-proxy-issues">Difficulties syncing the source code (proxy issues).</h3>
 <p><strong>Symptom</strong>: <code>repo init</code> or <code>repo sync</code> fail with http errors,
@@ -144,6 +155,7 @@ large amounts of data getting transferred.</p>
 <p><strong>Fix</strong>: While there's no general solution, using python 2.7
 and explicitly using <code>repo sync -j1</code> have been reported to
 improve the situation for some users.</p>
+
 <h3 id="difficulties-syncing-the-source-tree-virtualbox-ethernet-issues">Difficulties syncing the source tree (VirtualBox Ethernet issues).</h3>
 <p><strong>Symptom</strong>: When running <code>repo sync</code> in some VirtualBox installations,
 the process hangs or fails with a variety of possible symptoms.
@@ -154,6 +166,7 @@ NAT (Network Address Translation) to connect the guest system to
 the network. The heavy network activity of repo sync triggers some
 corner cases in the NAT code.</p>
 <p><strong>Fix</strong>: Configure VirtualBox to use bridged network instead of NAT.</p>
+
 <h3 id="difficulties-syncing-the-source-tree-dns-issues">Difficulties syncing the source tree (DNS issues).</h3>
 <p><strong>Symptom</strong>: When running <code>repo sync</code>, the process fails with
 various errors related to not recognizing the hostname. One such
@@ -166,25 +179,29 @@ those results locally.</p>
 <p>You can resolve them with the <code>nslookup</code> command, which will give
 you one numerical IP address for each of those (typically in the
 "Address" part of the output).</p>
-<pre><code>$ nslookup googlesource.com
-$ nslookup android.googlesource.com
-</code></pre>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">nslookup googlesource.com</code>
+<code class="devsite-terminal">nslookup android.googlesource.com</code>
+</pre>
 <p>You can then hard-code them locally by editing <code>/etc/hosts</code>, and
 adding two lines in that file, of the form:</p>
-<pre><code>aaa.bbb.ccc.ddd googlesource.com
+<pre class="devsite-click-to-copy">
+aaa.bbb.ccc.ddd googlesource.com
 eee.fff.ggg.hhh android.googlesource.com
-</code></pre>
+</pre>
 <p>Note that this will only work as long as the servers' addresses
 don't change, and if they do and you can't connect you'll have
 to resolve those hostnames again and edit <code>etc/hosts</code> accordingly.</p>
+
 <h3 id="difficulties-syncing-the-source-tree-tcp-issues">Difficulties syncing the source tree (TCP issues).</h3>
 <p><strong>Symptom</strong>: <code>repo sync</code> hangs while syncing, often when it's
 completed 99% of the sync.</p>
 <p><strong>Cause</strong>: Some settings in the TCP/IP stack cause difficulties
 in some network environments, such that <code>repo sync</code> neither completes
 nor fails.</p>
-<p><strong>Fix</strong>: On linux, <code>sysctl -w net.ipv4.tcp_window_scaling=0</code>. On
-MacOS, disable the rfc1323 extension in the network settings.</p>
+<p><strong>Fix</strong>: On Linux, enter the command:</p>
+<pre class="devsite-terminal devsite-click-to-copy">sysctl -w net.ipv4.tcp_window_scaling=0</pre>
+<p>On MacOS, disable the rfc1323 extension in the network settings.</p>
 
 
 <h2 id="runtime-issues">Runtime issues</h2>
