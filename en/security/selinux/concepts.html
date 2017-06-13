@@ -116,7 +116,9 @@ for each class are represented by permissions. </p>
 </ul>
 
 <p>And so an example use of this would follow the structure:</p>
-<code>allow appdomain app_data_file:file rw_file_perms;</code>
+<pre class="devsite-click-to-copy">
+allow appdomain app_data_file:file rw_file_perms;
+</pre>
 
 <p>This says that all application domains are allowed to read and write files labeled
 app_data_file. Note that this rule relies upon macros defined in the
@@ -129,13 +131,13 @@ failures due to denials on related permissions.</p>
 
 <p>Use the syntax above to create avc rules that comprise the essence of an
 SELinux policy.  A rule takes the form:
-<pre>
-&lt;rule variant&gt; &lt;source_types&gt; &lt;target_types&gt; : &lt;classes&gt; &lt;permissions&gt;
+<pre class="devsite-click-to-copy">
+<var>RULE_VARIANT SOURCE_TYPES TARGET_TYPES</var> : <var>CLASSES PERMISSIONS</var>
 </pre>
 
 <p>The rule indicates what should happen when a subject labeled with any of the <em>source_types</em> attempts an action corresponding to any of the <em>permissions</em> on an object with any of the class <em>classes</em> which has any of the <em>target_types</em> label.  The most common example of one of these rules is an allow rule, e.g.:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 allow domain null_device:chr_file { open };
 </pre>
 
@@ -143,7 +145,7 @@ allow domain null_device:chr_file { open };
 <p>
 This rule allows a process with any <em>domain</em> associated with the ‘domain’ attribute to take the action described by the <em>permission</em> ‘open’ on an object of <em>class</em> ‘chr_file’ (character device file) that has the <em>target_type</em> label of ‘null_device.’  In practice, this rule may be extended to include other permissions: </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 allow domain null_device:chr_file { getattr open read ioctl lock append write};
 </pre>
 

@@ -2096,18 +2096,20 @@ devices only when supported by hardware.</p>
 <p class="table_footnote">2 STRONGLY RECOMMENDED for Android Television device implementations when
 supported by hardware.</p>
 
-<p>Android device implementations, when supporting H.265 codec as described in <a href="#5_1_3_video_codecs">section 5.1.3</a>, MUST support the Main Profile Level 3 Main tier and the following SD video
-decoding profiles and SHOULD support the HD decoding profiles. Android
-Television devices MUST support the Main Profile Level 4.1 Main tier and the HD
-1080p decoding profile and SHOULD support Main10 Level 5 Main Tier profile and
-the UHD decoding profile.</p>
+<p>Android device implementations, when supporting H.265 codec as described in
+<a href="#5_1_3_video_codecs">section 5.1.3</a>, MUST support the Main Profile Level 3 Main tier
+and the following SD video decoding profiles and SHOULD support the HD decoding profiles. Android
+Television devices SHOULD support Main10 Level 5 Main Tier profile and the UHD decoding profile.
+Android Television devices are STRONGLY RECOMMENDED to support the HD 1080p decoding profile.
+If the HD 1080p decoding profile is supported, it MUST support the Main Profile Level
+4.1 Main tier</p>
 <table>
  <tr>
     <th></th>
     <th>SD (Low quality)</th>
     <th>SD (High quality)</th>
     <th>HD 720p </strong>1 </td>
-    <th>HD 1080p </strong>1 </td>
+    <th>HD 1080p </strong>2 </td>
     <th>UHD </strong>2</td>
  </tr>
  <tr>
@@ -2140,7 +2142,7 @@ the UHD decoding profile.</p>
 <p class="table_footnote">1 Required for Android Television device implementation, but for other type of
 devices only when supported by hardware.</p>
 
-<p class="table_footnote">2 Required for Android Television device implementations when supported by
+<p class="table_footnote">2 STRONGLY RECOMMENDED for Android Television device implementations when supported by
 hardware.</p>
 
 <h2 id="5_4_audio_recording">5.4. Audio Recording</h2>

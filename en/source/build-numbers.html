@@ -197,6 +197,42 @@ site:</p>
   </thead>
   <tbody>
     <tr>
+      <td>NJH47B</td>
+      <td>android-7.1.2_r17</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
+    <tr>
+      <td>NJH34C</td>
+      <td>android-7.1.2_r16</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
+    <tr>
+      <td>NKG47L</td>
+      <td>android-7.1.2_r15</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
+    <tr>
+      <td>NHG47N</td>
+      <td>android-7.1.2_r14</td>
+      <td>Nougat</td>
+      <td>Pixel XL, Pixel</td>
+    </tr>
+    <tr>
+      <td>N2G47X</td>
+      <td>android-7.1.2_r13</td>
+      <td>Nougat</td>
+      <td>Nexus Player</td>
+    </tr>
+    <tr>
+      <td>N2G47W</td>
+      <td>android-7.1.2_r12</td>
+      <td>Nougat</td>
+      <td>Nexus 5X, Nexus 6P, Pixel C</td>
+    </tr>
+    <tr>
       <td>NHG47L</td>
       <td>android-7.1.2_r11</td>
       <td>Nougat</td>
@@ -255,6 +291,24 @@ site:</p>
       <td>android-7.1.2_r1</td>
       <td>Nougat</td>
       <td>Pixel C</td>
+    </tr>
+    <tr>
+      <td>N9F27C</td>
+      <td>android-7.1.1_r43</td>
+      <td>Nougat</td>
+      <td>Nexus 9 (volantis)</td>
+    </tr>
+    <tr>
+      <td>N6F27E</td>
+      <td>android-7.1.1_r42</td>
+      <td>Nougat</td>
+      <td>Nexus 6</td>
+    </tr>
+    <tr>
+      <td>N4F27E</td>
+      <td>android-7.1.1_r41</td>
+      <td>Nougat</td>
+      <td>Nexus 9 (volantisg)</td>
     </tr>
     <tr>
       <td>N6F27C</td>
@@ -1780,15 +1834,15 @@ tested.</p>
 associated with each project by issuing the following command and passing it
 the two branch tags:</p>
 
-<pre><code>$ repo forall -pc 'git log --no-merges --oneline branch-1..branch-2'</pre></code>
+<pre class="devsite-terminal devsite-click-to-copy">repo forall -pc 'git log --no-merges --oneline branch-1..branch-2'</pre>
 
 <p>For example:</p>
 
-<pre><code>$ repo forall -pc 'git log --no-merges --oneline android-4.4.2_r2..android-4.4.2_r1'</pre></code>
+<pre class="devsite-terminal devsite-click-to-copy">repo forall -pc 'git log --no-merges --oneline android-4.4.2_r2..android-4.4.2_r1'</pre>
 
 <p>And to output to a text file:</p>
 
-<pre><code>repo forall -pc 'git log --no-merges --oneline android-4.4.2_r2..android-4.4.2_r1' > /tmp/android-4.4.2_r2-android-4.4.2_r1-diff.txt</pre></code>
+<pre class="devsite-terminal devsite-click-to-copy">repo forall -pc 'git log --no-merges --oneline android-4.4.2_r2..android-4.4.2_r1' > /tmp/android-4.4.2_r2-android-4.4.2_r1-diff.txt</pre>
 
 <h2 id="honeycomb-gpl-modules">Honeycomb GPL Modules</h2>
 <p>For Honeycomb, the entire platform source code isn't available.
@@ -1872,10 +1926,11 @@ commands work for 3.0_r1.1, and using other versions can be done by
 switching the git checkout paramater, and if necessary the -m parameter in
 repo init. The git checkout command outputs an error for the non-GPL
 projects, where it can't find the tag in question.</p>
-<pre><code>$ repo init -b master -m base-for-3.0-gpl.xml
-$ repo sync
-$ repo forall -c git checkout android-3.0_r1.1
-</code></pre>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">repo init -b master -m base-for-3.0-gpl.xml</code>
+<code class="devsite-terminal">repo sync</code>
+<code class="devsite-terminal">repo forall -c git checkout android-3.0_r1.1</code>
+</pre>
 
 
   </body>

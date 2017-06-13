@@ -127,7 +127,7 @@ containing the sepolicy subdirectory - to reference the sepolicy subdirectory
 and each policy file once created, as shown below. The BOARD_SEPOLICY variables
 and their meaning is documented in the system/sepolicy/README file.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 BOARD_SEPOLICY_DIRS += \
         &lt;root>/device/manufacturer/device-name/sepolicy
 
@@ -195,7 +195,9 @@ SELinux to protect your devices:</p>
   <li>Enable SELinux in the kernel:
 <code>CONFIG_SECURITY_SELINUX=y</code>
   <li>Change the kernel_cmdline parameter so that:<br/>
-<code>BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive</code>.
+<pre class="devsite-click-to-copy">
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
+</pre>
 <br/>
 This is only for initial development of policy for the device.  Once you have
 an initial bootstrap policy, remove this parameter so that your device is
@@ -203,10 +205,14 @@ enforcing or it will fail CTS.
   <li>Boot up the system in permissive and see what denials are encountered on boot:<br/>
 On Ubuntu 14.04 or newer:
 <br/>
-<code>adb shell su -c dmesg | grep denied | audit2allow -p out/target/product/<em>board</em>/root/sepolicy</code>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell su -c dmesg | grep denied | audit2allow -p out/target/product/<var>BOARD</var>/root/sepolicy
+</pre>
 <br/>
-On Ubuntu 12.04:
-<code>adb shell su -c dmesg | grep denied | audit2allow</code>
+On Ubuntu 12.04:<br/>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell su -c dmesg | grep denied | audit2allow
+</pre>
   <li>Evaluate the output. See <a href="validate.html">Validation</a> for instructions and tools.
   <li>Identify devices, and other new files that need labeling.
   <li>Use existing or new labels for your objects.
@@ -216,8 +222,12 @@ to assign a new one. Ideally, this will be an existing label which will fit
 into policy, but sometimes a new label will be needed, and rules for access to
 that label will be needed, as well.
   <li>Identify domains/processes that should have their own security domains. A policy will likely need to be written for each of these from scratch. All services spawned from <code>init</code>, for instance, should have their own. The following commands help reveal those that remain running (but ALL services need such a treatment):<br/>
-<code>$ adb shell su -c ps -Z | grep init</code><br/>
-<code>$ adb shell su -c dmesg | grep 'avc: '</code>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell su -c ps -Z | grep init
+</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell su -c dmesg | grep 'avc: '
+</pre>
   <li>Review init.&lt;device&gt;.rc to identify any which are without a type.
 These should
 be given domains EARLY in order to avoid adding rules to init or otherwise

@@ -2446,17 +2446,17 @@ supported by hardware.</p>
 <a href="#5_1_3_video_codecs">section 5.1.3</a>, MUST support the Main Profile
 Level 3 Main tier and the following SD video decoding profiles and SHOULD
 support the HD decoding profiles.
-Android Television devices MUST support the Main Profile Level 4.1 Main tier and
-the HD 1080p decoding profile and is STRONGLY RECOMMENDED to support the UHD
-decoding profile. If UHD decoding is supported, then it MUST support Main10
-Level 5 Main Tier profile.</p>
+Android Television devices are STRONGLY RECOMMENDED to support the UHD decoding profile
+and the HD 1080p decoding profile. If the HD 1080p decoding profile is supported, it MUST support
+the Main Profile Level 4.1 Main tier. If UHD decoding is supported, then it MUST support
+Main10 Level 5 Main Tier profile.</p>
 <table>
  <tr>
     <th></th>
     <th>SD (Low quality)</th>
     <th>SD (High quality)</th>
     <th>HD 720p<sup>1</sup></th>
-    <th>HD 1080p<sup>1</sup></th>
+    <th>HD 1080p<sup>2</sup></th>
     <th>UHD<sup>2</sup></th>
  </tr>
  <tr>
@@ -3495,7 +3495,8 @@ remote or can be a software-based remote that is accessible from a mobile phone
 or tablet. The remote control MUST meet the requirements defined below.</p>
 
 <ul>
-  <li><strong>Search affordance</strong>. Device implementations MUST fire KEYCODE_SEARCH when the user invokes voice search either on the physical or software-based remote.</li>
+  <li><strong>Search affordance</strong>. Device implementations MUST fire KEYCODE_SEARCH (or KEYCODE_ASSIST if the device supports an assistant)
+  when the user invokes voice search on either the physical or software-based remote.</li>
   <li><strong>Navigation</strong>. All Android Television remotes MUST include Back, Home, and Select buttons and
 support for D-pad events [<a href="http://developer.android.com/reference/android/view/KeyEvent.html">Resources, 88</a>].</li>
 </ul>

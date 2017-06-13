@@ -37,7 +37,7 @@ key generation to specify key characteristics.</p>
 
 <p>Possible values are defined by the following enumeration:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 typedef enum {
     KM_PURPOSE_ENCRYPT = 0,
     KM_PURPOSE_DECRYPT = 1,
@@ -58,7 +58,7 @@ key, the operation must fail with <code>KM_ERROR_INCOMPATIBLE_PURPOSE</code>.</p
 
 <p>Possible values are defined by the following enumeration:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 typedef enum {
     KM_ALGORITHM_RSA = 1,
     KM_ALGORITHM_EC = 3,
@@ -85,7 +85,7 @@ only relevant to AES keys.</p>
 
 <p>Possible values are defined by the following enumeration:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 typedef enum {
     KM_MODE_ECB = 1,
     KM_MODE_CBC = 2,
@@ -107,7 +107,7 @@ HMAC keys.</p>
 
 <p>Possible values are defined by the following enumeration:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 typedef enum {
     KM_DIGEST_NONE = 0,
     KM_DIGEST_MD5 = 1,
@@ -132,7 +132,7 @@ relevant to RSA and AES keys.</p>
 
 <p>Possible values are defined by the following enumeration:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 typedef enum {
     KM_PAD_NONE = 1,
     KM_PAD_RSA_OAEP = 2,
@@ -210,7 +210,7 @@ key to be used.</p>
 
 <p>Possible values are defined by the following enumeration:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 typedef enum {
     KM_BLOB_STANDALONE = 0,
     KM_BLOB_REQUIRES_FILE_SYSTEM = 1,
@@ -357,7 +357,7 @@ network-ordered integers to host-ordered integers and
 
 <p>The value is a 32-bit integer bitmask of values from the enumeration:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 typedef enum {
     HW_AUTH_NONE = 0,
     HW_AUTH_PASSWORD = 1 &lt;&lt; 0,
@@ -445,7 +445,7 @@ by the trustlet.</p>
 
 <p>The possible values are defined in <code>keymaster_origin_t</code>:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 typedef enum {
     KM_ORIGIN_GENERATED = 0,
     KM_ORIGIN_IMPORTED = 2,
