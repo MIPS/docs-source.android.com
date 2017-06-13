@@ -32,8 +32,9 @@ designed to complement the information in
 regular build system. Use the instructions in
 <a href="/source/building.html">Building a System</a> and replace the
 main <code>make</code> command with:</p>
-<pre><code>$ make fastboot adb
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+make fastboot adb
+</pre>
 
 <h2 id="booting-into-fastboot-mode">Booting into fastboot mode</h2>
 <p><em>Fastboot</em> is a bootloader mode in which you can flash a device.
@@ -186,33 +187,47 @@ Nexus 9) have factory reset protection and require a multi-step process to
 unlock the bootloader.</p>
 
 <ol>
-<li>Enable OEM unlocking on the device:
-<ol style="list-style-type:lower-alpha">
-<li>In Settings, tap <strong>About phone</strong>, then tap <strong>Build
-number</strong> seven (7) times.</li>
-<li>When you see the message "You are a developer", tap the back button.</li>
-<li>Tap <strong>Developer options</strong> and enable
-<strong>OEM unlocking</strong> and <strong>USB debugging</strong>.
-(If OEM unlocking is disabled, connect to the Internet so the device can check
-in at least once. If it remains disabled, your device may be SIM locked by your
-carrier and the bootloader cannot be unlocked.)</li></ol></li>
-<li>Reboot into the bootloader and use fastboot to unlock it.
-<ul>
-<li>For new devices (2015 and later): <code>$ fastboot flashing unlock</code>
-</li>
-<li>For older devices (2014 and earlier): <code>$ fastboot oem
-unlock</code></li></ul>
-You must confirm the unlock onscreen.</li></ol>
+  <li>Enable OEM unlocking on the device:
+    <ol style="list-style-type:lower-alpha">
+      <li>In Settings, tap <strong>About phone</strong>, then tap <strong>Build number</strong> seven (7) times.</li>
+      <li>When you see the message "You are a developer", tap the back button.</li>
+      <li>Tap <strong>Developer options</strong> and enable <strong>OEM unlocking</strong> and <strong>USB debugging</strong>. (If OEM unlocking is disabled, connect to the Internet so the device can check in at least once. If it remains disabled, your device may be SIM locked by your carrier and the bootloader cannot be unlocked.)</li>
+    </ol>
+  </li>
+  <li>Reboot into the bootloader and use fastboot to unlock it.
+    <ul>
+      <li>For new devices (2015 and later):
+<pre class="devsite-terminal devsite-click-to-copy">
+fastboot flashing unlock
+</pre>
+      </li>
+      <li>For older devices (2014 and earlier):
+<pre class="devsite-terminal devsite-click-to-copy">
+fastboot oem unlock
+</pre>
+      </li>
+    </ul>
+    You must confirm the unlock onscreen.
+  </li>
+</ol>
 
-<p class="note"><strong>Note</strong> On Nexus 10, after unlocking the
+<p class="note"><strong>Note:</strong> On Nexus 10, after unlocking the
 bootloader, the internal storage remains unformatted. You can format the device
 using <code>fastboot format cache</code> followed by <code>fastboot format userdata</code></p>
 
 <h3 id="relocking-the-bootloader">Re-locking the bootloader</h3>
 <p>To re-lock the bootloader:</p>
 <ul>
-<li>For new devices (2015 and later): <code>$ fastboot flashing lock</code></li>
-<li>For older devices (2014 and earlier): <code>$ fastboot oem lock</code></li>
+  <li>For new devices (2015 and later):
+<pre class="devsite-terminal devsite-click-to-copy">
+fastboot flashing lock
+</pre>
+  </li>
+  <li>For older devices (2014 and earlier):
+<pre class="devsite-terminal devsite-click-to-copy">
+fastboot oem lock
+</pre>
+  </li>
 </ul>
 
 <p class="note"><strong>Note</strong>: Re-locking the bootloading on a Motorola
@@ -429,14 +444,14 @@ unlock</code>.</p>
 <p>Place the device in fastboot mode either manually by holding the appropriate
 key combination at boot, or from the shell with:</p>
 
-<pre>
-$ adb reboot bootloader
+<pre class="devsite-terminal devsite-click-to-copy">
+adb reboot bootloader
 </pre>
 
 <p>After the device is in fastboot mode, run:</p>
 
-<pre>
-$ fastboot flashall -w
+<pre class="devsite-terminal devsite-click-to-copy">
+fastboot flashall -w
 </pre>
 
 <p>The <code>-w</code> option wipes the <code>/data</code> partition on the

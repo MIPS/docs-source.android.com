@@ -75,10 +75,9 @@ shows many of these features in use.</p>
 <code>/system/etc</code>. To view a simple audio policy configuration in the new
 XML file format, view the example below.</p>
 
-<p>
   <section class="expandable">
     <h4 class="showalways">Show audio policy example</h4>
-<pre>
+<pre class="devsite-click-to-copy">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;audioPolicyConfiguration version=&quot;1.0&quot; xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&gt;
     &lt;globalConfiguration speaker_drc_enabled=&quot;true&quot;/&gt;
@@ -139,7 +138,6 @@ XML file format, view the example below.</p>
     &lt;xi:include href=&quot;default_volume_tables.xml&quot;/&gt;
 &lt;/audioPolicyConfiguration&gt;
 </pre></section>
-</p>
 
 <p>The top level structure contains modules that correspond to each audio HAL
 hardware module, where each module has a list of mix ports, device ports, and
@@ -160,7 +158,7 @@ overwritten.</p>
 
   <section class="expandable">
     <h4 class="showalways">Show volume table example</h4>
-<p><pre>
+<pre class="devsite-click-to-copy">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;volumes&gt;
     &lt;reference name=&quot;FULL_SCALE_VOLUME_CURVE&quot;&gt;
@@ -178,11 +176,11 @@ overwritten.</p>
         &lt;point&gt;100,0&lt;/point&gt;
     &lt;/reference&gt;
 &lt;/volumes&gt;
-</pre></p></section>
+</pre></section>
 
   <section class="expandable">
     <h4 class="showalways">Show volumes example</h4>
-<p><pre>
+<pre class="devsite-click-to-copy">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;volumes&gt;
     &lt;volume stream=&quot;AUDIO_STREAM_VOICE_CALL&quot; deviceCategory=&quot;DEVICE_CATEGORY_HEADSET&quot; ref=&quot;DEFAULT_VOLUME_CURVE&quot;/&gt;
@@ -255,7 +253,7 @@ overwritten.</p>
     &lt;volume stream=&quot;AUDIO_STREAM_PATCH&quot; deviceCategory=&quot;DEVICE_CATEGORY_EARPIECE&quot; ref=&quot;FULL_SCALE_VOLUME_CURVE&quot;/&gt;
     &lt;volume stream=&quot;AUDIO_STREAM_PATCH&quot; deviceCategory=&quot;DEVICE_CATEGORY_EXT_MEDIA&quot; ref=&quot;FULL_SCALE_VOLUME_CURVE&quot;/&gt;
 &lt;/volumes&gt;
-</pre></p></section>
+</pre></section>
 
 <h2 id=file_inclusions>File inclusions</h2>
 <p>The XML Inclusions (XInclude) method can be used to include audio policy
@@ -391,7 +389,7 @@ product. The following example from a Galaxy Nexus shows a <em>dynamic</em>
 channel mask, which means the audio policy manager queries the actual channel
 masks supported by the HDMI sink after connection.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 audio_hw_modules {
   primary {
     outputs {

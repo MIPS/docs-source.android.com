@@ -73,65 +73,85 @@ HiKey960 board.</p>
 
 <h3 id="960userspace">Compiling userspace</h3>
 <ol>
-<li>Download the Android source tree:
-<pre>$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master
-$ repo sync -j24</pre></li>
-<li>Download and extract binaries into the Android source tree:
-<pre>$ wget https://dl.google.com/dl/android/aosp/arm-hikey960-NOU-7ad3cccc.tgz
-$ tar xzf arm-hikey960-NOU-7ad3cccc.tgz
-$ ./extract-arm-hikey960.sh</pre></li>
-<li>Build:
-<pre>$ . ./build/envsetup.sh
-$ lunch hikey960-userdebug
-$ make -j32</pre></li>
+  <li>Download the Android source tree:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master</code>
+<code class="devsite-terminal">repo sync -j24</code>
+</pre>
+  </li>
+  <li>Download and extract binaries into the Android source tree:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">wget https://dl.google.com/dl/android/aosp/arm-hikey960-NOU-7ad3cccc.tgz</code>
+<code class="devsite-terminal">tar xzf arm-hikey960-NOU-7ad3cccc.tgz</code>
+<code class="devsite-terimnal">./extract-arm-hikey960.sh</code>
+</pre>
+  </li>
+  <li>Build:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">. ./build/envsetup.sh</code>
+<code class="devsite-terminal">lunch hikey960-userdebug</code>
+<code class="devsite-terminal">make -j32</code>
+</pre>
+  </li>
 </ol>
 
 <h3 id="960fastboot">Installing initial images</h3>
 <ol>
-<li>Select fastboot mode turning ON switch 1 and 3 (for details, refer to the
+  <li>Select fastboot mode turning ON switch 1 and 3 (for details, refer to the
 HiKey960 user guide).</li>
-<li>Power the board.</li>
-<li>Flash initial images:
-<pre>$ cd device/linaro/hikey/installer/hikey960
-$ ./flash-all.sh</pre></li>
-<li>Turn OFF switch 3 and power cycle the board.</li>
+  <li>Power the board.</li>
+  <li>Flash initial images:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">cd device/linaro/hikey/installer/hikey960</code>
+<code class="devsite-terminal">./flash-all.sh</code>
+</pre>
+  </li>
+  <li>Turn OFF switch 3 and power cycle the board.</li>
 </ol>
 
 <h3 id="960images">Flashing images</h3>
 <ol>
-<li>Enter fastboot mode by turning ON switch 1 and 3.</li>
-<li>Flash images by running the following commands:
-<pre>$ fastboot flash boot out/target/product/hikey960/boot.img
-$ fastboot flash dts out/target/product/hikey960/dt.img
-$ fastboot flash system out/target/product/hikey960/system.img
-$ fastboot flash cache out/target/product/hikey960/cache.img
-$ fastboot flash userdata out/target/product/hikey960/userdata.img</pre>
-</li>
-<li>Turn OFF switch 3 and power cycle the board.</li>
+  <li>Enter fastboot mode by turning ON switch 1 and 3.</li>
+  <li>Flash images by running the following commands:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">fastboot flash boot out/target/product/hikey960/boot.img</code>
+<code class="devsite-terminal">fastboot flash dts out/target/product/hikey960/dt.img</code>
+<code class="devsite-terminal">fastboot flash system out/target/product/hikey960/system.img</code>
+<code class="devsite-terminal">fastboot flash cache out/target/product/hikey960/cache.img</code>
+<code class="devsite-terminal">fastboot flash userdata out/target/product/hikey960/userdata.img</code>
+</pre>
+  </li>
+  <li>Turn OFF switch 3 and power cycle the board.</li>
 </ol>
 
 <h3 id="960kernel">Building the kernel</h3>
 <ol>
-<li>Run the following commands:
-<pre>$ git clone <a href="https://android.googlesource.com/kernel/hikey-linaro">https://android.googlesource.com/kernel/hikey-linaro</a>
-$ cd hikey-linaro
-$ git checkout -b android-hikey-linaro-4.4 origin/android-hikey-linaro-4.4
-$ make ARCH=arm64 hikey960_defconfig
-$ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- -j24</pre></li>
-<li>Update the kernel in the boot image.
-<ul>
-<li>Copy hi3660-hikey960.dtb
-(<code>arch/arm64/boot/dts/hisilicon/hi3660-hikey960.dtb</code>) to the
-hikey-kernel directory as file hi3660-hikey960.dtb.</li>
-<li>Copy the Image file <code>(arch/arm64/boot/Image.gz</code>) to the
-hikey-kernel directory as file Image.gz-hikey960.</li></ul>
-<li>Make the boot image:
-<pre>$ make bootimage -j24</pre></li>
+  <li>Run the following commands:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">git clone <a href="https://android.googlesource.com/kernel/hikey-linaro">https://android.googlesource.com/kernel/hikey-linaro</a></code>
+<code class="devsite-terminal">cd hikey-linaro</code>
+<code class="devsite-terminal">git checkout -b android-hikey-linaro-4.4 origin/android-hikey-linaro-4.4</code>
+<code class="devsite-terminal">make ARCH=arm64 hikey960_defconfig</code>
+<code class="devsite-terminal">make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- -j24</code>
+</pre>
+  </li>
+  <li>Update the kernel in the boot image.
+    <ul>
+      <li>Copy hi3660-hikey960.dtb (<code>arch/arm64/boot/dts/hisilicon/hi3660-hikey960.dtb</code>) to the hikey-kernel directory as file hi3660-hikey960.dtb.</li>
+      <li>Copy the Image file <code>(arch/arm64/boot/Image.gz</code>) to the hikey-kernel directory as file Image.gz-hikey960.</li>
+    </ul>
+  <li>Make the boot image:
+<pre class="devsite-terminal devsite-click-to-copy">
+make bootimage -j24
+</pre>
+  </li>
 </ol>
 
 <h3 id="960serial">Setting serial number</h3>
 <p>To set random serial number, run:
-<pre>$ fastboot getvar nve:SN@<em>16-digit-number</em></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+fastboot getvar nve:SN@<var>16_DIGIT_NUMBER</var>
+</pre>
 <p>Bootloader exports the generated serial number to kernel via
 <code>androidboot.serialno=</code>.
 
@@ -167,19 +187,31 @@ board.</p>
 
 <h3 id="620userspace">Compiling userspace</h3>
 <ol>
-<li>Download the Android source tree:
-<pre>$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master
-$ repo sync -j24</pre></li>
-<li>Download and extract HDMI binaries into the Android source tree:
-<pre>$ wget <a href="https://dl.google.com/dl/android/aosp/linaro-hikey-20170523-4b9ebaff.tgz">https://dl.google.com/dl/android/aosp/linaro-hikey-20170523-4b9ebaff.tgz</a>
-$ tar xzf linaro-hikey-20170523-4b9ebaff.tgz
-$ ./extract-linaro-hikey.sh</pre></li>
-<li>Install mcopy utility:
-<pre>$ apt-get install mtools</pre></li>
-<li>Build:
-<pre>$ . ./build/envsetup.sh
-$ lunch hikey-userdebug
-$ make -j32</pre></li>
+  <li>Download the Android source tree:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master</code>
+<code class="devsite-terminal">repo sync -j24</code>
+</pre>
+  </li>
+  <li>Download and extract HDMI binaries into the Android source tree:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">wget <a href="https://dl.google.com/dl/android/aosp/linaro-hikey-20170523-4b9ebaff.tgz">https://dl.google.com/dl/android/aosp/linaro-hikey-20170523-4b9ebaff.tgz</a></code>
+<code class="devsite-terminal">tar xzf linaro-hikey-20170523-4b9ebaff.tgz</code>
+<code class="devsite-terminal">./extract-linaro-hikey.sh</code>
+</pre>
+  </li>
+  <li>Install mcopy utility:
+<pre class="devsite-terminal devsite-click-to-copy">
+apt-get install mtools
+</pre>
+  </li>
+  <li>Build:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">. ./build/envsetup.sh</code>
+<code class="devsite-terminal">lunch hikey-userdebug</code>
+<code class="devsite-terminal">make -j32</code>
+</pre>
+  </li>
 </ol>
 
 <p class="note"><strong>Note:</strong> For 4GB eMMC, instead of <code>$ make -j32</code>
@@ -187,44 +219,55 @@ use: <code>$ make -j32 TARGET_USERDATAIMAGE_4GB=true</code>.</p>
 
 <h3 id="620fastboot">Installing initial fastboot and ptable</h3>
 <ol>
-<li>Select special bootloader mode by linking J15 1-2 and 3-4 pins (for details,
+  <li>Select special bootloader mode by linking J15 1-2 and 3-4 pins (for details,
 refer to the
 <a href="https://www.96boards.org/wp-content/uploads/2015/02/HiKey_User_Guide_Rev0.2.pdf">HiKey
 user guide</a>).</li>
-<li>Connect USB to PC to get ttyUSB device (ex: <code>/dev/ttyUSB1</code>).</li>
-<li>Power the board:
-<pre>$ cd device/linaro/hikey/installer/hikey
-$ ./flash-all.sh /dev/ttyUSB1 [4g]</pre></li>
-<li>Remove jumper 3-4 and power the board.</li>
+  <li>Connect USB to PC to get ttyUSB device (ex: <code>/dev/ttyUSB1</code>).</li>
+  <li>Power the board:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">cd device/linaro/hikey/installer/hikey</code>
+<code class="devsite-terminal">./flash-all.sh /dev/ttyUSB1 [4g]</code>
+</pre>
+  </li>
+  <li>Remove jumper 3-4 and power the board.</li>
 </ol>
 
 <h3 id="620images">Flashing images</h3>
 <ol>
-<li>Enter fastboot mode by linking J15 1-2 and 5-6 pins.</li>
-<li>Run the following commands:
-<pre>$ fastboot flash boot out/target/product/hikey/boot.img
-$ fastboot flash -w system out/target/product/hikey/system.img</pre></li>
-<li>Remove jumper 5-6 and power the board.</li>
+  <li>Enter fastboot mode by linking J15 1-2 and 5-6 pins.</li>
+  <li>Run the following commands:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">fastboot flash boot out/target/product/hikey/boot.img</code>
+<code class="devsite-terminal">fastboot flash -w system out/target/product/hikey/system.img</code>
+</pre>
+  </li>
+  <li>Remove jumper 5-6 and power the board.</li>
 </ol>
 
 <h3 id="620kernel">Building the kernel</h3>
 <ol>
-<li>Run the following commands:
-<pre>$ git clone <a href="https://android.googlesource.com/kernel/hikey-linaro">https://android.googlesource.com/kernel/hikey-linaro</a>
-$ cd hikey-linaro
-$ git checkout -b android-hikey-linaro-4.9 origin/android-hikey-linaro-4.9
-$ make ARCH=arm64 hikey_defconfig
-$ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- -j24</pre></li>
-<li>Copy output to the hikey kernel directory
-(<code>/kernel/hikey-linaro</code>):
-<ul>
-<li>Copy hi6220-hikey.dtb
-(<code>arch/arm64/boot/dts/hisilicon/hi6220-hikey.dtb</code>) to the
+  <li>Run the following commands:
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">git clone <a href="https://android.googlesource.com/kernel/hikey-linaro">https://android.googlesource.com/kernel/hikey-linaro</a></code>
+<code class="devsite-terminal">cd hikey-linaro</code>
+<code class="devsite-terminal">git checkout -b android-hikey-linaro-4.9 origin/android-hikey-linaro-4.9</code>
+<code class="devsite-terminal">make ARCH=arm64 hikey_defconfig</code>
+<code class="devsite-terminal">make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- -j24</code>
+</pre>
+  </li>
+  <li>Copy output to the hikey kernel directory (<code>/kernel/hikey-linaro</code>):
+    <ul>
+      <li>Copy hi6220-hikey.dtb (<code>arch/arm64/boot/dts/hisilicon/hi6220-hikey.dtb</code>) to the
 hikey-kernel directory as file hi6220-hikey.dtb-4.9.</li>
-<li>Copy the Image file <code>(arch/arm64/boot/Image-dtb</code>) to the
-hikey-kernel directory as file Image-dtb-4.9.</li></ul>
-<li>Make the boot image:
-<pre>$ make bootimage -j24</pre></li>
+  <li>Copy the Image file <code>(arch/arm64/boot/Image-dtb</code>) to the
+hikey-kernel directory as file Image-dtb-4.9.</li>
+    </ul>
+  <li>Make the boot image:
+<pre class="devsite-terminal devsite-click-to-copy">
+make bootimage -j24
+</pre>
+  </li>
 </ol>
 
 <h3 id="620resolution">Setting monitor resolution</h3>

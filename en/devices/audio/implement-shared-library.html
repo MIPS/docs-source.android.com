@@ -34,7 +34,7 @@ directory to contain your library's source files.</li>
 <li>Create an <code>Android.mk</code> file to build the shared library. Ensure
 the Makefile contains the following line:
 <br>
-<pre>
+<pre class="devsite-click-to-copy">
 LOCAL_MODULE := audio.primary.&lt;device&gt;
 </pre>
 <br>
@@ -46,7 +46,8 @@ hardware located on the device. The module names
 <code>audio.usb.&lt;device&gt;</code> are also available for Bluetooth and
 USB audio interfaces. Here is an example of an <code>Android.mk</code> from the
 Galaxy Nexus audio hardware:</p>
-<p><pre>
+
+<pre class="devsite-click-to-copy">
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -62,29 +63,29 @@ LOCAL_SHARED_LIBRARIES := liblog libcutils libtinyalsa libaudioutils libdl
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
-</pre></p>
+</pre>
 </li>
 <br>
 <li>If your product supports low latency audio as specified by the Android CDD,
 copy the corresponding XML feature file into your product. For example, in your
 product's <code>device/&lt;company&gt;/&lt;device&gt;/device.mk</code>
 Makefile:
-<p><pre>
+<pre class="devsite-click-to-copy">
 PRODUCT_COPY_FILES := ...
 
 PRODUCT_COPY_FILES += \
 frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-</pre></p>
+</pre>
 </li>
 <br>
 <li>Copy the audio policy configuration file you created earlier to the
 <code>system/etc/</code> directory in your product's
 <code>device/&lt;company&gt;/&lt;device&gt;/device.mk</code> Makefile.
 For example:
-<p><pre>
+<pre class="devsite-click-to-copy">
 PRODUCT_COPY_FILES += \
         device/samsung/tuna/audio/audio_policy.conf:system/etc/audio_policy.conf
-</pre></p>
+</pre>
 </li>
 <br>
 <li>Declare the shared modules of your audio HAL that are required by your
@@ -92,7 +93,7 @@ product in the product's
 <code>device/&lt;company&gt;/&lt;device&gt;/device.mk</code> Makefile.
 For example, the Galaxy Nexus requires the primary and Bluetooth audio HAL
 modules:
-<pre>
+<pre class="devsite-click-to-copy">
 PRODUCT_PACKAGES += \
         audio.primary.tuna \
         audio.a2dp.default
