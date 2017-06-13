@@ -73,9 +73,9 @@ run at the time the denial was generated. In this case, it’s a pretty good hin
 </ul>
 
 <p>And here is another example:</p>
-
+<pre class="devsite-terminal devsite-click-to-copy">adb shell su root dmesg | grep 'avc: '</pre>
+<p>Output:</p>
 <pre>
-$ adb shell su root dmesg | grep 'avc: '
 &lt;5&gt; type=1400 audit: avc:  denied  { read write } for  pid=177
 comm="rmt_storage" name="mem" dev="tmpfs" ino=6004 scontext=u:r:rmt:s0
 tcontext=u:object_r:kmem_device:s0 tclass=chr_file
@@ -101,18 +101,18 @@ tcontext=u:object_r:kmem_device:s0 tclass=chr_file
 on production devices. CTS tests confirm
 enforcing mode is enabled.</p>
 
-<p>To turn a device’s SELinux enforcement into globally permissive via ADB, as
-root issue:</p>
-
-<pre>
-$ adb shell su root setenforce 0
+<p>SELinux enforcement can be disabled via ADB on userdebug or eng builds. To do so,
+first switch ADB to root by running <code>adb root</code>. Then, to disable SELinux
+enforcement, run:
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell setenforce 0
 </pre>
 
 <p>Or at the kernel command line (during early device bring-up):</p>
 
-<pre>
-androidboot.selinux=permissive
-androidboot.selinux=enforcing
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">androidboot.selinux=permissive</code>
+<code class="devsite-terminal">androidboot.selinux=enforcing</code>
 </pre>
 
 <h2 id=using_audit2allow>Using audit2allow</h2>
@@ -125,8 +125,8 @@ is compiled automatically when you build Android from source.</p>
 
 <p>To use it, run:</p>
 
-<pre>
-$ adb shell su root dmesg | audit2allow -p $OUT/root/sepolicy
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell su root dmesg | audit2allow -p $OUT/root/sepolicy
 </pre>
 
 <p>Nevertheless, care must be taken to examine each potential addition for
