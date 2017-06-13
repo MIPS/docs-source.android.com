@@ -49,19 +49,18 @@
       Make sure you have a bin/ directory in your home directory and that it is included in
       your path:
     </p>
-    <pre>
-<code>$ mkdir ~/bin
-$ PATH=~/bin:$PATH
-</code>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">mkdir ~/bin</code>
+<code class="devsite-terminal">PATH=~/bin:$PATH</code>
 </pre>
   </li>
   <li>
     <p>
       Download the Repo tool and ensure that it is executable:
     </p>
-    <pre>
-$ curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
-$ chmod a+x ~/bin/repo
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo</code>
+<code class="devsite-terminal">chmod a+x ~/bin/repo</code>
 </pre>
   </li>
 </ol>
@@ -86,9 +85,9 @@ $ chmod a+x ~/bin/repo
       Create an empty directory to hold your working files. If you're using MacOS, this has to
       be on a case-sensitive filesystem. Give it any name you like:
     </p>
-<pre>
-$ mkdir WORKING_DIRECTORY
-$ cd WORKING_DIRECTORY
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">mkdir WORKING_DIRECTORY</code>
+<code class="devsite-terminal">cd WORKING_DIRECTORY</code>
 </pre>
   </li>
   <li>
@@ -99,11 +98,10 @@ $ cd WORKING_DIRECTORY
       address at which you can receive messages. The name that you provide here will show up in
       attributions for your code submissions.
     </p>
-<pre>
-$ git config --global user.name "Your Name"
-$ git config --global user.email "you@example.com"
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">git config --global user.name "Your Name"</code>
+<code class="devsite-terminal">git config --global user.email "you@example.com"</code>
 </pre>
-  </li>
   </li>
   <li>
     <p>
@@ -112,14 +110,14 @@ $ git config --global user.email "you@example.com"
       various repositories included in the Android source will be placed within your working
       directory.
     </p>
-<pre>
-$ repo init -u https://android.googlesource.com/platform/manifest
+<pre class="devsite-terminal devsite-click-to-copy">
+repo init -u https://android.googlesource.com/platform/manifest
 </pre>
     <p>
       To check out a branch other than "master", specify it with <code>-b</code>. For a list of branches, see <a href="build-numbers.html#source-code-tags-and-builds">Source Code Tags and Builds</a>.
     </p>
-<pre>
-$ repo init -u https://android.googlesource.com/platform/manifest -b android-4.0.1_r1
+<pre class="devsite-terminal devsite-click-to-copy">
+repo init -u https://android.googlesource.com/platform/manifest -b android-4.0.1_r1
 </pre>
   </li>
 </ol>
@@ -135,7 +133,7 @@ $ repo init -u https://android.googlesource.com/platform/manifest -b android-4.0
   To pull down the Android source tree to your working directory from the repositories as
   specified in the default manifest, run
 </p>
-<pre>$ repo sync</pre>
+<pre class="devsite-terminal devsite-click-to-copy">repo sync</pre>
 <p>
   The Android source files will be located in your working directory under their project names.
   The initial sync operation will take an hour or more to complete. For more about <code>repo
@@ -168,8 +166,8 @@ $ repo init -u https://android.googlesource.com/platform/manifest -b android-4.0
   <code>/a/</code> directory prefix triggers mandatory authentication. You can convert an
   existing client to use mandatory authentication with the following command:
 </p>
-<pre>
-$ repo init -u https://android.googlesource.com/a/platform/manifest
+<pre class="devsite-terminal devsite-click-to-copy">
+repo init -u https://android.googlesource.com/a/platform/manifest
 </pre>
 <h2 id="troubleshooting-network-issues">
   Troubleshooting network issues
@@ -178,9 +176,9 @@ $ repo init -u https://android.googlesource.com/a/platform/manifest
   When downloading from behind a proxy (which is common in some corporate environments), it
   might be necessary to explicitly specify the proxy that is then used by repo:
 </p>
-<pre>
-$ export HTTP_PROXY=http://&lt;proxy_user_id&gt;:&lt;proxy_password&gt;@&lt;proxy_server&gt;:&lt;proxy_port&gt;
-$ export HTTPS_PROXY=http://&lt;proxy_user_id&gt;:&lt;proxy_password&gt;@&lt;proxy_server&gt;:&lt;proxy_port&gt;
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">export HTTP_PROXY=http://&lt;proxy_user_id&gt;:&lt;proxy_password&gt;@&lt;proxy_server&gt;:&lt;proxy_port&gt;</code>
+<code class="devsite-terminal">export HTTPS_PROXY=http://&lt;proxy_user_id&gt;:&lt;proxy_password&gt;@&lt;proxy_server&gt;:&lt;proxy_port&gt;</code>
 </pre>
 <p>
   More rarely, Linux clients experience connectivity issues, getting stuck in the middle of
@@ -188,9 +186,9 @@ $ export HTTPS_PROXY=http://&lt;proxy_user_id&gt;:&lt;proxy_password&gt;@&lt;pro
   settings of the TCP/IP stack and using non-parallel commands can improve the situation. You
   need root access to modify the TCP setting:
 </p>
-<pre>
-$ sudo sysctl -w net.ipv4.tcp_window_scaling=0
-$ repo sync -j1
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">sudo sysctl -w net.ipv4.tcp_window_scaling=0</code>
+<code class="devsite-terminal">repo sync -j1</code>
 </pre>
 <h2 id="using-a-local-mirror">
   Using a local mirror
@@ -206,30 +204,31 @@ $ repo sync -j1
   The first step is to create and sync the mirror itself. Notice the <code>--mirror</code> flag, which
   can be specified only when creating a new client:
 </p>
-<pre>
-$ mkdir -p /usr/local/aosp/mirror
-$ cd /usr/local/aosp/mirror
-$ repo init -u https://android.googlesource.com/mirror/manifest --mirror
-$ repo sync
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">mkdir -p /usr/local/aosp/mirror</code>
+<code class="devsite-terminal">cd /usr/local/aosp/mirror</code>
+<code class="devsite-terminal">repo init -u https://android.googlesource.com/mirror/manifest --mirror</code>
+<code class="devsite-terminal">repo sync</code>
 </pre>
 <p>
   Once the mirror is synced, new clients can be created from it. Note that it's important to
   specify an absolute path:
 </p>
-<pre>$ mkdir -p /usr/local/aosp/master
-$ cd /usr/local/aosp/master
-$ repo init -u /usr/local/aosp/mirror/platform/manifest.git
-$ repo sync
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">mkdir -p /usr/local/aosp/master</code>
+<code class="devsite-terminal">cd /usr/local/aosp/master</code>
+<code class="devsite-terminal">repo init -u /usr/local/aosp/mirror/platform/manifest.git</code>
+<code class="devsite-terminal">repo sync</code>
 </pre>
 <p>
   Finally, to sync a client against the server, the mirror needs to be synced against the
   server, then the client against the mirror:
 </p>
-<pre>
-$ cd /usr/local/aosp/mirror
-$ repo sync
-$ cd /usr/local/aosp/master
-$ repo sync
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">cd /usr/local/aosp/mirror</code>
+<code class="devsite-terminal">repo sync</code>
+<code class="devsite-terminal">cd /usr/local/aosp/master</code>
+<code class="devsite-terminal">repo sync</code>
 </pre>
 <p>
   It's possible to store the mirror on a LAN server and to access it over NFS, SSH or Git. It's
@@ -243,14 +242,14 @@ $ repo sync
   Load the following public key into your GnuPG key database. The key is used to sign annotated
   tags that represent releases.
 </p>
-<pre>
-$ gpg --import
+<pre class="devsite-terminal devsite-click-to-copy">
+gpg --import
 </pre>
 <p>
-  Copy and paste the key(s) below, then enter EOF (Ctrl-D) to end the input and process the
+  Copy and paste the key below, then enter EOF (Ctrl-D) to end the input and process the
   keys.
 </p>
-<pre>
+<pre class="devsite-click-to-copy">
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1.4.2.2 (GNU/Linux)
 
@@ -285,8 +284,8 @@ EXzeoxcdoafxqf6gZlJZlACgkWF7wi2YLW3Oa+jv2QSTlrx4KLM=
 <p>
   After importing the keys, you can verify any tag with
 </p>
-<pre>
-$ git tag -v TAG_NAME
+<pre class="devsite-terminal devsite-click-to-copy">
+git tag -v TAG_NAME
 </pre>
 <p>
   If you haven't <a href="initializing.html#ccache">set up ccache</a> yet, now would be a good

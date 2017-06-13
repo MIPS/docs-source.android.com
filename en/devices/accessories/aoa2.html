@@ -53,7 +53,8 @@ devices.</p>
 (<code>&lt;adk-src&gt;/adk1/board/AndroidAccessory/AndroidAccessory.cpp</code>)
 library demonstrates this protocol check:</p>
 
-<pre><code>bool AndroidAccessory::switchDevice(byte addr)
+<pre class="devsite-click-to-copy">
+bool AndroidAccessory::switchDevice(byte addr)
 {
     int protocol = getProtocol(addr);
     if (protocol &gt;= 1) {
@@ -74,7 +75,7 @@ library demonstrates this protocol check:</p>
                 USB_SETUP_RECIPIENT_DEVICE, ACCESSORY_START, 0, 0, 0, 0, NULL);
     return true;
 }
-</code></pre>
+</pre>
 
 <p>AOAv2 includes new USB product IDs for each combination of USB interfaces
 available in accessory mode:</p>
@@ -146,14 +147,15 @@ the future).</p>
 <p>To enable audio support, the accessory must send a new USB control request:
 </p>
 
-<pre><code>**SET_AUDIO_MODE**
+<pre class="devsite-click-to-copy">
+**SET_AUDIO_MODE**
 requestType:    USB_DIR_OUT | USB_TYPE_VENDOR
 request:        58
 value:          0 for no audio (default),
                 1 for 2 channel, 16-bit PCM at 44100 KHz
 index:          0
 data            none
-</code></pre>
+</pre>
 
 <p>This command must be sent <em>before</em> sending the
 <code>ACCESSORY_START</code> command for entering accessory mode.</p>
@@ -201,7 +203,8 @@ accessory to the Android device.</li>
 
 <p>The code definitions for the new control requests are:</p>
 
-<pre><code>/* Control request for registering a HID device.
+<pre class="devsite-click-to-copy">
+/* Control request for registering a HID device.
  * Upon registering, a unique ID is sent by the accessory in the
  * value parameter. This ID will be used for future commands for
  * the device
@@ -248,7 +251,7 @@ accessory to the Android device.</li>
  *  data            the HID report for the event
  */
 #define ACCESSORY_SEND_HID_EVENT         57
-</code></pre>
+</pre>
 
 <h2 id="interoperability-with-aoa-10-features">Interoperability with AOAv1</h2>
 

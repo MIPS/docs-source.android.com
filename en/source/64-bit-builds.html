@@ -49,7 +49,7 @@ within its manifest to avoid potential errors.</p>
 <p>In <code>BoardConfig.mk</code>, we added the following variables to
 configure the second CPU architecture and ABI:</p>
 
-<pre class=prettyprint>
+<pre>
 TARGET_2ND_ARCH
 TARGET_2ND_ARCH_VARIANT
 TARGET_2ND_CPU_VARIANT
@@ -63,7 +63,7 @@ TARGET_2ND_CPU_ABI2
 <p>If you want the build system to build 32-bit executables and apps by default,
 set the following variable:</p>
 
-<pre class=prettyprint>
+<pre class="devsite-click-to-copy">
 TARGET_PREFER_32_BIT := true
 </pre>
 
@@ -161,7 +161,7 @@ $(TARGET_OUT_SHARED_LIBRARIES)/hw</code>.</p>
 
 <p>In Multilib build, use <code>LOCAL_MODULE_RELATIVE_PATH</code> instead:</p>
 
-<pre class=prettyprint>
+<pre class="devsite-click-to-copy">
 LOCAL_MODULE_RELATIVE_PATH := hw
 </pre>
 

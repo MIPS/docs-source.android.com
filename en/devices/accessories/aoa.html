@@ -99,7 +99,7 @@ if the device supports that mode:</p>
   it returns a non-zero number that represents the supported protocol version.
   The control request is on endpoint 0 with the following characteristics:
 
-<pre>
+<pre class="devsite-click-to-copy">
 requestType:    USB_DIR_IN | USB_TYPE_VENDOR
 request:        51
 value:          0
@@ -116,7 +116,7 @@ data:           protocol version number (16 bits little endian sent from the
   request is on endpoint 0 (for each string ID) with the following
   characteristics:
 
-<pre>
+<pre class="devsite-click-to-copy">
 requestType:    USB_DIR_OUT | USB_TYPE_VENDOR
 request:        52
 value:          0
@@ -127,7 +127,7 @@ data            zero terminated UTF8 string sent from accessory to device
   <p>The following string IDs are supported, with a maximum size of 256 bytes
   for each string (must be zero-terminated with <code>\0</code>).</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 manufacturer name:  0
 model name:         1
 description:        2
@@ -140,7 +140,7 @@ serial number:      5
   <li>Send a control request to ask the device to start in accessory mode. The
   control request is on endpoint 0 with the following characteristics:
 
-<pre>
+<pre class="devsite-click-to-copy">
 requestType:    USB_DIR_OUT | USB_TYPE_VENDOR
 request:        53
 value:          0

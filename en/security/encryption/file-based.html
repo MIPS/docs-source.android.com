@@ -254,7 +254,9 @@ into FBE mode as is the case in the developer preview. It is also possible to
 enable FBE from fastboot using this command:
 </p>
 <p>
-<code>$ fastboot --wipe-and-use-fbe</code>
+<pre class="devsite-terminal devsite-click-to-copy">
+fastboot --wipe-and-use-fbe
+</pre>
 </p>
 <p>
 This is intended solely for development purposes as a platform for demonstrating
@@ -302,9 +304,7 @@ created and the encryption policy links these keys to those directories.
 In the current AOSP implementation, the encryption policy is hardcoded into this
 location:
 </p>
-<p>
-<code>/system/extras/ext4_utils/ext4_crypt_init_extensions.cpp</code>
-</p>
+<pre class="devsite-click-to-copy">/system/extras/ext4_utils/ext4_crypt_init_extensions.cpp</pre>
 <p>
 It is possible to add exceptions in this file to prevent certain directories
 from being encrypted at all, by adding to the <code>directories_to_exclude</code>
@@ -330,7 +330,7 @@ can be set at the application level. The
 system apps. The <code>directBootAware</code> attribute is available to all.
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 &lt;application
     android:directBootAware="true"
     android:defaultToDeviceProtectedStorage="true"&gt;
@@ -422,8 +422,8 @@ order to test with <a
 hre="https://git.kernel.org/cgit/fs/ext2/xfstests-bld.git/plain/quick-start?h=META">
 xfstest</a> by using:
 </p>
-<pre>
-$ kvm-xfstests -c encrypt -g auto
+<pre class="devsite-terminal devsite-click-to-copy">
+kvm-xfstests -c encrypt -g auto
 </pre>
 <p>
 In addition, device manufacturers may perform these manual tests. On a device
