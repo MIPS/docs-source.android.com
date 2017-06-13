@@ -158,19 +158,19 @@ href="https://android.googlesource.com/platform/frameworks/base/+/master/core/re
 <p> To set up a resource overlay on this file, add the overlay directory to the
 project buildfile, as follows:</p>
 
-<pre>
-PRODUCT_PACKAGE_OVERLAYS := device/<i>device_implementer</i>/<i>device_name</i>/overlay
+<pre class="devsite-click-to-copy">
+PRODUCT_PACKAGE_OVERLAYS := device/<var>DEVICE_IMPLEMENTER</var>/<var>DEVICE_NAME</var>/overlay
 </pre>
 
 <p>or</p>
 
-<pre>
-PRODUCT_PACKAGE_OVERLAYS := vendor/<i>vendor_name</i>/overlay
+<pre class="devsite-click-to-copy">
+PRODUCT_PACKAGE_OVERLAYS := vendor/<var>VENDOR_NAME</var>/overlay
 </pre>
 
 <p> Then, add an overlay file to the directory, for example:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 vendor/foobar/overlay/frameworks/base/core/res/res/config.xml
 </pre>
 
@@ -213,7 +213,7 @@ to that of the Nexus 6 product line:
   <code>vendor/moto/shamu/device-vendor.mk</code> files via the Makefile while
   also declaring the product-specific information such as name, brand, and model.
 
-<pre>
+<pre class="devsite-click-to-copy">
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
@@ -242,7 +242,7 @@ PRODUCT_PACKAGES += \
   <li>Create an <code>AndroidProducts.mk</code> file that points to the product's Makefiles. In
   this example, only the product definition Makefile is needed. The example below is from
   <code>device/moto/shamu/AndroidProducts.mk</code>:
-    <pre>
+<pre class="devsite-click-to-copy">
 #
 # This file should set PRODUCT_MAKEFILES to a list of product makefiles
 # to expose to the build system.  LOCAL_DIR will already be set to
@@ -265,8 +265,8 @@ PRODUCT_MAKEFILES := \
 
   <li>Create a <code>vendorsetup.sh</code> file to add your product (a "lunch combo") to the build
   along with a <a href="#build-variants">build variant</a> separated by a dash. For example:
-<pre>
-add_lunch_combo &lt;product_name&gt;-userdebug
+<pre class="devsite-click-to-copy">
+add_lunch_combo <var>&lt;PRODUCT_NAME&gt;</var>-userdebug
 </pre>
   </li>
 

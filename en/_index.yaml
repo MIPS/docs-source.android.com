@@ -60,6 +60,14 @@ landing_page:
       image_path: /images/android_stack.png
   - heading: News
     items:
+    - heading: Updated Debugging Docs
+      description: >
+        Debugging documentation has been updated with details on using
+        <code>debuggerd</code> (includes new examples), <code>stack</code>,
+        <code>strace</code>, and <code>Valgrind</code> tools.
+      buttons:
+      - label: June 5th, 2017
+        path: /devices/tech/debug/
     - heading: Using Reference Boards
       description: >
         The former <em>Selecting Devices</em> page has been renamed
@@ -84,14 +92,6 @@ landing_page:
       buttons:
       - label: April 27th, 2017
         path: /devices/tech/debug/eval_perf
-    - heading: Camera Image Test Suite (ITS) Test
-      description: >
-        The Android Compatibility Test Suite (CTS) now supports ITS test
-        automation via Camera ITS-in-a-box, an assembly for testing
-        multiple devices at once.
-      buttons:
-      - label: April 20th, 2017
-        path: /compatibility/cts/camera-its-box
   - classname: devsite-landing-row-100 tf-row-centered
     items:
     - buttons:
