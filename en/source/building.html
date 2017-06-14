@@ -63,24 +63,28 @@ will be installed in the <code>vendor/</code> hierarchy of the source tree.</p>
 
 <p>To ensure the newly installed binaries are properly taken into account after
 being extracted, delete the existing output of any previous build using:</p>
-<pre><code>$ make clobber
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+make clobber
+</pre>
 
 <h2 id="initialize">Set up environment</h2>
 <p>Initialize the environment with the <code>envsetup.sh</code> script. Note
 that replacing <code>source</code> with <code>.</code> (a single dot) saves a few characters,
 and the short form is more commonly used in documentation.</p>
-<pre><code>$ source build/envsetup.sh
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+source build/envsetup.sh
+</pre>
 <p>or</p>
-<pre><code>$ . build/envsetup.sh
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+. build/envsetup.sh
+</pre>
 
 <h2 id="choose-a-target">Choose a target</h2>
 <p>Choose which target to build with <code>lunch</code>.  The exact configuration can be passed as
 an argument. For example, the following command:</p>
-<pre><code>$ lunch aosp_arm-eng
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+lunch aosp_arm-eng
+</pre>
 <p>refers to a complete build for the emulator, with all debugging enabled.</p>
 <p>If run with no arguments <code>lunch</code> will prompt you to choose a
 target from the menu.</p>
@@ -127,8 +131,8 @@ dual-E5520 machine (2 CPUs, 4 cores per CPU, 2 threads per core),
 the fastest builds are made with commands between <code>make -j16</code> and
 <code>make -j32</code>.</p>
 
-<pre>
-$ make -j4
+<pre class="devsite-terminal devsite-click-to-copy">
+make -j4
 </pre>
 
 <h2 id="run-it">Run it!</h2>
@@ -156,8 +160,8 @@ instructions.</p>
 <p>The emulator is added to your path automatically by the build process. To
 run the emulator, type:</p>
 
-<pre>
-$ emulator
+<pre class="devsite-terminal devsite-click-to-copy">
+emulator
 </pre>
 
 <h2 id="troubleshooting-common-build-errors">Troubleshooting Common Build Errors</h2>
@@ -194,8 +198,8 @@ correct JDK to the beginning of your PATH or remove the problematic JDK.</li>
 unfortunately incompatible with Python 3.  In order to use repo, please install
 Python 2.x:</p>
 
-<pre>
-$ apt-get install python
+<pre class="devsite-terminal devsite-click-to-copy">
+apt-get install python
 </pre>
 
 <h3 id="case-insensitive-filesystem">Case Insensitive Filesystem</h3>

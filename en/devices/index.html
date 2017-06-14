@@ -127,7 +127,7 @@ by the contract defined in each hardware-specific HAL interface.
   contains a <code>hw_module_t</code> struct along with other camera-specific function pointers:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 typedef struct camera_module {
     hw_module_t common;
     int (*get_number_of_cameras)(void);
@@ -137,7 +137,8 @@ typedef struct camera_module {
 
 <p>When you implement a HAL and create the module struct, you must name it
   <code>HAL_MODULE_INFO_SYM</code>. For instance, here is an example from the Nexus 9 audio HAL:</p>
-<pre>
+
+<pre class="devsite-click-to-copy">
 struct audio_module HAL_MODULE_INFO_SYM = {
     .common = {
         .tag = HARDWARE_MODULE_TAG,
@@ -159,7 +160,7 @@ struct audio_module HAL_MODULE_INFO_SYM = {
   <code>audio_hw_device_t</code> struct type contains function pointers to audio device operations:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 struct audio_hw_device {
     struct hw_device_t common;
 

@@ -100,7 +100,7 @@ should supply the modifications to the default SELinux policy as a <a href="/sou
 
 <p>In the following example, all domains are granted access to read from or write to <code>/dev/null</code> and read from <code>/dev/zero</code>.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 # Allow read / write access to /dev/null
 allow domain null_device:chr_file { getattr open read ioctl lock append write};
 
@@ -111,7 +111,7 @@ allow domain zero_device:chr_file { getattr open read ioctl lock };
 
 <p>This same statement can be written with SELinux <code>*_file_perms</code> macros (shorthand):</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 # Allow read / write access to /dev/null
 allow domain null_device:chr_file rw_file_perms;
 
@@ -123,7 +123,7 @@ allow domain zero_device:chr_file r_file_perms;
 
 <p>Here is a complete example policy for DHCP, which we examine below:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 type dhcp, domain;
 permissive dhcp;
 type dhcp_exec, exec_type, file_type;
