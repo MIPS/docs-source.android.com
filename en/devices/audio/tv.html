@@ -73,12 +73,12 @@ of all the TV output (11Khz, 16bit mono or 48Khz, 16bit mono). Used only for aud
 
 <p>Android supports the following audio devices for TV audio input/output.</p>
 
-<h4>system/media/audio/include/system/audio.h</h4>
+<h4><code>system/media/audio/include/system/audio.h</code></h4>
 
 <p class="note"><strong>Note:</strong> In Android 5.1 and earlier, the path to
 this file is: <code>system/core/include/system/audio.h</code></p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 /* output devices */
 AUDIO_DEVICE_OUT_AUX_DIGITAL  = 0x400,
 AUDIO_DEVICE_OUT_HDMI   = AUDIO_DEVICE_OUT_AUX_DIGITAL,
@@ -101,12 +101,12 @@ AUDIO_DEVICE_IN_LOOPBACK    = AUDIO_DEVICE_BIT_IN | 0x40000,
 
 <p>The Audio HAL extension for the audio routing API is defined by following:</p>
 
-<h4>system/media/audio/include/system/audio.h</h4>
+<h4><code>system/media/audio/include/system/audio.h</code></h4>
 
 <p class="note"><strong>Note:</strong> In Android 5.1 and earlier, the path to
 this file is: <code>system/core/include/system/audio.h</code></p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 /* audio port configuration structure used to specify a particular configuration of an audio port */
 struct audio_port_config {
     audio_port_handle_t      id;           /* port unique ID */
@@ -144,9 +144,9 @@ struct audio_port {
 };
 </pre>
 
-<h4>hardware/libhardware/include/hardware/audio.h</h4>
+<h4><code>hardware/libhardware/include/hardware/audio.h</code></h4>
 
-<pre>
+<pre class="devsite-click-to-copy">
 struct audio_hw_device {
   :
     /**
@@ -185,9 +185,9 @@ struct audio_hw_device {
 
 <p>To test DEVICE_IN_LOOPBACK for TV monitoring, use the following testing code. After running the
 test, the captured audio saves to <code>/sdcard/record_loopback.raw</code>, where you can listen to
-it using <code>ffmeg</code>.</p>
+it using <code><a href="https://en.wikipedia.org/wiki/FFmpeg">FFmpeg</a></code>.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 &lt;uses-permission android:name="android.permission.MODIFY_AUDIO_ROUTING" /&gt;
 &lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;
 
@@ -267,12 +267,12 @@ it using <code>ffmeg</code>.</p>
 </pre>
 
 <p>Locate the captured audio file in <code>/sdcard/record_loopback.raw</code> and listen to it using
-<code>ffmeg</code>:</p>
+<code>FFmpeg</code>:</p>
 
-<pre>
-adb pull /sdcard/record_loopback.raw
-ffmpeg -f s16le -ar 48k -ac 1 -i record_loopback.raw record_loopback.wav
-ffplay record_loopback.wav
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb pull /sdcard/record_loopback.raw</code>
+<code class="devsite-terminal">ffmpeg -f s16le -ar 48k -ac 1 -i record_loopback.raw record_loopback.wav</code>
+<code class="devsite-terminal">ffplay record_loopback.wav</code>
 </pre>
 
 <h2 id="useCases">Use cases</h2>

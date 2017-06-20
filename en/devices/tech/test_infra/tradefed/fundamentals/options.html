@@ -46,7 +46,8 @@ the TF console when the command is run with <code>--help</code> or <code>--help-
 <p>As an example, let's say we want to build a functional phone test which will dial a variety of
 phone numbers, and will expect to receive a sequence of DTMF tones from each number after it
 connects.</p>
-<code><pre>public class PhoneCallFuncTest extends IRemoteTest {
+<pre class="prettyprint">
+public class PhoneCallFuncTest extends IRemoteTest {
     &#64;Option(name = "timeout", description = "How long to wait for connection, in millis")
     private long mWaitTime = 30 * 1000;  // 30 seconds
 
@@ -56,7 +57,8 @@ connects.</p>
 
     public PhoneCallFuncTest() {
         mCalls.add("123-456-7890", "01134");  // default
-    }</pre></code>
+    }
+</pre>
 
 <p>That's all that's required for the Developer to set up two points of configuration for that
 test.  They could then go off and use <code>mWaitTime</code> and <code>mCalls</code> as normal,
@@ -73,21 +75,24 @@ suppose the Integrator wanted to define a lower-latency test that calls the defa
 as a long-running test that calls a variety of numbers.  They could create a pair of configurations
 that might look like the following:</p>
 
-<code><pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;configuration description="low-latency default test; low-latency.xml"&gt;
     &lt;test class="com.example.PhoneCallFuncTest"&gt;
         &lt;option name="timeout" value="5000" /&gt;
     &lt;/test&gt;
-&lt;/configuration&gt;</pre></code>
+&lt;/configuration&gt;</pre>
 
-<code><pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;configuration description="call a bunch of numbers; many-numbers.xml"&gt;
     &lt;test class="com.example.PhoneCallFuncTest"&gt;
         &lt;option name="call" key="111-111-1111" value="#*#*TEST1*#*#" /&gt;
         &lt;option name="call" key="222-222-2222" value="#*#*TEST2*#*#" /&gt;
         &lt;!-- ... --&gt;
     &lt;/test&gt;
-&lt;/configuration&gt;</pre></code>
+&lt;/configuration&gt;
+</pre>
 
 <h2 id="testrunner">Test Runner</h2>
 <p>The Test Runner also has access to these configuration points via the Trade Federation console.
@@ -98,11 +103,14 @@ append to fields specified by Lifecycle Objects within each config.</p>
 
 <p>To run the low-latency test with the <code>many-numbers</code> phone numbers, the Test Runner
 could execute:</p>
-<code><pre>tf >run low-latency.xml --call 111-111-1111 #*#*TEST1*#*# --call 222-222-2222 #*#*TEST2*#*#</pre></code>
+<pre class="devsite-click-to-copy">
+tf&gt; run low-latency.xml --call 111-111-1111 #*#*TEST1*#*# --call 222-222-2222 #*#*TEST2*#*#
+</pre>
 
 <p>Or, to get a similar effect from the opposite direction, the Test Runner could reduce the wait time
 for the <code>many-numbers</code> test:</p>
-<code><pre>tf >run many-numbers.xml --timeout 5000</code></pre>
+<pre class="devsite-click-to-copy">
+tf&gt; run many-numbers.xml --timeout 5000</pre>
 
   </body>
 </html>

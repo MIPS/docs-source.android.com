@@ -39,26 +39,18 @@ state of the device.</p>
 <p>Example: Using the release tools to build a full update for the
 hypothetical <b>tardis</b> device:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 # first, build the target-files .zip
-% <b>. build/envsetup.sh &amp;&amp; lunch tardis-eng</b>
-% <b>mkdir dist_output</b>
-% <b>make dist DIST_DIR=dist_output</b>
-  [...]
-% <b>ls -l dist_output/*target_files*</b>
--rw-r----- 1 user eng  69965275 Sep 29 15:51 tardis-target_files.zip
+<code class="devsite-terminal">. build/envsetup.sh &amp;&amp; lunch tardis-eng</code>
+<code class="devsite-terminal">mkdir dist_output</code>
+<code class="devsite-terminal">make dist DIST_DIR=dist_output</code>
 </pre>
 
 <p>The target-files .zip contains everything needed to construct OTA packages.
 </p>
 
-<pre>
-% <b>./build/tools/releasetools/ota_from_target_files \
-    dist_output/tardis-target_files.zip ota_update.zip</b>
-unzipping target target-files...
-done.
-% <b>ls -l ota_update.zip</b>
--rw-r----- 1 user eng 62236561 Sep 29 15:58 ota_update.zip
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">./build/tools/releasetools/ota_from_target_files dist_output/tardis-target_files.zip ota_update.zip</code>
 </pre>
 
 <p>The ota_update.zip is now ready to be sent to test devices (everything is
@@ -81,16 +73,8 @@ incremental update, you need the target_files .zip from the previous build
 (the one you want to update <i>from</i>) as well as the target_files .zip from
 the new build.</p>
 
-<pre>
-% <b>./build/tools/releasetools/ota_from_target_files \
-    -i PREVIOUS-tardis-target_files.zip \  </b># make incremental from this older version<b>
-    dist_output/tardis-target_files.zip incremental_ota_update.zip</b>
-unzipping target target-files...
-unzipping source target-files...
-   [...]
-done.
-% <b>ls -l incremental_ota_update.zip</b>
--rw-r----- 1 user eng 1175314 Sep 29 16:10 incremental_ota_update.zip
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">./build/tools/releasetools/ota_from_target_files -i PREVIOUS-tardis-target_files.zip dist_output/tardis-target_files.zip incremental_ota_update.zip # make incremental from the older version</code>
 </pre>
 
 <p>This build is very similar to the previous build, and the incremental

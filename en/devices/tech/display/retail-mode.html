@@ -43,7 +43,7 @@ employees.</li></ul>
 
 <h2 id="lifecycle">Lifecycle</h2>
 
-<img src="images/retail-demo-flow.png" alt="retail demo mode flow" width="XXX" id="retail-demo-flow" />
+<img src="/devices/tech/display/images/retail-demo-flow.png" alt="retail demo mode flow" width="XXX" id="retail-demo-flow" />
 <p class="img-caption">
   <strong>Figure 1.</strong> Retail demonstration mode option in Language selection
 </p>
@@ -58,7 +58,7 @@ factory. Once a consumer setup has completed, retail mode may no longer be
 available.  Once selected, the device finishes SUW with an abbreviated flow.
 </p>
 
-<img src="images/retail-demo-wizard.png" alt="retail demo wizard use" width="XXX" id="retail-demo-wizard" />
+<img src="/devices/tech/display/images/retail-demo-wizard.png" alt="retail demo wizard use" width="XXX" id="retail-demo-wizard" />
 <p class="img-caption">
   <strong>Figure 2.</strong> Retail demonstration mode option in Language
 selection
@@ -135,9 +135,10 @@ from the boot loader.
 <h2 id="examples-and-source">Examples and source</h2>
 
 <p>
-Find the custom launcher that plays a video in a loop within:<br>
-<code>/packages/apps/RetailDemo</code>
-</p>
+Find the custom launcher that plays a video in a loop within:</p>
+<pre class="devsite-click-to-copy">
+/packages/apps/RetailDemo
+</pre>
 
 <h2 id="implementation">Implementation</h2>
 
@@ -165,7 +166,7 @@ An OEM specifies a custom launcher by overriding the framework resource
 For example, with:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 &lt;!-- Component that is the default launcher when Retail Mode is enabled. --&gt;
 &lt;string name="config_demoModeLauncherComponent"&gt;com.android.retaildemo/.DemoPlayer&lt;/string&gt;
 </pre>
@@ -288,7 +289,7 @@ video from can be configured by overriding the following string value in the
 RetailDemo app:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 &lt;!-- URL where the retail demo video can be downloaded from. --&gt;
 &lt;string name="retail_demo_video_download_url"&gt;&lt;/string&gt;
 </pre>
@@ -306,7 +307,7 @@ in <code>res/values-en-rUS/strings.xml</code> and
 In <code>res/values-en-rUS/strings.xml</code>:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 &lt;string name="retail_demo_video_download_url"&gt;download URL for US video goes here&lt;/string&gt;
 </pre>
 
@@ -314,7 +315,7 @@ In <code>res/values-en-rUS/strings.xml</code>:
 And similarly in <code>res/values-en-rGB/strings.xml</code>:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 &lt;string name="retail_demo_video_download_url"&gt;download URL for UK video goes here&lt;/string&gt;
 </pre>
 

@@ -133,7 +133,7 @@ directory to contain your library's source files.</li>
 
 <li>Create an <code>Android.mk</code> file to build the shared library. Ensure
 the Makefile contains the following lines:
-<pre>
+<pre class="devsite-click-to-copy">
 LOCAL_MODULE := camera.&lt;device_name&gt;
 LOCAL_MODULE_RELATIVE_PATH := hw
 </pre>
@@ -148,7 +148,7 @@ device's Makefile. For example, to specify your device has a camera flash and
 can autofocus, add the following lines in your device's
 <code>&lt;device&gt;/&lt;company_name&gt;/&lt;device_name&gt;/device.mk</code>
 Makefile:
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 PRODUCT_COPY_FILES := \ ...
 
 PRODUCT_COPY_FILES += \
@@ -168,7 +168,7 @@ framework</a>.</li>
 <code>device/&lt;company_name&gt;/&lt;device_name&gt;/device.mk</code> Makefile
 to copy the <code>media_profiles.xml</code> and <code>media_codecs.xml</code>
 files to the appropriate location:
-<pre>
+<pre class="devsite-click-to-copy">
 # media config xml file
 PRODUCT_COPY_FILES += \
     &lt;device&gt;/&lt;company&gt;/&lt;device&gt;/media_profiles.xml:system/etc/media_profiles.xml
@@ -182,7 +182,7 @@ PRODUCT_COPY_FILES += \
 <code>PRODUCT_PACKAGES</code> variable in your device's
 <code>device/&lt;company&gt;/&lt;device&gt;/device.mk</code>
 Makefile:
-<pre>
+<pre class="devsite-click-to-copy">
 PRODUCT_PACKAGES := \
 Gallery2 \
 ...

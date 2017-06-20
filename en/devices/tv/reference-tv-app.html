@@ -84,10 +84,10 @@ easily select an earlier version by changing the branch from master to a
 different one listed in the table above.</p>
 
 
-<pre>
-$ mkdir live-tv && cd live-tv
-$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master
-$ repo sync -j8 -c
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">mkdir live-tv && cd live-tv</code>
+<code class="devsite-terminal">repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b master</code>
+<code class="devsite-terminal">repo sync -j8 -c</code>
 </pre>
 
 
@@ -96,10 +96,10 @@ $ repo sync -j8 -c
 
 <p>To build the Live TV code, run:</p>
 
-<pre>
-$ . build/envsetup.sh
-$ tapas LiveTv x86
-$ make LiveTv
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">. build/envsetup.sh</code>
+<code class="devsite-terminal">apas LiveTv x86</code>
+<code class="devsite-terminal">make LiveTv</code>
 </pre>
 
 
@@ -108,14 +108,16 @@ $ make LiveTv
 
 <p>To push Live TV to your test device:</p>
 
-<pre>
-$ adb install -r -d $OUT/system/priv-app/LiveTv/LiveTv.apk
+<pre class="devsite-terminal devsite-click-to-copy">
+adb install -r -d $OUT/system/priv-app/LiveTv/LiveTv.apk
 </pre>
 
 <p>If the developer wants the LIVE TV app to have system permissions, the first time it
 is installed it needs to be pushed to /system/priv-app with:</p>
 
-<pre>adb push $OUT/system/priv-app/LiveTv/LiveTv.apk  /system/priv-app/LiveTv/</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb push $OUT/system/priv-app/LiveTv/LiveTv.apk  /system/priv-app/LiveTv/
+</pre>
 
 <h2 id=test>Test</h2>
 
@@ -129,8 +131,8 @@ integrated. In addition to running the <a href="/compatibility/cts/index.html">C
 <p>There are unit and functional tests for the Live TV app. You must have a
 device (or emulator) connected to run the tests.</p>
 
-<pre>
-$ adb shell logcat -c
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell logcat -c
 m LiveTv TVTestInput TVUnitTests -j20 &&\
 adb install -r -d $OUT/system/priv-app/LiveTv/LiveTv.apk &&\
 adb install -r -d $OUT/system/app/TVTestInput/TVTestInput.apk && \
@@ -148,7 +150,7 @@ adb shell am instrument \
 
 <h3 id=functional_tests>Functional Tests</h3>
 
-<pre>
+<pre class="devsite-terminal devsite-click-to-copy">
 $ adb shell logcat -c
 m LiveTv TVTestInput TVFuncTests -j20 &&\
 adb install -r -d $OUT/system/priv-app/LiveTv/LiveTv.apk &&\
@@ -170,7 +172,7 @@ adb shell am instrument \
 
 <p>The Jank tests look for dropped frames and delays in rendering.</p>
 
-<pre>
+<pre class="devsite-terminal devsite-click-to-copy">
 $ adb shell logcat -c
 m LiveTv TVTestInput TVJankTests -j20 &&\
 adb install -r -d $OUT/system/priv-app/LiveTv/LiveTv.apk &&\

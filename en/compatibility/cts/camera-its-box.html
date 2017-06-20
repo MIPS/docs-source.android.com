@@ -110,7 +110,9 @@ charts on the tablet screen.
 <li>Position the tablet face-up on a table (do not attach the tablet to the back
 panel of the box)</li>
 <li>Run the following command:
-<pre>$ python tools/run_all_tests.py device=$device_id camera=0 chart=$chart_id scenes=2,3</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+python tools/run_all_tests.py device=$device_id camera=0 chart=$chart_id scenes=2,3
+</pre>
 Scenes 2 and 3 require the tablet to display an image, so the tablet prompts you
 to "Allow Drive to access photos, media, and files on your device?". Clear this
 prompt (and prevent future prompts) by pressing <strong>Allow</strong>.</li>
@@ -135,25 +137,31 @@ hardware and software:</p>
 <ul>
 <li>One (1) Pixel NOF26W for the back camera(0) testing, S/N: FA6BM0305016. To
 install the CTS Verifier app, unzip android-cts-verifier.zip then run
-<pre>$ adb -s FA6BM0305016 install -r android-cts-verifier/CtsVerifier.apk</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb -s FA6BM0305016 install -r android-cts-verifier/CtsVerifier.apk
+</pre></li>
 <li>One (1) Pixel NOF26W for the front camera(1) testing, S/N: FA6BM0305439. To
 install the CTS Verifier app, unzip android-cts-verifier.zip then run
-<pre>$ adb -s FA6BM0305439 install -r android-cts-verifier/CtsVerifier.apk</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb -s FA6BM0305439 install -r android-cts-verifier/CtsVerifier.apk
+</pre>
+</li>
 </ul>
 </li></ul>
 
 <h3 id=scenes-0-4>Running scenes 0-4</h3>
 <p>To run scenes 0-4 on the front and back camera in parallel:</p>
-<pre>$ cd android-cts-verifier/CameraITS
-$ . build/envsetup.sh
-$ python tools/run_parallel_tests.py device0=FA6BM0305016 device1=FA6BM0305439 chart=5811000011
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">cd android-cts-verifier/CameraITS</code>
+<code class="devsite-terminal">. build/envsetup.sh</code>
+<code class="devsite-terminal">python tools/run_parallel_tests.py device0=FA6BM0305016 device1=FA6BM0305439 chart=5811000011</code>
 </pre>
 
 <p>Examples:</p>
 <table>
 <tr>
-<td ><img src=images/camera_its_cam0.png align="center"></td>
-<td align="center"><img src=images/camera_its_cam0.png></td>
+<td ><img src=/compatibility/cts/images/camera_its_cam0.png align="center"></td>
+<td align="center"><img src=/compatibility/cts/images/camera_its_cam0.png></td>
 </tr>
 <tr>
 <td align="center"><p class=caption><strong>Figure 1</strong>. Camera 0 S/N:
@@ -169,9 +177,15 @@ FA6BM0305439</p>
 <p>You can retry scenes for both front and back cameras or a single camera:
 <ul>
 <li>To retry scenes on front and back cameras in parallel:
-<pre>$ python tools/run_parallel_tests.py device0=FA6BM0305016 device1=FA6BM0305439 chart=5811000011 scenes=3,4</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+python tools/run_parallel_tests.py device0=FA6BM0305016 device1=FA6BM0305439 chart=5811000011 scenes=3,4
+</pre>
+</li>
 <li>To retry scenes on a single camera:
-<pre>$ python tools/run_all_tests.py device=FA6BM0305016 chart=5811000011 camera=1 scenes=3,4</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+python tools/run_all_tests.py device=FA6BM0305016 chart=5811000011 camera=1 scenes=3,4
+</pre>
+</li>
 </ul>
 
 <h3 id=scenes-0-4>Running scene 5</h3>
@@ -180,12 +194,15 @@ CameraITS.pdf in the CTS Verifier download). You can run Scene 5 separately
 (outside of the box) to test two devices in parallel.</p>
 <ul>
 <li>To run Scene 5 on front and back cameras on two devices in parallel:
-<pre>$ python tools/run_parallel_tests.py device0=FA6BM0305016 device1=FA6BM0305439 chart=5811000011 scenes=5</pre>
-<br><img src=images/camera_its_scene5.png width="50%"><br>
+<pre class="devsite-terminal devsite-click-to-copy">
+python tools/run_parallel_tests.py device0=FA6BM0305016 device1=FA6BM0305439 chart=5811000011 scenes=5
+</pre>
+<br><img src=/compatibility/cts/images/camera_its_scene5.png width="50%"><br>
 <strong>Figure 3</strong>. Camera scene 5.</li>
 <li>To run Scene 5 for front and back cameras on a single device:
-<pre>$ python tools/run_all_tests.py device=FA6BM0305016 camera=0 scenes=5
-$ python tools/run_all_tests.py device=FA6BM0305016 camera=1 scenes=5
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">python tools/run_all_tests.py device=FA6BM0305016 camera=0 scenes=5</code>
+<code class="devsite-terminal">python tools/run_all_tests.py device=FA6BM0305016 camera=1 scenes=5</code>
 </pre></li>
 </ul>
 
@@ -199,21 +216,27 @@ have finished, so to view results during test execution you must use Android
 Device Monitor or <code>adb logcat</code> to verify progress and/or view
 screenshots.<br>
 <br>Example adb command:
-<pre>$ adb -s FA6BM0305016 logcat -v time</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb -s FA6BM0305016 logcat -v time
+</pre>
 Example screenshots command:
-<pre>$ adb -s FA6BM0305016 shell screencap -p /sdcard/screencap.png
-$ adb -s FA6BM0305016 pull /sdcard/screencap.png
-$ display ./screencap.png
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb -s FA6BM0305016 shell screencap -p /sdcard/screencap.png</code>
+<code class="devsite-terminal">adb -s FA6BM0305016 pull /sdcard/screencap.png</code>
+<code class="devsite-terminal">display ./screencap.png</code>
 </pre></li>
 <li><strong>View results</strong>. To save Camera ITS results as a report:
 <ol>
 <li>Press <strong>Pass</strong> and save the report:
-<br><img src=images/camera_its_results.png width="50%"><br>
+<br><img src=/compatibility/cts/images/camera_its_results.png width="50%"><br>
 <strong>Figure 4</strong>. Camera ITS report.</li>
 <li>Pull reports from the device:
-<pre>$ adb -s FA6BM0305016 pull /sdcard/verifierReports</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb -s FA6BM0305016 pull /sdcard/verifierReports
+</pre>
+</li>
 <li>Unzip the report file and view the test_result.xml.
-<br><img src=images/camera_its_reports.png><br>
+<br><img src=/compatibility/cts/images/camera_its_reports.png><br>
 <strong>Figure 5</strong>. Camera ITS reports.<br></li>
 </ol>
 </li>

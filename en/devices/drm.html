@@ -46,7 +46,7 @@ from DRM-protected or non-protected content. See <a
 href="https://developer.android.com/reference/android/media/MediaDrm.html">MediaDrm</a>
 for the class to obtain keys for decrypting protected media streams.</p>
 
- <img src="images/ape_fwk_drm.png" alt="Android DRM HAL" />
+ <img src="/devices/images/ape_fwk_drm.png" alt="Android DRM HAL" />
 
 <p class="img-caption"><strong>Figure 1.</strong> DRM Hardware Abstraction
 Layer</p>
@@ -121,8 +121,10 @@ and does not have to be aware of each DRM scheme. </p>
 <p>Plug-ins are loaded automatically when DrmManagerService is launched. As
 shown in the figure below, the DRM plug-in manager loads/unloads all the
 available plug-ins. The DRM framework loads plug-ins automatically by finding
-them under:<br/>
-<code>/system/lib/drm/plugins/native/</code></p>
+them under:</p>
+<pre class="devsite-click-to-copy">
+/system/lib/drm/plugins/native/
+</pre>
  
 <img src="images/ape_fwk_drm_plugins_life.png" alt="Android DRM Plug-in Lifecycle" />
 
@@ -139,9 +141,9 @@ framework plug-in discovery directory. See implementation instructions below for
 developers must implement the interfaces specified in IDrmEngine and the
 listener interfaces specified below. The interface definition is available in
 the source tree at:<p/>
-<code>
-&lt;platform_root&gt;/frameworks/av/drm/libdrmframework/plugins/common/include
-</code>
+<pre class="devsite-click-to-copy">
+<var>PLATFORM_ROOT</var>/frameworks/av/drm/libdrmframework/plugins/common/include
+</pre>
 
 <h3 id="DrmInfo">DRM Info</h3>
 <p>DrmInfo is a wrapper class that wraps the protocol for communicating with the
@@ -151,12 +153,16 @@ The protocol should be described by the plug-in in XML format. Each DRM plug-in
 would accomplish the transaction by interpreting the protocol. The DRM framework
 defines an API to retrieve an instance of DrmInfo called acquireDrmInfo().</p>
 
-<code>DrmInfo* acquireDrmInfo(int uniqueId, const DrmInfoRequest* drmInfoRequest);</code>
+<pre class="devsite-click-to-copy prettyprint">
+DrmInfo* acquireDrmInfo(int uniqueId, const DrmInfoRequest* drmInfoRequest);
+</pre>
 <p>Retrieves necessary information for registration, deregistration or rights
 acquisition information. See <a
 href="http://developer.android.com/reference/android/drm/DrmInfoRequest.html">DrmInfoRequest</a> for more information.</p>
 
-<code>DrmInfoStatus* processDrmInfo(int uniqueId, const DrmInfo* drmInfo);</code>
+<pre class="devsite-click-to-copy prettyprint">
+DrmInfoStatus* processDrmInfo(int uniqueId, const DrmInfo* drmInfo);
+</pre>
 <p>processDrmInfo() behaves asynchronously and the results of the transaction can
 be retrieved either from OnEventListener or OnErrorListener.</p>
 
@@ -167,8 +173,9 @@ of DRM content. Once the association has been made, the license will be handled 
 the DRM framework so the Media Player application is abstracted from the existence
 of license.</p>
 
-<code>int checkRightsStatus(int uniqueId, const String8&amp; path, int
-action);</code>
+<pre class="devsite-click-to-copy prettyprint">
+int checkRightsStatus(int uniqueId, const String8&amp; path, int action);
+</pre>
 
 <p>Check whether the given content has valid rights or not.  The input
 parameters are the content file path where the content was saved and the action
@@ -176,7 +183,9 @@ to query rights for, for example: Action::DEFAULT, Action::PLAY.  Returns the
 status of the rights for the protected content, such as
 RightsStatus::RIGHTS_VALID, RightsStatus::RIGHTS_EXPIRED.</p>
 
-<code>status_t saveRights(int uniqueId, const DrmRights&amp; drmRights, const String8&amp; rightsPath, const String8&amp; contentPath);</code>
+<pre class="devsite-click-to-copy prettyprint">
+status_t saveRights(int uniqueId, const DrmRights&amp; drmRights, const String8&amp; rightsPath, const String8&amp; contentPath);
+</pre>
 
 <p>Save DRM rights to the specified rights path and make association with content path.
 The input parameters are the DrmRights to be saved, the rights file path where rights
@@ -189,8 +198,10 @@ provides APIs to return constraints associated with input content. See <a
 href="http://developer.android.com/reference/android/drm/DrmManagerClient.html">DrmManagerClient</a>
 for more information.</p>
 
-<code>DrmConstraints* getConstraints(int uniqueId, const String path, int
-action);</code>
+<pre class="devsite-click-to-copy prettyprint">
+DrmConstraints* getConstraints(int uniqueId, const String path, int
+action);
+</pre>
 <p>The getConstraint function call returns key-value pairs of constraints
 embedded in protected content. To retrieve the constraints, the uniqueIds (the
 Unique identifier for a session and path of the protected content) are required.
@@ -200,7 +211,9 @@ The action, defined as Action::DEFAULT, Action::PLAY, etc., is also required.</p
 
 <p class="img-caption"><strong>Figure 5.</strong> Retrieve license metadata</p>
 
-<code>DrmMetadata* getMetadata(int uniqueId, const String path);</code>
+<pre class="devsite-click-to-copy prettyprint">
+DrmMetadata* getMetadata(int uniqueId, const String path);
+</pre>
 <p>Get metadata information associated with input content for a given path of the
 protected content to return key-value pairs of metadata.</p>
 
@@ -209,10 +222,10 @@ protected content to return key-value pairs of metadata.</p>
 invoke openDecryptSession() at the beginning of the decryption sequence.
 openDecryptSession() asks each DRM plug-in if it can handle input DRM
 content.</p>
-<code>
+<pre class="devsite-click-to-copy prettyprint">
 status_t openDecryptSession(
    int uniqueId, DecryptHandle* decryptHandle, int fd, off64_t offset, off64_t length);
-</code>
+</pre>
 
 <p>The above call allows you to save DRM rights to specified rights path and make
 association with content path. DrmRights parameter is the rights to be saved,
@@ -234,29 +247,29 @@ transactions.</li>
 <h3 id="source">Source</h3>
 
 <p>The Android DRM framework includes a couple of samples, a passthru plug-in
-and a forward lock plug-in, which can be found at:<br/>
-<code>
-&lt;platform_root&gt;/frameworks/av/drm/libdrmframework/plugins/passthru<br/>
-&lt;platform_root&gt;/frameworks/av/drm/libdrmframework/plugins/forward-lock
-</code></p>
+and a forward lock plug-in, which can be found at:</p>
+<pre class="devsite-click-to-copy">
+<var>PLATFORM_ROOT</var>/frameworks/av/drm/libdrmframework/plugins/passthru
+<var>PLATFORM_ROOT</var>/frameworks/av/drm/libdrmframework/plugins/forward-lock
+</pre>
 
 <h3 id="build">Build and Integration</h3>
 
 <p>Add the following to the Android.mk of the plug-in implementation. The
 passthruplugin is used as a sample.</p>
 
-<code>
-PRODUCT_COPY_FILES +=
-$(TARGET_OUT_SHARED_LIBRARIES)/&lt;plugin_library&gt;:system/lib/drm/plugins/native/&lt;plugin_library&gt;
-e.g.,<br/>
-PRODUCT_COPY_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/
-libdrmpassthruplugin.so:system/lib/drm/plugins/native/libdrmpassthruplugin.so
-</code>
-<br/>
-<br/>
+<pre class="devsite-click-to-copy">
+PRODUCT_COPY_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/<var>PLUGIN_LIBRARY</var>:system/lib/drm/plugins/native/<var>PLUGIN_LIBRARY</var>
+</pre>
+<p>e.g.,</p>
+<pre class="devsite-click-to-copy">
+PRODUCT_COPY_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/libdrmpassthruplugin.so:system/lib/drm/plugins/native/libdrmpassthruplugin.so
+</pre>
 <p>Plug-in developers must  locate their respective plug-ins under this
-directory like so:<br/>
-<code>/system/lib/drm/plugins/native/libdrmpassthruplugin.so</code></p>
+directory like so:</p>
+<pre class="devsite-click-to-copy">
+/system/lib/drm/plugins/native/libdrmpassthruplugin.so
+</pre>
 
   </body>
 </html>

@@ -81,7 +81,7 @@ for discovering and loading the driver. Preferred paths for 32-bit and 64-bit
 Vulkan drivers are:</p>
 
 <p>
-<pre>
+<pre class="devsite-click-to-copy">
 /vendor/lib/hw/vulkan.&lt;ro.product.platform&gt;.so
 /vendor/lib64/hw/vulkan.&lt;ro.product.platform&gt;.so
 </pre>
@@ -176,7 +176,7 @@ the platform asks the driver to translate the requested format and image usage
 flags into gralloc usage flags by calling:</p>
 
 <p>
-<pre>
+<pre class="devsite-click-to-copy">
 VkResult VKAPI vkGetSwapchainGrallocUsageANDROID(
     VkDevice            device,
     VkFormat            format,
@@ -203,7 +203,7 @@ VK_SWAP_CHAIN_INFO_TYPE_IMAGES_WSI ..)</code>. The WSI implementation allocates
 the number of native buffers requested for the swapchain, then creates a
 <code>VkImage</code> for each one:</p>
 
-<p><pre>
+<pre class="devsite-click-to-copy">
 typedef struct {
     VkStructureType             sType; // must be VK_STRUCTURE_TYPE_NATIVE_BUFFER_ANDROID
     const void*                 pNext;
@@ -216,12 +216,12 @@ typedef struct {
     int                         format;
     int                         usage;
 } VkNativeBufferANDROID;
-</pre></p>
+</pre>
 
 <p>When creating a gralloc-backed image, the <code>VkImageCreateInfo</code> has
 the following data:</p>
 
-<p><pre>
+<pre class="devsite-click-to-copy">
  .imageType           = VK_IMAGE_TYPE_2D
   .format              = a VkFormat matching the format requested for the gralloc buffer
   .extent              = the 2D dimensions requested for the gralloc buffer
@@ -241,7 +241,7 @@ the following data:</p>
 and imports an externally-signalled native fence into both an existing
 <code>VkSemaphore</code> object and an existing <code>VkFence</code> object:</p>
 
-<p><pre>
+<pre class="devsite-click-to-copy">
 VkResult VKAPI vkAcquireImageANDROID(
     VkDevice            device,
     VkImage             image,
@@ -249,7 +249,7 @@ VkResult VKAPI vkAcquireImageANDROID(
     VkSemaphore         semaphore,
     VkFence             fence
 );
-</pre></p>
+</pre>
 
 <p>This function is called during <code>vkAcquireNextImageWSI</code> to import a
 native fence into the <code>VkSemaphore</code> and <code>VkFence</code> objects
@@ -274,13 +274,13 @@ it is as if the native fence was already signalled.</p>
 external use, and creates a native fence and schedules it to be signalled when
 prior work on the queue has completed:</p>
 
-<p><pre>
+<pre class="devsite-click-to-copy">
 VkResult VKAPI vkQueueSignalReleaseImageANDROID(
     VkQueue             queue,
     VkImage             image,
     int*                pNativeFenceFd
 );
-</pre></p>
+</pre>
 
 <p>This API is called during <code>vkQueuePresentWSI</code> on the provided
 queue. Effects are similar to <code>vkQueueSignalSemaphore</code>, except with a
