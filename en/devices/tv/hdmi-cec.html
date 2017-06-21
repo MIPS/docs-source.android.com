@@ -70,7 +70,7 @@ specifies.</p>
 controller to an implementation of the simpler HDMI-CEC hardware abstraction
 layer (HAL).</p>
 
-<img src="images/HDMI_Control_Service.png" alt="Diagram that shows how HDMI-CEC was implemented before and after Android 5.0">
+<img src="/devices/tv/images/HDMI_Control_Service.png" alt="Diagram that shows how HDMI-CEC was implemented before and after Android 5.0">
 
 <p class="img-caption"><strong>Figure 1.</strong> HDMI Control Service replacement</p>
 
@@ -79,7 +79,7 @@ layer (HAL).</p>
 
 <p>See the following diagram for a detailed view of the HDMI control service.</p>
 
-<img src="images/HDMI_Control_Service_Flow.png" alt="Image that shows how HDMI Control service details">
+<img src="/devices/tv/images/HDMI_Control_Service_Flow.png" alt="Image that shows how HDMI Control service details">
 
 <p class="img-caption"><strong>Figure 2.</strong> HDMI Control Service details</p>
 
@@ -96,7 +96,7 @@ to use to implement the HAL layer.</li>
 
 <p class="note"><strong>Note</strong>: Device manufacturers should add the following line into <code>PRODUCT_COPY_FILES</code> in <code>device.mk</code>.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 PRODUCT_COPY_FILES += \
 frameworks/native/data/etc/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml
 </pre>
@@ -107,13 +107,13 @@ device manufacturers need to set <code>ro.hdmi.device_type</code> in <code>devic
 
 <p>For HDMI source devices, like Over the Top (OTT) boxes, set:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=<strong>4</strong>
 </pre>
 
 <p>For HDMI sink devices, like panel TVs, set:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=<strong>0</strong></pre>
 </p>
 
@@ -169,7 +169,7 @@ etc.) to the upper layer through API.</p>
 
 <p>Here is an excerpt of the HDMI-CEC HAL definition regarding APIs:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 #ifndef ANDROID_INCLUDE_HARDWARE_HDMI_CEC_H
 #define ANDROID_INCLUDE_HARDWARE_HDMI_CEC_H
 

@@ -30,12 +30,15 @@ expected set of capabilities for each input device and are generating the
 desired stream of input events.</p>
 
 <h2 id="showing-device-capabilities">Showing device capabilities</h2>
-<p>Use the <code>-p</code> option to see all of the keys and axes a device
-reports. The following example lists the Linux key codes and other events a
+<p>Use the <code>-p</code> option with the <code>adb</code> command to see all of the keys and axes a device
+reports.</p>
+
+<pre class="devsite-terminal devsite-click-to-copy">adb shell su -- getevent -p</pre>
+
+<p>The following example lists the Linux key codes and other events a
 particular keyboard says it supports.</p>
 
-<pre><code>$ adb shell su -- getevent -p
-
+<pre>
   name:     "Motorola Bluetooth Wireless Keyboard"
   events:
     KEY (0001): 0001  0002  0003  0004  0005  0006  0007  0008
@@ -69,15 +72,17 @@ particular keyboard says it supports.</p>
     LED (0011): 0000  0001  0002  0003  0004
   input props:
     &lt;none&gt;
-</code></pre>
+</pre>
 
 <p>Use the <code>-i</code> option to get more information, including HID mapping
 tables and debugging information.</p>
 
-<p>Use the <code>-l</code> option to display textual labels for all event codes.
-Example:</p>
-<pre><code>$ adb shell su -- getevent -lp /dev/input/event1
-
+<p>Use the <code>-l</code> option to display textual labels for all event codes.</p>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell su -- getevent -lp /dev/input/event1
+</pre>
+<p>Example:</p>
+<pre>
   name:     "Melfas MMSxxx Touchscreen"
   events:
     ABS (0003): ABS_MT_SLOT           : value 0, min 0, max 9, fuzz 0, flat 0, resolution 0
@@ -95,8 +100,12 @@ touchscreen using the Linux multi-touch input protocol "B". The <code>-l</code>
 option displays textual labels and the <code>-t</code> option displays
 timestamps.</p>
 
-<pre><code>$ adb shell su -- getevent -lt /dev/input/event1
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell su -- getevent -lt /dev/input/event1
+</pre>
 
+<p>Example:</p>
+<pre>
 [   78826.389007] EV_ABS       ABS_MT_TRACKING_ID   0000001f
 [   78826.389038] EV_ABS       ABS_MT_PRESSURE      000000ab
 [   78826.389038] EV_ABS       ABS_MT_POSITION_X    000000ab
@@ -112,7 +121,7 @@ timestamps.</p>
 [   78826.468719] EV_ABS       ABS_MT_SLOT          00000001
 [   78826.468719] EV_ABS       ABS_MT_TRACKING_ID   ffffffff
 [   78826.468719] EV_SYN       SYN_REPORT           00000000
-</code></pre>
+</pre>
 <p class="note"><strong>Note:</strong> <code>getevent</code> timestamps use
 the format $SECONDS.$MICROSECONDS in the CLOCK_MONOTONIC timebase. For details,
 refer to getevent.c.</p>

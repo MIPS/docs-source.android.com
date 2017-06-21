@@ -81,11 +81,15 @@ outside the managed profile.</p>
 
 <p>Managed profiles are implemented as a new kind of secondary user, such that:</p>
 
-<pre>uid = 100000 * userid + appid</pre>
+<pre class="devsite-click-to-copy">
+uid = 100000 * userid + appid
+</pre>
 
 <p>They have separate app data like regular users:</p>
 
-<pre>/data/user/&lt;userid&gt;</pre>
+<pre class="devsite-click-to-copy">
+/data/user/&lt;userid&gt;
+</pre>
 
 <p>The UserId is calculated for all system requests using
 <code>Binder.getCallingUid()</code>, and all system state and responses are

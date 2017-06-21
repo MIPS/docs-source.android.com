@@ -94,13 +94,14 @@ managed profile by sending an intent with action:
 . Below is a sample intent that triggers the creation of the managed profile
 and sets the DeviceAdminSample as the profile owner:</p>
 
-<pre>adb shell am start -a android.app.action.PROVISION_MANAGED_PROFILE \
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb shell am start -a android.app.action.PROVISION_MANAGED_PROFILE \
           -c android.intent.category.DEFAULT \
 	      -e wifiSsid $(printf '%q' \"WifiSSID\") \
           -e deviceAdminPackage "com.google.android.deviceadminsample" \
 	      -e android.app.extra.deviceAdminPackageName $(printf '%q'
                         .DeviceAdminSample\$DeviceAdminSampleReceiver) \
-	      -e android.app.extra.DEFAULT_MANAGED_PROFILE_NAME "My Organisation"
+              -e android.app.extra.DEFAULT_MANAGED_PROFILE_NAME "My Organisation"</code>
 </pre>
 
 <h2 id=device_owner_provisioning_via_nfc>Device owner provisioning</h2>
@@ -117,7 +118,7 @@ DPC as device owner.</p>
 
 <p>A typical NFC bundle includes the following:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
                 EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME
                 EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_LOCATION
                 EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_CHECKSUM
@@ -128,8 +129,10 @@ DPC as device owner.</p>
 <p>Devices must have NFC configured to accept the managed provisioning
 mimetype from the setup experience:</p>
 
-<pre>/packages/apps/Nfc/res/values/provisioning.xml
-
+<pre class="devsite-click-to-copy">
+/packages/apps/Nfc/res/values/provisioning.xml
+</pre>
+<pre class="devsite-click-to-copy">
       &lt;bool name="enable_nfc_provisioning"&gt;true&lt;/bool&gt;
       &lt;item&gt;application/com.android.managedprovisioning&lt;/item&gt;
 </pre>

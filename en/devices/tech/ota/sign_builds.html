@@ -52,12 +52,12 @@ publicly released or deployed Android OS image with a special set of
 <p>To generate your own unique set of release-keys, run these commands from
 the root of your Android tree:</p>
 
-<pre class="no-pretty-print">
-subject='/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'
-mkdir ~/.android-certs
-for x in releasekey platform shared media; do \
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">subject='/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'</code>
+<code class="devsite-terminal">mkdir ~/.android-certs</code>
+<code class="devsite-terminal">for x in releasekey platform shared media; do \
     ./development/tools/make_key ~/.android-certs/$x "$subject"; \
-done
+done</code>
 </pre>
 
 <p><code>$subject</code> should be changed to reflect your organization's
@@ -69,12 +69,12 @@ such as on an air-gapped computer.</p>
 
 <p>To generate a release image, use:</p>
 
-<pre class="no-pretty-print">
-make dist
-./build/tools/releasetools/sign_target_files_apks \
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">make dist</code>
+<code class="devsite-terminal">./build/tools/releasetools/sign_target_files_apks \
     -o \    # explained in the next section
     -d ~/.android-certs out/dist/*-target_files-*.zip \
-    signed-target_files.zip
+    signed-target_files.zip</code>
 </pre>
 
 <p>The <code>sign_target_files_apks</code> script takes a target-files .zip
@@ -87,11 +87,11 @@ been signed with new keys. The newly signed images can be found under
 A signed target-files zip can be converted into a signed OTA update zip
 using the following procedure:
 
-<pre class="no-pretty-print">
-./build/tools/releasetools/ota_from_target_files \
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">./build/tools/releasetools/ota_from_target_files \
     -k ~/.android-certs/releasekey \
     signed-target_files.zip \
-    signed-ota_update.zip
+    signed-ota_update.zip</code>
 </pre>
 
 <h3 id="signatures-sideloading">Signatures and sideloading</h3>
@@ -126,8 +126,10 @@ verification against otacerts.zip). You can specify extra keys to be
 included only in recovery by setting the PRODUCT_EXTRA_RECOVERY_KEYS
 variable in your product definition:</p>
 
-<p><code>vendor/yoyodyne/tardis/products/tardis.mk</code></p>
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
+vendor/yoyodyne/tardis/products/tardis.mk
+</pre>
+<pre class="devsite-click-to-copy">
  [...]
 
 PRODUCT_EXTRA_RECOVERY_KEYS := vendor/yoyodyne/security/tardis/sideload
@@ -165,8 +167,10 @@ build/target/product/security</code>:</p>
 in their Android.mk file. (testkey is used if this variable is not set.) You
 can also specify an entirely different key by pathname, e.g.:</p>
 
-<p><code>device/yoyodyne/apps/SpecialApp/Android.mk</code></p>
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
+device/yoyodyne/apps/SpecialApp/Android.mk
+</pre>
+<pre class="devsite-click-to-copy">
  [...]
 
 LOCAL_CERTIFICATE := device/yoyodyne/security/special
@@ -185,7 +189,7 @@ dest_key</i></code> flag specifies key replacements one at a time. The flag
 replace all those in <code>build/target/product/security</code>; it is
 equivalent to using <code>-k</code> four times to specify the mappings:</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 build/target/product/security/testkey  = dir/releasekey
 build/target/product/security/platform = dir/platform
 build/target/product/security/shared   = dir/shared
@@ -198,7 +202,7 @@ one to replace the additional <code>keydevice/yoyodyne/security/special</code>
 required by SpecialApp in the example above. If the keys were in the following
 files:</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 vendor/yoyodyne/security/tardis/releasekey.x509.pem
 vendor/yoyodyne/security/tardis/releasekey.pk8
 vendor/yoyodyne/security/tardis/platform.x509.pem
@@ -215,12 +219,12 @@ vendor/yoyodyne/security/special-release.pk8   # password protected
 
 <p>Then you would sign all the apps like this:</p>
 
-<pre class="no-pretty-print">
-% <b>./build/tools/releasetools/sign_target_files_apks \
-    -d vendor/yoyodyne/security/tardis \
-    -k vendor/yoyodyne/special=vendor/yoyodyne/special-release \
-    -o \
-    tardis-target_files.zip signed-tardis-target_files.zip</b>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">./build/tools/releasetools/sign_target_files_apks -d vendor/yoyodyne/security/tardis -k vendor/yoyodyne/special=vendor/yoyodyne/special-release -o tardis-target_files.zip signed-tardis-target_files.zip</code>
+</pre>
+
+<p>This brings up the following:</p>
+<pre class="devsite-click-to-copy">
 Enter password for vendor/yoyodyne/security/special-release key&gt;
 Enter password for vendor/yoyodyne/security/tardis/media key&gt;
 Enter password for vendor/yoyodyne/security/tardis/platform key&gt;
@@ -267,24 +271,22 @@ flags.</p>
 certificate/private key pairs using the openssl tool from
 <a href="https://www.openssl.org/">openssl.org</a>:</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 # generate RSA key
-% <b>openssl genrsa -3 -out temp.pem 2048</b>
+<code class="devsite-terminal">openssl genrsa -3 -out temp.pem 2048</code>
 Generating RSA private key, 2048 bit long modulus
 ....+++
 .....................+++
 e is 3 (0x3)
 
 # create a certificate with the public part of the key
-% <b>openssl req -new -x509 -key temp.pem -out releasekey.x509.pem \
-  -days 10000 \
-  -subj '/C=US/ST=California/L=San Narciso/O=Yoyodyne, Inc./OU=Yoyodyne Mobility/CN=Yoyodyne/emailAddress=yoyodyne@example.com'</b>
+<code class="devsite-terminal">openssl req -new -x509 -key temp.pem -out releasekey.x509.pem -days 10000 -subj '/C=US/ST=California/L=San Narciso/O=Yoyodyne, Inc./OU=Yoyodyne Mobility/CN=Yoyodyne/emailAddress=yoyodyne@example.com'</code>
 
 # create a PKCS#8-formatted version of the private key
-% <b>openssl pkcs8 -in temp.pem -topk8 -outform DER -out releasekey.pk8 -nocrypt</b>
+<code class="devsite-terminal">openssl pkcs8 -in temp.pem -topk8 -outform DER -out releasekey.pk8 -nocrypt</code>
 
 # securely delete the temp.pem file
-% <b>shred --remove temp.pem</b>
+<code class="devsite-terminal">shred --remove temp.pem</code>
 </pre>
 
 <p>The openssl pkcs8 command given above creates a .pk8 file with <i>no</i>
@@ -315,7 +317,7 @@ the following command from the root of the Android
 tree:
 </p>
 
-<pre>
+<pre class="devsite-terminal devsite-click-to-copy">
 ./build/tools/releasetools/img_from_target_files signed-target-files.zip signed-img.zip
 </pre>
 
@@ -324,7 +326,7 @@ The resulting file, <code>signed-img.zip</code>, contains all the .img files.
 To load an image onto a device, use fastboot as
 follows:
 
-<pre>
+<pre class="devsite-terminal devsite-click-to-copy">
 fastboot update signed-img.zip
 </pre>
 

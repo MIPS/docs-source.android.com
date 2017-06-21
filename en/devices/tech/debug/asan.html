@@ -62,7 +62,7 @@ to the build rules. Clang may find bugs in your code that GCC missed.</p>
 <p>Add <code>LOCAL_SANITIZE:=address</code> to the build rule of the
 executable.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 LOCAL_SANITIZE:=address
 </pre>
 
@@ -83,7 +83,7 @@ which are built with ASan, you'll need two copies of the library. The
 recommended way to do this is to add the following to <code>Android.mk</code>
 for the module in question:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 LOCAL_SANITIZE:=address
 LOCAL_MODULE_RELATIVE_PATH := asan
 </pre>
@@ -95,7 +95,7 @@ LOCAL_MODULE_RELATIVE_PATH := asan
 <p>For system daemons, add the following to the appropriate section of
 <code>/init.rc</code> or <code>/init.$device$.rc</code>.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 setenv LD_LIBRARY_PATH /system/lib/asan
 </pre>
 
@@ -111,9 +111,9 @@ sync</code>.</p>
 when present by reading <code>/proc/$PID/maps</code>. If it's not, you may need
 to disable SELinux, like so:</p>
 
-<pre>
-$ adb root
-$ adb shell setenforce 0
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb root</code>
+<code class="devsite-terminal">adb shell setenforce 0</code>
 # restart the process with adb shell kill $PID
 # if it is a system service, or may be adb shell stop; adb shell start.
 </pre>
@@ -126,7 +126,7 @@ of Android is built without frame pointers. As a result, you will often get
 only one or two meaningful frames. To fix this, either rebuild the library with
 ASan (recommended!), or with:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 LOCAL_CFLAGS:=-fno-omit-frame-pointer
 LOCAL_ARM_MODE:=arm
 </pre>
@@ -167,7 +167,7 @@ this). Edit the Zygote record in
 <code>system/core/rootdir/init.zygote(<em>32|64</em>).rc</code> to add the
 following lines:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 setenv LD_LIBRARY_PATH /system/lib/asan:/system/lib
 setenv ASAN_OPTIONS
 allow_user_segv_handler=true
@@ -186,10 +186,10 @@ trading some memory overhead for slower application startup.</p>
 that’s used to run apps under Valgrind. The following example runs the Gmail app
 under ASan:</p>
 
-<pre>
-$ adb root
-$ adb shell setenforce 0  # disable SELinux
-$ adb shell setprop wrap.com.google.android.gm "asanwrapper"
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb root</code>
+<code class="devsite-terminal">adb shell setenforce 0  # disable SELinux</code>
+<code class="devsite-terminal">adb shell setprop wrap.com.google.android.gm "asanwrapper"</code>
 </pre>
 
 <p>In this context, asanwrapper rewrites <code>/system/bin/app_process</code>
@@ -209,16 +209,16 @@ AddressSanitizer at once.</p>
 
 <p>Run the following commands in the same build tree.</p>
 
-<pre>
-$ make -j42
-$ SANITIZE_TARGET=address make -j42
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">make -j42</code>
+<code class="devsite-terminal">SANITIZE_TARGET=address make -j42</code>
 </pre>
 
 <p>In this mode, <code>userdata.img</code> contains extra libraries and must be
 flashed to the device as well. Use the following command line:</p>
 
-<pre>
-$ fastboot flash userdata && fastboot flashall
+<pre class="devsite-terminal devsite-click-to-copy">
+fastboot flash userdata && fastboot flashall
 </pre>
 
 <p>At the moment of this writing, modern Nexus and Pixel devices boot to the UI in this mode.</p>

@@ -44,7 +44,7 @@ update</a> process and as part of an Android OS release.</p>
 <h2 id="architecture">Architecture</h2>
 <p>Media applications interact with the Android native multimedia framework
 according to the following architecture.</p>
-<img src="images/ape_fwk_media.png" alt="Android media architecture"
+<img src="/devices/media/images/ape_fwk_media.png" alt="Android media architecture"
 id="figure1" /><p class="img-caption"><strong>Figure 1.</strong> Media
 architecture</p>
 
@@ -98,14 +98,18 @@ service. For the interfaces to create the plugin, see
 <li>Build your plugin as a shared library with the name
 <code>libstagefrighthw.so</code> in your product Makefile. For example:
 <br>
-<p><pre>LOCAL_MODULE := libstagefrighthw</pre></p>
+<pre class="devsite-click-to-copy">
+LOCAL_MODULE := libstagefrighthw
+</pre>
 <p>In your device's Makefile, ensure you declare the module as a product
 package:</p>
-<pre>
+<pre class="devsite-click-to-copy">
 PRODUCT_PACKAGES += \
   libstagefrighthw \
   ...
-</pre></li></ol>
+</pre>
+</li>
+</ol>
 
 <h2 id="expose">Exposing codecs to the framework</h2>
 <p>The Stagefright service parses the <code>system/etc/media_codecs.xml</code>
@@ -116,7 +120,7 @@ and profiles on the device to app developers via the
 in the <code>device/&lt;company&gt;/&lt;device&gt;/</code> directory
 and copy this over to the system image's <code>system/etc</code> directory in
 your device's Makefile. For example:</p>
-<pre>
+<pre class="devsite-click-to-copy">
 PRODUCT_COPY_FILES += \
   device/samsung/tuna/media_profiles.xml:system/etc/media_profiles.xml \
   device/samsung/tuna/media_codecs.xml:system/etc/media_codecs.xml \

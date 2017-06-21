@@ -34,8 +34,8 @@ output, specify the service you would like to examine.  </p>
 
 <p>For example, the following command:</p>
 
-<pre>
-$ adb shell dumpsys input
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell dumpsys input
 </pre>
 
 <p>provides system data for input components such as touchscreens or built-in
@@ -47,8 +47,12 @@ keyboards.</p>
 <p>For a complete list of system services that you can use with dumpsys, try the
 following command:</p>
 
-<pre class="no-pretty-print">
-$ adb shell dumpsys -l
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell dumpsys -l
+</pre>
+
+<p>Example output:</p>
+<pre class="devsite-click-to-copy">
 Currently running services:
   DockObserver
   SurfaceFlinger

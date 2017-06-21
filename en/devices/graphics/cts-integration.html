@@ -35,8 +35,8 @@ files can be found under the <code>android/cts</code> directory in the deqp
 source tree. You can run deqp tests through the <code>cts-tradefed</code>
 utility with the following command:</p>
 
-<pre>
-$ cts-tradefed run cts --plan CTS-DEQP
+<pre class="devsite-terminal devsite-click-to-copy">
+cts-tradefed run cts --plan CTS-DEQP
 </pre>
 
 <h2 id=duplicating_runs_without_cts>Duplicating runs without CTS</h2>
@@ -44,8 +44,8 @@ $ cts-tradefed run cts --plan CTS-DEQP
 <p>To replicate the CTS run, install the deqp APK of the CTS package and use the
 following command:</p>
 
-<pre>
-$ adb -d shell am start -n com.drawelements.deqp/android.app.NativeActivity -e \
+<pre class="devsite-terminal devsite-click-to-copy">
+adb -d shell am start -n com.drawelements.deqp/android.app.NativeActivity -e \
 cmdLine "deqp --deqp-case=dEQP-GLES3.some_group.* --deqp-gl-config-name=rgba8888d24s8 --deqp-log-filename=/sdcard/dEQP-Log.qpa
 </pre>
 

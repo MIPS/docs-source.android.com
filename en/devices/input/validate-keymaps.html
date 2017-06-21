@@ -29,41 +29,51 @@ maps files and virtual key definition files.</p>
 <h2 id="compilation">Compilation</h2>
 <p>To compile <code>validatekeymaps</code>, set up the development environment, download
 the Android source tree, compile it, then run:</p>
-<pre><code>$ mmm frameworks/base/tools/validatekeymaps
-</code></pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+mmm frameworks/base/tools/validatekeymaps
+</pre>
 <p>This command should compile a host tool called validatekeymaps into the
 <code>out/host/&lt;os&gt;/bin</code> directory.</p>
 <h2 id="usage">Usage</h2>
 <p>If you ran <code>envsetup.sh</code> to set up your development environment, then the
 <code>validatekeymaps</code> tool should already be on your path.  You can verify
 this by running <code>validatekeymaps</code>.</p>
-<pre><code>$ validatekeymaps
-
+<pre class="devsite-terminal devsite-click-to-copy">
+validatekeymaps
+</pre>
+<p>You should see the following output:</p>
+<pre>
 Keymap Validation Tool
 
 Usage:
  validatekeymaps [*.kl] [*.kcm] [*.idc] [virtualkeys.*] [...]
    Validates the specified key layouts, key character maps, 
    input device configurations, or virtual key definitions.
-</code></pre>
-<p>Then all you need to do is run <code>validatekeymaps</code> an give it the path of
+</pre>
+<p>Then all you need to do is run <code>validatekeymaps</code> and give it the path of
 one or more files to validate.</p>
-<pre><code>$ validatekeymaps frameworks/base/data/keyboards/Generic.kl
-
+<pre class="devsite-terminal devsite-click-to-copy">
+validatekeymaps frameworks/base/data/keyboards/Generic.kl
+</pre>
+<p>Example:</p>
+<pre>
 Validating file 'frameworks/base/data/keyboards/Generic.kl'...
 No errors.
 
 Success.
-</code></pre>
+</pre>
 <p>And if there is an error...</p>
-<pre><code>$ validatekeymaps Bad.kl
-
+<pre class="devsite-terminal devsite-click-to-copy">
+validatekeymaps Bad.kl
+</pre>
+<p>Example:</p>
+<pre>
 Validating file 'Bad.kl'...
 E/KeyLayoutMap(87688): Bad.kl:24: Expected keyword, got 'ke'.
 Error -22 parsing key layout file.
 
 Failed!
-</code></pre>
+</pre>
 <h2 id="automation">Automation</h2>
 <p>It is a <em>very</em> good idea to run <code>validatekeymaps</code> on all configuration files
 before installing them on a device.</p>
@@ -71,7 +81,8 @@ before installing them on a device.</p>
 script or a makefile.</p>
 <p>The following sample makefile is based on the contents of
 <code>frameworks/base/data/keyboards/Android.mk</code>.</p>
-<pre><code># This makefile performs build time validation of framework keymap files.
+<pre class="devsite-click-to-copy">
+# This makefile performs build time validation of framework keymap files.
 
 LOCAL_PATH := $(call my-dir)
 
@@ -89,7 +100,7 @@ validate_framework_keymaps: $(files)
     $(hide) $(validatekeymaps) $(files)
 
 include $(BUILD_PHONY_PACKAGE)
-</code></pre>
+</pre>
 
   </body>
 </html>

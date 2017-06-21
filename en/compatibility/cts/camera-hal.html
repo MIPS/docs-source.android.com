@@ -102,10 +102,10 @@ tests.</p>
 
 <p>To set up these tests:</p>
 
-<pre>
-$ cd hardware/libhardware/tests/camera*/
-$ mm
-$ adb remount; adb sync
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">cd hardware/libhardware/tests/camera*/</code>
+<code class="devsite-terminal">mm</code>
+<code class="devsite-terminal">adb remount; adb sync</code>
 </pre>
 
 <h3 id=hal_3_x_tests>[  ] 3.1. HAL 3.x tests</h3>
@@ -115,8 +115,8 @@ $ adb remount; adb sync
 
 <p>To run all tests:</p>
 
-<pre>
-$ adb shell /data/nativetest/camera3_test/camera3_test
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell /data/nativetest/camera3_test/camera3_test
 </pre>
 
 <p>You receive an <strong>OK</strong> for each passed test. Errors are logged
@@ -129,24 +129,22 @@ at the end of output along with a summary of tests passed.</p>
 
 <p>To run all tests:</p>
 
-<pre>
-$ adb shell /data/nativetest/camera3_test/camera3_test
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell /data/nativetest/camera3_test/camera3_test
 </pre>
 
 <p>To run a single test, pass the <code>--gtest_filter</code> argument and the
 test name, like so:</p>
 
-<pre>
-$ adb shell /data/nativetest/camera2_test/camera2_test \
---gtest_filter=Camera2Test.OpenClose
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell /data/nativetest/camera2_test/camera2_test --gtest_filter=Camera2Test.OpenClose
 </pre>
 
 <p>To run a subset of tests, use a wildcard with the
 <code>--gtest_filter</code> argument, like so:</p>
 
-<pre>
-$ adb shell /data/nativetest/camera2_test/camera2_test \
---gtest_filter=Camera2Test.*
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell /data/nativetest/camera2_test/camera2_test --gtest_filter=Camera2Test.*
 </pre>
 
 <h3 id=3_tests_that_interact_with_the_camera_service>[  ] 3.3. Tests that
@@ -213,11 +211,11 @@ to communicate.</p>
 instructions on how to set up and run the tests. For setup: <code>make
 cts</code></p>
 
-<pre>
-$ extract root/out/host/linux-x86/cts-verfier/android-cts-verifier.zip
-$ cd android-cts-verifier
-$ adb install -r CtsVerifier.apk
-$ cd CameraITS
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">extract root/out/host/linux-x86/cts-verfier/android-cts-verifier.zip</code>
+<code class="devsite-terminal">cd android-cts-verifier</code>
+<code class="devsite-terminal">adb install -r CtsVerifier.apk</code>
+<code class="devsite-terminal">cd CameraITS</code>
 </pre>
 
 <p>See <code>tutorial.py</code> in the <code>tests</code> subdirectory for a
@@ -338,9 +336,9 @@ to install the resulting .apk. Example commands are included below.</p>
 
 <p>To set up these tests:</p>
 
-<pre>
-$ make mediaframeworktest
-$ adb install out/target/product/<em>&lt;name></em>/data/app/mediaframeworktest.apk
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">make mediaframeworktest</code>
+<code class="devsite-terminal">adb install out/target/product/<em>&lt;name></em>/data/app/mediaframeworktest.apk</code>
 </pre>
 
 <p>Where the <em><code><name></code></em> variable represents the directory
@@ -348,7 +346,7 @@ containing the vendor's product.</p>
 
 <p>Find all of the tests in the following directory or its subdirectories:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 frameworks/base/media/tests/MediaFrameworkTest/src/com/android/mediaframeworktest
 </pre>
 
@@ -367,13 +365,13 @@ frameworks/base/media/tests/MediaFrameworkTest/src/com/android/mediaframeworktes
 
 <p>To see all of the available tests::</p>
 
-<pre>
-$ adb shell pm list instrumentation
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell pm list instrumentation
 </pre>
 
 <p>This will yield results resembling:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 instrumentation:com.android.mediaframeworktest/.MediaFrameworkIntegrationTestRunner
 (target=com.android.mediaframeworktest)
 instrumentation:com.android.mediaframeworktest/.MediaRecorderStressTestRunner
@@ -392,7 +390,7 @@ The component is composed of the target package name
 
 <p>For instance:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 com.android.mediaframeworktest/.MediaFrameworkIntegrationTestRunner
 com.android.mediaframeworktest/.MediaRecorderStressTestRunner
 com.android.mediaframeworktest/.MediaFrameworkPerfTestRunner
@@ -401,15 +399,14 @@ com.android.mediaframeworktest/.MediaFrameworkPowerTestRunner
 
 <p>You may then pass each component to <code>adb shell am instrument</code> like so:</p>
 
-<pre>
-$ adb shell am instrument -w &lt;component.name&gt;
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell am instrument -w &lt;component.name&gt;
 </pre>
 
 <p>Where the &lt;component.name&gt; equals the extracted value above. For example:</p>
 
-<pre>
-$ adb shell am instrument -w \
-com.android.mediaframeworktest/.MediaFrameworkIntegrationTestRunner
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell am instrument -w com.android.mediaframeworktest/.MediaFrameworkIntegrationTestRunner
 </pre>
 
 <p>Please note, while the class path is the Java package + class name, the
@@ -420,19 +417,15 @@ name, not the Java package in which the test runner class resides.</p>
 <p>To run a single class of tests, pass the -e class <test-class> argument, like
 so:</p>
 
-<pre>
-$ adb shell am instrument -e class \
-com.android.mediaframeworktest.integration.CameraBinderTest -w \
-com.android.mediaframeworktest/.MediaFrameworkIntegrationTestRunner
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell am instrument -e class com.android.mediaframeworktest.integration.CameraBinderTest -w com.android.mediaframeworktest/.MediaFrameworkIntegrationTestRunner
 </pre>
 
 <p>To run only a single method in a test class, append a pound (#) sign and the
 method name (in this case, <code>testConnectPro</code>) to the class name, like so:</p>
 
-<pre>
-$ adb shell am instrument -e class \
-'com.android.mediaframeworktest.integration.CameraBinderTest#testConnectPro' -w
-\ com.android.mediaframeworktest/.MediaFrameworkIntegrationTestRunner
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell am instrument -e class 'com.android.mediaframeworktest.integration.CameraBinderTest#testConnectPro' -w com.android.mediaframeworktest/.MediaFrameworkIntegrationTestRunner
 </pre>
 
 <h3 id=media_settings_functional_tests>[  ] 7.2. Media settings functional tests</h3>
@@ -442,10 +435,8 @@ functionality of different combinations of camera settings. (ie, Flash,
 exposure, WB, scene, picture size and geoTag)</p>
 
 <p>Run the test command:</p>
-<pre>
-$ adb shell am instrument -w -r  -e delay_msec 15 -e log true -e class \
-com.android.mediaframeworktest.functional.camera.CameraPairwiseTest \
-com.android.mediaframeworktest/com.android.mediaframeworktest.CameraStressTestRunner
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell am instrument -w -r  -e delay_msec 15 -e log true -e class com.android.mediaframeworktest.functional.camera.CameraPairwiseTest com.android.mediaframeworktest/com.android.mediaframeworktest.CameraStressTestRunner
 </pre>
 
 <h3 id=media_integration_tests>[  ] 7.3. Media integration tests</h3>
@@ -454,13 +445,13 @@ com.android.mediaframeworktest/com.android.mediaframeworktest.CameraStressTestRu
 mediaframeworktest/integration/CameraBinderTest.java and
 mediaframeworktest/CameraStressTestRunner.java:</p>
 
-<pre>
-$ adb  shell am instrument -e class \ 'com.android.mediaframeworktest.<strong>integration</strong>.<strong>CameraBinderTest'</strong> -w \ 'com.android.mediaframeworktest/.<strong>CameraStressTestRunner'</strong>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb  shell am instrument -e class \ 'com.android.mediaframeworktest.<strong>integration</strong>.<strong>CameraBinderTest'</strong> -w \ 'com.android.mediaframeworktest/.<strong>CameraStressTestRunner'</strong>
 </pre>
 
 <p>If successful, this results in output resembling:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 -----
 
 com.android.mediaframeworktest.integration.CameraBinderTest:...........
@@ -480,10 +471,8 @@ and it will compare the memory usage different after 200 iterations. Test will
 fail If the difference is greater than 150kM.</p>
 
 <p>Run the test command:</p>
-<pre>
-$ adb shell am instrument -w -r  -e class \
-com.android.mediaframeworktest.performance.MediaPlayerPerformance#testCameraPreviewMemoryUsage
-\ com.android.mediaframeworktest/.MediaFrameworkPerfTestRunner
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell am instrument -w -r  -e class com.android.mediaframeworktest.performance.MediaPlayerPerformance#testCameraPreviewMemoryUsage com.android.mediaframeworktest/.MediaFrameworkPerfTestRunner
 </pre>
 
 <p>More detailed output can be found in:
@@ -494,10 +483,8 @@ com.android.mediaframeworktest.performance.MediaPlayerPerformance#testCameraPrev
 <p>The commands to run unit tests are all similar. For example, for
 CameraMetadataTest.java, the command would be:</p>
 
-<pre>
-$ adb  shell am instrument -e class \
-'com.android.mediaframeworktest.unit.CameraMetadataTest' -w \
-'com.android.mediaframeworktest/.CameraStressTestRunner'
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell am instrument -e class 'com.android.mediaframeworktest.unit.CameraMetadataTest' -w 'com.android.mediaframeworktest/.CameraStressTestRunner'
 </pre>
 
 <h3 id=media_stress_tests>[  ] 7.6. Media stress tests</h3>
@@ -506,9 +493,8 @@ $ adb  shell am instrument -e class \
 
 <p>Run the test command:</p>
 
-<pre>
-$ adb shell am instrument -w
-com.google.android.camera.tests/com.android.camera.stress.CameraStressTestRunner
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell am instrument -w com.google.android.camera.tests/com.android.camera.stress.CameraStressTestRunner
 </pre>
 
 <p>All tests should pass.</p>
