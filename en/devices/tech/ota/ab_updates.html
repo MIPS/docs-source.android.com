@@ -375,7 +375,7 @@
   <li>Implement the state machine as shown in Figure 1:</li>
 </ul>
 
-<img src="images/ab-updates-state-machine.png">
+<img src="/devices/tech/ota/images/ab-updates-state-machine.png">
 
 <p class="img-caption"><strong>Figure 1.</strong> Bootloader state machine</p>
 
@@ -423,8 +423,9 @@
   extra arguments:
 </p>
 
-<pre>skip_initramfs rootwait ro init=/init root="/dev/dm-0 dm=system none ro,0 1 \
-  android-verity &lt;public-key-id&gt; &lt;path-to-system-partition&gt;"
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">skip_initramfs rootwait ro init=/init root="/dev/dm-0 dm=system none ro,0 1 \
+  android-verity &lt;public-key-id&gt; &lt;path-to-system-partition&gt;"</code>
 </pre>
 
 <p>
@@ -444,19 +445,23 @@
     <code>openssl</code> command to convert from <code>.pem</code> to
     <code>.der</code> format (if the .X509 certificate is formatted in
     <code>.pem</code> format):
-    <pre>openssl x509 -in &lt;x509-pem-certificate&gt; -outform der -out &lt;x509-der-certificate&gt;</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+openssl x509 -in &lt;x509-pem-certificate&gt; -outform der -out &lt;x509-der-certificate&gt;
+</pre>
   </li>
   <li>
     Once copied to the kernel build root, build the <code>zImage</code> to
     include the certificate as part of the system keyring. This can be verified
     from the following <code>procfs</code> entry (requires
     <code>KEYS_CONFIG_DEBUG_PROC_KEYS</code> to be enabled):
-    <pre>angler:/# cat /proc/keys
+<pre class="devsite-click-to-copy">
+angler:/# cat /proc/keys
 
 1c8a217e I------     1 perm 1f010000     0     0 asymmetri
 Android: 7e4333f9bba00adfe0ede979e28ed1920492b40f: X509.RSA 0492b40f []
 2d454e3e I------     1 perm 1f030000     0     0 keyring
-.system_keyring: 1/4</pre>
+.system_keyring: 1/4
+</pre>
   </li>
 </ol>
 
@@ -550,8 +555,10 @@ Android: 7e4333f9bba00adfe0ede979e28ed1920492b40f: X509.RSA 0492b40f []
   the A/B-ed partitions. For example:
 </p>
 
-<pre>&lt;path-to-block-device&gt;/vendor  /vendor  ext4  ro
-wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
+<pre class="devsite-click-to-copy">
+&lt;path-to-block-device&gt;/vendor  /vendor  ext4  ro
+wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect
+</pre>
 
 <p>
   Please note that there should be no partition named <code>vendor</code> but
@@ -628,7 +635,8 @@ wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
   For example, use the following to generate a full OTA:
 </p>
 
-<pre>./build/tools/releasetools/ota_from_target_files \
+<pre class="devsite-terminal devsite-click-to-copy">
+./build/tools/releasetools/ota_from_target_files \
   dist_output/tardis-target_files.zip ota_update.zip
 </pre>
 
@@ -636,7 +644,8 @@ wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
   Or, generate an incremental OTA:
 </p>
 
-<pre>./build/tools/releasetools/ota_from_target_files \
+<pre class="devsite-terminal devsite-click-to-copy">
+./build/tools/releasetools/ota_from_target_files \
   -i PREVIOUS-tardis-target_files.zip \
   dist_output/tardis-target_files.zip incremental_ota_update.zip
 </pre>
@@ -661,7 +670,8 @@ wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
   configuration:
 </p>
 
-<pre>AB_OTA_PARTITIONS := \
+<pre class="devsite-click-to-copy">
+AB_OTA_PARTITIONS := \
   boot \
   system \
   bootloader
@@ -692,7 +702,8 @@ wait,verify=&lt;path-to-block-device&gt;/metadata,slotselect</pre>
   applicable):
 </p>
 
-<pre>AB_OTA_POSTINSTALL_CONFIG += \
+<pre class="devsite-click-to-copy">
+AB_OTA_POSTINSTALL_CONFIG += \
   RUN_POSTINSTALL_system=true \
   POSTINSTALL_PATH_system=usr/bin/postinst \
   FILESYSTEM_TYPE_system=ext4
@@ -706,14 +717,14 @@ additions to the product's device configuration (in the product's device.mk):</p
 <ol>
   <li>Include the native components in the build. This ensures the compilation
   script and binaries are compiled and included in the system image.
-  <pre>
+<pre class="devsite-click-to-copy">
   # A/B OTA dexopt package
   PRODUCT_PACKAGES += otapreopt_script
 </pre>
   </li>
   <li>Connect the compilation script to <code>update_engine</code> such that it
   is run as a post-install step.
-  <pre>
+<pre class="devsite-click-to-copy">
   # A/B OTA dexopt update_engine hookup
   AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \

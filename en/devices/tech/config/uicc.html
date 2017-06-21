@@ -74,10 +74,12 @@ access; otherwise both certificate and package name need to match.</p>
 <h3 id=rule_example>Rule example</h3>
 <p>The application name is <code>com.google.android.apps.myapp</code> and the
 SHA-1 certificate in hex string is:</p>
-<pre>AB:CD:92:CB:B1:56:B2:80:FA:4E:14:29:A6:EC:EE:B6:E5:C1:BF:E4</pre>
+<pre class="devsite-click-to-copy">
+AB:CD:92:CB:B1:56:B2:80:FA:4E:14:29:A6:EC:EE:B6:E5:C1:BF:E4
+</pre>
 
 <p>The rule on UICC in hex string is:</p>
-<pre>
+<pre class="devsite-click-to-copy">
 E243 &lt;= 43 is value length in hex
   E135
     C114 ABCD92CBB156B280FA4E1429A6ECEEB6E5C1BFE4
@@ -97,10 +99,13 @@ Access Control Rules File (ACRF) at <code>0x4300</code> and looks for entries
 with AID <code>FFFFFFFFFFFF</code>. Entries with different AIDs are ignored, so
 rules for other use cases can co-exist.</p>
 <p>Example ACRF content in hex string:</p>
-<pre>30 10 A0 08 04 06 FF FF FF FF FF FF 30 04 04 02 43 10</pre>
+<pre class="devsite-click-to-copy">
+30 10 A0 08 04 06 FF FF FF FF FF FF 30 04 04 02 43 10
+</pre>
 
 <p>Example Access Control Conditions File (ACCF) content:</p>
-<pre>30 16 04 14 61 ED 37 7E 85 D3 86 A8 DF EE 6B 86 4B D8 5B 0B FA A5 AF 81
+<pre class="devsite-click-to-copy">
+30 16 04 14 61 ED 37 7E 85 D3 86 A8 DF EE 6B 86 4B D8 5B 0B FA A5 AF 81
 </pre>
 
 <p>In above example, <code>0x4310</code> is the address for ACCF, which contains
@@ -204,7 +209,7 @@ developer key, with hash value
 tests also print out the expected certificate hash if certificates on UICC
 mismatch.</p>
 <p>Example output:</p>
-<pre>
+<pre class="devsite-click-to-copy">
 junit.framework.AssertionFailedError: This test requires a SIM card with carrier privilege rule on it.
 Cert hash: 61ed377e85d386a8dfee6b864bd85b0bfaa5af81
 </pre>
@@ -222,7 +227,9 @@ tests to run only on devices configured with same token. Carrier API CTS tests
 support the device token <code>sim-card-with-certs</code>. For example, the
 following device token restricts carrier API tests to run only on device
 <code>abcd1234</code>:</p>
-<pre>cts-tradefed run cts  --device-token abcd1234:sim-card-with-certs</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+cts-tradefed run cts  --device-token abcd1234:sim-card-with-certs
+</pre>
 
 <p>When running a test without using a device token, the test runs on all
 devices.</p>

@@ -31,27 +31,41 @@ then test a patch using a VTS plan.</p>
 <p>To set up a testing environment:</p>
 <ol>
 <li>Install Python development kit:
-<pre><code>$ sudo apt-get install python-dev</code></pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+sudo apt-get install python-dev
+</pre>
+</li>
 <li>Install Protocol Buffer tools (for Python):
-<pre><code>$ sudo apt-get install python-protobuf<br>
-$ sudo apt-get install protobuf-compiler
-</code></pre></li>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">sudo apt-get install python-protobuf</code>
+<code class="devsite-terminal">sudo apt-get install protobuf-compiler</code>
+</pre>
+</li>
 <li>Install Python virtual environment-related tools:
-<pre><code>$ sudo apt-get install python-virtualenv<br>
-$ sudo apt-get install python-pip
-</code></pre></li></ol>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">sudo apt-get install python-virtualenv</code>
+<code class="devsite-terminal">sudo apt-get install python-pip</code>
+</pre>
+</li>
+</ol>
 
 <h2 id="test">Testing a patch</h2>
 <p>To test a patch:</p>
 <ol>
 <li>Build a VTS host-side package:
-<pre><code>$ . build/envsetup.sh
-$ lunch aosp_arm64-userdebug
-$ make vts -j</code></pre></li>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">. build/envsetup.sh</code>
+<code class="devsite-terminal">lunch aosp_arm64-userdebug</code>
+<code class="devsite-terminal">make vts -j</code>
+</pre>
+</li>
 <li>Run the default VTS tests:
-<pre><code>$ vts-tradefed<br>
-&gt; run vts     // where vts is the test plan name
-</pre></code></li></ol>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">vts-tradefed</code>
+tf&gt; run vts     // where vts is the test plan name
+</pre>
+</li>
+</ol>
 
 <h2 id="plans">VTS plans</h2>
 <p>Available VTS test plans include:</p>

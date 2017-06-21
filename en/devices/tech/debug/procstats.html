@@ -33,8 +33,8 @@ proportional set size (PSS) and unique set size (USS).</p>
 <p>To get application memory usage stats for the last three hours, in
 human-readable form, run the following command:</p>
 
-<pre class=prettyprint>
-$ adb shell dumpsys procstats --hours 3
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell dumpsys procstats --hours 3
 </pre>
 
 
@@ -46,7 +46,7 @@ $ adb shell dumpsys procstats --hours 3
 time the application was running, while the numbers following show PSS and USS
 as minPSS-avgPSS-maxPSS/minUSS-avgUSS-maxUSS over samples.</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 AGGREGATED OVER LAST 3 HOURS:
   * com.android.systemui / u0a20 / v22:
            TOTAL: 100% (109MB-126MB-159MB/108MB-125MB-157MB over 18)

@@ -32,7 +32,9 @@ visual performance of graphics.</p>
 <p>The Hardware Composer (HWC) has a function pointer indicating the function
 to implement for VSYNC:</p>
 
-<pre class=prettyprint> int (waitForVsync*) (int64_t *timestamp) </pre>
+<pre class="prettyprint">
+int (waitForVsync*) (int64_t *timestamp)
+</pre>
 
 <p>This function blocks until a VSYNC occurs and returns the timestamp of the
 actual VSYNC. A message must be sent every time VSYNC occurs. A client can
@@ -179,7 +181,7 @@ synchronization framework existed, this function would receive dma-bufs, put
 those buffers on the display, and block while the buffer is visible. For
 example:</p>
 
-<pre class=prettyprint>
+<pre class="prettyprint">
 /*
  * assumes buf is ready to be displayed.  returns when buffer is no longer on
  * screen.
@@ -197,7 +199,7 @@ own fence, which is a guarantee of when the buffer will be off of the display.
 As you queue up buffers, the kernel will list dependencies with the
 synchronization framework:</p>
 
-<pre class=prettyprint>
+<pre class="prettyprint">
 /*
  * will display buf when fence is signaled.  returns immediately with a fence
  * that will signal when buf is no longer displayed.

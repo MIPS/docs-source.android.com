@@ -25,7 +25,7 @@
 
 <p>A very popular way to implement a game loop looks like this:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 while (playing) {
     advance state by one frame
     render the new frame
@@ -130,7 +130,7 @@ game state can be updated quickly.</p>
 simple game that did nothing but move a block every 100ms, you could have a
 dedicated thread that just did this:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
     run() {
         Thread.sleep(100);
         synchronized (mLock) {

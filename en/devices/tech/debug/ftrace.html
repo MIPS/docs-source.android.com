@@ -55,10 +55,14 @@ way to determine the correct values other than looking at the appropriate header
 divided into categories in <code>/d/tracing/events</code>.
 
 <p>To enable events on a per-category basis, use:
-<pre>$ echo 1 &gt; /d/tracing/events/irq/enable</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo 1 &gt; /d/tracing/events/irq/enable
+</pre>
 
 <p>To enable events on per-event basis, use:
-<pre>$ echo 1 &gt; /d/tracing/events/sched/sched_wakeup/enable</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo 1 &gt; /d/tracing/events/sched/sched_wakeup/enable
+</pre>
 
 <p>If extra events have been enabled by writing to sysfs nodes, they will
 <strong>not</strong> be reset by atrace. A common pattern
@@ -66,9 +70,11 @@ for Qualcomm device bringup is to enable <code>kgsl</code> (GPU) and
 <code>mdss</code> (display pipeline) tracepoints and then use atrace or
 <a href="/devices/tech/debug/systrace.html">systrace</a>:</p>
 
-<pre>$ adb shell "echo 1 &gt; /d/tracing/events/mdss/enable"
-$ adb shell "echo 1 &gt; /d/tracing/events/kgsl/enable"
-$ ./systrace.py sched freq idle am wm gfx view binder_driver irq workq ss sync -t 10 -b 96000 -o full_trace.html</pre>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb shell "echo 1 &gt; /d/tracing/events/mdss/enable"</code>
+<code class="devsite-terminal">adb shell "echo 1 &gt; /d/tracing/events/kgsl/enable"</code>
+<code class="devsite-terminal">./systrace.py sched freq idle am wm gfx view binder_driver irq workq ss sync -t 10 -b 96000 -o full_trace.html</code>
+</pre>
 
 <p>You can also use ftrace without atrace or systrace, which is
 useful when you want kernel-only traces (or if you've taken the time to write
@@ -76,13 +82,25 @@ the user-mode tracing property by hand). To run just ftrace:</p>
 
 <ol>
 <li>Set the buffer size to a value large enough for your trace:
-<pre>$ echo 96000 &gt; /d/tracing/buffer_size_kb</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo 96000 &gt; /d/tracing/buffer_size_kb
+</pre>
+</li>
 <li>Enable tracing:
-<pre>$ echo 1 &gt; /d/tracing/tracing_on</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo 1 &gt; /d/tracing/tracing_on
+</pre>
+</li>
 <li>Run your test, then disable tracing:
-<pre>$ echo 0 &gt; /d/tracing/tracing_on</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo 0 &gt; /d/tracing/tracing_on
+</pre>
+</li>
 <li>Dump the trace:
-<pre>$ cat /d/tracing/trace &gt; /data/local/tmp/trace_output</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+cat /d/tracing/trace &gt; /data/local/tmp/trace_output
+</pre>
+</li>
 </ol>
 
 <p>The trace_output gives the trace in text form. To visualize it using
@@ -90,7 +108,9 @@ Catapult, get the
 <a href="https://github.com/catapult-project/catapult/tree/master/">Catapult
 repository</a> from Github and run trace2html:</p>
 
-<pre>$ catapult/tracing/bin/trace2html ~/path/to/trace_file</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+catapult/tracing/bin/trace2html ~/path/to/trace_file
+</pre>
 
 <p>By default, this writes <code>trace_file.html</code> in the same
 directory.</p>
@@ -120,7 +140,9 @@ tree</a> (<code>tracing/bin/html2trace</code>) to uncompress the trace.</li>
 
 <li>Find a line at the beginning of the trace containing
 <code>tracing_mark_sync</code>. It should look something like this:
-<pre>&lt;5134&gt;-5134  (-----) [003] ...1    68.104349: tracing_mark_write: trace_event_clock_sync: parent_ts=68.104286</pre>
+<pre class="devsite-click-to-copy">
+&lt;5134&gt;-5134  (-----) [003] ...1    68.104349: tracing_mark_write: trace_event_clock_sync: parent_ts=68.104286
+</pre>
 
 <br>If this line does not exist (or if you used ftrace without atrace), then
 timings will be relative from the first event in the ftrace log.
@@ -154,11 +176,16 @@ CONFIG_IRQSOFF_TRACER=y, CONFIG_FUNCTION_PROFILER=y, and CONFIG_PREEMPT_TRACER=y
 </li>
 <li>Rebuild and boot the new kernel.</li>
 <li>Run the following to check for available tracers:
-<pre>$ cat /d/tracing/available_tracers</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+cat /d/tracing/available_tracers
+</pre>
+</li>
 <li>Confirm the command returns <code>function</code>, <code>irqsoff</code>,
 <code>preemptoff</code>, and <code>preemptirqsoff</code>.</li>
 <li>Run the following to ensure dynamic ftrace is working:
-<pre>$ cat /d/tracing/available_filter_functions | grep &lt;a function you care about&gt;</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+cat /d/tracing/available_filter_functions | grep &lt;a function you care about&gt;
+</pre>
 </li>
 </ol>
 
@@ -195,22 +222,43 @@ so it's time to use the function profiler:</p>
 <ol>
 <li>As functions are sometimes renamed by the compiler, confirm
 <code>ion_client_destroy</code> is there by using:
-<pre>$ cat /d/tracing/available_filter_functions | grep ion_client_destroy</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+cat /d/tracing/available_filter_functions | grep ion_client_destroy
+</pre>
 </li>
 <li>After confirming it is there, use it as the ftrace filter:
-<pre>$ echo ion_client_destroy &gt; /d/tracing/set_ftrace_filter</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo ion_client_destroy &gt; /d/tracing/set_ftrace_filter
+</pre>
+</li>
 <li>Turn on the function profiler:
-<pre>$ echo function &gt; /d/tracing/current_tracer</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo function &gt; /d/tracing/current_tracer
+</pre>
+</li>
 <li>Turn on stack traces whenever a filter function is called:
-<pre>$ echo func_stack_trace &gt; /d/tracing/trace_options</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo func_stack_trace &gt; /d/tracing/trace_options
+</pre>
+</li>
 <li>Increase the buffer size:
-<pre>$ echo 64000 &gt; /d/tracing/buffer_size_kb</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo 64000 &gt; /d/tracing/buffer_size_kb
+</pre>
+</li>
 <li>Turn on tracing:
-<pre>$ echo 1 &gt; /d/tracing/trace_on</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo 1 &gt; /d/tracing/trace_on
+</pre>
+</li>
 <li>Run the test and get the trace:
-<pre>$ cat /d/tracing/trace &gt; /data/local/tmp/trace</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+cat /d/tracing/trace &gt; /data/local/tmp/trace
+</pre>
+</li>
 <li>View the trace to see lots and lots of stack traces:
-<pre>    cameraserver-643   [003] ...1    94.192991: ion_client_destroy &lt;-ion_release
+<pre class="devsite-click-to-copy">
+    cameraserver-643   [003] ...1    94.192991: ion_client_destroy &lt;-ion_release
     cameraserver-643   [003] ...1    94.192997: &lt;stack trace&gt;
  =&gt; ftrace_ops_no_ops
  =&gt; ftrace_graph_call
@@ -220,7 +268,9 @@ so it's time to use the function profiler:</p>
  =&gt; ____fput
  =&gt; task_work_run
  =&gt; do_notify_resume
- =&gt; work_pending</pre></li>
+ =&gt; work_pending
+ </pre>
+</li>
  </ol>
 
 <p>Based on inspection of the ion driver, we can see that
@@ -286,12 +336,21 @@ the lock trace when ftrace was not running.</p>
 ftrace:</p>
 <ol>
 <li>Enable tracing:
-<pre>$ echo 1 &gt; /proc/sys/kernel/lock_stat</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo 1 &gt; /proc/sys/kernel/lock_stat
+</pre>
+</li>
 <li>Run your test.</li>
 <li>Disable tracing:
-<pre>$ echo 0 &gt; /proc/sys/kernel/lock_stat</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+echo 0 &gt; /proc/sys/kernel/lock_stat
+</pre>
+</li>
 <li>Dump your trace:
-<pre>$ cat /proc/lock_stat &gt; /data/local/tmp/lock_stat</pre></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+cat /proc/lock_stat &gt; /data/local/tmp/lock_stat
+</pre>
+</li>
 </ol>
 
 <p>For help interpreting the resulting output, refer to lockstat documentation

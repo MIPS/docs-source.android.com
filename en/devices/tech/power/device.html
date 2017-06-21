@@ -45,7 +45,7 @@ consumption between configurations.</p>
 
 <p>To read power consumption data, insert calls to the API in your testing code.</p>
 
-<pre>
+<pre class="prettyprint">
 import android.os.BatteryManager;
 import android.content.Context;
 BatteryManager mBatteryManager =
@@ -59,7 +59,7 @@ Slog.i(TAG, "Remaining energy = " + energy + "nWh");
 
 <p>Android supports the following battery fuel gauge properties:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 BATTERY_PROPERTY_CHARGE_COUNTER   Remaining battery capacity in microampere-hours
 BATTERY_PROPERTY_CURRENT_NOW      Instantaneous battery current in microamperes
 BATTERY_PROPERTY_CURRENT_AVERAGE  Average battery current in microamperes
