@@ -50,13 +50,13 @@ Android platform has a separate version of AfW Test Harness). For Android 7.0,
 the branch name is <code>afw-test-harness-nougat-dev</code>. To initialize
 the repo and download source code for this branch, use:</p>
 
-<pre>
-$ mkdir WORKING_DIRECTORY
-$ cd WORKING_DIRECTORY
-$ git config --global user.name "Your Name"
-$ git config --global user.email "you@example.com"
-$ repo init -u https://android.googlesource.com/platform/manifest -b afw-test-harness-nougat-dev
-$ repo sync -j24
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">mkdir WORKING_DIRECTORY</code>
+<code class="devsite-terminal">cd WORKING_DIRECTORY</code>
+<code class="devsite-terminal">git config --global user.name "Your Name"</code>
+<code class="devsite-terminal">git config --global user.email "you@example.com"</code>
+<code class="devsite-terminal">repo init -u https://android.googlesource.com/platform/manifest -b afw-test-harness-nougat-dev</code>
+<code class="devsite-terminal">repo sync -j24</code>
 </pre>
 
 <p>To check out the source code for a different version, specify the branch with
@@ -92,9 +92,9 @@ with the source code.</p>
 <p>To view and edit AfW source code in Android Studio:</p>
 <ol>
 <li>Run the following commands
-<pre>
-$ make idegen
-$ development/tools/idegen/idegen.sh
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">make idegen</code>
+<code class="devsite-terminal">development/tools/idegen/idegen.sh</code>
 </pre>
 </li>
 <li>In Android Studio, open <code>android.ipr</code>.</li>
@@ -109,7 +109,8 @@ successfully, complete the following steps:</p>
 <ol>
 <li>Configure the Wi-Fi network in <code>afw-test.props</code> with the
 following properties:
-<pre>wifi_ssid
+<pre class="devsite-click-to-copy">
+wifi_ssid
 wifi_password (optional)
 wifi_security_type (optional, available options are: NONE, WEP or WPA)
 </pre>
@@ -117,7 +118,7 @@ wifi_security_type (optional, available options are: NONE, WEP or WPA)
 <li>Obtain at least one account from a domain that is bound to Test DPC as
 its device policy controller. Specify the details in <code>afw-test.props</code>
 with the following properties:
-<pre>
+<pre class="devsite-click-to-copy">
 work_account_username
 work_account_password
 </pre>
@@ -128,15 +129,17 @@ work_account_password
 
 <h2 id=build_harness>Building the AfW Test Harness</h2>
 <p>Initialize the build configuration using:</p>
-<pre>
-$ source build/envsetup.sh
-$ lunch
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">source build/envsetup.sh</code>
+<code class="devsite-terminal">lunch</code>
 </pre>
 
 <p>Select a device type and press <strong>Enter</strong>.</p>
 
 <p>Build the harness using:</p>
-<pre>$ make afw-test-harness -j32</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+make afw-test-harness -j32
+</pre>
 <p>This creates a directory (<code>out/host/linux-x86/afw-th/android-cts</code>)
 with all necessary binaries, configuration files, and tools to run the test
 harness. This directory is also zipped into a file
@@ -147,13 +150,17 @@ for distribution.</p>
 <p>Use the following steps to run the AfW Test Harness:</p>
 <ol>
 <li>In your build environment, launch the test runner using:
-<pre>$ afw-test-tradefed</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+afw-test-tradefed
+</pre>
 This starts the <code>cts-tf</code> console, loads test plans, test cases,
 and <code>afw-test.props</code> from
 <code>out/host/linux-x86/afw-th/android-cts</code>.</li>
 <li>From the unzipped folder of <code>android-afw-test-harness.zip</code>,
 launch the test runner using:
-<pre>$ cts-tf &gt; ./android‐cts/tools/afw-test‐tradefed</pre>
+<pre class="devsite-click-to-copy">
+cts-tf&gt; ./android‐cts/tools/afw-test‐tradefed
+</pre>
 This loads test plans, test cases, and <code>afw-test.props</code> from
 <code>android-cts</code> directory. Ensure
 <code>./android‐cts/repository/testcases/afw-test.props</code> has the work
@@ -172,14 +179,17 @@ setup and enabling USB debugging.</li>
 </ul>
 
 <br>To run the test plan <code>afw-userdebug-build</code>, use:
-<pre>$ cts-tf &gt; run cts --plan afw-userdebug-build</pre>
+<pre class="devsite-click-to-copy">
+cts-tf&gt; run cts --plan afw-userdebug-build
+</pre>
 To see all test plans, use the command <code>list plans</code>. To view plan
 definitions, refer to
 <code>out/host/linux-x86/afw-th/android-cts/repository/plans</code>.
 <br>
 </li>
 <li>Run a test package. To run a single test package, use
-<pre>$ cts-tf &gt; run cts --package com.android.afwtest.NfcProvisioning
+<pre class="devsite-click-to-copy">
+cts-tf&gt; run cts --package com.android.afwtest.NfcProvisioning
 </pre>
 To view all packages, use the command <code>list packages</code>. For more
 options, use the command <code>run cts --help</code>.</li>
@@ -192,16 +202,23 @@ which you can launch by running <code>afw-test-tradefed</code>.</p>
 
 <li>Display more information with the <code>-l INFO</code> or <code>-l
 DEBUG</code> flags. Example:
-<pre>$ cts-tf &gt; run cts ‐‐plan afw-userdebug-build -l DEBUG</pre></li>
+<pre class="devsite-click-to-copy">
+cts-tf&gt; run cts ‐‐plan afw-userdebug-build -l DEBUG
+</pre>
+</li>
 
 <li>Run the test harness on a specific device with the <code>-s</code> flag.
 Example:
-<pre>$ cts-tf &gt; run cts ‐‐plan afw-userdebug-build -l DEBUG -s device_sn</pre>
+<pre class="devsite-click-to-copy">
+cts-tf&gt; run cts ‐‐plan afw-userdebug-build -l DEBUG -s device_sn
+</pre>
 </li>
 
 <li>Run test harness on all connected devices with the
 <code>--all-devices</code> flag. Example:
-<pre>$ cts-tf &gt; run cts ‐‐plan afw-userdebug-build -l DEBUG --all-devices</pre>
+<pre class="devsite-click-to-copy">
+cts-tf&gt; run cts ‐‐plan afw-userdebug-build -l DEBUG --all-devices
+</pre>
 </li>
 
 <li>View current running executions using <code>list invocations</code> or
@@ -246,7 +263,8 @@ Navigating:com.android.afwtest.uiautomator.pages.gms.AddAccountPage</code>
 </li>
 <li>If a test failed during the provisioning process, logcat contains an error
 similar to:
-<pre>TestRunner: java.lang.RuntimeException: Failed to load page: com.android.afwtest.uiautomator.pages.packageinstaller.DeviceAccessPage
+<pre class="devsite-click-to-copy">
+TestRunner: java.lang.RuntimeException: Failed to load page: com.android.afwtest.uiautomator.pages.packageinstaller.DeviceAccessPage
 </pre>
 This is typically caused by errors in a previous UI page or the page that
 failed to load, so try to find other error messages in logcat before this error,
@@ -306,7 +324,7 @@ meaningful text or content description that contains any of the following words:
 Skip, Finish, Done, Accept, Agree, Next, Continue, or Proceed. Alternatively,
 you can define a button in <code>afw-test.props</code> to configure the test
 harness to skip your UI. Example:</em></p>
-<pre>
+<pre class="devsite-click-to-copy">
 oem_widgets=your_btn
 your_btn.text=your_customized_text
 your_btn.package=your_package

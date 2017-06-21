@@ -572,7 +572,9 @@ To enable USB audio, add an entry to the
 audio policy configuration file.  This is typically
 located here:
 </p>
-<pre>device/oem/codename/audio_policy.conf</pre>
+<pre class="devsite-click-to-copy">
+device/oem/codename/audio_policy.conf
+</pre>
 <p>
 The pathname component "oem" should be replaced by the name
 of the OEM who manufactures the Android device,
@@ -583,7 +585,7 @@ and "codename" should be replaced by the device code name.
 An example entry is shown here:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 audio_hw_modules {
   ...
   usb {
@@ -620,7 +622,9 @@ audio_hw_modules {
 The audio Hardware Abstraction Layer (HAL)
 implementation for USB audio is located here:
 </p>
-<pre>hardware/libhardware/modules/usbaudio/</pre>
+<pre class="devsite-click-to-copy">
+hardware/libhardware/modules/usbaudio/
+</pre>
 <p>
 The USB audio HAL relies heavily on
 <i>tinyalsa</i>, described at <a href="terminology.html">Audio Terminology</a>.

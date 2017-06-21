@@ -57,7 +57,8 @@ model. Dangerous permissions are higher-risk permissions (such as
 <code>READ_CALENDAR</code>) that grant requesting applications access to private
 user data or control over the device that can negatively impact the user. To
 view a list of dangerous permissions, run the command:</p>
-<pre>
+
+<pre class="devsite-terminal devsite-click-to-copy">
 adb shell pm list permissions -g -d
 </pre>
 
@@ -159,10 +160,14 @@ strings to AOSP.</p>
 providers for core OS functionality using the
 <code>DefaultPermissionGrantPolicy.java</code> in PackageManager. Examples:</p>
 
-<p><code>ACTION_CALL (Dialer) Default</code><br>
-<code>Phone, Contacts, SMS, Microphone</code></p>
-<p><code>SMS_DELIVER_ACTION (SMS/MMS) Default</code><br>
-<code>Phone, Contacts, SMS</code></p>
+<pre class="devsite-click-to-copy">
+ACTION_CALL (Dialer) Default
+Phone, Contacts, SMS, Microphone
+</pre>
+<pre class="devsite-click-to-copy">
+SMS_DELIVER_ACTION (SMS/MMS) Default
+Phone, Contacts, SMS
+</pre>
 
 <h3 id="defining-custom-perms">Defining custom permissions</h3>
 <p>You can define custom permissions and groups as <em>normal</em> or

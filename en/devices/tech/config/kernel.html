@@ -54,7 +54,9 @@ Document (CDD)</a>.</p>
 <p>For devices that have a minimalist defconfig, you can use the following to
 enable options:</p>
 
-<pre><code>ARCH=<em>arch</em> scripts/kconfig/merge_config.sh <em>path</em>/<em>device</em>_defconfig android/configs/android-base.cfg android/configs/android-recommended.cfg</code></pre>
+<pre class="devsite-click-to-copy">
+ARCH=<em>arch</em> scripts/kconfig/merge_config.sh <em>path</em>/<em>device</em>_defconfig android/configs/android-base.cfg android/configs/android-recommended.cfg
+</pre>
 
 <p>This generates a .config file you can use to save a new defconfig or
 compile a new kernel with Android features enabled.</p>
@@ -62,13 +64,16 @@ compile a new kernel with Android features enabled.</p>
 <h2 id="usb">Enabling USB host mode options</h2>
 
 <p>For USB host mode audio, enable the following options:</p>
-<pre><code>CONFIG_SND_USB=y
+<pre class="devsite-click-to-copy">
+CONFIG_SND_USB=y
 CONFIG_SND_USB_AUDIO=y
 # CONFIG_USB_AUDIO is for a peripheral mode (gadget) driver
-</code></pre>
+</pre>
 
 <p>For USB host mode MIDI, enable the following option:</p>
-<pre><code>CONFIG_SND_USB_MIDI=y</code></pre>
+<pre class="devsite-click-to-copy">
+CONFIG_SND_USB_MIDI=y
+</pre>
 
 <h2 id="Seccomp-BPF-TSYNC">Seccomp-BPF with TSYNC</h2>
 <p>Seccomp-BPF is a kernel security technology that enables the creation of

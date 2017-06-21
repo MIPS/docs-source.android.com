@@ -35,10 +35,11 @@ the tag's uid_tag portion, and stats are collected for the acct_tag
 portion separately.</p>
 <p>Without explicit tagging, the qtaguid module will assume the
 <code>default_tag:  {acct_tag=0, uid_tag=10003}</code></p>
-<pre><code>    a:  {acct_tag=1, uid_tag=10003}
+<pre class="devsite-click-to-copy">
+    a:  {acct_tag=1, uid_tag=10003}
     b:  {acct_tag=2, uid_tag=10003}
     c:  {acct_tag=3, uid_tag=10003}
-</code></pre>
+</pre>
 <p><code>a, b, c…</code> represent explicit tags associated with specific sockets.</p>
 <p><code>default_tag (acct_tag=0)</code> is the default accounting tag that contains
 the total traffic for that uid, including all untagged
