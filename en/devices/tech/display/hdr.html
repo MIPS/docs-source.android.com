@@ -174,13 +174,13 @@ new HDR capable profiles:</p>
 
 <h4>Dolby-Vision</h4>
 
-<p><code>MediaFormat</code> mime constant:
-<blockquote><pre>
+<p><code>MediaFormat</code> mime constant:</p>
+<pre class="devsite-click-to-copy">
 String MIMETYPE_VIDEO_DOLBY_VISION
-</pre></blockquote></p>
+</pre>
 
 <p><code>MediaCodecInfo.CodecProfileLevel</code> profile constants:</p>
-<blockquote><pre>
+<pre class="devsite-click-to-copy">
 int DolbyVisionProfileDvavPen
 int DolbyVisionProfileDvavPer
 int DolbyVisionProfileDvheDen
@@ -189,7 +189,7 @@ int DolbyVisionProfileDvheDtb
 int DolbyVisionProfileDvheDth
 int DolbyVisionProfileDvheDtr
 int DolbyVisionProfileDvheStn
-</pre></blockquote>
+</pre>
 
 <p>Dolby Vision video layers and metadata must be concatenated into a single
 buffer per frames by video applications. This is done automatically by the
@@ -197,19 +197,19 @@ Dolby-Vision capable MediaExtractor.</p>
 
 <h4>HEVC HDR 10</h4>
 
-<p><code>MediaCodecInfo.CodecProfileLevel</code> profile constants:<p>
-<blockquote><pre>
+<p><code>MediaCodecInfo.CodecProfileLevel</code> profile constants:</p>
+<pre class="devsite-click-to-copy">
 int HEVCProfileMain10HDR10
-</pre></blockquote>
+</pre>
 
 <h4>VP9 HLG & PQ</h4>
 
 <p><code>MediaCodecInfo.CodecProfileLevel</code> profile
 constants:</p>
-<blockquote><pre>
+<pre class="devsite-click-to-copy">
 int VP9Profile2HDR
 int VP9Profile3HDR
-</pre></blockquote>
+</pre>
 
 <p>If a platform supports an HDR-capable decoder, it shall also support an
 HDR-capable extractor.</p>
@@ -553,7 +553,7 @@ MediaExtractor =&gt; MediaCodec pipeline.</p>
 
 <h3 id="hdr10decoder">HDR10 decoder pipeline</h3>
 
-<p><img src="../images/hdr10_decoder_pipeline.png"></p>
+<p><img src="/devices/tech/images/hdr10_decoder_pipeline.png"></p>
 
 <p class="img-caption"><strong>Figure 1.</strong> HDR10 pipeline</p>
 
@@ -588,7 +588,7 @@ the surface later.</li>
 
 <h3 id="dvdecoder">Dolby Vision decoder pipeline</h3>
 
-<p><img src="../images/dolby_vision_decoder_pipleline.png"></p>
+<p><img src="/devices/tech/images/dolby_vision_decoder_pipleline.png"></p>
 
 <p class="img-caption"><strong>Figure 2.</strong> Dolby Vision pipeline</p>
 
@@ -658,7 +658,7 @@ pass this to the display.</li>
 
 <h3 id="v9decoder">VP9 decoder pipeline</h3>
 
-<p><img src="../images/vp9-pq_decoder_pipleline.png"></p>
+<p><img src="/devices/tech/images/vp9-pq_decoder_pipleline.png"></p>
 
 <p class="img-caption"><strong>Figure 3.</strong> VP9-PQ pipeline</p>
 

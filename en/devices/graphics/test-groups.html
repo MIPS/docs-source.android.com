@@ -35,14 +35,14 @@ allocating certain resources until the driver reports an out-of-memory error.</p
 can occur: The operating system may kill the test process instead of allowing a
 driver to handle or otherwise provide an out-of-memory error. On such
 platforms, tests that are designed to cause out-of-memory errors are disabled
-by default, and must be enabled using the  <code>--deqp-test-oom=enable</code> command line argument. 
+by default, and must be enabled using the  <code>--deqp-test-oom=enable</code> command line argument.
 It is recommended that you run such tests manually to
 check if the system behaves correctly under resource pressure. However, in such
 a situation, a test process crash should be interpreted as a pass.</p>
 
 <h3 id=test_groups>Test groups</h3>
 
-<pre>
+<pre class="devsite-click-to-copy">
 dEQP-GLES2.stress.memory.*
 dEQP-GLES3.stress.memory.*
 </pre>
@@ -55,7 +55,7 @@ they can be configured to run indefinitely by supplying the <code>--deqp-test-it
 
 <h3 id=test_groups2>Test groups</h3>
 
-<pre>
+<pre class="devsite-click-to-copy">
 dEQP-GLES2.stress.long.*
 dEQP-GLES3.stress.long.*
 </pre>

@@ -59,7 +59,7 @@ Older versions of Android (especially on 32-bit ARM) followed a convoluted path
 between the original abort call (frame 4 here) and the actual sending of the
 signal (frame 0 here):
 </p>
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 pid: 1656, tid: 1656, name: crasher  >>> crasher <<<
 signal 6 (<i style="color:Orange">SIGABRT</i>), code -6 (SI_TKILL), fault addr --------
 <i style="color:Orange">Abort message</i>: 'some_file.c:123: some_function: assertion "false" failed'
@@ -85,7 +85,8 @@ href="http://man7.org/linux/man-pages/man2/tgkill.2.html">tgkill(2)</a></code>
 directly from <code>abort</code>, so there are fewer stack frames for you to
 skip over before you get to the interesting frames:
 
-<pre class="no-pretty-print">pid: 25301, tid: 25301, name: crasher  >>> crasher <<<
+<pre class="devsite-click-to-copy">
+pid: 25301, tid: 25301, name: crasher  >>> crasher <<<
 signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
     r0 00000000  r1 000062d5  r2 00000006  r3 00000008
     r4 ffa09dd8  r5 000062d5  r6 000062d5  r7 0000010c
@@ -119,7 +120,8 @@ was called with a null pointer; and this crash should go straight to the author
 of the calling code. In this case, frame #01 is the bad caller.
 </p>
 
-<pre class="no-pretty-print">pid: 25326, tid: 25326, name: crasher  >>> crasher <<<
+<pre class="devsite-click-to-copy">
+pid: 25326, tid: 25326, name: crasher  >>> crasher <<<
 signal 11 (<i style="color:Orange">SIGSEGV</i>), code 1 (SEGV_MAPERR), <i style="color:Orange">fault addr 0x0</i>
     r0 00000000  r1 00000000  r2 00004c00  r3 00000000
     r4 ab088071  r5 fff92b34  r6 00000002  r7 fff92b40
@@ -157,7 +159,9 @@ call actually succeeded first.
 <p>
 Here's an example of <code>readdir</code>:
 </p>
-<pre class="no-pretty-print">pid: 25405, tid: 25405, name: crasher  >>> crasher <<<
+
+<pre class="devsite-click-to-copy">
+pid: 25405, tid: 25405, name: crasher  >>> crasher <<<
 signal 11 (<i style="color:Orange">SIGSEGV</i>), code 1 (SEGV_MAPERR), <i style="color:Orange">fault addr 0xc</i>
     r0 0000000c  r1 00000000  r2 00000000  r3 3d5f0000
     r4 00000000  r5 0000000c  r6 00000002  r7 ff8618f0
@@ -190,7 +194,7 @@ you found the bug: <code>readdir</code> was passed a null pointer by the caller.
 At this point you can paste the stack into the stack tool to find out
 <em>where</em> in logcat this happened.
 
-<pre class="no-pretty-print">
+<pre class="prettyprint">
   struct DIR {
     int fd_;
     size_t available_bytes_;
@@ -220,7 +224,8 @@ to perform actually fits. Here's an example where the code tries to
 <code>read(fd, buf, 32)</code> into a buffer that's actually only 10 bytes
 long...
 </p>
-<pre class="no-pretty-print">pid: 25579, tid: 25579, name: crasher  >>> crasher <<<
+<pre class="devsite-click-to-copy">
+pid: 25579, tid: 25579, name: crasher  >>> crasher <<<
 signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
 Abort message: '<i style="color:Orange">FORTIFY: read: prevented 32-byte write into 10-byte buffer'</i>
     r0 00000000  r1 000063eb  r2 00000006  r3 00000008
@@ -254,7 +259,8 @@ epilogue to read it back and check that it's not changed. If that value changed,
 it was overwritten by a buffer overrun, so the epilogue calls
 <code>__stack_chk_fail</code> to log a message and abort.
 </p>
-<pre class="no-pretty-print">pid: 26717, tid: 26717, name: crasher  >>> crasher <<<
+<pre class="devsite-click-to-copy">
+pid: 26717, tid: 26717, name: crasher  >>> crasher <<<
 signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
 <i style="color:Orange">Abort message: 'stack corruption detected'</i>
     r0 00000000  r1 0000685d  r2 00000006  r3 00000008
@@ -294,7 +300,7 @@ to see the currently supported selection.</p>
 
 <p>To introduce the different pieces in a crash dump, let's work through this example crash dump:</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
 Build fingerprint: 'Android/aosp_flounder/flounder:5.1.51/AOSP/enh08201009:eng/test-keys'
 Revision: '0'
@@ -318,15 +324,14 @@ backtrace:
     #08 pc 00016795  /system/lib/libc.so (__libc_init+44)
     #09 pc 00000abc  /system/xbin/crasher
 Tombstone written to: /data/tombstones/tombstone_06
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
 </pre>
-
-<pre class="no-pretty-print">*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***</pre>
 
 <p>The line of asterisks with spaces is helpful if you're searching a log
 for native crashes. The string "*** ***" rarely shows up in logs other than
 at the beginning of a native crash.</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 Build fingerprint:
 'Android/aosp_flounder/flounder:5.1.51/AOSP/enh08201009:eng/test-keys'
 </pre>
@@ -334,7 +339,7 @@ Build fingerprint:
 <p>The fingerprint lets you identify exactly which build the crash occurred
 on. This is exactly the same as the <code>ro.build.fingerprint</code> system property.</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 Revision: '0'
 </pre>
 
@@ -343,7 +348,7 @@ usually unused but can be useful to help you automatically ignore bugs known
 to be caused by bad hardware. This is exactly the same as the <code>ro.revision</code>
 system property.</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 ABI: 'arm'
 </pre>
 
@@ -351,7 +356,7 @@ ABI: 'arm'
 mostly useful for the <code>stack</code> script mentioned above, so that it knows
 what toolchain to use.</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 pid: 1656, tid: 1656, name: crasher &gt;&gt;&gt; crasher &lt;&lt;&lt;
 </pre>
 
@@ -364,7 +369,7 @@ which is useful when filing bugs or trying to find the app in Google Play. The
 pid and tid can also be useful in finding the relevant log lines preceding
 the crash.</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
 </pre>
 
@@ -373,7 +378,7 @@ how it was received (SI_TKILL). The signals reported by <code>debuggerd</code> a
 SIGBUS, SIGFPE, SIGILL, SIGSEGV, and SIGTRAP. The signal-specific codes vary
 based on the specific signal.</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 Abort message: 'some_file.c:123: some_function: assertion "false" failed'
 </pre>
 
@@ -382,7 +387,7 @@ is automatically gathered from the last line of fatal logcat output for
 this pid/tid, and in the case of a deliberate abort is likely to give an
 explanation of why the program killed itself.</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 r0 00000000 r1 00000678 r2 00000006 r3 f70b6dc8
 r4 f70b6dd0 r5 f70b6d80 r6 00000002 r7 0000010c
 r8 ffffffed r9 00000000 sl 00000000 fp ff96ae1c
@@ -393,7 +398,7 @@ ip 00000006 sp ff96ad18 lr f700ced5 pc f700dc98 cpsr 400b0010
 signal was received. (This section varies wildly between ABIs.) How useful
 these are will depend on the exact crash.<p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 backtrace:
     #00 pc 00042c98 /system/lib/libc.so (tgkill+12)
     #01 pc 00041ed1 /system/lib/libc.so (pthread_kill+32)
@@ -419,7 +424,7 @@ to find the corresponding assembler instruction.</p>
 
 <h2 id=tombstones>Tombstones</h2>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 Tombstone written to: /data/tombstones/tombstone_06
 </pre>
 
@@ -434,7 +439,7 @@ and memory dumps around the addresses in registers. Most usefully it also
 includes a full memory map (similar to <code>/proc/<i>pid</i>/maps</code>). Here's an
 annotated example from a 32-bit ARM process crash:</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 memory map: (fault address prefixed with ---&gt;)
 ---&gt;ab15f000-ab162fff r-x 0 4000 /system/xbin/crasher (BuildId:
 b9527db01b5cf8f5402f899f64b9b121)
@@ -461,7 +466,7 @@ exactly which version of your code crashed. (Platform binaries include a
 BuildId by default since Android M. NDK r12 and later automatically pass
 <code>-Wl,--build-id</code> to the linker too.)<p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 ab163000-ab163fff r--      3000      1000  /system/xbin/crasher
 ab164000-ab164fff rw-         0      1000
 f6c80000-f6d7ffff rw-         0    100000  [anon:libc_malloc]
@@ -470,7 +475,7 @@ f6c80000-f6d7ffff rw-         0    100000  [anon:libc_malloc]
 <p>On Android the heap isn't necessarily a single region. Heap regions will
 be labeled <code>[anon:libc_malloc]</code>.</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 f6d82000-f6da1fff r--         0     20000  /dev/__properties__/u:object_r:logd_prop:s0
 f6da2000-f6dc1fff r--         0     20000  /dev/__properties__/u:object_r:default_prop:s0
 f6dc2000-f6de1fff r--         0     20000  /dev/__properties__/u:object_r:logd_prop:s0
@@ -504,7 +509,7 @@ shows the address ranges for the mapping, the second column the permissions
 (in hex), the fourth column the size of the region (in hex), and the fifth
 column the file (or other region name).</p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 f6f34000-f6f53fff r-x         0     20000  /system/lib/libm.so (BuildId: 76ba45dcd9247e60227200976a02c69b)
 f6f54000-f6f54fff ---         0      1000
 f6f55000-f6f55fff r--     20000      1000  /system/lib/libm.so
@@ -537,7 +542,7 @@ Note that since Android 5.0 (Lollipop), the C library names most of its anonymou
 regions so there are fewer mystery regions.
 </p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 f6fcb000-f6fccfff rw- 0 2000 [stack:5081]
 </pre>
 
@@ -545,7 +550,7 @@ f6fcb000-f6fccfff rw- 0 2000 [stack:5081]
 Regions named <code>[stack:<i>tid</i>]</code> are the stacks for the given threads.
 </p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 f6fcd000-f702afff r-x         0     5e000  /system/bin/linker (BuildId: 84f1316198deee0591c8ac7f158f28b7)
 f702b000-f702cfff r--     5d000      2000  /system/bin/linker
 f702d000-f702dfff rw-     5f000      1000  /system/bin/linker

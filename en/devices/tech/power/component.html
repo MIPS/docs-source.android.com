@@ -105,8 +105,8 @@ in low-power states inappropriate for measuring active power use. To prevent the
 suspending while the screen is off, use a temporary partial wakelock. Using a USB cable, connect
 the device to a development host, then issue the following command:</p>
 
-<pre>
-$ adb shell "echo temporary &gt; /sys/power/wake_lock"
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell "echo temporary &gt; /sys/power/wake_lock"
 </pre>
 
 <p>While in <code>wake_lock</code>, the screen off state does not trigger a system suspend.
@@ -114,8 +114,8 @@ $ adb shell "echo temporary &gt; /sys/power/wake_lock"
 
 <p>To remove the wakelock:</p>
 
-<pre>
-$ adb shell "echo temporary &gt; /sys/power/wake_unlock"
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell "echo temporary &gt; /sys/power/wake_unlock"
 </pre>
 
 <h3 id="measure-suspend">Measuring system suspend</h3>
@@ -155,7 +155,7 @@ scheduling activity.</p>
 
 <p>You must specify the available CPU speeds for your device in the power profile <code>cpu.speeds</code> entry. To get a list of available CPU speeds, run:</p>
 
-<pre>
+<pre class="devsite-terminal devsite-click-to-copy">
 adb shell cat /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
 </pre>
 
@@ -167,12 +167,12 @@ controlling CPU speed using the userspace cpufreq governor and using sysfs inter
 speed. For example, to set speed for 200MHz on a system with only 1 CPU or all CPUs sharing a
 common cpufreq policy, use the system console or adb shell to run the following commands:</p>
 
-<pre>
-echo userspace &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-echo 200000 &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 200000 &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 200000 &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed
-cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">echo userspace &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor</code>
+<code class="devsite-terminal">echo 200000 &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq</code>
+<code class="devsite-terminal">echo 200000 &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq</code>
+<code class="devsite-terminal">echo 200000 &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed</code>
+<code class="devsite-terminal">cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq</code>
 </pre>
 
 <p class="note">
@@ -187,7 +187,7 @@ setting the maximum speed.</p>
 
 <p>To measure current consumed by a CPU running at various speeds, use the system console to place
 the CPU in a CPU-bound loop using the command:</p>
-<pre>
+<pre class="devsite-click-to-copy">
 # while true; do true; done
 </pre>
 

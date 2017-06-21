@@ -111,12 +111,12 @@ key.</li> </ul>
 
 <table>
   <tr>
-    <td width="50%"><img src="images/emergency-button.png" alt="emergency
+    <td width="50%"><img src="/devices/tech/connect/images/emergency-button.png" alt="emergency
 button" width="246" id="emergency-button" />
 <p class="img-caption">
   <strong>Figure 1.</strong> Long press the <strong>EMERGENCY</strong> button,
 highlighted with a red box, on the lock screen.</p></td>
-    <td width="50%"><img src="images/emergency-option.png" alt="emergency
+    <td width="50%"><img src="/devices/tech/connect/images/emergency-option.png" alt="emergency
 option" width="247" id="emergency-option" />
 <p class="img-caption">
   <strong>Figure 2.</strong> Tap the <strong>Emergency</strong> action item on
@@ -125,11 +125,17 @@ the <em>Global Action Menu</em>.</p></td>
 </table>
 
 <p>This feature introduces the following internal components:</p> <ul>
-<li>EmergencyAffordanceManager<br>
-<code>frameworks/base/core/java/com/android/internal/policy/EmergencyAffordanceManager.java</code>
-</li> <li>EmergencyAffordanceService<br>
-<code>frameworks/base/services/core/java/com/android/server/emergency/EmergencyAffordanceService.java</code>
-</li> </ul>
+<li>EmergencyAffordanceManager
+<pre class="devsite-click-to-copy">
+frameworks/base/core/java/com/android/internal/policy/EmergencyAffordanceManager.java
+</pre>
+</li>
+<li>EmergencyAffordanceService
+<pre class="devsite-click-to-copy">
+frameworks/base/services/core/java/com/android/server/emergency/EmergencyAffordanceService.java
+</pre>
+</li>
+</ul>
 
 <h3 id="EmergencyAffordanceManager">EmergencyAffordanceManager</h3> <p>The
 EmergencyAffordanceManager provides an internal API to use the Emergency
@@ -218,23 +224,23 @@ the RIL.</p>
 
 <h2 id="validation">Validation</h2> <p>While testing, on a debuggable build,
 the number that is called can be changed with the following command:</p>
-<pre>
-$ adb shell settings put global emergency_affordance_number <i>&lt;number_to_call&gt;</i>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell settings put global emergency_affordance_number <var>NUMBER_TO_CALL</var>
 </pre>
 
 <p>Although this setting can be set on a normal user build, it will be ignored.
 To actually connect the call the number must be in the list of emergency
 numbers provided by the RIL. This can be temporarily set using the following
 command executed from a root shell on a userdebug device:</p>
-<pre>
-$ setprop ril.ecclist "$(getprop ril.ecclist),<i>&lt;number_to_call&gt;</i>"
+<pre class="devsite-terminal devsite-click-to-copy">
+setprop ril.ecclist "$(getprop ril.ecclist),<var>NUMBER_TO_CALL</var>"
 </pre>
 
 <p>The following command can also be used to force the Emergency Affordance
 feature to be enabled even in the absence of an Indian mobile network being
 detected or an Indian SIM card being inserted.</p>
-<pre>
-$ adb shell settings put global force_emergency_affordance 1
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell settings put global force_emergency_affordance 1
 </pre>
 
 <p>During testing it is recommend that at least the following cases are

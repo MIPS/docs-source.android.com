@@ -30,16 +30,16 @@ to learn how to collect only data you're actually interested in.</p>
 <h2 id=build-strace>Building strace</h2>
 
 <p>To build strace, run the following:
-<pre>
-$ mmma -j6 external/strace
+<pre class="devsite-terminal devsite-click-to-copy">
+mmma -j6 external/strace
 </pre>
 
 <h2 id=attach-strace>Attaching to a running process</h2>
 
 <p>The simplest and most common use case for strace is to attach it to a running
 process, which you can do with:</p>
-<pre>
-$ adb shell strace -f -p PID
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell strace -f -p PID
 </pre>
 <p>The <code>-f</code> flag tells strace to attach to all the threads in the
 process, plus any new threads spawned later.</p>
@@ -49,16 +49,16 @@ process, plus any new threads spawned later.</p>
 
 <ol>
 <li>Set up a directory for strace logs:
-<pre>
-$ adb shell setenforce 0
-$ adb shell mkdir /data/local/tmp/strace
-$ adb shell chmod 777 /data/local/tmp/strace
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb shell setenforce 0</code>
+<code class="devsite-terminal">adb shell mkdir /data/local/tmp/strace</code>
+<code class="devsite-terminal">adb shell chmod 777 /data/local/tmp/strace</code>
 </pre>
 </li>
 
 <li>Choose the process to trace before launching it:
-<pre>
-$ adb shell setprop wrap.com.google.android.browser "logwrapper strace -f -o /data/local/tmp/strace/strace.com.google.android.browser.txt"
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell setprop wrap.com.google.android.browser "logwrapper strace -f -o /data/local/tmp/strace/strace.com.google.android.browser.txt"
 </pre>
 </li>
 <li>Launch the process normally.</li>
@@ -69,9 +69,9 @@ $ adb shell setprop wrap.com.google.android.browser "logwrapper strace -f -o /da
 line (requires <code>adb shell setenforce 0</code>):
 </p>
 
-<pre>
-$ cd system/core/
-$ patch -p1 &lt;&lt;EOF
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">cd system/core/</code>
+<code class="devsite-terminal">patch -p1 &lt;&lt;EOF
 --- a/rootdir/init.zygote32.rc
 +++ b/rootdir/init.zygote32.rc
 @@ -1,4 +1,4 @@
@@ -80,7 +80,7 @@ $ patch -p1 &lt;&lt;EOF
      class main
      socket zygote stream 660 root system
      onrestart write /sys/android_power/request_state wake
-EOF
+EOF</code>
 </pre>
 
 <h2 id=get-logs-boot>Getting strace logs during Android boot</h2>
@@ -93,7 +93,7 @@ EOF
 SELinux <code>file_context</code> for <code>strace</code>. The solution is to
 add a new line for strace in <code>system/sepolicy/private/file_contexts</code>
 and copy the original file context over. Example:
-<pre>
+<pre class="devsite-click-to-copy">
 /dev/socket/zygote      u:object_r:zygote_socket:s0
 + /system/xbin/strace u:object_r:zygote_socket:s0
 </pre>
@@ -108,7 +108,7 @@ do this by adding <code>androidboot.selinux=permissive</code>to
 <br>
 <br>Example for the Pixel (sailfish) device in
 <code>/device/google/marlin/sailfish/BoardConfig.mk</code>:
-<pre>
+<pre class="devsite-click-to-copy">
 - BOARD_KERNEL_CMDLINE := ....  androidboot.hardware=sailfish ...
 +BOARD_KERNEL_CMDLINE := ....  androidboot.hardware=sailfish ...  androidboot.selinux=permissive
 </pre>

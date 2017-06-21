@@ -52,7 +52,8 @@ shortcuts include:
 You can find the primary implementation of this feature in the following files:
 </p>
 
-<pre>frameworks/base/services/core/java/com/android/server/policy/ShortcutManager.java
+<pre class="devsite-click-to-copy">
+frameworks/base/services/core/java/com/android/server/policy/ShortcutManager.java
 frameworks/base/services/core/java/com/android/server/pm/ShortcutPackage.java
 frameworks/base/services/core/java/com/android/server/pm/ShortcutUser.java
 frameworks/base/services/core/java/com/android/server/pm/ShortcutPackageInfo.java
@@ -73,7 +74,7 @@ With the following files providing supporting features (called hidden APIs in
 <code>ShortcutManager.java</code>):
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 packages/apps/Settings/src/com/android/settings/DevelopmentSettings.java
 frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/policy/RemoteInputView.java
 </pre>
@@ -83,7 +84,7 @@ And, for an example, the Android Open Source Project Launcher version 3 supports
 shortcuts:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 packages/apps/Launcher3/
 </pre>
 
@@ -91,7 +92,8 @@ packages/apps/Launcher3/
 Finally, see the following files for public Javadoc.
 </p>
 
-<pre>frameworks/base/core/java/android/content/pm/ShortcutManager.java
+<pre class="devsite-click-to-copy">
+frameworks/base/core/java/android/content/pm/ShortcutManager.java
 frameworks/base/core/java/android/content/pm/ShortcutInfo.java
 frameworks/base/core/java/android/content/pm/LauncherApps.java
 </pre>
@@ -138,7 +140,7 @@ Use the following Android Compatibility Test Suite (CTS) tests to ensure your
 version of the feature (ShortcutManager and LauncherApps) works as intended:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 cts/tests/tests/shortcutmanager/
 cts/hostsidetests/shortcuts/
 </pre>
@@ -147,20 +149,22 @@ cts/hostsidetests/shortcuts/
 And find the unit tests for the AOSP implementation here:
 </p>
 
-<pre>frameworks/base/services/tests/servicestests/
+<pre class="devsite-click-to-copy">
+frameworks/base/services/tests/servicestests/
 </pre>
 
 <p>
 Which includes:
 </p>
 
-<pre>src/com/android/server/pm/ShortcutManagerTest*.java
+<pre class="devsite-click-to-copy">
+src/com/android/server/pm/ShortcutManagerTest*.java
 </pre>
 <p>
 You may also employ the CTS Verifier test for shortcut manager:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 cts/apps/CtsVerifier/src/com/android/cts/verifier/notifications/ShortcutThrottlingResetActivity.java
 </pre>
 

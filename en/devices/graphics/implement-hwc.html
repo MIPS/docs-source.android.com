@@ -206,7 +206,7 @@ composition. SurfaceFlinger may choose to:</p>
 <li>Change some of the layer composition types and re-validate the display.</li>
 </ul>
 
-<blockquote><strong><em>OR</strong></em></blockquote>
+<em><strong>OR</strong></em>
 
 <ul>
 <li>Call <code>acceptDisplayChanges</code>, which has the same effect as
@@ -252,7 +252,7 @@ they are currently performed sequentially for all active displays, even if only
 the contents of one display are updated.</p>
 <p>For example, if only the external display is updated, the sequence is:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 // Update state for internal display
 // Update state for external display
 validateDisplay(&lt;internal display&gt;)

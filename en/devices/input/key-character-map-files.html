@@ -50,7 +50,7 @@ id or by input device name.</p>
 <li><code>/data/system/devices/keychars/Virtual.kcm</code></li>
 </ul>
 <p>When constructing a file path that contains the device name, all characters
-in the device name other than '0'-'9', 'a'-'z', 'A'-'Z', '-' or '<em>' are replaced by '</em>'.</p>
+in the device name other than '0'-'9', 'a'-'z', 'A'-'Z', '-' or '_' are replaced by '_'.</p>
 <h2 id="generic-key-character-map-file">Generic Key Character Map File</h2>
 <p>The system provides a special built-in key character map file called <code>Generic.kcm</code>.
 This key character map is intended to support a variety of standard external
@@ -76,8 +76,9 @@ declaration and a set of key declarations.</p>
 <p>A keyboard type declaration describes the overall behavior of the keyboard.
 A character map file must contain a keyboard type declaration.  For clarity,
 it is often placed at the top of the file.</p>
-<pre><code>type FULL
-</code></pre>
+<pre class="devsite-click-to-copy">
+type FULL
+</pre>
 <p>The following keyboard types are recognized:</p>
 <ul>
 <li>
@@ -120,13 +121,14 @@ HOME and POWER that are not actually used for typing.</p>
 <h3 id="key-declarations">Key Declarations</h3>
 <p>Key declarations each consist of the keyword <code>key</code> followed by an Android key code
 name, an open curly brace, a set of properties and behaviors and a close curly brace.</p>
-<pre><code>key A {
+<pre class="devsite-click-to-copy">
+key A {
     label:                              'A'
     base:                               'a'
     shift, capslock:                    'A'
     ctrl, alt, meta:                    none
 }
-</code></pre>
+</pre>
 <h4 id="properties">Properties</h4>
 <p>Each key property establishes a mapping from a key to a behavior.  To make the
 key character map files more compact, several properties can be mapped to the
@@ -254,8 +256,9 @@ key followed by the letter 'a', the result is '&agrave;'.</p>
 <p>Refer to <code>KeyCharacterMap.getDeadChar</code> for more information about dead key handling.</p>
 <h3 id="comments">Comments</h3>
 <p>Comment lines begin with '#' and continue to the end of the line.  Like this:</p>
-<pre><code># A comment!
-</code></pre>
+<pre class="devsite-click-to-copy">
+# A comment!
+</pre>
 <p>Blank lines are ignored.</p>
 <h3 id="how-key-combinations-are-mapped-to-behaviors">How Key Combinations are Mapped to Behaviors</h3>
 <p>When the user presses a key, the system looks up the behavior associated with
@@ -263,13 +266,14 @@ the combination of that key press and the currently pressed modifiers.</p>
 <h4 id="shift-a">SHIFT + A</h4>
 <p>Suppose the user pressed A and SHIFT together.  The system first locates
 the set of properties and behaviors associated with <code>KEYCODE_A</code>.</p>
-<pre><code>key A {
+<pre class="devsite-click-to-copy">
+key A {
     label:                              'A'
     base:                               'a'
     shift, capslock:                    'A'
     ctrl, alt, meta:                    none
 }
-</code></pre>
+</pre>
 <p>The system scans the properties from first to last and left to right, ignoring
 the <code>label</code> and <code>number</code> properties, which are special.</p>
 <p>The first property encountered is <code>base</code>.  The <code>base</code> property always applies to
@@ -295,12 +299,13 @@ property appears after <code>base</code> so its behavior overrides the <code>bas
 <p>So the resulting behavior for the key combination CONTROL + A is <code>none</code>.</p>
 <h4 id="escape">ESCAPE</h4>
 <p>Now suppose the user pressed ESCAPE.</p>
-<pre><code>key ESCAPE {
+<pre class="devsite-click-to-copy">
+key ESCAPE {
     base:                               fallback BACK
     alt, meta:                          fallback HOME
     ctrl:                               fallback MENU
 }
-</code></pre>
+</pre>
 <p>This time the system obtains the behavior <code>fallback BACK</code>, a fallback behavior.
 Because no character literal appears, no character will be typed.</p>
 <p>When processing the key, the system will first deliver <code>KEYCODE_ESCAPE</code> to the
@@ -317,19 +322,21 @@ the NUM LOCK key is locked.</p>
 when NUM LOCK is pressed.  When NUM LOCK is not pressed, the key is delivered
 to the application as usual, and if it is not handled, then the fallback
 key <code>KEYCODE_INSERT</code> is delivered instead.</p>
-<pre><code>key NUMPAD_0 {
+<pre class="devsite-click-to-copy">
+key NUMPAD_0 {
     label, number:                      '0'
     base:                               fallback INSERT
     numlock:                            '0'
     ctrl, alt, meta:                    none
 }
-</code></pre>
+</pre>
 <p>As we can see, fallback key declarations greatly improve compatibility
 with older applications that do not recognize or directly support all of the keys
 that are present on a full PC style keyboard.</p>
 <h3 id="examples">Examples</h3>
 <h4 id="full-keyboard">Full Keyboard</h4>
-<pre><code># This is an example of part of a key character map file for a full keyboard
+<pre class="devsite-click-to-copy">
+# This is an example of part of a key character map file for a full keyboard
 # include a few fallback behaviors for special keys that few applications
 # handle themselves.
 
@@ -357,9 +364,10 @@ key NUMPAD_9 {
     numlock:                            '9'
     ctrl, alt, meta:                    none
 }
-</code></pre>
+</pre>
 <h4 id="alphanumeric-keyboard">Alphanumeric Keyboard</h4>
-<pre><code># This is an example of part of a key character map file for an alphanumeric
+<pre class="devsite-click-to-copy">
+# This is an example of part of a key character map file for an alphanumeric
 # thumb keyboard.  Some keys are combined, such as `A` and `2`.  Here we
 # specify `number` labels to tell the system what to do when the user is
 # typing a number into a dial pad.
@@ -386,9 +394,10 @@ key SPACE {
     alt:                                '\uef01'
     shift+alt:                          '\uef01'
 }
-</code></pre>
+</pre>
 <h4 id="game-pad">Game Pad</h4>
-<pre><code># This is an example of part of a key character map file for a game pad.
+<pre class="devsite-click-to-copy">
+# This is an example of part of a key character map file for a game pad.
 # It defines fallback actions that enable the user to navigate the user interface
 # by pressing buttons.
 
@@ -409,7 +418,7 @@ key BUTTON_START {
 key BUTTON_SELECT {
     base:                               fallback MENU
 }
-</code></pre>
+</pre>
 <h2 id="compatibility-note">Compatibility Note</h2>
 <p>Prior to Android Honeycomb 3.0, the Android key character map was specified
 using a very different syntax and was compiled into a binary file format
