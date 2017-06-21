@@ -54,7 +54,7 @@ JIT/AOT Compilation</a> on developer.android.com for a more thorough overview.
 
 <h2 id="architectural-overview">Architectural Overview</h2>
 
-<img src="images/jit-arch.png" alt="JIT architecture" width="633" id="JIT-architecture" />
+<img src="/devices/tech/dalvik/images/jit-arch.png" alt="JIT architecture" width="633" id="JIT-architecture" />
 <p class="img-caption">
   <strong>Figure 1.</strong> JIT architecture - how it works
 </p>
@@ -83,12 +83,12 @@ application has access to the directory.
 compilation.</li>
 </ol>
 
-<img src="images/jit-profile-comp.png" alt="Profile-guided comp" width="452" id="JIT-profile-comp" />
+<img src="/devices/tech/dalvik/images/jit-profile-comp.png" alt="Profile-guided comp" width="452" id="JIT-profile-comp" />
 <p class="img-caption">
   <strong>Figure 2.</strong> Profile-guided compilation
 </p>
 
-<img src="images/jit-daemon.png" alt="JIT daemon" width="718" id="JIT-daemon" />
+<img src="/devices/tech/dalvik/images/jit-daemon.png" alt="JIT daemon" width="718" id="JIT-daemon" />
 <p class="img-caption">
   <strong>Figure 3.</strong> How the daemon works
 </p>
@@ -103,7 +103,7 @@ to behave more like shared libraries.
 See the following high-level overview of how JIT works in the next diagram.
 </p>
 
-<img src="images/jit-workflow.png" alt="JIT architecture" width="707" id="JIT-workflow" />
+<img src="/devices/tech/dalvik/images/jit-workflow.png" alt="JIT architecture" width="707" id="JIT-workflow" />
 <p class="img-caption">
   <strong>Figure 4.</strong> JIT data flow
 </p>
@@ -183,7 +183,7 @@ compilation to a later stage). The compilation levels can be configured via
 system properties with the defaults being:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 pm.dexopt.install=interpret-only
 pm.dexopt.bg-dexopt=speed-profile
 pm.dexopt.ab-ota=speed-profile
@@ -211,20 +211,20 @@ copying and pasting. A few common use cases:
 
 <h3 id="turn-on-jit-logging">Turn on JIT logging</h3>
 
-<pre>
-$ adb root
-$ adb shell stop
-$ adb shell setprop dalvik.vm.extra-opts -verbose:jit
-$ adb shell start
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb root</code>
+<code class="devsite-terminal">adb shell stop</code>
+<code class="devsite-terminal">adb shell setprop dalvik.vm.extra-opts -verbose:jit</code>
+<code class="devsite-terminal">adb shell start</code>
 </pre>
 
 <h3 id="disable-jit-and-run-applications-in-interpreter">Disable JIT</h3>
 
-<pre>
-$ adb root
-$ adb shell stop
-$ adb shell setprop dalvik.vm.usejit false
-$ adb shell start
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb root</code>
+<code class="devsite-terminal">adb shell stop</code>
+<code class="devsite-terminal">adb shell setprop dalvik.vm.usejit false</code>
+<code class="devsite-terminal">adb shell start</code>
 </pre>
 
 <h3 id="force-compilation-of-a-specific-package">Force compilation of a specific
@@ -232,11 +232,15 @@ package</h3>
 
 <ul>
 <li>Profile-based:
-<code>$ adb shell cmd package compile -m speed-profile -f
-my-package</code>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell cmd package compile -m speed-profile -f my-package
+</pre>
+</li>
 <li>Full:
-<code>$ adb shell cmd package compile -m speed -f
-my-package</code></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell cmd package compile -m speed -f my-package
+</pre>
+</li>
 </ul>
 
 <h3 id="force-compilation-of-all-packages">Force compilation of all
@@ -244,20 +248,31 @@ packages</h3>
 
 <ul>
 <li>Profile-based:
-<code>$ adb shell cmd package compile -m speed-profile -f
--a</code>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell cmd package compile -m speed-profile -f -a
+</pre>
+</li>
 <li>Full:
-<code>$ adb shell cmd package compile -m speed -f -a</code></li></ul>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell cmd package compile -m speed -f -a
+</pre>
+</li>
+</ul>
 
 <h3 id="clear-profile-data-and-remove-compiled-code">Clear profile data and
 remove compiled code</h3>
 
 <ul>
 <li>One package:
-<code>$ adb shell cmd package compile --reset my-package</code>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell cmd package compile --reset my-package
+</pre>
+</li>
 <li>All packages
-<code>$ adb shell cmd package compile --reset
--a</code></li>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell cmd package compile --reset -a
+</pre>
+</li>
 </ul>
 
 <h2 id="recommendation">Recommendation</h2>
@@ -270,7 +285,7 @@ Note that it is strongly recommended to use the default following
 support.
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 pm.dexopt.install=interpret-only
 pm.dexopt.bg-dexopt=speed-profile
 pm.dexopt.boot=verify-profile (or interpret-only)
@@ -281,7 +296,7 @@ Here’s a detailed explanation about the <code>pm.dexopt</code> options, and th
 reasoning for our recommendations:
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 pm.dexopt.install
 </pre>
 
@@ -290,7 +305,7 @@ This is the compilation filter used when installing application through the
 Play Store. For faster installs we recommend <code>interpret-only</code>.
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 pm.dexopt.bg-dexopt
 </pre>
 
@@ -300,7 +315,7 @@ fully charged.  We recommend using <code>speed-profile</code> to take advantage
 of profile guided compilation and save on storage.
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 pm.dexopt.ab-ota
 </pre>
 
@@ -311,7 +326,7 @@ update. If the device supports A/B OTA,  we recommend using
 save on storage.
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 pm.dexopt.nsys-library
 pm.dexopt.shared-apk
 pm.dexopt.core-app
@@ -324,7 +339,7 @@ the <code>speed</code> filter, as the platform does not support efficient
 profiling of them.
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 pm.dexopt.first-boot
 </pre>
 
@@ -336,7 +351,7 @@ use the phone for the very first time. Note that if all applications in /system
 are already speed compiled, <code>pm.dexopt.first-boot</code> has no effect.
 </p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 pm.dexopt.boot
 </pre>
 
@@ -364,11 +379,13 @@ filter. To do this, edit the following files to include these entries.
 
 <p>Add the following entry to <code>BoardConfig.mk</code>:</p>
 
-<pre>WITH_DEXPREOPT := true</pre>
+<pre class="devsite-click-to-copy">
+WITH_DEXPREOPT := true
+</pre>
 
 <p>Add the following entry to <code>device.mk</code>:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=interpret-only
 </pre>
 

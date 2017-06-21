@@ -32,8 +32,9 @@ staging operations to prepare the media before exposing it to apps.</p>
 <p>For Android 4.2.2 and earlier, the device-specific <code>vold.fstab</code>
 configuration file defines mappings from sysfs devices to filesystem mount
 points, and each line follows this format:</p>
-<pre><code>dev_mount &lt;label&gt; &lt;mount_point&gt; &lt;partition&gt; &lt;sysfs_path&gt; [flags]
-</code></pre>
+<pre class="devsite-click-to-copy">
+dev_mount &lt;label&gt; &lt;mount_point&gt; &lt;partition&gt; &lt;sysfs_path&gt; [flags]
+</pre>
 <ul>
 <li><code>label</code>: Label for the volume.</li>
 <li><code>mount_point</code>: Filesystem path where the volume should be mounted.</li>
@@ -47,8 +48,9 @@ Possible values include <code>nonremovable</code> and <code>encryptable</code>.<
 recovery were unified in the <code>/fstab.&lt;device&gt;</code> file. For external
 storage volumes that are managed by <code>vold</code>, the entries should have the
 following format:</p>
-<pre><code>&lt;src&gt; &lt;mnt_point&gt; &lt;type&gt; &lt;mnt_flags&gt; &lt;fs_mgr_flags&gt;
-</code></pre>
+<pre class="devsite-click-to-copy">
+&lt;src&gt; &lt;mnt_point&gt; &lt;type&gt; &lt;mnt_flags&gt; &lt;fs_mgr_flags&gt;
+</pre>
 <ul>
 <li><code>src</code>: A path under sysfs (usually mounted at /sys) to the device that
 can provide the mount point. The path must start with <code>/</code>.</li>
@@ -95,10 +97,11 @@ storage. Only used when mount is marked as emulated.</li>
 permissionless filesystem backed by internal storage. One possible
 implementation is provided by the FUSE daemon in <code>system/core/sdcard</code>, which can
 be added as a device-specific <code>init.rc</code> service:</p>
-<pre><code># virtual sdcard daemon running as media_rw (1023)
+<pre class="devsite-click-to-copy">
+# virtual sdcard daemon running as media_rw (1023)
 service sdcard /system/bin/sdcard &lt;source_path&gt; &lt;dest_path&gt; 1023 1023
     class late_start
-</code></pre>
+</pre>
 <p>Where <code>source_path</code> is the backing internal storage and <code>dest_path</code> is the
 target mount point.</p>
 <p>When configuring a device-specific <code>init.rc</code> script, the <code>EXTERNAL_STORAGE</code>
@@ -130,9 +133,10 @@ adopted is viewed as portable. </p>
 
 <h4 id=adoptable_storage>Adoptable storage </h4>
 <p>To indicate an adoptable storage device in the <code>fstab</code>, use the <code>encryptable=userdata</code> attribute in the <code>fs_mgr_flags</code> field. Here’s a typical definition:</p>
-<pre><code>/devices/platform/mtk-msdc.1/mmc_host*           auto      auto     defaults
+<pre class="devsite-click-to-copy">
+/devices/platform/mtk-msdc.1/mmc_host*           auto      auto     defaults
 voldmanaged=sdcard1:auto,encryptable=userdata
-</code></pre>
+</pre>
 <p>When a storage device is adopted, the platform erases the contents and writes a
 GUID partition table that defines two partitions:</p>
 <ul>
@@ -144,9 +148,10 @@ GUID partition table that defines two partitions:</p>
 <h4 id=portable_storage>Portable storage </h4>
 <p>In the <code>fstab</code>, storage devices with the <code>voldmanaged</code> attribute are considered to be portable by default unless another attribute
 like <code>encryptable=userdata</code> is defined. For example, here’s a typical definition for USB OTG devices:</p>
-<pre><code>/devices/*/xhci-hcd.0.auto/usb*             auto            auto    defaults
+<pre class="devsite-click-to-copy">
+/devices/*/xhci-hcd.0.auto/usb*             auto            auto    defaults
                                                     voldmanaged=usb:auto
-</code></pre>
+</pre>
 <p>The platform uses <code>blkid</code> to detect filesystem types before mounting, and users can choose to format the
 media when the filesystem is unsupported.</p>
 

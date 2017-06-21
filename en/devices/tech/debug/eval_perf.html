@@ -169,8 +169,10 @@ thread enters uninterruptible sleep. It is critical for performance analysis
 because uninterruptible sleep is a very common indicator of jitter.</li>
 <li>Ensure you have sufficient tracing for the GPU and display pipelines. On
 recent Qualcomm SOCs, tracepoints are enabled using:</li>
-<pre>$ adb shell "echo 1 &gt; /d/tracing/events/kgsl/enable"
-$ adb shell "echo 1 &gt; /d/tracing/events/mdss/enable"</pre>
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb shell "echo 1 &gt; /d/tracing/events/kgsl/enable"</code>
+<code class="devsite-terminal">adb shell "echo 1 &gt; /d/tracing/events/mdss/enable"</code>
+</pre>
 
 <p>These events remain enabled when you run systrace so you can see additional
 information in the trace about the display pipeline (MDSS) in the

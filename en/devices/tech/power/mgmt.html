@@ -97,11 +97,11 @@ a period of time.
 <h3 id=testing_app_standby>Testing App Standby</h3>
 <p>You can manually test App Standby using the following <code>adb</code> commands:</p>
 
-<pre>
-$ adb shell dumpsys battery unplug
-$ adb shell am set-idle packageName true
-$ adb shell am set-idle packageName false
-$ adb shell am get-idle packageName
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb shell dumpsys battery unplug</code>
+<code class="devsite-terminal">adb shell am set-idle packageName true</code>
+<code class="devsite-terminal">adb shell am set-idle packageName false</code>
+<code class="devsite-terminal">adb shell am get-idle packageName</code>
 </pre>
 
 <h2 id="doze">Doze</h2>
@@ -195,7 +195,7 @@ they can complete their processing.</li>
 
 <p>Android 7.0 and later extends Doze by enabling a lightweight sleep mode during screen
 off, before the device is idle.</p>
-<p><img src="../images/doze_lightweight.png"></p>
+<p><img src="/devices/tech/images/doze_lightweight.png"></p>
 <p class="img-caption">Figure 1. Doze modes for non-stationary and stationary
 devices.</p>
 
@@ -258,10 +258,10 @@ configuration is necessary.</p>
 <li>In the device overlay config file
 <code>overlay/frameworks/base/core/res/res/values/config.xml</code>, set
 <code>config_enableAutoPowerModes</code> to <strong>true</strong>:
-<pre>
-bool name="config_enableAutoPowerModes"&gt;true&lt;/bool&gt;
+<pre class="devsite-click-to-copy">
+&lt;bool name="config_enableAutoPowerModes"&gt;true&lt;/bool&gt;
 </pre>
-<br>In AOSP, this parameter is set to false (Doze disabled) by default.<br>
+In AOSP, this parameter is set to false (Doze disabled) by default.<br>
 </li>
 <li>Confirm that preloaded apps and services:
 <ul>

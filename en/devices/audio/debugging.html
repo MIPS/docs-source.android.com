@@ -50,30 +50,31 @@ For Android 7.x, replace <code>/data/misc/media</code> with
 <code>/data/misc/audioserver</code>.
 Additionally, you must use a userdebug or eng build.
 If you use a userdebug build, then disable verity with:</p>
-<pre>
-<code>$ adb root &amp;&amp; adb disable-verity &amp;&amp; adb reboot</code>
+
+<pre class="devsite-terminal devsite-click-to-copy">
+adb root &amp;&amp; adb disable-verity &amp;&amp; adb reboot
 </pre>
 
 <h3 id="compile">Compile-time setup</h3>
 
 <ol>
-<li><code>$ cd frameworks/av/services/audioflinger</code></li>
+  <li><code class="devsite-terminal">cd frameworks/av/services/audioflinger</code></li>
 <li>Edit <code>Configuration.h</code>.</li>
 <li>Uncomment <code>#define TEE_SINK</code>.</li>
 <li>Re-build <code>libaudioflinger.so</code>.</li>
-<li><code>$ adb root</code></li>
-<li><code>$ adb remount</code></li>
+<li><code class="devsite-terminal">adb root</code></li>
+<li><code class="devsite-terminal">adb remount</code></li>
 <li>Push or sync the new <code>libaudioflinger.so</code> to the device's <code>/system/lib</code>.</li>
 </ol>
 
 <h3 id="runtime">Run-time setup</h3>
 
 <ol>
-<li><code>$ adb shell getprop | grep ro.debuggable</code>
+<li><code class="devsite-terminal">adb shell getprop | grep ro.debuggable</code>
 <br />Confirm that the output is: <code>[ro.debuggable]: [1]</code>
 </li>
-<li><code>$ adb shell</code></li>
-<li><code>$ ls -ld /data/misc/media</code>
+<li><code class="devsite-terminal">adb shell</code></li>
+<li><code class="devsite-terminal">ls -ld /data/misc/media</code>
 <br />
 <p>
 Confirm that the output is:
@@ -81,20 +82,19 @@ Confirm that the output is:
 <pre>
 drwx------ media media ... media
 </pre>
-<br />
 <p>
 If the directory does not exist, create it as follows:
 </p>
-<pre>
-$ mkdir /data/misc/media
-$ chown media:media /data/misc/media
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">mkdir /data/misc/media</code>
+<code class="devsite-terminal">chown media:media /data/misc/media</code>
 </pre>
 </li>
-<li><code>$ echo af.tee=# &gt; /data/local.prop</code>
+<li><code class="devsite-terminal">echo af.tee=# &gt; /data/local.prop</code>
 <br />Where the <code>af.tee</code> value is a number described below.
 </li>
-<li><code>$ chmod 644 /data/local.prop</code></li>
-<li><code>$ reboot</code></li>
+<li><code class="devsite-terminal">chmod 644 /data/local.prop</code></li>
+<li><code class="devsite-terminal">reboot</code></li>
 </ol>
 
 <h4>Values for <code>af.tee</code> property</h4>
@@ -120,7 +120,7 @@ but you can get similar results using "4."
 
 <ol>
 <li>Run your audio test.</li>
-<li><code>$ adb shell dumpsys media.audio_flinger</code></li>
+<li><code class="devsite-terminal">adb shell dumpsys media.audio_flinger</code></li>
 <li>Look for a line in dumpsys output such as this:<br />
 <code>tee copied to /data/misc/media/20131010101147_2.wav</code>
 <br />This is a PCM .wav file.
@@ -165,10 +165,10 @@ Restore your build and device as follows:
 <li>Push or sync the restored <code>libaudioflinger.so</code>
 to the device's <code>/system/lib</code>.
 </li>
-<li><code>$ adb shell</code></li>
-<li><code>$ rm /data/local.prop</code></li>
-<li><code>$ rm /data/misc/media/*.wav</code></li>
-<li><code>$ reboot</code></li>
+<li><code class="devsite-terminal">adb shell</code></li>
+<li><code class="devsite-terminal">rm /data/local.prop</code></li>
+<li><code class="devsite-terminal">rm /data/misc/media/*.wav</code></li>
+<li><code class="devsite-terminal">reboot</code></li>
 </ol>
 
 <h2 id="mediaLog">media.log</h2>
@@ -345,7 +345,7 @@ First, you need to add logs to your code.
 <p>
 In <code>FastMixer</code> and <code>FastCapture</code> threads, use code such as this:
 </p>
-<pre>
+<pre class="devsite-click-to-copy">
 logWriter-&gt;log("string");
 logWriter-&gt;logf("format", parameters);
 logWriter-&gt;logTimestamp();
@@ -359,7 +359,7 @@ there is no need for mutual exclusion.
 <p>
 In other AudioFlinger threads, use <code>mNBLogWriter</code>:
 </p>
-<pre>
+<pre class="devsite-click-to-copy">
 mNBLogWriter-&gt;log("string");
 mNBLogWriter-&gt;logf("format", parameters);
 mNBLogWriter-&gt;logTimestamp();
@@ -397,19 +397,19 @@ The full <code>NBLog</code> API is at <code>frameworks/av/include/media/nbaio/NB
 <code>ro.test_harness</code> is <code>1</code>.  You can enable it by:
 </p>
 
-<pre>
-$ adb root
-$ adb shell
-$ echo ro.test_harness=1 > /data/local.prop
-$ chmod 644 /data/local.prop
-$ reboot
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb root</code>
+<code class="devsite-terminal">adb shell</code>
+<code class="devsite-terminal">echo ro.test_harness=1 > /data/local.prop</code>
+<code class="devsite-terminal">chmod 644 /data/local.prop</code>
+<code class="devsite-terminal">reboot</code>
 </pre>
 
 <p>
 The connection is lost during reboot, so:
 </p>
-<pre>
-$ adb shell
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell
 </pre>
 
 The command <code>ps media</code> will now show two processes:
@@ -427,8 +427,8 @@ Note the process ID of <code>mediaserver</code> for later.
 You can manually request a log dump at any time.
 This command shows logs from all the active and recent timelines, and then clears them:
 </p>
-<pre>
-$ dumpsys media.log
+<pre class="devsite-terminal devsite-click-to-copy">
+dumpsys media.log
 </pre>
 
 <p>
@@ -443,8 +443,9 @@ Now try killing <code>mediaserver</code> process: <code>kill -9 #</code>, where 
 the process ID you noted earlier.  You should see a dump from <code>media.log</code>
 in the main <code>logcat</code>, showing all the logs leading up to the crash.
 </p>
-<pre>
-$ dumpsys media.log
+
+<pre class="devsite-terminal devsite-click-to-copy">
+dumpsys media.log
 </pre>
 
   </body>

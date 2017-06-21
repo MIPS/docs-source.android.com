@@ -43,7 +43,8 @@ using the following flags defined in:
 <code><a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml">
 /android/frameworks/base/core/res/res/values/config.xml</a></code>
 
-<pre>&lt;!-- Control whether Night display is available. This should only be enabled
+<pre class="devsite-click-to-copy">
+&lt;!-- Control whether Night display is available. This should only be enabled
       on devices with HWC 2 color transform  support. --&gt;
  &lt;bool name="config_nightDisplayAvailable">false&lt;/bool&gt;
  &lt;!-- Default mode to control how Night display is automatically activated.
@@ -63,7 +64,8 @@ using the following flags defined in:
 <p>
 The code is divided between framework, system services, SystemUI, and Settings:
 </p>
-<pre>platform/frameworks/base/core
+<pre class="devsite-click-to-copy">
+platform/frameworks/base/core
 ├ java/android/provider/Settings.java
 ├ java/com/android/internal/app/NightDisplayController.java
 └ res/res/values/config.xml

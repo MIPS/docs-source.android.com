@@ -104,7 +104,7 @@ enabled to work.</p>
 
 <p>Example usage (in product’s BoardConfig.mk):</p>
 
-<pre><code>WITH_DEXPREOPT := true</code></pre>
+<pre class="devsite-click-to-copy">WITH_DEXPREOPT := true</pre>
 
 <h3 id=dont_dexpreopt_prebuilts>DONT_DEXPREOPT_PREBUILTS</h3>
 
@@ -116,8 +116,10 @@ to first boot time.</p>
 
 <p>Example usage (in product’s BoardConfig.mk):</p>
 
-<pre><code>WITH_DEXPREOPT := true
-DONT_DEXPREOPT_PREBUILTS := true</code></pre>
+<pre class="devsite-click-to-copy">
+WITH_DEXPREOPT := true
+DONT_DEXPREOPT_PREBUILTS := true
+</pre>
 
 <h3 id=with_dexpreopt_boot_img_only>WITH_DEXPREOPT_BOOT_IMG_ONLY</h3>
 
@@ -130,8 +132,10 @@ selectively disable app pre-optimization via
 
 <p>Example usage (in product’s BoardConfig.mk):</p>
 
-<pre><code>WITH_DEXPREOPT := true
-WITH_DEXPREOPT_BOOT_IMG_ONLY := true</code></pre>
+<pre class="devsite-click-to-copy">
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+</pre>
 
 <h3 id=local_dex_preopt>LOCAL_DEX_PREOPT</h3>
 
@@ -152,7 +156,9 @@ APK signatures to remain valid.</p>
 
 <p>Example usage (in app’s Android.mk):</p>
 
-<pre><code>LOCAL_DEX_PREOPT := false</code></pre>
+<pre class="devsite-click-to-copy">
+LOCAL_DEX_PREOPT := false
+</pre>
 
 <h3 id=product_dex_preopt_*>PRODUCT_DEX_PREOPT_*</h3>
 
@@ -177,8 +183,10 @@ maximally used to improve first boot time.</p>
 
 <p>Example usage (in product’s device.mk):</p>
 
-<pre><code>PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=interpret-only
-$(call add-product-dex-preopt-module-config,services,--compiler-filter=space)</code></pre>
+<pre class="devsite-click-to-copy">
+PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=interpret-only
+$(call add-product-dex-preopt-module-config,services,--compiler-filter=space)
+</pre>
 
 <p>These flags can also be used to selectively disable pre-optimization of a
 particular module or package by specifying <code>$(call
@@ -187,7 +195,9 @@ product's device.mk file.</p>
 
 <p>Example usage (in product’s device.mk):</p>
 
-<pre><code>$(call add-product-dex-preopt-module-config,Calculator,disable)</code></pre>
+<pre class="devsite-click-to-copy">
+$(call add-product-dex-preopt-module-config,Calculator,disable)
+</pre>
 
 <h2 id=other_odex>First boot installation of DEX_PREOPT files</h2>
 
@@ -199,14 +209,17 @@ partition. They are then copied to the data partition on first boot.</p>
 
 <p>Example usage (in device-common.mk):</p>
 
-<pre><code>PRODUCT_PACKAGES += \
+<pre class="devsite-click-to-copy">
+PRODUCT_PACKAGES += \
      cppreopts.sh
 PRODUCT_PROPERTY_OVERRIDES += \
      ro.cp_system_other_odex=1
-</code></pre>
+</pre>
 
 <p>And in device's BoardConfig.mk:</p>
-<pre><code>BOARD_USES_SYSTEM_OTHER_ODEX := true</code></pre>
+<pre class="devsite-click-to-copy">
+BOARD_USES_SYSTEM_OTHER_ODEX := true
+</pre>
 
 <p>See <a href="/devices/tech/ota/ab_updates.html#compilation">App
 compilation in background</a> to optionally include the compilation script and
@@ -226,7 +239,9 @@ have to have its own copy, again wasting memory.</p>
 
 <p>Example usage (in product’s device.mk):</p>
 
-<pre><code>PRODUCT_COPY_FILES += &lt;filename&gt;:system/etc/preloaded-classes</code></pre>
+<pre class="devsite-click-to-copy">
+PRODUCT_COPY_FILES += &lt;filename&gt;:system/etc/preloaded-classes
+</pre>
 
 <p class="note"><strong>Note:</strong> This line must be placed before
 inheriting any product configuration makefiles that get the default one from
@@ -246,7 +261,9 @@ post-L in AOSP, a custom image classes list can be specified using
 
 <p>Example usage (in product’s device.mk):</p>
 
-<pre><code>PRODUCT_DEX_PREOPT_BOOT_FLAGS += --image-classes=&lt;filename&gt;</code></pre>
+<pre class="devsite-click-to-copy">
+PRODUCT_DEX_PREOPT_BOOT_FLAGS += --image-classes=&lt;filename&gt;
+</pre>
 
 <h2 id=compiled_classes_list>Compiled Classes List</h2>
 
@@ -262,7 +279,9 @@ also be specified using <code>PRODUCT_DEX_PREOPT_BOOT_FLAGS</code>.</p>
 
 <p>Example usage (in product’s device.mk):</p>
 
-<pre><code>PRODUCT_COPY_FILES += &lt;filename&gt;:system/etc/compiled-classes</code></pre>
+<pre class="devsite-click-to-copy">
+PRODUCT_COPY_FILES += &lt;filename&gt;:system/etc/compiled-classes
+</pre>
 
 <p class="note"><strong>Note:</strong> This line must be placed before
 inheriting any product configuration makefiles that get the default one from
@@ -280,9 +299,13 @@ methods that are too large to be represented by the compiler’s internal
 representation.
   <li><em>speed</em> - compiles most methods and maximizes runtime performance, which is the
 default option.
+  <li><em>speed-profile</em> - compiles methods passed from a profile file
+  through the <em>--profile-file</em> option or <em>--profile-file-fd</em> option.
   <li><em>balanced</em> - attempts to get the best performance return on compilation investment.
   <li><em>space</em> - compiles a limited number of methods, prioritizing storage space.
   <li><em>interpret-only</em> - skips all compilation and relies on the interpreter to run code.
+  <li><em>verify-profile</em> - skips all compilation and only performs verification of methods passed
+  from a profile file through the <em>--profile-file</em> option or <em>--profile-file-fd</em> option.
   <li><em>verify-none</em> - special option that skips verification and compilation, should be used only
 for trusted system code.
 </ul>
@@ -299,8 +322,10 @@ should enable PIC compilation.</p>
 
 <p>Example usage (in product’s device.mk):</p>
 
-<pre><code>WITH_DEXPREOPT := true
-WITH_DEXPREOPT_PIC := true</code></pre>
+<pre class="devsite-click-to-copy">
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_PIC := true
+</pre>
 
 <p>Starting in Android 7.0, PIC compilation is enabled by default.</p>
 
@@ -316,14 +341,18 @@ regressions may appear in benchmarking.</p>
 
 <p>Example usage (in product’s device.mk):</p>
 
-<pre><code>WITH_ART_SMALL_MODE := true</code></pre>
+<pre class="devsite-click-to-copy">
+WITH_ART_SMALL_MODE := true
+</pre>
 
 <p>In future releases, this build option will be removed since it can be done with
 this (in product’s device.mk):</p>
 
-<pre><code>PRODUCT_PROPERTY_OVERRIDES += \
+<pre class="devsite-click-to-copy">
+PRODUCT_PROPERTY_OVERRIDES += \
      dalvik.vm.dex2oat-filter=interpret-only \
-     dalvik.vm.image-dex2oat-filter=speed</code></pre>
+     dalvik.vm.image-dex2oat-filter=speed
+</pre>
 
 <h2 id=dalvik_vm_properties>dalvik.vm Properties</h2>
 
@@ -383,23 +412,29 @@ all that is necessary.
 
 <p>BoardConfig.mk:</p>
 
-<pre><code>WITH_DEXPREOPT := true</code></pre>
+<pre class="devsite-click-to-copy">
+WITH_DEXPREOPT := true
+</pre>
 
 <p>If this causes the system image to become too large, the next thing to try is
 disabling pre-optimization of the prebuilts.
 
 <p>BoardConfig.mk:</p>
 
-<pre><code>WITH_DEXPREOPT := true
-DONT_DEXPREOPT_PREBUILTS := true</code></pre>
+<pre class="devsite-click-to-copy">
+WITH_DEXPREOPT := true
+DONT_DEXPREOPT_PREBUILTS := true
+</pre>
 
 <p>Again, if the system image is still too large, try pre-optimizing only the boot
 image.
 
 <p>BoardConfig.mk:</p>
 
-<pre><code>WITH_DEXPREOPT := true
-WITH_DEXPREOPT_BOOT_IMG_ONLY := true</code></pre>
+<pre class="devsite-click-to-copy">
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+</pre>
 
 <p>However, limiting to pre-optimizing only the boot-image means all apps will
 have to be optimized on first boot. In order to avoid this, it is possible to
@@ -413,12 +448,16 @@ potentially interpreting more code and impacting runtime performance.
 
 <p>BoardConfig.mk:</p>
 
-<pre><code>WITH_DEXPREOPT := true
-DONT_DEXPREOPT_PREBUILTS := true</code></pre>
+<pre class="devsite-click-to-copy">
+WITH_DEXPREOPT := true
+DONT_DEXPREOPT_PREBUILTS := true
+</pre>
 
 <p>device.mk:</p>
 
-<pre><code>PRODUCT_DEX_PREOPT_BOOT_FLAGS := --compiler-filter=space</code></pre>
+<pre class="devsite-click-to-copy">
+PRODUCT_DEX_PREOPT_BOOT_FLAGS := --compiler-filter=space
+</pre>
 
 <p>If a device has very limited system partition space, it’s possible to compile a
 subset of classes in the boot classpath using the compiled classes list. Boot
@@ -427,12 +466,16 @@ could affect runtime performance.
 
 <p>BoardConfig.mk:</p>
 
-<pre><code>WITH_DEXPREOPT := true
-WITH_DEXPREOPT_BOOT_IMG_ONLY := true</code></pre>
+<pre class="devsite-click-to-copy">
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+</pre>
 
 <p>device.mk:</p>
 
-<pre><code>PRODUCT_COPY_FILES += &lt;filename&gt;:system/etc/compiled-classes</code></pre>
+<pre class="devsite-click-to-copy">
+PRODUCT_COPY_FILES += &lt;filename&gt;:system/etc/compiled-classes
+</pre>
 
 <p>If a device has both limited space in the system and data partitions, compiler
 filter flags can be used to disable compilation of certain apps. This will save
@@ -446,13 +489,17 @@ speed.
 
 <p>BoardConfig.mk:</p>
 
-<pre><code>WITH_DEXPREOPT := true
-DONT_DEXPREOPT_PREBUILTS := true</code></pre>
+<pre class="devsite-click-to-copy">
+WITH_DEXPREOPT := true
+DONT_DEXPREOPT_PREBUILTS := true
+</pre>
 
 <p>device.mk:</p>
 
-<pre><code>PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=interpret-only
-$(call add-product-dex-preopt-module-config,services,--compiler-filter=space)</code></pre>
+<pre class="devsite-click-to-copy">
+PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=interpret-only
+$(call add-product-dex-preopt-module-config,services,--compiler-filter=space)
+</pre>
 
 <p>For a major version upgrade OTA, it can be useful to blacklist certain apps
 from being pre-optimized since they will likely be out of date. This can be
@@ -461,11 +508,15 @@ done by specifying <code>LOCAL_DEX_PREOPT</code> (for all products) or with
 
 <p>BoardConfig.mk:</p>
 
-<pre><code>WITH_DEXPREOPT := true</code></pre>
+<pre class="devsite-click-to-copy">
+WITH_DEXPREOPT := true
+</pre>
 
 <p>Android.mk (of blacklisted apps):</p>
 
-<pre><code>LOCAL_DEX_PREOPT := false</code></pre>
+<pre class="devsite-click-to-copy">
+LOCAL_DEX_PREOPT := false
+</pre>
 
   </body>
 </html>

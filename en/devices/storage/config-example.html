@@ -39,30 +39,34 @@ device which is a physical SD card, like Nexus One.</p>
 it. <code>vold</code> will then manage the <code>fuse_sdcard0</code> service
 when media is inserted/removed.
 <h4>fstab.hardware</h4>
-<pre><code>[physical device node]  auto  vfat  defaults  voldmanaged=sdcard0:auto,noemulatedsd
-</code></pre>
+<pre class="devsite-click-to-copy">
+[physical device node]  auto  vfat  defaults  voldmanaged=sdcard0:auto,noemulatedsd
+</pre>
 <h4>init.hardware.rc</h4>
-<pre><code>on init
+<pre class="devsite-click-to-copy">
+on init
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
     mkdir /storage/sdcard0 0700 root root
     export EXTERNAL_STORAGE /storage/sdcard0
 service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
     class late_start
     disabled
-</code></pre>
+</pre>
 <h4>storage_list.xml</h4>
-<pre><code>&lt;storage
+<pre class="devsite-click-to-copy">
+&lt;storage
     android:mountPoint="/storage/sdcard0"
     android:storageDescription="@string/storage_sd_card"
     android:removable="true"
     android:primary="true"
     android:maxFileSize="4096" /&gt;
-</code></pre>
+</pre>
 <h3 id=android_5_x_emulated>Emulated primary only</h3>
 <p>This is a typical configuration for a device with single external storage
 device which is backed by internal storage on the device, like Nexus 4.</p>
 <h4>init.hardware.rc</h4>
-<pre><code>on init
+<pre class="devsite-click-to-copy">
+on init
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
     export EXTERNAL_STORAGE /storage/emulated/legacy
@@ -72,13 +76,14 @@ on fs
     setprop ro.crypto.fuse_sdcard true
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
-</code></pre>
+</pre>
 <h4>storage_list.xml</h4>
-<pre><code>&lt;storage
+<pre class="devsite-click-to-copy">
+&lt;storage
     android:storageDescription="@string/storage_internal"
     android:emulated="true"
     android:mtpReserve="100" /&gt;
-</code></pre>
+</pre>
 <h3 id=android_5_x_both>Emulated primary, physical secondary</h3>
 <p>This is a typical configuration for a device with multiple external
 storage devices, where the primary device is backed by internal storage
@@ -88,10 +93,12 @@ on the device, and where the secondary device is a physical SD card, like Xoom.<
 access it. <code>vold</code> will then manage the <code>fuse_sdcard1</code>
 service when media is inserted/removed.</p>
 <h4>fstab.hardware</h4>
-<pre><code>[physical device node]  auto  vfat  defaults  voldmanaged=sdcard1:auto
-</code></pre>
+<pre class="devsite-click-to-copy">
+[physical device node]  auto  vfat  defaults  voldmanaged=sdcard1:auto
+</pre>
 <h4>init.hardware.rc</h4>
-<pre><code>on init
+<pre class="devsite-click-to-copy">
+on init
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
@@ -107,9 +114,10 @@ service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emul
 service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
     class late_start
     disabled
-</code></pre>
+</pre>
 <h4>storage_list.xml</h4>
-<pre><code>&lt;storage
+<pre class="devsite-click-to-copy">
+&lt;storage
     android:storageDescription="@string/storage_internal"
     android:emulated="true"
     android:mtpReserve="100" /&gt;
@@ -118,7 +126,7 @@ service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw
     android:storageDescription="@string/storage_sd_card"
     android:removable="true"
     android:maxFileSize="4096" /&gt;
-</code></pre>
+</pre>
 
 <h2 id=android_6>Android 6.0</h2>
 <h3 id=android_6_physical>Physical primary only</h3>
@@ -126,14 +134,16 @@ service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw
 device which is a physical SD card, like the original Android One. There is no
 secondary shared storage and the device cannot support multi-user.</p>
 <h4>fstab.device</h4>
-<pre><code>/devices/platform/mtk-msdc.1/mmc_host*         auto        auto       defaults
+<pre class="devsite-click-to-copy">
+/devices/platform/mtk-msdc.1/mmc_host*         auto        auto       defaults
 voldmanaged=sdcard0:auto,encryptable=userdata,noemulatedsd
-</code></pre>
+</pre>
 <h4>init.device.rc</h4>
-<pre><code>on init
+<pre class="devsite-click-to-copy">
+on init
     # By default, primary storage is physical
     setprop ro.vold.primary_physical 1
-    </code></pre>
+</pre>
 <h3 id=android_6_emulated> Emulated primary only</h3>
 <p>This is a typical configuration for a device with single external storage
 device which is backed by internal storage on the device, like Nexus 6.</p>
@@ -144,8 +154,9 @@ device which is backed by internal storage on the device, like Nexus 6.</p>
   <li>Supports multi-user.
 </ul>
 <h4>fstab.device</h4>
-<pre><code>/devices/*/xhci-hcd.0.auto/usb*             auto            auto    defaults
-                                                    voldmanaged=usb:auto</code></pre>
+<pre class="devsite-click-to-copy">/devices/*/xhci-hcd.0.auto/usb*             auto            auto    defaults
+                                                    voldmanaged=usb:auto
+</pre>
 <h3 id=android_6_both>Emulated primary, physical secondary</h3>
 <p>This is a typical configuration for a device with multiple external storage
 devices, where the primary device is backed by internal storage on the device,
@@ -156,9 +167,10 @@ and where the secondary device is a physical SD card, like Xoom.</p>
   <li>Supports multi-user.
 </ul>
 <h4>fstab.device</h4>
-<pre><code>/devices/platform/mtk-msdc.1/mmc_host*           auto      auto     defaults
+<pre class="devsite-click-to-copy">
+/devices/platform/mtk-msdc.1/mmc_host*           auto      auto     defaults
 voldmanaged=sdcard1:auto,encryptable=userdata
-</code></pre>
+</pre>
 
   </body>
 </html>

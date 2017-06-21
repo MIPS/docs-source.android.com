@@ -31,16 +31,16 @@ debugging, most Android platform developers use
 
 <h2 id=build-valgrind>Building Valgrind</h2>
 <p>To build Valgrind:</p>
-<pre class="no-pretty-print">
-$ mmma -j6 external/valgrind
+<pre class="devsite-terminal devsite-click-to-copy">
+mmma -j6 external/valgrind
 </pre>
 
 <h2 id=app-valgrind>Using on an application</h2>
 <p>To use Valgrind on an application:</p>
 
-<pre class="no-pretty-print">
-$ adb shell setprop wrap.<em>app_name</em> "logwrapper valgrind"
-$ adb shell am start -a android.intent.action.MAIN -n <em>app_name</em>/.MainActivity
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb shell setprop wrap.<em>app_name</em> "logwrapper valgrind"</code>
+<code class="devsite-terminal">adb shell am start -a android.intent.action.MAIN -n <em>app_name</em>/.MainActivity</code>
 </pre>
 
 <code><em>app_name</em></code> must be a fully-qualified name such as
@@ -49,25 +49,25 @@ $ adb shell am start -a android.intent.action.MAIN -n <em>app_name</em>/.MainAct
 <h2 id=server-valgrind>Using on the system server</h2>
 <p>To run the system server with Valgrind:</p>
 
-<pre class="no-pretty-print">
-$ adb shell setprop wrap.system_server "logwrapper valgrind"
-$ adb shell stop && adb shell start
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb shell setprop wrap.system_server "logwrapper valgrind"</code>
+<code class="devsite-terminal">adb shell stop && adb shell start</code>
 </pre>
 
 
 <h2 id=symbols-valgrind>Getting debug symbols</h2>
 <p>For debug symbols, push unstripped libraries to <code>/data/local/symbols</code>:</p>
-<pre class="no-pretty-print">
-$ adb shell mkdir /data/local/symbols
-$ adb push $OUT/symbols /data/local/symbols
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb shell mkdir /data/local/symbols</code>
+<code class="devsite-terminal">adb push $OUT/symbols /data/local/symbols</code>
 </pre>
 
 <h2 id=boot-valgrind>Using during boot up</h2>
 <p>To use Valgrind during boot up, edit
 <code>out/target/product/XXXX/root/init.rc</code> by changing</p>
-<p><code>service example /system/bin/foo --arg1 --arg2</code></p>
+<pre class="devsite-click-to-copy">service example /system/bin/foo --arg1 --arg2</pre>
 <p>to:</p>
-<p><code>service example /system/bin/logwrapper /system/bin/valgrind /system/bin/foo --arg1 --arg2</code></p>
+<pre class="devsite-click-to-copy">>service example /system/bin/logwrapper /system/bin/valgrind /system/bin/foo --arg1 --arg2</pre>
 <p>To see the effects, create a <code>boot.img</code> and reflash the
 device.</p>
 

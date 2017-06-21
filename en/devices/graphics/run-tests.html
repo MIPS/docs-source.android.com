@@ -209,19 +209,19 @@ the full name of each test on a separate line in a standard ASCII file. As the
 test sets grow, the repetitive prefixes can be cumbersome. To avoid repeating
 the prefixes, use a trie (also known as a prefix tree) syntax shown below.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 {nodeName{firstChild{…},…lastChild{…}}}
 </pre>
 
 <p>For example:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 {dEQP-EGL{config-list,create_context{rgb565_depth_stencil}}}
 </pre>
 
 <p>Translates into the following two test cases:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 dEQP-EGL.config_list
 dEQP-EGL.create_context.rgb565_depth_stencil
 </pre>
@@ -235,20 +235,22 @@ a <code>NativeActivity</code> that uses EGL (requires Android 3.2 or higher).</p
 <p>The application package can be installed with the following command (name
 shown is the name of the APK in the Android CTS package; which name depends on
 the build):</p>
-<pre>$ adb –d install –r com.drawelements.deqp.apk</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb –d install –r com.drawelements.deqp.apk
+</pre>
 
 <p>To launch the test execution service and to setup port forwarding, use the
 following:</p>
-<pre>
-$ adb –d forward tcp:50016 tcp:50016
-$ adb –d shell am start –n com.drawelements.deqp/.execserver.ServiceStarter
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb –d forward tcp:50016 tcp:50016</code>
+<code class="devsite-terminal">adb –d shell am start –n com.drawelements.deqp/.execserver.ServiceStarter</code>
 </pre>
 
 <p>Debug prints can be enabled by executing the following before starting the
 tests:</p>
 
-<pre>
-$ adb –d shell setprop log.tag.dEQP DEBUG
+<pre class="devsite-terminal devsite-click-to-copy">
+adb –d shell setprop log.tag.dEQP DEBUG
 </pre>
 
 <h3 id=executing_tests_on_android_without_android_cts>Executing tests on
@@ -267,7 +269,8 @@ log.</p>
 utility. For example, to run <code>dEQP-GLES2.info</code> tests on a platform
 supporting <code>NativeActivity,</code> use the following commands.</p>
 
-<pre>$ adb -d shell am start -n com.drawelements.deqp/android.app.NativeActivity -e \
+<pre class="devsite-terminal devsite-click-to-copy">
+adb -d shell am start -n com.drawelements.deqp/android.app.NativeActivity -e \
 cmdLine "deqp --deqp-case=dEQP-GLES2.info.* --deqp-log-filename=/sdcard/dEQP-Log.qpa
 </pre>
 
@@ -276,15 +279,16 @@ cmdLine "deqp --deqp-case=dEQP-GLES2.info.* --deqp-log-filename=/sdcard/dEQP-Log
 <p>To run the tests under the GDB debugger on Android, first compile and install
 the debug build by running the following two scripts:</p>
 
-<pre>
-$ python android/scripts/build.py --native-build-type=Debug
-$ python android/scripts/install.py
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">python android/scripts/build.py --native-build-type=Debug</code>
+<code class="devsite-terminal">python android/scripts/install.py</code>
 </pre>
 
 <p>After the debug build is installed on the device, to launch the tests under
 GDB running on the host, run the following command:</p>
 
-<pre>$ python android/scripts/debug.py \
+<pre class="devsite-terminal devsite-click-to-copy">
+python android/scripts/debug.py \
 --deqp-commandline="--deqp-log-filename=/sdcard/TestLog.qpa --deqp-case=dEQP-GLES2.functional.*"
 </pre>
 
@@ -310,8 +314,7 @@ line parameters should be enough.</p>
 <code>&lt;path-to-ndk&gt;/prebuilt/windows/bin</code> to the PATH variable.</p>
 
 <p class="note"><strong>Note:</strong> Native code debugging does not work on
-stock Android 4.3; for workarounds, refer to
-<a href="https://code.google.com/p/android/issues/detail?id=58373">https://code.google.com/p/android/issues/detail?id=58373</a>.
+stock Android 4.3; for workarounds, refer to <a href="https://issuetracker.google.com/issues/36976703">this public bug</a>.
 Android 4.4 and higher do not contain this bug.</p>
 
   </body>

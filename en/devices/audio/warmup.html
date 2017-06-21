@@ -54,7 +54,9 @@ Layer (HAL) <code>write()</code> takes to stabilize.
   the hardware itself might have its own power logic beyond the three seconds that AudioFlinger has.</li>
   <li>Press Home, and you should hear a click sound.</li>
   <li>Run the following command to receive the measured warmup:
-  <br /><code>adb shell dumpsys media.audio_flinger | grep measuredWarmup</code>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell dumpsys media.audio_flinger | grep measuredWarmup
+</pre>
 
 <p>
 You should see output like this:

@@ -101,6 +101,8 @@ toc:
     path: /devices/tech/debug/asan
   - title: Dumpsys
     path: /devices/tech/debug/dumpsys
+  - title: Using GDB
+    path: /devices/tech/debug/gdb
   - title: Native Memory Use
     path: /devices/tech/debug/native-memory
   - title: Network Use

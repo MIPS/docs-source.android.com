@@ -68,8 +68,9 @@ assignments and comments.</p>
 <h3 id="properties">Properties</h3>
 <p>Property assignments each consist of a property name, an <code>=</code>, a property value,
 and a new line.  Like this:</p>
-<pre><code>property = value
-</code></pre>
+<pre class="devsite-click-to-copy">
+property = value
+</pre>
 <p>Property names are non-empty literal text identifiers.  They must not contain
 whitespace.  Each components of the input system defines a set of properties
 that are used to configure its function.</p>
@@ -78,11 +79,13 @@ They must not contain whitespace or the reserved characters <code>\</code> or <c
 <p>Property names and values are case-sensitive.</p>
 <h3 id="comments">Comments</h3>
 <p>Comment lines begin with '#' and continue to the end of the line.  Like this:</p>
-<pre><code># A comment!
-</code></pre>
+<pre class="devsite-click-to-copy">
+# A comment!
+</pre>
 <p>Blank lines are ignored.</p>
 <h3 id="example">Example</h3>
-<pre><code># This is an example of an input device configuration file.
+<pre class="devsite-click-to-copy">
+# This is an example of an input device configuration file.
 # It might be used to describe the characteristics of a built-in touch screen.
 
 # This is an internal device, not an external peripheral attached to the USB
@@ -96,9 +99,9 @@ touch.orientationAware = 1
 
 # Additional calibration properties...
 # etc...
-</code></pre>
+</pre>
 <h2 id="common-properties">Common Properties</h2>
-<p>The following properties are common to all input device classes.</p>
+<p>The following property is common to all input device classes.</p>
 <p>Refer to the documentation of each input device class for information about the
 special properties used by each class.</p>
 <h4 id="deviceinternal"><code>device.internal</code></h4>
