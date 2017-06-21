@@ -31,14 +31,14 @@ properly implement support for Android media resource manager and related APIs.<
 <p>The <code>CodecCapabilities.getMaxSupportedInstances</code> interface
 returns the maximum number of supported concurrent codec instances.</p>
 
-<p>The CTS test 
+<p>The CTS test
 <code>testGetMaxSupportedInstances(android.media.cts.MediaCodecCapabilitiesTest)</code>
-is used to enforce the proper maximum is set in 
+is used to enforce the proper maximum is set in
 <code>/etc/media_codecs.xml</code>.</p>
 
 <p>Here is an example:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 ...
 &lt;MediaCodecs&gt;
     ...
@@ -60,7 +60,7 @@ To do this:</p>
     <li>Run the test first using cts-tradefed.
     <li>Evaluate the resulting failure message. Here is an example:
 
-<pre>
+<pre class="devsite-click-to-copy">
 There was 1 failure:
 1) testGetMaxSupportedInstances(android.media.cts.MediaCodecCapabilitiesTest)
 junit.framework.AssertionFailedError: In order to pass the test, please publish
@@ -120,7 +120,7 @@ script to generate the XML file.
 This is usually done by placing the XML file in the device project
 (device/<em>&lt;vendor&gt;</em>/<em>&lt;product&gt;</em>) and adding a
 <code>PRODUCT_COPY_FILES</code> line to <code>device.mk</code> like so:
-<pre>
+<pre class="devsite-click-to-copy">
 PRODUCT_COPY_FILES += \
 ...
    device/moto/shamu/media_codecs.xml:system/etc/media_codecs.xml \
@@ -136,7 +136,7 @@ PRODUCT_COPY_FILES += \
 If the instance of secure codec and the instance of non-secure codec can’t
 co-exist at the same time, that should be indicated as global setting in the
 <code>media_codecs.xml</code> file.
-<pre>
+<pre class="devsite-click-to-copy">
 &lt;MediaCodecs&gt;
     &lt;Settings&gt;
         &lt;Setting name="supports-secure-with-non-secure-codec" value="false" /&gt;
@@ -147,7 +147,7 @@ co-exist at the same time, that should be indicated as global setting in the
   <li>supports-multiple-secure-codecs &mdash;
 If co-exist of multiple secure codec instances is not supported, that should be
 indicated as a global setting in the <code>media_codecs.xml</code> file.
-<pre>
+<pre class="devsite-click-to-copy">
 &lt;MediaCodecs&gt;
     &lt;Settings&gt;
         &lt;Setting name="supports-multiple-secure-codecs" value="false" /&gt;

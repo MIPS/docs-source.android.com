@@ -22,9 +22,6 @@
   -->
 
 
-
-<h2 id=intro>Introduction</h2>
-
 <p>Deqp test modules can be integrated to automated test systems in multiple ways.
 The best approach depends on the existing test infrastructure and target
 environment.</p>
@@ -67,9 +64,9 @@ The following examples demonstrate how to use the command line Test Executor
 
 <h4 id=example_1_run_gles2_functional_tests>Example 1: Run GLES2 functional tests on an Android device:</h4>
 
-<pre>
+<pre class="devsite-terminal devsite-click-to-copy">
 executor --connect=127.0.0.1 --port=50016 --binaryname=
-com.drawelements.deqp/android.app.NativeActivity 
+com.drawelements.deqp/android.app.NativeActivity
 --caselistdir=caselists
 --testset=dEQP-GLES2.* --out=BatchResult.qpa
 --cmdline="--deqp-crashhandler=enable --deqp-watchdog=enable
@@ -78,9 +75,9 @@ com.drawelements.deqp/android.app.NativeActivity
 
 <h4 id=example_2_continue_a_partial_opengl>Example 2: Continue a partial OpenGL ES 2 test run locally:</h4>
 
-<pre>
+<pre class="devsite-terminal devsite-click-to-copy">
 executor --start-server=execserver/execserver --port=50016
---binaryname=deqp-gles2 --workdir=modules/opengl 
+--binaryname=deqp-gles2 --workdir=modules/opengl
 --caselistdir=caselists
 --testset=dEQP-GLES2.* --exclude=dEQP-GLES2.performance.* --in=BatchResult.qpa
 --out=BatchResult.qpa
@@ -99,14 +96,14 @@ plain-text format can be selected using the following command line argument: <co
 
 <h4 id=example_1_export_test_log_in_csv_format>Example 1: Export test log in CSV format</h4>
 
-<pre>
-testlog-to-csv --value=code BatchResult.qpa > Result_statuscodes.csv
-testlog-to-csv --value=details BatchResult.qpa > Result_statusdetails.csv
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">testlog-to-csv --value=code BatchResult.qpa > Result_statuscodes.csv</code>
+<code class="devsite-terminal">testlog-to-csv --value=details BatchResult.qpa > Result_statusdetails.csv</code>
 </pre>
 
 <h4 id=example_2_list_differences>Example 2: List differences of test results between two test logs</h4>
 
-<pre>
+<pre class="devsite-terminal devsite-click-to-copy">
 testlog-to-csv --mode=diff --format=text Device_v1.qpa Device_v2.qpa
 </pre>
 

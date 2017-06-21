@@ -38,9 +38,11 @@ used by both the recovery binary and the package-building tools. You can
 specify the name of the map file in TARGET_RECOVERY_FSTAB in BoardConfig.mk.</p>
 <p>A sample partition map file might look like this:</p>
 
-<p><code>device/yoyodyne/tardis/recovery.fstab</code></p>
+<pre class="devsite-click-to-copy">
+device/yoyodyne/tardis/recovery.fstab
+</pre>
 
-<pre>
+<pre class="devsite-click-to-copy">
 # mount point       fstype  device       [device2]        [options (3.0+ only)]
 
 /sdcard     vfat    /dev/block/mmcblk0p1 /dev/block/mmcblk0
@@ -131,9 +133,11 @@ to provide the device-specific functionality. The file <code>
 makes a good starting point to copy when writing a version of this file for
 your device.</p>
 
-<p><code>device/yoyodyne/tardis/recovery/recovery_ui.cpp</code></p>
+<pre class="devsite-click-to-copy">
+device/yoyodyne/tardis/recovery/recovery_ui.cpp
+</pre>
 
-<pre>
+<pre class="prettyprint">
 #include &lt;linux/input.h&gt;
 
 #include "common.h"
@@ -147,7 +151,7 @@ your device.</p>
 appear in the hidden recovery menu. Headers describe how to operate the menu
 (i.e. controls to change/select the highlighted item).</p>
 
-<pre>
+<pre class="prettyprint">
 static const char* HEADERS[] = { "Volume up/down to move highlight;",
                                  "power button to select.",
                                  "",
@@ -171,7 +175,7 @@ ScreenRecoveryUIimplementation (see instructions for
 function to customize from ScreenRecoveryUI is <code>CheckKey()</code>, which
 does the initial asynchronous key handling:</p>
 
-<pre>
+<pre class="prettyprint">
 class TardisUI : public ScreenRecoveryUI {
   public:
     virtual KeyAction CheckKey(int key) {
@@ -212,7 +216,7 @@ setup: the display is toggled by holding down power and pressing volume-up,
 and the device can be rebooted immediately by pressing the power button five
 times in a row (with no other intervening keys):</p>
 
-<pre>
+<pre class="prettyprint">
 class TardisUI : public ScreenRecoveryUI {
   private:
     int consecutive_power_keys;
@@ -263,7 +267,7 @@ Images</a>.</p>
 instance of your UI class and return that from the <code>GetUI()</code>
 function:</p>
 
-<pre>
+<pre class="prettyprint">
 class TardisDevice : public Device {
   private:
     TardisUI* ui;
@@ -283,7 +287,7 @@ but before any action has been taken. The default implementation does nothing,
 so you do not need to provide this in your subclass if you have nothing to do:
 </p>
 
-<pre>
+<pre class="prettyprint">
    void StartRecovery() {
        // ... do something tardis-specific here, if needed ....
     }
@@ -294,7 +298,7 @@ so you do not need to provide this in your subclass if you have nothing to do:
 of items. In this implementation, it returns the static arrays defined at the
 top of the file:</p>
 
-<pre>
+<pre class="prettyprint">
 const char* const* GetMenuHeaders() { return HEADERS; }
 const char* const* GetMenuItems() { return ITEMS; }
 </pre>
@@ -303,7 +307,7 @@ const char* const* GetMenuItems() { return ITEMS; }
 <p>Next, provide a <code>HandleMenuKey()</code> function, which takes a
 keypress and the current menu visibility, and decides what action to take:</p>
 
-<pre>
+<pre class="prettyprint">
    int HandleMenuKey(int key, int visible) {
         if (visible) {
             switch (key) {
@@ -350,7 +354,7 @@ use trackball motions as triggers for rebooting or toggling the display.</p>
 devices pressing Alt-W in recovery would start a data wipe whether the menu
 was visible or not. YOu could implement like this:</p>
 
-<pre>
+<pre class="prettyprint">
    int HandleMenuKey(int key, int visible) {
         if (ui->IsKeyPressed(KEY_LEFTALT) &amp;&amp; key == KEY_W) {
             return 2;  // position of the "wipe data" item in the menu
@@ -369,7 +373,7 @@ However, you can return the values if desired.</p>
 positions in the array of items returned by <code>GetMenuItems()</code> to
 actions. For the array of items in the tardis example, use:</p>
 
-<pre>
+<pre class="prettyprint">
    BuiltinAction InvokeMenuItem(int menu_position) {
         switch (menu_position) {
           case 0: return REBOOT;
@@ -409,7 +413,7 @@ should erase it here. You should return 0 to indicate success and another
 value for failure, though currently the return value is ignored. The user data
 and cache partitions are wiped whether you return success or failure.</p>
 
-<pre>
+<pre class="prettyprint">
    int WipeData() {
        // ... do something tardis-specific here, if needed ....
        return 0;
@@ -421,7 +425,7 @@ and cache partitions are wiped whether you return success or failure.</p>
 for the <code>make_device()</code> function that creates and returns an
 instance of your Device class:</p>
 
-<pre>
+<pre class="prettyprint">
 class TardisDevice : public Device {
    // ... all the above methods ...
 };
@@ -436,9 +440,11 @@ Device* make_device() {
 on your device. In Android.mk, create a static library that contains only this
 C++ file:</p>
 
-<p><code>device/yoyodyne/tardis/recovery/Android.mk</code></p>
+<pre class="devsite-click-to-copy">
+device/yoyodyne/tardis/recovery/Android.mk
+</pre>
 
-<pre>
+<pre class="devsite-click-to-copy">
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
@@ -455,7 +461,7 @@ include $(BUILD_STATIC_LIBRARY)
 <p>Then, in the board configuration for this device, specify your static
 library as the value of TARGET_RECOVERY_UI_LIB.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 device/yoyodyne/tardis/BoardConfig.mk
  [...]
 
@@ -483,11 +489,11 @@ and the <strong>installing</strong> animation.</p>
 <tbody>
 <tr>
 <td>
-<img src="../images/icon_error.png" alt="image shown during ota error">
+<img src="/devices/tech/images/icon_error.png" alt="image shown during ota error">
 <p class="img-caption"><strong>Figure 1.</strong> icon_error.png</p>
 </td>
 <td>
-<img src="../images/icon_installing_5x.png" alt="image shown during ota install"
+<img src="/devices/tech/images/icon_installing_5x.png" alt="image shown during ota install"
 height="275">
 <p class="img-caption"><strong>Figure 2.</strong> icon_installing.png</p>
 </td>
@@ -521,11 +527,11 @@ above) and the <b>installing</b> animation plus several overlay images:</p>
 <tbody>
 <tr>
 <td rowspan="2">
-<img src="../images/icon_installing.png" alt="image shown during ota install">
+<img src="/devices/tech/images/icon_installing.png" alt="image shown during ota install">
 <p class="img-caption"><strong>Figure 3.</strong> icon_installing.png</p>
 </td>
 <td>
-<img src="../images/icon_installing_overlay01.png" alt="image shown as first
+<img src="/devices/tech/images/icon_installing_overlay01.png" alt="image shown as first
 overlay">
 <p class="img-caption"><strong>Figure 4.</strong> icon-installing_overlay01.png
 </p>
@@ -533,7 +539,7 @@ overlay">
 </tr>
 <tr>
 <td>
-<img src="../images/icon_installing_overlay07.png" alt="image shown as seventh
+<img src="/devices/tech/images/icon_installing_overlay07.png" alt="image shown as seventh
 overlay">
 <p class="img-caption"><strong>Figure 5.</strong> icon_installing_overlay07.png
 </p>
@@ -551,12 +557,12 @@ overlay is placed on top of the base image:</p>
 <table style="border-collapse:collapse;">
 <tbody>
 <tr>
-<td><img align="center" src="../images/composite01.png" alt="composite image of
+<td><img align="center" src="/devices/tech/images/composite01.png" alt="composite image of
 install plus first overlay">
 <p class="img-caption"><strong>Figure 6.</strong> Installing animation frame 1
 (icon_installing.png + icon_installing_overlay01.png)
 </td>
-<td><img align="center" src="../images/composite07.png" alt="composite image of
+<td><img align="center" src="/devices/tech/images/composite07.png" alt="composite image of
 install plus seventh overlay">
 <p class="img-caption"><strong>Figure 7.</strong> Installing animation frame 7
 (icon_installing.png + icon_installing_overlay07.png)
@@ -593,7 +599,7 @@ strings for that message in each locale.</p>
 
 <p>Sample image of recovery text strings:</p>
 
-<img src="../images/installing_text.png" alt="image of recovery text">
+<img src="/devices/tech/images/installing_text.png" alt="image of recovery text">
 <p class="img-caption"><strong>Figure 8.</strong> Localized text for recovery
 messages</p>
 
@@ -623,9 +629,9 @@ in English.</p>
 <p>Progress bars can appear below the main image (or animation). The progress
 bar is made by combining two input images, which must be of the same size:</p>
 
-<img src="../images/progress_empty.png" alt="empty progress bar">
+<img src="/devices/tech/images/progress_empty.png" alt="empty progress bar">
 <p class="img-caption"><strong>Figure 9.</strong> progress_empty.png</p>
-<img src="../images/progress_fill.png" alt="full progress bar">
+<img src="/devices/tech/images/progress_fill.png" alt="full progress bar">
 <p class="img-caption"><strong>Figure 10.</strong> progress_fill.png</p>
 
 <p>The left end of the <i>fill</i> image is displayed next to the right end of
@@ -633,11 +639,11 @@ the <i>empty</i> image to make the progress bar. The position of the boundary
 between the two images is changed to indicate the progress. For example, with
 the above pairs of input images, display:</p>
 
-<img src="../images/progress_1.png" alt="progress bar at 1%">
+<img src="/devices/tech/images/progress_1.png" alt="progress bar at 1%">
 <p class="img-caption"><strong>Figure 11.</strong> Progress bar at 1%></p>
-<img src="../images/progress_10.png" alt="progress bar at 10%">
+<img src="/devices/tech/images/progress_10.png" alt="progress bar at 10%">
 <p class="img-caption"><strong>Figure 12.</strong> Progress bar at 10%</p>
-<img src="../images/progress_50.png" alt="progress bar at 50%">
+<img src="/devices/tech/images/progress_50.png" alt="progress bar at 50%">
 <p class="img-caption"><strong>Figure 13.</strong> Progress bar at 50%</p>
 
 <p>You can provide device-specific versions of these images by placing them
@@ -678,8 +684,10 @@ doesn't have keys or you want to process them differently.</p>
 by providing your own extension functions that can be called from within your
 updater script. Here's a sample function for the tardis device:</p>
 
-<p><code>device/yoyodyne/tardis/recovery/recovery_updater.c</code></p>
-<pre>
+<pre class="devsite-click-to-copy">
+device/yoyodyne/tardis/recovery/recovery_updater.c
+</pre>
+<pre class="prettyprint">
 #include &lt;stdlib.h&gt;
 #include &lt;string.h&gt;
 
@@ -691,7 +699,7 @@ by which the function was called, a <code>State*</code> cookie, the number of
 incoming arguments, and an array of <code>Expr*</code> pointers representing
 the arguments. The return value is a newly-allocated <code>Value*</code>.</p>
 
-<pre>
+<pre class="prettyprint">
 Value* ReprogramTardisFn(const char* name, State* state, int argc, Expr* argv[]) {
     if (argc != 2) {
         return ErrorAbort(state, "%s() expects 2 args, got %d", name, argc);
@@ -711,7 +719,7 @@ ownership of the Value returned and are responsible for eventually calling
 <p>Suppose the function needs two arguments: a string-valued <b>key</b> and a
 blob-valued <b>image</b>. You could read arguments like this:</p>
 
-<pre>
+<pre class="prettyprint">
    Value* key = EvaluateValue(state, argv[0]);
     if (key == NULL) {
         return NULL;
@@ -738,7 +746,7 @@ blob-valued <b>image</b>. You could read arguments like this:</p>
 for multiple arguments. The <code>ReadValueArgs()</code> function can make this
 easier. Instead of the code above, you could have written this:</p>
 
-<pre>
+<pre class="prettyprint">
    Value* key;
     Value* image;
     if (ReadValueArgs(state, argv, 2, &amp;key, &amp;image) != 0) {
@@ -763,7 +771,7 @@ number of arguments (it returns an array of <code>Value*</code>).</p>
 
 <p>After evaluating the arguments, do the work of the function:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
    // key-&gt;data is a NUL-terminated string
     // image-&gt;data and image-&gt;size define a block of binary data
     //
@@ -781,7 +789,7 @@ copy of the constant string to return, since the caller will <code>free()
 </code> both. Don't forget to call <code>FreeValue()</code> on the objects you
 got by evaluating your arguments!</p>
 
-<pre>
+<pre class="prettyprint">
    FreeValue(key);
     FreeValue(image);
 
@@ -796,7 +804,7 @@ got by evaluating your arguments!</p>
 <p>The convenience function <code>StringValue()</code> wraps a string into a
 new Value object. Use to write the above code more succinctly:</p>
 
-<pre>
+<pre class="prettyprint">
    FreeValue(key);
     FreeValue(image);
 
@@ -811,7 +819,7 @@ register each extension function. By convention, name device-specific
 functions <code><i>device</i>.<i>whatever</i></code> to avoid conflicts with
 future built-in functions added.</p>
 
-<pre>
+<pre class="prettyprint">
 void Register_librecovery_updater_tardis() {
     RegisterFunction("tardis.reprogram", ReprogramTardisFn);
 }
@@ -821,9 +829,11 @@ void Register_librecovery_updater_tardis() {
 code. (This is the same makefile used to customize the recovery UI in the
 previous section; your device may have both static libraries defined here.)</p>
 
-<p><code>device/yoyodyne/tardis/recovery/Android.mk</code></p>
+<pre class="devsite-click-to-copy">
+device/yoyodyne/tardis/recovery/Android.mk
+</pre>
 
-<pre>
+<pre class="devsite-click-to-copy">
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := recovery_updater.c
 LOCAL_C_INCLUDES += bootable/recovery
@@ -832,7 +842,7 @@ LOCAL_C_INCLUDES += bootable/recovery
 <p>The name of the static library must match the name of the
 <code>Register_<i>libname</i></code> function contained within it.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 LOCAL_MODULE := librecovery_updater_tardis
 include $(BUILD_STATIC_LIBRARY)
 </pre>
@@ -847,9 +857,11 @@ their (non-existent) registration function. For example, if your
 device-specific code wanted to use zlib to decompress data, you would include
 libz here.</p>
 
-<p><code>device/yoyodyne/tardis/BoardConfig.mk</code></p>
+<pre class="devsite-click-to-copy">
+device/yoyodyne/tardis/BoardConfig.mk
+</pre>
 
-<pre>
+<pre class="devsite-click-to-copy">
  [...]
 
 # add device-specific extensions to the updater binary
@@ -873,8 +885,10 @@ your extension functions.</p>
 Assuming your data file is in <code>device/yoyodyne/tardis/tardis.dat</code>,
 declare the following in your device's AndroidBoard.mk:</p>
 
-<p><code>device/yoyodyne/tardis/AndroidBoard.mk</code></p>
-<pre>
+<pre class="devsite-click-to-copy">
+device/yoyodyne/tardis/AndroidBoard.mk
+</pre>
+<pre class="devsite-click-to-copy">
   [...]
 
 $(call add-radio-file,tardis.dat)
@@ -886,8 +900,10 @@ loaded no matter what device is being built. (If your tree includes multiple
 devices, you only want the tardis.dat file added when building the tardis
 device.)</p>
 
-<p><code>device/yoyodyne/tardis/Android.mk</code></p>
-<pre>
+<pre class="devsite-click-to-copy">
+device/yoyodyne/tardis/Android.mk
+</pre>
+<pre class="devsite-click-to-copy">
   [...]
 
 # an alternative to specifying it in AndroidBoard.mk
@@ -907,8 +923,10 @@ multiple times to add as many files as you want.</p>
 <p>To extend the release tools, write a Python module (must be named
 releasetools.py) the tools can call into if present. Example:</p>
 
-<p><code>device/yoyodyne/tardis/releasetools.py</code></p>
-<pre>
+<pre class="devsite-click-to-copy">
+device/yoyodyne/tardis/releasetools.py
+</pre>
+<pre class="prettyprint">
 import common
 
 def FullOTA_InstallEnd(info):
@@ -924,7 +942,7 @@ def FullOTA_InstallEnd(info):
 <p>A separate function handles the case of generating an incremental OTA
 package. For this example, suppose you need to reprogram the tardis only when
 the tardis.dat file has changed between two builds.</p>
-<pre>
+<pre class="prettyprint">
 def IncrementalOTA_InstallEnd(info):
   # copy the data into the package.
   source_tardis_dat = info.source_zip.read("RADIO/tardis.dat")
@@ -1016,9 +1034,11 @@ documentation for ZIP archives</a>.</p>
 <p>Specify the location of your device's releasetools.py script in your
 BoardConfig.mk file:</p>
 
-<p><code>device/yoyodyne/tardis/BoardConfig.mk</code></p>
+<pre class="devsite-click-to-copy">
+device/yoyodyne/tardis/BoardConfig.mk
+</pre>
 
-<pre>
+<pre class="devsite-click-to-copy">
  [...]
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/yoyodyne/tardis
@@ -1042,30 +1062,15 @@ target-files.</p>
 picks up the device-specific module from the target_files .zip file and uses
 it when generating OTA packages:</p>
 
-<pre>
-% <b>./build/tools/releasetools/ota_from_target_files \
-    -i PREVIOUS-tardis-target_files.zip \
-    dist_output/tardis-target_files.zip incremental_ota_update.zip</b>
-unzipping target target-files...
-<b>using device-specific extensions from target_files</b>
-unzipping source target-files...
-   [...]
-done.
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">./build/tools/releasetools/ota_from_target_files -i PREVIOUS-tardis-target_files.zip dist_output/tardis-target_files.zip incremental_ota_update.zip</code>
 </pre>
 
 <p>Alternatively, you can specify device-specific extensions when you run
 <code>ota_from_target_files</code>.</p>
 
-<pre>
-% <b>./build/tools/releasetools/ota_from_target_files \
-    -s device/yoyodyne/tardis \  # specify the path to device-specific extensions
-    -i PREVIOUS-tardis-target_files.zip \
-    dist_output/tardis-target_files.zip incremental_ota_update.zip</b>
-unzipping target target-files...
-<b>loaded device-specific extensions from device/yoyodyne/tardis</b>
-unzipping source target-files...
-   [...]
-done.
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">./build/tools/releasetools/ota_from_target_files -s device/yoyodyne/tardis -i PREVIOUS-tardis-target_files.zip dist_output/tardis-target_files.zip incremental_ota_update.zip</code>
 </pre>
 
 <p class="note"><strong>Note:</strong> For a complete list of options, refer

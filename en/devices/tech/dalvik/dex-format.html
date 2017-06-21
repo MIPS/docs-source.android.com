@@ -291,7 +291,7 @@ in the detection of certain forms of corruption. The value also
 encodes a format version number as three decimal digits, which is
 expected to increase monotonically over time as the format evolves.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 ubyte[8] DEX_FILE_MAGIC = { 0x64 0x65 0x78 0x0a 0x30 0x33 0x38 0x00 }
                         = "dex\n038\0"
 </pre>
@@ -328,7 +328,7 @@ header whose <code>endian_tag</code> is <code>REVERSE_ENDIAN_CONSTANT</code>
 instead of <code>ENDIAN_CONSTANT</code>, it would know that the file
 has been byte-swapped from the expected form.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 uint ENDIAN_CONSTANT = 0x12345678;
 uint REVERSE_ENDIAN_CONSTANT = 0x78563412;
 </pre>
@@ -345,7 +345,7 @@ an index value is absent.</p>
 <p>The chosen value for <code>NO_INDEX</code> is
 representable as a single byte in the <code>uleb128p1</code> encoding.</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 uint NO_INDEX = 0xffffffff;    // == -1 if treated as a signed int
 </pre>
 
@@ -2659,7 +2659,7 @@ each register for the <code>DBG_RESTART_LOCAL</code> code.</p>
 registers by a small amount and then emit a new position table entry.
 The formula for the increments are as follows:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 DBG_FIRST_SPECIAL = 0x0a  // the smallest special opcode
 DBG_LINE_BASE   = -4      // the smallest line number increment
 DBG_LINE_RANGE  = 15      // the number of line increments represented

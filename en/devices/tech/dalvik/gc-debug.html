@@ -216,8 +216,11 @@ to <code>dalvikvm</code> when starting a command line program. When an app gets
 the ANR request signal (SIGQUIT) it dumps information related to its locks,
 thread stacks, and GC performance.</p>
 
-<p>The way to get GC timing dumps is to use:<br>
-<code>$ adb shell kill -S QUIT <pid></code></p>
+<p>The way to get GC timing dumps is to use:</p>
+
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell kill -S QUIT <var>PID</var>
+</pre>
 
 <p>This creates a <code>traces.txt</code> file in <code>/data/anr/</code>. This
 file contains some ANR dumps as well as GC timings. You can locate the
@@ -226,7 +229,7 @@ show a few things that may be of interest. It will show the histogram info for
 each GC type’s phases and pauses. The pauses are usually more important to look
 at. For example:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 sticky concurrent mark sweep paused:	Sum: 5.491ms 99% C.I. 1.464ms-2.133ms Avg: 1.830ms Max: 2.133ms
 </pre>
 
@@ -240,14 +243,14 @@ determine if long pauses are caused by the GC being slow or the thread
 suspending slowly. Here is an example of what a normal time to suspend
 resembles on a Nexus 5:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 suspend all histogram:	Sum: 1.513ms 99% C.I. 3us-546.560us Avg: 47.281us Max: 601us
 </pre>
 
 <p>There are also a few other areas of interest, such as total time spent, GC
 throughput, etc. Examples:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 Total time spent in GC: 502.251ms
 Mean GC size throughput: 92MB/s
 Mean GC object throughput: 1.54702e+06 objects/s
@@ -255,15 +258,15 @@ Mean GC object throughput: 1.54702e+06 objects/s
 
 <p>Here is an example of how to dump the GC timings of an already running app:
 
-<pre>
-$ adb shell kill -s QUIT &lt;pid&gt;
-$ adb pull /data/anr/traces.txt
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb shell kill -s QUIT <var>PID</var></code>
+<code class="devsite-terminal">adb pull /data/anr/traces.txt</code>
 </pre>
 
 <p>At this point the GC timings are inside of traces.txt. Here is example output
 from Google maps:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 Start Dumping histograms for 34 iterations for sticky concurrent mark sweep
 ScanGrayAllocSpaceObjects:	Sum: 196.174ms 99% C.I. 0.011ms-11.615ms Avg: 1.442ms Max: 14.091ms
 FreeList:	Sum: 140.457ms 99% C.I. 6us-1676.749us Avg: 128.505us Max: 9886us
@@ -342,8 +345,8 @@ reasons. The checks will catch a few errors that could cause heap corruption
 such as using invalid/stale local and global references. Here is how to enable
 CheckJNI:</p>
 
-<pre>
-$ adb shell setprop dalvik.vm.checkjni true
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell setprop dalvik.vm.checkjni true
 </pre>
 
 <p>Forcecopy mode is another part of CheckJNI that is very useful for detecting
@@ -355,8 +358,8 @@ the red zone don’t match what is expected, this usually means a buffer overrun
 or underrun occurred. This would cause CheckJNI to abort. Here is how to enable
 forcecopy mode:</p>
 
-<pre>
-$ adb shell setprop dalvik.vm.jniopts forcecopy
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell setprop dalvik.vm.jniopts forcecopy
 </pre>
 
 <p>One example of an error that CheckJNI should catch is writing past the end of
@@ -388,18 +391,18 @@ that valgrind is orders of magnitude slower than normal execution.</p>
 
 <p>Here is an example use:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 # build and install
-$ mmm external/valgrind
-$ adb remount && adb sync
+<code class="devsite-terminal">mmm external/valgrind</code>
+<code class="devsite-terminal">adb remount && adb sync</code>
 # disable selinux
-$ adb shell setenforce 0
-$ adb shell setprop wrap.com.android.calculator2
+<code class="devsite-terminal">adb shell setenforce 0</code>
+<code class="devsite-terminal">adb shell setprop wrap.com.android.calculator2</code>
 "TMPDIR=/data/data/com.android.calculator2 logwrapper valgrind"
 # push symbols
-$ adb shell mkdir /data/local/symbols
-$ adb push $OUT/symbols /data/local/symbols
-$ adb logcat
+<code class="devsite-terminal">adb shell mkdir /data/local/symbols</code>
+<code class="devsite-terminal">adb push $OUT/symbols /data/local/symbols</code>
+<code class="devsite-terminal">adb logcat</code>
 </pre>
 
 
@@ -410,7 +413,7 @@ useful information:
 <code>art E  5955  5955 art/runtime/gc/collector/mark_sweep.cc:383] Tried to mark 0x2
 not contained by any spaces</code></p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 art E  5955  5955 art/runtime/gc/collector/mark_sweep.cc:384] Attempting see if
 it's a bad root
 art E  5955  5955 art/runtime/gc/collector/mark_sweep.cc:485] Found invalid
@@ -435,7 +438,7 @@ href="https://android-review.googlesource.com/#/c/133932/">https://android-revie
 <p>In the case where the object isn’t a root, output similar to the following
 prints:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 01-15 12:38:00.196  1217  1238 E art     : Attempting see if it's a bad root
 01-15 12:38:00.196  1217  1238 F art     :
 art/runtime/gc/collector/mark_sweep.cc:381] Can't mark invalid object

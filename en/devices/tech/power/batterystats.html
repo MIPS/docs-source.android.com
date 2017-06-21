@@ -48,8 +48,9 @@
 
   <h2 id="command-line_options">Command input</h2>
   <p>The basic <code>batterystats</code> command is:</p>
-  <pre class="prettyprint">
-$ adb shell dumpsys batterystats</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell dumpsys batterystats
+</pre>
   <p>Supported options:</p>
   <ul>
   <li><code>--help</code> displays additional options for tailoring the output.
@@ -59,13 +60,15 @@ $ adb shell dumpsys batterystats</pre>
   </ul>
   <p>For example, to print battery usage statistics in csv format for all apps
   since the device was last charged, run the command:</p>
-  <pre class="prettyprint">
-$ adb shell dumpsys batterystats --charged --checkin</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell dumpsys batterystats --charged --checkin
+</pre>
   <p>You can also specify a package name to get statistics for a single app. For
   example, to print battery usage statistics for a given app package
   since the device was last charged, run the command:</p>
-  <pre class="prettyprint">
-$ adb shell dumpsys batterystats --charged &lt;package-name&gt;</pre>
+<pre class="devsite-terminal devsite-click-to-copy">
+adb shell dumpsys batterystats --charged &lt;package-name&gt;
+</pre>
 
   <h2 id="output">Command output</h2>
 
@@ -101,7 +104,7 @@ $ adb shell dumpsys batterystats --charged &lt;package-name&gt;</pre>
 
 <p>Sample output:</p>
 
-  <pre class="no-pretty-print">
+  <pre class="devsite-click-to-copy">
   9,0,i,vers,11,116,K,L 9,0,i,uid,1000,android
   9,0,i,uid,1000,com.android.providers.settings
   9,0,i,uid,1000,com.android.inputdevices

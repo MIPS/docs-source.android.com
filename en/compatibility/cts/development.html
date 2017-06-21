@@ -37,14 +37,16 @@ CTS console:</p>
 <p class="note"><strong>Note:</strong> You may supply one of these other values
 for <code>TARGET_PRODUCT</code> to build for different architectures:
 <code>aosp_x86_64</code> or <code>aosp_mips</code></p>
-<pre><code>cd <em>/path/to/android/root</em>
-make cts -j32 TARGET_PRODUCT=aosp_arm64
-cts-tradefed
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">cd <em>/path/to/android/root</em></code>
+<code class="devsite-terminal">make cts -j32 TARGET_PRODUCT=aosp_arm64</code>
+<code class="devsite-terminal">cts-tradefed</code>
 </code></pre>
 
 <p>At the cts-tf console, enter e.g.:</p>
-<pre><code>run cts --plan CTS
-</code></pre>
+<pre class="devsite-click-to-copy">
+tf&gt; run cts --plan CTS
+</pre>
 
 <h2 id="writing-cts-tests">Writing CTS tests</h2>
 
@@ -106,7 +108,7 @@ For Android 6.0 and earlier, use CTS v1.  For CTS v1, the sample code is at
 <p>
 The directory structure in CTS v1 tests looks like this:
 </p>
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 cts/
   tests/
     tests/
@@ -120,7 +122,7 @@ cts/
               cts/
                 SampleDeviceTest.java
 </pre>
-<h4 id="cts-v2"><strong>CTS v2</strong></h4>
+<h4 id="cts-v2">CTS v2</h4>
 <p>
 For Android 7.0 and later, use CTS v2.  For details, see <a
 href="https://android.googlesource.com/platform/cts/+/master/tests/sample/">the
@@ -130,7 +132,7 @@ sample test in AOSP</a>.
 The CTS v2 directory structure looks like this:
 </p>
 
-<pre class="no-pretty-print">
+<pre class="devsite-click-to-copy">
 cts/
   tests/
     <em>module-name</em>/
@@ -169,7 +171,7 @@ to quick start your new test module with following steps:
 
 <ol>
   <li>Run this command to create the test directory and copy sample files to it:
-    <pre class="no-pretty-print">$ mkdir cts/tests/<i>module-name</i> && cp -r cts/tests/sample/* cts/tests/<i>module-name</i></pre>
+    <pre class="devsite-terminal devsite-click-to-copy">mkdir cts/tests/<i>module-name</i> && cp -r cts/tests/sample/* cts/tests/<i>module-name</i></pre>
   <li>Navigate to <code>cts/tests/<em>module-name</em></code> and substitute all instances of
 "[Ss]ample" following the recommended naming convention from above.
   <li>Update <code>SampleDeviceActivity</code> to exercise the feature you're testing.
@@ -177,7 +179,7 @@ to quick start your new test module with following steps:
 errors.</li>
 </ol>
 
-<h4><strong>Additional directories</strong></h4>
+<h4>Additional directories</h4>
 
 <p> Other Android directories such as <code>assets</code>, <code>jni</code>,
 <code>libs</code> and <code>res</code> can also be added. To add JNI code,
@@ -187,7 +189,7 @@ code and an <code>Android.mk</code> in it.</p>
 <p>
 The makefile typically contains the following settings:
 </p>
-<pre>
+<pre class="devsite-click-to-copy">
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libCtsSample_jni
@@ -210,7 +212,7 @@ include $(BUILD_SHARED_LIBRARY)
 need to be modified to build the native code and depend on it, as shown
 below:</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 # All tests should include android.test.runner.
 LOCAL_JAVA_LIBRARIES := android.test.runner
 

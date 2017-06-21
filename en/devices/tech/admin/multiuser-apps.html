@@ -38,7 +38,7 @@ requests from any user. Only system apps can currently use this feature.</p>
 
 <p>See the diagram below for a depiction of permissions flow with multiple users.</p>
 
-<p><img src="images/multi-user-perms.png" alt="Multiple users permissions flow" />
+<p><img src="/devices/tech/admin/images/multi-user-perms.png" alt="Multiple users permissions flow" />
 <p class="img-caption"><strong>Figure 1.</strong> Multiple users permissions</p>
 
 <h2 id=enabling_a_singleton_component>Enabling a singleton component</h2>
@@ -59,7 +59,7 @@ each user, with the UID being in the UID range for that user (such as 1010034).<
 
 <p>These permissions are required</p>
 
-<pre>
+<pre class="devsite-click-to-copy">
 INTERACT_ACROSS_USERS (signature|system)
 INTERACT_ACROSS_USERS_FULL (signature)
 </pre>
@@ -74,7 +74,7 @@ INTERACT_ACROSS_USERS_FULL (signature)
     <li> <code>int userHandle = UserHandle.getCallingUserId()</code>
   </ul>
   <li> Use new, protected APIs to start services, activities, broadcasts on a specific
-user: 
+user:
   <ul>
     <li><code>Context.startActivityAsUser(Intent, UserHandle)</code>
     <li><code>Context.bindServiceAsUser(Intent, …, UserHandle)</code>
@@ -101,6 +101,29 @@ then access the <code>singleUser</code> component in user 0.
 ContentObserver, PackageMonitor, BroadcastReceiver that provide additional
 information about which user has caused the callback.
 </ol>
+
+<h3 id="work-profiles">Services in multiple users or profiles</h3>
+
+<p>Not all services need to run an instance in another user or work profile. If your system service
+only needs to run as user 0, disable the service's components when running under other users to
+help preserve resources. The following example shows how you might do this at your service's entry
+points:</p>
+
+<pre class="devsite-click-to-copy">
+// Add on all entry points such as boot_completed or other manifest-listed receivers and providers
+if (!UserManager.isSystemUser()) {
+    // Disable the service
+    ComponentName targetServiceName = new ComponentName(this, TargetService.class);
+    context.getPackageManager().setComponentEnabledSetting(
+        targetServiceName, COMPONENT_ENABLED_STATE_DISABLED, 0);
+}
+</pre>
+
+<p>The example could also use <code>PackageManager.setApplicationEnabledSetting()</code> to disable
+the entire app.</p>
+
+
+
 
   </body>
 </html>

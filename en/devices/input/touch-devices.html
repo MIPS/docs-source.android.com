@@ -357,9 +357,10 @@ actually touching the screen or is merely in range and hovering.</p>
 <p>For a touch screen, the system automatically interpolates the reported touch
 positions in surface units to obtain touch positions in display pixels according
 to the following calculation:</p>
-<pre><code>displayX = (x - minX) * displayWidth / (maxX - minX + 1)
+<pre class="devsite-click-to-copy">
+displayX = (x - minX) * displayWidth / (maxX - minX + 1)
 displayY = (y - minY) * displayHeight / (maxY - minY + 1)
-</code></pre>
+</pre>
 <p>A touch screen may report touches outside of the reported active area.</p>
 <p>Touches that are initiated outside the active area are not delivered to applications
 but may be used for virtual keys.</p>
@@ -713,7 +714,8 @@ is set, or <code>spots</code> otherwise.</p>
 <h4 id="calculation">Calculation</h4>
 <p>The calculation is straightforward: positional information from the touch driver is
 linearly interpolated to the output coordinate system.</p>
-<pre><code>xScale = output.width / raw.width
+<pre class="devsite-click-to-copy">
+xScale = output.width / raw.width
 yScale = output.height / raw.height
 
 If not orientation aware or screen rotation is 0 degrees:
@@ -729,7 +731,7 @@ Else If rotation is 270 degrees:
     output.x = (raw.y.max - raw.y) * yScale
     output.y = (raw.x - raw.x.min) * xScale
 End If
-</code></pre>
+</pre>
 <h3 id="touchmajor-touchminor-toolmajor-toolminor-size-fields"><code>TouchMajor</code>, <code>TouchMinor</code>, <code>ToolMajor</code>, <code>ToolMinor</code>, <code>Size</code> Fields</h3>
 <p>The <code>TouchMajor</code> and <code>TouchMinor</code> fields describe the approximate dimensions
 of the contact area in output units (pixels).</p>
@@ -807,7 +809,8 @@ that represents their total area or width.  This property should only be set to
 <h4 id="calculation_1">Calculation</h4>
 <p>The calculation of the <code>TouchMajor</code>, <code>TouchMinor</code>, <code>ToolMajor</code>, <code>ToolMinor</code>
 and <code>Size</code> fields depends on the specified calibration parameters.</p>
-<pre><code>If raw.touchMajor and raw.toolMajor are available:
+<pre class="devsite-click-to-copy">
+If raw.touchMajor and raw.toolMajor are available:
     touchMajor = raw.touchMajor
     touchMinor = raw.touchMinor
     toolMajor = raw.toolMajor
@@ -879,7 +882,7 @@ Else
 End If
 
 output.size = size
-</code></pre>
+</pre>
 <h3 id="pressure-field"><code>Pressure</code> Field</h3>
 <p>The <code>Pressure</code> field describes the approximate physical pressure applied to the
 touch device as a normalized value between 0.0 (no touch) and 1.0 (full force).</p>
@@ -911,7 +914,7 @@ touch device as a normalized value between 0.0 (no touch) and 1.0 (full force).<
 <p>The default value is <code>1.0 / raw.pressure.max</code>.</p>
 <h4 id="calculation_2">Calculation</h4>
 <p>The calculation of the <code>Pressure</code> field depends on the specified calibration parameters.</p>
-<pre><code>If touch.pressure.calibration == "physical" or "amplitude":
+<pre class="devsite-click-to-copy">If touch.pressure.calibration == "physical" or "amplitude":
     output.pressure = raw.pressure * touch.pressure.scale
 Else
     If hovering:
@@ -920,7 +923,7 @@ Else
         output.pressure = 1
     End If
 End If
-</code></pre>
+</pre>
 <h3 id="orientation-and-tilt-fields"><code>Orientation</code> and <code>Tilt</code> Fields</h3>
 <p>The <code>Orientation</code> field describes the orientation of the touch and tool as an
 angular measurement.  An orientation of <code>0</code> indicates that the major axis is
@@ -959,7 +962,8 @@ A tilt of <code>PI/2</code> indicates that the tool is flat on the surface.</p>
 <h4 id="calculation_3">Calculation</h4>
 <p>The calculation of the <code>Orientation</code> and <code>Tilt</code> fields depends on the specified
 calibration parameters and available input.</p>
-<pre><code>If touch.tiltX and touch.tiltY are available:
+<pre class="devsite-click-to-copy">
+If touch.tiltX and touch.tiltY are available:
     tiltXCenter = average(raw.tiltX.min, raw.tiltX.max)
     tiltYCenter = average(raw.tiltY.min, raw.tiltY.max)
     tiltXAngle = (raw.tiltX - tiltXCenter) * PI / 180
@@ -1005,7 +1009,7 @@ If orientation aware:
         output.orientation = output.orientation + PI / 2
     End If
 End If
-</code></pre>
+</pre>
 <h3 id="distance-field"><code>Distance</code> Field</h3>
 <p>The <code>Distance</code> field describes the distance between the tool and the touch device
 surface.  A value of 0.0 indicates direct contact and larger values indicate
@@ -1032,14 +1036,15 @@ increasing distance from the surface.</p>
 <p>The default value is <code>1.0</code>.</p>
 <h4 id="calculation_4">Calculation</h4>
 <p>The calculation of the <code>Distance</code> field depends on the specified calibration parameters.</p>
-<pre><code>If touch.distance.calibration == "scaled":
+<pre class="devsite-click-to-copy">If touch.distance.calibration == "scaled":
     output.distance = raw.distance * touch.distance.scale
 Else
     output.distance = 0
 End If
-</code></pre>
+</pre>
 <h3 id="example">Example</h3>
-<pre><code># Input device configuration file for a touch screen that supports pressure,
+<pre class="devsite-click-to-copy">
+# Input device configuration file for a touch screen that supports pressure,
 # size and orientation.  The pressure and size scale factors were obtained
 # by measuring the characteristics of the device itself and deriving
 # useful approximations based on the resolution of the touch sensor and the
@@ -1070,7 +1075,7 @@ touch.pressure.scale = 0.0125
 
 # Orientation
 touch.orientation.calibration = vector
-</code></pre>
+</pre>
 <h3 id="compatibility-notes">Compatibility Notes</h3>
 <p>The configuration properties for touch devices changed significantly in
 Android Ice Cream Sandwich 4.0.  <strong>All input device configuration files for touch
@@ -1107,16 +1112,18 @@ layout descriptions either separated by newlines or by colons.</p>
 </ul>
 <p>All coordinates and sizes are specified in terms of the display coordinate system.</p>
 <p>Here is a virtual key map file all written on one line.</p>
-<pre><code># All on one line
+<pre class="devsite-click-to-copy">
+# All on one line
 0x01:158:55:835:90:55:0x01:139:172:835:125:55:0x01:102:298:835:115:55:0x01:217:412:835:95:55
-</code></pre>
+</pre>
 <p>The same virtual key map file can also be written on multiple lines.</p>
-<pre><code># One key per line
+<pre class="devsite-click-to-copy">
+# One key per line
 0x01:158:55:835:90:55
 0x01:139:172:835:125:55
 0x01:102:298:835:115:55
 0x01:217:412:835:95:55
-</code></pre>
+</pre>
 <p>In the above example, the touch screen has a resolution of 480x800.  Accordingly, all of
 the virtual keys have a &lt;centerY&gt; coordinate of 835, which is a little bit below
 the visible area of the touch screen.</p>
@@ -1124,20 +1131,22 @@ the visible area of the touch screen.</p>
 centerY of <code>835</code>, width of <code>90</code> and height of <code>55</code>.</p>
 <h3 id="example_1">Example</h3>
 <p>Virtual key map file: <code>/sys/board_properties/virtualkeys.touchyfeely</code>.</p>
-<pre><code>0x01:158:55:835:90:55
+<pre class="devsite-click-to-copy">
+0x01:158:55:835:90:55
 0x01:139:172:835:125:55
 0x01:102:298:835:115:55
 0x01:217:412:835:95:55
-</code></pre>
+</pre>
 <p>Key layout file: <code>/system/usr/keylayout/touchyfeely.kl</code>.</p>
-<pre><code>key 158 BACK
+<pre class="devsite-click-to-copy">key 158 BACK
 key 139 MENU
 key 102 HOME
 key 217 SEARCH
-</code></pre>
+</pre>
 <p>Key character map file: <code>/system/usr/keychars/touchyfeely.kcm</code>.</p>
-<pre><code>type SPECIAL_FUNCTION
-</code></pre>
+<pre class="devsite-click-to-copy">
+type SPECIAL_FUNCTION
+</pre>
 <h2 id="indirect-multi-touch-pointer-gestures">Indirect Multi-touch Pointer Gestures</h2>
 <p>In pointer mode, the system interprets the following gestures:</p>
 <ol>
