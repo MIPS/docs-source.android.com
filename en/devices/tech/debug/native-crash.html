@@ -46,7 +46,7 @@ using one of the Android-specific fatal logging types), but they all involve
 calling <code>abort</code>. A call to <code>abort</code> basically signals the
 calling thread with SIGABRT, so a frame showing "abort" in <code>libc.so</code>
 plus SIGABRT are the things to look for in the <code>debuggerd</code> output to
-recognize this case.
+recognize this case.</p>
 
 <p>
 As mentioned above, there may be an explicit "abort message" line. But you
@@ -83,7 +83,7 @@ backtrace:
 More recent versions call <code><a
 href="http://man7.org/linux/man-pages/man2/tgkill.2.html">tgkill(2)</a></code>
 directly from <code>abort</code>, so there are fewer stack frames for you to
-skip over before you get to the interesting frames:
+skip over before you get to the interesting frames:</p>
 
 <pre class="devsite-click-to-copy">
 pid: 25301, tid: 25301, name: crasher  >>> crasher <<<
@@ -155,6 +155,7 @@ href="http://man7.org/linux/man-pages/man3/fopen.3.html">fopen(3)</a></code> or
 <code><a
 href="http://man7.org/linux/man-pages/man3/opendir.3.html">opendir(3)</a></code>
 call actually succeeded first.
+</p>
 
 <p>
 Here's an example of <code>readdir</code>:
@@ -192,7 +193,7 @@ offset <code>sizeof(int) + sizeof(size_t) + sizeof(dirent*)</code> into
 <code>struct DIR</code>, which on a 32-bit device is 4 + 4 + 4 = 12 = 0xc, so
 you found the bug: <code>readdir</code> was passed a null pointer by the caller.
 At this point you can paste the stack into the stack tool to find out
-<em>where</em> in logcat this happened.
+<em>where</em> in logcat this happened.</p>
 
 <pre class="prettyprint">
   struct DIR {
@@ -396,7 +397,7 @@ ip 00000006 sp ff96ad18 lr f700ced5 pc f700dc98 cpsr 400b0010
 
 <p>The register dump shows the content of the CPU registers at the time the
 signal was received. (This section varies wildly between ABIs.) How useful
-these are will depend on the exact crash.<p>
+these are will depend on the exact crash.</p>
 
 <pre class="devsite-click-to-copy">
 backtrace:
@@ -464,7 +465,7 @@ that can be recognized by looking at the maps include:</p>
 will show the BuildId (if present) in Android M and later, so you can see
 exactly which version of your code crashed. (Platform binaries include a
 BuildId by default since Android M. NDK r12 and later automatically pass
-<code>-Wl,--build-id</code> to the linker too.)<p>
+<code>-Wl,--build-id</code> to the linker too.)</p>
 
 <pre class="devsite-click-to-copy">
 ab163000-ab163fff r--      3000      1000  /system/xbin/crasher

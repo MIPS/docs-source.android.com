@@ -69,13 +69,13 @@ Other possible flags are <code>nonremovable</code>,
 
 <h2 id=configuration_details>Configuration details</h2>
 <p>External storage interactions at and above the framework level are handled
-through <code>MountService</code>. 
-Due to configuration changes in Android 6.0 (like the
+through <code>MountService</code>. Due to configuration changes in Android 6.0 (like the
 removal of the storage_list.xml resource overlay), the configuration details
-are split into two categories.
+are split into two categories.</p>
 
 <h3 id=android_5_x_and_earlier>Android 5.x and earlier</h3>
-The device-specific <code>storage_list.xml</code> configuration
+
+<p>The device-specific <code>storage_list.xml</code> configuration
 file, typically provided through a <code>frameworks/base</code> overlay, defines the
 attributes and constraints of storage devices. The <code>&lt;StorageList&gt;</code> element
 contains one or more <code>&lt;storage&gt;</code> elements, exactly one of which should be marked
