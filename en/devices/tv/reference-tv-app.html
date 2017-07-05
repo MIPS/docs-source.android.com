@@ -98,7 +98,7 @@ different one listed in the table above.</p>
 
 <pre class="devsite-click-to-copy">
 <code class="devsite-terminal">. build/envsetup.sh</code>
-<code class="devsite-terminal">apas LiveTv x86</code>
+<code class="devsite-terminal">tapas LiveTv x86</code>
 <code class="devsite-terminal">make LiveTv</code>
 </pre>
 
@@ -151,7 +151,7 @@ adb shell am instrument \
 <h3 id=functional_tests>Functional Tests</h3>
 
 <pre class="devsite-terminal devsite-click-to-copy">
-$ adb shell logcat -c
+adb shell logcat -c
 m LiveTv TVTestInput TVFuncTests -j20 &&\
 adb install -r -d $OUT/system/priv-app/LiveTv/LiveTv.apk &&\
 adb install -r -d $OUT/system/app/TVTestInput/TVTestInput.apk && \
@@ -173,7 +173,7 @@ adb shell am instrument \
 <p>The Jank tests look for dropped frames and delays in rendering.</p>
 
 <pre class="devsite-terminal devsite-click-to-copy">
-$ adb shell logcat -c
+adb shell logcat -c
 m LiveTv TVTestInput TVJankTests -j20 &&\
 adb install -r -d $OUT/system/priv-app/LiveTv/LiveTv.apk &&\
 adb install -r -d $OUT/system/app/TVTestInput/TVTestInput.apk &&\
