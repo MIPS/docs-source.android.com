@@ -57,7 +57,7 @@ returned by the HAL through the <code>process_capture_result()</code> call. This
   it needs to retain for the capture processing. The HAL is responsible for
   waiting on and closing the buffers' fences and returning the buffer handles to
   the framework.</p>
-  The HAL must write the file descriptor for the input buffer's release sync fence
+<p>The HAL must write the file descriptor for the input buffer's release sync fence
   into <code>input_buffer</code>-&gt;<code>release_fence</code>, if <code>input_buffer</code> is not <code>NULL</code>. If the HAL
   returns <code>-1</code> for the input buffer release sync fence, the framework is free to
   immediately reuse the input buffer. Otherwise, the framework will wait on the

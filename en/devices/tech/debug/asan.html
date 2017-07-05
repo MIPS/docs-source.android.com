@@ -74,7 +74,7 @@ output and to <code>logcat</code> and then crashes the process.</p>
 <p>Due to the way ASan works, a library built with ASan cannot be used by an
 executable that's built without ASan.</p>
 
-<p class="note">Note</strong>: In runtime situations where an ASan library is
+<p class="note"><strong>Note</strong>: In runtime situations where an ASan library is
 loaded into an incorrect process, you will see unresolved symbol messages
 starting with <code>_asan</code> or <code>_sanitizer</code>.</p>
 
@@ -155,7 +155,7 @@ the availability of symbolized libraries on the host.</p>
 
 <p>AddressSanitizer cannot see into Java code, but it can detect bugs in the JNI
 libraries. For that, you'll need to build the executable with ASan, which in
-this case is <code>/system/bin/app_process(<em>32|64</code></em>). This will
+this case is <code>/system/bin/app_process(<em>32|64</em>)</code>. This will
 enable ASan in all apps on the device at the same time, which is a
 bit stressful, but nothing that a 2GB RAM device cannot handle.</p>
 

@@ -167,9 +167,9 @@ array if HDR is not supported by the display.</li>
 
 <h3 id="decoder">Decoder</h3>
 
-<p>Applications shall use the existing 
+<p>Applications shall use the existing
 <a href="https://developer.android.com/reference/android/media/MediaCodecInfo.CodecCapabilities.html#profileLevels">
-<code>CodecCapabilities.profileLevels</code></a> API to verify support for the 
+<code>CodecCapabilities.profileLevels</code></a> API to verify support for the
 new HDR capable profiles:</p>
 
 <h4>Dolby-Vision</h4>
@@ -385,10 +385,12 @@ that matches the display's color volume.</li>
 <li>Determine the color, mastering, and potential dynamic metadata for the
 blended scene.</li>
 <li>Convert the resulting blended scene to the derived color
-space/volume.</ol></li>
+space/volume.</li>
+</ol>
+</li>
 <li>If displaying directly to the display, convert the resulting blended
 scene to the required display signals to produce that scene.
-</ol></li>
+</li>
 </ol>
 
 <h4>Display discovery</h4>
@@ -407,16 +409,19 @@ its HDR capability through HDMI EDID as defined in
 <a href="https://standards.cta.tech/kwspub/published_docs/CTA-861.3-Preview.pdf">
 CTA-861.3</a>
 section 4.2.</li>
-<li>The following EOTF mapping shall be used:<ul>
+<li>The following EOTF mapping shall be used:
+<ul>
 <li>ET_0 Traditional gamma - SDR Luminance Range: not mapped to any HDR
 type</li>
 <li>ET_1 Traditional gamma - HDR Luminance Range: not mapped to any HDR
 type</li>
-<li>ET_2 SMPTE ST 2084 - mapped to HDR type HDR10</ul></li>
+<li>ET_2 SMPTE ST 2084 - mapped to HDR type HDR10</li>
+</ul>
+</li>
 <li>The signaling of Dolby Vision or HLG support over HDMI is done as defined
 by their relevant bodies.</li>
 <li>Note that the HWC2 API uses float desired luminance values, so the 8-bit
-EDID values must be translated in a suitable fashion.</ul></li>
+EDID values must be translated in a suitable fashion.</li>
 </ul>
 
 <h3 id="decoders">Decoders</h3>
