@@ -64,8 +64,8 @@ the corresponding tag. Available branches include:</p>
 
 <table>
 <tr>
-<th>Branch Name</td>
-<th>Supported Android Platform</td>
+<th>Branch Name</th>
+<th>Supported Android Platform</th>
 </tr>
 <tr>
 <td>afw-test-harness-nougat-dev</td>
@@ -171,9 +171,9 @@ packages from the <code>AfwTestHarness/tests</code> test package directory.
 Common plans include:
 
 <ul>
-<li><code><strong>afw-userdebug-build</code></strong>. Contains all test
+<li><code><strong>afw-userdebug-build</strong></code>. Contains all test
 packages that require a userdebug build.</li>
-<li><code><strong>afw-user-build</code></strong>. Runs on a user build but
+<li><code><strong>afw-user-build</strong></code>. Runs on a user build but
 requires the test device to be set up properly, including completing the initial
 setup and enabling USB debugging.</li>
 </ul>
@@ -288,8 +288,6 @@ as:
 as: <code>screenshot-<em>random_number</em>.png</code>.
 This information is also logged in the host log.</li>
 </ul>
-</li>
-</ul>
 
 <h2 id=faq>FAQ</h2>
 <p>For help with questions not answered below, contact
@@ -309,7 +307,8 @@ with userdebug build?</strong></p>
 <p><em>Yes, but we recommend that you run this test plan on a user build.</em></p>
 
 <p><strong>Sometimes my test fails because UI loading takes too much time. How
-can I fix this?</strong></p><em>Configure the <code>timeout_size</code> setting
+can I fix this?</strong></p>
+<p><em>Configure the <code>timeout_size</code> setting
 in <code>./android-cts/repository/testcases/afw-test.props</code>. Valid
 settings are: S, M, L, XL, XXL.</em></p>
 
@@ -330,7 +329,7 @@ your_btn.text=your_customized_text
 your_btn.package=your_package
 your_btn.action=click
 </pre>
-<em><p>To define multiple widgets, separate using commas.</em></p>
+<p><em>To define multiple widgets, separate using commas.</em></p>
 
 <p><strong>The test package
 <code>com.android.afwtest.NfcProvisioning</code> (or
