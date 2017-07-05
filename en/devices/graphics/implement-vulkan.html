@@ -80,12 +80,10 @@ image is built. The loader uses the existing HAL mechanism (see <code><a href="h
 for discovering and loading the driver. Preferred paths for 32-bit and 64-bit
 Vulkan drivers are:</p>
 
-<p>
 <pre class="devsite-click-to-copy">
 /vendor/lib/hw/vulkan.&lt;ro.product.platform&gt;.so
 /vendor/lib64/hw/vulkan.&lt;ro.product.platform&gt;.so
 </pre>
-</p>
 
 <p>Where &lt;<code>ro.product.platform</code>&gt; is replaced by the value of
 the system property of that name. For details and supported alternative
@@ -175,7 +173,6 @@ implementation-defined private gralloc usage flags. When creating a swapchain,
 the platform asks the driver to translate the requested format and image usage
 flags into gralloc usage flags by calling:</p>
 
-<p>
 <pre class="devsite-click-to-copy">
 VkResult VKAPI vkGetSwapchainGrallocUsageANDROID(
     VkDevice            device,
@@ -184,7 +181,6 @@ VkResult VKAPI vkGetSwapchainGrallocUsageANDROID(
     int*                grallocUsage
 );
 </pre>
-</p>
 
 <p>The <code>format</code> and <code>imageUsage</code> parameters are taken from
 the <code>VkSwapchainCreateInfoKHR</code> structure. The driver should fill
@@ -234,7 +230,7 @@ the following data:</p>
   .sharingMode         = VkSwapChainCreateInfoWSI::sharingMode
   .queueFamilyCount    = VkSwapChainCreateInfoWSI::queueFamilyCount
   .pQueueFamilyIndices = VkSwapChainCreateInfoWSI::pQueueFamilyIndices
-</pre></p>
+</pre>
 
 <h3 id=acquire_image>Aquiring images</h3>
 <p><code>vkAcquireImageANDROID</code> acquires ownership of a swapchain image
