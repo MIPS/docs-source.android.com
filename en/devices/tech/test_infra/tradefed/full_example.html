@@ -151,7 +151,7 @@ example/helloworld: Runs the hello world test
 tf&gt; run example/helloworld
 05-12 13:21:21 I/TestInvocation: Starting invocation for target stub on build 0 on device 004ad9880810a548
 Hello, TF World!
-</code></pre>
+</pre>
 
 <h2 id="deviceinteract">Interacting with a device (D, R)</h2>
 <p>So far, our HelloWorldTest isn't doing anything interesting. Tradefed's
@@ -294,7 +294,7 @@ Hello, TF World! I have device 004ad9880810a548
 05-16 21:07:07 I/XmlResultReporter: Saved device_logcat log to /tmp/0/inv_2991649128735283633/device_logcat_6999997036887173857.txt
 05-16 21:07:07 I/XmlResultReporter: Saved host_log log to /tmp/0/inv_2991649128735283633/host_log_6307746032218561704.txt
 05-16 21:07:07 I/XmlResultReporter: XML test result file generated at /tmp/0/inv_2991649128735283633/test_result_536358148261684076.xml. Total tests 1, Failed 1, Error 0
-</code></pre>
+</pre>
 
 <p>Notice the log message stating that an XML file has been generated; the
 generated file should look like this:</p>
@@ -365,7 +365,7 @@ full class name of <code>FileLogger</code>:</p>
     &lt;result_reporter class="com.android.tradefed.result.XmlResultReporter" /&gt;
     &lt;logger class="com.android.tradefed.log.FileLogger" /&gt;
 &lt;/configuration&gt;
-</code></pre>
+</pre>
 
 <p>Now, rebuild and run the helloworld example again:</p>
 <pre class="devsite-click-to-copy">
@@ -374,7 +374,7 @@ tf &gt;run example/helloworld
 05-16 21:38:21 I/XmlResultReporter: Saved device_logcat log to /tmp/0/inv_6390011618174565918/device_logcat_1302097394309452308.txt
 05-16 21:38:21 I/XmlResultReporter: Saved host_log log to /tmp/0/inv_6390011618174565918/host_log_4255420317120216614.txt
 …
-</code></pre>
+</pre>
 <p>The log message indicates the path of the host log, which, when viewed,
 should contain your HelloWorldTest log message:</p>
 <pre class="devsite-terminal devsite-click-to-copy">
@@ -453,7 +453,7 @@ Printing help for only the important options. To see help for all options, use t
 
   'file' logger options:
     --log-level-display  the minimum log level to display on stdout. Must be one of verbose, debug, info, warn, error, assert. Default: error.
-</code></pre>
+</pre>
 
 <p>Note the message about "printing only the important options." To reduce
 option help clutter, TF uses the <code>Option#importance</code> attribute to
@@ -500,7 +500,7 @@ stdout, in addition to being logged to a file:</p>
 tf&gt; run example/helloworld --log-level-display info
 …
 05-24 18:53:50 I/HelloWorldTest: Hello, TF World! I have device 004ad9880810a548
-</code></pre>
+</pre>
 
 <h2 id="conclusion">That's all, folks!</h2>
 <p>As a reminder, if you're stuck on something, the
