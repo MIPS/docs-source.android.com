@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <title>
-   Android 7.1 Compatibility Definition
-  </title>
-  <link href="source/android-cdd.css" rel="stylesheet" type="text/css"/>
- </head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>
+      Android 7.0, (N) Compatibility Definition
+    </title>
+    <link href="source/android-cdd.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+  </head>
   <body>
     <h6>
       Table of Contents
@@ -618,7 +618,7 @@
         This document enumerates the requirements that must be met in order for devices to be compatible with Android 7.1.
       </p>
       <p>
-        The use of “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” is per the IETF standard defined in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC2119</a>.
+        The use of “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” is per the IETF standard defined in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC2119</a> .
       </p>
       <p>
         As used in this document, a “device implementer” or “implementer” is a person or organization developing a hardware/software solution running Android 7.1. A “device implementation” or “implementation is the hardware/software solution so developed.
@@ -667,7 +667,7 @@
         </li>
         <li>MUST declare the feature android.hardware.type.watch.
         </li>
-        <li>MUST support uiMode = <a href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_WATCH">UI_MODE_TYPE_WATCH</a>.
+        <li>MUST support uiMode = <a href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_WATCH">UI_MODE_TYPE_WATCH</a> .
         </li>
       </ul>
       <p>
@@ -678,7 +678,7 @@
         </li>
         <li>MUST declare the feature android.hardware.type.automotive.
         </li>
-        <li>MUST support uiMode = <a href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR">UI_MODE_TYPE_CAR</a>.
+        <li>MUST support uiMode = <a href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR">UI_MODE_TYPE_CAR</a> .
         </li>
         <li>Android Automotive implementations MUST support all public APIs in the <code>android.car.*</code> namespace.
         </li>
@@ -994,13 +994,13 @@
         3.2. Soft API Compatibility
       </h2>
       <p>
-        In addition to the managed APIs from <a href="#3_1_managed_api_compatibility">section 3.1</a>, Android also includes a significant runtime-only “soft” API, in the form of such things as intents, permissions, and similar aspects of Android applications that cannot be enforced at application compile time.
+        In addition to the managed APIs from <a href="#3_1_managed_api_compatibility">section 3.1</a> , Android also includes a significant runtime-only “soft” API, in the form of such things as intents, permissions, and similar aspects of Android applications that cannot be enforced at application compile time.
       </p>
       <h3 id="3_2_1_permissions">
         3.2.1. Permissions
       </h3>
       <p>
-        Device implementers MUST support and enforce all permission constants as documented by the <a href="http://developer.android.com/reference/android/Manifest.permission.html">Permission reference page</a>. Note that <a href="#9_security_model_compatibility">section 9</a> lists additional requirements related to the Android security model.
+        Device implementers MUST support and enforce all permission constants as documented by the <a href="http://developer.android.com/reference/android/Manifest.permission.html">Permission reference page</a> . Note that <a href="#9_security_model_compatibility">section 9</a> lists additional requirements related to the Android security model.
       </p>
       <h3 id="3_2_2_build_parameters">
         3.2.2. Build Parameters
@@ -1022,7 +1022,7 @@
             VERSION.RELEASE
           </td>
           <td>
-            The version of the currently-executing Android system, in human-readable format. This field MUST have one of the string values defined in <a href="http://source.android.com/compatibility/7.1/versions.html">7.1</a>.
+            The version of the currently-executing Android system, in human-readable format. This field MUST have one of the string values defined in <a href="http://source.android.com/compatibility/7.1/versions.html">7.1</a> .
           </td>
         </tr>
         <tr>
@@ -1070,7 +1070,7 @@
             SUPPORTED_ABIS
           </td>
           <td>
-            The name of the instruction set (CPU type + ABI convention) of native code. See <a href="#3_3_native_api_compatibility">section 3.3. Native API Compatibility</a>.
+            The name of the instruction set (CPU type + ABI convention) of native code. See <a href="#3_3_native_api_compatibility">section 3.3. Native API Compatibility</a> .
           </td>
         </tr>
         <tr>
@@ -1078,7 +1078,7 @@
             SUPPORTED_32_BIT_ABIS
           </td>
           <td>
-            The name of the instruction set (CPU type + ABI convention) of native code. See <a href="#3_3_native_api_compatibility">section 3.3. Native API Compatibility</a>.
+            The name of the instruction set (CPU type + ABI convention) of native code. See <a href="#3_3_native_api_compatibility">section 3.3. Native API Compatibility</a> .
           </td>
         </tr>
         <tr>
@@ -1086,7 +1086,7 @@
             SUPPORTED_64_BIT_ABIS
           </td>
           <td>
-            The name of the second instruction set (CPU type + ABI convention) of native code. See <a href="#3_3_native_api_compatibility">section 3.3. Native API Compatibility</a>.
+            The name of the second instruction set (CPU type + ABI convention) of native code. See <a href="#3_3_native_api_compatibility">section 3.3. Native API Compatibility</a> .
           </td>
         </tr>
         <tr>
@@ -1094,7 +1094,7 @@
             CPU_ABI
           </td>
           <td>
-            The name of the instruction set (CPU type + ABI convention) of native code. See <a href="#3_3_native_api_compatibility">section 3.3. Native API Compatibility</a>.
+            The name of the instruction set (CPU type + ABI convention) of native code. See <a href="#3_3_native_api_compatibility">section 3.3. Native API Compatibility</a> .
           </td>
         </tr>
         <tr>
@@ -1102,7 +1102,7 @@
             CPU_ABI2
           </td>
           <td>
-            The name of the second instruction set (CPU type + ABI convention) of native code. See <a href="#3_3_native_api_compatibility">section 3.3. Native API Compatibility</a>.
+            The name of the second instruction set (CPU type + ABI convention) of native code. See <a href="#3_3_native_api_compatibility">section 3.3. Native API Compatibility</a> .
           </td>
         </tr>
         <tr>
@@ -1228,7 +1228,7 @@
             SECURITY_PATCH
           </td>
           <td>
-            A value indicating the security patch level of a build. It MUST signify that the build includes all security patches issued up through the designated Android Public Security Bulletin. It MUST be in the format [YYYY-MM-DD], matching one of the Android Security Patch Level strings of the <a href="source.android.com/security/bulletin">Public Security Bulletins</a>, for example "2015-11-01".
+            A value indicating the security patch level of a build. It MUST signify that the build is not in any way vulnerable to any of the issues described up through the designated Android Public Security Bulletin. It MUST be in the format [YYYY-MM-DD], matching a defined string documented in the <a href="source.android.com/security/bulletin">Android Public Security Bulletin</a> or in the <a href="http://source.android.com/security/advisory">Android Security Advisory</a> , for example "2015-11-01".
           </td>
         </tr>
         <tr>
@@ -1311,7 +1311,7 @@
         3.2.3.3. Intent Namespaces
       </h4>
       <p>
-        Device implementations MUST NOT include any Android component that honors any new intent or broadcast intent patterns using an ACTION, CATEGORY, or other key string in the android. <em>or com.android.</em> namespace. Device implementers MUST NOT include any Android components that honor any new intent or broadcast intent patterns using an ACTION, CATEGORY, or other key string in a package space belonging to another organization. Device implementers MUST NOT alter or extend any of the intent patterns used by the core apps listed in <a href="#3_2_3_1_core_application_intents">section 3.2.3.1</a>. Device implementations MAY include intent patterns using namespaces clearly and obviously associated with their own organization. This prohibition is analogous to that specified for Java language classes in <a href="#3_6_api_namespaces">section 3.6</a>.
+        Device implementations MUST NOT include any Android component that honors any new intent or broadcast intent patterns using an ACTION, CATEGORY, or other key string in the android. <em>or com.android.</em> namespace. Device implementers MUST NOT include any Android components that honor any new intent or broadcast intent patterns using an ACTION, CATEGORY, or other key string in a package space belonging to another organization. Device implementers MUST NOT alter or extend any of the intent patterns used by the core apps listed in <a href="#3_2_3_1_core_application_intents">section 3.2.3.1</a> . Device implementations MAY include intent patterns using namespaces clearly and obviously associated with their own organization. This prohibition is analogous to that specified for Java language classes in <a href="#3_6_api_namespaces">section 3.6</a> .
       </p>
       <h4 id="3_2_3_4_broadcast_intents">
         3.2.3.4. Broadcast Intents
@@ -1335,7 +1335,7 @@
         </li>
         <li>MUST honor the <a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFC_PAYMENT_SETTINGS">android.settings.NFC_PAYMENT_SETTINGS</a> intent to show a default app settings menu for Tap and Pay, if the device implementation reports android.hardware.nfc.hce.
         </li>
-        <li>MUST honor the <a href="https://developer.android.com/reference/android/telecom/TelecomManager.html#ACTION_CHANGE_DEFAULT_DIALER">android.telecom.action.CHANGE_DEFAULT_DIALER</a> intent to show a dialog to allow the user to change the default Phone application, if the device implementation reports <code>android.hardware.telephony</code>.
+        <li>MUST honor the <a href="https://developer.android.com/reference/android/telecom/TelecomManager.html#ACTION_CHANGE_DEFAULT_DIALER">android.telecom.action.CHANGE_DEFAULT_DIALER</a> intent to show a dialog to allow the user to change the default Phone application, if the device implementation reports <code>android.hardware.telephony</code> .
         </li>
         <li>MUST honor the <a href="https://developer.android.com/reference/android/provider/Settings.html#ACTION_VOICE_INPUT_SETTINGS">android.settings.ACTION_VOICE_INPUT_SETTINGS</a> intent when the device supports the VoiceInteractionService and show a default app settings menu for voice input and assist.
         </li>
@@ -1350,7 +1350,7 @@
         3.3.1. Application Binary Interfaces
       </h3>
       <p>
-        Managed Dalvik bytecode can call into native code provided in the application.apk file as an ELF.so file compiled for the appropriate device hardware architecture. As native code is highly dependent on the underlying processor technology, Android defines a number of Application Binary Interfaces (ABIs) in the Android NDK. Device implementations MUST be compatible with one or more defined ABIs, and MUST implement compatibility with the Android NDK, as below.
+        Managed Dalvik bytecode can call into native code provided in the application .apk file as an ELF .so file compiled for the appropriate device hardware architecture. As native code is highly dependent on the underlying processor technology, Android defines a number of Application Binary Interfaces (ABIs) in the Android NDK. Device implementations MUST be compatible with one or more defined ABIs, and MUST implement compatibility with the Android NDK, as below.
       </p>
       <p>
         If a device implementation includes support for an Android ABI, it:
@@ -1364,7 +1364,7 @@
         </li>
         <li>MUST accurately report the native Application Binary Interface (ABI) supported by the device, via the android.os.Build.SUPPORTED_ABIS, android.os.Build.SUPPORTED_32_BIT_ABIS, and android.os.Build.SUPPORTED_64_BIT_ABIS parameters, each a comma separated list of ABIs ordered from the most to the least preferred one.
         </li>
-        <li>MUST report, via the above parameters, only those ABIs documented and described in the latest version of the <a href="https://developer.android.com/ndk/guides/abis.html">Android NDK ABI Management documentation</a>, and MUST include support for the <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0388f/Beijfcja.html">Advanced SIMD</a> (a.k.a. NEON) extension.
+        <li>MUST report, via the above parameters, only those ABIs documented and described in the latest version of the <a href="https://developer.android.com/ndk/guides/abis.html">Android NDK ABI Management documentation</a> , and MUST include support for the <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0388f/Beijfcja.html">Advanced SIMD</a> (a.k.a. NEON) extension.
         </li>
         <li>SHOULD be built using the source code and header files available in the upstream Android Open Source Project
         </li>
@@ -1428,7 +1428,7 @@
         Native libraries not listed above but implemented and provided in AOSP as system libraries are reserved and MUST NOT be exposed to third-party apps targeting API level 24 or higher.
       </p>
       <p>
-        Device implementations MAY add non-AOSP libraries and expose them directly as an API to third-party apps but the additional libraries SHOULD be in <code>/vendor/lib</code> or <code>/vendor/lib64</code> and MUST be listed in <code>/vendor/etc/public.libraries.txt</code>.
+        Device implementations MAY add non-AOSP libraries and expose them directly as an API to third-party apps but the additional libraries SHOULD be in <code>/vendor/lib</code> or <code>/vendor/lib64</code> and MUST be listed in <code>/vendor/etc/public.libraries.txt</code> .
       </p>
       <p>
         Note that device implementations MUST include libGLESv3.so and in turn, MUST export all the OpenGL ES 3.1 and <a href="http://developer.android.com/guide/topics/graphics/opengl.html#aep">Android Extension Pack</a> function symbols as defined in the NDK release android-24. Although all the symbols must be present, only the corresponding functions for OpenGL ES versions and extensions actually supported by the device must be fully implemented.
@@ -1440,7 +1440,7 @@
         <a href="https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html">Vulkan</a> is a low-overhead, cross-platform API for high-performance 3D graphics. Device implementations, even if not including support of the Vulkan APIs, MUST satisfy the following requirements:
       </p>
       <ul>
-        <li>It MUST always provide a native library named <code>libvulkan.so</code> which exports function symbols for the core Vulkan 1.0 API as well as the <code>VK_KHR_surface</code>, <code>VK_KHR_android_surface</code>, and <code>VK_KHR_swapchain</code> extensions.
+        <li>It MUST always provide a native library named <code>libvulkan.so</code> which exports function symbols for the core Vulkan 1.0 API as well as the <code>VK_KHR_surface</code> , <code>VK_KHR_android_surface</code> , and <code>VK_KHR_swapchain</code> extensions.
         </li>
       </ul>
       <p>
@@ -1464,7 +1464,7 @@
       <ul>
         <li>MUST report 0 <code>VkPhysicalDevices</code> through the <code>vkEnumeratePhysicalDevices</code> call.
         </li>
-        <li>MUST NOT declare any of the Vulkan feature flags <a href="https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_LEVEL"><code>PackageManager#FEATURE_VULKAN_HARDWARE_LEVEL</code></a> and <a href="https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_VERSION"><code>PackageManager#FEATURE_VULKAN_HARDWARE_VERSION</code></a>.
+        <li>MUST NOT declare any of the Vulkan feature flags <a href="https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_LEVEL"><code>PackageManager#FEATURE_VULKAN_HARDWARE_LEVEL</code></a> and <a href="https://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_VULKAN_HARDWARE_VERSION"><code>PackageManager#FEATURE_VULKAN_HARDWARE_VERSION</code></a> .
         </li>
       </ul>
       <h3 id="3_3_2_32-bit_arm_native_code_compatibility">
@@ -1503,7 +1503,7 @@
         Android Watch devices MAY, but all other device implementations MUST provide a complete implementation of the android.webkit.Webview API.
       </div>
       <p>
-        The platform feature android.software.webview MUST be reported on any device that provides a complete implementation of the android.webkit.WebView API, and MUST NOT be reported on devices without a complete implementation of the API. The Android Open Source implementation uses code from the Chromium Project to implement the <a href="http://developer.android.com/reference/android/webkit/WebView.html">android.webkit.WebView</a>. Because it is not feasible to develop a comprehensive test suite for a web rendering system, device implementers MUST use the specific upstream build of Chromium in the WebView implementation. Specifically:
+        The platform feature android.software.webview MUST be reported on any device that provides a complete implementation of the android.webkit.WebView API, and MUST NOT be reported on devices without a complete implementation of the API. The Android Open Source implementation uses code from the Chromium Project to implement the <a href="http://developer.android.com/reference/android/webkit/WebView.html">android.webkit.WebView</a> . Because it is not feasible to develop a comprehensive test suite for a web rendering system, device implementers MUST use the specific upstream build of Chromium in the WebView implementation. Specifically:
       </p>
       <ul>
         <li>Device android.webkit.WebView implementations MUST be based on the <a href="http://www.chromium.org/">Chromium</a> build from the upstream Android Open Source Project for Android 7.1. This build includes a specific set of functionality and security fixes for the WebView.
@@ -1530,16 +1530,16 @@
         </li>
       </ul>
       <p>
-        The WebView component SHOULD include support for as many HTML5 features as possible and if it supports the feature SHOULD conform to the <a href="http://html.spec.whatwg.org/multipage/">HTML5 specification</a>.
+        The WebView component SHOULD include support for as many HTML5 features as possible and if it supports the feature SHOULD conform to the <a href="http://html.spec.whatwg.org/multipage/">HTML5 specification</a> .
       </p>
       <h3 id="3_4_2_browser_compatibility">
         3.4.2. Browser Compatibility
       </h3>
       <div class="note">
-        Android Television, Watch, and Android Automotive implementations MAY omit a browser application, but MUST support the public intent patterns as described in <a href="#3_2_3_1_core_application_intents">section 3.2.3.1</a>. All other types of device implementations MUST include a standalone Browser application for general user web browsing.
+        Android Television, Watch, and Android Automotive implementations MAY omit a browser application, but MUST support the public intent patterns as described in <a href="#3_2_3_1_core_application_intents">section 3.2.3.1</a> . All other types of device implementations MUST include a standalone Browser application for general user web browsing.
       </div>
       <p>
-        The standalone Browser MAY be based on a browser technology other than WebKit. However, even if an alternate Browser application is used, the android.webkit.WebView component provided to third-party applications MUST be based on WebKit, as described in <a href="#3_4_1_webview_compatibility">section 3.4.1</a>.
+        The standalone Browser MAY be based on a browser technology other than WebKit. However, even if an alternate Browser application is used, the android.webkit.WebView component provided to third-party applications MUST be based on WebKit, as described in <a href="#3_4_1_webview_compatibility">section 3.4.1</a> .
       </p>
       <p>
         Implementations MAY ship a custom user agent string in the standalone Browser application.
@@ -1559,13 +1559,13 @@
         </li>
       </ul>
       <p>
-        Additionally, device implementations MUST support the HTML5/W3C <a href="http://www.w3.org/TR/webstorage/">webstorage API</a> and SHOULD support the HTML5/W3C <a href="http://www.w3.org/TR/IndexedDB/">IndexedDB API</a>. Note that as the web development standards bodies are transitioning to favor IndexedDB over webstorage, IndexedDB is expected to become a required component in a future version of Android.
+        Additionally, device implementations MUST support the HTML5/W3C <a href="http://www.w3.org/TR/webstorage/">webstorage API</a> and SHOULD support the HTML5/W3C <a href="http://www.w3.org/TR/IndexedDB/">IndexedDB API</a> . Note that as the web development standards bodies are transitioning to favor IndexedDB over webstorage, IndexedDB is expected to become a required component in a future version of Android.
       </p>
       <h2 id="3_5_api_behavioral_compatibility">
         3.5. API Behavioral Compatibility
       </h2>
       <p>
-        The behaviors of each of the API types (managed, soft, native, and web) must be consistent with the preferred implementation of the upstream <a href="http://source.android.com/">Android Open Source Project</a>. Some specific areas of compatibility are:
+        The behaviors of each of the API types (managed, soft, native, and web) must be consistent with the preferred implementation of the upstream <a href="http://source.android.com/">Android Open Source Project</a> . Some specific areas of compatibility are:
       </p>
       <ul>
         <li>Devices MUST NOT change the behavior or semantics of a standard intent.
@@ -1597,7 +1597,7 @@
         </li>
       </ul>
       <p>
-        <strong>Prohibited modifications include</strong>:
+        <strong>Prohibited modifications include</strong> :
       </p>
       <ul>
         <li>Device implementations MUST NOT modify the publicly exposed APIs on the Android platform by changing any method or class signatures, or by removing classes or class fields.
@@ -1623,7 +1623,7 @@
         3.7. Runtime Compatibility
       </h2>
       <p>
-        Device implementations MUST support the full Dalvik Executable (DEX) format and <a href="https://android.googlesource.com/platform/dalvik/">Dalvik bytecode specification and semantics</a>. Device implementers SHOULD use ART, the reference upstream implementation of the Dalvik Executable Format, and the reference implementation’s package management system.
+        Device implementations MUST support the full Dalvik Executable (DEX) format and <a href="https://android.googlesource.com/platform/dalvik/">Dalvik bytecode specification and semantics</a> . Device implementers SHOULD use ART, the reference upstream implementation of the Dalvik Executable Format, and the reference implementation’s package management system.
       </p>
       <p>
         Device implementations MUST configure Dalvik runtimes to allocate memory in accordance with the upstream Android platform, and as specified by the following table. (See <a href="#7_1_1_screen_configuration">section 7.1.1</a> for screen size and screen density definitions.) Note that memory values specified below are considered minimum values and device implementations MAY allocate more memory per application.
@@ -2032,10 +2032,6 @@
         </li>
         <li>Device implementations that include support for lock screen MAY support application widgets on the lock screen.
         </li>
-        <li>SHOULD trigger the fast-switch action between the two most recently used apps, when the recents function key is tapped twice.
-        </li>
-        <li>SHOULD trigger the split-screen multiwindow-mode, if supported, when the recents functions key is long pressed.
-        </li>
       </ul>
       <h3 id="3_8_3_notifications">
         3.8.3. Notifications
@@ -2044,10 +2040,10 @@
         Android includes APIs that allow developers to <a href="http://developer.android.com/guide/topics/ui/notifiers/notifications.html">notify users of notable events</a> using hardware and software features of the device.
       </p>
       <p>
-        Some APIs allow applications to perform notifications or attract attention using hardware—specifically sound, vibration, and light. Device implementations MUST support notifications that use hardware features, as described in the SDK documentation, and to the extent possible with the device implementation hardware. For instance, if a device implementation includes a vibrator, it MUST correctly implement the vibration APIs. If a device implementation lacks hardware, the corresponding APIs MUST be implemented as no-ops. This behavior is further detailed in <a href="#7_hardware_compatibility">section 7</a>.
+        Some APIs allow applications to perform notifications or attract attention using hardware—specifically sound, vibration, and light. Device implementations MUST support notifications that use hardware features, as described in the SDK documentation, and to the extent possible with the device implementation hardware. For instance, if a device implementation includes a vibrator, it MUST correctly implement the vibration APIs. If a device implementation lacks hardware, the corresponding APIs MUST be implemented as no-ops. This behavior is further detailed in <a href="#7_hardware_compatibility">section 7</a> .
       </p>
       <p>
-        Additionally, the implementation MUST correctly render all <a href="https://developer.android.com/guide/topics/resources/available-resources.html">resources</a> (icons, animation files etc.) provided for in the APIs, or in the Status/System Bar <a href="http://developer.android.com/design/style/iconography.html">icon style guide</a>, which in the case of an Android Television device includes the possibility to not display the notifications. Device implementers MAY provide an alternative user experience for notifications than that provided by the reference Android Open Source implementation; however, such alternative notification systems MUST support existing notification resources, as above.
+        Additionally, the implementation MUST correctly render all <a href="https://developer.android.com/guide/topics/resources/available-resources.html">resources</a> (icons, animation files etc.) provided for in the APIs, or in the Status/System Bar <a href="http://developer.android.com/design/style/iconography.html">icon style guide</a> , which in the case of an Android Television device includes the possibility to not display the notifications. Device implementers MAY provide an alternative user experience for notifications than that provided by the reference Android Open Source implementation; however, such alternative notification systems MUST support existing notification resources, as above.
       </p>
       <div class="note">
         Android Automotive implementations MAY manage the visibility and timing of notifications to mitigate driver distraction, but MUST display notifications that use <a href="https://developer.android.com/reference/android/app/Notification.CarExtender.html">CarExtender</a> when requested by applications.
@@ -2057,23 +2053,23 @@
       </p>
       <ul>
         <li>
-          <strong>Rich notifications</strong>. Interactive Views for ongoing notifications.
+          <strong>Rich notifications</strong> . Interactive Views for ongoing notifications.
         </li>
         <li>
-          <strong>Heads-up notifications</strong>. Interactive Views users can act on or dismiss without leaving the current app.
+          <strong>Heads-up notifications</strong> . Interactive Views users can act on or dismiss without leaving the current app.
         </li>
         <li>
-          <strong>Lock screen notifications</strong>. Notifications shown over a lock screen with granular control on visibility.
+          <strong>Lock screen notifications</strong> . Notifications shown over a lock screen with granular control on visibility.
         </li>
       </ul>
       <p>
-        Android device implementations, when such notifications are made visible, MUST properly execute Rich and Heads-up notifications and include the title/name, icon, text as <a href="https://developer.android.com/design/patterns/notifications.html">documented in the Android APIs</a>.
+        Android device implementations, when such notifications are made visible, MUST properly execute Rich and Heads-up notifications and include the title/name, icon, text as <a href="https://developer.android.com/design/patterns/notifications.html">documented in the Android APIs</a> .
       </p>
       <p>
         Android includes Notification Listener Service APIs that allow apps (once explicitly enabled by the user) to receive a copy of all notifications as they are posted or updated. Device implementations MUST correctly and promptly send notifications in their entirety to all such installed and user-enabled listener services, including any and all metadata attached to the Notification object.
       </p>
       <p>
-        Handheld device implementations MUST support the behaviors of updating, removing, replying to, and bundling notifications as described in this <a href="https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Managing">section</a>.
+        Handheld device implementations MUST support the behaviors of updating, removing, replying to, and bundling notifications as described in this <a href="https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Managing">section</a> .
       </p>
       <p>
         Also, handheld device implementations MUST provide:
@@ -2087,15 +2083,15 @@
         </li>
       </ul>
       <p>
-        All 6 direct subclasses of the <code>Notification.Style class</code> MUST be supported as described in the <a href="https://developer.android.com/reference/android/app/Notification.Style.html">SDK documents</a>.
+        All 6 direct subclasses of the <code>Notification.Style class</code> MUST be supported as described in the <a href="https://developer.android.com/reference/android/app/Notification.Style.html">SDK documents</a> .
       </p>
       <p>
         Device implementations that support the DND (Do not Disturb) feature MUST meet the following requirements:
       </p>
       <ul>
-        <li>MUST implement an activity where the user can grant or deny the app access to DND policy configurations in response to the intent <a href="https://developer.android.com/reference/android/provider/Settings.html#ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS">ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS</a>.
+        <li>MUST implement an activity that would respond to the intent <a href="https://developer.android.com/reference/android/provider/Settings.html#ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS">ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS</a> , which for implementations with UI_MODE_TYPE_NORMAL it MUST be an activity where the user can grant or deny the app access to DND policy configurations.
         </li>
-        <li>MUST display <a href="https://developer.android.com/reference/android/app/NotificationManager.html#addAutomaticZenRule%28android.app.AutomaticZenRule%29">Automatic DND rules</a> created by applications alongside the user-created and pre-defined rules.
+        <li>MUST, for when the device implementation has provided a means for the user to grant or deny third-party apps to access the DND policy configuration, display <a href="https://developer.android.com/reference/android/app/NotificationManager.html#addAutomaticZenRule%28android.app.AutomaticZenRule%29">Automatic DND rules</a> created by applications alongside the user-created and pre-defined rules.
         </li>
         <li>MUST honor the <a href="https://developer.android.com/reference/android/app/NotificationManager.Policy.html#suppressedVisualEffects"><code>suppressedVisualEffects</code></a> values passed along the <a href="https://developer.android.com/reference/android/app/NotificationManager.Policy.html#NotificationManager.Policy%28int,%20int,%20int,%20int%29"><code>NotificationManager.Policy</code></a> and if an app has set any of the SUPPRESSED_EFFECT_SCREEN_OFF or SUPPRESSED_EFFECT_SCREEN_ON flags, it SHOULD indicate to the user that the visual effects are suppressed in the DND settings menu.
         </li>
@@ -2110,7 +2106,7 @@
         Android device implementations SHOULD include global search, a single, shared, system-wide search user interface capable of real-time suggestions in response to user input. Device implementations SHOULD implement the APIs that allow developers to reuse this user interface to provide search within their own applications. Device implementations that implement the global search interface MUST implement the APIs that allow third-party applications to add suggestions to the search box when it is run in global search mode. If no third-party applications are installed that make use of this functionality, the default behavior SHOULD be to display web search engine results and suggestions.
       </p>
       <p>
-        Android device implementations SHOULD, and Android Automotive implementations MUST, implement an assistant on the device to handle the <a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_ASSIST">Assist action</a>.
+        Android device implementations SHOULD, and Android Automotive implementations MUST, implement an assistant on the device to handle the <a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_ASSIST">Assist action</a> .
       </p>
       <p>
         Android also includes the <a href="https://developer.android.com/reference/android/app/assist/package-summary.html">Assist APIs</a> to allow applications to elect how much information of the current context is shared with the assistant on the device. Device implementations supporting the Assist action MUST indicate clearly to the end user when the context is shared by displaying a white light around the edges of the screen. To ensure clear visibility to the end user, the indication MUST meet or exceed the duration and brightness of the Android Open Source Project implementation.
@@ -2132,7 +2128,7 @@
         </li>
         <li>
           <p>
-            The device implementation MUST provide an affordance to enable the indication, less than two navigations away from (the default voice input and assistant app settings menu) <a href="#3_2_3_5_default_app_settings">section 3.2.3.5</a>.
+            The device implementation MUST provide an affordance to enable the indication, less than two navigations away from (the default voice input and assistant app settings menu) <a href="#3_2_3_5_default_app_settings">section 3.2.3.5</a> .
           </p>
         </li>
       </ul>
@@ -2179,12 +2175,12 @@
         As the Recent function navigation key is OPTIONAL, the requirement to implement the overview screen is OPTIONAL for Android Watch and Android Automotive implementations, and RECOMMENDED for Android Television devices. There SHOULD still be a method to switch between activities on Android Automotive implementations.
       </div>
       <p>
-        The upstream Android source code includes the <a href="http://developer.android.com/guide/components/recents.html">overview screen</a>, a system-level user interface for task switching and displaying recently accessed activities and tasks using a thumbnail image of the application’s graphical state at the moment the user last left the application. Device implementations including the recents function navigation key as detailed in <a href="#7_2_3_navigation_keys">section 7.2.3</a> MAY alter the interface but MUST meet the following requirements:
+        The upstream Android source code includes the <a href="http://developer.android.com/guide/components/recents.html">overview screen</a> , a system-level user interface for task switching and displaying recently accessed activities and tasks using a thumbnail image of the application’s graphical state at the moment the user last left the application. Device implementations including the recents function navigation key as detailed in <a href="#7_2_3_navigation_keys">section 7.2.3</a> MAY alter the interface but MUST meet the following requirements:
       </p>
       <ul>
         <li>MUST support at least up to 20 displayed activities.
         </li>
-        <li>SHOULD display the titles of at least 4 activities at a time.
+        <li>SHOULD at least display the title of 4 activities at a time.
         </li>
         <li>MUST implement the <a href="http://developer.android.com/about/versions/android-5.0.html#ScreenPinning">screen pinning behavior</a> and provide the user with a settings menu to toggle the feature.
         </li>
@@ -2195,6 +2191,10 @@
         <li>SHOULD implement a shortcut to switch easily to the previous activity
         </li>
         <li>MAY display affiliated recents as a group that moves together.
+        </li>
+        <li>SHOULD trigger the fast-switch action between the two most recently used apps, when the recents function key is tapped twice.
+        </li>
+        <li>SHOULD trigger the split-screen multiwindow-mode, if supported, when the recents functions key is long pressed.
         </li>
       </ul>
       <p>
@@ -2219,7 +2219,7 @@
         3.8.11. Screen savers (previously Dreams)
       </h3>
       <p>
-        Android includes support for <a href="http://developer.android.com/reference/android/service/dreams/DreamService.html">interactivescreensavers</a>, previously referred to as Dreams. Screen savers allow users to interact with applications when a device connected to a power source is idle or docked in a desk dock. Android Watch devices MAY implement screen savers, but other types of device implementations SHOULD include support for screen savers and provide a settings option for users toconfigure screen savers in response to the <code>android.settings.DREAM_SETTINGS</code> intent.
+        Android includes support for <a href="http://developer.android.com/reference/android/service/dreams/DreamService.html">interactivescreensavers</a> , previously referred to as Dreams. Screen savers allow users to interact with applications when a device connected to a power source is idle or docked in a desk dock. Android Watch devices MAY implement screen savers, but other types of device implementations SHOULD include support for screen savers and provide a settings option for users toconfigure screen savers in response to the <code>android.settings.DREAM_SETTINGS</code> intent.
       </p>
       <h3 id="3_8_12_location">
         3.8.12. Location
@@ -2231,10 +2231,10 @@
         3.8.13. Unicode and Font
       </h3>
       <p>
-        Android includes support for the emoji characters defined in <a href="http://www.unicode.org/versions/Unicode9.0.0/">Unicode 9.0</a>. All device implementations MUST be capable of rendering these emoji characters in color glyph and when Android device implementations include an IME, it SHOULD provide an input method to the user for these emoji characters.
+        Android includes support for the emoji characters defined in <a href="http://www.unicode.org/versions/Unicode9.0.0/">Unicode 9.0</a> . All device implementations MUST be capable of rendering these emoji characters in color glyph and when Android device implementations include an IME, it SHOULD provide an input method to the user for these emoji characters.
       </p>
       <p>
-        Android handheld devices SHOULD support the skin tone and diverse family emojis as specified in the <a href="http://unicode.org/reports/tr51">Unicode Technical Report #51</a>.
+        Android handheld devices SHOULD support the skin tone and diverse family emojis as specified in the <a href="http://unicode.org/reports/tr51">Unicode Technical Report #51</a> .
       </p>
       <p>
         Android includes support for Roboto 2 font with different weights—sans-serif-thin, sans-serif-light, sans-serif-medium, sans-serif-black, sans-serif-condensed, sans-serif-condensed-light—which MUST all be included for the languages available on the device and full Unicode 7.0 coverage of Latin, Greek, and Cyrillic, including the Latin Extended A, B, C, and D ranges, and all glyphs in the currency symbols block of Unicode 7.0.
@@ -2277,17 +2277,17 @@
       <ul>
         <li>When the device implementation has no user data configured yet, it:
           <ul>
-            <li>MUST report <code>true</code> for <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProvisioningAllowed(java.lang.String)"><code>DevicePolicyManager.isProvisioningAllowed(ACTION_PROVISION_MANAGED_DEVICE)</code></a>.
+            <li>MUST report <code>true</code> for <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProvisioningAllowed(java.lang.String)"><code>DevicePolicyManager.isProvisioningAllowed(ACTION_PROVISION_MANAGED_DEVICE)</code></a> .
             </li>
-            <li>MUST enroll the DPC application as the Device Owner app in response to the intent action <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE"><code>android.app.action.PROVISION_MANAGED_DEVICE</code></a>.
+            <li>MUST enroll the DPC application as the Device Owner app in response to the intent action <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE"><code>android.app.action.PROVISION_MANAGED_DEVICE</code></a> .
             </li>
-            <li>MUST enroll the DPC application as the Device Owner app if the device declares Near-Field Communications (NFC) support via the feature flag <code>android.hardware.nfc</code> and receives an NFC message containing a record with MIME type <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#MIME_TYPE_PROVISIONING_NFC"><code>MIME_TYPE_PROVISIONING_NFC</code></a>.
+            <li>MUST enroll the DPC application as the Device Owner app if the device declares Near-Field Communications (NFC) support via the feature flag <code>android.hardware.nfc</code> and receives an NFC message containing a record with MIME type <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#MIME_TYPE_PROVISIONING_NFC"><code>MIME_TYPE_PROVISIONING_NFC</code></a> .
             </li>
           </ul>
         </li>
         <li>When the device implementation has user data, it:
           <ul>
-            <li>MUST report <code>false</code> for the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProvisioningAllowed(java.lang.String)"><code>DevicePolicyManager.isProvisioningAllowed(ACTION_PROVISION_MANAGED_DEVICE)</code></a>.
+            <li>MUST report <code>false</code> for the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProvisioningAllowed(java.lang.String)"><code>DevicePolicyManager.isProvisioningAllowed(ACTION_PROVISION_MANAGED_DEVICE)</code></a> .
             </li>
             <li>MUST not enroll any DPC application as the Device Owner App any more.
             </li>
@@ -2301,7 +2301,7 @@
         3.9.1.2 Managed profile provisioning
       </h4>
       <p>
-        If a device implementation declares the android.software.managed_users, it MUST be possible to enroll a Device Policy Controller (DPC) application as the <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)">owner of a new Managed Profile</a>.
+        If a device implementation declares the android.software.managed_users, it MUST be possible to enroll a Device Policy Controller (DPC) application as the <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)">owner of a new Managed Profile</a> .
       </p>
       <p>
         The managed profile provisioning process (the flow initiated by <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">android.app.action.PROVISION_MANAGED_PROFILE</a> ) user experience MUST align with the AOSP implementation.
@@ -2312,7 +2312,7 @@
       <ul>
         <li>A consistent icon or other user affordance (for example the upstream AOSP info icon) to represent when a particular setting is restricted by a Device Admin.
         </li>
-        <li>A short explanation message, as provided by the Device Admin via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setShortSupportMessage%28android.content.ComponentName,%20java.lang.CharSequence%29"><code>setShortSupportMessage</code></a>.
+        <li>A short explanation message, as provided by the Device Admin via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setShortSupportMessage%28android.content.ComponentName,%20java.lang.CharSequence%29"><code>setShortSupportMessage</code></a> .
         </li>
         <li>The DPC application’s icon.
         </li>
@@ -2335,11 +2335,11 @@
         Managed profile capable devices MUST:
       </p>
       <ul>
-        <li>Declare the platform feature flag <code>android.software.managed_users</code>.
+        <li>Declare the platform feature flag <code>android.software.managed_users</code> .
         </li>
         <li>Support managed profiles via the <code>android.app.admin.DevicePolicyManager</code> APIs.
         </li>
-        <li>Allow one and only <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">one managed profile to be created</a>.
+        <li>Allow one and only <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">one managed profile to be created</a> .
         </li>
         <li>Use an icon badge (similar to the AOSP upstream work badge) to represent the managed applications and widgets and other badged UI elements like Recents &amp; Notifications.
         </li>
@@ -2371,7 +2371,7 @@
             </li>
             <li>The lock screen credentials of the managed profile MUST use the same credential storage and management mechanisms as the parent profile, as documented on the <a href="http://source.android.com/security/authentication/index.html">Android Open Source Project Site</a>
             </li>
-            <li>The DPC <a href="https://developer.android.com/guide/topics/admin/device-admin.html#pwd">password policies</a> MUST apply to only the managed profile's lock screen credentials unless called upon the <code>DevicePolicyManager</code> instance returned by <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#getParentProfileInstance%28android.content.ComponentName%29">getParentProfileInstance</a>.
+            <li>The DPC <a href="https://developer.android.com/guide/topics/admin/device-admin.html#pwd">password policies</a> MUST apply to only the managed profile's lock screen credentials unless called upon the <code>DevicePolicyManager</code> instance returned by <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#getParentProfileInstance%28android.content.ComponentName%29">getParentProfileInstance</a> .
             </li>
           </ul>
         </li>
@@ -2390,7 +2390,7 @@
         </li>
         <li>Device implementations (Android Automotive excluded) MUST provide an implementation of the Android accessibility framework consistent with the default Android implementation.
         </li>
-        <li>Device implementations (Android Automotive excluded) MUST support third-party accessibility service implementations through the <a href="http://developer.android.com/reference/android/view/accessibility/package-summary.html">android.accessibilityservice APIs</a>.
+        <li>Device implementations (Android Automotive excluded) MUST support third-party accessibility service implementations through the <a href="http://developer.android.com/reference/android/view/accessibility/package-summary.html">android.accessibilityservice APIs</a> .
         </li>
         <li>Device implementations (Android Automotive excluded) MUST generate AccessibilityEvents and deliver these events to all registered AccessibilityService implementations in a manner consistent with the default Android implementation
         </li>
@@ -2419,7 +2419,7 @@
         3.11. Text-to-Speech
       </h2>
       <p>
-        Android includes APIs that allow applications to make use of text-to-speech (TTS) services and allows service providers to provide implementations of TTS services. Device implementations reporting the feature android.hardware.audio.output MUST meet these requirements related to the <a href="http://developer.android.com/reference/android/speech/tts/package-summary.html">Android TTS framework</a>.
+        Android includes APIs that allow applications to make use of text-to-speech (TTS) services and allows service providers to provide implementations of TTS services. Device implementations reporting the feature android.hardware.audio.output MUST meet these requirements related to the <a href="http://developer.android.com/reference/android/speech/tts/package-summary.html">Android TTS framework</a> .
       </p>
       <p>
         Android Automotive implementations:
@@ -2506,19 +2506,19 @@
         3.12.1.3. TV input app linking
       </h4>
       <p>
-        Android Television device implementations MUST support <a href="http://developer.android.com/reference/android/media/tv/TvContract.Channels.html#COLUMN_APP_LINK_INTENT_URI">TV input app linking</a>, which allows all inputs to provide activity links from the current activity to another activity (i.e. a link from live programming to related content). The TV App MUST show TV input app linking when it is provided.
+        Android Television device implementations MUST support <a href="http://developer.android.com/reference/android/media/tv/TvContract.Channels.html#COLUMN_APP_LINK_INTENT_URI">TV input app linking</a> , which allows all inputs to provide activity links from the current activity to another activity (i.e. a link from live programming to related content). The TV App MUST show TV input app linking when it is provided.
       </p>
       <h4 id="3_12_1_4_time_shifting">
         3.12.1.4. Time shifting
       </h4>
       <p>
-        Android Television device implementations MUST support time shifting, which allows the user to pause and resume live content. Device implementations MUST provide the user a way to pause and resume the currently playing program, if time shifting for that program <a href="https://developer.android.com/reference/android/media/tv/TvInputManager.html#TIME_SHIFT_STATUS_AVAILABLE">is available</a>.
+        Android Television device implementations MUST support time shifting, which allows the user to pause and resume live content. Device implementations MUST provide the user a way to pause and resume the currently playing program, if time shifting for that program <a href="https://developer.android.com/reference/android/media/tv/TvInputManager.html#TIME_SHIFT_STATUS_AVAILABLE">is available</a> .
       </p>
       <h4 id="3_12_1_5_tv_recording">
         3.12.1.5. TV recording
       </h4>
       <p>
-        Android Television device implementations are STRONGLY RECOMMENDED to support TV recording. If the TV input supports recording, the EPG MAY provide a way to <a href="https://developer.android.com/reference/android/media/tv/TvInputInfo.html#canRecord%28%29">record a program</a> if the recording of such a program is not <a href="https://developer.android.com/reference/android/media/tv/TvContract.Programs.html#COLUMN_RECORDING_PROHIBITED">prohibited</a>. Device implementations SHOULD provide a user interface to play recorded programs.
+        Android Television device implementations are STRONGLY RECOMMENDED to support TV recording. If the TV input supports recording, the EPG MAY provide a way to <a href="https://developer.android.com/reference/android/media/tv/TvInputInfo.html#canRecord%28%29">record a program</a> if the recording of such a program is not <a href="https://developer.android.com/reference/android/media/tv/TvContract.Programs.html#COLUMN_RECORDING_PROHIBITED">prohibited</a> . Device implementations SHOULD provide a user interface to play recorded programs.
       </p>
       <h2 id="3_13_quick_settings">
         3.13. Quick Settings
@@ -2563,13 +2563,13 @@
         4. Application Packaging Compatibility
       </h1>
       <p>
-        Device implementations MUST install and run Android “.apk” files as generated by the “aapt” tool included in the <a href="http://developer.android.com/tools/help/index.html">official Android SDK</a>. For this reason device implementations SHOULD use the reference implementation’s package management system.
+        Device implementations MUST install and run Android “.apk” files as generated by the “aapt” tool included in the <a href="http://developer.android.com/tools/help/index.html">official Android SDK</a> . For this reason device implementations SHOULD use the reference implementation’s package management system.
       </p>
       <p>
-        The package manager MUST support verifying “.apk” files using the <a href="https://source.android.com/security/apksigning/v2.html">APK Signature Scheme v2</a>.
+        The package manager MUST support verifying “.apk” files using the <a href="https://source.android.com/security/apksigning/v2.html">APK Signature Scheme v2</a> and <a href="https://source.android.com/security/apksigning/v2.html#v1-verification">JAR signing</a> .
       </p>
       <p>
-        Devices implementations MUST NOT extend either the <a href="http://developer.android.com/guide/components/fundamentals.html">.apk</a>, <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">Android Manifest</a>, <a href="https://android.googlesource.com/platform/dalvik/">Dalvik bytecode</a>, or RenderScript bytecode formats in such a way that would prevent those files from installing and running correctly on other compatible devices.
+        Devices implementations MUST NOT extend either the <a href="http://developer.android.com/guide/components/fundamentals.html">.apk</a> , <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">Android Manifest</a> , <a href="https://android.googlesource.com/platform/dalvik/">Dalvik bytecode</a> , or RenderScript bytecode formats in such a way that would prevent those files from installing and running correctly on other compatible devices.
       </p>
       <p>
         Device implementations MUST NOT allow apps other than the current "installer of record" for the package to silently uninstall the app without any prompt, as documented in the SDK for the <a href="https://developer.android.com/reference/android/Manifest.permission.html#DELETE_PACKAGES"><code>DELETE_PACKAGE</code></a> permission. The only exceptions are the system package verifier app handling <a href="https://developer.android.com/reference/android/content/Intent.html#ACTION_PACKAGE_NEEDS_VERIFICATION">PACKAGE_NEEDS_VERIFICATION</a> intent and the storage manager app handling <a href="https://developer.android.com/reference/android/os/storage/StorageManager.html#ACTION_MANAGE_STORAGE">ACTION_MANAGE_STORAGE</a> intent.
@@ -2591,7 +2591,7 @@
         </li>
         <li>
           <p>
-            MUST support the media formats, encoders, decoders, file types, and container formats defined in the tables below and reported via <a href="http://developer.android.com/reference/android/media/MediaCodecList.html">MediaCodecList</a>.
+            MUST support the media formats, encoders, decoders, file types, and container formats defined in the tables below and reported via <a href="http://developer.android.com/reference/android/media/MediaCodecList.html">MediaCodecList</a> .
           </p>
         </li>
         <li>
@@ -2661,7 +2661,7 @@
             <ul>
               <li class="table_list">3GPP (.3gp)
               </li>
-              <li class="table_list">MPEG-4 (.mp4,.m4a)
+              <li class="table_list">MPEG-4 (.mp4, .m4a)
               </li>
               <li class="table_list">ADTS raw AAC (.aac, decode in Android 3.1+, encode in Android 4.0+, ADIF not supported)
               </li>
@@ -2793,9 +2793,9 @@
           </td>
           <td>
             <ul>
-              <li class="table_list">Type 0 and 1 (.mid,.xmf,.mxmf)
+              <li class="table_list">Type 0 and 1 (.mid, .xmf, .mxmf)
               </li>
-              <li class="table_list">RTTTL/RTX (.rtttl,.rtx)
+              <li class="table_list">RTTTL/RTX (.rtttl, .rtx)
               </li>
               <li class="table_list">OTA (.ota)
               </li>
@@ -3167,7 +3167,7 @@
         2 Required for device implementations except Android Watch devices.
       </p>
       <p class="table_footnote">
-        3 For acceptable quality of web video streaming and video-conference services, device implementations SHOULD use a hardware VP8 codec that meets the <a href="http://www.webmproject.org/hardware/rtc-coding-requirements/">requirements</a>.
+        3 For acceptable quality of web video streaming and video-conference services, device implementations SHOULD use a hardware VP8 codec that meets the <a href="http://www.webmproject.org/hardware/rtc-coding-requirements/">requirements</a> .
       </p>
       <p class="table_footnote">
         4 Device implementations SHOULD support writing Matroska WebM files.
@@ -3530,7 +3530,7 @@
         5.3.5. H.265 (HEVC)
       </h3>
       <p>
-        Android device implementations, when supporting H.265 codec as described in <a href="#5_1_3_video_codecs">section 5.1.3</a>:
+        Android device implementations, when supporting H.265 codec as described in <a href="#5_1_3_video_codecs">section 5.1.3</a> :
       </p>
       <ul>
         <li>MUST support the Main Profile Level 3 Main tier and the SD video decoding profiles as indicated in the following table.
@@ -3635,7 +3635,7 @@
         5.3.6. VP8
       </h3>
       <p>
-        Android device implementations, when supporting VP8 codec as described in <a href="https://source.android.com/compatibility/android-cdd.html#5_1_3_video_codecs">section 5.1.3</a>:
+        Android device implementations, when supporting VP8 codec as described in <a href="https://source.android.com/compatibility/android-cdd.html#5_1_3_video_codecs">section 5.1.3</a> :
       </p>
       <ul>
         <li>MUST support the SD decoding profiles in the following table.
@@ -3723,7 +3723,7 @@
         5.3.7. VP9
       </h3>
       <p>
-        Android device implementations, when supporting VP9 codec as described in <a href="https://source.android.com/compatibility/android-cdd.html#5_1_3_video_codecs">section 5.1.3</a>:
+        Android device implementations, when supporting VP9 codec as described in <a href="https://source.android.com/compatibility/android-cdd.html#5_1_3_video_codecs">section 5.1.3</a> :
       </p>
       <ul>
         <li>MUST support the SD video decoding profiles as indicated in the following table.
@@ -3843,13 +3843,13 @@
       </p>
       <ul>
         <li>
-          <strong>Format</strong>: Linear PCM, 16-bit
+          <strong>Format</strong> : Linear PCM, 16-bit
         </li>
         <li>
-          <strong>Sampling rates</strong>: 8000, 11025, 16000, 44100
+          <strong>Sampling rates</strong> : 8000, 11025, 16000, 44100
         </li>
         <li>
-          <strong>Channels</strong>: Mono
+          <strong>Channels</strong> : Mono
         </li>
       </ul>
       <p>
@@ -3860,13 +3860,13 @@
       </p>
       <ul>
         <li>
-          <strong>Format</strong>: Linear PCM, 16-bit
+          <strong>Format</strong> : Linear PCM, 16-bit
         </li>
         <li>
-          <strong>Sampling rates</strong>: 22050, 48000
+          <strong>Sampling rates</strong> : 22050, 48000
         </li>
         <li>
-          <strong>Channels</strong>: Stereo
+          <strong>Channels</strong> : Stereo
         </li>
       </ul>
       <p>
@@ -3926,13 +3926,13 @@
       </p>
       <ul>
         <li>
-          <strong>Format</strong>: Linear PCM, 16-bit
+          <strong>Format</strong> : Linear PCM, 16-bit
         </li>
         <li>
-          <strong>Sampling rates</strong>: 8000, 11025, 16000, 22050, 32000, 44100
+          <strong>Sampling rates</strong> : 8000, 11025, 16000, 22050, 32000, 44100
         </li>
         <li>
-          <strong>Channels</strong>: Mono, Stereo
+          <strong>Channels</strong> : Mono, Stereo
         </li>
       </ul>
       <p>
@@ -3940,7 +3940,7 @@
       </p>
       <ul>
         <li>
-          <strong>Sampling rates</strong>: 24000, 48000
+          <strong>Sampling rates</strong> : 24000, 48000
         </li>
       </ul>
       <h3 id="5_5_2_audio_effects">
@@ -3964,7 +3964,7 @@
         Android Television device implementations MUST include support for system Master Volume and digital audio output volume attenuation on supported outputs, except for compressed audio passthrough output (where no audio decoding is done on the device).
       </p>
       <p>
-        Android Automotive device implementations SHOULD allow adjusting audio volume separately per each audio stream using the content type or usage as defined by <a href="" title="http://developer.android.com/reference/android/media/AudioAttributes.html">AudioAttributes</a> and car audio usage as publicly defined in <code>android.car.CarAudioManager</code>.
+        Android Automotive device implementations SHOULD allow adjusting audio volume separately per each audio stream using the content type or usage as defined by <a href="" title="http://developer.android.com/reference/android/media/AudioAttributes.html">AudioAttributes</a> and car audio usage as publicly defined in <code>android.car.CarAudioManager</code> .
       </p>
       <h2 id="5_6_audio_latency">
         5.6. Audio Latency
@@ -3977,37 +3977,37 @@
       </p>
       <ul>
         <li>
-          <strong>output latency</strong>. The interval between when an application writes a frame of PCM-coded data and when the corresponding sound is presented to environment at an on-device transducer or signal leaves the device via a port and can be observed externally.
+          <strong>output latency</strong> . The interval between when an application writes a frame of PCM-coded data and when the corresponding sound is presented to environment at an on-device transducer or signal leaves the device via a port and can be observed externally.
         </li>
         <li>
-          <strong>cold output latency</strong>. The output latency for the first frame, when the audio output system has been idle and powered down prior to the request.
+          <strong>cold output latency</strong> . The output latency for the first frame, when the audio output system has been idle and powered down prior to the request.
         </li>
         <li>
-          <strong>continuous output latency</strong>. The output latency for subsequent frames, after the device is playing audio.
+          <strong>continuous output latency</strong> . The output latency for subsequent frames, after the device is playing audio.
         </li>
         <li>
-          <strong>input latency</strong>. The interval between when a sound is presented by environment to device at an on-device transducer or signal enters the device via a port and when an application reads the corresponding frame of PCM-coded data.
+          <strong>input latency</strong> . The interval between when a sound is presented by environment to device at an on-device transducer or signal enters the device via a port and when an application reads the corresponding frame of PCM-coded data.
         </li>
         <li>
-          <strong>lost input</strong>. The initial portion of an input signal that is unusable or unavailable.
+          <strong>lost input</strong> . The initial portion of an input signal that is unusable or unavailable.
         </li>
         <li>
-          <strong>cold input latency</strong>. The sum of lost input time and the input latency for the first frame, when the audio input system has been idle and powered down prior to the request.
+          <strong>cold input latency</strong> . The sum of lost input time and the input latency for the first frame, when the audio input system has been idle and powered down prior to the request.
         </li>
         <li>
-          <strong>continuous input latency</strong>. The input latency for subsequent frames, while the device is capturing audio.
+          <strong>continuous input latency</strong> . The input latency for subsequent frames, while the device is capturing audio.
         </li>
         <li>
-          <strong>cold output jitter</strong>. The variability among separate measurements of cold output latency values.
+          <strong>cold output jitter</strong> . The variability among separate measurements of cold output latency values.
         </li>
         <li>
-          <strong>cold input jitter</strong>. The variability among separate measurements of cold input latency values.
+          <strong>cold input jitter</strong> . The variability among separate measurements of cold input latency values.
         </li>
         <li>
-          <strong>continuous round-trip latency</strong>. The sum of continuous input latency plus continuous output latency plus one buffer period. The buffer period allows time for the app to process the signal and time for the app to mitigate phase difference between input and output streams.
+          <strong>continuous round-trip latency</strong> . The sum of continuous input latency plus continuous output latency plus one buffer period. The buffer period allows time for the app to process the signal and time for the app to mitigate phase difference between input and output streams.
         </li>
         <li>
-          <strong>OpenSL ES PCM buffer queue API</strong>. The set of PCM-related OpenSL ES APIs within <a href="https://developer.android.com/ndk/index.html">Android NDK</a>.
+          <strong>OpenSL ES PCM buffer queue API</strong> . The set of PCM-related OpenSL ES APIs within <a href="https://developer.android.com/ndk/index.html">Android NDK</a> .
         </li>
       </ul>
       <p>
@@ -4123,7 +4123,7 @@
             RTSP (RTP, SDP)
           </p>
           <p>
-            The following RTP audio video profile and related codecs MUST be supported. For exceptions please see the table footnotes in <a href="#5_1_media_codecs">section 5.1</a>.
+            The following RTP audio video profile and related codecs MUST be supported. For exceptions please see the table footnotes in <a href="#5_1_media_codecs">section 5.1</a> .
           </p>
         </li>
       </ul>
@@ -4288,7 +4288,7 @@
         </li>
         <li>The device implementation MUST report support for feature android.software.midi.
         </li>
-        <li>If the device includes a 4 conductor 3.5mm audio jack, the device implementation is STRONGLY RECOMMENDED to comply with section <a href="https://source.android.com/accessories/headset/specification.html#mobile_device_jack_specifications">Mobile device (jack) specifications</a> of the <a href="https://source.android.com/accessories/headset/specification.html">Wired Audio Headset Specification (v1.1)</a>.
+        <li>If the device includes a 4 conductor 3.5mm audio jack, the device implementation is STRONGLY RECOMMENDED to comply with section <a href="https://source.android.com/accessories/headset/specification.html#mobile_device_jack_specifications">Mobile device (jack) specifications</a> of the <a href="https://source.android.com/accessories/headset/specification.html">Wired Audio Headset Specification (v1.1)</a> .
         </li>
       </ul>
       <p>
@@ -4339,10 +4339,10 @@
         5.11. Capture for Unprocessed
       </h2>
       <p>
-        Starting from Android 7.0, a new recording source has been added. It can be accessed using the <code>android.media.MediaRecorder.AudioSource.UNPROCESSED</code> audio source. In OpenSL ES, it can be accessed with the record preset <code>SL_ANDROID_RECORDING_PRESET_UNPROCESSED</code>.
+        Starting from Android 7.0, a new recording source has been added. It can be accessed using the <code>android.media.MediaRecorder.AudioSource.UNPROCESSED</code> audio source. In OpenSL ES, it can be accessed with the record preset <code>SL_ANDROID_RECORDING_PRESET_UNPROCESSED</code> .
       </p>
       <p>
-        A device MUST satisfy all of the following requirements to report support of the unprocessed audio source via the <code>android.media.AudioManager</code> property <a href="http://developer.android.com/reference/android/media/AudioManager.html#PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED">PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED</a>:
+        A device MUST satisfy all of the following requirements to report support of the unprocessed audio source via the <code>android.media.AudioManager</code> property <a href="http://developer.android.com/reference/android/media/AudioManager.html#PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED">PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED</a> :
       </p>
       <ul>
         <li>
@@ -4408,7 +4408,7 @@
         <li>
           <a href="http://developer.android.com/tools/help/adb.html"><strong>Android Debug Bridge (adb)</strong></a>
           <ul>
-            <li>Device implementations MUST support all adb functions as documented in the Android SDK including <a href="https://source.android.com/devices/input/diagnostics.html">dumpsys</a>.
+            <li>Device implementations MUST support all adb functions as documented in the Android SDK including <a href="https://source.android.com/devices/input/diagnostics.html">dumpsys</a> .
             </li>
             <li>The device-side adb daemon MUST be inactive by default and there MUST be a user-accessible mechanism to turn on the Android Debug Bridge. If a device implementation omits USB peripheral mode, it MUST implement the Android Debug Bridge via local-area network (such as Ethernet or 802.11).
             </li>
@@ -4477,23 +4477,23 @@
         7.1. Display and Graphics
       </h2>
       <p>
-        Android includes facilities that automatically adjust application assets and UI layouts appropriately for the device to ensure that third-party applications run well on a <a href="http://developer.android.com/guide/practices/screens_support.html">variety of hardware configurations</a>. Devices MUST properly implement these APIs and behaviors, as detailed in this section.
+        Android includes facilities that automatically adjust application assets and UI layouts appropriately for the device to ensure that third-party applications run well on a <a href="http://developer.android.com/guide/practices/screens_support.html">variety of hardware configurations</a> . Devices MUST properly implement these APIs and behaviors, as detailed in this section.
       </p>
       <p>
         The units referenced by the requirements in this section are defined as follows:
       </p>
       <ul>
         <li>
-          <strong>physical diagonal size</strong>. The distance in inches between two opposing corners of the illuminated portion of the display.
+          <strong>physical diagonal size</strong> . The distance in inches between two opposing corners of the illuminated portion of the display.
         </li>
         <li>
-          <strong>dots per inch (dpi)</strong>. The number of pixels encompassed by a linear horizontal or vertical span of 1”. Where dpi values are listed, both horizontal and vertical dpi must fall within the range.
+          <strong>dots per inch (dpi)</strong> . The number of pixels encompassed by a linear horizontal or vertical span of 1”. Where dpi values are listed, both horizontal and vertical dpi must fall within the range.
         </li>
         <li>
-          <strong>aspect ratio</strong>. The ratio of the pixels of the longer dimension to the shorter dimension of the screen. For example, a display of 480x854 pixels would be 854/480 = 1.779, or roughly “16:9”.
+          <strong>aspect ratio</strong> . The ratio of the pixels of the longer dimension to the shorter dimension of the screen. For example, a display of 480x854 pixels would be 854/480 = 1.779, or roughly “16:9”.
         </li>
         <li>
-          <strong>density-independent pixel (dp)</strong>. The virtual pixel unit normalized to a 160 dpi screen, calculated as: pixels = dps * (density/160).
+          <strong>density-independent pixel (dp)</strong> . The virtual pixel unit normalized to a 160 dpi screen, calculated as: pixels = dps * (density/160).
         </li>
       </ul>
       <h3 id="7_1_1_screen_configuration">
@@ -4540,17 +4540,22 @@
       <h4 id="7_1_1_2_screen_aspect_ratio">
         7.1.1.2. Screen Aspect Ratio
       </h4>
-      <div class="note">
-        Android Watch devices MAY have an aspect ratio of 1.0 (1:1).
-      </div>
       <p>
-        The screen aspect ratio MUST be a value from 1.3333 (4:3) to 1.86 (roughly 16:9), but Android Watch devices MAY have an aspect ratio of 1.0 (1:1) because such a device implementation will use a UI_MODE_TYPE_WATCH as the android.content.res.Configuration.uiMode.
+        While there is no restriction to the screen aspect ratio value of the physical screen display, the screen aspect ratio of the surface that third-party apps are rendered on and which can be derived from the values reported via the <a href="https://developer.android.com/reference/android/util/DisplayMetrics.html">DisplayMetrics</a> MUST meet the following requirements:
       </p>
+      <ul>
+        <li>If the <a href="https://developer.android.com/reference/android/content/res/Configuration.html#uiMode">uiMode</a> is configured as UI_MODE_TYPE_WATCH, the aspect ratio value MAY be set as 1.0 (1:1).
+        </li>
+        <li>If the third-party app indicates that it is resizeable via the <a href="https://developer.android.com/guide/topics/ui/multi-window.html#configuring">android:resizeableActivity</a> attribute, there are no restrictions to the aspect ratio value.
+        </li>
+        <li>For all other cases, the aspect ratio MUST be a value between 1.3333 (4:3) and 1.86 (roughly 16:9) unless the app has indicated explicitly that it supports a higher screen aspect ratio through the <a href="https://developer.android.com/guide/practices/screens_support.html#MaxAspectRatio">maxAspectRatio</a> metadata value.
+        </li>
+      </ul>
       <h4 id="7_1_1_3_screen_density">
         7.1.1.3. Screen Density
       </h4>
       <p>
-        The Android UI framework defines a set of standard logical densities to help application developers target application resources. Device implementations MUST report only one of the following logical Android framework densities through the android.util.DisplayMetrics APIs, and MUST execute applications at this standard density and MUST NOT change the value at at any time for the default display.
+        The Android UI framework defines a set of standard logical densities to help application developers target application resources. By default, device implementations MUST report only one of the following logical Android framework densities through the <a href="https://developer.android.com/reference/android/util/DisplayMetrics.html#DENSITY_DEVICE_STABLE">DENSITY_DEVICE_STABLE</a> API and this value MUST NOT change at any time; however, the device MAY report a different arbitrary density according to the display configuration changes made by the user (for example, display size) set after initial boot.
       </p>
       <ul>
         <li>120 dpi (ldpi)
@@ -4561,9 +4566,15 @@
         </li>
         <li>240 dpi (hdpi)
         </li>
+        <li>260 dpi (260dpi)
+        </li>
         <li>280 dpi (280dpi)
         </li>
+        <li>300 dpi (300dpi)
+        </li>
         <li>320 dpi (xhdpi)
+        </li>
+        <li>340 dpi (340dpi)
         </li>
         <li>360 dpi (360dpi)
         </li>
@@ -4627,7 +4638,7 @@
         7.1.4. 2D and 3D Graphics Acceleration
       </h3>
       <p>
-        Device implementations MUST support both OpenGL ES 1.0 and 2.0, as embodied and detailed in the Android SDK documentations. Device implementations SHOULD support OpenGL ES 3.0, 3.1, or 3.2 on devices capable of supporting it. Device implementations MUST also support <a href="http://developer.android.com/guide/topics/renderscript/">Android RenderScript</a>, as detailed in the Android SDK documentation.
+        Device implementations MUST support both OpenGL ES 1.0 and 2.0, as embodied and detailed in the Android SDK documentations. Device implementations SHOULD support OpenGL ES 3.0, 3.1, or 3.2 on devices capable of supporting it. Device implementations MUST also support <a href="http://developer.android.com/guide/topics/renderscript/">Android RenderScript</a> , as detailed in the Android SDK documentation.
       </p>
       <p>
         Device implementations MUST also correctly identify themselves as supporting OpenGL ES 1.0, OpenGL ES 2.0, OpenGL ES 3.0, OpenGL 3.1, or OpenGL 3.2. That is:
@@ -4656,7 +4667,7 @@
         Device implementations MUST enable hardware acceleration by default, and MUST disable hardware acceleration if the developer so requests by setting android:hardwareAccelerated="false” or disabling hardware acceleration directly through the Android View APIs.
       </p>
       <p>
-        In addition, device implementations MUST exhibit behavior consistent with the Android SDK documentation on <a href="http://developer.android.com/guide/topics/graphics/hardware-accel.html">hardware acceleration</a>.
+        In addition, device implementations MUST exhibit behavior consistent with the Android SDK documentation on <a href="http://developer.android.com/guide/topics/graphics/hardware-accel.html">hardware acceleration</a> .
       </p>
       <p>
         Android includes a TextureView object that lets developers directly integrate hardware-accelerated OpenGL ES textures as rendering targets in a UI hierarchy. Device implementations MUST support the TextureView API, and MUST exhibit consistent behavior with the upstream Android implementation.
@@ -4712,7 +4723,7 @@
         Device implementations:
       </p>
       <ul>
-        <li>MUST include support for the Input Management Framework (which allows third-party developers to create Input Method Editors—i.e. soft keyboard) as detailed at <a href="http://developer.android.com">http://developer.android.com</a>.
+        <li>MUST include support for the Input Management Framework (which allows third-party developers to create Input Method Editors—i.e. soft keyboard) as detailed at <a href="http://developer.android.com">http://developer.android.com</a> .
         </li>
         <li>MUST provide at least one soft keyboard implementation (regardless of whether a hard keyboard is present) except for Android Watch devices where the screen size makes it less reasonable to have a soft keyboard.
         </li>
@@ -4735,7 +4746,7 @@
       <ul>
         <li>MAY omit a non-touch navigation option (trackball, d-pad, or wheel) if the device implementation is not an Android Television device.
         </li>
-        <li>MUST report the correct value for <a href="http://developer.android.com/reference/android/content/res/Configuration.html">android.content.res.Configuration.navigation</a>.
+        <li>MUST report the correct value for <a href="http://developer.android.com/reference/android/content/res/Configuration.html">android.content.res.Configuration.navigation</a> .
         </li>
         <li>MUST provide a reasonable alternative user interface mechanism for the selection and editing of text, compatible with Input Management Engines. The upstream Android open source implementation includes a selection mechanism suitable for use with devices that lack non-touch navigation inputs.
         </li>
@@ -4754,7 +4765,7 @@
         </li>
         <li>Android Television device implementations MUST provide the Home and Back functions.
         </li>
-        <li>Android Watch device implementations MUST have the Home function available to the user, and the Back function except for when it is in <code>UI_MODE_TYPE_WATCH</code>.
+        <li>Android Watch device implementations MUST have the Home function available to the user, and the Back function except for when it is in <code>UI_MODE_TYPE_WATCH</code> .
         </li>
         <li>Android Watch device implementations, and no other Android device types, MAY consume the long press event on the key event <a href="http://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_BACK"><code>KEYCODE_BACK</code></a> and omit it from being sent to the foreground application.
         </li>
@@ -4795,7 +4806,7 @@
       <ul>
         <li>Device implementation navigation keys MUST use a distinct portion of the screen, not available to applications, and MUST NOT obscure or otherwise interfere with the portion of the screen available to applications.
         </li>
-        <li>Device implementations MUST make available a portion of the display to applications that meets the requirements defined in <a href="#7_1_1_screen_configuration">section 7.1.1</a>.
+        <li>Device implementations MUST make available a portion of the display to applications that meets the requirements defined in <a href="#7_1_1_screen_configuration">section 7.1.1</a> .
         </li>
         <li>Device implementations MUST display the navigation keys when applications do not specify a system UI mode, or specify SYSTEM_UI_FLAG_VISIBLE.
         </li>
@@ -4820,10 +4831,10 @@
         </li>
       </ul>
       <p>
-        Android includes support for a variety of touchscreens, touch pads, and fake touch input devices. <a href="http://source.android.com/devices/tech/input/touch-devices.html">Touchscreen-based device implementations</a> are associated with a display such that the user has the impression of directly manipulating items on screen. Since the user is directly touching the screen, the system does not require any additional affordances to indicate the objects being manipulated. In contrast, a fake touch interface provides a user input system that approximates a subset of touchscreen capabilities. For example, a mouse or remote control that drives an on-screen cursor approximates touch, but requires the user to first point or focus then click. Numerous input devices like the mouse, trackpad, gyro-based air mouse, gyro-pointer, joystick, and multi-touch trackpad can support fake touch interactions. Android includes the feature constant android.hardware.faketouch, which corresponds to a high-fidelity non-touch (pointer-based) input device such as a mouse or trackpad that can adequately emulate touch-based input (including basic gesture support), and indicates that the device supports an emulated subset of touchscreen functionality. Device implementations that declare the fake touch feature MUST meet the fake touch requirements in <a href="#7_2_5_fake_touch_input">section 7.2.5</a>.
+        Android includes support for a variety of touchscreens, touch pads, and fake touch input devices. <a href="http://source.android.com/devices/tech/input/touch-devices.html">Touchscreen-based device implementations</a> are associated with a display such that the user has the impression of directly manipulating items on screen. Since the user is directly touching the screen, the system does not require any additional affordances to indicate the objects being manipulated. In contrast, a fake touch interface provides a user input system that approximates a subset of touchscreen capabilities. For example, a mouse or remote control that drives an on-screen cursor approximates touch, but requires the user to first point or focus then click. Numerous input devices like the mouse, trackpad, gyro-based air mouse, gyro-pointer, joystick, and multi-touch trackpad can support fake touch interactions. Android includes the feature constant android.hardware.faketouch, which corresponds to a high-fidelity non-touch (pointer-based) input device such as a mouse or trackpad that can adequately emulate touch-based input (including basic gesture support), and indicates that the device supports an emulated subset of touchscreen functionality. Device implementations that declare the fake touch feature MUST meet the fake touch requirements in <a href="#7_2_5_fake_touch_input">section 7.2.5</a> .
       </p>
       <p>
-        Device implementations MUST report the correct feature corresponding to the type of input used. Device implementations that include a touchscreen (single-touch or better) MUST report the platform feature constant android.hardware.touchscreen. Device implementations that report the platform feature constant android.hardware.touchscreen MUST also report the platform feature constant android.hardware.faketouch. Device implementations that do not include a touchscreen (and rely on a pointer device only) MUST NOT report any touchscreen feature, and MUST report only android.hardware.faketouch if they meet the fake touch requirements in <a href="#7_2_5_fake_touch_input">section 7.2.5</a>.
+        Device implementations MUST report the correct feature corresponding to the type of input used. Device implementations that include a touchscreen (single-touch or better) MUST report the platform feature constant android.hardware.touchscreen. Device implementations that report the platform feature constant android.hardware.touchscreen MUST also report the platform feature constant android.hardware.faketouch. Device implementations that do not include a touchscreen (and rely on a pointer device only) MUST NOT report any touchscreen feature, and MUST report only android.hardware.faketouch if they meet the fake touch requirements in <a href="#7_2_5_fake_touch_input">section 7.2.5</a> .
       </p>
       <h3 id="7_2_5_fake_touch_input">
         7.2.5. Fake Touch Input
@@ -4834,7 +4845,7 @@
       <ul>
         <li>MUST report the <a href="http://developer.android.com/reference/android/view/MotionEvent.html">absolute X and Y screen positions</a> of the pointer location and display a visual pointer on the screen.
         </li>
-        <li>MUST report touch event with the action code that specifies the state change that occurs on the pointer <a href="http://developer.android.com/reference/android/view/MotionEvent.html">going down or up on the screen</a>.
+        <li>MUST report touch event with the action code that specifies the state change that occurs on the pointer <a href="http://developer.android.com/reference/android/view/MotionEvent.html">going down or up on the screen</a> .
         </li>
         <li>MUST support pointer down and up on an object on the screen, which allows users to emulate tap on an object on the screen.
         </li>
@@ -5091,17 +5102,17 @@
       </p>
       <ul>
         <li>
-          <strong>Search affordance</strong>. Device implementations MUST fire KEYCODE_SEARCH when the user invokes voice search either on the physical or software-based remote.
+          <strong>Search affordance</strong> . Device implementations MUST fire KEYCODE_SEARCH (or KEYCODE_ASSIST if the device supports an assistant) when the user invokes voice search on either the physical or software-based remote.
         </li>
         <li>
-          <strong>Navigation</strong>. All Android Television remotes MUST include <a href="http://developer.android.com/reference/android/view/KeyEvent.html">Back, Home, and Select buttons and support for D-pad events</a>.
+          <strong>Navigation</strong> . All Android Television remotes MUST include <a href="http://developer.android.com/reference/android/view/KeyEvent.html">Back, Home, and Select buttons and support for D-pad events</a> .
         </li>
       </ul>
       <h2 id="7_3_sensors">
         7.3. Sensors
       </h2>
       <p>
-        Android includes APIs for accessing a variety of sensor types. Devices implementations generally MAY omit these sensors, as provided for in the following subsections. If a device includes a particular sensor type that has a corresponding API for third-party developers, the device implementation MUST implement that API as described in the Android SDK documentation and the Android Open Source documentation on <a href="http://source.android.com/devices/sensors/">sensors</a>. For example, device implementations:
+        Android includes APIs for accessing a variety of sensor types. Devices implementations generally MAY omit these sensors, as provided for in the following subsections. If a device includes a particular sensor type that has a corresponding API for third-party developers, the device implementation MUST implement that API as described in the Android SDK documentation and the Android Open Source documentation on <a href="http://source.android.com/devices/sensors/">sensors</a> . For example, device implementations:
       </p>
       <ul>
         <li>MUST accurately report the presence or absence of sensors per the <a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">android.content.pm.PackageManager</a> class.
@@ -5123,10 +5134,10 @@
         The list above is not comprehensive; the documented behavior of the Android SDK and the Android Open Source Documentations on <a href="http://source.android.com/devices/sensors/">sensors</a> is to be considered authoritative.
       </p>
       <p>
-        Some sensor types are composite, meaning they can be derived from data provided by one or more other sensors. (Examples include the orientation sensor and the linear acceleration sensor.) Device implementations SHOULD implement these sensor types, when they include the prerequisite physical sensors as described in <a href="https://source.android.com/devices/sensors/sensor-types.html">sensor types</a>. If a device implementation includes a composite sensor it MUST implement the sensor as described in the Android Open Source documentation on <a href="https://source.android.com/devices/sensors/sensor-types.html#composite_sensor_type_summary">composite sensors</a>.
+        Some sensor types are composite, meaning they can be derived from data provided by one or more other sensors. (Examples include the orientation sensor and the linear acceleration sensor.) Device implementations SHOULD implement these sensor types, when they include the prerequisite physical sensors as described in <a href="https://source.android.com/devices/sensors/sensor-types.html">sensor types</a> . If a device implementation includes a composite sensor it MUST implement the sensor as described in the Android Open Source documentation on <a href="https://source.android.com/devices/sensors/sensor-types.html#composite_sensor_type_summary">composite sensors</a> .
       </p>
       <p>
-        Some Android sensors support a <a href="https://source.android.com/devices/sensors/report-modes.html#continuous">“continuous” trigger mode</a>, which returns data continuously. For any API indicated by the Android SDK documentation to be a continuous sensor, device implementations MUST continuously provide periodic data samples that SHOULD have a jitter below 3%, where jitter is defined as the standard deviation of the difference of the reported timestamp values between consecutive events.
+        Some Android sensors support a <a href="https://source.android.com/devices/sensors/report-modes.html#continuous">“continuous” trigger mode</a> , which returns data continuously. For any API indicated by the Android SDK documentation to be a continuous sensor, device implementations MUST continuously provide periodic data samples that SHOULD have a jitter below 3%, where jitter is defined as the standard deviation of the difference of the reported timestamp values between consecutive events.
       </p>
       <p>
         Note that the device implementations MUST ensure that the sensor event stream MUST NOT prevent the device CPU from entering a suspend state or waking up from a suspend state.
@@ -5141,13 +5152,13 @@
         Device implementations SHOULD include a 3-axis accelerometer. Android Handheld devices, Android Automotive implementations, and Android Watch devices are STRONGLY RECOMMENDED to include this sensor. If a device implementation does include a 3-axis accelerometer, it:
       </p>
       <ul>
-        <li>MUST implement and report <a href="http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER">TYPE_ACCELEROMETER sensor</a>.
+        <li>MUST implement and report <a href="http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER">TYPE_ACCELEROMETER sensor</a> .
         </li>
         <li>MUST be able to report events up to a frequency of at least 50 Hz for Android Watch devices as such devices have a stricter power constraint and 100 Hz for all other device types.
         </li>
         <li>SHOULD report events up to at least 200 Hz.
         </li>
-        <li>MUST comply with the <a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">Android sensor coordinate system</a> as detailed in the Android APIs. Android Automotive implementations MUST comply with the Android <a href="http://source.android.com/devices/sensors/sensor-types.html#auto_axes">car sensor coordinate system</a>.
+        <li>MUST comply with the <a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">Android sensor coordinate system</a> as detailed in the Android APIs. Android Automotive implementations MUST comply with the Android <a href="http://source.android.com/devices/sensors/sensor-types.html#auto_axes">car sensor coordinate system</a> .
         </li>
         <li>MUST be capable of measuring from freefall up to four times the gravity (4g) or more on any axis.
         </li>
@@ -5207,7 +5218,7 @@
       <ul>
         <li>It is STRONGLY RECOMMENDED that the device continue to deliver normal GPS/GNSS outputs to applications during an emergency phone call and that location output not be blocked during an emergency phone call.
         </li>
-        <li>It MUST support location outputs at a rate of at least 1 Hz when requested via <code>LocationManager#requestLocationUpdate</code>.
+        <li>It MUST support location outputs at a rate of at least 1 Hz when requested via <code>LocationManager#requestLocationUpdate</code> .
         </li>
         <li>It MUST be able to determine the location in open-sky conditions (strong signals, negligible multipath, HDOP &lt; 2) within 10 seconds (fast time to first fix), when connected to a 0.5 Mbps or faster data speed internet connection. This requirement is typically met by the use of some form of Assisted or Predicted GPS/GNSS technique to minimize GPS/GNSS lock-on time (Assistance data includes Reference Time, Reference Location and Satellite Ephemeris/Clock).
           <ul>
@@ -5525,7 +5536,7 @@
         7.3.11. Android Automotive-only sensors
       </h3>
       <p>
-        Automotive-specific sensors are defined in the <code>android.car.CarSensorManager API</code>.
+        Automotive-specific sensors are defined in the <code>android.car.CarSensorManager API</code> .
       </p>
       <h4 id="7_3_11_1_current_gear">
         7.3.11.1. Current Gear
@@ -5537,7 +5548,7 @@
         7.3.11.2. Day Night Mode
       </h4>
       <p>
-        Android Automotive implementations MUST support day/night mode defined as SENSOR_TYPE_NIGHT. The value of this flag MUST be consistent with dashboard day/night mode and SHOULD be based on ambient light sensor input. The underlying ambient light sensor MAY be the same as <a href="#7_3_7_photometer">Photometer</a>.
+        Android Automotive implementations MUST support day/night mode defined as SENSOR_TYPE_NIGHT. The value of this flag MUST be consistent with dashboard day/night mode and SHOULD be based on ambient light sensor input. The underlying ambient light sensor MAY be the same as <a href="#7_3_7_photometer">Photometer</a> .
       </p>
       <h4 id="7_3_11_3_driving_status">
         7.3.11.3. Driving Status
@@ -5653,7 +5664,7 @@
         Device implementations that support <code>android.hardware.vr.high_performance</code> feature MUST support Bluetooth 4.2 and Bluetooth LE Data Length Extension.
       </p>
       <p>
-        Android includes support for <a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">Bluetooth and Bluetooth Low Energy</a>. Device implementations that include support for Bluetooth and Bluetooth Low Energy MUST declare the relevant platform features (android.hardware.bluetooth and android.hardware.bluetooth_le respectively) and implement the platform APIs. Device implementations SHOULD implement relevant Bluetooth profiles such as A2DP, AVCP, OBEX, etc. as appropriate for the device.
+        Android includes support for <a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">Bluetooth and Bluetooth Low Energy</a> . Device implementations that include support for Bluetooth and Bluetooth Low Energy MUST declare the relevant platform features (android.hardware.bluetooth and android.hardware.bluetooth_le respectively) and implement the platform APIs. Device implementations SHOULD implement relevant Bluetooth profiles such as A2DP, AVCP, OBEX, etc. as appropriate for the device.
       </p>
       <p>
         Android Automotive implementations SHOULD support Message Access Profile (MAP). Android Automotive implementations MUST support the following Bluetooth profiles:
@@ -5674,11 +5685,11 @@
       <ul>
         <li>MUST declare the hardware feature android.hardware.bluetooth_le.
         </li>
-        <li>MUST enable the GATT (generic attribute profile) based Bluetooth APIs as described in the SDK documentation and <a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">android.bluetooth</a>.
+        <li>MUST enable the GATT (generic attribute profile) based Bluetooth APIs as described in the SDK documentation and <a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">android.bluetooth</a> .
         </li>
         <li>are STRONGLY RECOMMENDED to implement a Resolvable Private Address (RPA) timeout no longer than 15 minutes and rotate the address at timeout to protect user privacy.
         </li>
-        <li>SHOULD support offloading of the filtering logic to the bluetooth chipset when implementing the <a href="https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html">ScanFilter API</a>, and MUST report the correct value of where the filtering logic is implemented whenever queried via the android.bluetooth.BluetoothAdapter.isOffloadedFilteringSupported() method.
+        <li>SHOULD support offloading of the filtering logic to the bluetooth chipset when implementing the <a href="https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html">ScanFilter API</a> , and MUST report the correct value of where the filtering logic is implemented whenever queried via the android.bluetooth.BluetoothAdapter.isOffloadedFilteringSupported() method.
         </li>
         <li>SHOULD support offloading of the batched scanning to the bluetooth chipset, but if not supported, MUST report ‘false’ whenever queried via the android.bluetooth.BluetoothAdapter.isOffloadedScanBatchingSupported() method.
         </li>
@@ -5692,7 +5703,7 @@
         Device implementations SHOULD include a transceiver and related hardware for Near-Field Communications (NFC). If a device implementation does include NFC hardware and plans to make it available to third-party apps, then it:
       </p>
       <ul>
-        <li>MUST report the android.hardware.nfc feature from the <a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">android.content.pm.PackageManager.hasSystemFeature() method</a>.
+        <li>MUST report the android.hardware.nfc feature from the <a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">android.content.pm.PackageManager.hasSystemFeature() method</a> .
         </li>
         <li>MUST be capable of reading and writing NDEF messages via the following NFC standards:
           <ul>
@@ -5733,11 +5744,11 @@
                 </li>
               </ul>
             </li>
-            <li>MUST include support for <a href="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html">Android Beam</a>.
+            <li>MUST include support for <a href="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html">Android Beam</a> .
             </li>
             <li>MUST implement the SNEP default server. Valid NDEF messages received by the default SNEP server MUST be dispatched to applications using the android.nfc.ACTION_NDEF_DISCOVERED intent. Disabling Android Beam in settings MUST NOT disable dispatch of incoming NDEF message.
             </li>
-            <li>MUST honor the android.settings.NFCSHARING_SETTINGS intent to show <a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFCSHARING_SETTINGS">NFC sharing settings</a>.
+            <li>MUST honor the android.settings.NFCSHARING_SETTINGS intent to show <a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFCSHARING_SETTINGS">NFC sharing settings</a> .
             </li>
             <li>MUST implement the NPP server. Messages received by the NPP server MUST be processed the same way as the SNEP default server.
             </li>
@@ -5820,7 +5831,7 @@
         Devices MAY implement more than one form of data connectivity.
       </p>
       <p>
-        Devices MUST include an IPv6 networking stack and support IPv6 communication using the managed APIs, such as <code>java.net.Socket</code> and <code>java.net.URLConnection</code>, as well as the native APIs, such as <code>AF_INET6</code> sockets. The required level of IPv6 support depends on the network type, as follows:
+        Devices MUST include an IPv6 networking stack and support IPv6 communication using the managed APIs, such as <code>java.net.Socket</code> and <code>java.net.URLConnection</code> , as well as the native APIs, such as <code>AF_INET6</code> sockets. The required level of IPv6 support depends on the network type, as follows:
       </p>
       <ul>
         <li>Devices that support Wi-Fi networks MUST support dual-stack and IPv6-only operation on Wi-Fi.
@@ -5928,7 +5939,7 @@
         </li>
         <li>MUST NOT use a front-facing camera as the default for the Camera API. The camera API in Android has specific support for front-facing cameras and device implementations MUST NOT configure the API to to treat a front-facing camera as the default rear-facing camera, even if it is the only camera on the device.
         </li>
-        <li>MAY include features (such as auto-focus, flash, etc.) available to rear-facing cameras as described in <a href="#7_5_1_rear-facing_camera">section 7.5.1</a>.
+        <li>MAY include features (such as auto-focus, flash, etc.) available to rear-facing cameras as described in <a href="#7_5_1_rear-facing_camera">section 7.5.1</a> .
         </li>
         <li>MUST horizontally reflect (i.e. mirror) the stream displayed by an app in a CameraPreview, as follows:
           <ul>
@@ -5952,7 +5963,7 @@
         Device implementations MAY include support for an external camera that is not necessarily always connected. If a device includes support for an external camera, it:
       </p>
       <ul>
-        <li>MUST declare the platform feature flag <code>android.hardware.camera.external</code> and <code>android.hardware camera.any</code>.
+        <li>MUST declare the platform feature flag <code>android.hardware.camera.external</code> and <code>android.hardware camera.any</code> .
         </li>
         <li>MAY support multiple cameras.
         </li>
@@ -5992,7 +6003,7 @@
         Device implementations MUST recognize and honor each parameter name defined as a constant on the <a href="http://developer.android.com/reference/android/hardware/Camera.Parameters.html">android.hardware.Camera.Parameters</a> class, if the underlying hardware supports the feature. If the device hardware does not support a feature, the API must behave as documented. Conversely, device implementations MUST NOT honor or recognize string constants passed to the android.hardware.Camera.setParameters() method other than those documented as constants on the android.hardware.Camera.Parameters. That is, device implementations MUST support all standard Camera parameters if the hardware allows, and MUST NOT support custom Camera parameter types. For instance, device implementations that support image capture using high dynamic range (HDR) imaging techniques MUST support camera parameter Camera.SCENE_MODE_HDR.
       </p>
       <p>
-        Because not all device implementations can fully support all the features of the android.hardware.camera2 API, device implementations MUST report the proper level of support with the <a href="https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics.html#INFO_SUPPORTED_HARDWARE_LEVEL">android.info.supportedHardwareLevel</a> property as described in the Android SDK and report the appropriate <a href="http://source.android.com/devices/camera/versioning.html">framework feature flags</a>.
+        Because not all device implementations can fully support all the features of the android.hardware.camera2 API, device implementations MUST report the proper level of support with the <a href="https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics.html#INFO_SUPPORTED_HARDWARE_LEVEL">android.info.supportedHardwareLevel</a> property as described in the Android SDK and report the appropriate <a href="http://source.android.com/devices/camera/versioning.html">framework feature flags</a> .
       </p>
       <p>
         Device implementations MUST also declare its Individual camera capabilities of android.hardware.camera2 via the android.request.availableCapabilities property and declare the appropriate <a href="http://source.android.com/devices/camera/versioning.html">feature flags</a> ; a device must define the feature flag if any of its attached camera devices supports the feature.
@@ -6165,7 +6176,7 @@
         Regardless of the form of shared storage used, if the device implementation has a USB port with USB peripheral mode support, it MUST provide some mechanism to access the contents of shared storage from a host computer. Device implementations MAY use USB mass storage, but SHOULD use Media Transfer Protocol to satisfy this requirement. If the device implementation supports Media Transfer Protocol, it:
       </p>
       <ul>
-        <li>SHOULD be compatible with the reference Android MTP host, <a href="http://www.android.com/filetransfer">Android File Transfer</a>.
+        <li>SHOULD be compatible with the reference Android MTP host, <a href="http://www.android.com/filetransfer">Android File Transfer</a> .
         </li>
         <li>SHOULD report a USB device class of 0x00.
         </li>
@@ -6204,7 +6215,7 @@
         </li>
         <li>It SHOULD implement the Android Open Accessory (AOA) API and specification as documented in the Android SDK documentation, and if it is an Android Handheld device it MUST implement the AOA API. Device implementations implementing the AOA specification:
           <ul>
-            <li>MUST declare support for the hardware feature <a href="http://developer.android.com/guide/topics/connectivity/usb/accessory.html">android.hardware.usb.accessory</a>.
+            <li>MUST declare support for the hardware feature <a href="http://developer.android.com/guide/topics/connectivity/usb/accessory.html">android.hardware.usb.accessory</a> .
             </li>
             <li>MUST implement the <a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">USB audio class</a> as documented in the Android SDK documentation.
             </li>
@@ -6212,7 +6223,7 @@
             </li>
           </ul>
         </li>
-        <li>It SHOULD implement support to draw 1.5 A current during HS chirp and traffic as specified in the <a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">USB Battery Charging specification, revision 1.2</a>. Existing and new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to the future platform releases.
+        <li>It SHOULD implement support to draw 1.5 A current during HS chirp and traffic as specified in the <a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">USB Battery Charging specification, revision 1.2</a> . Existing and new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to the future platform releases.
         </li>
         <li>Type-C devices MUST detect 1.5A and 3.0A chargers per the Type-C resistor standard and it must detect changes in the advertisement.
         </li>
@@ -6240,15 +6251,15 @@
         </li>
         <li>is <strong>STRONGLY RECOMMENDED</strong> to implement the <a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">USB audio class</a> as documented in the Android SDK documentation.
         </li>
-        <li>MUST implement the Android USB host API as documented in the Android SDK, and MUST declare support for the hardware feature <a href="http://developer.android.com/guide/topics/connectivity/usb/host.html">android.hardware.usb.host</a>.
+        <li>MUST implement the Android USB host API as documented in the Android SDK, and MUST declare support for the hardware feature <a href="http://developer.android.com/guide/topics/connectivity/usb/host.html">android.hardware.usb.host</a> .
         </li>
-        <li>SHOULD support the Charging Downstream Port output current range of 1.5 A ~ 5 A as specified in the <a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">USB Battery Charging specifications, revision 1.2</a>.
+        <li>SHOULD support device charging while in host mode; advertising a source current of at least 1.5A as specified in the Termination Parameters section of the [USB Type-C Cable and Connector Specification Revision 1.2] (http://www.usb.org/developers/docs/usb_31_021517.zip) for USB Type-C connectors or using Charging Downstream Port(CDP) output current range as specified in the <a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">USB Battery Charging specifications, revision 1.2</a> for Micro-AB connectors.
         </li>
         <li>USB Type-C devices are STRONGLY RECOMMENDED to support DisplayPort, SHOULD support USB SuperSpeed Data Rates, and are STRONGLY RECOMMENDED to support Power Delivery for data and power role swapping.
         </li>
         <li>Devices with any type-A or type-AB ports MUST NOT ship with an adapter converting from this port to a type-C receptacle.
         </li>
-        <li>MUST recognize any remotely connected MTP (Media Transfer Protocol) devices and make their contents accessible through the <code>ACTION_GET_CONTENT</code>, <code>ACTION_OPEN_DOCUMENT</code>, and <code>ACTION_CREATE_DOCUMENT</code> intents, if the Storage Access Framework (SAF) is supported.
+        <li>MUST recognize any remotely connected MTP (Media Transfer Protocol) devices and make their contents accessible through the <code>ACTION_GET_CONTENT</code> , <code>ACTION_OPEN_DOCUMENT</code> , and <code>ACTION_CREATE_DOCUMENT</code> intents, if the Storage Access Framework (SAF) is supported.
         </li>
         <li>MUST, if using a Type-C USB port and including support for peripheral mode, implement Dual Role Port functionality as defined by the USB Type-C specification (section 4.5.1.3.3).
         </li>
@@ -6265,16 +6276,16 @@
         Android Handheld, Watch, and Automotive implementations MUST include a microphone.
       </div>
       <p>
-        Device implementations MAY omit a microphone. However, if a device implementation omits a microphone, it MUST NOT report the android.hardware.microphone feature constant, and MUST implement the audio recording API at least as no-ops, per <a href="#7_hardware_compatibility">section 7</a>. Conversely, device implementations that do possess a microphone:
+        Device implementations MAY omit a microphone. However, if a device implementation omits a microphone, it MUST NOT report the android.hardware.microphone feature constant, and MUST implement the audio recording API at least as no-ops, per <a href="#7_hardware_compatibility">section 7</a> . Conversely, device implementations that do possess a microphone:
       </p>
       <ul>
         <li>MUST report the android.hardware.microphone feature constant.
         </li>
-        <li>MUST meet the audio recording requirements in <a href="#5_4_audio_recording">section 5.4</a>.
+        <li>MUST meet the audio recording requirements in <a href="#5_4_audio_recording">section 5.4</a> .
         </li>
-        <li>MUST meet the audio latency requirements in <a href="#5_6_audio_latency">section 5.6</a>.
+        <li>MUST meet the audio latency requirements in <a href="#5_6_audio_latency">section 5.6</a> .
         </li>
-        <li>STRONGLY RECOMMENDED to support near-ultrasound recording as described in <a href="#7_8_3_near_ultrasound">section 7.8.3</a>.
+        <li>STRONGLY RECOMMENDED to support near-ultrasound recording as described in <a href="#7_8_3_near_ultrasound">section 7.8.3</a> .
         </li>
       </ul>
       <h3 id="7_8_2_audio_output">
@@ -6289,11 +6300,11 @@
       <ul>
         <li>MUST report the android.hardware.audio.output feature constant.
         </li>
-        <li>MUST meet the audio playback requirements in <a href="#5_5_audio_playback">section 5.5</a>.
+        <li>MUST meet the audio playback requirements in <a href="#5_5_audio_playback">section 5.5</a> .
         </li>
-        <li>MUST meet the audio latency requirements in <a href="#5_6_audio_latency">section 5.6</a>.
+        <li>MUST meet the audio latency requirements in <a href="#5_6_audio_latency">section 5.6</a> .
         </li>
-        <li>STRONGLY RECOMMENDED to support near-ultrasound playback as described in <a href="#7_8_3_near_ultrasound">section 7.8.3</a>.
+        <li>STRONGLY RECOMMENDED to support near-ultrasound playback as described in <a href="#7_8_3_near_ultrasound">section 7.8.3</a> .
         </li>
       </ul>
       <p>
@@ -6318,13 +6329,13 @@
         <li>MUST support the detection and mapping to the keycodes for the following 3 ranges of equivalent impedance between the microphone and ground conductors on the audio plug:
           <ul>
             <li>
-              <strong>70 ohm or less</strong>: KEYCODE_HEADSETHOOK
+              <strong>70 ohm or less</strong> : KEYCODE_HEADSETHOOK
             </li>
             <li>
-              <strong>210-290 Ohm</strong>: KEYCODE_VOLUME_UP
+              <strong>210-290 Ohm</strong> : KEYCODE_VOLUME_UP
             </li>
             <li>
-              <strong>360-680 Ohm</strong>: KEYCODE_VOLUME_DOWN
+              <strong>360-680 Ohm</strong> : KEYCODE_VOLUME_DOWN
             </li>
           </ul>
         </li>
@@ -6370,7 +6381,7 @@
         7.9.1. Virtual Reality Mode
       </h3>
       <p>
-        Android handheld device implementations that support a mode for VR applications that handles stereoscopic rendering of notifications and disable monocular system UI components while a VR application has user focus MUST declare <code>android.software.vr.mode</code> feature. Devices declaring this feature MUST include an application implementing <code>android.service.vr.VrListenerService</code> that can be enabled by VR applications via <code>android.app.Activity#setVrModeEnabled</code>.
+        Android handheld device implementations that support a mode for VR applications that handles stereoscopic rendering of notifications and disable monocular system UI components while a VR application has user focus MUST declare <code>android.software.vr.mode</code> feature. Devices declaring this feature MUST include an application implementing <code>android.service.vr.VrListenerService</code> that can be enabled by VR applications via <code>android.app.Activity#setVrModeEnabled</code> .
       </p>
       <h3 id="7_9_2_virtual_reality_high_performance">
         7.9.2. Virtual Reality High Performance
@@ -6383,7 +6394,7 @@
         </li>
         <li>Device implementations MUST declare android.software.vr.mode feature.
         </li>
-        <li>Device implementations MAY provide an exclusive core to the foreground application and MAY support the <code>Process.getExclusiveCores</code> API to return the numbers of the CPU cores that are exclusive to the top foreground application. If exclusive core is supported, then the core MUST not allow any other userspace processes to run on it (except device drivers used by the application), but MAY allow some kernel processes to run as necessary.
+        <li>Device implementations MAY provide an exclusive core to the foreground application and MAY support the Process.getExclusiveCores API to return the numbers of the cpu cores that are exclusive to the top foreground application. If exclusive core is supported then the core MUST not allow any other userspace processes to run on it (except device drivers used by the application), but MAY allow some kernel processes to run as necessary.
         </li>
         <li>Device implementations MUST support sustained performance mode.
         </li>
@@ -6419,7 +6430,7 @@
         </li>
         <li>The display MUST support a low-persistence mode with ≤5 ms persistence,persistence being defined as the amount of time for which a pixel is emitting light.
         </li>
-        <li>Device implementations MUST support Bluetooth 4.2 and Bluetooth LE Data Length Extension <a href="#7_4_3_bluetooth">section 7.4.3</a>.
+        <li>Device implementations MUST support Bluetooth 4.2 and Bluetooth LE Data Length Extension <a href="#7_4_3_bluetooth">section 7.4.3</a> .
         </li>
       </ul>
       <h1 id="8_performance_and_power">
@@ -6436,13 +6447,13 @@
       </p>
       <ul>
         <li>
-          <strong>Consistent frame latency</strong>. Inconsistent frame latency or a delay to render frames MUST NOT happen more often than 5 frames in a second, and SHOULD be below 1 frames in a second.
+          <strong>Consistent frame latency</strong> . Inconsistent frame latency or a delay to render frames MUST NOT happen more often than 5 frames in a second, and SHOULD be below 1 frames in a second.
         </li>
         <li>
-          <strong>User interface latency</strong>. Device implementations MUST ensure low latency user experience by scrolling a list of 10K list entries as defined by the Android Compatibility Test Suite (CTS) in less than 36 secs.
+          <strong>User interface latency</strong> . Device implementations MUST ensure low latency user experience by scrolling a list of 10K list entries as defined by the Android Compatibility Test Suite (CTS) in less than 36 secs.
         </li>
         <li>
-          <strong>Task switching</strong>. When multiple applications have been launched, re-launching an already-running application after it has been launched MUST take less than 1 second.
+          <strong>Task switching</strong> . When multiple applications have been launched, re-launching an already-running application after it has been launched MUST take less than 1 second.
         </li>
       </ul>
       <h2 id="8_2_file_i/o_access_performance">
@@ -6453,16 +6464,16 @@
       </p>
       <ul>
         <li>
-          <strong>Sequential write</strong>. Device implementations MUST ensure a sequential write performance of at least 5MB/s for a 256MB file using 10MB write buffer.
+          <strong>Sequential write</strong> . Device implementations MUST ensure a sequential write performance of at least 5MB/s for a 256MB file using 10MB write buffer.
         </li>
         <li>
-          <strong>Random write</strong>. Device implementations MUST ensure a random write performance of at least 0.5MB/s for a 256MB file using 4KB write buffer.
+          <strong>Random write</strong> . Device implementations MUST ensure a random write performance of at least 0.5MB/s for a 256MB file using 4KB write buffer.
         </li>
         <li>
-          <strong>Sequential read</strong>. Device implementations MUST ensure a sequential read performance of at least 15MB/s for a 256MB file using 10MB write buffer.
+          <strong>Sequential read</strong> . Device implementations MUST ensure a sequential read performance of at least 15MB/s for a 256MB file using 10MB write buffer.
         </li>
         <li>
-          <strong>Random read</strong>. Device implementations MUST ensure a random read performance of at least 3.5MB/s for a 256MB file using 4KB write buffer.
+          <strong>Random read</strong> . Device implementations MUST ensure a random read performance of at least 3.5MB/s for a 256MB file using 4KB write buffer.
         </li>
       </ul>
       <h2 id="8_3_power-saving_modes">
@@ -6555,13 +6566,13 @@
         9.2. UID and Process Isolation
       </h2>
       <p>
-        Device implementations MUST support the Android application sandbox model, in which each application runs as a unique Unixstyle UID and in a separate process. Device implementations MUST support running multiple applications as the same Linux user ID, provided that the applications are properly signed and constructed, as defined in the <a href="http://developer.android.com/guide/topics/security/permissions.html">Security and Permissions reference</a>.
+        Device implementations MUST support the Android application sandbox model, in which each application runs as a unique Unixstyle UID and in a separate process. Device implementations MUST support running multiple applications as the same Linux user ID, provided that the applications are properly signed and constructed, as defined in the <a href="http://developer.android.com/guide/topics/security/permissions.html">Security and Permissions reference</a> .
       </p>
       <h2 id="9_3_filesystem_permissions">
         9.3. Filesystem Permissions
       </h2>
       <p>
-        Device implementations MUST support the Android file access permissions model as defined in the <a href="http://developer.android.com/guide/topics/security/permissions.html">Security and Permissions reference</a>.
+        Device implementations MUST support the Android file access permissions model as defined in the <a href="http://developer.android.com/guide/topics/security/permissions.html">Security and Permissions reference</a> .
       </p>
       <h2 id="9_4_alternate_execution_environments">
         9.4. Alternate Execution Environments
@@ -6570,7 +6581,7 @@
         Device implementations MAY include runtime environments that execute applications using some other software or technology than the Dalvik Executable Format or native code. However, such alternate execution environments MUST NOT compromise the Android security model or the security of installed Android applications, as described in this section.
       </p>
       <p>
-        Alternate runtimes MUST themselves be Android applications, and abide by the standard Android security model, as described elsewhere in <a href="#9_security_model_compatibility">section 9</a>.
+        Alternate runtimes MUST themselves be Android applications, and abide by the standard Android security model, as described elsewhere in <a href="#9_security_model_compatibility">section 9</a> .
       </p>
       <p>
         Alternate runtimes MUST NOT be granted access to resources protected by permissions not requested in the runtime’s AndroidManifest.xml file via the &lt;uses-permission&gt; mechanism.
@@ -6594,7 +6605,7 @@
         </li>
       </ul>
       <p>
-        The.apk files of alternate runtimes MAY be included in the system image of a device implementation, but MUST be signed with a key distinct from the key used to sign other applications included with the device implementation.
+        The .apk files of alternate runtimes MAY be included in the system image of a device implementation, but MUST be signed with a key distinct from the key used to sign other applications included with the device implementation.
       </p>
       <p>
         When installing applications, alternate runtimes MUST obtain user consent for the Android permissions used by the application. If an application needs to make use of a device resource for which there is a corresponding Android permission (such as Camera, GPS, etc.), the alternate runtime MUST inform the user that the application will be able to access that resource. If the runtime environment does not record application capabilities in this manner, the runtime environment MUST list all permissions held by the runtime itself when installing any application using that runtime.
@@ -6606,7 +6617,7 @@
         This feature is optional for all device types.
       </div>
       <p>
-        Android includes <a href="http://developer.android.com/reference/android/os/UserManager.html">support for multiple users</a> and provides support for full user isolation. Device implementations MAY enable multiple users, but when enabled MUST meet the following requirements related to <a href="http://source.android.com/devices/storage/traditional.html">multi-user support</a>:
+        Android includes <a href="http://developer.android.com/reference/android/os/UserManager.html">support for multiple users</a> and provides support for full user isolation. Device implementations MAY enable multiple users, but when enabled MUST meet the following requirements related to <a href="http://source.android.com/devices/storage/traditional.html">multi-user support</a> :
       </p>
       <ul>
         <li>Android Automotive device implementations with multi-user support enabled MUST include a guest account that allows all functions provided by the vehicle system without requiring a user to log in.
@@ -6624,7 +6635,7 @@
         9.6. Premium SMS Warning
       </h2>
       <p>
-        Android includes support for warning users of any outgoing <a href="http://en.wikipedia.org/wiki/Short_code">premium SMS message</a>. Premium SMS messages are text messages sent to a service registered with a carrier that may incur a charge to the user. Device implementations that declare support for android.hardware.telephony MUST warn users before sending a SMS message to numbers identified by regular expressions defined in /data/misc/sms/codes.xml file in the device. The upstream Android Open Source Project provides an implementation that satisfies this requirement.
+        Android includes support for warning users of any outgoing <a href="http://en.wikipedia.org/wiki/Short_code">premium SMS message</a> . Premium SMS messages are text messages sent to a service registered with a carrier that may incur a charge to the user. Device implementations that declare support for android.hardware.telephony MUST warn users before sending a SMS message to numbers identified by regular expressions defined in /data/misc/sms/codes.xml file in the device. The upstream Android Open Source Project provides an implementation that satisfies this requirement.
       </p>
       <h2 id="9_7_kernel_security_features">
         9.7. Kernel Security Features
@@ -6663,7 +6674,7 @@
         Device implementations SHOULD retain the default SELinux policy provided in the system/sepolicy folder of the upstream Android Open Source Project and only further add to this policy for their own device-specific configuration. Device implementations MUST be compatible with the upstream Android Open Source Project.
       </p>
       <p>
-        Devices MUST implement a kernel application sandboxing mechanism which allows filtering of system calls using a configurable policy from multithreaded programs. The upstream Android Open Source Project meets this requirement through enabling the seccomp-BPF with threadgroup synchronization (TSYNC) as described <a href="http://source.android.com/devices/tech/config/kernel.html#Seccomp-BPF-TSYNC">in the Kernel Configuration section of source.android.com</a>.
+        Devices MUST implement a kernel application sandboxing mechanism which allows filtering of system calls using a configurable policy from multithreaded programs. The upstream Android Open Source Project meets this requirement through enabling the seccomp-BPF with threadgroup synchronization (TSYNC) as described <a href="http://source.android.com/devices/tech/config/kernel.html#Seccomp-BPF-TSYNC">in the Kernel Configuration section of source.android.com</a> .
       </p>
       <h2 id="9_8_privacy">
         9.8. Privacy
@@ -6672,7 +6683,7 @@
         If the device implements functionality in the system that captures the contents displayed on the screen and/or records the audio stream played on the device, it MUST continuously notify the user whenever this functionality is enabled and actively capturing/recording.
       </p>
       <p>
-        If a device implementation has a mechanism that routes network data traffic through a proxy server or VPN gateway by default (for example, preloading a VPN service with android.permission.CONTROL_VPN granted), the device implementation MUST ask for the user's consent before enabling that mechanism, unless that VPN is enabled by the Device Policy Controller via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setAlwaysOnVpnPackage(android.content.ComponentName,%20java.lang.String,%20boolean)"><code>DevicePolicyManager.setAlwaysOnVpnPackage()</code></a>, in which case the user does not need to provide a separate consent, but MUST only be notified.
+        If a device implementation has a mechanism that routes network data traffic through a proxy server or VPN gateway by default (for example, preloading a VPN service with android.permission.CONTROL_VPN granted), the device implementation MUST ask for the user's consent before enabling that mechanism, unless that VPN is enabled by the Device Policy Controller via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setAlwaysOnVpnPackage(android.content.ComponentName,%20java.lang.String,%20boolean)"><code>DevicePolicyManager.setAlwaysOnVpnPackage()</code></a> , in which case the user does not need to provide a separate consent, but MUST only be notified.
       </p>
       <p>
         Device implementations MUST ship with an empty user-added Certificate Authority (CA) store, and MUST preinstall the same root certificates for the system-trusted CA store as <a href="https://source.android.com/security/overview/app-security.html#certificate-authorities">provided</a> in the upstream Android Open Source Project.
@@ -6785,7 +6796,7 @@
         9.11. Keys and Credentials
       </h2>
       <p>
-        The <a href="https://developer.android.com/training/articles/keystore.html">Android Keystore System</a> allows app developers to store cryptographic keys in a container and use them in cryptographic operations through the <a href="https://developer.android.com/reference/android/security/KeyChain.html">KeyChain API</a> or the <a href="https://developer.android.com/reference/java/security/KeyStore.html">Keystore API</a>.
+        The <a href="https://developer.android.com/training/articles/keystore.html">Android Keystore System</a> allows app developers to store cryptographic keys in a container and use them in cryptographic operations through the <a href="https://developer.android.com/reference/android/security/KeyChain.html">KeyChain API</a> or the <a href="https://developer.android.com/reference/java/security/KeyStore.html">Keystore API</a> .
       </p>
       <p>
         All Android device implementations MUST meet the following requirements:
@@ -6797,15 +6808,15 @@
         </li>
         <li>When the device implementation supports a secure lock screen it MUST back up the keystore implementation with secure hardware and meet following requirements:
           <ul>
-            <li>MUST have hardware backed implementations of RSA, AES, ECDSA and HMAC cryptographic algorithms and MD5, SHA1, SHA-2 Family hash functions to properly support the <a href="https://developer.android.com/training/articles/keystore.html#SupportedAlgorithms">Android Keystore system's supported algorithms</a>.
+            <li>MUST have implementations of RSA, AES, ECDSA and HMAC cryptographic algorithms and MD5, SHA1, and SHA-2 family hash functions to properly support the Android Keystore system's supported algorithms in an area that is securely isolated from the code running on the kernel and above. Secure isolation MUST block all potential mechanisms by which kernel or userspace code might access the internal state of the isolated environment, including DMA. The upstream Android Open Source Project (AOSP) meets this requirement by using the <a href="https://source.android.com/security/trusty/">Trusty</a> implementation, but another ARM TrustZone-based solution or a third-party reviewed secure implementation of a proper hypervisor-based isolation are alternative options.
             </li>
-            <li>MUST perform the lock screen authentication in the secure hardware and only when successful allow the authentication-bound keys to be used. The upstream Android Open Source Project provides the <a href="http://source.android.com/devices/tech/security/authentication/gatekeeper.html">Gatekeeper Hardware Abstraction Layer (HAL)</a> that can be used to satisfy this requirement.
+            <li>MUST perform the lock screen authentication in the isolated execution environment and only when successful, allow the authentication-bound keys to be used. The upstream Android Open Source Project provides the <a href="http://source.android.com/devices/tech/security/authentication/gatekeeper.html">Gatekeeper Hardware Abstraction Layer (HAL)</a> and Trusty, which can be used to satisfy this requirement.
             </li>
           </ul>
         </li>
       </ul>
       <p>
-        Note that if a device implementation is already launched on an earlier Android version, and does not have a fingerprint scanner, such a device is exempted from the requirement to have a hardware-backed keystore.
+        Note that if a device implementation is already launched on an earlier Android version, such a device is exempted from the requirement to have a hardware-backed keystore, unless it declares the <code>android.hardware.fingerprint</code> feature which requires a hardware-backed keystore.
       </p>
       <h3 id="9_11_1_secure_lock_screen">
         9.11.1. Secure Lock Screen
@@ -6822,7 +6833,7 @@
             </li>
             <li>MUST not replace any of the existing authentication methods (PIN, pattern, password) implemented and provided in AOSP.
             </li>
-            <li>MUST be disabled when the Device Policy Controller (DPC) application has set the password quality policy via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordQuality%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setPasswordQuality()</code></a> method with a more restrictive quality constant than <code>PASSWORD_QUALITY_SOMETHING</code>.
+            <li>MUST be disabled when the Device Policy Controller (DPC) application has set the password quality policy via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordQuality%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setPasswordQuality()</code></a> method with a more restrictive quality constant than <code>PASSWORD_QUALITY_SOMETHING</code> .
             </li>
           </ul>
         </li>
@@ -6830,7 +6841,7 @@
           <ul>
             <li>It MUST have a fall-back mechanism to use one of the primary authentication methods which is based on a known secret and meets the requirements to be treated as a secure lock screen.
             </li>
-            <li>It MUST be disabled and only allow the primary authentication to unlock the screen when the Device Policy Controller (DPC) application has set the policy with either the <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setKeyguardDisabledFeatures%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setKeyguardDisabledFeatures(KEYGUARD_DISABLE_TRUST_AGENTS)</code></a> method or the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordQuality%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setPasswordQuality()</code></a> method with a more restrictive quality constant than <code>PASSWORD_QUALITY_UNSPECIFIED</code>.
+            <li>It MUST be disabled and only allow the primary authentication to unlock the screen when the Device Policy Controller (DPC) application has set the policy with either the <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setKeyguardDisabledFeatures%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setKeyguardDisabledFeatures(KEYGUARD_DISABLE_TRUST_AGENTS)</code></a> method or the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordQuality%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setPasswordQuality()</code></a> method with a more restrictive quality constant than <code>PASSWORD_QUALITY_UNSPECIFIED</code> .
             </li>
           </ul>
         </li>
@@ -6838,9 +6849,9 @@
           <ul>
             <li>It MUST have a fall-back mechanism to use one of the primary authentication methods which is based on a known secret and meets the requirements to be treated as a secure lock screen.
             </li>
-            <li>It MUST be disabled and only allow the primary authentication to unlock the screen when the Device Policy Controller (DPC) application has set the keguard feature policy by calling the method <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setKeyguardDisabledFeatures%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setKeyguardDisabledFeatures(KEYGUARD_DISABLE_FINGERPRINT)</code></a>.
+            <li>It MUST be disabled and only allow the primary authentication to unlock the screen when the Device Policy Controller (DPC) application has set the keguard feature policy by calling the method <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setKeyguardDisabledFeatures%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setKeyguardDisabledFeatures(KEYGUARD_DISABLE_FINGERPRINT)</code></a> .
             </li>
-            <li>It MUST have a false acceptance rate that is equal or stronger than what is required for a fingerprint sensor as described in section 7.3.10, or otherwise MUST be disabled and only allow the primary authentication to unlock the screen when the Device Policy Controller (DPC) application has set the password quality policy via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordQuality%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setPasswordQuality()</code></a> method with a more restrictive quality constant than <code>PASSWORD_QUALITY_BIOMETRIC_WEAK</code>.
+            <li>It MUST have a false acceptance rate that is equal or stronger than what is required for a fingerprint sensor as described in section 7.3.10, or otherwise MUST be disabled and only allow the primary authentication to unlock the screen when the Device Policy Controller (DPC) application has set the password quality policy via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordQuality%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setPasswordQuality()</code></a> method with a more restrictive quality constant than <code>PASSWORD_QUALITY_BIOMETRIC_WEAK</code> .
             </li>
           </ul>
         </li>
@@ -6848,9 +6859,9 @@
           <ul>
             <li>MUST return <code>false</code> for both the <a href="http://developer.android.com/reference/android/app/KeyguardManager.html#isKeyguardSecure%28%29"><code>KeyguardManager.isKeyguardSecure()</code></a> and the <a href="https://developer.android.com/reference/android/app/KeyguardManager.html#isDeviceSecure%28%29"><code>KeyguardManager.isDeviceSecure()</code></a> methods.
             </li>
-            <li>MUST be disabled when the Device Policy Controller (DPC) application has set the password quality policy via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordQuality%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setPasswordQuality()</code></a> method with a more restrictive quality constant than <code>PASSWORD_QUALITY_UNSPECIFIED</code>.
+            <li>MUST be disabled when the Device Policy Controller (DPC) application has set the password quality policy via the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordQuality%28android.content.ComponentName,%20int%29"><code>DevicePolicyManager.setPasswordQuality()</code></a> method with a more restrictive quality constant than <code>PASSWORD_QUALITY_UNSPECIFIED</code> .
             </li>
-            <li>MUST NOT reset the password expiration timers set by <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordExpirationTimeout%28android.content.ComponentName,%20long%29"><code>DevicePolicyManager.setPasswordExpirationTimeout()</code></a>.
+            <li>MUST NOT reset the password expiration timers set by <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordExpirationTimeout%28android.content.ComponentName,%20long%29"><code>DevicePolicyManager.setPasswordExpirationTimeout()</code></a> .
             </li>
             <li>MUST NOT authenticate access to keystores if the application has called <a href="https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html#setUserAuthenticationRequired%28boolean%29"><code>KeyGenParameterSpec.Builder.setUserAuthenticationRequired(true)</code></a> ).
             </li>
@@ -6858,9 +6869,9 @@
         </li>
         <li>If the authentication method is based on a physical token, the location, or biometrics that has higher false acceptance rate than what is required for fingerprint sensors as described in section 7.3.10, then it:
           <ul>
-            <li>MUST NOT reset the password expiration timers set by <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordExpirationTimeout%28android.content.ComponentName,%20long%29"><code>DevicePolicyManager.setPasswordExpirationTimeout()</code></a>.
+            <li>MUST NOT reset the password expiration timers set by <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#setPasswordExpirationTimeout%28android.content.ComponentName,%20long%29"><code>DevicePolicyManager.setPasswordExpirationTimeout()</code></a> .
             </li>
-            <li>MUST NOT authenticate access to keystores if the application has called <a href="https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html#setUserAuthenticationRequired%28boolean%29"><code>KeyGenParameterSpec.Builder.setUserAuthenticationRequired(true)</code></a>.
+            <li>MUST NOT authenticate access to keystores if the application has called <a href="https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html#setUserAuthenticationRequired%28boolean%29"><code>KeyGenParameterSpec.Builder.setUserAuthenticationRequired(true)</code></a> .
             </li>
           </ul>
         </li>
@@ -6878,7 +6889,7 @@
         </li>
       </ul>
       <p>
-        All user-generated data MUST be deleted. This MUST satisfy relevant industry standards for data deletion such as NIST SP800-88. This MUST be used for the implementation of the wipeData() API (part of the Android Device Administration API) described in <a href="#3_9_device_administration">section 3.9 Device Administration</a>.
+        All user-generated data MUST be deleted. This MUST satisfy relevant industry standards for data deletion such as NIST SP800-88. This MUST be used for the implementation of the wipeData() API (part of the Android Device Administration API) described in <a href="#3_9_device_administration">section 3.9 Device Administration</a> .
       </p>
       <p>
         Devices MAY provide a fast data wipe that conducts a logical data erase.
@@ -6978,7 +6989,7 @@
         For device implementations that are launching with Android 6.0 and later, the update mechanism SHOULD support verifying that the system image is binary identical to expected result following an OTA. The block-based OTA implementation in the upstream Android Open Source Project, added since Android 5.1, satisfies this requirement.
       </p>
       <p>
-        Also, device implementations SHOULD support <a href="https://source.android.com/devices/tech/ota/ab_updates.html">A/B system updates</a>. The AOSP implements this feature using the boot control HAL.
+        Also, device implementations SHOULD support <a href="https://source.android.com/devices/tech/ota/ab_updates.html">A/B system updates</a> . The AOSP implements this feature using the boot control HAL.
       </p>
       <p>
         If an error is found in a device implementation after it has been released but within its reasonable product lifetime that is determined in consultation with the Android Compatibility Team to affect the compatibility of third-party applications, the device implementer MUST correct the error via a software update available that can be applied per the mechanism just described.
