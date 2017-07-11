@@ -60,6 +60,14 @@ landing_page:
       image_path: /images/android_stack.png
   - heading: News
     items:
+    - heading: July Android Security Bulletin
+      description: >
+        The July 2017 Android Security Bulletin has been published along with
+        links to associated fixes and new build numbers to support the July
+        Android security release.
+      buttons:
+      - label: July 6th, 2017
+        path: /security/bulletin/2017-07-01
     - heading: Updated Debugging Docs
       description: >
         Debugging documentation has been updated with details on using
@@ -76,14 +84,6 @@ landing_page:
       buttons:
       - label: May 3rd, 2017
         path: /source/devices#960hikey
-    - heading: May Android Security Bulletin
-      description: >
-        The May 2017 Android Security Bulletin has been published along with
-        links to associated fixes and new build numbers to support the May
-        Android security release.
-      buttons:
-      - label: May 2nd, 2017
-        path: /security/bulletin/2017-05-01
     - heading: Evaluating Performance in Detail
       description: >
         Detailed instructions now exist for understanding and examining the
