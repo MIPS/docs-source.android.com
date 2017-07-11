@@ -28,9 +28,15 @@
 these accessories were historically limited to simple file storage, due to
 their expected impermanence and the minimal data protection offered to
 <a href="/devices/storage/traditional.html">traditional external storage</a>.
-Android 6.0 introduces the ability to
+Android 6.0 introduced the ability to
 <a href="http://developer.android.com/about/versions/marshmallow/android-6.0.html#adoptable-storage">adopt</a>
 external storage media to act like internal storage.</p>
+
+<p class="warning"><strong>Warning:</strong> <a
+href="/security/encryption/file-based.html">File-based encryption</a> cannot
+currently be used together with adoptable storage. On devices using file-based
+encryption, new storage media (such as an SD card) must be used as <a
+href="/devices/storage/traditional.html">traditional storage</a>.</p>
 
 <p>When external storage media is adopted, it’s formatted and encrypted to only
 work with a single Android device at a time. Because the media is strongly tied
