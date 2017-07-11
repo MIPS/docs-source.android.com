@@ -127,15 +127,16 @@ single commit, use git rebase -i before you run repo upload.</p>
 </li>
 <li>
 <p>For each commit in the series, enter the Gerrit change ID inside the brackets:</p>
-<pre><code># Replacing from branch foo 
+<pre><code># Replacing from branch foo
 [ 3021 ] 35f2596c Refactor part of GetUploadableBranches to lookup one specific...
-[ 2829 ] ec18b4ba Update proto client to support patch set replacments 
+[ 2829 ] ec18b4ba Update proto client to support patch set replacments
 # Insert change numbers in the brackets to add a new patch set.
 # To create a new change record, leave the brackets empty.
 </code></pre>
 </li>
 </ul>
 <p>After the upload is complete the changes will have an additional Patch Set.</p>
+<p>If you only want to upload the currently checked out Git branch, you can use the flag <code>--current-branch</code> (or <code>--cbr</code> for short).</p>
 
 <h2 id="diff">diff</h2>
 <pre class="devsite-terminal devsite-click-to-copy">

@@ -272,19 +272,19 @@ set indicate which user can use the key:</p>
 
 <ul>
   <li><code>KM_TAG_ALL_USERS</code> indicates the key is usable by all users. If
-  present, <code>KM_TAG_USER_ID</code> and <code>KM_TAG_SECURE_USER_ID</code> must not be present.
+  present, <code>KM_TAG_USER_ID</code> and <code>KM_TAG_USER_SECURE_ID</code> must not be present.
   <li><code>KM_TAG_USER_ID</code> has a numeric value specifying the ID of the authorized user.
   Note that this
 is the Android user ID (for multi-user), not the application UID, and it is
 enforced by non-secure software only. If present, <code>KM_TAG_ALL_USERS</code> must not be present.
-  <li><code>KM_TAG_SECURE_USER_ID</code> has a 64-bit numeric value specifying the secure user ID
+  <li><code>KM_TAG_USER_SECURE_ID</code> has a 64-bit numeric value specifying the secure user ID
   that must be provided
 in a secure authentication token to unlock use of the key. If repeated, the key
 may be used if any of the values is provided in a secure authentication token.
 </ul>
 
 <p>The second set indicate whether and when the user must be authenticated. If
-neither of these tags is present, but <code>KM_TAG_SECURE_USER_ID</code> is, authentication is
+neither of these tags is present, but <code>KM_TAG_USER_SECURE_ID</code> is, authentication is
 required for every use of the key.</p>
 
 <ul>
