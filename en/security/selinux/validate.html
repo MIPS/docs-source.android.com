@@ -125,9 +125,17 @@ is compiled automatically when you build Android from source.</p>
 
 <p>To use it, run:</p>
 
-<pre class="devsite-terminal devsite-click-to-copy">
-adb shell su root dmesg | audit2allow -p $OUT/root/sepolicy
+<pre class="devsite-click-to-copy">
+<code class="devsite-terminal">adb pull /sys/fs/selinux/policy</code>
+<code class="devsite-terminal">adb logcat -b all -d | audit2allow -p policy</code>
 </pre>
+
+<p class="note"><strong>Note</strong>: Running these commands does not change
+bugreport.txt because all logs are already there, including the ones from
+before the last reboot. On devices running an OTA or development flash, old
+and new violations are mixed until another reboot. To address this, reboot
+the device again or filter LAST_KMSG and LAST_LOGCAT from your bugreport.
+</p>
 
 <p>Nevertheless, care must be taken to examine each potential addition for
 overreaching permissions. For example, feeding audit2allow the
