@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <title>
-   Android 7.1 Compatibility Definition
-  </title>
-  <link href="/compatibility/android-cdd.css" rel="stylesheet" type="text/css"/>
- </head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>
+      Android 7.0, (N) Compatibility Definition
+    </title>
+    <link href="/compatibility/android-cdd.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+  </head>
   <body>
     <h6>
       Table of Contents
@@ -1228,7 +1228,7 @@
             SECURITY_PATCH
           </td>
           <td>
-            A value indicating the security patch level of a build. It MUST signify that the build includes all security patches issued up through the designated Android Public Security Bulletin. It MUST be in the format [YYYY-MM-DD], matching one of the Android Security Patch Level strings of the <a href="source.android.com/security/bulletin">Public Security Bulletins</a> , for example "2015-11-01".
+            A value indicating the security patch level of a build. It MUST signify that the build is not in any way vulnerable to any of the issues described up through the designated Android Public Security Bulletin. It MUST be in the format [YYYY-MM-DD], matching a defined string documented in the <a href="source.android.com/security/bulletin">Android Public Security Bulletin</a> or in the <a href="http://source.android.com/security/advisory">Android Security Advisory</a> , for example "2015-11-01".
           </td>
         </tr>
         <tr>
@@ -2032,10 +2032,6 @@
         </li>
         <li>Device implementations that include support for lock screen MAY support application widgets on the lock screen.
         </li>
-        <li>SHOULD trigger the fast-switch action between the two most recently used apps, when the recents function key is tapped twice.
-        </li>
-        <li>SHOULD trigger the split-screen multiwindow-mode, if supported, when the recents functions key is long pressed.
-        </li>
       </ul>
       <h3 id="3_8_3_notifications">
         3.8.3. Notifications
@@ -2093,9 +2089,9 @@
         Device implementations that support the DND (Do not Disturb) feature MUST meet the following requirements:
       </p>
       <ul>
-        <li>MUST implement an activity where the user can grant or deny the app access to DND policy configurations in response to the intent <a href="https://developer.android.com/reference/android/provider/Settings.html#ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS">ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS</a> .
+        <li>MUST implement an activity that would respond to the intent <a href="https://developer.android.com/reference/android/provider/Settings.html#ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS">ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS</a> , which for implementations with UI_MODE_TYPE_NORMAL it MUST be an activity where the user can grant or deny the app access to DND policy configurations.
         </li>
-        <li>MUST display <a href="https://developer.android.com/reference/android/app/NotificationManager.html#addAutomaticZenRule%28android.app.AutomaticZenRule%29">Automatic DND rules</a> created by applications alongside the user-created and pre-defined rules.
+        <li>MUST, for when the device implementation has provided a means for the user to grant or deny third-party apps to access the DND policy configuration, display <a href="https://developer.android.com/reference/android/app/NotificationManager.html#addAutomaticZenRule%28android.app.AutomaticZenRule%29">Automatic DND rules</a> created by applications alongside the user-created and pre-defined rules.
         </li>
         <li>MUST honor the <a href="https://developer.android.com/reference/android/app/NotificationManager.Policy.html#suppressedVisualEffects"><code>suppressedVisualEffects</code></a> values passed along the <a href="https://developer.android.com/reference/android/app/NotificationManager.Policy.html#NotificationManager.Policy%28int,%20int,%20int,%20int%29"><code>NotificationManager.Policy</code></a> and if an app has set any of the SUPPRESSED_EFFECT_SCREEN_OFF or SUPPRESSED_EFFECT_SCREEN_ON flags, it SHOULD indicate to the user that the visual effects are suppressed in the DND settings menu.
         </li>
@@ -2184,7 +2180,7 @@
       <ul>
         <li>MUST support at least up to 20 displayed activities.
         </li>
-        <li>SHOULD display the titles of at least 4 activities at a time.
+        <li>SHOULD at least display the title of 4 activities at a time.
         </li>
         <li>MUST implement the <a href="http://developer.android.com/about/versions/android-5.0.html#ScreenPinning">screen pinning behavior</a> and provide the user with a settings menu to toggle the feature.
         </li>
@@ -2195,6 +2191,10 @@
         <li>SHOULD implement a shortcut to switch easily to the previous activity
         </li>
         <li>MAY display affiliated recents as a group that moves together.
+        </li>
+        <li>SHOULD trigger the fast-switch action between the two most recently used apps, when the recents function key is tapped twice.
+        </li>
+        <li>SHOULD trigger the split-screen multiwindow-mode, if supported, when the recents functions key is long pressed.
         </li>
       </ul>
       <p>
@@ -2566,7 +2566,7 @@
         Device implementations MUST install and run Android “.apk” files as generated by the “aapt” tool included in the <a href="http://developer.android.com/tools/help/index.html">official Android SDK</a> . For this reason device implementations SHOULD use the reference implementation’s package management system.
       </p>
       <p>
-        The package manager MUST support verifying “.apk” files using the <a href="https://source.android.com/security/apksigning/v2.html">APK Signature Scheme v2</a> .
+        The package manager MUST support verifying “.apk” files using the <a href="https://source.android.com/security/apksigning/v2.html">APK Signature Scheme v2</a> and <a href="https://source.android.com/security/apksigning/v2.html#v1-verification">JAR signing</a> .
       </p>
       <p>
         Devices implementations MUST NOT extend either the <a href="http://developer.android.com/guide/components/fundamentals.html">.apk</a> , <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">Android Manifest</a> , <a href="https://android.googlesource.com/platform/dalvik/">Dalvik bytecode</a> , or RenderScript bytecode formats in such a way that would prevent those files from installing and running correctly on other compatible devices.
@@ -4540,17 +4540,22 @@
       <h4 id="7_1_1_2_screen_aspect_ratio">
         7.1.1.2. Screen Aspect Ratio
       </h4>
-      <div class="note">
-        Android Watch devices MAY have an aspect ratio of 1.0 (1:1).
-      </div>
       <p>
-        The screen aspect ratio MUST be a value from 1.3333 (4:3) to 1.86 (roughly 16:9), but Android Watch devices MAY have an aspect ratio of 1.0 (1:1) because such a device implementation will use a UI_MODE_TYPE_WATCH as the android.content.res.Configuration.uiMode.
+        While there is no restriction to the screen aspect ratio value of the physical screen display, the screen aspect ratio of the surface that third-party apps are rendered on and which can be derived from the values reported via the <a href="https://developer.android.com/reference/android/util/DisplayMetrics.html">DisplayMetrics</a> MUST meet the following requirements:
       </p>
+      <ul>
+        <li>If the <a href="https://developer.android.com/reference/android/content/res/Configuration.html#uiMode">uiMode</a> is configured as UI_MODE_TYPE_WATCH, the aspect ratio value MAY be set as 1.0 (1:1).
+        </li>
+        <li>If the third-party app indicates that it is resizeable via the <a href="https://developer.android.com/guide/topics/ui/multi-window.html#configuring">android:resizeableActivity</a> attribute, there are no restrictions to the aspect ratio value.
+        </li>
+        <li>For all other cases, the aspect ratio MUST be a value between 1.3333 (4:3) and 1.86 (roughly 16:9) unless the app has indicated explicitly that it supports a higher screen aspect ratio through the <a href="https://developer.android.com/guide/practices/screens_support.html#MaxAspectRatio">maxAspectRatio</a> metadata value.
+        </li>
+      </ul>
       <h4 id="7_1_1_3_screen_density">
         7.1.1.3. Screen Density
       </h4>
       <p>
-        The Android UI framework defines a set of standard logical densities to help application developers target application resources. Device implementations MUST report only one of the following logical Android framework densities through the android.util.DisplayMetrics APIs, and MUST execute applications at this standard density and MUST NOT change the value at at any time for the default display.
+        The Android UI framework defines a set of standard logical densities to help application developers target application resources. By default, device implementations MUST report only one of the following logical Android framework densities through the <a href="https://developer.android.com/reference/android/util/DisplayMetrics.html#DENSITY_DEVICE_STABLE">DENSITY_DEVICE_STABLE</a> API and this value MUST NOT change at any time; however, the device MAY report a different arbitrary density according to the display configuration changes made by the user (for example, display size) set after initial boot.
       </p>
       <ul>
         <li>120 dpi (ldpi)
@@ -4561,9 +4566,15 @@
         </li>
         <li>240 dpi (hdpi)
         </li>
+        <li>260 dpi (260dpi)
+        </li>
         <li>280 dpi (280dpi)
         </li>
+        <li>300 dpi (300dpi)
+        </li>
         <li>320 dpi (xhdpi)
+        </li>
+        <li>340 dpi (340dpi)
         </li>
         <li>360 dpi (360dpi)
         </li>
@@ -5091,7 +5102,7 @@
       </p>
       <ul>
         <li>
-          <strong>Search affordance</strong> . Device implementations MUST fire KEYCODE_SEARCH when the user invokes voice search either on the physical or software-based remote.
+          <strong>Search affordance</strong> . Device implementations MUST fire KEYCODE_SEARCH (or KEYCODE_ASSIST if the device supports an assistant) when the user invokes voice search on either the physical or software-based remote.
         </li>
         <li>
           <strong>Navigation</strong> . All Android Television remotes MUST include <a href="http://developer.android.com/reference/android/view/KeyEvent.html">Back, Home, and Select buttons and support for D-pad events</a> .
@@ -6242,7 +6253,7 @@
         </li>
         <li>MUST implement the Android USB host API as documented in the Android SDK, and MUST declare support for the hardware feature <a href="http://developer.android.com/guide/topics/connectivity/usb/host.html">android.hardware.usb.host</a> .
         </li>
-        <li>SHOULD support the Charging Downstream Port output current range of 1.5 A ~ 5 A as specified in the <a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">USB Battery Charging specifications, revision 1.2</a> .
+        <li>SHOULD support device charging while in host mode; advertising a source current of at least 1.5A as specified in the Termination Parameters section of the [USB Type-C Cable and Connector Specification Revision 1.2] (http://www.usb.org/developers/docs/usb_31_021517.zip) for USB Type-C connectors or using Charging Downstream Port(CDP) output current range as specified in the <a href="http://www.usb.org/developers/docs/devclass_docs/BCv1.2_070312.zip">USB Battery Charging specifications, revision 1.2</a> for Micro-AB connectors.
         </li>
         <li>USB Type-C devices are STRONGLY RECOMMENDED to support DisplayPort, SHOULD support USB SuperSpeed Data Rates, and are STRONGLY RECOMMENDED to support Power Delivery for data and power role swapping.
         </li>
@@ -6383,7 +6394,7 @@
         </li>
         <li>Device implementations MUST declare android.software.vr.mode feature.
         </li>
-        <li>Device implementations MAY provide an exclusive core to the foreground application and MAY support the <code>Process.getExclusiveCores</code> API to return the numbers of the CPU cores that are exclusive to the top foreground application. If exclusive core is supported, then the core MUST not allow any other userspace processes to run on it (except device drivers used by the application), but MAY allow some kernel processes to run as necessary.
+        <li>Device implementations MAY provide an exclusive core to the foreground application and MAY support the Process.getExclusiveCores API to return the numbers of the cpu cores that are exclusive to the top foreground application. If exclusive core is supported then the core MUST not allow any other userspace processes to run on it (except device drivers used by the application), but MAY allow some kernel processes to run as necessary.
         </li>
         <li>Device implementations MUST support sustained performance mode.
         </li>
@@ -6797,15 +6808,15 @@
         </li>
         <li>When the device implementation supports a secure lock screen it MUST back up the keystore implementation with secure hardware and meet following requirements:
           <ul>
-            <li>MUST have hardware backed implementations of RSA, AES, ECDSA and HMAC cryptographic algorithms and MD5, SHA1, SHA-2 Family hash functions to properly support the <a href="https://developer.android.com/training/articles/keystore.html#SupportedAlgorithms">Android Keystore system's supported algorithms</a> .
+            <li>MUST have implementations of RSA, AES, ECDSA and HMAC cryptographic algorithms and MD5, SHA1, and SHA-2 family hash functions to properly support the Android Keystore system's supported algorithms in an area that is securely isolated from the code running on the kernel and above. Secure isolation MUST block all potential mechanisms by which kernel or userspace code might access the internal state of the isolated environment, including DMA. The upstream Android Open Source Project (AOSP) meets this requirement by using the <a href="https://source.android.com/security/trusty/">Trusty</a> implementation, but another ARM TrustZone-based solution or a third-party reviewed secure implementation of a proper hypervisor-based isolation are alternative options.
             </li>
-            <li>MUST perform the lock screen authentication in the secure hardware and only when successful allow the authentication-bound keys to be used. The upstream Android Open Source Project provides the <a href="http://source.android.com/devices/tech/security/authentication/gatekeeper.html">Gatekeeper Hardware Abstraction Layer (HAL)</a> that can be used to satisfy this requirement.
+            <li>MUST perform the lock screen authentication in the isolated execution environment and only when successful, allow the authentication-bound keys to be used. The upstream Android Open Source Project provides the <a href="http://source.android.com/devices/tech/security/authentication/gatekeeper.html">Gatekeeper Hardware Abstraction Layer (HAL)</a> and Trusty, which can be used to satisfy this requirement.
             </li>
           </ul>
         </li>
       </ul>
       <p>
-        Note that if a device implementation is already launched on an earlier Android version, and does not have a fingerprint scanner, such a device is exempted from the requirement to have a hardware-backed keystore.
+        Note that if a device implementation is already launched on an earlier Android version, such a device is exempted from the requirement to have a hardware-backed keystore, unless it declares the <code>android.hardware.fingerprint</code> feature which requires a hardware-backed keystore.
       </p>
       <h3 id="9_11_1_secure_lock_screen">
         9.11.1. Secure Lock Screen

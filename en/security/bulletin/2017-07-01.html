@@ -20,7 +20,7 @@
       See the License for the specific language governing permissions and
       limitations under the License.
   -->
-<p><em>Published July 5, 2017</em></p>
+<p><em>Published July 5, 2017 | Updated July 6, 2017</em></p>
 
 <p>The Android Security Bulletin contains details of security vulnerabilities
 affecting Android devices. Security patch levels of July 05, 2017 or later
@@ -30,9 +30,9 @@ and Nexus update schedule</a> to learn how to check a device's security patch
 level.</p>
 
 <p>Partners were notified of the issues described in the bulletin at least a month
-ago. Source code patches for these issues will be released to the Android Open
-Source Project (AOSP) repository in the next 48 hours. We will revise this
-bulletin with the AOSP links when they are available.</p>
+ago. Source code patches for these issues have been released to the Android Open
+Source Project (AOSP) repository and linked from this bulletin. This bulletin also
+includes links to patches outside of AOSP.</p>
 
 <p>The most severe of these issues is a critical security vulnerability in media
 framework that could enable a remote attacker using a specially crafted file to
@@ -128,7 +128,8 @@ an unprivileged process.</p>
   </tr>
   <tr>
    <td>CVE-2017-3544</td>
-   <td>A-35784677</td>
+   <td><a href="https://android.googlesource.com/platform/libcore/+/c5dd90d62590425f04a261e0f6c927acca147f88">
+       A-35784677</a></td>
    <td>RCE</td>
    <td>Moderate</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -154,49 +155,56 @@ context of an application that uses the library.</p>
   </tr>
   <tr>
    <td>CVE-2017-0664</td>
-   <td>A-36491278</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/base/+/59773dc2f213c3e645c7e04881afa0a8e6ffccca">
+       A-36491278</a></td>
    <td>EoP</td>
    <td>High</td>
    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0665</td>
-   <td>A-36991414</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/native/+/75edf04bf18d37df28fb58e1d75331ed4bcae230">
+       A-36991414</a></td>
    <td>EoP</td>
    <td>High</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0666</td>
-   <td>A-37285689</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/native/+/5fc2df253c089b53b3e235a3f237f96a98b53977">
+       A-37285689</a></td>
    <td>EoP</td>
    <td>High</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0667</td>
-   <td>A-37478824</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/native/+/5ac63e4547feaa7cb51ac81896250f47f367ffba">
+       A-37478824</a></td>
    <td>EoP</td>
    <td>High</td>
    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0668</td>
-   <td>A-22011579</td>
+   <td><a href="https://android.googlesource.com/platform/packages/providers/DownloadProvider/+/b3e3325d23289a94e66d8ce36a53a7ccf7b52c6d">
+       A-22011579</a></td>
    <td>ID</td>
    <td>Moderate</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0669</td>
-   <td>A-34114752</td>
+   <td><a href="https://android.googlesource.com/platform/packages/providers/MediaProvider/+/7b7ef84234cd3daea0e22025b908b0041885736c">
+       A-34114752</a></td>
    <td>ID</td>
    <td>High</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0670</td>
-   <td>A-36104177</td>
+   <td><a href="https://android.googlesource.com/platform/bionic/+/e102faee8b2f87c28616e7f5453f9a11eea9b122">
+       A-36104177</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -222,21 +230,23 @@ an application that uses the library.</p>
   </tr>
   <tr>
    <td>CVE-2017-0671</td>
-   <td>A-34514762</td>
+   <td>A-34514762<a href="#asterisk">*</a></td>
    <td>RCE</td>
    <td>High</td>
    <td>4.4.4</td>
   </tr>
   <tr>
    <td>CVE-2016-2109</td>
-   <td>A-35443725</td>
+   <td><a href="https://android.googlesource.com/platform/external/boringssl/+/ccb2efe8d3fccb4321e85048d67c8528e03d4652">
+       A-35443725</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0672</td>
-   <td>A-34778578</td>
+   <td><a href="https://android.googlesource.com/platform/external/skia/+/c4087ff5486d36a690c681affb668164ec0dd697">
+       A-34778578</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>7.0, 7.1.1, 7.1.2</td>
@@ -262,189 +272,215 @@ a privileged process.</p>
   </tr>
   <tr>
    <td>CVE-2017-0540</td>
-   <td>A-33966031</td>
+   <td><a href="https://android.googlesource.com/platform/external/libhevc/+/a92b39ff0c47d488b81fecd62ba85e48d386aa68">
+       A-33966031</a></td>
    <td>RCE</td>
    <td>Critical</td>
    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0673</td>
-   <td>A-33974623</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/381ccb2b7f2ba42490bafab6aa7a63a8212b396f">
+       A-33974623</a></td>
    <td>RCE</td>
    <td>Critical</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0674</td>
-   <td>A-34231163</td>
+   <td><a href="https://android.googlesource.com/platform/external/libmpeg2/+/1603112cccbab3dff66a7eb1b82e858c1749f34b">
+       A-34231163</a></td>
    <td>RCE</td>
    <td>Critical</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0675</td>
-   <td>A-34779227</td>
+   <td><a href="https://android.googlesource.com/platform/external/libhevc/+/726108468dcfdabb833b8d55333de53cf6350aaa">
+       A-34779227</a>
+      [<a href="https://android.googlesource.com/platform/external/libhevc/+/4395fc2288e3f692765c73fce416e831fdaa5463">2</a>]</td>
    <td>RCE</td>
    <td>Critical</td>
    <td>6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0676</td>
-   <td>A-34896431</td>
+   <td><a href="https://android.googlesource.com/platform/external/libhevc/+/8e415eabb5d2abd2f2bd40a675339d967f81521b">
+       A-34896431</a></td>
    <td>RCE</td>
    <td>Critical</td>
    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0677</td>
-   <td>A-36035074</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/b8fee6a6d0a91fb5ddca8f54b0c891e25c1b65ae">
+       A-36035074</a></td>
    <td>RCE</td>
    <td>Critical</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0678</td>
-   <td>A-36576151</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/64bc0b8c0c495c487604d483aa57978db7f634be">
+       A-36576151</a></td>
    <td>RCE</td>
    <td>Critical</td>
    <td>7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0679</td>
-   <td>A-36996978</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/91cb6b1745f3e9d341cf6decc2b916cb1e4eea77">
+       A-36996978</a></td>
    <td>RCE</td>
    <td>Critical</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0680</td>
-   <td>A-37008096</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/989df73b34a7a698731cab3ee1e4a831a862fbe1">
+       A-37008096</a></td>
    <td>RCE</td>
    <td>Critical</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0681</td>
-   <td>A-37208566</td>
+   <td><a href="https://android.googlesource.com/platform/external/tremolo/+/822af05a1364d8dc6189dce5380a2703214dd799">
+       A-37208566</a></td>
    <td>RCE</td>
    <td>Critical</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0682</td>
-   <td>A-36588422</td>
+   <td>A-36588422<a href="#asterisk">*</a></td>
    <td>RCE</td>
    <td>High</td>
    <td>7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0683</td>
-   <td>A-36591008</td>
+   <td>A-36591008<a href="#asterisk">*</a></td>
    <td>RCE</td>
    <td>High</td>
    <td>7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0684</td>
-   <td>A-35421151</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/c7c9271740c29c02e7926265ed53a44b8113dbfb">
+       A-35421151</a></td>
    <td>EoP</td>
    <td>High</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0685</td>
-   <td>A-34203195</td>
+   <td><a href="https://android.googlesource.com/platform/external/libmpeg2/+/680b75dabb90c8c2e22886826554ad1bc99b36f1">
+       A-34203195</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0686</td>
-   <td>A-34231231</td>
+   <td><a href="https://android.googlesource.com/platform/external/libmpeg2/+/b8d7e85c10cc22e1a5d81ec3d8a2e5bdd6102852">
+       A-34231231</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0688</td>
-   <td>A-35584425</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/62c07468bc26d1f9487c5298bb2a2f3740db13b1">
+       A-35584425</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0689</td>
-   <td>A-36215950</td>
+   <td><a href="https://android.googlesource.com/platform/external/libhevc/+/2210ff5600d3f965352a3074adff8fedddcf347e">
+       A-36215950</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0690</td>
-   <td>A-36592202</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/1f418f10f4319fc829360b7efee7fca4b3880867">
+       A-36592202</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0691</td>
-   <td>A-36724453</td>
+   <td><a href="https://android.googlesource.com/platform/external/dng_sdk/+/c70264282305351abbec9b967333db4d896583b9">
+       A-36724453</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0692</td>
-   <td>A-36725407</td>
+   <td><a href="https://android.googlesource.com/platform/external/sonivox/+/6db482687caf12ea7d2d07d655b17413bc937c73">
+       A-36725407</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0693</td>
-   <td>A-36993291</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/632ff754836d22415136cb3f97fe4622c862ce81">
+       A-36993291</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0694</td>
-   <td>A-37093318</td>
+   <td><a href="https://android.googlesource.com/platform/external/sonivox/+/47750a5f1b19695ac64d6f7aa6e7e0918d3c8977">
+       A-37093318</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0695</td>
-   <td>A-37094889</td>
+   <td><a href="https://android.googlesource.com/platform/external/libhevc/+/cc5683451dd9be1491b54f215e9934d49f11cf70">
+       A-37094889</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0696</td>
-   <td>A-37207120</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/0d0ddb7cd7618ede5301803c526f066b95ce5089">
+       A-37207120</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0697</td>
-   <td>A-37239013</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/c5eaf3ae70d5ea3a7d390294002e4cf9859b3578">
+       A-37239013</a></td>
    <td>DoS</td>
    <td>High</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0698</td>
-   <td>A-35467458</td>
+   <td><a href="https://android.googlesource.com/platform/frameworks/av/+/1618337cac09284fddb5bb14b5e0cfe2946d3431">
+       A-35467458</a></td>
    <td>ID</td>
    <td>Moderate</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0699</td>
-   <td>A-36490809</td>
+   <td><a href="https://android.googlesource.com/platform/external/libavc/+/989b2afc3ebb1bbb4c962e2aff1fd9b3149f83f1">
+       A-36490809</a></td>
    <td>ID</td>
    <td>Moderate</td>
    <td>6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
@@ -470,35 +506,41 @@ privileged process.</p>
   </tr>
   <tr>
    <td>CVE-2017-0700</td>
-   <td>A-35639138</td>
+   <td><a href="https://android.googlesource.com/platform/external/libgdx/+/38889ebd9b9c682bd1b64fd251ecd69b504a6155">
+       A-35639138</a></td>
    <td>RCE</td>
    <td>High</td>
    <td>7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0701</td>
-   <td>A-36385715</td>
+   <td><a href="https://android.googlesource.com/platform/external/libgdx/+/85e94f5b67c1beb9402c4de82bd481a5202470de">
+       A-36385715</a>
+      [<a href="https://android.googlesource.com/platform/external/libgdx/+/bd4c825d8fc5dd48f5c602e673ae210909b31fd0">2</a>]</td>
    <td>RCE</td>
    <td>High</td>
    <td>7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0702</td>
-   <td>A-36621442</td>
+   <td><a href="https://android.googlesource.com/platform/external/libgdx/+/5d46e9a1784c02f347af107a978fe9fbd7af7fb2">
+       A-36621442</a></td>
    <td>RCE</td>
    <td>High</td>
    <td>7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0703</td>
-   <td>A-33123882</td>
+   <td><a href="https://android.googlesource.com/platform/packages/apps/Settings/+/4af8f912aa1ee714638d0f9694d6f856bc8166f3">
+       A-33123882</a></td>
    <td>EoP</td>
    <td>High</td>
    <td>4.4.4, 5.0.2, 5.1.1, 6.0, 6.0.1, 7.0, 7.1.1, 7.1.2</td>
   </tr>
   <tr>
    <td>CVE-2017-0704</td>
-   <td>A-33059280</td>
+   <td><a href="https://android.googlesource.com/platform/packages/apps/Settings/+/179f0e9512100b0a403aab8b2b4cf5510bb20bee">
+       A-33059280</a></td>
    <td>EoP</td>
    <td>Moderate</td>
    <td>7.1.1, 7.1.2</td>
@@ -1726,6 +1768,11 @@ site</a>.</p>
    <td>1.0</td>
    <td>July 5, 2017</td>
    <td>Bulletin published.</td>
+  </tr>
+  <tr>
+   <td>1.1</td>
+   <td>July 6, 2017</td>
+   <td>Bulletin revised to include AOSP links.</td>
   </tr>
 </table>
 </body>
