@@ -187,9 +187,10 @@ wishes to disable verification on the device.
     <td><code>flashing lock</code></td>
     <td>
       <ul>
-        <li>Wipe data after asking the user for confirmation
-        <li>Clear a write-protected bit, readable by the bootloader, indicating
-            the device is unlocked
+        <li>Wipes data after asking the user for confirmation.
+        <li>Clears a write-protected bit to lock the device.
+            Because the bit is write-protected, only the
+            bootloader can change it.
       </ul>
     </td>
  </tr>
@@ -198,10 +199,11 @@ wishes to disable verification on the device.
     <td>
       <ul>
         <li>If the unlock device setting has not been enabled by the user,
-            abort unlocking
-        <li>Wipe data after asking the user for confirmation
-        <li>Set a write-protected bit, readable by the bootloader, indicating
-            the device is unlocked
+            aborts unlocking
+        <li>Wipes data after asking the user for confirmation
+        <li>Sets a write-protected bit to unlock the device.
+            Because the bit is write-protected, only the
+            bootloader can change it.
       </ul>
     </td>
  </tr>

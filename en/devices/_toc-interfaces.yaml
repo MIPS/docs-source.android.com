@@ -1,41 +1,14 @@
 toc:
 - title: Overview
   path: /devices/
-- title: Accessories
-  path: /devices/accessories
+- title: Architecture
   section:
-  - title: Audio Accessories
-    section:
-    - title: Overview
-      path: /devices/accessories/audio
-    - title: Headset
-      section:
-      - title: Overview
-        path: /devices/accessories/headset/
-      - title: 3.5 mm Headset Spec
-        path: /devices/accessories/headset/plug-headset-spec
-      - title: 3.5 mm Jack Spec
-        path: /devices/accessories/headset/jack-headset-spec
-      - title: USB Headset Spec
-        path: /devices/accessories/headset/usb-headset-spec
-      - title: Expected Behavior
-        path: /devices/accessories/headset/expected-behavior
-      - title: Testing
-        path: /devices/accessories/headset/testing
-  - title: Custom Accessories
-    section:
-    - title: Overview
-      path: /devices/accessories/custom
-    - title: AOA
-      section:
-      - title: Overview
-        path: /devices/accessories/protocol
-      - title: AOA 2.0
-        path: /devices/accessories/aoa2
-      - title: AOA 1.0
-        path: /devices/accessories/aoa
-    - title: Stylus
-      path: /devices/accessories/stylus
+  - title: Overview
+    path: /devices/architecture/
+  - title: Hardware Abstraction Layer (HAL)
+    path: /devices/architecture/hal
+  - title: Treble
+    path: /devices/architecture/treble
 - title: Audio
   section:
   - title: Overview
@@ -95,7 +68,11 @@ toc:
   - title: TV Audio
     path: /devices/audio/tv
 - title: Automotive
-  path: /devices/automotive
+  section:
+  - title: Overview
+    path: /devices/automotive/
+  - title: Vehicle Properties
+    path: /devices/automotive/properties
 - title: Bluetooth
   path: /devices/bluetooth
 - title: Camera
@@ -206,6 +183,41 @@ toc:
     path: /devices/media/soc
   - title: OEM Dependencies
     path: /devices/media/oem
+- title: Peripherals
+  path: /devices/accessories
+  section:
+  - title: Audio Accessories
+    section:
+    - title: Overview
+      path: /devices/accessories/audio
+    - title: Headset
+      section:
+      - title: Overview
+        path: /devices/accessories/headset/
+      - title: 3.5 mm Headset Spec
+        path: /devices/accessories/headset/plug-headset-spec
+      - title: 3.5 mm Jack Spec
+        path: /devices/accessories/headset/jack-headset-spec
+      - title: USB Headset Spec
+        path: /devices/accessories/headset/usb-headset-spec
+      - title: Expected Behavior
+        path: /devices/accessories/headset/expected-behavior
+      - title: Testing
+        path: /devices/accessories/headset/testing
+  - title: Custom Accessories
+    section:
+    - title: Overview
+      path: /devices/accessories/custom
+    - title: AOA
+      section:
+      - title: Overview
+        path: /devices/accessories/protocol
+      - title: AOA 2.0
+        path: /devices/accessories/aoa2
+      - title: AOA 1.0
+        path: /devices/accessories/aoa
+    - title: Stylus
+      path: /devices/accessories/stylus
 - title: Sensors
   section:
   - title: Overview

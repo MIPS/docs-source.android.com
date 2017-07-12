@@ -1,8 +1,7 @@
-<html devsite>
-  <head>
-    <title>Android 安全公告 - 2016 年 3 月 18 日</title>
-    <meta name="project_path" value="/_project.yaml" />
-    <meta name="book_path" value="/_book.yaml" />
+<html devsite><head>
+    <title>Android 安全建议 - 2016 年 3 月 18 日</title>
+    <meta name="project_path" value="/_project.yaml"/>
+    <meta name="book_path" value="/_book.yaml"/>
   </head>
   <body>
   <!--
@@ -21,15 +20,13 @@
       limitations under the License.
   -->
 
-
-
 <p><em>发布时间：2016 年 3 月 18 日</em></p>
 
-<p>Android 安全公告是对 Nexus 安全公告的补充。要详细了解安全公告，请参阅我们的<a href="index.html">摘要网页</a>。</p>
+<p>Android 安全建议是对 Nexus 安全公告的补充。如需关于安全建议的更多信息，请参阅我们的<a href="index.html">摘要页面</a>。</p>
 
 <h2 id="summary">摘要</h2>
 
-<p>Google 注意到，某个 Root 应用会利用部分 Android 设备上的内核中某个未被补丁程序修复的本地提权漏洞 (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a>)。只有用户在设备上安装该应用后，设备才会受到该应用的影响。Google 已通过<a href="https://support.google.com/accounts/answer/2812853">验证应用</a>功能阻止用户在 Google Play 内外安装会利用该漏洞的 Root 应用。此外，Google 还更新了系统，以便检测会利用这一特定漏洞的应用。</p>
+<p>Google 注意到，某个 Root 应用会利用部分 Android 设备的内核中某个未被补丁程序修复的本地提权漏洞 (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805">CVE-2015-1805</a>)。只有用户在设备上安装该应用后，设备才会受到该应用的影响。Google 已通过<a href="https://support.google.com/accounts/answer/2812853">验证应用</a>功能阻止用户在 Google Play 内外安装会利用该漏洞的 Root 应用。此外，Google 还更新了系统，以便检测会利用这一特定漏洞的应用。</p>
 
 <p>为了针对该问题提供最后一道防护屏障，我们已在 2016 年 3 月 16 日向合作伙伴提供用于修复该问题的补丁程序。我们正在准备 Nexus 更新版本，近日就会发布。此外，我们还在 Android 开放源代码项目 (AOSP) 代码库中发布了针对该问题的源代码补丁程序。</p>
 
@@ -43,37 +40,32 @@
 
 <h3 id="scope">范围</h3>
 
-
-<p>该公告适用于所有搭载内核版本 3.4、3.10 和 3.14 且未安装补丁程序的 Android 设备（包括所有 Nexus 设备）。Linux 内核版本为 3.18 或更高版本的 Android 设备不会受到影响。</p>
+<p>该安全建议适用于所有内核版本为 3.4、3.10 和 3.14 且未安装补丁程序的 Android 设备（包括所有 Nexus 设备）。Linux 内核版本为 3.18 或更高版本的 Android 设备不会受到影响。</p>
 
 <h3 id="mitigations">缓解措施</h3>
-
 
 <p>下列缓解措施有助于降低用户受该问题影响的可能性：</p>
 
 <ul>
   <li>“验证应用”功能已进行了更新，能够阻止用户在 Google Play 内外安装会试图利用该漏洞的已知应用。
-  <li>Google Play 禁止 Root 应用（例如会试图利用该问题的应用）上架。
-  <li><a href="https://support.google.com/nexus/answer/4457705">Linux 内核版本为 3.18</a> 或更高版本的 Android 设备不会受到影响。
-</li></li></li></ul>
+  </li><li>Google Play 禁止 Root 应用（例如会试图利用该问题的应用）上架。
+  </li><li><a href="https://support.google.com/nexus/answer/4457705">Linux 内核版本为 3.18</a> 或更高版本的 Android 设备不会受到影响。
+</li></ul>
 
 <h3 id="acknowledgements">致谢</h3>
 
-
-<p>Android 非常感谢 <a href="http://c0reteam.org/">C0RE 团队</a>和 <a href="https://www.zimperium.com/">Zimperium</a> 对该公告做出的贡献。</p>
+<p>Android 衷心感谢 <a href="http://c0reteam.org/">C0RE 团队</a>和 <a href="https://www.zimperium.com/">Zimperium</a> 对该安全建议做出的贡献。</p>
 
 <h3 id="suggested_actions">建议操作</h3>
-
 
 <p>Android 建议所有用户在有设备软件更新时，进行相应更新。</p>
 
 <h3 id="fixes">修复程序</h3>
 
-
 <p>Google 已针对多个内核版本在 AOSP 代码库中发布修复程序。我们已向 Android 合作伙伴发出相关修复程序的通知，并建议他们采用。如需进一步更新，Android 会直接将更新内容发布到 AOSP。</p>
 
 <table>
- <tr>
+ <tbody><tr>
     <th>内核版本</th>
     <th>补丁程序</th>
  </tr>
@@ -93,11 +85,9 @@
     <td>3.18+</td>
     <td>公开 Linux 内核已打了补丁程序</td>
  </tr>
-</table>
-
+</tbody></table>
 
 <h2 id="common_questions_and_answers">常见问题和解答</h2>
-
 
 <p><strong>1. 具体问题是什么？
 </strong></p>
@@ -126,10 +116,8 @@
 
 <h2 id="revisions">修订版本</h2>
 
-
 <ul>
-  <li>2016 年 3 月 18 日：发布了公告。
+  <li>2016 年 3 月 18 日：发布了安全建议。
 </li></ul>
 
-  </body>
-</html>
+</body></html>
