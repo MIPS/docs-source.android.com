@@ -190,6 +190,18 @@ List of applications that are loaded by the system server. These applications
 will be compiled by default with the <em>speed</em> compiler filter.
 </p>
 
+<li><code>PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD(Post Android O)</code></li>
+<p>
+Whether to include a debug version of ART on the device. By default, this is
+enabled for userdebug and eng builds. The behavior can be overridden by explicitly
+setting the option to <em>true</em> or <em>false</em>.
+</p>
+<p>
+By default, the device will use the non-debug version (<em>libart.so</em>).
+To switch, set the system property <code>persist.sys.dalvik.vm.lib.2</code> to
+<em>libartd.so</em>.
+</p>
+
 <li><code>WITH_DEXPREOPT_PIC (Removed in Android O)</code></li>
 
 <p>In Android 5.1.0 through Android 6.0.1, <code>WITH_DEXPREOPT_PIC</code> can
