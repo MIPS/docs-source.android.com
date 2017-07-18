@@ -60,6 +60,13 @@ landing_page:
       image_path: /images/android_stack.png
   - heading: News
     items:
+    - heading: Revised ART Configuration and JIT Compilation
+      description: >
+        The Android runtime (ART) configuration and JIT compilation
+        instructions have been updated to reflect the Android O release.
+      buttons:
+      - label: July 12th, 2017
+        path: /devices/tech/dalvik/configure
     - heading: July Android Security Bulletin
       description: >
         The July 2017 Android Security Bulletin has been published along with
@@ -76,22 +83,6 @@ landing_page:
       buttons:
       - label: June 5th, 2017
         path: /devices/tech/debug/
-    - heading: Using Reference Boards
-      description: >
-        The former <em>Selecting Devices</em> page has been renamed
-        <strong>Using Reference Boards</strong> and updated to include
-        information on HiKey960 boards.
-      buttons:
-      - label: May 3rd, 2017
-        path: /source/devices#960hikey
-    - heading: Evaluating Performance in Detail
-      description: >
-        Detailed instructions now exist for understanding and examining the
-        performance of a device using <code>systrace</code>,
-        <code>ftrace</code> and other tools.
-      buttons:
-      - label: April 27th, 2017
-        path: /devices/tech/debug/eval_perf
   - classname: devsite-landing-row-100 tf-row-centered
     items:
     - buttons:
